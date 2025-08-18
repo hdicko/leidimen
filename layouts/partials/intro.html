@@ -1,0 +1,456 @@
+<!-- Context7 Professional Intro Section -->
+<section class="intro-section-ctx7 py-5">
+  <div class="container">
+    <!-- Hero Header -->
+    <div class="intro-hero-ctx7 text-center mb-5">
+      <div class="hero-content-ctx7">
+        <span class="hero-badge-ctx7 badge bg-primary mb-3 px-4 py-2 fs-6">
+          <i class="bi bi-heart me-2"></i>Association Humanitaire
+        </span>
+        <h1 class="hero-title-ctx7 display-4 fw-bold mb-4">
+          Découvrez <span class="text-primary">Leidimen</span>
+        </h1>
+        <p class="hero-subtitle-ctx7 lead text-muted mb-4 mx-auto">
+          Une association dédiée au développement et à la solidarité, agissant pour un avenir meilleur
+        </p>
+      </div>
+    </div>
+
+    <!-- Professional Accordion -->
+    <div class="accordion accordion-ctx7" id="accordionLeidimen">
+      
+      <!-- Présentation Section -->
+      <div class="accordion-item accordion-item-ctx7">
+        <h2 class="accordion-header">
+          <button
+            class="accordion-button accordion-button-ctx7"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapsePresentation"
+            aria-expanded="true"
+            aria-controls="collapsePresentation"
+          >
+            <div class="accordion-icon-ctx7 me-3">
+              <i class="bi bi-building"></i>
+            </div>
+            <div class="accordion-text-ctx7">
+              <h3 class="mb-1 fw-bold">Présentation de Leidimen</h3>
+              <p class="mb-0 text-muted small">Découvrez notre mission et nos valeurs</p>
+            </div>
+          </button>
+        </h2>
+        <div
+          id="collapsePresentation"
+          class="accordion-collapse collapse show"
+          data-bs-parent="#accordionLeidimen"
+        >
+          <div class="accordion-body accordion-body-ctx7">
+            <div class="content-wrapper-ctx7">
+              {{ partial "charte.html" }}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Qui sommes nous Section -->
+      <div class="accordion-item accordion-item-ctx7">
+        <h2 class="accordion-header">
+          <button
+            class="accordion-button accordion-button-ctx7 collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseTeam"
+            aria-expanded="false"
+            aria-controls="collapseTeam"
+          >
+            <div class="accordion-icon-ctx7 me-3">
+              <i class="bi bi-people"></i>
+            </div>
+            <div class="accordion-text-ctx7">
+              <h3 class="mb-1 fw-bold">Qui sommes nous</h3>
+              <p class="mb-0 text-muted small">Rencontrez notre équipe et notre organisation</p>
+            </div>
+          </button>
+        </h2>
+        <div
+          id="collapseTeam"
+          class="accordion-collapse collapse"
+          data-bs-parent="#accordionLeidimen"
+        >
+          <div class="accordion-body accordion-body-ctx7">
+            <div class="content-wrapper-ctx7">
+              {{ partial "qui-sommes-nous.html" }}
+              {{ partial "bureau.html" }}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Nos actions Section -->
+      <div class="accordion-item accordion-item-ctx7">
+        <h2 class="accordion-header">
+          <button
+            class="accordion-button accordion-button-ctx7 collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseActions"
+            aria-expanded="false"
+            aria-controls="collapseActions"
+          >
+            <div class="accordion-icon-ctx7 me-3">
+              <i class="bi bi-gear"></i>
+            </div>
+            <div class="accordion-text-ctx7">
+              <h3 class="mb-1 fw-bold">Nos actions</h3>
+              <p class="mb-0 text-muted small">Explorez nos projets et initiatives</p>
+            </div>
+          </button>
+        </h2>
+        <div
+          id="collapseActions"
+          class="accordion-collapse collapse"
+          data-bs-parent="#accordionLeidimen"
+        >
+          <div class="accordion-body accordion-body-ctx7">
+            <div class="content-wrapper-ctx7">
+              {{ partial "que-voulons-nous.html" }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="cta-section-ctx7 text-center mt-5">
+      <div class="cta-card-ctx7 p-5 rounded-4">
+        <h3 class="fw-bold mb-3">Rejoignez notre mission</h3>
+        <p class="text-muted mb-4">
+          Ensemble, nous pouvons faire la différence et construire un avenir plus solidaire
+        </p>
+        <div class="cta-buttons-ctx7">
+          <a href="/about/" class="btn btn-primary btn-lg rounded-pill me-3 mb-2">
+            <i class="bi bi-people me-2"></i>Découvrir l'équipe
+          </a>
+          <a href="/documents/" class="btn btn-outline-primary btn-lg rounded-pill mb-2">
+            <i class="bi bi-file-text me-2"></i>Nos documents
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+/* Context7 Professional Intro Styles */
+.intro-section-ctx7 {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  min-height: 80vh;
+  position: relative;
+}
+
+.intro-section-ctx7::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="%23000" opacity="0.02"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+  pointer-events: none;
+}
+
+/* Hero Section */
+.intro-hero-ctx7 {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-badge-ctx7 {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border-radius: 50px;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.25);
+  animation: float-gentle 3s ease-in-out infinite;
+}
+
+.hero-title-ctx7 {
+  color: #1e293b;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.hero-subtitle-ctx7 {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+/* Professional Accordion */
+.accordion-ctx7 {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.accordion-item-ctx7 {
+  border: none;
+  margin-bottom: 1.5rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.accordion-item-ctx7:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.accordion-button-ctx7 {
+  background: white;
+  border: none;
+  padding: 2rem;
+  font-weight: 500;
+  box-shadow: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.accordion-button-ctx7::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.accordion-button-ctx7:hover::before,
+.accordion-button-ctx7:focus::before {
+  opacity: 1;
+}
+
+.accordion-button-ctx7:not(.collapsed) {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: white;
+}
+
+.accordion-button-ctx7:not(.collapsed) .accordion-icon-ctx7 {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.accordion-button-ctx7:focus {
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25);
+}
+
+.accordion-icon-ctx7 {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  transition: all 0.3s ease;
+}
+
+.accordion-text-ctx7 h3 {
+  font-size: 1.25rem;
+  color: inherit;
+}
+
+.accordion-text-ctx7 p {
+  color: #64748b;
+  font-size: 0.875rem;
+}
+
+.accordion-button-ctx7:not(.collapsed) .accordion-text-ctx7 p {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.accordion-body-ctx7 {
+  padding: 2rem;
+  background: #fafbfc;
+  border-top: 1px solid #e2e8f0;
+}
+
+.content-wrapper-ctx7 {
+  line-height: 1.7;
+}
+
+.content-wrapper-ctx7 h1,
+.content-wrapper-ctx7 h2,
+.content-wrapper-ctx7 h3 {
+  color: #1e293b;
+  margin-bottom: 1rem;
+}
+
+.content-wrapper-ctx7 p {
+  color: #475569;
+  margin-bottom: 1.25rem;
+}
+
+/* Call to Action */
+.cta-section-ctx7 {
+  position: relative;
+  z-index: 2;
+}
+
+.cta-card-ctx7 {
+  background: white;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-card-ctx7::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+}
+
+.cta-buttons-ctx7 .btn {
+  font-weight: 600;
+  padding: 0.75rem 2rem;
+  transition: all 0.3s ease;
+}
+
+.cta-buttons-ctx7 .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Animations */
+@keyframes float-gentle {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .intro-hero-ctx7 {
+    padding: 2rem 0;
+  }
+  
+  .hero-title-ctx7 {
+    font-size: 2.5rem;
+  }
+  
+  .accordion-button-ctx7 {
+    padding: 1.5rem;
+  }
+  
+  .accordion-body-ctx7 {
+    padding: 1.5rem;
+  }
+  
+  .accordion-icon-ctx7 {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+  
+  .accordion-text-ctx7 h3 {
+    font-size: 1.1rem;
+  }
+  
+  .cta-card-ctx7 {
+    padding: 2rem !important;
+  }
+  
+  .cta-buttons-ctx7 .btn {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-title-ctx7 {
+    font-size: 2rem;
+  }
+  
+  .accordion-button-ctx7 {
+    padding: 1rem;
+  }
+  
+  .accordion-body-ctx7 {
+    padding: 1rem;
+  }
+}
+</style>
+
+<script>
+// Context7 Professional Intro Enhancements
+document.addEventListener('DOMContentLoaded', function() {
+  // Smooth accordion transitions
+  const accordionButtons = document.querySelectorAll('.accordion-button-ctx7');
+  
+  accordionButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      // Add loading state
+      this.style.pointerEvents = 'none';
+      setTimeout(() => {
+        this.style.pointerEvents = 'auto';
+      }, 300);
+    });
+  });
+
+  // Intersection Observer for animations
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, observerOptions);
+
+  // Observe accordion items for stagger animation
+  const accordionItems = document.querySelectorAll('.accordion-item-ctx7');
+  accordionItems.forEach((item, index) => {
+    item.style.opacity = '0';
+    item.style.transform = 'translateY(30px)';
+    item.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+    observer.observe(item);
+  });
+
+  // CTA section animation
+  const ctaSection = document.querySelector('.cta-section-ctx7');
+  if (ctaSection) {
+    ctaSection.style.opacity = '0';
+    ctaSection.style.transform = 'translateY(30px)';
+    ctaSection.style.transition = 'opacity 0.6s ease 0.3s, transform 0.6s ease 0.3s';
+    observer.observe(ctaSection);
+  }
+
+  // Enhanced button interactions
+  const ctaButtons = document.querySelectorAll('.cta-buttons-ctx7 .btn');
+  ctaButtons.forEach(button => {
+    button.addEventListener('mouseenter', function() {
+      this.style.transform = 'translateY(-2px) scale(1.02)';
+    });
+    
+    button.addEventListener('mouseleave', function() {
+      this.style.transform = 'translateY(0) scale(1)';
+    });
+  });
+});
+</script>

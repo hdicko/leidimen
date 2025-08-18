@@ -1,0 +1,58 @@
+# Villages d'intervention de Leidimen au Mali
+# Coordonnées géographiques des villages dans la région de Douentza
+
+- name: "Douentza"
+  latitude: 15.0068749
+  longitude: -2.9529649
+  type: "chef-lieu"
+  description: "Chef-lieu de region, centre administratif de la région"
+  population: 25885
+  projects: ["école", "santé", "eau"]
+
+- name: "Darawal"
+  latitude: 15.1708300
+  longitude: -1.7340800
+  type: "village"
+  description: "Village rural avec école primaire"
+  population: 2500
+  projects: ["puits", "école"]
+
+- name: "Debere"
+  latitude: 15.1051109
+  longitude: -3.0106193
+  type: "village"
+  description: "Village agricole et d'élevage"
+  population: 7485
+  projects: ["agriculture", "élevage"]
+
+- name: "Diambana"
+  latitude: 15.0567
+  longitude: -2.8765
+  type: "village"
+  description: "Village avec centre de santé communautaire"
+  population: 3200
+  projects: ["santé", "eau", "éducation"]
+
+- name: "Diona"
+  latitude: 15.32591
+  longitude: -3.23359
+  type: "chef-lieu"
+  description: "Village pastoral et agricole"
+  population: 3713
+  projects: ["eau", "agriculture", "éducation"]
+
+- name: "Dorool"
+  latitude: 15.4704400
+  longitude: -3.2711600
+  type: "village"
+  description: "Village avec école communautaire"
+  population: 2100
+  projects: ["école", "formation"]
+
+- name: "Tanal"
+  latitude: 15.3364548
+  longitude: -3.1302111
+  type: "village"
+  description: "Village avec projet de développement rural"
+  population: 1900
+  projects: ["développement rural", "coopératives"]

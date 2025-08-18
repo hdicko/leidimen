@@ -1,0 +1,5 @@
+{{ if .Site.Params.ShowReadTime }}A {{ .ReadingTime }} minute read,{{ end }}
+<a href="#">{{ .Site.Params.Author }}</a> le {{ .PublishDate.Format "02-01-2006"
+}} <br />
+{{ partial "categories.html" . }} <br />
+{{ partial "tags.html" . }}

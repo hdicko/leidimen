@@ -1,0 +1,210 @@
+# baseURL = "https://leidimen"
+relativeURLs = true
+languageCode = "en-us"
+title = "Leidimen"
+pagination.pagerSize = 8
+image = "img/leidimen-logo.jpg"
+description = "Solidarite Bondoufle - Mali (Region de Douentza)"
+enableInlineShortcodes = true
+enableEmoji = true
+assetDir = "static"
+
+#### markup
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      definitionList = true
+      footnote = true
+      linkify = true
+      linkifyProtocol = 'https'
+      strikethrough = true
+      table = true
+      taskList = true
+      [markup.goldmark.extensions.typographer]
+        apostrophe = '&rsquo;'
+        disable = false
+        ellipsis = '&hellip;'
+        emDash = '&mdash;'
+        enDash = '&ndash;'
+        leftAngleQuote = '&laquo;'
+        leftDoubleQuote = '&ldquo;'
+        leftSingleQuote = '&lsquo;'
+        rightAngleQuote = '&raquo;'
+        rightDoubleQuote = '&rdquo;'
+        rightSingleQuote = '&rsquo;'
+    [markup.goldmark.parser]
+      autoHeadingID = true
+      autoHeadingIDType = 'github'
+      wrapStandAloneImageWithinParagraph = true
+      [markup.goldmark.parser.attribute]
+        block = true
+        title = true
+    [markup.goldmark.renderer]
+      hardWraps = false
+      unsafe = true
+      xhtml = false
+
+### taxonomie
+[taxonomies]
+    tag = "tags"
+    category = "categories"
+    mood = "moods"
+    village = "villages"
+
+[imaging]
+# Default resample filter used for resizing. Default is Box,
+# a simple and fast averaging filter appropriate for downscaling.
+# See https://github.com/disintegration/imaging
+resampleFilter = "box"
+
+# Default JPEG quality setting. Default is 75.
+quality = 75
+
+# Anchor used when cropping pictures.
+# Default is "smart" which does Smart Cropping, using https://github.com/muesli/smartcrop
+# Smart Cropping is content aware and tries to find the best crop for each image.
+# Valid values are Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight
+anchor = "smart"
+
+# Default background color.
+# Hugo will preserve transparency for target formats that supports it,
+# but will fall back to this color for JPEG.
+# Expects a standard HEX color string with 3 or 6 digits.
+# See https://www.google.com/search?q=color+picker
+bgColor = "#ffffff"
+
+[imaging.exif]
+ # Regexp matching the fields you want to Exclude from the (massive) set of Exif info
+# available. As we cache this info to disk, this is for performance and
+# disk space reasons more than anything.
+# If you want it all, put ".*" in this config setting.
+# Note that if neither this or ExcludeFields is set, Hugo will return a small
+# default set.
+includeFields = ""
+
+# Regexp matching the Exif fields you want to exclude. This may be easier to use
+# than IncludeFields above, depending on what you want.
+excludeFields = ""
+
+# Hugo extracts the "photo taken" date/time into .Date by default.
+# Set this to true to turn it off.
+disableDate = false
+
+# Hugo extracts the "photo taken where" (GPS latitude and longitude) into
+# .Long and .Lat. Set this to true to turn it off.
+disableLatLong = false
+
+
+### params
+[params]
+  DateForm = "Mon, Jan 2, 2006"
+  Description = "Leidimen: association solidaire Bondoufle (France) et Douentza (Mali)"
+  author = ""
+  email = "association@leidimen.com"
+  address = "Association Leidimen, 14 rue des Pommiers, 91070 Bondoufle."
+  tel= "+33603751327"
+  avatarurl = "/img/leidimen-logo.jpg"
+  
+ 
+
+  ### Analytics
+  Ganalytics = ""
+  # This will load all the CSS defined in the list
+  # customCSS = ["<absolute path to CSS>", "/static/css/test.css", "<or just load it off the internet>"]
+
+### params social
+[[params.social]]
+    name = "facebook"
+    icon = "fab fa-facebook"
+    weight = 1
+    url = "https://www.facebook.com/dicko.hamadoun.3"
+[[params.social]]
+    name = "Twitter"
+    icon = "fab fa-twitter"
+    weight = 2
+    url = "https://twitter.com/@HamadounDicko"
+[[params.social]]
+    name = "LinkedIn"
+    icon = "fab fa-linkedin"
+    weight = 3
+    url = "https://www.linkedin.com/in/hamadoundicko"
+
+[menu]
+  [[menu.main]]
+    name = 'Accueil'
+    pageRef = '/'
+    weight = 10
+    pre = "<i class='fa fa-home'></i>"
+  [[menu.main]]
+    name = 'Nous'
+    pageRef = '/about'
+    pre = "<i class='fa fa-id-card'></i>"
+    weight = 20
+  [[menu.main]]
+    name = 'Documents'
+    pageRef = '/documents'
+    pre = "<i class='fa fa-folder'></i>"
+    weight = 30
+  [[menu.main]]
+    name = 'Posts'
+    pageRef = '/posts'
+    pre = "<i class='fa fa-blog'></i>"
+    weight = 40
+  [[menu.main]]
+    name = 'Services'
+    identifier = "Services"
+    weight = 40 
+  [[menu.main]]
+  parent = 'Services'
+  name = "Le Monde"
+  weight = 50
+  url = 'https://www.lemonde.fr'
+  [menu.main.params]
+    rel = 'external'
+
+[[menu.main]]
+  parent = 'Services'
+  name = "CCVE - Communaute de commune de Val D'Essonne"
+  weight = 60
+  url = 'https://www.valessonne.fr'
+  [menu.main.params]
+    rel = 'external'
+
+[[menu.main]]
+  parent = 'Services'
+  name = "L'Essor - Maliweb"
+  weight = 70
+  url = 'https://www.maliweb.net'
+  [menu.main.params]
+    rel = 'external'
+
+[[menu.main]]
+  parent = 'Services'
+  name = "Departement de l'Essonne"
+  weight = 80
+  url = 'https://www.essonne.fr'
+  [menu.main.params]
+    rel = 'external'
+
+[[menu.main]]
+  parent = 'Services'
+  name = "L'agglomération Grand Paris Sud Seine Essonne Sénart"
+  weight = 90
+  url = 'https://www.grandparissud.fr'
+  [menu.main.params]
+    rel = 'external'
+
+[[menu.footer]]
+  name = 'Terms'
+  pageRef = '/terms'
+  weight = 10
+[[menu.footer]]
+  name = 'Privacy'
+  pageRef = '/privacy'
+  weight = 20
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
+    
+

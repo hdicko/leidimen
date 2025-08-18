@@ -1,0 +1,182 @@
+{{ define "main" }}
+<!-- Individual Document in Informations Section -->
+<div class="container-fluid bg-light py-5">
+  <div class="container">
+    
+    <!-- Breadcrumb -->
+    <nav aria-label="breadcrumb" class="mb-4">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="/documents/" class="text-decoration-none text-primary">
+            <i class="bi bi-folder me-1"></i>
+            Documents
+          </a>
+        </li>
+        <li class="breadcrumb-item">
+          <a href="/documents/informations-et-compte-rendus/" class="text-decoration-none text-primary">
+            Informations et Comptes rendus
+          </a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">{{ .Title }}</li>
+      </ol>
+    </nav>
+    
+    <!-- Page Header -->
+    <div class="text-center mb-5">
+      <div class="d-inline-flex align-items-center bg-primary bg-opacity-10 px-4 py-2 rounded-pill mb-3">
+        {{ if in .RelPermalink "informations" }}
+          <i class="bi bi-info-circle text-primary me-2"></i>
+          <span class="text-primary fw-semibold">Informations utiles</span>
+        {{ else }}
+          {{ if in .RelPermalink "compte-rendu" }}
+            <i class="bi bi-journal-check text-success me-2"></i>
+            <span class="text-success fw-semibold">Compte rendu</span>
+          {{ else }}
+            <i class="bi bi-file-earmark-text text-info me-2"></i>
+            <span class="text-info fw-semibold">Document</span>
+          {{ end }}
+        {{ end }}
+      </div>
+      <h1 class="display-5 fw-bold text-dark mb-3">{{ .Title }}</h1>
+      {{ with .Params.author }}
+      <p class="text-muted">
+        <i class="bi bi-person me-1"></i>
+        Par {{ . }} • {{ $.Date.Format "2 January 2006" }}
+      </p>
+      {{ end }}
+    </div>
+
+    <!-- Content Card -->
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="card border-0 shadow-sm">
+          <div class="card-body p-5">
+            <div class="content-area">
+              {{ .Content }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Footer -->
+    <div class="row mt-5">
+      <div class="col-12">
+        <div class="card border-0 bg-primary bg-opacity-5">
+          <div class="card-body text-center p-4">
+            <h5 class="card-title mb-3">Actions rapides</h5>
+            <div class="row g-3 justify-content-center">
+              <div class="col-md-3">
+                <a href="/documents/informations-et-compte-rendus/" class="btn btn-outline-primary w-100">
+                  <i class="bi bi-arrow-left me-2"></i>
+                  Retour section
+                </a>
+              </div>
+              <div class="col-md-3">
+                <a href="/documents/" class="btn btn-outline-success w-100">
+                  <i class="bi bi-folder me-2"></i>
+                  Tous les documents
+                </a>
+              </div>
+              <div class="col-md-3">
+                <a href="/about/" class="btn btn-outline-info w-100">
+                  <i class="bi bi-people me-2"></i>
+                  Notre équipe
+                </a>
+              </div>
+              <div class="col-md-3">
+                <a href="/posts/" class="btn btn-outline-warning w-100">
+                  <i class="bi bi-newspaper me-2"></i>
+                  Actualités
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Document Specific Styles -->
+<style>
+.content-area {
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+.content-area h1,
+.content-area h2,
+.content-area h3 {
+  color: #2c3e50;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.content-area h1:first-child,
+.content-area h2:first-child,
+.content-area h3:first-child {
+  margin-top: 0;
+}
+
+.content-area p {
+  margin-bottom: 1.5rem;
+  color: #555;
+}
+
+.content-area ul,
+.content-area ol {
+  margin-bottom: 1.5rem;
+  padding-left: 2rem;
+}
+
+.content-area li {
+  margin-bottom: 0.75rem;
+  line-height: 1.7;
+}
+
+.content-area a {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.content-area a:hover {
+  color: #764ba2;
+  border-bottom-color: #764ba2;
+}
+
+.content-area blockquote {
+  border-left: 4px solid #667eea;
+  background: #f8f9fa;
+  padding: 1rem 1.5rem;
+  margin: 2rem 0;
+  border-radius: 0 8px 8px 0;
+}
+
+.breadcrumb {
+  background: transparent;
+  padding: 0;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  content: "›";
+  color: #6c757d;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .content-area {
+    font-size: 1rem;
+  }
+  
+  .card-body {
+    padding: 2rem !important;
+  }
+}
+</style>
+
+{{ end }}

@@ -1,0 +1,778 @@
+<!-- Context7 Professional Contact Section -->
+<section class="contact-section-ctx7 py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        
+        <!-- Contact Header -->
+        <div class="contact-header-ctx7 text-center mb-5">
+          <div class="contact-icon-wrapper-ctx7 mb-4">
+            <div class="contact-icon-ctx7">
+              <i class="bi bi-envelope-heart"></i>
+            </div>
+            <div class="icon-rings-ctx7">
+              <div class="ring ring-1"></div>
+              <div class="ring ring-2"></div>
+              <div class="ring ring-3"></div>
+            </div>
+          </div>
+          
+          <span class="contact-badge-ctx7 badge bg-primary mb-3 px-4 py-2 fs-6">
+            <i class="bi bi-chat-dots me-2"></i>Restons en contact
+          </span>
+          
+          <h2 class="contact-title-ctx7 display-5 fw-bold mb-3">
+            Envoyez-nous un <span class="text-primary">message</span>
+          </h2>
+          
+          <p class="contact-subtitle-ctx7 lead text-muted mb-0">
+            Nous sommes là pour vous écouter et répondre à toutes vos questions
+          </p>
+        </div>
+
+        <!-- Contact Form Card -->
+        <div class="contact-form-card-ctx7">
+          <div class="card-background-ctx7"></div>
+          
+          <div class="contact-form-content-ctx7">
+            <form
+              id="fs-frm"
+              name="simple-contact-form"
+              accept-charset="utf-8"
+              action="https://formspree.io/f/xpznrrjd"
+              method="post"
+              class="contact-form-ctx7"
+            >
+              <div class="row">
+                <!-- Name Field -->
+                <div class="col-md-6">
+                  <div class="form-group-ctx7">
+                    <label class="form-label-ctx7" for="name">
+                      <i class="bi bi-person me-2"></i>Nom complet
+                    </label>
+                    <div class="input-wrapper-ctx7">
+                      <input
+                        class="form-control-ctx7"
+                        id="name"
+                        name="nom"
+                        type="text"
+                        placeholder="Votre nom complet"
+                        required
+                      />
+                      <div class="input-focus-border-ctx7"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Email Field -->
+                <div class="col-md-6">
+                  <div class="form-group-ctx7">
+                    <label class="form-label-ctx7" for="email">
+                      <i class="bi bi-envelope me-2"></i>Adresse email
+                    </label>
+                    <div class="input-wrapper-ctx7">
+                      <input
+                        class="form-control-ctx7"
+                        name="Email"
+                        id="email"
+                        type="email"
+                        placeholder="votre.email@exemple.com"
+                        required
+                      />
+                      <div class="input-focus-border-ctx7"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Subject Field -->
+              <div class="form-group-ctx7">
+                <label class="form-label-ctx7" for="subject">
+                  <i class="bi bi-tag me-2"></i>Sujet
+                </label>
+                <div class="input-wrapper-ctx7">
+                  <select class="form-control-ctx7" id="subject" name="sujet" required>
+                    <option value="">Choisissez un sujet</option>
+                    <option value="Information générale">Information générale</option>
+                    <option value="Adhésion">Devenir membre</option>
+                    <option value="Partenariat">Partenariat</option>
+                    <option value="Don">Faire un don</option>
+                    <option value="Bénévolat">Bénévolat</option>
+                    <option value="Autre">Autre</option>
+                  </select>
+                  <div class="input-focus-border-ctx7"></div>
+                </div>
+              </div>
+
+              <!-- Message Field -->
+              <div class="form-group-ctx7">
+                <label class="form-label-ctx7" for="message">
+                  <i class="bi bi-chat-text me-2"></i>Votre message
+                </label>
+                <div class="input-wrapper-ctx7">
+                  <textarea
+                    name="Message"
+                    class="form-control-ctx7 message-textarea-ctx7"
+                    id="message"
+                    placeholder="Décrivez votre demande en détail..."
+                    rows="6"
+                    required
+                  ></textarea>
+                  <div class="input-focus-border-ctx7"></div>
+                </div>
+                <small class="character-count-ctx7 text-muted">
+                  <span id="charCount">0</span> / 500 caractères
+                </small>
+              </div>
+
+              <!-- Privacy Notice -->
+              <div class="privacy-notice-ctx7 mb-4">
+                <div class="form-check-ctx7">
+                  <input type="checkbox" class="form-check-input-ctx7" id="privacy" required>
+                  <label class="form-check-label-ctx7" for="privacy">
+                    J'accepte que mes données soient utilisées pour traiter ma demande conformément à notre 
+                    <a href="/documents/politique-confidentialite/" class="text-primary">politique de confidentialité</a>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Submit Button -->
+              <div class="text-center">
+                <button class="btn-submit-ctx7" type="submit">
+                  <span class="btn-text">
+                    <i class="bi bi-send me-2"></i>Envoyer le message
+                  </span>
+                  <div class="btn-loading">
+                    <div class="spinner"></div>
+                    <span>Envoi en cours...</span>
+                  </div>
+                </button>
+              </div>
+            </form>
+
+            <!-- Success/Error Messages -->
+            <div class="form-messages-ctx7">
+              <div class="success-message-ctx7" id="successMessage">
+                <div class="message-icon">
+                  <i class="bi bi-check-circle"></i>
+                </div>
+                <div class="message-text">
+                  <h5>Message envoyé avec succès !</h5>
+                  <p>Nous vous répondrons dans les plus brefs délais.</p>
+                </div>
+              </div>
+              
+              <div class="error-message-ctx7" id="errorMessage">
+                <div class="message-icon">
+                  <i class="bi bi-exclamation-triangle"></i>
+                </div>
+                <div class="message-text">
+                  <h5>Erreur d'envoi</h5>
+                  <p>Une erreur est survenue. Veuillez réessayer.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Info Cards -->
+        <div class="contact-info-ctx7 mt-5">
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="info-card-ctx7">
+                <div class="info-icon-ctx7">
+                  <i class="bi bi-geo-alt"></i>
+                </div>
+                <h5>Adresse</h5>
+                <p>Association Leidimen<br>
+                Paris, France</p>
+              </div>
+            </div>
+            
+            <div class="col-md-4">
+              <div class="info-card-ctx7">
+                <div class="info-icon-ctx7">
+                  <i class="bi bi-telephone"></i>
+                </div>
+                <h5>Téléphone</h5>
+                <p>Nous contacter<br>
+                via le formulaire</p>
+              </div>
+            </div>
+            
+            <div class="col-md-4">
+              <div class="info-card-ctx7">
+                <div class="info-icon-ctx7">
+                  <i class="bi bi-clock"></i>
+                </div>
+                <h5>Disponibilité</h5>
+                <p>Réponse sous 24h<br>
+                du lundi au vendredi</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+/* Context7 Professional Contact Form Styles */
+.contact-section-ctx7 {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-section-ctx7::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="contactGrid" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="%236366f1" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23contactGrid)"/></svg>');
+  pointer-events: none;
+}
+
+/* Contact Header */
+.contact-header-ctx7 {
+  position: relative;
+  z-index: 2;
+}
+
+.contact-icon-wrapper-ctx7 {
+  position: relative;
+  display: inline-block;
+}
+
+.contact-icon-ctx7 {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2rem;
+  position: relative;
+  z-index: 3;
+  animation: pulse-gentle 3s ease-in-out infinite;
+}
+
+.icon-rings-ctx7 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.ring {
+  position: absolute;
+  border: 2px solid rgba(99, 102, 241, 0.2);
+  border-radius: 50%;
+  animation: expand-ring 3s ease-in-out infinite;
+}
+
+.ring-1 { width: 100px; height: 100px; margin: -50px 0 0 -50px; animation-delay: 0s; }
+.ring-2 { width: 120px; height: 120px; margin: -60px 0 0 -60px; animation-delay: 1s; }
+.ring-3 { width: 140px; height: 140px; margin: -70px 0 0 -70px; animation-delay: 2s; }
+
+.contact-badge-ctx7 {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border-radius: 50px;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.25);
+}
+
+.contact-title-ctx7 {
+  color: #1e293b;
+  line-height: 1.2;
+}
+
+.contact-subtitle-ctx7 {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Contact Form Card */
+.contact-form-card-ctx7 {
+  position: relative;
+  z-index: 2;
+}
+
+.card-background-ctx7 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.9);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border-radius: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form-content-ctx7 {
+  position: relative;
+  z-index: 2;
+  padding: 3rem;
+}
+
+/* Form Styles */
+.form-group-ctx7 {
+  margin-bottom: 2rem;
+}
+
+.form-label-ctx7 {
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.75rem;
+  display: block;
+  font-size: 0.95rem;
+}
+
+.input-wrapper-ctx7 {
+  position: relative;
+}
+
+.form-control-ctx7 {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  font-size: 1rem;
+  background: white;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.form-control-ctx7:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.form-control-ctx7:focus + .input-focus-border-ctx7 {
+  transform: scaleX(1);
+}
+
+.input-focus-border-ctx7 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  border-radius: 0 0 12px 12px;
+}
+
+.message-textarea-ctx7 {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.character-count-ctx7 {
+  display: block;
+  text-align: right;
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+}
+
+/* Privacy Notice */
+.privacy-notice-ctx7 {
+  background: rgba(99, 102, 241, 0.05);
+  border: 1px solid rgba(99, 102, 241, 0.1);
+  border-radius: 12px;
+  padding: 1.25rem;
+}
+
+.form-check-ctx7 {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.form-check-input-ctx7 {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #d1d5db;
+  border-radius: 4px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.form-check-input-ctx7:checked {
+  background: #6366f1;
+  border-color: #6366f1;
+}
+
+.form-check-label-ctx7 {
+  font-size: 0.9rem;
+  color: #4b5563;
+  line-height: 1.5;
+}
+
+/* Submit Button */
+.btn-submit-ctx7 {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  border: none;
+  border-radius: 50px;
+  padding: 1rem 3rem;
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  min-width: 200px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-submit-ctx7:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+}
+
+.btn-submit-ctx7:active {
+  transform: translateY(0);
+}
+
+.btn-loading {
+  display: none;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.btn-submit-ctx7.loading .btn-text {
+  display: none;
+}
+
+.btn-submit-ctx7.loading .btn-loading {
+  display: flex;
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Messages */
+.form-messages-ctx7 {
+  margin-top: 2rem;
+}
+
+.success-message-ctx7,
+.error-message-ctx7 {
+  display: none;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem;
+  border-radius: 12px;
+  animation: slideDown 0.3s ease;
+}
+
+.success-message-ctx7 {
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  color: #065f46;
+}
+
+.error-message-ctx7 {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  color: #991b1b;
+}
+
+.message-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.message-text h5 {
+  margin: 0 0 0.25rem 0;
+  font-weight: 600;
+}
+
+.message-text p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Contact Info Cards */
+.contact-info-ctx7 {
+  position: relative;
+  z-index: 2;
+}
+
+.info-card-ctx7 {
+  background: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.info-card-ctx7:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.info-icon-ctx7 {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin: 0 auto 1.5rem;
+}
+
+.info-card-ctx7 h5 {
+  color: #1e293b;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.info-card-ctx7 p {
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Animations */
+@keyframes pulse-gentle {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes expand-ring {
+  0% { transform: scale(0.8); opacity: 0.8; }
+  50% { transform: scale(1.2); opacity: 0.3; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-form-content-ctx7 {
+    padding: 2rem 1.5rem;
+  }
+  
+  .contact-title-ctx7 {
+    font-size: 2rem;
+  }
+  
+  .btn-submit-ctx7 {
+    width: 100%;
+    padding: 1rem 2rem;
+  }
+  
+  .contact-info-ctx7 .row {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .contact-form-content-ctx7 {
+    padding: 1.5rem 1rem;
+  }
+  
+  .form-group-ctx7 {
+    margin-bottom: 1.5rem;
+  }
+  
+  .contact-icon-ctx7 {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+  
+  .ring-1 { width: 80px; height: 80px; margin: -40px 0 0 -40px; }
+  .ring-2 { width: 100px; height: 100px; margin: -50px 0 0 -50px; }
+  .ring-3 { width: 120px; height: 120px; margin: -60px 0 0 -60px; }
+}
+</style>
+
+<script>
+// Context7 Professional Contact Form Enhancement
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.getElementById('fs-frm');
+  const submitBtn = document.querySelector('.btn-submit-ctx7');
+  const messageTextarea = document.getElementById('message');
+  const charCount = document.getElementById('charCount');
+  const successMessage = document.getElementById('successMessage');
+  const errorMessage = document.getElementById('errorMessage');
+
+  // Character counter
+  if (messageTextarea && charCount) {
+    messageTextarea.addEventListener('input', function() {
+      const count = this.value.length;
+      charCount.textContent = Math.min(count, 500);
+      
+      if (count > 500) {
+        charCount.style.color = '#ef4444';
+        this.value = this.value.substring(0, 500);
+      } else if (count > 450) {
+        charCount.style.color = '#f59e0b';
+      } else {
+        charCount.style.color = '#6b7280';
+      }
+    });
+  }
+
+  // Form validation and submission
+  if (form && submitBtn) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Validation
+      const requiredFields = form.querySelectorAll('[required]');
+      let isValid = true;
+      
+      requiredFields.forEach(field => {
+        if (!field.value.trim()) {
+          isValid = false;
+          field.style.borderColor = '#ef4444';
+          field.focus();
+          return;
+        } else {
+          field.style.borderColor = '#e5e7eb';
+        }
+      });
+      
+      if (!isValid) {
+        showMessage('Veuillez remplir tous les champs requis.', 'error');
+        return;
+      }
+      
+      // Email validation
+      const email = form.querySelector('#email');
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (email && !emailRegex.test(email.value)) {
+        email.style.borderColor = '#ef4444';
+        email.focus();
+        showMessage('Veuillez entrer une adresse email valide.', 'error');
+        return;
+      }
+      
+      // Show loading state
+      submitBtn.classList.add('loading');
+      
+      // Submit form
+      const formData = new FormData(form);
+      
+      fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+      .then(response => {
+        if (response.ok) {
+          showMessage('', 'success');
+          form.reset();
+          if (charCount) charCount.textContent = '0';
+        } else {
+          throw new Error('Erreur de soumission');
+        }
+      })
+      .catch(error => {
+        console.error('Erreur:', error);
+        showMessage('', 'error');
+      })
+      .finally(() => {
+        submitBtn.classList.remove('loading');
+      });
+    });
+  }
+
+  // Enhanced input interactions
+  const inputs = document.querySelectorAll('.form-control-ctx7');
+  inputs.forEach(input => {
+    input.addEventListener('focus', function() {
+      this.parentElement.style.transform = 'translateY(-2px)';
+    });
+    
+    input.addEventListener('blur', function() {
+      this.parentElement.style.transform = 'translateY(0)';
+    });
+  });
+
+  function showMessage(customText, type) {
+    // Hide all messages first
+    successMessage.style.display = 'none';
+    errorMessage.style.display = 'none';
+    
+    // Show appropriate message
+    if (type === 'success') {
+      successMessage.style.display = 'flex';
+      setTimeout(() => {
+        successMessage.style.display = 'none';
+      }, 5000);
+    } else if (type === 'error') {
+      if (customText) {
+        errorMessage.querySelector('.message-text p').textContent = customText;
+      }
+      errorMessage.style.display = 'flex';
+      setTimeout(() => {
+        errorMessage.style.display = 'none';
+      }, 5000);
+    }
+  }
+
+  // Intersection Observer for animations
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, observerOptions);
+
+  // Observe elements for animation
+  const animatedElements = document.querySelectorAll('.contact-form-card-ctx7, .info-card-ctx7');
+  animatedElements.forEach((element, index) => {
+    element.style.opacity = '0';
+    element.style.transform = 'translateY(30px)';
+    element.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+    observer.observe(element);
+  });
+});
+</script>

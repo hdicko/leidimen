@@ -1,0 +1,21 @@
+{
+	"geolocation": {
+		"data": {
+			"city": "Mennecy",
+			"country": {
+				"code": "FR",
+				"name": "France"
+			},
+			"subdivision": {
+				"code": "IDF",
+				"name": "Île-de-France"
+			},
+			"timezone": "Europe/Paris",
+			"latitude": 48.5669,
+			"longitude": 2.4488,
+			"postalCode": "91540"
+		},
+		"timestamp": 1730648491402
+	},
+	"siteId": "537bcc16-272b-4de4-ba0e-d21c0acfba9d"
+}

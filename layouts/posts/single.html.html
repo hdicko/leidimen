@@ -1,0 +1,167 @@
+{{ define "main" }}
+
+<body>
+
+  <hr class="border border-danger border-2 opacity-50">
+  <p>Rendering from posts/single.html.html </p>
+  <hr class="border border-danger border-2 opacity-50">
+
+  {{/* load sript */}}
+  <!-- 
+  <hr class="border border-danger border-2 opacity-50">
+  <p>loading scripts.js for single post </p>
+  <hr class="border border-danger border-2 opacity-50">
+
+  {{ with .Resources.GetMatch "script.js" }}
+  {{/* <p>This is the script for post in single.html </p> */}}
+  {{ .Content }}
+  <script>
+    { { .Content | safeJS } }
+  </script>
+  {{ end }}
+
+  {{/* loading style */}}
+  <hr class="border border-danger border-2 opacity-50">
+  <p>loading style.css for single post </p>
+  <hr class="border border-danger border-2 opacity-50">
+
+  {{ with .Resources.GetMatch "*.css" }}
+  <p> {{ .Content |safeCSS }} </p>
+  <style>
+    {
+        {
+        .Content|safeCSS;
+      }
+    }
+  </style>
+  {{ end }}
+
+-->
+  {{/* load image img.png
+  <hr class="border border-danger border-2 opacity-50">
+  <p>loading single images </p>
+  <hr class="border border-danger border-2 opacity-50">
+  */}}
+  {{/*
+  {{ with .Resources.GetMatch "img.png" }}
+
+  <img src="data:{{ .MediaType.Type }};base64,{{ .Content | base64Encode }}" />
+  {{ end }}
+
+  load image eleves.jpg
+
+  <div class="text-center display-flex">
+    {{ $image := .Resources.GetMatch "paris/paris.jpg" }}
+
+    {{ with $image }}
+    {{ $resized := .Fit "600x400" }}
+    <img src="{{ $resized.RelPermalink }}" />
+    {{ end }}
+  </div>
+
+
+  <hr class="border border-danger border-2 opacity-50">
+  <p>Rendred from post/single.html.html Date and content </p>
+  <hr class="border border-danger border-2 opacity-50">
+  */}}
+
+  <div class="container-fluid" data-aos="flip-left">
+    <div class="row border-primary">
+      <div class="col-sm-4 col-md-6 col-xxl-12">
+        <h2 class="text-bg-primary text-center">{{ .Title }}</h2>
+        <h2 class="text-start">Date de publication: <span>{{ dateFormat "02 Jan 2006 15:04 MST" .Date.Local }}</span>
+        </h2>
+        <div>
+          {{ .Content | markdownify }}</div>
+      </div>
+      <div class="col-sm-4 col-md-6 col-xxl-12">
+        <p class="fs-4"> <small class="muted">{{ .Params.auteur }}</small> </p>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- 
+  <hr class="border border-danger border-2 opacity-50">
+  List Tags in a Single Page Template
+  <p>List Tags in a post -- Single Page Template</p>
+  <hr class="border border-danger border-2 opacity-50">
+
+  <ul>
+    {{ range (.GetTerms "tags") }}
+    <li><a href="{{ .Permalink }}">Tag: {{ .LinkTitle }}</a></li>
+    {{ end }}
+  </ul>
+-->
+  {{/*
+  <hr class="border border-danger border-2 opacity-50">
+  <math>
+    <h2> Un peu de math </h2>
+    <p>voir: https://cortexjs.io/mathlive/guides/static/</p>
+  </math>
+
+  <math-field>x=\frac{-b\pm \sqrt{b^2-4ac}}{2a}</math-field>
+
+  <math-field read-only style="display: inline-block">
+    x=\frac{-b\pm \sqrt{b^2-4ac}}{2a}
+  </math-field>
+
+  <script type="math/tex; mode=text">
+      =  a
+      \left( x - \frac{-b + \sqrt {b^2-4ac}}{2a} \right)
+      \left( x - \frac{-b - \sqrt {b^2-4ac}}{2a} \right)
+    </script>
+  */}}
+
+  {{/*
+  <hr class="border border-danger border-1 opacity-50">
+  <p class="fs-2 text-center badge text-bg-info">processing all sites taxonomies _default/taxonomy.html</p>
+  <hr class="border border-danger border-2 opacity-50">
+  <ul>
+    {{ range $taxonomy, $terms := site.Taxonomies }}
+    <li>
+      {{ with site.GetPage $taxonomy }}
+      <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+      {{ end }}
+      <ul>
+        {{ range $term, $weightedPages := $terms }}
+        <li>
+          {{ with site.GetPage (path.Join $taxonomy $term) }}
+          <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+          {{ end }}
+        </li>
+        <ul>
+          {{ range $weightedPages }}
+          <li>
+            <a href="{{ .RelPermalink }}"> {{ .LinkTitle }}</a>
+          </li>
+          {{ end }}
+        </ul>
+        {{ end }}
+      </ul>
+    </li>
+    {{ end }}
+  </ul>
+
+
+  <hr class="border border-danger border-1 opacity-50">
+  <p class="fs-2  badge text-bg-info ">processing all regular related pages</p>
+  <hr class="border border-danger border-2 opacity-50">
+
+  {{ $related := .Site.RegularPages.Related . | first 10 }}
+  {{ with $related }}
+  <h3>Voir aussi</h3>
+  <ul>
+    {{ range . }}
+    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+    {{ end }}
+  </ul>
+  {{ end }}
+
+  <p> preview</p>
+  {{ partial "post_preview"}}
+
+  */}}
+</body>
+
+{{ end }}

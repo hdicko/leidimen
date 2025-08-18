@@ -1,0 +1,28 @@
+{{ define "main"}}
+<hr class="border border-danger border-1 opacity-50" />
+<p class="fs-2 text-center badge text-bg-info">
+  processing all sites taxonomies layout/categories/term.html.html
+</p>
+<hr class="border border-danger border-2 opacity-50" />
+
+{{ $taxonomy := "categories" }}
+{{ with .GetTerms $taxonomy }}
+<p>{{ (site.GetPage $taxonomy).LinkTitle }}:</p>
+<ul>
+  {{ range . }}
+  <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+  {{ end }}
+</ul>
+{{ end }}
+
+<h1 class="display-2 text-center text-primary text-wrap">{{ .Title }}</h1>
+
+{{ range .Pages }}
+<h2 class="mx-auto"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+<p>{{ .Date.Format "January 2, 2006" }}</p>
+<div class="mx-auto"> {{ .Content }} </div>
+</article>
+<hr class="border border-danger border-1 opacity-50" />
+{{ end }}
+<hr>
+{{ end }}

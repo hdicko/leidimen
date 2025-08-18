@@ -1,0 +1,1178 @@
+{{ define "main" }}
+<!-- Context7 Individual Profile Page -->
+{{ $image := resources.Get .Params.card.image }}
+
+<!-- Hero Profile Section with Glassmorphism -->
+<section class="profile-hero-ctx7 position-relative overflow-hidden">
+  <!-- Animated Background -->
+  <div class="profile-bg-effects">
+    <div class="gradient-bg"></div>
+    <div class="floating-particles">
+      <div class="particle particle-1"></div>
+      <div class="particle particle-2"></div>
+      <div class="particle particle-3"></div>
+      <div class="particle particle-4"></div>
+      <div class="particle particle-5"></div>
+    </div>
+  </div>
+  
+  <div class="container position-relative z-2">
+    <div class="row align-items-center min-vh-75">
+      <!-- Profile Photo Column -->
+      <div class="col-lg-5 text-center mb-5 mb-lg-0">
+        <div class="profile-photo-container" data-aos="zoom-in">
+          <!-- Main Photo -->
+          <div class="main-photo-wrapper">
+            {{ if $image }}
+            <img src="{{ ($image.Resize "400x400 center").RelPermalink }}" 
+                 class="profile-main-photo" 
+                 alt="{{ .Title }}">
+            {{ else }}
+            <div class="profile-placeholder">
+              <i class="bi bi-person-circle"></i>
+            </div>
+            {{ end }}
+            
+            <!-- Status Ring -->
+            <div class="status-ring">
+              {{ if in .Params.card.membre "fondateur" }}
+              <div class="status-indicator status-founder">
+                <i class="bi bi-star-fill"></i>
+              </div>
+              {{ else if in .Params.categories "CA" }}
+              <div class="status-indicator status-bureau">
+                <i class="bi bi-shield-check-fill"></i>
+              </div>
+              {{ else }}
+              <div class="status-indicator status-member">
+                <i class="bi bi-person-check-fill"></i>
+              </div>
+              {{ end }}
+            </div>
+          </div>
+          
+          <!-- Floating Badge -->
+          <div class="floating-badge">
+            {{ if in .Params.card.membre "fondateur" }}
+            <span class="badge-ctx7 badge-founder-ctx7">
+              <i class="bi bi-crown-fill"></i>
+              <span>Fondateur</span>
+            </span>
+            {{ else if in .Params.categories "CA" }}
+            <span class="badge-ctx7 badge-bureau-ctx7">
+              <i class="bi bi-shield-fill"></i>
+              <span>Bureau</span>
+            </span>
+            {{ else }}
+            <span class="badge-ctx7 badge-member-ctx7">
+              <i class="bi bi-people-fill"></i>
+              <span>Membre</span>
+            </span>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+      
+      <!-- Profile Info Column -->
+      <div class="col-lg-7">
+        <div class="profile-info-ctx7" data-aos="fade-left">
+          <!-- Name & Title -->
+          <div class="profile-header">
+            <h1 class="profile-name">{{ .Title }}</h1>
+            <p class="profile-role">
+              <i class="bi bi-briefcase-fill"></i>
+              {{ .Params.card.membre }}
+            </p>
+          </div>
+          
+          <!-- Description -->
+          <div class="profile-description">
+            <p class="lead">{{ .Params.card.presentation }}</p>
+          </div>
+          
+          <!-- Quote Section -->
+          {{ if .Params.card.devise }}
+          <div class="profile-quote">
+            <blockquote class="ctx7-quote">
+              <div class="quote-mark">
+                <i class="bi bi-quote"></i>
+              </div>
+              <p>"{{ .Params.card.devise }}"</p>
+              <footer>— {{ .Title }}</footer>
+            </blockquote>
+          </div>
+          {{ end }}
+          
+          <!-- Stats Row -->
+          <div class="profile-stats">
+            <div class="stat-item">
+              <div class="stat-number" data-count="{{ now.Year | sub .Date.Year }}">0</div>
+              <div class="stat-label">Années d'engagement</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number" data-count="{{ len .Params.categories }}">0</div>
+              <div class="stat-label">Domaines d'action</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number" data-count="100">0</div>
+              <div class="stat-label">% Dévouement</div>
+            </div>
+          </div>
+          
+          <!-- Action Buttons -->
+          <div class="profile-actions">
+            <button class="btn-ctx7-primary" onclick="openContactModal('{{ .Title }}')">
+              <i class="bi bi-envelope-heart"></i>
+              <span>Contacter</span>
+            </button>
+            <a href="/about/" class="btn-ctx7-outline">
+              <i class="bi bi-arrow-left"></i>
+              <span>Retour à l'équipe</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Main Content Section -->
+<section class="profile-content-ctx7 py-5">
+  <div class="container">
+    <div class="row">
+      <!-- Main Content -->
+      <div class="col-lg-8">
+        <div class="content-card-ctx7">
+          <div class="content-header">
+            <div class="content-icon">
+              <i class="bi bi-person-lines-fill"></i>
+            </div>
+            <h2>À propos de {{ .Title }}</h2>
+          </div>
+          
+          <div class="content-body">
+            {{ if .Content }}
+              {{ .Content }}
+            {{ else }}
+              <p class="text-muted">
+                <i class="bi bi-info-circle me-2"></i>
+                Le profil détaillé de {{ .Title }} sera bientôt disponible.
+              </p>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+      
+      <!-- Sidebar -->
+      <div class="col-lg-4">
+        <!-- Info Card -->
+        <div class="sidebar-card-ctx7 mb-4">
+          <div class="card-header-ctx7">
+            <h5>
+              <i class="bi bi-info-square"></i>
+              Informations
+            </h5>
+          </div>
+          <div class="card-body-ctx7">
+            <div class="info-grid">
+              <div class="info-item">
+                <div class="info-label">
+                  <i class="bi bi-calendar3"></i>
+                  Membre depuis
+                </div>
+                <div class="info-value">{{ .Date.Format "January 2006" }}</div>
+              </div>
+              
+              <div class="info-item">
+                <div class="info-label">
+                  <i class="bi bi-person-badge"></i>
+                  Statut
+                </div>
+                <div class="info-value">{{ .Params.card.membre }}</div>
+              </div>
+              
+              {{ if .Params.categories }}
+              <div class="info-item">
+                <div class="info-label">
+                  <i class="bi bi-tags"></i>
+                  Catégories
+                </div>
+                <div class="info-value">
+                  <div class="tags-list">
+                    {{ range .Params.categories }}
+                    <span class="tag-ctx7">{{ . }}</span>
+                    {{ end }}
+                  </div>
+                </div>
+              </div>
+              {{ end }}
+            </div>
+          </div>
+        </div>
+        
+        <!-- Actions Card -->
+        <div class="sidebar-card-ctx7">
+          <div class="card-header-ctx7">
+            <h5>
+              <i class="bi bi-lightning"></i>
+              Actions
+            </h5>
+          </div>
+          <div class="card-body-ctx7">
+            <div class="actions-grid">
+              <button class="action-btn-ctx7" onclick="openContactModal('{{ .Title }}')">
+                <i class="bi bi-envelope-heart"></i>
+                <span>Envoyer un message</span>
+              </button>
+              
+              <button class="action-btn-ctx7" onclick="shareProfile()">
+                <i class="bi bi-share"></i>
+                <span>Partager le profil</span>
+              </button>
+              
+              <a href="/about/" class="action-btn-ctx7">
+                <i class="bi bi-people"></i>
+                <span>Voir tous les membres</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Related Members Section -->
+<section class="related-members-ctx7 py-5 bg-light">
+  <div class="container">
+    <div class="section-header text-center mb-5">
+      <h3 class="section-title-ctx7">Autres Membres de l'Équipe</h3>
+      <p class="section-subtitle-ctx7">Découvrez les autres personnes qui font la force de Leidimen</p>
+    </div>
+    
+    <div class="related-grid">
+      {{ $currentPage := . }}
+      {{ $aboutPages := where .Site.Pages "Section" "about" }}
+      {{ range first 3 (where $aboutPages "Title" "!=" $currentPage.Title) }}
+      {{ $memberImage := resources.Get .Params.card.image }}
+      <div class="related-card-ctx7">
+        <div class="related-photo">
+          {{ if $memberImage }}
+          <img src="{{ ($memberImage.Resize "150x150 center").RelPermalink }}" 
+               alt="{{ .Title }}">
+          {{ else }}
+          <div class="related-placeholder">
+            <i class="bi bi-person-circle"></i>
+          </div>
+          {{ end }}
+        </div>
+        <div class="related-info">
+          <h6 class="related-name">{{ .Title }}</h6>
+          <p class="related-role">{{ .Params.card.membre }}</p>
+          <a href="{{ .RelPermalink }}" class="related-link">
+            <i class="bi bi-arrow-right"></i>
+            Voir le profil
+          </a>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<script>
+// Context7 Enhanced Single Profile Page Functionality
+class ProfilePageEnhancer {
+  constructor() {
+    this.init();
+  }
+  
+  init() {
+    this.animateCounters();
+    this.setupContactModal();
+    this.setupShareProfile();
+    this.setupScrollEffects();
+  }
+  
+  animateCounters() {
+    const statNumbers = document.querySelectorAll('.stat-number[data-count]');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          this.animateCounter(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    });
+    
+    statNumbers.forEach(number => observer.observe(number));
+  }
+  
+  animateCounter(element) {
+    const target = parseInt(element.dataset.count);
+    const duration = 2000;
+    const step = target / (duration / 16);
+    let current = 0;
+    
+    const timer = setInterval(() => {
+      current += step;
+      if (current >= target) {
+        element.textContent = target;
+        clearInterval(timer);
+      } else {
+        element.textContent = Math.floor(current);
+      }
+    }, 16);
+  }
+  
+  setupContactModal() {
+    window.openContactModal = (memberName) => {
+      this.showNotification(`Contact avec ${memberName}`, 'Fonctionnalité bientôt disponible', 'info');
+    };
+  }
+  
+  setupShareProfile() {
+    window.shareProfile = () => {
+      if (navigator.share) {
+        navigator.share({
+          title: document.title,
+          text: `Découvrez le profil de ${document.querySelector('.profile-name').textContent}`,
+          url: window.location.href
+        });
+      } else {
+        this.copyToClipboard(window.location.href);
+        this.showNotification('Lien copié', 'Le lien du profil a été copié dans le presse-papiers', 'success');
+      }
+    };
+  }
+  
+  setupScrollEffects() {
+    // Parallax effect for hero section
+    const hero = document.querySelector('.profile-hero-ctx7');
+    if (hero) {
+      window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const rate = scrolled * -0.5;
+        hero.style.transform = `translateY(${rate}px)`;
+      });
+    }
+  }
+  
+  copyToClipboard(text) {
+    navigator.clipboard.writeText(text).catch(() => {
+      const textArea = document.createElement('textarea');
+      textArea.value = text;
+      document.body.appendChild(textArea);
+      textArea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textArea);
+    });
+  }
+  
+  showNotification(title, message, type = 'info') {
+    const notification = document.createElement('div');
+    notification.className = 'ctx7-notification';
+    
+    const icons = {
+      info: 'bi-info-circle',
+      success: 'bi-check-circle',
+      warning: 'bi-exclamation-triangle',
+      error: 'bi-x-circle'
+    };
+    
+    const colors = {
+      info: '--ctx7-primary',
+      success: '--ctx7-success',
+      warning: '--ctx7-warning',
+      error: '--ctx7-danger'
+    };
+    
+    notification.innerHTML = `
+      <div class="notification-content-ctx7">
+        <div class="notification-icon-ctx7" style="background: var(${colors[type]})">
+          <i class="bi ${icons[type]}"></i>
+        </div>
+        <div class="notification-text-ctx7">
+          <h6>${title}</h6>
+          <p>${message}</p>
+        </div>
+        <button class="notification-close-ctx7" onclick="this.parentElement.parentElement.remove()">
+          <i class="bi bi-x"></i>
+        </button>
+      </div>
+    `;
+    
+    if (!document.querySelector('#ctx7NotificationStyles')) {
+      const style = document.createElement('style');
+      style.id = 'ctx7NotificationStyles';
+      style.textContent = `
+        .ctx7-notification {
+          position: fixed;
+          top: 2rem;
+          right: 2rem;
+          z-index: 9999;
+          background: white;
+          border-radius: 16px;
+          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+          padding: 1.5rem;
+          max-width: 350px;
+          animation: slideInRight 0.3s ease;
+          border-left: 4px solid var(--ctx7-primary);
+        }
+        
+        .notification-content-ctx7 {
+          display: flex;
+          align-items: flex-start;
+          gap: 1rem;
+        }
+        
+        .notification-icon-ctx7 {
+          color: white;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+        }
+        
+        .notification-text-ctx7 h6 {
+          margin: 0 0 0.5rem 0;
+          color: var(--ctx7-dark);
+          font-weight: 600;
+        }
+        
+        .notification-text-ctx7 p {
+          margin: 0;
+          color: #6b7280;
+          font-size: 0.9rem;
+        }
+        
+        .notification-close-ctx7 {
+          background: none;
+          border: none;
+          color: #9ca3af;
+          cursor: pointer;
+          padding: 0;
+          width: 24px;
+          height: 24px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50%;
+          transition: all 0.2s ease;
+        }
+        
+        .notification-close-ctx7:hover {
+          background: #f3f4f6;
+          color: #374151;
+        }
+        
+        @keyframes slideInRight {
+          from { transform: translateX(100%); opacity: 0; }
+          to { transform: translateX(0); opacity: 1; }
+        }
+        
+        @media (max-width: 768px) {
+          .ctx7-notification {
+            top: 1rem;
+            right: 1rem;
+            left: 1rem;
+            max-width: none;
+          }
+        }
+      `;
+      document.head.appendChild(style);
+    }
+    
+    document.body.appendChild(notification);
+    
+    setTimeout(() => {
+      if (notification.parentElement) {
+        notification.style.animation = 'slideInRight 0.3s ease reverse';
+        setTimeout(() => notification.remove(), 300);
+      }
+    }, 5000);
+  }
+}
+
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+  new ProfilePageEnhancer();
+});
+      
+      progressBar.style.width = Math.min(scrollPercent, 100) + '%';
+    });
+  }
+</script>
+
+<style>
+/* Context7 Single Profile Page Styles */
+:root {
+  --ctx7-primary: #6366f1;
+  --ctx7-secondary: #8b5cf6;
+  --ctx7-accent: #06b6d4;
+  --ctx7-success: #10b981;
+  --ctx7-warning: #f59e0b;
+  --ctx7-danger: #ef4444;
+  --ctx7-dark: #1f2937;
+  --ctx7-light: #f8fafc;
+  --ctx7-glass: rgba(255, 255, 255, 0.15);
+  --ctx7-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Global animations */
+@keyframes float-gentle {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-10px) rotate(1deg); }
+  66% { transform: translateY(5px) rotate(-1deg); }
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.1); opacity: 0.4; }
+  100% { transform: scale(1.2); opacity: 0; }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Hero Section */
+.profile-hero-ctx7 {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.profile-bg-effects {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, 
+    var(--ctx7-primary) 0%, 
+    var(--ctx7-secondary) 50%, 
+    var(--ctx7-accent) 100%);
+  background-size: 400% 400%;
+  animation: gradient-shift 12s ease infinite;
+  height: 100%;
+}
+
+.floating-particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.particle {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  animation: float-gentle 8s ease-in-out infinite;
+}
+
+.particle-1 { width: 60px; height: 60px; top: 20%; left: 10%; animation-delay: 0s; }
+.particle-2 { width: 40px; height: 40px; top: 60%; right: 15%; animation-delay: 2s; }
+.particle-3 { width: 80px; height: 80px; bottom: 30%; left: 20%; animation-delay: 4s; }
+.particle-4 { width: 50px; height: 50px; top: 15%; right: 30%; animation-delay: 1s; }
+.particle-5 { width: 70px; height: 70px; bottom: 20%; right: 25%; animation-delay: 3s; }
+
+.min-vh-75 {
+  min-height: 75vh;
+}
+
+/* Profile Photo */
+.profile-photo-container {
+  position: relative;
+  display: inline-block;
+}
+
+.main-photo-wrapper {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  margin: 0 auto;
+}
+
+.profile-main-photo {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 6px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.profile-main-photo:hover {
+  transform: scale(1.05);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.profile-placeholder {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  color: white;
+  border: 6px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Status Ring */
+.status-ring {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 80px;
+  height: 80px;
+}
+
+.status-indicator {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.status-indicator::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  animation: pulse-ring 2s infinite;
+}
+
+.status-founder {
+  background: var(--ctx7-success);
+  color: white;
+}
+
+.status-founder::before {
+  background: var(--ctx7-success);
+}
+
+.status-bureau {
+  background: var(--ctx7-primary);
+  color: white;
+}
+
+.status-bureau::before {
+  background: var(--ctx7-primary);
+}
+
+.status-member {
+  background: var(--ctx7-accent);
+  color: white;
+}
+
+.status-member::before {
+  background: var(--ctx7-accent);
+}
+
+/* Floating Badge */
+.floating-badge {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.badge-ctx7 {
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--ctx7-dark);
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  animation: float-gentle 4s ease-in-out infinite;
+}
+
+/* Profile Info */
+.profile-info-ctx7 {
+  text-align: center;
+  padding: 2rem;
+}
+
+.profile-header {
+  margin-bottom: 2rem;
+}
+
+.profile-name {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  background: linear-gradient(45deg, #fff, #e2e8f0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.profile-role {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin: 0;
+}
+
+.profile-description {
+  margin-bottom: 2rem;
+}
+
+.profile-description .lead {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+}
+
+/* Quote */
+.profile-quote {
+  margin-bottom: 3rem;
+}
+
+.ctx7-quote {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 2rem;
+  border-left: 4px solid rgba(255, 255, 255, 0.5);
+  position: relative;
+}
+
+.quote-mark {
+  position: absolute;
+  top: -10px;
+  left: 2rem;
+  background: rgba(255, 255, 255, 0.2);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.ctx7-quote p {
+  font-size: 1.25rem;
+  font-style: italic;
+  margin: 0 0 1rem 0;
+  color: white;
+}
+
+.ctx7-quote footer {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1rem;
+}
+
+/* Stats */
+.profile-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: white;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Action Buttons */
+.profile-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-ctx7-primary,
+.btn-ctx7-outline {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-ctx7-primary {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.btn-ctx7-primary:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
+  color: white;
+  text-decoration: none;
+}
+
+.btn-ctx7-outline {
+  background: transparent;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.btn-ctx7-outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: translateY(-2px);
+  color: white;
+  text-decoration: none;
+}
+
+/* Content Section */
+.profile-content-ctx7 {
+  background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+}
+
+.content-card-ctx7 {
+  background: white;
+  border-radius: 24px;
+  padding: 3rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  margin-bottom: 2rem;
+}
+
+.content-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.content-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(45deg, var(--ctx7-primary), var(--ctx7-secondary));
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.content-header h2 {
+  color: var(--ctx7-dark);
+  margin: 0;
+  font-weight: bold;
+}
+
+.content-body {
+  line-height: 1.8;
+  color: #4b5563;
+}
+
+/* Sidebar */
+.sidebar-card-ctx7 {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  margin-bottom: 2rem;
+}
+
+.card-header-ctx7 {
+  background: linear-gradient(45deg, var(--ctx7-primary), var(--ctx7-secondary));
+  color: white;
+  padding: 1.5rem;
+}
+
+.card-header-ctx7 h5 {
+  margin: 0;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.card-body-ctx7 {
+  padding: 2rem;
+}
+
+/* Info Grid */
+.info-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.info-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #6b7280;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.info-value {
+  color: var(--ctx7-dark);
+  font-weight: 600;
+}
+
+.tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag-ctx7 {
+  background: #e5e7eb;
+  color: #374151;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* Actions Grid */
+.actions-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.action-btn-ctx7 {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: #f8fafc;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  color: var(--ctx7-dark);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.action-btn-ctx7:hover {
+  background: var(--ctx7-primary);
+  border-color: var(--ctx7-primary);
+  color: white;
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+/* Related Members */
+.related-members-ctx7 {
+  background: #f8fafc;
+}
+
+.section-header {
+  margin-bottom: 3rem;
+}
+
+.section-title-ctx7 {
+  color: var(--ctx7-dark);
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.section-subtitle-ctx7 {
+  color: #6b7280;
+  font-size: 1.1rem;
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.related-card-ctx7 {
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.related-card-ctx7:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.related-photo {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 1.5rem auto;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.related-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.related-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, var(--ctx7-primary), var(--ctx7-secondary));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2rem;
+}
+
+.related-name {
+  color: var(--ctx7-dark);
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.related-role {
+  color: #6b7280;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.related-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--ctx7-primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.related-link:hover {
+  color: var(--ctx7-secondary);
+  text-decoration: none;
+  transform: translateX(3px);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .profile-hero-ctx7 {
+    min-height: 90vh;
+    text-align: center;
+  }
+  
+  .profile-info-ctx7 {
+    padding: 1rem;
+  }
+  
+  .profile-name {
+    font-size: 2.5rem;
+  }
+  
+  .profile-role {
+    font-size: 1.25rem;
+  }
+  
+  .main-photo-wrapper {
+    width: 220px;
+    height: 220px;
+  }
+  
+  .profile-stats {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1.5rem;
+  }
+  
+  .profile-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .content-card-ctx7 {
+    padding: 2rem;
+  }
+  
+  .card-body-ctx7 {
+    padding: 1.5rem;
+  }
+  
+  .related-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Accessibility */
+.btn-ctx7-primary:focus,
+.btn-ctx7-outline:focus,
+.action-btn-ctx7:focus {
+  outline: 2px solid var(--ctx7-primary);
+  outline-offset: 2px;
+}
+</style>
+{{ end }}

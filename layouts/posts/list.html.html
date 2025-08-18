@@ -1,0 +1,55 @@
+{{/* post list template */}}
+{{ define "main" }}
+
+<!--paginator -->
+{{ $paginator := .Paginate (where .Pages "Type" "posts") }}
+
+{{/** pagination **/}}
+{{ partial "util/pagination.html" . }}
+
+<section class="blog-preview-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      {{ range (.Paginate (first 3 .Pages.ByTitle)).Pages }}
+      <article class="col-md-10 col-lg-8 col-xl-7 mb-4 blog-preview-card">
+        <div class="card h-100 border-0" data-aos="fade-up">
+          <div class="card-body">
+            <h2 class="card-title text-primary mb-3">
+              <a href="{{ .RelPermalink }}" class="text-decoration-none hover:text-primary-hover">
+                {{ .Title }}
+              </a>
+            </h2>
+            
+            <div class="meta-data mb-3">
+              <small class="text-secondary">
+                Posted by: {{ .Params.auteur }}
+              </small>
+              <small class="text-muted">
+                • {{ dateFormat "Jan 2, 2006" .Date.Local }}
+              </small>
+            </div>
+
+            <div class="card-text mb-3">
+              <p class="text-body-secondary line-height-lg">
+                {{ .Summary }}
+              </p>
+            </div>
+
+            {{ if .Truncated }}
+            <div class="read-more">
+              <a href="{{ .RelPermalink }}" class="text-primary-hover text-decoration-none">
+                Read More →
+              </a>
+            </div>
+            {{ end }}
+          </div>
+        </div>
+      </article>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+{{/** pagination **/}}
+{{ partial "util/pagination.html" . }}
+{{ end }} {{/* end main*/}}

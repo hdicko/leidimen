@@ -1,0 +1,153 @@
+
+
+
+.blog-preview-section {
+  padding: 2rem 0;
+}
+
+.blog-preview-card {
+  transition: transform 0.3s ease;
+}
+
+.blog-preview-card:hover {
+  transform: translateY(-5px);
+}
+
+.blog-preview-card .card {
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.blog-preview-card .card-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.blog-preview-card .card-title a {
+  color: var(--primary-color);
+}
+
+.card-title a:hover {
+  color: var(--primary-hover-color);
+}
+
+.meta-data {
+  display: flex;
+  gap: 0.5rem;
+  color: var(--secondary-color);
+  font-size: 0.9rem;
+}
+
+.card-text {
+  color: var(--text-body-secondary);
+}
+
+.read-more {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.read-more a {
+  font-weight: 500;
+  color: var(--primary-hover-color);
+  text-decoration: none;
+}
+
+.read-more a:hover {
+  text-decoration: underline;
+}
+
+/* CSS Variables 
+:root {
+  --primary-color: #2563eb;
+  --primary-hover-color: #1e40af;
+  --secondary-color: #4b5563;
+  --text-body-secondary: #64748b;
+  --background-light: #f8fafc;
+}
+*/
+
+@media (min-width: 768px) {
+  .blog-preview-card {
+    margin-bottom: 2rem;
+  }
+}
+
+
+
+// Customize the left border of the alert component
+.alert {
+  border-left: ($spacer * .5) solid;
+}
+
+// Customize the background color and bottom border of the header of the offcanvas component
+.offcanvas-header {
+  background-color: $card-cap-bg;
+  border-bottom: $card-border-width solid $card-border-color;
+}
+
+// accordeon customization
+$accordion-icon-color: #007bff;
+.accordion-button {
+  &::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z'/%3e%3c/svg%3e");
+  }
+
+  &:not(.collapsed)::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M0 8a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1z'/%3e%3c/svg%3e");
+  }
+}
+
+.gradient-striped {
+@include gradient-striped();
+}
+
+.bg-primary-tinted {
+background-color: tint-color($primary, 90%);
+}
+
+.bg-primary-shaded {
+background-color: shade-color($primary, 25%);
+}
+
+// Create a custom jumbotron component that extends various
+// Bootstrap 5 classes
+.jumbotron {
+@extend .bg-light, .py-5, .mb-5, .text-center;
+}
+
+.footer-border {
+@extend  .text-center, .text-lg-start, .border, .border-5, .border-senary, .rounded, .mt-4, .bg-gray-400!optional;
+}
+
+// Create a custom quote component that extends various Bootstrap 5 classes
+.quote {
+@extend .blockquote;
+}
+
+.quote-border {
+  @extend .border-bottom, .border-2, .border-light, .mb-4,
+.pb-4, .border-bottom-md-0, .border-end-md, .border-md-2, .pb-md-0, .mb-md-0, .border-bottom-xl, .border-end-xl-0, .border-xl-2, .pb-xl-4, .mb-xl-4, .border-bottom,
+.border-2, .border-light, .mb-4, .pb-4, .border-bottom-md-0, .border-end-md, .border-md-2, .pb-md-0,
+.mb-md-0, .border-bottom-xl, .border-end-xl-0, .border-xl-2, .pb-xl-4, .mb-xl-4;
+}
+
+//root
+
+:root {
+--bs-primary: red;
+--bs-secondary: green;
+--bs-success: blue;
+--bs-primary-rgb: #{to-rgb(red)};
+--bs-secondary-rgb: #{to-rgb(green)};
+--bs-success-rgb: #{to-rgb(blue)};
+}
+
+.bg-primary {
+--bs-bg-opacity: 1;
+background-color: rgba(var(--bs-primary-rgb), var(--bs-
+bg-opacity)) !important;
+}
+

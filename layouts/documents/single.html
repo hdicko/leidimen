@@ -1,0 +1,15 @@
+{{ define "main" }}
+
+<body>
+  <div class="container-flex border border-danger">
+    <div class="row">
+      <div class="col">{{ .Content }}</div>
+    </div>
+  </div>
+  
+  {{ if eq .Title "Adhesion" }}
+    <!-- Mali Villages Interactive Map -->
+    {{ partial "mali-villages-map-interactive.html" . }}
+  {{ end }}
+</body>
+{{ end }}

@@ -1,0 +1,27 @@
+{{ define "main" }}
+<hr class="border border-danger border-1 opacity-50" />
+<p class="fs-2 text-center">_default/tags.html</p>
+<hr class="border border-danger border-2 opacity-50" />
+
+<ul class="">
+  {{ range .GetTerms "tags" }}
+  <li class="list">
+    <a href="{{ .RelPermalink }}" class=""> {{- .LinkTitle -}} </a>
+  </li>
+  {{ end }}
+</ul>
+
+hr class="border border-danger border-1 opacity-50">
+<p class="fs-2 text-center">
+  _default/tags.html To render a comma-delimited list:
+</p>
+<hr class="border border-danger border-2 opacity-50" />
+
+{{ $taxonomy := "villages" }} {{ with .GetTerms $taxonomy }}
+<p>
+  {{ (site.GetPage $taxonomy).LinkTitle }}: {{ range $k, $_ := . -}} {{ if $k
+  }},{{ end }}
+  <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+  {{- end }}
+</p>
+{{ end }} {{ end }}

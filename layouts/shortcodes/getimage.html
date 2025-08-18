@@ -1,0 +1,5 @@
+{{ $image := resources.GetMatch "img/dorool/ecole/extension.jpg" }}
+<p>the image is {{ $image }}</p>
+{{ with $image }}
+<img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" />
+{{ end }}

@@ -1,0 +1,19 @@
+<!-- rendering some images -->
+<!-- using fancybox -- https://fancyapps.com/fancybox/ -->
+<div class="container-flex text-center me-auto">
+  {{ with .Resources.ByType "image" }}
+  <h1 class="text-center fs-4">
+    <mark> Quelques images </mark>
+  </h1>
+  {{ range . }} {{ $img := . }} {{ $alt := $img.Resize "120x150" }} {{/* $img :=
+  $img | images.Filter (images.GaussianBlur 6) (images.Pixelate 8) */}}
+  <a data-fancybox="gallery" data-src="{{ $img.RelPermalink }}">
+    <img src="{{ $alt.RelPermalink }}" class="img-fluid" />
+  </a>
+  <!-- 
+    <figure style="padding: 0.25rem; margin: 2rem 0; background-color: #cae">
+    <img style="max-width: 100%; width: auto; height: auto;" src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}">
+    </figure>
+    -->
+  {{ end }} {{ end }}
+</div>

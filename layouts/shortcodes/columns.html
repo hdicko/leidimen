@@ -1,0 +1,9 @@
+<div class="container">
+  <div class="row">
+    {{ range split .Inner "<--->" }}
+      {{ printf "<div class=\"markdown-inner col-4\">" | htmlUnescape | safeHTML }}
+      {{ . | safeHTML }}
+      {{ printf "</div>" | htmlUnescape | safeHTML }}
+    {{ end }}
+  </div>
+</div>

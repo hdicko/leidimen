@@ -1,0 +1,184 @@
+{{ define "main" }}
+
+<body>
+  <!-- -->
+  <hr class="border border-danger border-1 opacity-50" />
+  <p class="fs-2 text-center badge text-bg-info">
+    processing all site taxonomies layouts/villages/village.terms.html.html
+  </p>
+
+  {{ .Content }} {{/**
+  <ul>
+    {{ range $taxonomy, $terms := site.Taxonomies }}
+    <li>
+      {{ with site.GetPage $taxonomy }}
+      <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+      {{ end }}
+      <ul>
+        {{ range $term, $weightedPages := $terms }}
+        <li>
+          {{ with site.GetPage (path.Join $taxonomy $term) }}
+          <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+          {{ end }}
+        </li>
+        <ul>
+          {{ range $weightedPages }}
+          <li>
+            <a href="{{ .RelPermalink }}"> {{ .LinkTitle }}</a>
+          </li>
+          {{ end }}
+        </ul>
+        {{ end }}
+      </ul>
+    </li>
+    {{ end }}
+  </ul>
+
+  **/}} {{/* content from content/villages/_index.md */}} {{/**
+  <section id="villages">
+    <div>
+      <ul>
+        {{ $data := .Data }} {{ range $key, $value := .Data.Terms }}
+        <li>
+          <a href="/{{ $data.Plural }}/{{ $key | urlize }}">{{ $key }}</a> {{
+          len $value }}
+        </li>
+        {{ end }}
+      </ul>
+    </div>
+  </section>
+
+  <hr class="border border-danger border-1 opacity-50" />
+  <p>Example terms.html file (ordered by popularity)</p>
+  <hr class="border border-danger border-1 opacity-50" />
+  <section id="main">
+    <div>
+      <h1 id="title">{{ .Title }}</h1>
+      {{ $data := .Data }} {{ range $key,$value := .Data.Terms.ByCount }}
+      <h2>
+        <a href="/{{ $data.Plural }}/{{ $value.Name | urlize }}"
+          >{{ $value.Name }}</a
+        >
+      </h2>
+      <ul>
+        {{ range $value.Pages.ByDate }}
+        <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+        {{ end }}
+      </ul>
+      {{ end }}
+    </div>
+  </section>
+
+  <hr class="border border-danger border-1 opacity-50" />
+  <p>Example terms.html file (alphabetical)</p>
+  <hr class="border border-danger border-1 opacity-50" />
+  <section id="main">
+    <div>
+      <h1 id="title">{{ .Title }}</h1>
+      <ul>
+        {{ $data := .Data }} {{ range $key, $value := .Data.Terms.Alphabetical
+        }}
+        <li>
+          <a href="/{{ $data.Plural }}/{{ $value.Name | urlize }}"
+            >{{ $value.Name }}</a
+          >
+        </li>
+        {{ end }}
+      </ul>
+    </div>
+  </section>
+
+  <hr class="border border-danger border-1 opacity-50" />
+  <section id="main">
+    <div class="container">
+      {{ $data := .Data }} {{ range $key,$value := .Data.Terms.ByCount }}
+      <h2>
+        <a href="/{{ $data.Plural }}/{{ $value.Name | urlize }}"
+          >{{ $value.Name }}</a
+        >
+      </h2>
+      <ul class="list-group me-auto">
+        {{ range $value.Pages.ByDate }}
+        <li class="list-group-item">
+          <a href="{{ .Permalink }}">{{ .Title }}</a>
+        </li>
+        {{ end }}
+      </ul>
+      {{ end }}
+    </div>
+  </section>
+</body>
+**/}} {{/** Accordeon **/}}
+
+<!-- 
+This HTML code represents a template file used in a Hugo website. It displays a list of terms and associated posts in an accordion format.
+
+The template uses the following variables:
+- $data: Represents the data passed to the template.
+- .Data.Terms.ByCount: Represents a range of terms sorted by count.
+
+The template structure is as follows:
+- A container div with top and bottom margins.
+- A row div with centered content.
+- A column div with a width of 8 columns on large screens and 10 columns on medium screens.
+- An accordion div with the ID "accordionExample".
+- A range loop that iterates over the terms in .Data.Terms.ByCount.
+- For each term, an accordion item is created with a unique ID and a collapsed accordion button.
+- The accordion item contains a heading with the term name and a count badge.
+- The content of the accordion item is collapsed by default and contains a link to associated posts and a list of associated posts.
+- The associated posts are displayed as clickable list items.
+
+Note: This code is specific to a Hugo website and relies on Hugo's templating language and data structure.
+-->
+{{ $data := .Data }}
+<div class="container mt-3 mb-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-8 col-md-10">
+      <div class="accordion shadow" id="accordionExample">
+        {{ range $key, $value := .Data.Terms.ByCount }}
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="heading{{ $key }}">
+            <button
+              class="accordion-button collapsed text-primary"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapse{{ $value.Name }}"
+              aria-expanded="false"
+              aria-controls="collapse{{ $value.Name }}"
+            >
+              {{ $value.Name }}
+              <span class="badge bg-primary ms-2 rounded-pill"
+                >{{ $value.Count }}</span
+              >
+            </button>
+          </h2>
+          <div
+            id="collapse{{ $value.Name }}"
+            class="accordion-collapse collapse"
+            aria-labelledby="heading{{ $key }}"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body p-3">
+              <a
+                href="{{ $.Site.LanguagePrefix | absURL }}/{{ $data.Plural }}/{{ $value.Name | urlize }}/"
+                class="d-block mb-2 text-decoration-none fw-bold"
+                >Posts associés</a
+              >
+              <div class="list-group list-group-flush">
+                {{ range $item := $value.WeightedPages }}
+                <a
+                  href="{{ $item.Permalink }}"
+                  class="list-group-item list-group-item-action text-decoration-none"
+                  >{{ $item.Title }}</a
+                >
+                {{ end }}
+              </div>
+            </div>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</div>
+{{ end }}

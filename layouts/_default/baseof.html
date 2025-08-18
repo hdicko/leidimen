@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="{{ .Site.Language.Lang | default " en" }}" data-bs-theme="light">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {{ partial "head.html" . }}
+</head>
+
+<body>
+
+  {{/** {{ partial "theme-mode"}} **/}}
+  {{/** navbar **/}}
+  {{- partial "navbar.html" . -}}
+
+  {{/** bandeau association **/}}
+
+  {{ partial "association.html" .}}
+  <!-- block header  changing theme - dark  light 
+  {{- partial "theme.html" . -}}
+  -->
+
+  <!-- block main -->
+  {{ block "main" . }} {{ end }}
+
+  <!-- block footer -->
+  {{ block "footer" . }} {{ partial "footer.html" . }} {{ end }}
+
+  <!-- site scripts -->
+  {{ partial "scripts.html" }}
+</body>
+
+</html>

@@ -1,0 +1,170 @@
+<!-- Professional Navigation Bar -->
+{{ $current := . }}
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+  <div class="container">
+    <!-- Brand/Logo -->
+    <a class="navbar-brand d-flex align-items-center" href="/">
+      <img src="/img/leidimen-logo.jpg" alt="Leidimen" height="40" width="40" class="rounded-circle me-2">
+      <span class="fw-bold text-primary fs-4">Leidimen</span>
+    </a>
+
+    <!-- Mobile Toggle Button -->
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" 
+            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" 
+            aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navigation Menu -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        {{- range $i, $e := .Site.Menus.main -}}
+        {{- if .HasChildren -}}
+        <li class="nav-item dropdown me-2">
+          <a class="nav-link dropdown-toggle fw-semibold px-3 py-2 rounded-pill {{ if $.HasMenuCurrent "main" . }}active bg-primary text-white{{ else }}text-dark hover-bg-light{{ end }}" 
+             href="#" id="navbarDropdown-{{- $i -}}" role="button" 
+             data-bs-toggle="dropdown" aria-expanded="false">
+            {{- if .Pre }}{{ .Pre | safeHTML }}&nbsp;{{ end -}}{{ .Name }}
+          </a>
+          <ul class="dropdown-menu border-0 shadow-lg rounded-3 mt-2" aria-labelledby="navbarDropdown-{{- $i -}}">
+            {{- range .Children -}}
+            {{- if eq .Params.disabled true -}}
+            <li>
+              <a class="dropdown-item text-muted disabled" href="#" tabindex="-1" aria-disabled="true">
+                {{- if .Pre }}{{ .Pre | safeHTML }}&nbsp;{{ end -}}{{ .Name }}
+              </a>
+            </li>
+            {{- else if eq .Params.divider true -}}
+            <li><hr class="dropdown-divider my-2"></li>
+            {{- else -}}
+            <li>
+              <a class="dropdown-item py-2 px-3 {{ if $.IsMenuCurrent "main" . }}active bg-primary text-white{{ end }}" 
+                 href="{{ .URL }}"{{ if .Params.rel }} rel="{{ .Params.rel }}"{{ end }}{{ if eq .Params.rel "external" }} target="_blank"{{ end }}>
+                {{- if .Pre }}{{ .Pre | safeHTML }}&nbsp;{{ end -}}{{ .Name }}{{- if eq .Params.rel "external" }}&nbsp;↗{{ end }}
+              </a>
+            </li>
+            {{- end -}}
+            {{- end -}}
+          </ul>
+        </li>
+        {{- else -}}
+        {{- if eq .Params.disabled true -}}
+        <li class="nav-item me-2">
+          <a class="nav-link text-muted disabled px-3 py-2" href="#" tabindex="-1" aria-disabled="true">
+            {{- if .Pre }}{{ .Pre | safeHTML }}&nbsp;{{ end -}}{{ .Name }}
+          </a>
+        </li>
+        {{- else -}}
+        <li class="nav-item me-2">
+          <a class="nav-link fw-semibold px-3 py-2 rounded-pill {{ if $.IsMenuCurrent "main" . }}active bg-primary text-white{{ else }}text-dark hover-bg-light{{ end }}" 
+             href="{{ .URL }}"{{ if .Params.rel }} rel="{{ .Params.rel }}"{{ end }}{{ if eq .Params.rel "external" }} target="_blank"{{ end }}>
+            {{- if .Pre }}{{ .Pre | safeHTML }}&nbsp;{{ end -}}{{ .Name }}{{- if eq .Params.rel "external" }}&nbsp;↗{{ end }}
+          </a>
+        </li>
+        {{- end -}}
+        {{- end -}}
+        {{- end -}}
+        <li class="nav-item ms-lg-3">
+          <a href="/documents/" class="btn btn-primary rounded-pill px-4 py-2 fw-semibold">
+            📄&nbsp;Documents
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Enhanced Breadcrumb Navigation -->
+{{- if not .IsHome -}}
+<nav aria-label="breadcrumb" class="bg-light border-bottom">
+  <div class="container">
+    <ol class="breadcrumb py-3 mb-0">
+      <li class="breadcrumb-item">
+        <a href="/" class="text-decoration-none text-primary fw-medium">
+          🏠&nbsp;Accueil
+        </a>
+      </li>
+      {{- if .Parent -}}
+      <li class="breadcrumb-item">
+        <a href="{{ .Parent.Permalink }}" class="text-decoration-none text-primary fw-medium">
+          {{ .Parent.Title }}
+        </a>
+      </li>
+      {{- end -}}
+      <li class="breadcrumb-item active fw-semibold" aria-current="page">
+        {{ .Title }}
+      </li>
+    </ol>
+  </div>
+</nav>
+{{- end -}}
+
+<style>
+/* Professional Navigation Styles */
+.navbar-brand {
+  transition: transform 0.2s ease;
+}
+
+.navbar-brand:hover {
+  transform: scale(1.02);
+}
+
+.nav-link {
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.nav-link:not(.active):hover {
+  background-color: rgba(13, 110, 253, 0.1) !important;
+  transform: translateY(-1px);
+}
+
+.dropdown-menu {
+  animation: fadeInDown 0.2s ease;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-item {
+  transition: all 0.2s ease;
+}
+
+.dropdown-item:hover:not(.disabled) {
+  background-color: rgba(13, 110, 253, 0.1);
+  transform: translateX(5px);
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  content: "›";
+  font-weight: bold;
+  color: #6c757d;
+}
+
+/* Mobile Optimizations */
+@media (max-width: 991.98px) {
+  .nav-link {
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+  
+  .navbar-nav .btn {
+    margin-top: 1rem;
+    width: 100%;
+  }
+}
+
+/* Hover effect for non-active nav items */
+.hover-bg-light:hover {
+  background-color: rgba(13, 110, 253, 0.1) !important;
+}
+</style>

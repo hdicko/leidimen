@@ -1,0 +1,51 @@
+{
+  "Aissa Dicko": {
+    "nom": "Aissa Dicko",
+    "fonction": "Tresoriere",
+    "adresse": "Bondoufle - Essonne - France",
+    "email": "aissa.dicko@google.com",
+    "Tel": "-86.279118"
+  },
+  "Abdoulaye Dicko": {
+    "nom": "Abdoulaye Dicko",
+    "fonction": "President",
+    "adresse": "Bondoufle",
+    "email": "a.dicko@gmail.com",
+    "Tel": "-134.419740"
+  },
+  "David Dicko": {
+    "nom": "David Dicko",
+    "fonction": "President",
+    "adresse": "Paris",
+    "email": "david.dicko@gmail.com",
+    "Tel": "-134.419740"
+  },
+  "Oumar Hamadoun Dicko": {
+    "nom": "Oumar Hamadoun Dicko",
+    "fonction": "Monsieur Le Ministre",
+    "adresse": "Bamako",
+    "email": "odicko@gmail.com",
+    "Tel": "-134.419740"
+  },
+  "Hamadoun Oumar Dicko": {
+    "nom": "Hamadoun Oumar Dicko",
+    "fonction": "Maire de Diona",
+    "adresse": "Diona - Mali",
+    "email": "maire.dicko@gmail.com",
+    "Tel": "-134.419740"
+  },
+  "Mamadou Dicko": {
+    "nom": "Mamadou Dicko",
+    "fonction": "President",
+    "adresse": "Bondoufle - Essonne - France",
+    "email": "m.dicko@gmail.com",
+    "Tel": "-134.419740"
+  },
+  "HD": {
+    "nom": "Hamadoun Dicko",
+    "fonction": "Informaticien devOps, Unix, Web",
+    "adresse": "Mennecy - France",
+    "email": "dicko.hamadoun@gmail.com ",
+    "Tel": "111-111-2222-333"
+  }
+}

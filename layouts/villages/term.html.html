@@ -1,0 +1,74 @@
+{{ define "main"}}
+<hr class="border border-danger border-1 opacity-50" />
+<p class="fs-2 text-center badge text-bg-info">layouts/villages/term.html.html</p>
+<hr class="border border-danger border-2 opacity-50 " />
+
+
+<!-- Groups content by month according to the "date" field in front matter -->
+<h1 class="dipslay-2 text-center font-monospace text-decoration-underline fst-italic mb-2 ">{{ .Title }}
+</h1>
+
+{{/** images **/}}
+<section>
+    {{ partial "util/villages-images" . }}
+
+    {{/** videos **/}}
+    {{ partial "util/villages-videos" .}}
+
+    {{/** content **/}}
+    <div class="container text-center">
+        <div class="row align-items-start">
+            <div class="col-12 ">
+                {{ .Content }}
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    {{/** related posts **/}}
+    <h1 class="lead text-center mt-4 mb-2">
+        <mark> Posts sur {{ .Title }} </mark>
+    </h1>
+    <div class="container px-4 px-lg-5 mt-3" data-aos="fade-up">
+        {{ range .Data.Pages.GroupByDate "2006-01" "asc" }}
+        {{ range .Pages }}
+        <div class="row gx-4 gx-lg-5 justify-content-center ">
+            <div class="col-md-10 col-lg-8 col-xl-7  mb-2 text-danger border-start border-primary opacity-75">
+                <div class="post-preview">
+                    <a href="{{ .RelPermalink }}">
+                        <h2> {{ .Title }}</h2>
+                    </a>
+                    <p class="post-subtitle fs-6 text-info-emphasis text-decoration-none text-body-secondary">
+                        {{.Summary }}</p>
+                    <h6>Posted by {{ .Params.auteur }}</h6>
+                    <a href="{{ .RelPermalink}}" class="btn ">Date: {{ dateFormat "02 Jan 2006 15:04 MST"
+                        .Date.Local }}</a>
+                    </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        {{ end }}
+        {{ end }}
+    </div>
+</section>
+
+<section>
+    <!--paginator -->
+    {{ $paginator := .Paginate (where .Pages "Type" "posts") }}
+    {{/** pagination **/}}
+    <div class="d-sm-flex d-md-flex d-lg-flex d-xl-flex justify-content-center">
+        <div class="row font-sans mt-4">
+            <div class="col-md-12 mt-10">
+                <nav aria-label="Page navigation">
+                    <div class="pagination justify-content-left">
+                        {{ template "_internal/pagination.html" . }}
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{ end }} {{/** end main **/}}

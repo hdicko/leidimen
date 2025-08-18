@@ -1,0 +1,38 @@
+{
+  "name": "leidimen",
+  "version": "1.0.0",
+  "description": " leidimen",
+  "main": "index.js",
+  "scripts": {
+    "dev": "exec-bin node_modules/.bin/hugo/hugo server --disableFastRender --gc",
+    "build": "exec-bin node_modules/.bin/hugo/hugo --gc --cleanDestinationDir --minify",
+    "npm-check": "npm-check -u",
+    "postinstall": "hugo-installer --version otherDependencies.hugo  --extended --destination node_modules/.bin/hugo",
+    "format:check": "prettier --check .",
+    "format:write": "prettier --write ."
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "npm-check": "^6.0.1",
+    "npm-scripts": "^1.4.0",
+    "prettier": "^3.4.2",
+    "prettier-plugin-go-template": "^0.0.15"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.20",
+    "bootstrap": "^5.3.3",
+    "bootstrap-icons": "^1.11.3",
+    "exec-bin": "^1.0.0",
+    "fontawesome-bootstrap-icons": "^1.0.0-1.9.1",
+    "hugo-installer": "^4.0.1",
+    "postcss-cli": "^11.0.0",
+    "postscss": "^2.0.0"
+  },
+  "otherDependencies": {
+    "hugo": "0.122.0"
+  },
+  "directories": {
+    "man": "man"
+  }
+}

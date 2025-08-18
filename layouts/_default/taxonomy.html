@@ -1,0 +1,61 @@
+{{ define "main" }}
+<main>
+
+  <!--Taxonomies  -->
+  <hr class="border border-danger border-1 opacity-50" />
+  <p class="fs-2 text-center badge text-bg-info">_default/taxonomy.html</p>
+  <hr class="border border-danger border-2 opacity-50 " />
+
+
+  {{/** Add taxonomy images in content/TAXONOMY/TERM/<images resources> **/}}
+    {{ with .Resources.ByType "image" }}
+    {{ range . }}
+    {{ $img := . }}
+
+    {{/** {{ $alt := $img.Resize "300x160" }} **/}}
+    {{ $alt := $img.Process "fit 600x400" }}
+    <a data-fancybox="gallery" data-src="{{ $alt.RelPermalink }}">
+      <img src="{{ $alt.RelPermalink }}" />
+    </a>
+    {{ with $img.Exif }}
+    <ul>
+      {{ with .Date }}<li>Date: {{ .Format "January 02, 2006" }}</li>{{ end }}
+    </ul>
+    {{ end }}
+    {{ end }}
+    {{ end }}
+
+    <hr class="border border-danger border-2 opacity-50 " />
+    <div>
+      {{ $pages := site.Taxonomies.categories.gauche }}
+      {{/** $pages := index site.Taxonomies "categories" "villages" }}
+      <span class="badge text-bg-info">
+        Title: {{ .Title }} --
+        Kind: {{ .Kind }} --
+        Type: {{ .Type }}
+        Site: {{ .Site }}
+        Page: {{ .Page }}
+        Section:{{ .Section }} Data Pages: {{ .Data.Pages }}</span>
+      **/}}
+
+      <!-- ranges through each of the content files associated with a particular taxonomy term and renders the summary.html content view -->
+      <hr class="border border-danger border-1 opacity-50" />
+      <p class="fs-2 text-center badge text-bg-info">
+        Render pages with summary _default/taxonomy.html
+      </p>
+      <hr class="border border-danger border-2 opacity-50" />
+
+      <div class="d-flex flex-column">
+        <div class="row">
+          {{ range .Pages }}
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 mb-5">
+            <h3>{{ .Title }}</h3>
+            {{ .Render "summary" }}
+            <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+</main>
+{{ end }}

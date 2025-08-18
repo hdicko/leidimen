@@ -1,0 +1,12 @@
+{{- $image := (.Page.Resources.ByType "image") -}}
+{{/* $image := ( .Page.Resources.Match "posts/images/paris/*") */}}
+{{- with $image -}}
+{{- range . -}}
+{{/* {{ $resized := .Fill "300x230 q20" }} */}}
+{{- $resized := .Fill "400x500 top webp q85 lanczos" -}}
+{{/* <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt=""> */}}
+<a href="{{ .Permalink }}" data-lightbox="roadtrip" title="View Image">
+  <img class="img-fluid rounded shadow p-3 bg-body-tertiary mx-auto" src="{{ $resized.Permalink }}" />
+</a>
+{{- end -}}
+{{- end -}}

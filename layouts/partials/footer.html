@@ -1,0 +1,533 @@
+<!-- Professional Footer Section -->
+<footer class="footer bg-dark text-light py-5 mt-auto">
+  <div class="container">
+    <!-- Main Footer Content -->
+    <div class="row g-4">
+      
+      <!-- About Leidimen Column -->
+      <div class="col-lg-4 col-md-6">
+        <div class="footer-section">
+          <!-- Logo and Brand -->
+          <div class="d-flex align-items-center mb-4">
+            {{ with .Site.Params.avatarurl }}
+            <img src="{{ . | absURL }}" alt="Leidimen Logo" class="footer-logo rounded-circle me-3" width="60" height="60">
+            {{ end }}
+            <div>
+              <h4 class="fw-bold mb-1 text-white">{{ .Site.Title }}</h4>
+              <p class="text-light mb-0 small">Association de solidarité</p>
+            </div>
+          </div>
+          
+          <!-- Description -->
+          <p class="text-light mb-4">
+            {{ .Site.Params.Description | default "Association de solidarité entre Bondoufle et le Mali" }}
+          </p>
+          
+          <!-- Social Media Links -->
+          <div class="social-links">
+            <h6 class="fw-semibold mb-3 text-white">🌐 Suivez-nous</h6>
+            <div class="d-flex gap-3">
+              {{ range .Site.Params.social }}
+              <a href="{{ .url }}" target="_blank" rel="noopener" 
+                 class="social-link btn btn-outline-light rounded-circle p-2" 
+                 title="{{ .name }}" aria-label="{{ .name }}">
+                {{ if eq .name "facebook" }}
+                  <i class="bi bi-facebook"></i><span class="d-none">📘</span>
+                {{ else if eq .name "Twitter" }}
+                  <i class="bi bi-twitter"></i><span class="d-none">🐦</span>
+                {{ else if eq .name "LinkedIn" }}
+                  <i class="bi bi-linkedin"></i><span class="d-none">💼</span>
+                {{ else }}
+                  <i class="{{ .icon }}"></i>
+                {{ end }}
+              </a>
+              {{ end }}
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Quick Links Column -->
+      <div class="col-lg-2 col-md-6">
+        <div class="footer-section">
+          <h5 class="fw-bold mb-4 text-white">🔗 Navigation</h5>
+          <ul class="list-unstyled footer-links">
+            {{ range .Site.Menus.main }}
+            {{ if not .HasChildren }}
+            <li class="mb-2">
+              <a href="{{ .URL }}" class="text-light text-decoration-none">
+                {{ if .Pre }}{{ .Pre | safeHTML }}{{ end }}
+                {{ .Name }}
+              </a>
+            </li>
+            {{ end }}
+            {{ end }}
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Sections Column -->
+      <div class="col-lg-3 col-md-6">
+        <div class="footer-section">
+          <h5 class="fw-bold mb-4 text-white">📂 Découvrir</h5>
+          <ul class="list-unstyled footer-links">
+            <li class="mb-2">
+              <a href="/galleries/" class="text-light text-decoration-none">
+                📸 Galeries photos
+              </a>
+            </li>
+            <li class="mb-2">
+              <a href="/categories/" class="text-light text-decoration-none">
+                🏷️ Catégories
+              </a>
+            </li>
+            <li class="mb-2">
+              <a href="/moods/" class="text-light text-decoration-none">
+                🎯 Nos activités
+              </a>
+            </li>
+            <li class="mb-2">
+              <a href="/villages/" class="text-light text-decoration-none">
+                🏘️ Nos villages
+              </a>
+            </li>
+            <li class="mb-2">
+              <a href="/documents/" class="text-light text-decoration-none">
+                📄 Documents
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Contact Information Column -->
+      <div class="col-lg-3 col-md-6">
+        <div class="footer-section">
+          <h5 class="fw-bold mb-4 text-white">📞 Contact</h5>
+          
+          <!-- Address -->
+          {{ with .Site.Params.address }}
+          <div class="contact-item mb-3">
+            <div class="d-flex align-items-start">
+              <i class="bi bi-geo-alt-fill text-primary me-3 mt-1"></i>
+              <div>
+                <h6 class="fw-semibold mb-1 text-white">Adresse</h6>
+                <p class="text-light mb-0 small">{{ . }}</p>
+              </div>
+            </div>
+          </div>
+          {{ end }}
+          
+          <!-- Phone -->
+          {{ with .Site.Params.tel }}
+          <div class="contact-item mb-3">
+            <div class="d-flex align-items-center">
+              <i class="bi bi-telephone-fill text-primary me-3"></i>
+              <div>
+                <h6 class="fw-semibold mb-1 text-white">Téléphone</h6>
+                <a href="tel:{{ . }}" class="text-light text-decoration-none small">{{ . }}</a>
+              </div>
+            </div>
+          </div>
+          {{ end }}
+          
+          <!-- Email -->
+          {{ with .Site.Params.email }}
+          <div class="contact-item mb-3">
+            <div class="d-flex align-items-center">
+              <i class="bi bi-envelope-fill text-primary me-3"></i>
+              <div>
+                <h6 class="fw-semibold mb-1 text-white">Email</h6>
+                <a href="mailto:{{ . }}" class="text-light text-decoration-none small">{{ . }}</a>
+              </div>
+            </div>
+          </div>
+          {{ end }}
+          
+          <!-- Newsletter Signup -->
+          <div class="newsletter-signup mt-4">
+            <h6 class="fw-semibold mb-3 text-white">✉️ Newsletter</h6>
+            <form class="d-flex" onsubmit="return false;">
+              <input type="email" class="form-control form-control-sm rounded-start" 
+                     placeholder="Votre email" required>
+              <button type="submit" class="btn btn-primary btn-sm rounded-end" 
+                      title="S'abonner à la newsletter" aria-label="S'abonner">
+                <i class="bi bi-send"></i>
+              </button>
+            </form>
+            <small class="text-muted mt-1 d-block">Restez informé de nos actions</small>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Divider -->
+    <hr class="my-5 border-secondary">
+    
+    <!-- Footer Bottom -->
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <div class="d-flex flex-column flex-sm-row align-items-center gap-3">
+          <!-- Copyright -->
+          <p class="mb-0 text-light">
+            &copy; {{ now.Format "2006" }} <strong>{{ .Site.Title }}</strong>. Tous droits réservés.
+          </p>
+          <!-- Since Year -->
+          <span class="badge bg-primary rounded-pill">
+            Depuis {{ 2007 }} • {{ now.Year | sub 2007 }} ans de solidarité
+          </span>
+        </div>
+      </div>
+      
+      <div class="col-md-6">
+        <div class="d-flex flex-column flex-sm-row align-items-center justify-content-md-end gap-3">
+          <!-- Social Media Links -->
+          <div class="social-media mb-3 mb-sm-0">
+            <h6 class="fw-semibold mb-3 text-white d-sm-none">🌐 Suivez-nous</h6>
+            <div class="d-flex gap-2">
+              <a href="https://www.facebook.com/leidimen" 
+                 class="social-link social-icon-size btn btn-outline-light btn-sm rounded-circle d-flex align-items-center justify-content-center"
+                 target="_blank" rel="noopener noreferrer" title="Facebook">
+                <i class="bi bi-facebook social-icon-font"></i>
+              </a>
+              <a href="https://twitter.com/leidimen" 
+                 class="social-link social-icon-size btn btn-outline-light btn-sm rounded-circle d-flex align-items-center justify-content-center"
+                 target="_blank" rel="noopener noreferrer" title="Twitter">
+                <i class="bi bi-twitter social-icon-font"></i>
+              </a>
+              <a href="https://www.linkedin.com/company/leidimen" 
+                 class="social-link social-icon-size btn btn-outline-light btn-sm rounded-circle d-flex align-items-center justify-content-center"
+                 target="_blank" rel="noopener noreferrer" title="LinkedIn">
+                <i class="bi bi-linkedin social-icon-font"></i>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Legal Links -->
+          <div class="footer-legal">
+            <a href="/documents/mentions-legales/" class="text-light text-decoration-none small me-3">
+              Mentions légales
+            </a>
+            <a href="/documents/politique-confidentialite/" class="text-light text-decoration-none small me-3">
+              Confidentialité
+            </a>
+            <a href="/documents/adhesion/" class="text-light text-decoration-none small">
+              Adhésion
+            </a>
+          </div>
+          
+          <!-- Back to Top Button -->
+          <button class="btn btn-outline-light btn-sm rounded-circle back-to-top" 
+                  onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+                  title="Retour en haut">
+            <i class="bi bi-arrow-up"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Solidarity Message -->
+    <div class="row mt-4">
+      <div class="col-12 text-center">
+        <div class="solidarity-message p-3 rounded bg-primary bg-opacity-10 border border-primary border-opacity-25">
+          <p class="mb-0 text-light fw-medium">
+            🤝 <em>"Ensemble, nous construisons des ponts de solidarité entre Bondoufle et le Mali"</em>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+/* Professional Footer Styles */
+.footer {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+}
+
+.footer-logo {
+  border: 2px solid rgba(255,255,255,0.2);
+  transition: transform 0.3s ease;
+}
+
+.footer-logo:hover {
+  transform: scale(1.1);
+}
+
+.footer-section h5,
+.footer-section h6 {
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.footer-section h5::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+}
+
+.footer-links li a {
+  transition: all 0.2s ease;
+  padding: 0.25rem 0;
+  display: inline-block;
+}
+
+.footer-links li a:hover {
+  color: #667eea !important;
+  transform: translateX(5px);
+}
+
+.social-link {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255,255,255,0.2);
+}
+
+.social-link:hover {
+  background-color: #667eea;
+  border-color: #667eea;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* Specific Social Media Colors */
+.social-link[title="facebook"]:hover {
+  background-color: #1877f2;
+  border-color: #1877f2;
+  box-shadow: 0 5px 15px rgba(24, 119, 242, 0.4);
+}
+
+.social-link[title="Twitter"]:hover {
+  background-color: #1da1f2;
+  border-color: #1da1f2;
+  box-shadow: 0 5px 15px rgba(29, 161, 242, 0.4);
+}
+
+.social-link[title="LinkedIn"]:hover {
+  background-color: #0077b5;
+  border-color: #0077b5;
+  box-shadow: 0 5px 15px rgba(0, 119, 181, 0.4);
+}
+
+.social-link i {
+  font-size: 1.2rem;
+}
+
+.social-icon-size {
+  width: 40px;
+  height: 40px;
+}
+
+.social-icon-font {
+  font-size: 1.1rem;
+}
+
+.contact-item {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.contact-item:last-child {
+  border-bottom: none;
+}
+
+.contact-item i {
+  width: 20px;
+  text-align: center;
+}
+
+.newsletter-signup .form-control:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+}
+
+.back-to-top {
+  width: 40px;
+  height: 40px;
+  transition: all 0.3s ease;
+}
+
+.back-to-top:hover {
+  background-color: #667eea;
+  border-color: #667eea;
+  transform: translateY(-2px);
+}
+
+.solidarity-message {
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.solidarity-message:hover {
+  background-color: rgba(102, 126, 234, 0.2) !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer {
+    padding: 3rem 0 !important;
+  }
+  
+  .footer-section {
+    margin-bottom: 2rem;
+  }
+  
+  .social-links .d-flex {
+    justify-content: center;
+  }
+  
+  .footer-legal {
+    text-align: center;
+  }
+}
+
+/* Animation for footer links */
+.footer-links li {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.footer-links li:nth-child(1) { animation-delay: 0.1s; }
+.footer-links li:nth-child(2) { animation-delay: 0.2s; }
+.footer-links li:nth-child(3) { animation-delay: 0.3s; }
+.footer-links li:nth-child(4) { animation-delay: 0.4s; }
+.footer-links li:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Intersection Observer Animation */
+.footer-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.footer-section.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+
+<script>
+// Professional Footer Interactions
+document.addEventListener('DOMContentLoaded', function() {
+  // Animate footer sections on scroll
+  const footerSections = document.querySelectorAll('.footer-section');
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate');
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  });
+  
+  footerSections.forEach(section => {
+    observer.observe(section);
+  });
+  
+  // Newsletter form handling
+  const newsletterForm = document.querySelector('.newsletter-signup form');
+  if (newsletterForm) {
+    newsletterForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const email = this.querySelector('input[type="email"]').value;
+      
+      if (email) {
+        // Simulate newsletter signup
+        const button = this.querySelector('button');
+        const originalHTML = button.innerHTML;
+        
+        button.innerHTML = '<i class="bi bi-check"></i>';
+        button.classList.remove('btn-primary');
+        button.classList.add('btn-success');
+        
+        setTimeout(() => {
+          button.innerHTML = originalHTML;
+          button.classList.remove('btn-success');
+          button.classList.add('btn-primary');
+          this.querySelector('input').value = '';
+        }, 2000);
+        
+        // Show success message
+        const small = this.querySelector('small');
+        const originalText = small.textContent;
+        small.textContent = 'Merci ! Inscription confirmée.';
+        small.classList.add('text-success');
+        
+        setTimeout(() => {
+          small.textContent = originalText;
+          small.classList.remove('text-success');
+        }, 3000);
+      }
+    });
+  }
+  
+  // Smooth scrolling for footer links
+  document.querySelectorAll('.footer-links a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+  
+  // Show back to top button on scroll
+  const backToTop = document.querySelector('.back-to-top');
+  if (backToTop) {
+    window.addEventListener('scroll', function() {
+      if (window.pageYOffset > 300) {
+        backToTop.style.opacity = '1';
+        backToTop.style.visibility = 'visible';
+      } else {
+        backToTop.style.opacity = '0';
+        backToTop.style.visibility = 'hidden';
+      }
+    });
+    
+    // Initialize button state
+    backToTop.style.opacity = '0';
+    backToTop.style.visibility = 'hidden';
+    backToTop.style.transition = 'all 0.3s ease';
+  }
+});
+</script>
+
