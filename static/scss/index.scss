@@ -5,11 +5,9 @@
 @use "sass::color";
 
 //
-// Import Bootstrap Icons w/ custom path to fonts folder
+// Bootstrap Icons - Using CDN instead of local import for GitHub Actions
+// Icons will be loaded from CDN in the HTML head
 //
-
-$bootstrap-icons-font-dir: "../../node_modules/bootstrap-icons/font/fonts";
-@import "../../node_modules/bootstrap-icons/font/bootstrap-icons.scss";
 
 // Required
 @import "../../node_modules/bootstrap/scss/functions";
