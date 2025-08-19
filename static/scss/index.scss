@@ -1,76 +1,62 @@
 
-// Modified variables
+// Leidimen Custom SCSS
+// Bootstrap and Bootstrap Icons are loaded via CDN in the HTML head
 
-// use "sass::color"
-@use "sass::color";
-
-//
-// Bootstrap Icons - Using CDN instead of local import for GitHub Actions
-// Icons will be loaded from CDN in the HTML head
-//
-
-// Required
-@import "../../node_modules/bootstrap/scss/functions";
-
-// Default variable overrides
-@import "../scss/default-variable-overrides";
-
-// Required
-@import "../../node_modules/bootstrap/scss/variables";
-
-
-// Variable value using existing variable
-@import "../scss/variable-value-using-variable";
-
-
-// Required
-@import "../../node_modules/bootstrap/scss/maps";
-@import "../../node_modules/bootstrap/scss/mixins";
-@import "../..//node_modules/bootstrap/scss/root";
+// Custom variables for Context7 design system
+:root {
+  --ctx7-primary: #6366f1;
+  --ctx7-secondary: #8b5cf6;
+  --ctx7-accent: #06b6d4;
+  --ctx7-success: #10b981;
+  --ctx7-warning: #f59e0b;
+  --ctx7-danger: #ef4444;
+  --ctx7-dark: #1f2937;
+  --ctx7-light: #f8fafc;
+  --ctx7-gray-50: #f9fafb;
+  --ctx7-gray-100: #f3f4f6;
+  --ctx7-gray-200: #e5e7eb;
+  --ctx7-gray-300: #d1d5db;
+  --ctx7-gray-400: #9ca3af;
+  --ctx7-gray-500: #6b7280;
+  --ctx7-gray-600: #4b5563;
+  --ctx7-gray-700: #374151;
+  --ctx7-gray-800: #1f2937;
+  --ctx7-gray-900: #111827;
   
+  // Gradient colors
+  --ctx7-gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --ctx7-gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --ctx7-gradient-accent: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  
+  // Glassmorphism
+  --ctx7-glass-bg: rgba(255, 255, 255, 0.25);
+  --ctx7-glass-border: rgba(255, 255, 255, 0.18);
+  --ctx7-glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  
+  // Animations
+  --ctx7-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --ctx7-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
 
-  // Optional Bootstrap CSS
-@import "../../node_modules/bootstrap/scss/reboot";
-@import "../../node_modules/bootstrap/scss/type";
-@import "../../node_modules/bootstrap/scss/images";
-@import "../../node_modules/bootstrap/scss/containers";
-@import "../../node_modules/bootstrap/scss/grid";
-@import "../../node_modules/bootstrap/scss/tables";
-@import "../../node_modules/bootstrap/scss/forms";
-@import "../../node_modules/bootstrap/scss/buttons";
-@import "../../node_modules/bootstrap/scss/transitions";
-@import "../../node_modules/bootstrap/scss/dropdown";
-@import "../../node_modules/bootstrap/scss/button-group";
-@import "../../node_modules/bootstrap/scss/nav";
-@import "../../node_modules/bootstrap/scss/navbar";
-@import "../../node_modules/bootstrap/scss/card";
-@import "../../node_modules/bootstrap/scss/accordion";
-@import "../../node_modules/bootstrap/scss/breadcrumb";
-@import "../../node_modules/bootstrap/scss/pagination";
-@import "../../node_modules/bootstrap/scss/badge";
-@import "../../node_modules/bootstrap/scss/alert";
-@import "../../node_modules/bootstrap/scss/progress";
-@import "../../node_modules/bootstrap/scss/list-group";
-@import "../../node_modules/bootstrap/scss/close";
-@import "../../node_modules/bootstrap/scss/toasts";
-@import "../../node_modules/bootstrap/scss/modal";
-@import "../../node_modules/bootstrap/scss/tooltip";
-@import "../../node_modules/bootstrap/scss/popover";
-@import "../../node_modules/bootstrap/scss/carousel";
-@import "../../node_modules/bootstrap/scss/spinners";
-@import "../../node_modules/bootstrap/scss/offcanvas";
-@import "../../node_modules/bootstrap/scss/placeholders";
+// Dark theme variables
+[data-bs-theme="dark"] {
+  --ctx7-glass-bg: rgba(0, 0, 0, 0.25);
+  --ctx7-glass-border: rgba(255, 255, 255, 0.1);
+  --ctx7-glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
 
-// Helpers
-@import "../../node_modules/bootstrap/scss/helpers";
+// Custom utility classes
+.glassmorphism {
+  background: var(--ctx7-glass-bg);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  border: 1px solid var(--ctx7-glass-border);
+  box-shadow: var(--ctx7-glass-shadow);
+}
 
-// Utilities
-@import "../../node_modules/bootstrap/scss/utilities";
+.ctx7-transition {
+  transition: var(--ctx7-transition);
+}
 
-@import "../scss/utilities";
-
-// Utilities API
-@import "../../node_modules/bootstrap/scss/utilities/api";
-
-// Own custom styles
-@import "../scss/custom-styles";
+// Custom components will be defined in individual templates
+// This file serves as the base for Context7 design system variables
