@@ -653,6 +653,14 @@ document.addEventListener('DOMContentLoaded', function() {
   // Form validation and submission
   if (form && submitBtn) {
     form.addEventListener('submit', function(e) {
+      // Check if this is the first time - allow normal submission for activation
+      const isActivated = localStorage.getItem('formspree-activated');
+      if (!isActivated) {
+        // Let the form submit normally for activation
+        localStorage.setItem('formspree-activated', 'true');
+        return; // Don't prevent default - let it submit normally
+      }
+      
       e.preventDefault();
       
       // Validation
