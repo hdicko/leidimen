@@ -1,5 +1,5 @@
-# baseURL = "https://leidimen"
-relativeURLs = true
+baseURL = "https://hdicko.github.io/leidimen"
+relativeURLs = false
 languageCode = "en-us"
 title = "Leidimen"
 pagination.pagerSize = 8
