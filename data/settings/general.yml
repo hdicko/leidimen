@@ -1,0 +1,25 @@
+site_name: "Association Leidimen"
+tagline: "Solidarité Bondoufle - Mali (Région de Douentza)"
+contact_email: "contact@leidimen.org"
+phone: ""
+address: |
+  Association Leidimen
+  Paris, France
+
+social:
+  facebook: ""
+  twitter: ""
+  linkedin: ""
+
+# Mali villages data
+villages:
+  featured_village: "Douentza"
+  total_villages: 7
+  main_region: "Région de Douentza"
+
+# Association info
+association:
+  founded_year: 2007
+  registration_number: ""
+  mission: "Soutenir le développement des villages de la région de Douentza au Mali"
+  vision: "Contribuer à l'amélioration des conditions de vie des populations locales"
