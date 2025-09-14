@@ -25,6 +25,20 @@ image: /img/abdoulaye.dicko.jpg
 
 weight: 20
 
+experience:
+  - date: "2007"
+    title: "Co-fondateur de Leidimen"
+    icon: "bi-people-fill"
+    description: "A participé à la création de l'association pour renforcer les liens entre Bondoufle et le Mali."
+  - date: "2015 - Aujourd'hui"
+    title: "Senior Manager chez Lundano"
+    icon: "bi-briefcase-fill"
+    description: "Apporte son expertise en management et leadership à l'entreprise."
+  - date: "2020"
+    title: "Créateur de Macaron x Addict"
+    icon: "bi-gem"
+    description: "A lancé sa propre marque pour partager sa passion de la pâtisserie et des produits d'exception."
+
 slug: Abdoulaye
 resources:
   - src: "example.jpg"

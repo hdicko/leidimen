@@ -47,5 +47,19 @@
     "adresse": "Mennecy - France",
     "email": "dicko.hamadoun@gmail.com ",
     "Tel": "111-111-2222-333"
+  },
+  "Nouveau Membre": {
+    "nom": "Nouveau Membre Exemple",
+    "fonction": "Secrétaire",
+    "adresse": "Paris - France",
+    "email": "nouveau.membre@example.com",
+    "Tel": "+33 1 23 45 67 89"
+  },
+  "Mariam Dicko": {
+    "nom": "Mariam Dicko",
+    "fonction": "membre du CA",
+    "adresse": "Paris - France",
+    "email": "mariam.dicko@leidimen.org",
+    "Tel": "+33 6 12 34 56 78"
   }
 }

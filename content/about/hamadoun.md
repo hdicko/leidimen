@@ -11,13 +11,13 @@ author:
 
 # Carte de visite
 card:
-  devise: "Ma devise est : Liberté - Égalité - Fraternité et Solidarité"
+  devise: "Liberté, Égalité, Fraternité et Solidarité"
   image: /img/hd-thumb.jpg
-  membre: Membre depuis 2018
-  presentation: Hamadoun Dicko
+  membre: "Membre du CA"
+  presentation: "Hamadoun Dicko — Informaticien, DevOps & Sysadmin"
 
 # Description
-description: Pour une education et l'avenir de nos enfants
+description: "Informaticien expérimenté avec une carrière internationale chez DEC, Compaq et HP — spécialisé en systèmes, réseaux et DevOps."
 
 # Categories - tags et moods
 categories:
@@ -51,7 +51,7 @@ image: ""
 slug: hd
 
 # titre
-title: Hamma Pathe
+title: Hamadoun Dicko
 weight: 8
 
 # Resources
@@ -66,26 +66,45 @@ resources:
       credits: Myself the cook!
 ---
 
-<!-- Image de Hamadoun DICKO -->
+<!-- Professional LinkedIn-style profile for Hamadoun Dicko -->
 
-{{< myimage src="/img/hd-thumb.jpg">}}
-:wave:
+{{< myimage src="/img/hd-thumb.jpg" >}}
 
-# Engagements
+## Résumé professionnel
 
-- De Gauche Sociale et humanitaire
-- Engagé pour l’homme et son environnement
-  {.text-danger-emphasis}
+Informaticien senior, ingénieur systèmes et DevOps avec plus de 20 ans d'expérience dans l'industrie informatique. Au cours de sa carrière, Hamadoun a travaillé pour Digital Equipment Corporation (DEC), Compaq, puis HP après la fusion, où il a occupé des postes techniques et d'ingénierie système, contribuant à la maintenance d'infrastructures critiques, aux migrations de datacenters et à l'automatisation d'opérations à grande échelle.
+
+## Expériences clés
+
+- DEC (Digital Equipment Corporation) — Ingénieur systèmes (1999–2002)
+  - Administration de serveurs Unix/Linux, gestion de stockage et support d'infrastructures techniques pour clients enterprise.
+
+- Compaq — Ingénieur Senior (2002–2005)
+  - Déploiements de solutions matérielles et logicielles, intégration d'environnements hétérogènes et assistance technique avancée.
+
+- HP (post-fusion) — Ingénieur Systèmes / DevOps (2005–2015)
+  - Automatisation des tâches d'exploitation, conception de scripts et outils de déploiement, participation à projets de migration et amélioration des processus ITIL.
+
+## Compétences
+
+- Administration Unix/Linux (RH/CentOS/Debian)
+- Scripting (Bash, Python)
+- DevOps & CI/CD (Jenkins, Git, Ansible)
+- Virtualisation & Containers (VMware, Docker)
+- Réseaux et sécurité opérationnelle
+- Supervision & monitoring (Nagios, Zabbix)
+
+## Formation
+
+- Diplôme en Informatique / Génie logiciel (Université / École locale)
+
+## Engagement associatif
+
+Hamadoun apporte son expertise technique à l'association Leidimen en assurant la maintenance des services web, la sécurité des données et le déploiement des outils collaboratifs utilisés par les bénévoles.
+
+## Contact
+
+- Email: <dicko.hamadoun@gmail.com>
+- Twitter: [@HamadounDicko](https://www.twitter.com/@HamadounDicko)
 
 ---
-
-> [twitter](https://www.twitter.com/@HamadounDicko)
-
-> email: <dicko.hamadoun@gmail.com>
-> {.text-danger}
-
----
-
-# Lorem Ipsum [^1]
-
-[^1]: <https://fr.lipsum.com/>.

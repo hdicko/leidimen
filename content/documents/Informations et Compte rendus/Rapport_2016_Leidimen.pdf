@@ -1,0 +1,276 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+
+<head profile="http://gmpg.org/xfn/11">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+	<title>Leïdimen &raquo; Page not found</title>
+	<meta name="description" content="Le&iuml;dimen est une association qui soutient des projets de d&eacute;veloppement collectifs et durables au Mali"/>
+	<meta name="keywords" content="leidimen, le&iuml;dimen, humanitaire, mali, d&eacute;veloppement, durable"/>
+	<meta name="generator" content="WordPress 6.8.2" /> <!-- leave this for stats please -->
+
+	<style type="text/css" media="screen">
+		@import url( https://leidimen.com/wp-content/themes/leidimen/style.css );
+	</style>
+
+	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="https://leidimen.com/feed" />
+	<link rel="alternate" type="text/xml" title="RSS .92" href="https://leidimen.com/feed/rss" />
+	<link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="https://leidimen.com/feed/atom" />
+
+	<link rel="pingback" href="https://leidimen.com/xmlrpc.php" />
+		<link rel='archives' title='January 2017' href='https://leidimen.com/2017/01' />
+	<link rel='archives' title='March 2013' href='https://leidimen.com/2013/03' />
+	<link rel='archives' title='January 2012' href='https://leidimen.com/2012/01' />
+	<link rel='archives' title='July 2011' href='https://leidimen.com/2011/07' />
+	<link rel='archives' title='February 2010' href='https://leidimen.com/2010/02' />
+	<link rel='archives' title='February 2009' href='https://leidimen.com/2009/02' />
+	<link rel='archives' title='October 2008' href='https://leidimen.com/2008/10' />
+	<link rel='archives' title='September 2008' href='https://leidimen.com/2008/09' />
+	<link rel='archives' title='May 2008' href='https://leidimen.com/2008/05' />
+	<link rel='archives' title='April 2008' href='https://leidimen.com/2008/04' />
+	<link rel='archives' title='February 2008' href='https://leidimen.com/2008/02' />
+	<link rel='archives' title='December 2007' href='https://leidimen.com/2007/12' />
+	<link rel='archives' title='November 2007' href='https://leidimen.com/2007/11' />
+	<link rel='archives' title='October 2007' href='https://leidimen.com/2007/10' />
+	<link rel='archives' title='September 2007' href='https://leidimen.com/2007/09' />
+	<link rel='archives' title='July 2007' href='https://leidimen.com/2007/07' />
+	<link rel='archives' title='June 2007' href='https://leidimen.com/2007/06' />
+	<link rel='archives' title='February 2007' href='https://leidimen.com/2007/02' />
+	<link rel='archives' title='January 2007' href='https://leidimen.com/2007/01' />
+	<link rel='archives' title='December 2006' href='https://leidimen.com/2006/12' />
+	<link rel='archives' title='October 2006' href='https://leidimen.com/2006/10' />
+	<link rel='archives' title='September 2006' href='https://leidimen.com/2006/09' />
+		<meta name='robots' content='max-image-preview:large' />
+	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+	<script type="text/javascript">
+/* <![CDATA[ */
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16.0.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16.0.1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/leidimen.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.8.2"}};
+/*! This file is auto-generated */
+!function(s,n){var o,i,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),a=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===a[t]})}function u(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);for(var n=e.getImageData(16,16,1,1),a=0;a<n.data.length;a++)if(0!==n.data[a])return!1;return!0}function f(e,t,n,a){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!a(e,"\ud83e\udedf")}return!1}function g(e,t,n,a){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):s.createElement("canvas"),o=r.getContext("2d",{willReadFrequently:!0}),i=(o.textBaseline="top",o.font="600 32px Arial",{});return e.forEach(function(e){i[e]=t(o,e,n,a)}),i}function t(e){var t=s.createElement("script");t.src=e,t.defer=!0,s.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",i=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){s.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+g.toString()+"("+[JSON.stringify(i),f.toString(),p.toString(),u.toString()].join(",")+"));",a=new Blob([e],{type:"text/javascript"}),r=new Worker(URL.createObjectURL(a),{name:"wpTestEmojiSupports"});return void(r.onmessage=function(e){c(n=e.data),r.terminate(),t(n)})}catch(e){}c(n=g(i,f,p,u))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+/* ]]> */
+</script>
+
+<style id='wp-emoji-styles-inline-css' type='text/css'>
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+</style>
+<link rel='stylesheet' id='wp-block-library-css' href='https://leidimen.com/wp-includes/css/dist/block-library/style.min.css?ver=6.8.2' type='text/css' media='all' />
+<style id='classic-theme-styles-inline-css' type='text/css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id='global-styles-inline-css' type='text/css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel="https://api.w.org/" href="https://leidimen.com/wp-json/" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://leidimen.com/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 6.8.2" />
+</head>
+<body id="bodyFront" style=""  > <!--onload=" iniPage() "  -->
+
+<div id="topbanner" style="padding: 4em 0;">
+Septembre 2025: Leïdimen est toujours active, mais ce site est désormais archivé. Vous retrouverez Leïdimen à la Mairie de Bondoufle (91070). 
+</div>
+    	
+ <div id="znContainer">
+ <div id="znBg"> 
+ 
+<div id="page">
+
+     <!--   ZN ////////////////////////////////////////////////////////// -->
+      <div id="znTop"> 
+		
+      		<div id="logo">  
+        		<a href="/"><img alt="Leidimen" src="https://leidimen.com/wp-content/themes/leidimen/images/header_illustr_home.jpg" /></a>
+			</div>
+				
+      </div>
+
+<!--   ZN ////////////////////////////////////////////////////////// --> 
+      	<div id="znMain"> 
+
+      	<div id="znContent">
+      	
+      	<div id="znContentTop"></div>
+      	
+      	 <div id="znContentMiddle">
+
+
+<h2>29 January 2017</h2>
+<div class="post" id="post-748">
+	 <h3 class="storytitle"><a href="https://leidimen.com/nouvelle-news-2017" rel="bookmark">nouvelle news 2017</a></h3>
+	<div class="meta">Filed under: <a href="https://leidimen.com/category/news" rel="category tag">News Leidimen</a> &#8212;  Moussa @ 10:39 </div>
+
+	<div class="storycontent">
+		<p>Bonjour,</p>
+<p>&nbsp;</p>
+<p>Nous avons des nouvelles à partager.</p>
+<p><strong><a href="https://leidimen.com/wp-content/uploads/2017/01/20160608_132632.jpg"><img fetchpriority="high" decoding="async" class="alignnone size-medium wp-image-750" src="https://leidimen.com/wp-content/uploads/2017/01/20160608_132632-300x169.jpg" alt="20160608_132632" width="300" height="169" srcset="https://leidimen.com/wp-content/uploads/2017/01/20160608_132632-300x169.jpg 300w, https://leidimen.com/wp-content/uploads/2017/01/20160608_132632-768x432.jpg 768w, https://leidimen.com/wp-content/uploads/2017/01/20160608_132632-1024x576.jpg 1024w" sizes="(max-width: 300px) 100vw, 300px" /></a></strong></p>
+<p><strong>Leidimen</strong></p>
+	</div>
+
+	<div class="feedback">
+				<span>Comments Off<span class="screen-reader-text"> on nouvelle news 2017</span></span>	</div>
+
+</div>
+
+
+
+<h2>5 March 2013</h2>
+<div class="post" id="post-708">
+	 <h3 class="storytitle"><a href="https://leidimen.com/subventions" rel="bookmark">Reprise de l&#8217;aide au développement</a></h3>
+	<div class="meta">Filed under: <a href="https://leidimen.com/category/non-classe" rel="category tag">Divers</a> &#8212;  Hamassala David @ 04:46 </div>
+
+	<div class="storycontent">
+		<p>Le Mali n&#8217;est pas encore stable, ni militairement, ni politiquement – sur ces deux points, la situation s&#8217;améliore néanmoins rapidement.</p>
+<p>Une bonne nouvelle : l&#8217;UE, la France, l&#8217;Espagne, et d&#8217;autres pays ont tous fait des annonces en ce sens.</p>
+<p>Quant à nous, nous renforçons nos liens avec le conseil général de l&#8217;Essonne et travaillons à obtenir un soutien des collectivités territoriales, nationales, et européennes.</p>
+	</div>
+
+	<div class="feedback">
+				<span>Comments Off<span class="screen-reader-text"> on Reprise de l&#8217;aide au développement</span></span>	</div>
+
+</div>
+
+
+
+
+<div class="post" id="post-704">
+	 <h3 class="storytitle"><a href="https://leidimen.com/et-si-on-se-retrouvait-sur-paris" rel="bookmark">Et si on se retrouvait sur Paris?</a></h3>
+	<div class="meta">Filed under: <a href="https://leidimen.com/category/non-classe" rel="category tag">Divers</a> &#8212;  Hamassala David @ 04:42 </div>
+
+	<div class="storycontent">
+		<p><a href="https://leidimen.com/wp-content/uploads/2013/03/3855898610_5bfe548bc2.jpg"><img decoding="async" class="alignnone size-medium wp-image-705" alt="3855898610_5bfe548bc2" src="//leidimen.com/wp-content/uploads/2013/03/3855898610_5bfe548bc2-300x200.jpg" width="300" height="200" srcset="https://leidimen.com/wp-content/uploads/2013/03/3855898610_5bfe548bc2-300x200.jpg 300w, https://leidimen.com/wp-content/uploads/2013/03/3855898610_5bfe548bc2.jpg 320w" sizes="(max-width: 300px) 100vw, 300px" /></a><br />
+Nous contemplons l&#8217;idée d&#8217;un événement sur le printemps parisien, pourquoi pas le long des berges du canal.<br />
+Bonne humeur, jetons de poker, boules&#8230; Donnez-nous des idées pour organiser une très belle journée ensemble.<br />
+On vous tient au courant. A très bientôt!</p>
+	</div>
+
+	<div class="feedback">
+				<a href="https://leidimen.com/et-si-on-se-retrouvait-sur-paris#comments">Comments (2)</a>	</div>
+
+</div>
+
+
+
+<h2>1 January 2012</h2>
+<div class="post" id="post-667">
+	 <h3 class="storytitle"><a href="https://leidimen.com/ecole-de-dorool" rel="bookmark">Ecole de Dorool</a></h3>
+	<div class="meta">Filed under: <a href="https://leidimen.com/category/non-classe" rel="category tag">Divers</a> &#8212;  Melina @ 22:16 </div>
+
+	<div class="storycontent">
+		<p>Quelques nouvelles en images (vous pouvez cliquer sur les photos pour les agrandir):</p>
+<p style="text-align: center;"><a href="https://leidimen.com/wp-content/uploads/2012/01/DSC00385.jpg"><img decoding="async" title="L'école (à gauche, la troisième classe en cours de construction)" src="//leidimen.com/wp-content/uploads/2012/01/DSC00385-300x225.jpg" alt="" width="300" height="225" /></a><a href="https://leidimen.com/wp-content/uploads/2012/01/DSC00385.jpg"> </a><a href="https://leidimen.com/wp-content/uploads/2012/01/IMG_4663.jpg"><img loading="lazy" decoding="async" class="aligncenter size-medium wp-image-675" title="Une partie des élèves" src="//leidimen.com/wp-content/uploads/2012/01/IMG_4663-300x225.jpg" alt="" width="300" height="225" srcset="https://leidimen.com/wp-content/uploads/2012/01/IMG_4663-300x225.jpg 300w, https://leidimen.com/wp-content/uploads/2012/01/IMG_4663-1024x768.jpg 1024w" sizes="auto, (max-width: 300px) 100vw, 300px" />  </a><a href="https://leidimen.com/wp-content/uploads/2012/01/DSC00425.jpg"><img loading="lazy" decoding="async" class="aligncenter size-medium wp-image-674" title="Les élèves posent devant l'école avec la présidente de Leïdimen, Aissa Dicko" src="//leidimen.com/wp-content/uploads/2012/01/DSC00425-300x225.jpg" alt="" width="300" height="225" srcset="https://leidimen.com/wp-content/uploads/2012/01/DSC00425-300x225.jpg 300w, https://leidimen.com/wp-content/uploads/2012/01/DSC00425-1024x768.jpg 1024w" sizes="auto, (max-width: 300px) 100vw, 300px" />  </a><a href="https://leidimen.com/wp-content/uploads/2012/01/DSC00419.jpg"><img loading="lazy" decoding="async" class="aligncenter size-medium wp-image-673" title="En classe" src="//leidimen.com/wp-content/uploads/2012/01/DSC00419-300x225.jpg" alt="" width="300" height="225" srcset="https://leidimen.com/wp-content/uploads/2012/01/DSC00419-300x225.jpg 300w, https://leidimen.com/wp-content/uploads/2012/01/DSC00419-1024x768.jpg 1024w" sizes="auto, (max-width: 300px) 100vw, 300px" />  </a><a href="https://leidimen.com/wp-content/uploads/2012/01/DSC00412.jpg"><img loading="lazy" decoding="async" class="aligncenter size-medium wp-image-672" title="En classe" src="//leidimen.com/wp-content/uploads/2012/01/DSC00412-300x225.jpg" alt="" width="300" height="225" srcset="https://leidimen.com/wp-content/uploads/2012/01/DSC00412-300x225.jpg 300w, https://leidimen.com/wp-content/uploads/2012/01/DSC00412-1024x768.jpg 1024w" sizes="auto, (max-width: 300px) 100vw, 300px" />  </a><a href="https://leidimen.com/wp-content/uploads/2012/01/DSC00410.jpg"><img loading="lazy" decoding="async" class="aligncenter size-medium wp-image-671" title="En classe" src="//leidimen.com/wp-content/uploads/2012/01/DSC00410-300x225.jpg" alt="" width="300" height="225" srcset="https://leidimen.com/wp-content/uploads/2012/01/DSC00410-300x225.jpg 300w, https://leidimen.com/wp-content/uploads/2012/01/DSC00410-1024x768.jpg 1024w" sizes="auto, (max-width: 300px) 100vw, 300px" />  </a><a href="https://leidimen.com/wp-content/uploads/2012/01/DSC00408.jpg"><img loading="lazy" decoding="async" class="aligncenter size-medium wp-image-670" title="Une partie des élèves" src="//leidimen.com/wp-content/uploads/2012/01/DSC00408-300x225.jpg" alt="" width="300" height="225" srcset="https://leidimen.com/wp-content/uploads/2012/01/DSC00408-300x225.jpg 300w, https://leidimen.com/wp-content/uploads/2012/01/DSC00408-1024x768.jpg 1024w" sizes="auto, (max-width: 300px) 100vw, 300px" />  </a></p>
+	</div>
+
+	<div class="feedback">
+				<span>Comments Off<span class="screen-reader-text"> on Ecole de Dorool</span></span>	</div>
+
+</div>
+
+
+
+<a href="https://leidimen.com/wp-content/uploads/2007/05/Rapport_2016_Leidimen.pdf/page/2" >Newer Posts &raquo;</a>
+
+<!-- begin sidebar -->
+	</div> <!--- end znContentMiddle -->
+	<div id="znContentBottom"></div>
+	</div> <!-- end div znContent -->
+
+		        <div id="znLeft">  
+		        
+		        <div id="znLeftTop"></div>
+		        
+		        <div id="znLeftMiddle">
+
+				<div id="menuScroll">	
+
+<ul>
+	<li><a href="http://www.leidimen.com/">Accueil</li>
+	<li class="pagenav">Pages<ul><li class="page_item page-item-4 page_item_has_children"><a href="https://leidimen.com/presentation">Qui sommes-nous?</a></li>
+<li class="page_item page-item-10 page_item_has_children"><a href="https://leidimen.com/projets">Nos projets</a></li>
+<li class="page_item page-item-80 page_item_has_children"><a href="https://leidimen.com/zone-daction">Zone d&#8217;action</a></li>
+<li class="page_item page-item-11"><a href="https://leidimen.com/partenaires">Nos partenaires</a></li>
+<li class="page_item page-item-469 page_item_has_children"><a href="https://leidimen.com/photos">Photos</a></li>
+<li class="page_item page-item-9"><a href="https://leidimen.com/contact">Nous contacter</a></li>
+</ul></li>		<li class="categories">Catégories<ul>	<li class="cat-item cat-item-1"><a href="https://leidimen.com/category/non-classe">Divers</a>
+</li>
+	<li class="cat-item cat-item-6"><a href="https://leidimen.com/category/news">News Leidimen</a>
+</li>
+	<li class="cat-item cat-item-7"><a href="https://leidimen.com/category/reunions">Réunions</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="https://leidimen.com/category/infos-sorties">Sorties</a>
+</li>
+</ul></li>	
+ <li id="archives">Archives	<ul>
+	 	<li><a href='https://leidimen.com/2017/01'>January 2017</a></li>
+	<li><a href='https://leidimen.com/2013/03'>March 2013</a></li>
+	<li><a href='https://leidimen.com/2012/01'>January 2012</a></li>
+	<li><a href='https://leidimen.com/2011/07'>July 2011</a></li>
+	<li><a href='https://leidimen.com/2010/02'>February 2010</a></li>
+	<li><a href='https://leidimen.com/2009/02'>February 2009</a></li>
+	<li><a href='https://leidimen.com/2008/10'>October 2008</a></li>
+	<li><a href='https://leidimen.com/2008/09'>September 2008</a></li>
+	<li><a href='https://leidimen.com/2008/05'>May 2008</a></li>
+	<li><a href='https://leidimen.com/2008/04'>April 2008</a></li>
+	<li><a href='https://leidimen.com/2008/02'>February 2008</a></li>
+	<li><a href='https://leidimen.com/2007/12'>December 2007</a></li>
+	<li><a href='https://leidimen.com/2007/11'>November 2007</a></li>
+	<li><a href='https://leidimen.com/2007/10'>October 2007</a></li>
+	<li><a href='https://leidimen.com/2007/09'>September 2007</a></li>
+	<li><a href='https://leidimen.com/2007/07'>July 2007</a></li>
+	<li><a href='https://leidimen.com/2007/06'>June 2007</a></li>
+	<li><a href='https://leidimen.com/2007/02'>February 2007</a></li>
+	<li><a href='https://leidimen.com/2007/01'>January 2007</a></li>
+	<li><a href='https://leidimen.com/2006/12'>December 2006</a></li>
+	<li><a href='https://leidimen.com/2006/10'>October 2006</a></li>
+	<li><a href='https://leidimen.com/2006/09'>September 2006</a></li>
+	</ul>
+ </li>
+ 
+ 
+ <li id="meta">Méta	<ul>
+				<li><a href="https://leidimen.com/wp-login.php">Log in</a></li>
+		<li><a href="https://leidimen.com/feed" title="Syndicate this site using RSS"><abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			</ul>
+ </li>
+ 
+ 
+
+</ul>
+
+			  </div> <!-- end Menu SCROLL -->	
+			  
+			  </div> <!-- end znLeftMiddle -->
+			  
+			  <div id="znLeftBottom"></div>
+			  
+			  
+		      </div> <!-- END ZN LEFT -->
+<!-- end sidebar -->
+
+<!-- begin footer -->
+
+</div>    <!-- end div znMain -->
+
+         <div id="znBottom"></div>
+
+
+		</div> 	<!-- end div page (wordpress auto) --> 
+   </div> 	<!-- end div znBg --> 	
+ </div> <!-- end div znContainer -->
+ 
+</body>
+</html>

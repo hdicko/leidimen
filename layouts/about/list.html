@@ -157,13 +157,23 @@
     </div>
     
     <!-- Team Grid with Staggered Animation -->
-    <div class="team-grid" id="membersGrid">
-      {{ range $index, $member := .Pages }}
-      {{ $image := resources.Get $member.Params.card.image }}
+                                                                                                                                                                                                                                                                                                                                                                                    <div class="team-grid" id="membersGrid">
+      {{ range $index, $member := .RegularPages }}
+      {{ $image := "" }}
+      {{ if $member.Params.card.image }}
+        {{ if hasPrefix $member.Params.card.image "/" }}
+          {{ $image = $member.Params.card.image }}
+        {{ else }}
+          {{ $imageResource := resources.Get $member.Params.card.image }}
+          {{ if $imageResource }}
+            {{ $image = ($imageResource.Resize "400x400 center").RelPermalink }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
       <div class="team-card-wrapper" 
            data-name="{{ $member.Title | lower }}" 
            data-role="{{ $member.Params.card.membre | lower }}"
-           data-categories="{{ delimit $member.Params.categories " " | lower }}"
+           data-categories="{{ if $member.Params.categories }}{{ delimit $member.Params.categories " " | lower }}{{ end }}"
            data-aos="fade-up" 
            data-aos-delay="{{ mul $index 100 }}">
         
@@ -178,7 +188,7 @@
           <div class="member-photo-section">
             <div class="photo-container">
               {{ if $image }}
-              <img src="{{ ($image.Resize "400x400 center").RelPermalink }}" 
+              <img src="{{ $image }}" 
                    class="member-photo" 
                    alt="{{ $member.Title }}" 
                    loading="lazy">
@@ -195,7 +205,7 @@
                   <i class="bi bi-star-fill"></i>
                   <span>Fondateur</span>
                 </span>
-                {{ else if in $member.Params.categories "CA" }}
+                {{ else if and $member.Params.categories (in $member.Params.categories "CA") }}
                 <span class="badge badge-bureau">
                   <i class="bi bi-shield-check"></i>
                   <span>Bureau</span>
@@ -238,8 +248,10 @@
             
             <!-- Tags & Categories -->
             <div class="member-tags">
+              {{ if $member.Params.categories }}
               {{ range $member.Params.categories }}
               <span class="tag">{{ . }}</span>
+              {{ end }}
               {{ end }}
             </div>
             
@@ -250,13 +262,13 @@
                 <span class="stat-label">années</span>
               </div>
               <div class="stat">
-                <span class="stat-number">{{ len $member.Params.categories }}</span>
+                <span class="stat-number">{{ if $member.Params.categories }}{{ len $member.Params.categories }}{{ else }}0{{ end }}</span>
                 <span class="stat-label">rôles</span>
               </div>
             </div>
             
             <!-- Action Buttons -->
-            <div class="card-actions">
+                        <div class="card-actions">
               <a href="{{ $member.RelPermalink }}" class="btn-primary-action">
                 <i class="bi bi-person-lines-fill"></i>
                 <span>Voir le profil</span>
@@ -462,6 +474,7 @@
 /* Glass Morphism Cards */
 .glass-card {
   background: rgba(255, 255, 255, 0.15);
+  -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   border-radius: 24px;
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -521,10 +534,9 @@
 
 .stat-card {
   background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
-  border-radius: 20px;
-  padding: 2rem;
-  text-align: center;
   border: 1px solid rgba(255, 255, 255, 0.2);
   transition: all 0.3s ease;
 }
@@ -599,10 +611,12 @@
 }
 
 .filter-container {
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   border-radius: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 /* Search Input */
@@ -730,13 +744,15 @@
 
 /* Context7 Member Cards */
 .context7-member-card {
-  position: relative;
-  background: white;
-  border-radius: 24px;
+  background: rgba(30, 41, 59, 0.5);
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  transition: all 0.4s ease;
-  height: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
 }
 
 .context7-member-card:hover {
@@ -762,6 +778,20 @@
   background: linear-gradient(135deg, var(--context7-primary), var(--context7-secondary));
   opacity: 0.05;
   height: 100%;
+}
+
+.card-bg-effects .bg-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 15px 15px;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  transition: opacity 0.4s ease;
 }
 
 /* Member Photo */

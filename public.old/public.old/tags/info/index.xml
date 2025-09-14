@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Info on Leidimen</title>
+    <link>http://localhost:1313/tags/info/</link>
+    <description>Recent content in Info on Leidimen</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 26 Feb 2007 20:37:50 +0200</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/info/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Info – Arrivée des ordinateurs à Bamako et info musique</title>
+      <link>http://localhost:1313/posts/info-ordi/</link>
+      <pubDate>Mon, 26 Feb 2007 20:37:50 +0200</pubDate>
+      <guid>http://localhost:1313/posts/info-ordi/</guid>
+      <description>&lt;p class=&#34;h1&#34;&gt;26 février 2007&lt;/p&gt;&#xA;&lt;p class=&#34;h2&#34;&gt;Les 10 ordis sont arrivés à Bamako !&lt;/p&gt;&#xA;&lt;p&gt;Nous nous réjouissons d’avons recu un coup de téléphone de Abdoulaye nous disant que hier, le 22 février, notre cargaison de 10 ordinateurs est arrivée à Bamako. Il a tout récupéré à la douane (non sans quelques diffucultés), et maintenant il suffit de stocker les cartons chez lui avant de les acheminer à Douentza où le lycée les attend.&lt;/p&gt;&#xA;&lt;p&gt;Pour la suite de ce projet, nous attendons maintenant jusqu’au moment où un de nous ira là-bas pour bien organiser la réception et l’installation du matériel informatique au lycée. David prévoit en effet un séjour au Mali en septembre.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Envoi du matériel informatique à Bamako</title>
+      <link>http://localhost:1313/posts/janvier-2007/</link>
+      <pubDate>Mon, 15 Jan 2007 20:37:50 +0200</pubDate>
+      <guid>http://localhost:1313/posts/janvier-2007/</guid>
+      <description>&lt;p class=&#34;h1&#34;&gt;Chargement du matériel informatique direction Bamako&lt;/p&gt;&#xA;&lt;p class=&#34;col row gx-5 text-center img-fluid&#34;&gt;&lt;img&#xA;  src=&#34;http://localhost:1313/img/infos/prep1.jpeg&#34;&#xA;  class=&#34;figure-img img-fluid rounded&#34;&#xA;  alt=&#34;&#34;&#xA;  loading=&#34;lazy&#34;&#xA;/&gt;&#xA;&lt;/p&gt;&#xA;&lt;p class=&#34;col text-center img-fluid&#34;&gt;&lt;img&#xA;  src=&#34;http://localhost:1313/img/infos/prep2.jpeg&#34;&#xA;  class=&#34;figure-img img-fluid rounded&#34;&#xA;  alt=&#34;&#34;&#xA;  loading=&#34;lazy&#34;&#xA;/&gt;&#xA;&lt;/p&gt;&#xA;&lt;p class=&#34;col text-center img-fluid&#34;&gt;&lt;img&#xA;  src=&#34;http://localhost:1313/img/infos/prep3.jpeg&#34;&#xA;  class=&#34;figure-img img-fluid rounded&#34;&#xA;  alt=&#34;&#34;&#xA;  loading=&#34;lazy&#34;&#xA;/&gt;&#xA;&lt;/p&gt;&#xA;&lt;p class=&#34;col text-center img-fluid&#34;&gt;&lt;img&#xA;  src=&#34;http://localhost:1313/img/infos/envoi.jpeg&#34;&#xA;  class=&#34;figure-img img-fluid rounded&#34;&#xA;  alt=&#34;&#34;&#xA;  loading=&#34;lazy&#34;&#xA;/&gt;&#xA;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

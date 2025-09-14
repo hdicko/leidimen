@@ -1,55 +1,576 @@
-{{/* post list template */}}
+{{/* Context7 Posts List Template with Modern Pagination */}}
 {{ define "main" }}
 
-<!--paginator -->
-{{ $paginator := .Paginate (where .Pages "Type" "posts") }}
-
-{{/** pagination **/}}
-{{ partial "util/pagination.html" . }}
-
-<section class="blog-preview-section">
-  <div class="container">
+<!-- Context7 Hero Section for Posts -->
+<section class="posts-hero-ctx7 position-relative overflow-hidden">
+  <div class="hero-bg-effects">
+    <div class="gradient-bg"></div>
+    <div class="floating-particles">
+      <div class="particle particle-1"></div>
+      <div class="particle particle-2"></div>
+      <div class="particle particle-3"></div>
+    </div>
+  </div>
+  
+  <div class="container position-relative z-2">
     <div class="row justify-content-center">
-      {{ range (.Paginate (first 3 .Pages.ByTitle)).Pages }}
-      <article class="col-md-10 col-lg-8 col-xl-7 mb-4 blog-preview-card">
-        <div class="card h-100 border-0" data-aos="fade-up">
-          <div class="card-body">
-            <h2 class="card-title text-primary mb-3">
-              <a href="{{ .RelPermalink }}" class="text-decoration-none hover:text-primary-hover">
-                {{ .Title }}
-              </a>
-            </h2>
-            
-            <div class="meta-data mb-3">
-              <small class="text-secondary">
-                Posted by: {{ .Params.auteur }}
-              </small>
-              <small class="text-muted">
-                • {{ dateFormat "Jan 2, 2006" .Date.Local }}
-              </small>
+      <div class="col-lg-10 text-center">
+        <div class="glass-card hero-card p-5">
+          <div class="hero-icon mb-4">
+            <i class="bi bi-journal-text animated-icon"></i>
+          </div>
+          <h1 class="hero-title display-4 fw-bold mb-4 text-gradient">
+            Actualités & Nouvelles
+          </h1>
+          <p class="hero-subtitle lead fs-5 mb-4 text-white-75">
+            Suivez les dernières nouvelles de nos actions de solidarité entre Bondoufle et le Mali
+          </p>
+          
+          <!-- Stats -->
+          <div class="stats-row d-flex justify-content-center gap-4 mb-4">
+            <div class="stat-item">
+              <div class="stat-number">{{ len .Pages }}</div>
+              <div class="stat-label">Articles</div>
             </div>
-
-            <div class="card-text mb-3">
-              <p class="text-body-secondary line-height-lg">
-                {{ .Summary }}
-              </p>
+            <div class="stat-item">
+              <div class="stat-number">{{ now.Year | sub 2007 }}</div>
+              <div class="stat-label">Années</div>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-            {{ if .Truncated }}
-            <div class="read-more">
-              <a href="{{ .RelPermalink }}" class="text-primary-hover text-decoration-none">
-                Read More →
-              </a>
+<!-- Posts Grid Section -->
+<section class="posts-section py-5">
+  <div class="container">
+    {{ $paginator := .Paginate .Pages }}
+    
+    <!-- Posts Grid -->
+    <div class="posts-grid mb-5">
+      {{ range $index, $post := $paginator.Pages }}
+      <article class="post-card-ctx7" data-aos="fade-up" data-aos-delay="{{ mul $index 100 }}">
+        <div class="post-card-inner">
+          <!-- Post Header -->
+          <div class="post-header">
+            {{ if $post.Params.featured_image }}
+            <div class="post-image">
+              <img src="{{ $post.Params.featured_image }}" alt="{{ $post.Title }}" loading="lazy">
+              <div class="post-overlay"></div>
             </div>
             {{ end }}
+            
+            <!-- Post Meta -->
+            <div class="post-meta">
+              <div class="post-date">
+                <i class="bi bi-calendar3"></i>
+                <span>{{ dateFormat "2 Jan 2006" $post.Date }}</span>
+              </div>
+              {{ if $post.Params.auteur }}
+              <div class="post-author">
+                <i class="bi bi-person"></i>
+                <span>{{ $post.Params.auteur }}</span>
+              </div>
+              {{ end }}
+              {{ if $post.Params.categories }}
+              <div class="post-categories">
+                {{ range $post.Params.categories }}
+                <span class="category-tag">{{ . }}</span>
+                {{ end }}
+              </div>
+              {{ end }}
+            </div>
+          </div>
+          
+          <!-- Post Content -->
+          <div class="post-content">
+            <h2 class="post-title">
+              <a href="{{ $post.RelPermalink }}">{{ $post.Title }}</a>
+            </h2>
+            
+            <div class="post-excerpt">
+              {{ if $post.Summary }}
+                {{ $post.Summary }}
+              {{ else }}
+                {{ $post.Description }}
+              {{ end }}
+            </div>
+            
+            <!-- Read More -->
+            <div class="post-actions">
+              <a href="{{ $post.RelPermalink }}" class="btn-read-more">
+                <span>Lire la suite</span>
+                <i class="bi bi-arrow-right"></i>
+              </a>
+              
+              <!-- Post Stats -->
+              <div class="post-stats">
+                <span class="read-time">
+                  <i class="bi bi-clock"></i>
+                  {{ math.Ceil (div (countwords $post.Content) 200.0) }} min
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </article>
       {{ end }}
     </div>
+    
+    <!-- Context7 Modern Pagination -->
+    {{ if gt $paginator.TotalPages 1 }}
+    <div class="pagination-ctx7">
+      <nav aria-label="Pagination Navigation" class="pagination-nav">
+        <div class="pagination-container">
+          
+          <!-- Previous Page -->
+          {{ if $paginator.HasPrev }}
+          <a href="{{ $paginator.Prev.URL }}" class="pagination-btn pagination-prev" aria-label="Page précédente">
+            <i class="bi bi-chevron-left"></i>
+            <span class="btn-text">Précédent</span>
+          </a>
+          {{ else }}
+          <span class="pagination-btn pagination-prev disabled">
+            <i class="bi bi-chevron-left"></i>
+            <span class="btn-text">Précédent</span>
+          </span>
+          {{ end }}
+          
+          <!-- Page Numbers -->
+          <div class="pagination-numbers">
+            {{ $currentPage := $paginator.PageNumber }}
+            {{ $totalPages := $paginator.TotalPages }}
+            
+            <!-- First page -->
+            {{ if gt $currentPage 3 }}
+            <a href="{{ $paginator.First.URL }}" class="pagination-number">1</a>
+            {{ if gt $currentPage 4 }}
+            <span class="pagination-ellipsis">...</span>
+            {{ end }}
+            {{ end }}
+            
+            <!-- Pages around current -->
+            {{ range $paginator.Pagers }}
+              {{ $pageNum := .PageNumber }}
+              {{ if and (ge $pageNum (sub $currentPage 2)) (le $pageNum (add $currentPage 2)) }}
+                {{ if eq $pageNum $currentPage }}
+                <span class="pagination-number active" aria-current="page">{{ $pageNum }}</span>
+                {{ else }}
+                <a href="{{ .URL }}" class="pagination-number">{{ $pageNum }}</a>
+                {{ end }}
+              {{ end }}
+            {{ end }}
+            
+            <!-- Last page -->
+            {{ if lt $currentPage (sub $totalPages 2) }}
+            {{ if lt $currentPage (sub $totalPages 3) }}
+            <span class="pagination-ellipsis">...</span>
+            {{ end }}
+            <a href="{{ $paginator.Last.URL }}" class="pagination-number">{{ $totalPages }}</a>
+            {{ end }}
+          </div>
+          
+          <!-- Next Page -->
+          {{ if $paginator.HasNext }}
+          <a href="{{ $paginator.Next.URL }}" class="pagination-btn pagination-next" aria-label="Page suivante">
+            <span class="btn-text">Suivant</span>
+            <i class="bi bi-chevron-right"></i>
+          </a>
+          {{ else }}
+          <span class="pagination-btn pagination-next disabled">
+            <span class="btn-text">Suivant</span>
+            <i class="bi bi-chevron-right"></i>
+          </span>
+          {{ end }}
+        </div>
+        
+        <!-- Pagination Info -->
+        <div class="pagination-info">
+          <span class="pagination-stats">
+            Page {{ $paginator.PageNumber }} sur {{ $paginator.TotalPages }} 
+            ({{ len $paginator.Pages }} articles sur {{ $paginator.TotalNumberOfElements }})
+          </span>
+        </div>
+      </nav>
+    </div>
+    {{ end }}
   </div>
 </section>
 
-{{/** pagination **/}}
-{{ partial "util/pagination.html" . }}
+<!-- Context7 Posts Styles -->
+<style>
+/* Context7 Posts Section Styles */
+.posts-hero-ctx7 {
+  min-height: 60vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.hero-bg-effects {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.gradient-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(99, 102, 241, 0.8), rgba(139, 92, 246, 0.8));
+}
+
+.floating-particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.particle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  animation: float 6s ease-in-out infinite;
+}
+
+.particle-1 { top: 20%; left: 20%; animation-delay: 0s; }
+.particle-2 { top: 60%; left: 80%; animation-delay: 2s; }
+.particle-3 { top: 80%; left: 40%; animation-delay: 4s; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+.hero-icon .animated-icon {
+  font-size: 3rem;
+  color: white;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.stats-row {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.stat-item {
+  text-align: center;
+  color: white;
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: bold;
+  display: block;
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  opacity: 0.8;
+}
+
+.posts-section {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.post-card-ctx7 {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.post-card-ctx7:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.post-header {
+  position: relative;
+}
+
+.post-image {
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.post-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.post-image:hover img {
+  transform: scale(1.1);
+}
+
+.post-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.3));
+}
+
+.post-meta {
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.post-date, .post-author {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.post-categories {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.category-tag {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.post-content {
+  padding: 1.5rem;
+}
+
+.post-title {
+  margin-bottom: 1rem;
+}
+
+.post-title a {
+  color: #1f2937;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.25rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.post-title a:hover {
+  color: #6366f1;
+}
+
+.post-excerpt {
+  color: #6b7280;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.post-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-read-more {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #6366f1;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-read-more:hover {
+  color: #8b5cf6;
+  transform: translateX(5px);
+}
+
+.post-stats {
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+.read-time {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* Context7 Modern Pagination Styles */
+.pagination-ctx7 {
+  margin-top: 3rem;
+  padding: 2rem 0;
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.pagination-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: white;
+  color: #374151;
+  text-decoration: none;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: 500;
+}
+
+.pagination-btn:hover:not(.disabled) {
+  background: #6366f1;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.3);
+}
+
+.pagination-btn.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.pagination-numbers {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pagination-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  background: white;
+  color: #374151;
+  text-decoration: none;
+  border-radius: 50%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: 500;
+}
+
+.pagination-number:hover {
+  background: #6366f1;
+  color: white;
+  transform: scale(1.1);
+}
+
+.pagination-number.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.4);
+}
+
+.pagination-ellipsis {
+  padding: 0 0.5rem;
+  color: #9ca3af;
+  font-weight: bold;
+}
+
+.pagination-info {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.pagination-stats {
+  color: #6b7280;
+  font-size: 0.875rem;
+  background: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  display: inline-block;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .posts-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .pagination-container {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .pagination-btn .btn-text {
+    display: none;
+  }
+  
+  .pagination-numbers {
+    gap: 0.25rem;
+  }
+  
+  .pagination-number {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  
+  .stats-row {
+    gap: 1rem;
+  }
+  
+  .stat-number {
+    font-size: 1.5rem;
+  }
+}
+</style>
+
 {{ end }} {{/* end main*/}}

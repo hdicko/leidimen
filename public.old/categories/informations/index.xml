@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Informations on Leidimen</title>
+    <link>http://localhost:1313/categories/informations/</link>
+    <description>Recent content in Informations on Leidimen</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 06 Mar 2013 14:30:00 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/informations/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Reprise Aide au Developpement</title>
+      <link>http://localhost:1313/posts/aide/</link>
+      <pubDate>Wed, 06 Mar 2013 14:30:00 +0100</pubDate>
+      <guid>http://localhost:1313/posts/aide/</guid>
+      <description>&lt;p&gt;Le Mali n’est pas encore stable, ni militairement, ni politiquement, cependant sur ces deux points, la situation s’améliore néanmoins rapidement.&#xA;Une bonne nouvelle : l’UE, la France, l’Espagne, et d’autres pays ont tous fait des annonces en ce sens.&lt;/p&gt;&#xA;&lt;p&gt;Quant à nous, nous renforçons nos liens avec le conseil général de l’Essonne et travaillons à obtenir un soutien des collectivités territoriales, nationales, et européennes.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>RDV Paris</title>
+      <link>http://localhost:1313/posts/rdv-paris/</link>
+      <pubDate>Tue, 05 Mar 2013 14:30:00 +0100</pubDate>
+      <guid>http://localhost:1313/posts/rdv-paris/</guid>
+      <description>&lt;p class=&#34;fs-5&#34;&gt;Nous contemplons l’idée d’un évènement sur le printemps parisien, pourquoi pas le long des berges du canal.&#xA;Bonne humeur, jetons de poker, boules… Donnez-nous des idées pour organiser une très belle journée ensemble.&#xA;On vous informe.&lt;/p&gt;&#xA;&lt;p&gt;2 Comments&#xA;Je viendrai avec de grands jetons de poker en plastique qui vont assez loin quand on les jette en l’air…&lt;/p&gt;&#xA;&lt;p&gt;Commentaire by Olivier — 6 mars 2013 @ 19:52&lt;/p&gt;&#xA;&lt;p&gt;😉&lt;/p&gt;&#xA;&lt;p&gt;Commentaire by David — 6 mars 2013 @ 21:22&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

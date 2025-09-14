@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Documents on Leidimen</title>
+    <link>http://localhost:1313/documents/</link>
+    <description>Recent content in Documents on Leidimen</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 18 Aug 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/documents/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mentions Légales</title>
+      <link>http://localhost:1313/documents/mentions-legales/</link>
+      <pubDate>Mon, 18 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/documents/mentions-legales/</guid>
+      <description>&lt;h1 id=&#34;mentions-légales&#34;&gt;Mentions Légales&#xA;    &lt;a href=&#34;#mentions-l%c3%a9gales&#34;&gt;¶&lt;/a&gt;&#xA;&lt;/h1&gt;&lt;h2 id=&#34;informations-sur-lassociation&#34;&gt;Informations sur l&amp;rsquo;association&#xA;    &lt;a href=&#34;#informations-sur-lassociation&#34;&gt;¶&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Dénomination :&lt;/strong&gt; Association Leidimen&lt;br&gt;&#xA;&lt;strong&gt;Forme juridique :&lt;/strong&gt; Association loi 1901&lt;br&gt;&#xA;&lt;strong&gt;Siège social :&lt;/strong&gt; {{ .Site.Params.address }}&lt;br&gt;&#xA;&lt;strong&gt;Email :&lt;/strong&gt; {{ .Site.Params.email }}&lt;/p&gt;&#xA;&lt;h3 id=&#34;objet-de-lassociation&#34;&gt;Objet de l&amp;rsquo;association&#xA;    &lt;a href=&#34;#objet-de-lassociation&#34;&gt;¶&lt;/a&gt;&#xA;&lt;/h3&gt;&lt;p&gt;L&amp;rsquo;association Leidimen a pour objet de développer la solidarité entre Bondoufle (France) et les villages du Mali, notamment dans les domaines de l&amp;rsquo;éducation, de la santé, de l&amp;rsquo;accès à l&amp;rsquo;eau et du développement rural.&lt;/p&gt;&#xA;&lt;h2 id=&#34;responsable-de-la-publication&#34;&gt;Responsable de la publication&#xA;    &lt;a href=&#34;#responsable-de-la-publication&#34;&gt;¶&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Directeur de publication :&lt;/strong&gt; Le Président de l&amp;rsquo;association Leidimen&lt;br&gt;&#xA;&lt;strong&gt;Hébergement du site :&lt;/strong&gt; Netlify, Inc.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Politique de Confidentialité</title>
+      <link>http://localhost:1313/documents/politique-confidentialite/</link>
+      <pubDate>Mon, 18 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/documents/politique-confidentialite/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&#xA;    &lt;a href=&#34;#introduction&#34;&gt;¶&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;L&amp;rsquo;association Leidimen s&amp;rsquo;engage à protéger la vie privée de ses visiteurs et adhérents. Cette politique de confidentialité explique comment nous collectons, utilisons et protégeons vos données personnelles.&lt;/p&gt;&#xA;&lt;h2 id=&#34;responsable-du-traitement&#34;&gt;Responsable du traitement&#xA;    &lt;a href=&#34;#responsable-du-traitement&#34;&gt;¶&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Association Leidimen&lt;/strong&gt;&lt;br&gt;&#xA;Adresse : {{ .Site.Params.address }}&lt;br&gt;&#xA;Email : {{ .Site.Params.email }}&lt;/p&gt;&#xA;&lt;h2 id=&#34;données-collectées&#34;&gt;Données collectées&#xA;    &lt;a href=&#34;#donn%c3%a9es-collect%c3%a9es&#34;&gt;¶&lt;/a&gt;&#xA;&lt;/h2&gt;&lt;h3 id=&#34;types-de-données&#34;&gt;Types de données&#xA;    &lt;a href=&#34;#types-de-donn%c3%a9es&#34;&gt;¶&lt;/a&gt;&#xA;&lt;/h3&gt;&lt;p&gt;Nous pouvons collecter les types de données suivantes :&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Données d&amp;rsquo;identification :&lt;/strong&gt; nom, prénom, adresse email&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Données de contact :&lt;/strong&gt; adresse postale, numéro de téléphone&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Données de navigation :&lt;/strong&gt; adresse IP, type de navigateur, pages visitées&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Données d&amp;rsquo;adhésion :&lt;/strong&gt; informations relatives à votre adhésion à l&amp;rsquo;association&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;méthodes-de-collecte&#34;&gt;Méthodes de collecte&#xA;    &lt;a href=&#34;#m%c3%a9thodes-de-collecte&#34;&gt;¶&lt;/a&gt;&#xA;&lt;/h3&gt;&lt;p&gt;Les données sont collectées par les moyens suivants :&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Adhesion</title>
+      <link>http://localhost:1313/documents/adhesion/</link>
+      <pubDate>Wed, 06 Nov 2019 10:08:23 +0100</pubDate>
+      <guid>http://localhost:1313/documents/adhesion/</guid>
+      <description>&lt;p class=&#34;text-muted lead fst-italic fs-2 text-center fw-bold bg-primary-subtle border rounded-3 mb-2 fs-2&#34;&gt;Coordonnées&lt;/p&gt;&#xA;&lt;p class=&#34;text-muted lead fst-italic fw-bold mb-2 text-center&#34;&gt;♦ Email  &lt;a href=&#34;mailto:association@leidimen.com&#34;&gt;association@leidimen.com&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p class=&#34;text-muted lead fst-italic fw-bold mb-2&#34;&gt;♦ Adresse postale Association Leidimen, 14 rue des Pommiers, 91070 Bondoufle.&lt;/p&gt;&#xA;&lt;p class=&#34;text-muted lead fst-italic fw-bold mb-2 fs-5 text-center&#34;&gt;N’hésitez surtout pas à nous contacter pour toute question, remarque, suggestion, ou simplement pour nous encourager !&lt;/p&gt;&#xA;&lt;p class=&#34;text-center bg-primary-subtle border border-success-subtle rounded-3 mb-2 fs-1&#34;&gt;L&amp;rsquo;association existe essentiellement grâce aux dons des particuliers&lt;/p&gt;&#xA;&lt;p class=&#34;fs-4 text-center text-primary&#34;&gt;L&amp;rsquo;adhésion à l&amp;rsquo;Association Leidimen s&amp;rsquo;élève à 10 € par an (20 € pour un couple)&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
