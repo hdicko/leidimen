@@ -19,6 +19,65 @@ card:
 # Description
 description: "Informaticien expérimenté avec une carrière internationale chez DEC, Compaq et HP — spécialisé en systèmes, réseaux et DevOps."
 
+# Timeline d'expériences
+experience:
+  - date: "2019"
+    title: "Co-fondateur de Leidimen"
+    description: "Création de l'association solidaire Leidimen pour soutenir les projets de développement entre Bondoufle et Douentza"
+    category: "Associatif"
+    icon: "bi-heart-fill"
+    achievements:
+      - "Mise en place de la structure juridique"
+      - "Développement du site web et outils collaboratifs"
+      - "Coordination technique des projets"
+    skills:
+      - "Gestion de projet"
+      - "Développement web"
+      - "Communication"
+
+  - date: "2005-2015"
+    title: "Ingénieur Systèmes / DevOps chez HP"
+    description: "Automatisation des tâches d'exploitation, conception de scripts et outils de déploiement, participation à projets de migration"
+    category: "Professionnel"
+    icon: "bi-laptop-fill"
+    achievements:
+      - "Mise en place de pipelines CI/CD"
+      - "Migration de datacenters critiques"
+      - "Amélioration des processus ITIL"
+    skills:
+      - "DevOps"
+      - "Automatisation"
+      - "Jenkins"
+      - "Ansible"
+
+  - date: "2002-2005"
+    title: "Ingénieur Senior chez Compaq"
+    description: "Déploiements de solutions matérielles et logicielles, intégration d'environnements hétérogènes"
+    category: "Professionnel"
+    icon: "bi-server"
+    achievements:
+      - "Intégration d'environnements complexes"
+      - "Support technique avancé"
+      - "Formation des équipes"
+    skills:
+      - "Intégration système"
+      - "Support enterprise"
+      - "Formation"
+
+  - date: "1999-2002"
+    title: "Ingénieur Systèmes chez DEC"
+    description: "Administration de serveurs Unix/Linux, gestion de stockage et support d'infrastructures techniques"
+    category: "Professionnel"
+    icon: "bi-terminal-fill"
+    achievements:
+      - "Administration systèmes Unix/Linux"
+      - "Gestion de stockage enterprise"
+      - "Support clients critiques"
+    skills:
+      - "Unix/Linux"
+      - "Stockage"
+      - "Administration"
+
 # Categories - tags et moods
 categories:
   - Gauche
