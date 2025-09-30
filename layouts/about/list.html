@@ -188,7 +188,7 @@
           <div class="member-photo-section">
             <div class="photo-container">
               {{ if $image }}
-              <img src="{{ $image }}" 
+              <img src="{{ $image | relURL }}" 
                    class="member-photo" 
                    alt="{{ $member.Title }}" 
                    loading="lazy">
