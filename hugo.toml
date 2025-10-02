@@ -9,6 +9,25 @@ enableInlineShortcodes = true
 enableEmoji = true
 assetDir = "static"
 
+[sitemap]
+  changefreq = "monthly"
+  priority = 0.5
+  filename = "sitemap.xml"
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+  page = ["HTML", "JSON"]
+  section = ["HTML", "RSS", "JSON"]
+  taxonomy = ["HTML", "RSS", "JSON"]
+  term = ["HTML", "RSS", "JSON"]
+
+[outputFormats]
+  [outputFormats.JSON]
+    name = "json"
+    baseName = "index"
+    isPlainText = true
+    mediaType = "application/json"
+
 #### markup
 [markup]
   [markup.goldmark]
@@ -55,7 +74,7 @@ assetDir = "static"
 # Default resample filter used for resizing. Default is Box,
 # a simple and fast averaging filter appropriate for downscaling.
 # See https://github.com/disintegration/imaging
-resampleFilter = "box"
+resampleFilter = "Box"
 
 # Default JPEG quality setting. Default is 75.
 quality = 75
@@ -64,7 +83,7 @@ quality = 75
 # Default is "smart" which does Smart Cropping, using https://github.com/muesli/smartcrop
 # Smart Cropping is content aware and tries to find the best crop for each image.
 # Valid values are Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight
-anchor = "smart"
+anchor = "Smart"
 
 # Default background color.
 # Hugo will preserve transparency for target formats that supports it,
