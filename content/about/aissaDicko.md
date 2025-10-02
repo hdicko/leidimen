@@ -6,7 +6,7 @@ title: Aissa Dicko
 
 card:
   devise: "Ma devise est : Liberté - Égalité - Fraternité et Solidarité"
-  image: /img/aissa-logo.jpg
+  image: images/aissa-logo.jpg
   membre: Membre fondateur - President de Leidimen
   presentation: Presidente de leidimen
   type: membre
@@ -36,7 +36,7 @@ resources:
       caption: "Some more information about this image"
 ---
 
-{{< myimage src="/img/aissa-logo.jpg" >}}
+{{< myimage src="images/aissa-logo.jpg" >}}
 
 ---
 

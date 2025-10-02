@@ -12,7 +12,7 @@ author:
 # Carte de visite
 card:
   devise: "Liberté, Égalité, Fraternité et Solidarité"
-  image: /img/hd-thumb.jpg
+  image: images/hd-thumb.jpg
   membre: "Membre du CA"
   presentation: "Hamadoun Dicko — Informaticien, DevOps & Sysadmin"
 
@@ -103,7 +103,7 @@ villages:
   - douentza
 
 # photo
-featured_image: /img/hd.jpg
+featured_image: images/hd.jpg
 image: ""
 
 # slug
@@ -127,7 +127,7 @@ resources:
 
 <!-- Professional LinkedIn-style profile for Hamadoun Dicko -->
 
-{{< myimage src="/img/hd-thumb.jpg" >}}
+{{< myimage src="images/hd-thumb.jpg" >}}
 
 ## Résumé professionnel
 

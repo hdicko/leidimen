@@ -7,7 +7,7 @@ title: Hamassala Dicko
 
 card:
   devise: "Ma devise est : Liberté - Égalité - Fraternité et Solidarité"
-  image: /img/david-logo-thumb.jpg
+  image: images/david-logo-thumb.jpg
   membre: Membre du CA de Leidimen
   presentation: Tresoriere de Leidimen
   type: membre
@@ -35,7 +35,7 @@ resources:
       caption: "Some more information about this image"
 ---
 
-{{< myimage src="/img/david-logo.jpg" >}}
+{{< myimage src="images/david-logo.jpg" >}}
 
 ---
 

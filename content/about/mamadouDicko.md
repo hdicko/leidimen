@@ -1,7 +1,7 @@
 ---
 card:
   devise: 'Ma devise est : Liberté - Égalité - Fraternité et Solidarité'
-  image: /img/mamadou-logo-thumb.jpg
+  image: images/mamadou-logo-thumb.jpg
   membre: Membre du CA
   presentation: Membre de Leidimen depuis sa creation
 categories:
@@ -30,7 +30,7 @@ resources:
           caption: 'Some more information about this image'
 ---
 
-{{< myimage src="/img/mamadou-logo.jpg" >}}
+{{< myimage src="images/mamadou-logo.jpg" >}}
 
 ---
 

@@ -6,7 +6,7 @@ title: Abdoulaye Dicko
 # presenation card
 card:
   devise: Creation entreprenerial et Solidarite
-  image: /img/abdoulaye.dicko-thumb.jpg
+  image: images/abdoulaye.dicko-thumb.jpg
   membre: Membre fondateur
   presentation: Membre fondateur de leidimen
 
@@ -21,7 +21,7 @@ tags:
   - Bondoufle
 tags_weight: 20
 
-image: /img/abdoulaye.dicko.jpg
+image: images/abdoulaye.dicko.jpg
 
 weight: 20
 
@@ -47,7 +47,7 @@ resources:
       caption: "Some more information about this image"
 ---
 
-{{< myimage src="/img/abdoulaye.dicko.jpg" >}}
+{{< myimage src="images/abdoulaye.dicko.jpg" >}}
 Abdoulaye Dicko : <abd-dicko@hotmail.fr>
 
 ---
