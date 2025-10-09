@@ -131,24 +131,27 @@
             <h5 class="card-title mb-3">Navigation rapide</h5>
             <div class="row g-3">
               <div class="col-md-4">
-                <a href="/documents/" class="btn btn-outline-primary w-100">
+              {{ $page := .Site.GetPage "/documents" }}
+                <a href="{{ $page.Permalink }}" class="btn btn-outline-primary w-100">
                   <i class="bi bi-arrow-left me-2"></i>
                   Retour aux documents
                 </a>
               </div>
               <div class="col-md-4">
-                <a href="/about/" class="btn btn-outline-success w-100">
+
+                {{ $page := .Site.GetPage "/about" }}
+                <a href="{{ $page.Permalink }}" class="btn btn-outline-success w-100">
                   <i class="bi bi-people me-2"></i>
                   Notre équipe
                 </a>
               </div>
               <div class="col-md-4">
-                <a href="/posts/" class="btn btn-outline-info w-100">
-                  <i class="bi bi-newspaper me-2"></i>
-                  Actualités
-                </a>
-              </div>
-            </div>
+
+                {{ $page := .Site.GetPage "/posts" }}
+            <a href="{{ $page.Permalink }}" class="btn btn-outline-info w-100">
+              <i class="bi bi-newspaper me-2"></i>
+              Actualités
+            </a>
           </div>
         </div>
       </div>

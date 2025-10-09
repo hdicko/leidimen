@@ -125,7 +125,8 @@
               <i class="bi bi-envelope-heart"></i>
               <span>Contacter</span>
             </button>
-            <a href="/about/" class="btn-ctx7-outline">
+            {{ $page := .Site.GetPage "/about" }}
+            <a href="{{ $page.Permalink }}" class="btn-ctx7-outline">
               <i class="bi bi-arrow-left"></i>
               <span>Retour à l'équipe</span>
             </a>
@@ -301,8 +302,10 @@
                 <i class="bi bi-share"></i>
                 <span>Partager le profil</span>
               </button>
-              
-              <a href="/about/" class="action-btn-ctx7">
+
+{{ $page := .Site.GetPage "/about/" }}
+          
+              <a href="{{ $page.Permalink }}" class="action-btn-ctx7">
                 <i class="bi bi-people"></i>
                 <span>Voir tous les membres</span>
               </a>

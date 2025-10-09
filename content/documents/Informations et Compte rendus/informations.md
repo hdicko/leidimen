@@ -11,4 +11,4 @@ title: Informations
 - [Declaration D'association de Leidimen](/docs/hammadoun/status-de-leidimen.pdf)
 - [Pourquoi voter OUI au Referendum ](/docs/hammadoun/referendum2023.pdf)
 - [Alphabet adlan - Wikipedia](/docs/fulfulde/fulfulde.pdf)
-- [Douentza - Info](/docs/Douentza/Douentza1.pdf)
+- [Douentza - Info](docs/Douentza/Douentza1.pdf)

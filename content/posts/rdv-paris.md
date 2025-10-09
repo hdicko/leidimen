@@ -38,4 +38,4 @@ RSS feed for comments on this post.
 
 Sorry, the comment form is closed at this time.
 
-- [Paris](/posts/paris/)
+- [Paris](/leidimen/posts/paris/)

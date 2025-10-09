@@ -15,5 +15,5 @@ villages:
 type: posts
 ---
 
-This is post 20 - Just for testing !
-### [Post - ecole de Dorool](/img/hd-thumb.jpg "Titre Hamadoun Dicko")
+### This is post 20 - Just for testing !
+

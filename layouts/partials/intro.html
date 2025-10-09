@@ -128,10 +128,13 @@
           Ensemble, nous pouvons faire la différence et construire un avenir plus solidaire
         </p>
         <div class="cta-buttons-ctx7">
-          <a href="/about/" class="btn btn-primary btn-lg rounded-pill me-3 mb-2">
+    
+          {{ $page := .Site.GetPage "/about/" }}
+        
+          <a href="/leidimen/about" class="btn btn-primary btn-lg rounded-pill me-3 mb-2">
             <i class="bi bi-people me-2"></i>Découvrir l'équipe
           </a>
-          <a href="/documents/" class="btn btn-outline-primary btn-lg rounded-pill mb-2">
+          <a href="/leidimen/documents/" class="btn btn-outline-primary btn-lg rounded-pill mb-2">
             <i class="bi bi-file-text me-2"></i>Nos documents
           </a>
         </div>

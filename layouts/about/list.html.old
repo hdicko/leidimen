@@ -1,4 +1,5 @@
 {{ define "main" }}
+<!-- ABOUT LIST TEMPLATE IS BEING USED -->
 <!-- Context7 Hero Section with Glassmorphism -->
 <section class="context7-hero position-relative overflow-hidden">
   <!-- Animated Background -->
@@ -37,7 +38,7 @@
             <div class="col-md-4">
               <div class="stat-card glass-effect">
                 <div class="stat-icon">
-                  <i class="bi bi-people text-secondary"></i>
+                  <i class="bi bi-people text-primary"></i>
                 </div>
                 <div class="stat-number" data-count="{{ len .Pages }}">0</div>
                 <div class="stat-label">Membres Actifs</div>
@@ -69,9 +70,7 @@
               <i class="bi bi-arrow-down-circle me-2"></i>
               Découvrir l'équipe
             </button>
-            {{ $page := .Site.GetPage "/documents/adhesion/" }}
-            
-            <a href="{{ $page.Permalink }}" class="btn btn-context7-outline btn-lg rounded-pill px-4">
+            <a href="/documents/adhesion/" class="btn btn-context7-outline btn-lg rounded-pill px-4">
               <i class="bi bi-person-plus me-2"></i>
               Nous rejoindre
             </a>
@@ -159,8 +158,8 @@
     </div>
     
     <!-- Team Grid with Staggered Animation -->
-                                                                                                                                                                                                                                                                                                                                                                                    <div class="team-grid" id="membersGrid">
-      {{ range $index, $member := .RegularPages }}
+    <div class="team-grid" id="membersGrid">
+      {{ range $index, $member := (where .Site.RegularPages "Section" "about") }}
       {{ $image := "" }}
       {{ if $member.Params.card.image }}
         {{ if hasPrefix $member.Params.card.image "/" }}
@@ -175,7 +174,7 @@
       <div class="team-card-wrapper" 
            data-name="{{ $member.Title | lower }}" 
            data-role="{{ $member.Params.card.membre | lower }}"
-           data-categories="{{ if $member.Params.categories }}{{ delimit $member.Params.categories " " | lower }}{{ end }}"
+           data-categories="{{ delimit $member.Params.categories| lower }}"
            data-aos="fade-up" 
            data-aos-delay="{{ mul $index 100 }}">
         
@@ -190,7 +189,7 @@
           <div class="member-photo-section">
             <div class="photo-container">
               {{ if $image }}
-              <img src="{{ $image | relURL }}" 
+              <img src="{{ $image }}" 
                    class="member-photo" 
                    alt="{{ $member.Title }}" 
                    loading="lazy">
@@ -207,7 +206,7 @@
                   <i class="bi bi-star-fill"></i>
                   <span>Fondateur</span>
                 </span>
-                {{ else if and $member.Params.categories (in $member.Params.categories "CA") }}
+                {{ else if in $member.Params.categories "CA" }}
                 <span class="badge badge-bureau">
                   <i class="bi bi-shield-check"></i>
                   <span>Bureau</span>
@@ -250,10 +249,8 @@
             
             <!-- Tags & Categories -->
             <div class="member-tags">
-              {{ if $member.Params.categories }}
               {{ range $member.Params.categories }}
               <span class="tag">{{ . }}</span>
-              {{ end }}
               {{ end }}
             </div>
             
@@ -264,19 +261,19 @@
                 <span class="stat-label">années</span>
               </div>
               <div class="stat">
-                <span class="stat-number">{{ if $member.Params.categories }}{{ len $member.Params.categories }}{{ else }}0{{ end }}</span>
+                <span class="stat-number">{{ len $member.Params.categories }}</span>
                 <span class="stat-label">rôles</span>
               </div>
             </div>
             
             <!-- Action Buttons -->
             <div class="card-actions">
-              <a href="{{ $member.Permalink }}" class="btn-primary-action">
+              <a href="{{ $member.RelPermalink }}" class="btn-primary-action">
                 <i class="bi bi-person-lines-fill"></i>
                 <span>Voir le profil</span>
               </a>
               <button class="btn-secondary-action" 
-                      onclick="openContactModal('{{ $member.Title }}', '{{ $member.Permalink }}')"
+                      onclick="openContactModal('{{ $member.Title }}')"
                       title="Contacter {{ $member.Title }}"
                       aria-label="Contacter {{ $member.Title }}">
                 <i class="bi bi-envelope"></i>
@@ -338,9 +335,7 @@
           
           <!-- Action Buttons -->
           <div class="cta-actions d-flex flex-column flex-sm-row gap-4 justify-content-center">
-            
-            {{ $page := .Site.GetPage "/documents/adhesion/" }}
-            <a href="{{ $page.Permalink }}" class="btn-cta-primary">
+            <a href="/documents/adhesion/" class="btn-cta-primary">
               <div class="btn-content">
                 <i class="bi bi-person-plus"></i>
                 <span>Devenir membre</span>
@@ -348,8 +343,7 @@
               <div class="btn-glow"></div>
             </a>
             
-            {{ $page := .Site.GetPage "/documents" }}
-            <a href="{{ $page.Permalink }}" class="btn-cta-secondary">
+            <a href="/documents/" class="btn-cta-secondary">
               <div class="btn-content">
                 <i class="bi bi-info-circle"></i>
                 <span>En savoir plus</span>
@@ -479,7 +473,6 @@
 /* Glass Morphism Cards */
 .glass-card {
   background: rgba(255, 255, 255, 0.15);
-  -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   border-radius: 24px;
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -539,9 +532,10 @@
 
 .stat-card {
   background: rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
-  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
   border: 1px solid rgba(255, 255, 255, 0.2);
   transition: all 0.3s ease;
 }
@@ -616,12 +610,10 @@
 }
 
 .filter-container {
-  background: rgba(255, 255, 255, 0.1);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
   border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 /* Search Input */
@@ -749,15 +741,13 @@
 
 /* Context7 Member Cards */
 .context7-member-card {
-  background: rgba(30, 41, 59, 0.5);
-  border-radius: 20px;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  -webkit-backdrop-filter: blur(20px);
-  backdrop-filter: blur(20px);
-  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   position: relative;
+  background: white;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+  height: 100%;
 }
 
 .context7-member-card:hover {
@@ -783,20 +773,6 @@
   background: linear-gradient(135deg, var(--context7-primary), var(--context7-secondary));
   opacity: 0.05;
   height: 100%;
-}
-
-.card-bg-effects .bg-pattern {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-  background-size: 15px 15px;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  opacity: 0;
-  transition: opacity 0.4s ease;
 }
 
 /* Member Photo */
@@ -1386,7 +1362,7 @@ class Context7AboutPage {
     
     // Contact modal function
     window.openContactModal = (memberName) => {
-      this.showContactModal(memberName);
+      this.showContactNotification(memberName);
     };
     
     // Clear filters function
@@ -1575,356 +1551,55 @@ class Context7AboutPage {
     });
   }
   
-  showContactModal(memberName) {
-    // Remove existing modal if any
-    const existingModal = document.querySelector('#contactModal');
-    if (existingModal) {
-      existingModal.remove();
-    }
-
-    // Create modal backdrop and container
-    const modal = document.createElement('div');
-    modal.id = 'contactModal';
-    modal.className = 'contact-modal-backdrop';
-    modal.innerHTML = `
-      <div class="contact-modal-container">
-        <div class="contact-modal-content">
-          <!-- Modal Header -->
-          <div class="contact-modal-header">
-            <h3><i class="bi bi-envelope-heart me-2"></i>Contacter ${memberName}</h3>
-            <button class="contact-modal-close" onclick="this.closest('.contact-modal-backdrop').remove()">
-              <i class="bi bi-x"></i>
-            </button>
-          </div>
-          
-          <!-- Modal Body -->
-          <div class="contact-modal-body">
-            <form id="contactForm" class="contact-form">
-              <div class="form-group">
-                <label for="senderName">Votre nom *</label>
-                <input type="text" id="senderName" name="senderName" required>
-              </div>
-              
-              <div class="form-group">
-                <label for="senderEmail">Votre email *</label>
-                <input type="email" id="senderEmail" name="senderEmail" required>
-              </div>
-              
-              <div class="form-group">
-                <label for="subject">Sujet *</label>
-                <input type="text" id="subject" name="subject" required placeholder="Objet de votre message">
-              </div>
-              
-              <div class="form-group">
-                <label for="message">Message *</label>
-                <textarea id="message" name="message" rows="6" required placeholder="Votre message pour ${memberName}..."></textarea>
-              </div>
-              
-              <div class="contact-modal-footer">
-                <button type="button" class="btn-secondary" onclick="this.closest('.contact-modal-backdrop').remove()">
-                  Annuler
-                </button>
-                <button type="submit" class="btn-primary">
-                  <i class="bi bi-send me-2"></i>Envoyer le message
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    `;
-
-    // Add modal styles if not exist
-    if (!document.querySelector('#contactModalStyles')) {
-      const style = document.createElement('style');
-      style.id = 'contactModalStyles';
-      style.textContent = `
-        .contact-modal-backdrop {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: rgba(0, 0, 0, 0.5);
-          backdrop-filter: blur(8px);
-          z-index: 10000;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          padding: 1rem;
-          animation: fadeIn 0.3s ease;
-        }
-        
-        .contact-modal-container {
-          background: white;
-          border-radius: 16px;
-          max-width: 600px;
-          width: 100%;
-          max-height: 90vh;
-          overflow-y: auto;
-          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-          animation: modalSlideIn 0.3s ease;
-        }
-        
-        .contact-modal-content {
-          padding: 0;
-        }
-        
-        .contact-modal-header {
-          padding: 2rem 2rem 1rem 2rem;
-          border-bottom: 1px solid #e5e7eb;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-        }
-        
-        .contact-modal-header h3 {
-          margin: 0;
-          color: var(--context7-dark);
-          font-weight: 600;
-          display: flex;
-          align-items: center;
-        }
-        
-        .contact-modal-close {
-          background: #f3f4f6;
-          border: none;
-          border-radius: 8px;
-          width: 40px;
-          height: 40px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          cursor: pointer;
-          color: #6b7280;
-          transition: all 0.2s ease;
-        }
-        
-        .contact-modal-close:hover {
-          background: #e5e7eb;
-          color: #374151;
-        }
-        
-        .contact-modal-body {
-          padding: 1rem 2rem 2rem 2rem;
-        }
-        
-        .contact-form {
-          display: flex;
-          flex-direction: column;
-          gap: 1.5rem;
-        }
-        
-        .form-group {
-          display: flex;
-          flex-direction: column;
-          gap: 0.5rem;
-        }
-        
-        .form-group label {
-          font-weight: 500;
-          color: var(--context7-dark);
-          font-size: 0.875rem;
-        }
-        
-        .form-group input,
-        .form-group textarea {
-          padding: 0.75rem 1rem;
-          border: 2px solid #e5e7eb;
-          border-radius: 8px;
-          font-size: 1rem;
-          transition: border-color 0.2s ease;
-          font-family: inherit;
-        }
-        
-        .form-group input:focus,
-        .form-group textarea:focus {
-          outline: none;
-          border-color: var(--context7-primary);
-          box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
-        }
-        
-        .form-group textarea {
-          resize: vertical;
-          min-height: 120px;
-        }
-        
-        .contact-modal-footer {
-          display: flex;
-          gap: 1rem;
-          justify-content: flex-end;
-          margin-top: 2rem;
-        }
-        
-        .btn-primary,
-        .btn-secondary {
-          padding: 0.75rem 1.5rem;
-          border-radius: 8px;
-          font-weight: 500;
-          cursor: pointer;
-          transition: all 0.2s ease;
-          border: none;
-          font-size: 0.875rem;
-          display: flex;
-          align-items: center;
-        }
-        
-        .btn-primary {
-          background: var(--context7-primary);
-          color: white;
-        }
-        
-        .btn-primary:hover {
-          background: var(--context7-primary-dark, #2563eb);
-          transform: translateY(-1px);
-        }
-        
-        .btn-secondary {
-          background: #f3f4f6;
-          color: #6b7280;
-        }
-        
-        .btn-secondary:hover {
-          background: #e5e7eb;
-          color: #374151;
-        }
-        
-        @keyframes fadeIn {
-          from { opacity: 0; }
-          to { opacity: 1; }
-        }
-        
-        @keyframes modalSlideIn {
-          from {
-            opacity: 0;
-            transform: scale(0.9) translateY(-20px);
-          }
-          to {
-            opacity: 1;
-            transform: scale(1) translateY(0);
-          }
-        }
-        
-        @media (max-width: 768px) {
-          .contact-modal-container {
-            margin: 1rem;
-            max-width: calc(100% - 2rem);
-          }
-          
-          .contact-modal-header,
-          .contact-modal-body {
-            padding-left: 1.5rem;
-            padding-right: 1.5rem;
-          }
-          
-          .contact-modal-footer {
-            flex-direction: column;
-          }
-        }
-      `;
-      document.head.appendChild(style);
-    }
-
-    // Add modal to page
-    document.body.appendChild(modal);
-
-    // Handle form submission
-    const form = modal.querySelector('#contactForm');
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      this.handleContactFormSubmit(memberName, form);
-    });
-
-    // Close modal on backdrop click
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) {
-        modal.remove();
-      }
-    });
-
-    // Focus first input
-    setTimeout(() => {
-      modal.querySelector('#senderName').focus();
-    }, 100);
-  }
-
-  handleContactFormSubmit(memberName, form) {
-    const formData = new FormData(form);
-    const data = {
-      to: memberName,
-      from: formData.get('senderName'),
-      email: formData.get('senderEmail'),
-      subject: formData.get('subject'),
-      message: formData.get('message')
-    };
-
-    // Show loading state
-    const submitBtn = form.querySelector('button[type="submit"]');
-    const originalText = submitBtn.innerHTML;
-    submitBtn.innerHTML = '<i class="bi bi-hourglass-split me-2"></i>Envoi en cours...';
-    submitBtn.disabled = true;
-
-    // Create mailto link as fallback
-    const mailto = `mailto:association@leidimen.com?subject=${encodeURIComponent(`[Contact ${memberName}] ${data.subject}`)}&body=${encodeURIComponent(`De: ${data.from} (${data.email})\nPour: ${memberName}\n\nMessage:\n${data.message}`)}`;
-
-    // Simulate sending (replace with actual email service integration)
-    setTimeout(() => {
-      // For now, open default email client
-      window.location.href = mailto;
-      
-      // Show success notification
-      this.showSuccessNotification(memberName);
-      
-      // Close modal
-      document.querySelector('#contactModal').remove();
-    }, 1500);
-  }
-
-  showSuccessNotification(memberName) {
+  showContactNotification(memberName) {
+    // Create a modern notification
     const notification = document.createElement('div');
-    notification.className = 'success-notification';
+    notification.className = 'context7-notification';
     notification.innerHTML = `
       <div class="notification-content">
         <div class="notification-icon">
-          <i class="bi bi-check-circle-fill"></i>
+          <i class="bi bi-envelope-heart"></i>
         </div>
         <div class="notification-text">
-          <h6>Message envoyé !</h6>
-          <p>Votre message pour ${memberName} a été transmis.</p>
+          <h6>Contacter ${memberName}</h6>
+          <p>Fonctionnalité bientôt disponible</p>
         </div>
+        <button class="notification-close" onclick="this.parentElement.parentElement.remove()">
+          <i class="bi bi-x"></i>
+        </button>
       </div>
     `;
-
-    // Add success notification styles if not exist
-    if (!document.querySelector('#successNotificationStyles')) {
+    
+    // Add styles if not exist
+    if (!document.querySelector('#notificationStyles')) {
       const style = document.createElement('style');
-      style.id = 'successNotificationStyles';
+      style.id = 'notificationStyles';
       style.textContent = `
-        .success-notification {
+        .context7-notification {
           position: fixed;
           top: 2rem;
           right: 2rem;
-          z-index: 10001;
+          z-index: 9999;
           background: white;
-          border-radius: 12px;
+          border-radius: 16px;
           box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-          padding: 1rem 1.5rem;
+          padding: 1.5rem;
           max-width: 350px;
           animation: slideInRight 0.3s ease;
-          border-left: 4px solid #10b981;
+          border-left: 4px solid var(--context7-primary);
         }
         
-        .success-notification .notification-content {
+        .notification-content {
           display: flex;
-          align-items: center;
+          align-items: flex-start;
           gap: 1rem;
         }
         
-        .success-notification .notification-icon {
-          background: #10b981;
+        .notification-icon {
+          background: var(--context7-primary);
           color: white;
-          width: 32px;
-          height: 32px;
+          width: 40px;
+          height: 40px;
           border-radius: 50%;
           display: flex;
           align-items: center;
@@ -1932,16 +1607,36 @@ class Context7AboutPage {
           flex-shrink: 0;
         }
         
-        .success-notification h6 {
-          margin: 0 0 0.25rem 0;
+        .notification-text h6 {
+          margin: 0 0 0.5rem 0;
+          color: var(--context7-dark);
           font-weight: 600;
-          color: #065f46;
         }
         
-        .success-notification p {
+        .notification-text p {
           margin: 0;
           color: #6b7280;
-          font-size: 0.875rem;
+          font-size: 0.9rem;
+        }
+        
+        .notification-close {
+          background: none;
+          border: none;
+          color: #9ca3af;
+          cursor: pointer;
+          padding: 0;
+          width: 24px;
+          height: 24px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50%;
+          transition: all 0.2s ease;
+        }
+        
+        .notification-close:hover {
+          background: #f3f4f6;
+          color: #374151;
         }
         
         @keyframes slideInRight {
@@ -1954,18 +1649,28 @@ class Context7AboutPage {
             opacity: 1;
           }
         }
+        
+        @media (max-width: 768px) {
+          .context7-notification {
+            top: 1rem;
+            right: 1rem;
+            left: 1rem;
+            max-width: none;
+          }
+        }
       `;
       document.head.appendChild(style);
     }
-
+    
     document.body.appendChild(notification);
-
-    // Auto remove after 4 seconds
+    
+    // Auto remove after 5 seconds
     setTimeout(() => {
       if (notification.parentElement) {
-        notification.remove();
+        notification.style.animation = 'slideInRight 0.3s ease reverse';
+        setTimeout(() => notification.remove(), 300);
       }
-    }, 4000);
+    }, 5000);
   }
 }
 

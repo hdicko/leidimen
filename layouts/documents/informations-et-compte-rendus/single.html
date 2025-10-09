@@ -7,13 +7,18 @@
     <nav aria-label="breadcrumb" class="mb-4">
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="/documents/" class="text-decoration-none text-primary">
+        {{ $page := .Site.GetPage "/documents" }}
+        
+          <a href="{{ $page.Permalink }}" class="text-decoration-none text-primary">
             <i class="bi bi-folder me-1"></i>
             Documents
           </a>
         </li>
         <li class="breadcrumb-item">
-          <a href="/documents/informations-et-compte-rendus/" class="text-decoration-none text-primary">
+
+          {{ $page := .Site.GetPage "/documents/informations-et-compte-rendus" }}
+            
+          <a href="{{ $page.Permalink }}" class="text-decoration-none text-primary">
             Informations et Comptes rendus
           </a>
         </li>
@@ -73,19 +78,22 @@
                 </a>
               </div>
               <div class="col-md-3">
-                <a href="/documents/" class="btn btn-outline-success w-100">
-                  <i class="bi bi-folder me-2"></i>
-                  Tous les documents
-                </a>
-              </div>
-              <div class="col-md-3">
-                <a href="/about/" class="btn btn-outline-info w-100">
+              {{ $page := .Site.GetPage "/documents" }}
+            <a href="{{ $page.Permalink }}" class="btn btn-outline-success w-100">
+              <i class="bi bi-folder me-2"></i>
+              Tous les documents
+            </a>
+          </div>
+          <div class="col-md-3">
+              {{ $page := .Site.GetPage "/about" }}
+                <a href="{{ $page.Permalink }}" class="btn btn-outline-info w-100">
                   <i class="bi bi-people me-2"></i>
                   Notre équipe
                 </a>
               </div>
               <div class="col-md-3">
-                <a href="/posts/" class="btn btn-outline-warning w-100">
+                {{ $page := .Site.GetPage "/posts" }}
+                <a href="{{ $page.Permalink }}" class="btn btn-outline-warning w-100">
                   <i class="bi bi-newspaper me-2"></i>
                   Actualités
                 </a>

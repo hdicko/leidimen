@@ -12,9 +12,9 @@ card:
   type: membre
 
 cascade:
-  banner: img/leidimen-logo.jpg
+  banner: img/logo/leidimen-logo.jpg
 
-image: img/leidimen-logo.jpg
+image: img/logo/leidimen-logo.jpg
 
 categories_weight: 10
 # Taxonomies
@@ -28,12 +28,8 @@ tags_weight: 10
 
 weight: 10
 
-slug: Aissa
-resources:
-  - src: "example.jpg"
-    params:
-      licence: MIT
-      caption: "Some more information about this image"
+slug: aissa
+
 ---
 
 {{< myimage src="images/aissa-logo.jpg" >}}
@@ -43,13 +39,4 @@ resources:
 - Presidente de Leidimen
 - Membre fondatrice
 
-{{< myshortcode bg-info  >}}
 
-  <div class="container px-4">
-    <div class="row gx-5">
-    <div class="col">
-        <div class="p-3 border bg-info border-0 text-center">{{< photo >}} </div>
-      </div>
-    </div>
-  </div>
-{{</myshortcode>}}
