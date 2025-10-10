@@ -14,8 +14,10 @@ L'association Leidimen s'engage à protéger la vie privée de ses visiteurs et 
 ## Responsable du traitement
 
 **Association Leidimen**  
-Adresse : {{ .Site.Params.address }}  
-Email : {{ .Site.Params.email }}
+Adresse : 14, rue des Pommiers, 91070 Bondoufle 
+Email : leidimen@gmail.com
+
+## Objectif
 
 ## Données collectées
 

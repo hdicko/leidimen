@@ -13,8 +13,8 @@ layout: "single"
 
 **Dénomination :** Association Leidimen  
 **Forme juridique :** Association loi 1901  
-**Siège social :** {{ .Site.Params.address }}  
-**Email :** {{ .Site.Params.email }}
+**Siège social :** 14, rue des Pommiers, 91070 Bondoufle  
+**Email :** leidimen@gmail.com
 
 ### Objet de l'association
 
@@ -23,7 +23,8 @@ L'association Leidimen a pour objet de développer la solidarité entre Bondoufl
 ## Responsable de la publication
 
 **Directeur de publication :** Le Président de l'association Leidimen  
-**Hébergement du site :** Netlify, Inc.
+**Hébergement du site :** github.com/hdicko/leidimen  
+
 
 ## Propriété intellectuelle
 

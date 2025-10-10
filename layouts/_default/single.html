@@ -1,11 +1,11 @@
 {{ define "main" }}
-<hr class="border border-danger border-2 opacity-50" />
-<p>Menus loaded from _default/single</p>
+{{/* <hr class="border border-danger border-2 opacity-50" />
+<p>Menus loaded from _default/single</p> */}}
 
 <section>
-  <hr class="border border-danger border-2 opacity-50" />
+  {{/* <hr class="border border-danger border-2 opacity-50" />
   <p>loading title and content of the _defaults/single.html</p>
-  <hr class="border border-danger border-2 opacity-50" />
+  <hr class="border border-danger border-2 opacity-50" /> */}}
   <!-- Title and Content of the page -->
   <div class="container-flex">
     <div class="row">
@@ -17,7 +17,7 @@
   </div>
 
   <!--  accessing the data -->
-  <hr class="border border-danger border-2 opacity-50" />
+  {{/* <hr class="border border-danger border-2 opacity-50" />
   <p>Accessing data</p>
   <hr class="border border-danger border-2 opacity-50" />
 
@@ -46,12 +46,22 @@
       </tr>
       {{ end }}
     </tbody>
-  </table>
+  </table> */}}
 
-  <hr class="border border-danger border-2 opacity-50" />
-  <p>disqus</p>
-  <hr class="border border-danger border-2 opacity-50" />
-  {{ template "_internal/disqus.html" . }}
+  <!-- Comments Section -->
+  <div class="container mt-5 mb-5">
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <hr class="my-4" />
+        <h3 class="mb-4">Commentaires</h3>
+        {{ if .Site.Config.Services.Disqus.Shortname }}
+          {{ template "_internal/disqus.html" . }}
+        {{ else }}
+          <p class="text-muted">Les commentaires ne sont pas activés pour le moment.</p>
+        {{ end }}
+      </div>
+    </div>
+  </div>
 </section>
 
 {{ end }}

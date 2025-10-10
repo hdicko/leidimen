@@ -1,25 +1,19 @@
 ---
-# titre du post
-title: "Ecole de Dorool"
-
-# date de creation du post
-date: 2012-01-27T20:37:50+02:00
-
-# dev
 draft: false
-
-# taxonomy
-tags:
-  - blog
+auteur: Melina Dicko
+title: Nouvelle AI created by claude
+date: 2025-10-10
+lastmod: 2025-10-10
+author: Hamadoun Dicko
 villages:
   - dorool
-
-# type
+  - douentza
+slug: ecole de dorool
+description: Cet article est créer par l'agent AI claude
+moods:
+  - inspire
+tags:
+  - blog
 type: posts
-
-# slug
-slug: "ecole de dorool"
-
-#auteur du post
-auteur: Melina Dicko
 ---
+***A﻿I Claude content***

@@ -2,188 +2,167 @@ backend:
   name: git-gateway
   branch: main
 
-# when using the default proxy server port
+# Local backend for development - Run: npx netlify-cms-proxy-server
 local_backend: true
-media_folder: "static/img"
-public_folder: "/img"
+
+# Media files will be stored in the repo under static/images/uploads
+media_folder: "static/images/uploads"
+public_folder: "/images/uploads"
 
 collections:
+  # ===== POSTS COLLECTION =====
   - name: "posts"
-    label: "Articles"
+    label: "📝 Articles"
+    label_singular: "Article"
     folder: "content/posts"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{slug}}"
+    editor:
+      preview: false
     fields:
-      - {label: "Titre", name: "title", widget: "string"}
-      - {label: "Date", name: "date", widget: "datetime"}
-      - {label: "Auteur", name: "author", widget: "string", default: "Leidimen"}
-      - {label: "Description", name: "description", widget: "text"}
-      - {label: "Image", name: "image", widget: "image", required: false}
-      - {label: "Catégories", name: "categories", widget: "list", required: false}
-      - {label: "Tags", name: "tags", widget: "list", required: false}
-      - {label: "Brouillon", name: "draft", widget: "boolean", default: false}
-      - {label: "Contenu", name: "body", widget: "markdown"}
+      - {label: "Titre", name: "title", widget: "string", required: true, hint: "Le titre de l'article"}
+      - {label: "Date de publication", name: "date", widget: "datetime", format: "YYYY-MM-DD", required: true}
+      - {label: "Dernière modification", name: "lastmod", widget: "datetime", format: "YYYY-MM-DD", required: false}
+      - {label: "Auteur", name: "author", widget: "string", default: "Leidimen", required: false}
+      - {label: "Brouillon", name: "draft", widget: "boolean", default: false, required: false, hint: "Cochez pour masquer l'article du site"}
+      - {label: "Description courte", name: "description", widget: "text", required: false, hint: "Description pour SEO et aperçu (150-160 caractères recommandés)"}
+      - {label: "Image principale", name: "image", widget: "image", required: false, hint: "Image de couverture de l'article"}
+      - label: "Villages concernés"
+        name: "villages"
+        widget: "select"
+        multiple: true
+        required: false
+        hint: "Sélectionnez les villages concernés par cet article"
+        options:
+          - {label: "Darawal", value: "darawal"}
+          - {label: "Debere", value: "debere"}
+          - {label: "Diambana", value: "diambana"}
+          - {label: "Diona", value: "diona"}
+          - {label: "Dorool", value: "dorool"}
+          - {label: "Douentza", value: "douentza"}
+          - {label: "Tanal", value: "tanal"}
+      - label: "Humeur/Mood"
+        name: "moods"
+        widget: "select"
+        multiple: true
+        required: false
+        hint: "Ajoutez une humeur à l'article"
+        options:
+          - {label: "Heureux", value: "heureux"}
+          - {label: "Triste", value: "triste"}
+          - {label: "Inspiré", value: "inspire"}
+          - {label: "Motivé", value: "motive"}
+          - {label: "Reconnaissant", value: "reconnaissant"}
+      - {label: "Catégories", name: "categories", widget: "list", required: false, hint: "Ex: Éducation, Santé, Infrastructure"}
+      - {label: "Tags", name: "tags", widget: "list", required: false, hint: "Mots-clés pour l'article"}
+      - {label: "Contenu", name: "body", widget: "markdown", required: true}
 
-  - name: "about"
-    label: "Équipe"
-    folder: "content/about"
-    path: "{{slug}}/index"
-    media_folder: "images"
-    public_folder: "images"
-    create: true
-    fields:
-      - {label: "Nom", name: "title", widget: "string"}
-      - {label: "Date", name: "date", widget: "datetime"}
-      - {label: "Photo", name: "image", widget: "image"}
-      - {label: "Poste", name: "job", widget: "string", required: false}
-      - {label: "Email", name: "email", widget: "string", required: false}
-      - {label: "Téléphone", name: "phone", widget: "string", required: false}
-      - {label: "Bio courte", name: "bio", widget: "text", required: false}
-      - {label: "Compétences", name: "skills", widget: "list", required: false}
-      - {label: "Contenu", name: "body", widget: "markdown"}
-
-  - name: "villages"
-    label: "Villages"
-    folder: "content/villages"
-    path: "{{slug}}/index"
-    media_folder: "images"
-    public_folder: "images"
-    create: true
-    fields:
-      - {label: "Nom du village", name: "title", widget: "string"}
-      - {label: "Population", name: "population", widget: "number", required: false}
-      - {label: "Région", name: "region", widget: "string", default: "Douentza"}
-      - {label: "Description courte", name: "description", widget: "text"}
-      - {label: "Photos", name: "images", widget: "list", field: {label: "Image", name: "image", widget: "image"}, required: false}
-      - {label: "Projets", name: "projects", widget: "list", required: false}
-      - {label: "Contenu", name: "body", widget: "markdown"}
-
+  # ===== TEAM MEMBERS COLLECTION =====
   - name: "team"
-    label: "Équipe"
+    label: "👥 Équipe"
+    label_singular: "Membre"
     folder: "content/about"
     create: true
     slug: "{{slug}}"
-    media_folder: "images"
-    public_folder: "images"
+    editor:
+      preview: false
     fields:
-      - {label: "Nom complet", name: "title", widget: "string"}
-      - {label: "Date d'ajout", name: "date", widget: "datetime", default: "{{now}}"}
-      - {label: "Photo", name: "card.image", widget: "image", required: false}
-      - {label: "Fonction", name: "card.fonction", widget: "string"}
-      - {label: "Statut", name: "card.membre", widget: "select", options: ["fondateur", "bureau", "adherent", "bienfaiteur"], default: "adherent"}
-      - {label: "Ville", name: "card.ville", widget: "string"}
-      - {label: "Pays", name: "card.pays", widget: "string", default: "France"}
-      - {label: "Email", name: "card.email", widget: "string", required: false}
-      - {label: "Téléphone", name: "card.tel", widget: "string", required: false}
-      - {label: "LinkedIn", name: "card.linkedin", widget: "string", required: false}
-      - {label: "Spécialités", name: "card.specialites", widget: "list", required: false}
-      - {label: "Catégories", name: "categories", widget: "list", options: ["CA", "Bureau", "Membres"], required: false}
-      - {label: "Biography", name: "body", widget: "markdown"}
+      - {label: "Nom complet", name: "title", widget: "string", required: true}
+      - {label: "Date d'ajout", name: "date", widget: "datetime", format: "YYYY-MM-DD", default: ""}
+      - label: "Informations carte"
+        name: "card"
+        widget: "object"
+        fields:
+          - {label: "Photo", name: "image", widget: "image", required: false, hint: "Photo du membre (format carré recommandé)"}
+          - {label: "Fonction", name: "fonction", widget: "string", required: true, hint: "Ex: Président, Trésorier, Membre actif"}
+          - label: "Statut"
+            name: "membre"
+            widget: "select"
+            options: ["fondateur", "bureau", "adherent", "bienfaiteur"]
+            default: "adherent"
+            required: true
+          - {label: "Ville", name: "ville", widget: "string", required: false}
+          - {label: "Pays", name: "pays", widget: "string", default: "France", required: false}
+          - {label: "Email", name: "email", widget: "string", required: false}
+          - {label: "Téléphone", name: "tel", widget: "string", required: false}
+          - {label: "LinkedIn", name: "linkedin", widget: "string", required: false, hint: "URL du profil LinkedIn"}
+          - {label: "Devise personnelle", name: "devise", widget: "string", required: false}
+          - {label: "Spécialités", name: "specialites", widget: "list", required: false, hint: "Compétences ou domaines d'expertise"}
+      - {label: "Catégories", name: "categories", widget: "list", required: false, hint: "Ex: CA, Bureau, Membres"}
+      - {label: "Ordre d'affichage", name: "weight", widget: "number", default: 100, required: false, hint: "Plus le nombre est petit, plus le membre apparaît en premier"}
+      - {label: "Biographie", name: "body", widget: "markdown", required: false}
 
+  # ===== VILLAGES COLLECTION =====
+  - name: "villages"
+    label: "🏘️ Villages"
+    label_singular: "Village"
+    folder: "content/villages"
+    create: true
+    slug: "{{slug}}"
+    editor:
+      preview: false
+    fields:
+      - {label: "Nom du village", name: "title", widget: "string", required: true}
+      - {label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", required: true}
+      - {label: "Description courte", name: "description", widget: "text", required: false, hint: "Brève description du village"}
+      - {label: "Image principale", name: "image", widget: "image", required: false}
+      - {label: "Population", name: "population", widget: "number", required: false}
+      - {label: "Région", name: "region", widget: "string", default: "Douentza", required: false}
+      - {label: "Coordonnées GPS", name: "coordinates", widget: "string", required: false, hint: "Format: latitude, longitude"}
+      - label: "Projets en cours"
+        name: "projects"
+        widget: "list"
+        required: false
+        hint: "Liste des projets actifs dans le village"
+        fields:
+          - {label: "Nom du projet", name: "name", widget: "string"}
+          - {label: "Description", name: "description", widget: "text"}
+          - {label: "Année", name: "year", widget: "number", required: false}
+      - {label: "Contenu détaillé", name: "body", widget: "markdown", required: false}
+
+  # ===== DOCUMENTS COLLECTION =====
   - name: "documents"
-    label: "Documents"
+    label: "📄 Documents"
+    label_singular: "Document"
     folder: "content/documents"
     create: true
     slug: "{{slug}}"
-    fields:
-      - {label: "Titre", name: "title", widget: "string"}
-      - {label: "Type", name: "type", widget: "select", options: ["Rapport", "Politique", "Guide", "Formulaire", "Compte-rendu"]}
-      - {label: "Date", name: "date", widget: "datetime"}
-      - {label: "Fichier PDF", name: "file", widget: "file", required: false}
-      - {label: "Description", name: "description", widget: "text"}
-      - {label: "Contenu", name: "body", widget: "markdown"}
-
-  - name: "galleries"
-    label: "Galeries"
-    folder: "content/galleries"
-    path: "{{slug}}/index"
-    media_folder: "images"
-    public_folder: "images"
-    create: true
-    fields:
-      - {label: "Titre", name: "title", widget: "string"}
-      - {label: "Date", name: "date", widget: "datetime"}
-      - {label: "Description", name: "description", widget: "text"}
-      - {label: "Lieu", name: "location", widget: "string", required: false}
-      - {label: "Photos", name: "images", widget: "list", field: {label: "Image", name: "image", widget: "image"}}
-      - {label: "Contenu", name: "body", widget: "markdown"}
-
-  - name: "pages"
-    label: "Pages principales"
-    files:
-      - label: "Page d'accueil"
-        name: "home"
-        file: "content/_index.md"
-        fields:
-          - {label: "Titre", name: "title", widget: "string"}
-          - {label: "Description", name: "description", widget: "text"}
-          - {label: "Contenu", name: "body", widget: "markdown"}
-
-  - name: "config"
-    label: "Configuration"
     editor:
       preview: false
-    files:
-      - label: "Configuration générale"
-        name: "hugo"
-        file: "hugo.toml"
+    fields:
+      - {label: "Titre", name: "title", widget: "string", required: true}
+      - {label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", required: true}
+      - label: "Type de document"
+        name: "type"
+        widget: "select"
+        options: ["Rapport", "Politique", "Guide", "Formulaire", "Compte-rendu", "Statuts", "Adhésion"]
+        required: false
+      - {label: "Description", name: "description", widget: "text", required: false}
+      - {label: "Fichier PDF", name: "file", widget: "file", required: false, hint: "Téléchargez le document PDF"}
+      - {label: "Contenu", name: "body", widget: "markdown", required: false}
+
+  # ===== GALLERIES COLLECTION =====
+  - name: "galleries"
+    label: "📸 Galeries"
+    label_singular: "Galerie"
+    folder: "content/galleries"
+    create: true
+    slug: "{{slug}}"
+    editor:
+      preview: false
+    fields:
+      - {label: "Titre de la galerie", name: "title", widget: "string", required: true}
+      - {label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", required: true}
+      - {label: "Description", name: "description", widget: "text", required: false}
+      - {label: "Lieu", name: "location", widget: "string", required: false, hint: "Ex: Paris, Dorool, etc."}
+      - {label: "Image de couverture", name: "coverImage", widget: "image", required: false}
+      - label: "Photos de la galerie"
+        name: "images"
+        widget: "list"
+        required: false
+        hint: "Ajoutez toutes les photos de la galerie"
         fields:
-          - {label: "URL de base", name: "baseURL", widget: "string"}
-          - {label: "Titre du site", name: "title", widget: "string"}
-          - {label: "Description", name: "description", widget: "string"}
-          - {label: "Langue", name: "languageCode", widget: "string", default: "fr-fr"}
-      - { label: "Description", name: "description", widget: "string" }
-      - { label: "Body", name: "body", widget: "markdown" }
-  - name: "pages"
-    label: "Pages"
-    files:
-      - file: "content/_index.md"
-        label: "Home Page"
-        name: "home"
-        fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Blurb", name: "blurb", widget: "text" }
-          - {
-              label: "Section",
-              name: "section",
-              widget: "object",
-              fields:
-                [
-                  { label: "Heading", name: "heading", widget: string },
-                  { label: "Text", name: "text", widget: "text" },
-                ],
-            }
-      - file: "content/about/hamadoun.md"
-        label: "Hamadoun"
-        name: "hamadoun"
-        fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Body", name: "body", widget: "text" }
-          - {
-              label: "Card",
-              name: "card",
-              widget: "object",
-              fields:
-                [
-                  { label: "devise", name: "devise", widget: string },
-                  { label: "membre", name: "membre", widget: "text" },
-                ],
-            }
-      - file: "/Documents/"
-        label: "Documents"
-        name: ""
-        fields:
-          - label: "Title"
-            name: "title"
-            widget: "string"
-          - label: "Description"
-            name: "description"
-            widget: "string"
-          - label: "Image"
-            name: "image"
-            widget: "image"
-            choose_url: true
-            media_library:
-              config:
-                multiple: true
-                media_folder: "documents"
+          - {label: "Image", name: "src", widget: "image"}
+          - {label: "Légende", name: "caption", widget: "string", required: false}
+          - {label: "Crédit photo", name: "credit", widget: "string", required: false}
+      - {label: "Contenu additionnel", name: "body", widget: "markdown", required: false}

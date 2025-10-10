@@ -271,12 +271,12 @@
             
             <!-- Action Buttons -->
             <div class="card-actions">
-              <a href="{{ $member.Permalink }}" class="btn-primary-action">
+              <a href="{{ $member.RelPermalink }}" class="btn-primary-action">
                 <i class="bi bi-person-lines-fill"></i>
                 <span>Voir le profil</span>
               </a>
               <button class="btn-secondary-action" 
-                      onclick="openContactModal('{{ $member.Title }}', '{{ $member.Permalink }}')"
+                      onclick="openContactModal('{{ $member.Title }}', '{{ $member.RelPermalink }}')"
                       title="Contacter {{ $member.Title }}"
                       aria-label="Contacter {{ $member.Title }}">
                 <i class="bi bi-envelope"></i>
@@ -773,6 +773,7 @@
   bottom: 0;
   opacity: 0;
   transition: opacity 0.3s ease;
+  pointer-events: none;
 }
 
 .context7-member-card:hover .card-bg-effects {

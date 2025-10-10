@@ -1,184 +1,166 @@
 {{ define "main" }}
+{{ $terms := .Data.Terms }}
+{{ $totalTerms := len $terms }}
+{{ $totalPages := 0 }}
+{{ range $t := $terms }}{{ $totalPages = add $totalPages $t.Count }}{{ end }}
 
-<body>
-  <!-- -->
-  <hr class="border border-danger border-1 opacity-50" />
-  <p class="fs-2 text-center badge text-bg-info">
-    processing all site taxonomies layouts/villages/village.terms.html.html
-  </p>
-
-  {{ .Content }} {{/**
-  <ul>
-    {{ range $taxonomy, $terms := site.Taxonomies }}
-    <li>
-      {{ with site.GetPage $taxonomy }}
-      <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
-      {{ end }}
-      <ul>
-        {{ range $term, $weightedPages := $terms }}
-        <li>
-          {{ with site.GetPage (path.Join $taxonomy $term) }}
-          <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
-          {{ end }}
-        </li>
-        <ul>
-          {{ range $weightedPages }}
-          <li>
-            <a href="{{ .RelPermalink }}"> {{ .LinkTitle }}</a>
-          </li>
-          {{ end }}
-        </ul>
-        {{ end }}
-      </ul>
-    </li>
-    {{ end }}
-  </ul>
-
-  **/}} {{/* content from content/villages/_index.md */}} {{/**
-  <section id="villages">
-    <div>
-      <ul>
-        {{ $data := .Data }} {{ range $key, $value := .Data.Terms }}
-        <li>
-          <a href="/{{ $data.Plural }}/{{ $key | urlize }}">{{ $key }}</a> {{
-          len $value }}
-        </li>
-        {{ end }}
-      </ul>
-    </div>
-  </section>
-
-  <hr class="border border-danger border-1 opacity-50" />
-  <p>Example terms.html file (ordered by popularity)</p>
-  <hr class="border border-danger border-1 opacity-50" />
-  <section id="main">
-    <div>
-      <h1 id="title">{{ .Title }}</h1>
-      {{ $data := .Data }} {{ range $key,$value := .Data.Terms.ByCount }}
-      <h2>
-        <a href="/{{ $data.Plural }}/{{ $value.Name | urlize }}"
-          >{{ $value.Name }}</a
-        >
-      </h2>
-      <ul>
-        {{ range $value.Pages.ByDate }}
-        <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
-        {{ end }}
-      </ul>
-      {{ end }}
-    </div>
-  </section>
-
-  <hr class="border border-danger border-1 opacity-50" />
-  <p>Example terms.html file (alphabetical)</p>
-  <hr class="border border-danger border-1 opacity-50" />
-  <section id="main">
-    <div>
-      <h1 id="title">{{ .Title }}</h1>
-      <ul>
-        {{ $data := .Data }} {{ range $key, $value := .Data.Terms.Alphabetical
-        }}
-        <li>
-          <a href="/{{ $data.Plural }}/{{ $value.Name | urlize }}"
-            >{{ $value.Name }}</a
-          >
-        </li>
-        {{ end }}
-      </ul>
-    </div>
-  </section>
-
-  <hr class="border border-danger border-1 opacity-50" />
-  <section id="main">
-    <div class="container">
-      {{ $data := .Data }} {{ range $key,$value := .Data.Terms.ByCount }}
-      <h2>
-        <a href="/{{ $data.Plural }}/{{ $value.Name | urlize }}"
-          >{{ $value.Name }}</a
-        >
-      </h2>
-      <ul class="list-group me-auto">
-        {{ range $value.Pages.ByDate }}
-        <li class="list-group-item">
-          <a href="{{ .Permalink }}">{{ .Title }}</a>
-        </li>
-        {{ end }}
-      </ul>
-      {{ end }}
-    </div>
-  </section>
-</body>
-**/}} {{/** Accordeon **/}}
-
-<!-- 
-This HTML code represents a template file used in a Hugo website. It displays a list of terms and associated posts in an accordion format.
-
-The template uses the following variables:
-- $data: Represents the data passed to the template.
-- .Data.Terms.ByCount: Represents a range of terms sorted by count.
-
-The template structure is as follows:
-- A container div with top and bottom margins.
-- A row div with centered content.
-- A column div with a width of 8 columns on large screens and 10 columns on medium screens.
-- An accordion div with the ID "accordionExample".
-- A range loop that iterates over the terms in .Data.Terms.ByCount.
-- For each term, an accordion item is created with a unique ID and a collapsed accordion button.
-- The accordion item contains a heading with the term name and a count badge.
-- The content of the accordion item is collapsed by default and contains a link to associated posts and a list of associated posts.
-- The associated posts are displayed as clickable list items.
-
-Note: This code is specific to a Hugo website and relies on Hugo's templating language and data structure.
--->
-{{ $data := .Data }}
-<div class="container mt-3 mb-5">
-  <div class="row justify-content-center">
-    <div class="col-lg-8 col-md-10">
-      <div class="accordion shadow" id="accordionExample">
-        {{ range $key, $value := .Data.Terms.ByCount }}
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="heading{{ $key }}">
-            <button
-              class="accordion-button collapsed text-primary"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapse{{ $value.Name }}"
-              aria-expanded="false"
-              aria-controls="collapse{{ $value.Name }}"
-            >
-              {{ $value.Name }}
-              <span class="badge bg-primary ms-2 rounded-pill"
-                >{{ $value.Count }}</span
-              >
-            </button>
-          </h2>
-          <div
-            id="collapse{{ $value.Name }}"
-            class="accordion-collapse collapse"
-            aria-labelledby="heading{{ $key }}"
-            data-bs-parent="#accordionExample"
-          >
-            <div class="accordion-body p-3">
-              <a
-                href="{{ $.Site.LanguagePrefix | absURL }}/{{ $data.Plural }}/{{ $value.Name | urlize }}/"
-                class="d-block mb-2 text-decoration-none fw-bold"
-                >Posts associés</a
-              >
-              <div class="list-group list-group-flush">
-                {{ range $item := $value.WeightedPages }}
-                <a
-                  href="{{ $item.Permalink }}"
-                  class="list-group-item list-group-item-action text-decoration-none"
-                  >{{ $item.Title }}</a
-                >
-                {{ end }}
-              </div>
-            </div>
+<!-- Hero Section -->
+<section class="bg-primary text-white py-5 mb-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-8">
+        <h1 class="display-4 fw-bold mb-3">🏘️ {{ .Title | default "Villages" }}</h1>
+        <p class="lead mb-0">Découvrez {{ $totalTerms }} villages contenant {{ $totalPages }} contenus au total</p>
+      </div>
+      <div class="col-lg-4 text-lg-end">
+        <div class="d-flex justify-content-lg-end justify-content-start gap-3 mt-3 mt-lg-0">
+          <div class="text-center">
+            <div class="h2 fw-bold mb-0">{{ $totalTerms }}</div>
+            <small>Villages</small>
+          </div>
+          <div class="text-center">
+            <div class="h2 fw-bold mb-0">{{ $totalPages }}</div>
+            <small>Contenus</small>
           </div>
         </div>
-        {{ end }}
       </div>
     </div>
   </div>
+</section>
+
+<div class="container mb-5">
+  <!-- Search and Filters -->
+  <div class="row mb-4">
+    <div class="col-lg-8 mx-auto">
+      <div class="card border-0 shadow-sm">
+        <div class="card-body p-4">
+          <div class="row g-3 align-items-end">
+            <div class="col-md-8">
+              <label for="searchTerms" class="form-label fw-semibold">Rechercher</label>
+              <input type="search" class="form-control form-control-lg" id="searchTerms" 
+                     placeholder="Filtrer par nom de village..." autocomplete="off">
+            </div>
+            <div class="col-md-4">
+              <label for="sortTerms" class="form-label fw-semibold">Trier par</label>
+              <select class="form-select form-select-lg" id="sortTerms" title="Options de tri">
+                <option value="count">Nombre de contenus</option>
+                <option value="name">Ordre alphabétique</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Villages Grid -->
+  <div class="row g-4" id="termsContainer">
+    {{ range $key, $value := .Data.Terms.ByCount }}
+    <div class="col-lg-4 col-md-6 term-card" data-name="{{ $value.Name | lower }}" data-count="{{ $value.Count }}">
+      <div class="card h-100 border-0 shadow-sm hover-shadow">
+        <div class="card-header bg-light border-0 d-flex justify-content-between align-items-center">
+          <h5 class="card-title mb-0 fw-bold text-primary">{{ $value.Name }}</h5>
+          <span class="badge bg-primary rounded-pill">{{ $value.Count }}</span>
+        </div>
+        <div class="card-body">
+          <p class="text-muted small mb-3">{{ $value.Count }} contenu{{ if gt $value.Count 1 }}s{{ end }} disponible{{ if gt $value.Count 1 }}s{{ end }}</p>
+          
+          {{ if $value.WeightedPages }}
+          <div class="mb-3">
+            <h6 class="fw-semibold mb-2">Contenus récents :</h6>
+            <ul class="list-unstyled mb-0">
+              {{- range first 3 $value.WeightedPages -}}
+              <li class="mb-1">
+                <a href="{{ .Permalink }}" class="text-decoration-none text-dark">
+                  <small>{{ .Title | truncate 40 }}</small>
+                </a>
+              </li>
+              {{- end -}}
+              {{- if gt (len $value.WeightedPages) 3 -}}
+              <li class="text-muted small">
+                +{{ sub (len $value.WeightedPages) 3 }} autre{{ if gt (sub (len $value.WeightedPages) 3) 1 }}s{{ end }}
+              </li>
+              {{- end -}}
+            </ul>
+          </div>
+          {{ end }}
+        </div>
+        <div class="card-footer bg-transparent border-0 pt-0">
+          <a href="{{ $.Site.LanguagePrefix | absURL }}/{{ $.Data.Plural }}/{{ $value.Name | urlize }}/" 
+             class="btn btn-primary btn-sm w-100">
+            →&nbsp;&nbsp;Voir tout
+          </a>
+        </div>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+
+  <!-- No Results Message -->
+  <div id="noResults" class="text-center py-5 d-none">
+    <div class="text-muted">
+      <div class="display-1 mb-3">🔍</div>
+      <h4>Aucun résultat trouvé</h4>
+      <p>Essayez de modifier votre recherche ou vos filtres.</p>
+    </div>
+  </div>
 </div>
-{{ end }}
+
+<style>
+.hover-shadow {
+  transition: all 0.2s ease-in-out;
+}
+.hover-shadow:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+.card-header {
+  border-radius: 0.375rem 0.375rem 0 0 !important;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('searchTerms');
+  const sortSelect = document.getElementById('sortTerms');
+  const container = document.getElementById('termsContainer');
+  const noResults = document.getElementById('noResults');
+  const termCards = Array.from(document.querySelectorAll('.term-card'));
+
+  function filterAndSort() {
+    const searchTerm = searchInput.value.toLowerCase().trim();
+    const sortBy = sortSelect.value;
+    
+    // Filter cards
+    const visibleCards = termCards.filter(card => {
+      const name = card.dataset.name;
+      const isVisible = !searchTerm || name.includes(searchTerm);
+      card.style.display = isVisible ? 'block' : 'none';
+      return isVisible;
+    });
+
+    // Sort visible cards
+    visibleCards.sort((a, b) => {
+      if (sortBy === 'name') {
+        return a.dataset.name.localeCompare(b.dataset.name);
+      } else {
+        return parseInt(b.dataset.count) - parseInt(a.dataset.count);
+      }
+    });
+
+    // Reorder in DOM
+    visibleCards.forEach(card => container.appendChild(card));
+
+    // Show/hide no results message
+    if (visibleCards.length === 0) {
+      noResults.classList.remove('d-none');
+    } else {
+      noResults.classList.add('d-none');
+    }
+  }
+
+  searchInput.addEventListener('input', filterAndSort);
+  sortSelect.addEventListener('change', filterAndSort);
+});
+</script>
+{{ end }} {{/* end main */}}

@@ -2,12 +2,17 @@ baseURL = 'https://hdicko.github.io/leidimen/'
 relativeURLs = false
 languageCode = "en-us"
 title = "Leidimen"
+disqusShortname = "leidimen"
 pagination.pagerSize = 8
-image = "img/leidimen-logo.jpg"
+image = "images/leidimen-logo.jpg"
 description = "Solidarite Bondoufle - Mali (Region de Douentza)"
 enableInlineShortcodes = true
 enableEmoji = true
 assetDir = "static"
+address = "Association Leidimen, 14 rue des Pommiers, 91070 Bondoufle."
+email = "association@leidimen.com"
+tel = "+33603751327"
+
 
 [sitemap]
   changefreq = "monthly"
