@@ -4,7 +4,7 @@ auteur: Hamassala David Dicko
 date: "2013-03-06T14:30:00+01:00"
 description: Reprise d'aide
 draft: false
-image: /posts/images/paris/paris.jpg
+image: /images/bureau-leidimen.jpg
 linkTitle: reprise de l'aide au developpement
 slug: aide
 tags:
