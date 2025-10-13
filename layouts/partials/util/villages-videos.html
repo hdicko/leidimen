@@ -1,5 +1,8 @@
-<!-- Modern Village Videos Gallery with Fancy Effects -->
-{{ with .Resources.ByType "video" }}
+<!-- Modern Village Videos and Audio Gallery with Fancy Effects -->
+{{ $videos := .Resources.ByType "video" }}
+{{ $audios := .Resources.ByType "audio" }}
+{{ $mediaFiles := union $videos $audios }}
+{{ with $mediaFiles }}
 <div class="village-videos-section">
   <!-- Section Header -->
   <div class="videos-header text-center mb-5" data-aos="fade-up">
@@ -9,12 +12,12 @@
       </span>
     </div>
     <h2 class="videos-title">
-      <span class="title-gradient">Galerie Vidéos</span>
+      <span class="title-gradient">Galerie Vidéos & Audio</span>
     </h2>
     <div class="videos-subtitle">
       <span class="video-count-badge">
         <i class="bi bi-camera-video"></i>
-        {{ len . }} {{ if eq (len .) 1 }}vidéo{{ else }}vidéos{{ end }}
+        {{ len . }} {{ if eq (len .) 1 }}média{{ else }}médias{{ end }}
       </span>
     </div>
     <div class="title-underline"></div>
@@ -22,12 +25,14 @@
 
   <!-- Videos Grid -->
   <div class="modern-videos-grid">
-    {{ range $index, $video := . }}
+    {{ range $index, $media := . }}
+    {{ $isAudio := in $media.MediaType.Type "audio" }}
     <div class="video-item-wrapper" data-aos="fade-up" data-aos-delay="{{ mul $index 50 }}">
-      <div class="video-card-modern">
-        <!-- Video Container -->
-        <div class="video-container-modern">
-          <!-- Play Button Overlay (before playing) -->
+      <div class="video-card-modern {{ if $isAudio }}audio-card{{ end }}">
+        <!-- Media Container -->
+        <div class="video-container-modern {{ if $isAudio }}audio-container{{ end }}">
+          {{ if not $isAudio }}
+          <!-- Play Button Overlay (before playing) - for videos only -->
           <div class="play-overlay">
             <div class="play-button-wrapper">
               <div class="play-button-circle">
@@ -36,28 +41,45 @@
             </div>
             <div class="play-text">Cliquez pour lire</div>
           </div>
+          {{ end }}
 
-          <!-- Video Element -->
+          {{ if $isAudio }}
+          <!-- Audio Player -->
+          <div class="audio-player-wrapper">
+            <div class="audio-visual">
+              <i class="bi bi-music-note-beamed"></i>
+            </div>
+            <audio 
+              class="audio-player-modern" 
+              controls 
+              preload="metadata">
+              <source src="{{ $media.RelPermalink }}" type="{{ $media.MediaType }}" />
+              Votre navigateur ne supporte pas la lecture audio.
+            </audio>
+          </div>
+          {{ else }}
+          <!-- Video Player -->
           <video 
             class="video-player-modern" 
             controls 
             preload="metadata"
             onplay="this.parentElement.classList.add('playing')"
             onpause="this.parentElement.classList.remove('playing')">
-            <source src="{{ $video.RelPermalink }}" type="video/mp4" />
+            <source src="{{ $media.RelPermalink }}" type="video/mp4" />
             Votre navigateur ne supporte pas la lecture de vidéos.
           </video>
+          {{ end }}
           
           <!-- Decorative Border -->
           <div class="video-border-effect"></div>
         </div>
 
-        <!-- Video Info -->
+        <!-- Media Info -->
         <div class="video-info-modern">
           <div class="video-meta">
             <span class="video-number">
-              <i class="bi bi-film"></i>
-              Vidéo {{ add $index 1 }}
+              <i class="{{ if $isAudio }}bi bi-music-note{{ else }}bi bi-film{{ end }}"></i>
+              {{ if $isAudio }}Audio{{ else }}Vidéo{{ end }} {{ add $index 1 }}
             </span>
             <span class="video-badge">
               <i class="bi bi-badge-hd"></i>
@@ -393,8 +415,65 @@
   }
 }
 
+/* Audio Player Styles */
+.audio-card .video-container-modern {
+  aspect-ratio: 16 / 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.audio-player-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.audio-visual {
+  font-size: 5rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2rem;
+  animation: audioIconPulse 2s ease-in-out infinite;
+}
+
+@keyframes audioIconPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+
+.audio-player-modern {
+  width: 90%;
+  max-width: 500px;
+  height: 54px;
+  border-radius: 27px;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.audio-player-modern::-webkit-media-controls-panel {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 27px;
+}
+
+.audio-card:hover .audio-visual {
+  transform: scale(1.15);
+  color: white;
+}
+
 /* Accessibility */
-.video-player-modern:focus {
+.video-player-modern:focus,
+.audio-player-modern:focus {
   outline: 3px solid #f5576c;
   outline-offset: 4px;
 }
@@ -403,7 +482,8 @@
   .video-card-modern,
   .play-button-circle,
   .video-border-effect,
-  .videos-header .decoration-icon {
+  .videos-header .decoration-icon,
+  .audio-visual {
     animation: none;
     transition: none;
   }
