@@ -1,19 +1,400 @@
-<!-- rendering some images -->
-<!-- using fancybox -- https://fancyapps.com/fancybox/ -->
-<div class="container d-flex justify-content-center flex-wrap text-center">
-  {{ with .Resources.ByType "image" }}
-  <h1 class="text-center fs-4">
-    <mark> Quelques images </mark>
-  </h1>
-  {{ range . }} {{ $img := . }} {{ $alt := $img.Resize "120x150" }} {{/* $img :=
-  $img | images.Filter (images.GaussianBlur 6) (images.Pixelate 8) */}}
-  <a data-fancybox="gallery" data-src="{{ $img.RelPermalink }}">
-    <img src="{{ $alt.RelPermalink }}" class="img-fluid" />
-  </a>
-  <!-- 
-    <figure style="padding: 0.25rem; margin: 2rem 0; background-color: #cae">
-    <img style="max-width: 100%; width: auto; height: auto;" src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}">
-    </figure>
-    -->
-  {{ end }} {{ end }}
+<!-- Modern Village Images Gallery with Fancy Effects -->
+{{ with .Resources.ByType "image" }}
+<div class="village-gallery-section">
+  <!-- Section Header -->
+  <div class="gallery-header text-center mb-5" data-aos="fade-up">
+    <div class="header-decoration mb-3">
+      <span class="decoration-icon">
+        <i class="bi bi-image"></i>
+      </span>
+    </div>
+    <h2 class="gallery-title">
+      <span class="title-gradient">Galerie Photos</span>
+    </h2>
+    <div class="gallery-subtitle">
+      <span class="image-count-badge">
+        <i class="bi bi-images"></i>
+        {{ len . }} {{ if eq (len .) 1 }}photo{{ else }}photos{{ end }}
+      </span>
+    </div>
+    <div class="title-underline"></div>
+  </div>
+
+  <!-- Images Grid -->
+  <div class="modern-gallery-grid">
+    {{ range $index, $img := . }}
+    {{ $thumbnail := $img.Fill "400x300 center" }}
+    {{ $medium := $img.Fit "800x600" }}
+    
+    <div class="gallery-item-wrapper" data-aos="zoom-in" data-aos-delay="{{ mul $index 50 }}">
+      <div class="gallery-item-modern">
+        <!-- Image Container -->
+        <a href="{{ $img.RelPermalink }}" 
+           data-fancybox="village-gallery" 
+           data-caption="{{ $img.Name }}"
+           class="gallery-link">
+          
+          <!-- Image -->
+          <div class="gallery-image-container">
+            <img src="{{ $thumbnail.RelPermalink }}" 
+                 alt="{{ $img.Name }}" 
+                 class="gallery-image"
+                 loading="lazy">
+            
+            <!-- Overlay with Zoom Icon -->
+            <div class="gallery-overlay">
+              <div class="overlay-content">
+                <div class="zoom-icon-wrapper">
+                  <i class="bi bi-zoom-in"></i>
+                </div>
+                <span class="view-text">Voir en grand</span>
+              </div>
+            </div>
+            
+            <!-- Hover Border Effect -->
+            <div class="hover-border"></div>
+          </div>
+          
+          <!-- Image Info (Optional) -->
+          <div class="image-info">
+            <span class="image-name">
+              <i class="bi bi-card-image"></i>
+              Photo {{ add $index 1 }}
+            </span>
+          </div>
+        </a>
+      </div>
+    </div>
+    {{ end }}
+  </div>
 </div>
+
+<!-- Styles -->
+<style>
+/* Gallery Section */
+.village-gallery-section {
+  padding: 3rem 0;
+  position: relative;
+}
+
+/* Header Styling */
+.gallery-header {
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.header-decoration {
+  display: inline-block;
+}
+
+.decoration-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  font-size: 2rem;
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+  animation: iconPulse 2s ease-in-out infinite;
+}
+
+@keyframes iconPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 12px 35px rgba(102, 126, 234, 0.4);
+  }
+}
+
+.gallery-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.title-gradient {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gallery-subtitle {
+  margin: 1rem 0;
+}
+
+.image-count-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+  padding: 0.6rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  color: #667eea;
+  border: 2px solid rgba(102, 126, 234, 0.2);
+  transition: all 0.3s ease;
+}
+
+.image-count-badge:hover {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+}
+
+.title-underline {
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  margin: 1.5rem auto 0;
+  border-radius: 2px;
+  animation: underlineExpand 1s ease-out;
+}
+
+@keyframes underlineExpand {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100px;
+  }
+}
+
+/* Gallery Grid */
+.modern-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+/* Gallery Item */
+.gallery-item-wrapper {
+  position: relative;
+}
+
+.gallery-item-modern {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gallery-item-modern:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 50px rgba(102, 126, 234, 0.25);
+}
+
+/* Image Container */
+.gallery-image-container {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gallery-item-modern:hover .gallery-image {
+  transform: scale(1.15) rotate(2deg);
+}
+
+/* Overlay */
+.gallery-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.95) 0%, rgba(118, 75, 162, 0.95) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.gallery-item-modern:hover .gallery-overlay {
+  opacity: 1;
+}
+
+.overlay-content {
+  text-align: center;
+  color: white;
+  transform: translateY(20px);
+  transition: transform 0.4s ease;
+}
+
+.gallery-item-modern:hover .overlay-content {
+  transform: translateY(0);
+}
+
+.zoom-icon-wrapper {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  border: 3px solid rgba(255, 255, 255, 0.4);
+  animation: zoomPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes zoomPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.zoom-icon-wrapper i {
+  font-size: 2rem;
+}
+
+.view-text {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* Hover Border Effect */
+.hover-border {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  border: 3px solid white;
+  border-radius: 15px;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.4s ease;
+  pointer-events: none;
+}
+
+.gallery-item-modern:hover .hover-border {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Image Info */
+.image-info {
+  padding: 1rem;
+  background: white;
+  text-align: center;
+  border-top: 2px solid #f0f0f0;
+}
+
+.image-name {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #667eea;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.gallery-item-modern:hover .image-name {
+  color: #764ba2;
+}
+
+.image-name i {
+  font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .modern-gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .gallery-title {
+    font-size: 2rem;
+  }
+  
+  .gallery-image-container {
+    height: 220px;
+  }
+  
+  .decoration-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .modern-gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .gallery-title {
+    font-size: 1.75rem;
+  }
+}
+
+/* Loading Animation */
+.gallery-image {
+  animation: fadeInImage 0.5s ease-in;
+}
+
+@keyframes fadeInImage {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Accessibility */
+.gallery-link {
+  display: block;
+  text-decoration: none;
+  outline: none;
+  position: relative;
+}
+
+.gallery-link:focus {
+  outline: 3px solid #667eea;
+  outline-offset: 4px;
+  border-radius: 20px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-item-modern,
+  .gallery-image,
+  .overlay-content,
+  .hover-border,
+  .decoration-icon {
+    animation: none;
+    transition: none;
+  }
+}
+</style>
+{{ end }}
