@@ -1,28 +1,545 @@
 {{ define "main"}}
-<hr class="border border-danger border-1 opacity-50" />
-<p class="fs-2 text-center badge text-bg-info">
-  processing all sites taxonomies layout/categories/term.html.html
-</p>
-<hr class="border border-danger border-2 opacity-50" />
 
-{{ $taxonomy := "categories" }}
-{{ with .GetTerms $taxonomy }}
-<p>{{ (site.GetPage $taxonomy).LinkTitle }}:</p>
-<ul>
-  {{ range . }}
-  <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
-  {{ end }}
-</ul>
-{{ end }}
+<!-- Modern Category Page with Cards -->
+<div class="category-page">
+  <!-- Hero Section -->
+  <section class="category-hero position-relative overflow-hidden">
+    <div class="hero-background">
+      <div class="gradient-layer"></div>
+      <div class="pattern-overlay"></div>
+    </div>
+    
+    <div class="container position-relative z-3">
+      <div class="row justify-content-center">
+        <div class="col-lg-10 text-center">
+          <div class="hero-content" data-aos="fade-up">
+            <!-- Category Icon -->
+            <div class="category-icon-wrapper mb-4">
+              <div class="icon-circle">
+                <i class="bi bi-folder-fill"></i>
+              </div>
+            </div>
+            
+            <!-- Category Title -->
+            <h1 class="display-3 fw-bold text-white mb-3">{{ .Title }}</h1>
+            
+            <!-- Posts Count -->
+            <div class="category-meta">
+              <span class="badge badge-custom">
+                <i class="bi bi-file-text"></i>
+                {{ len .Pages }} {{ if eq (len .Pages) 1 }}article{{ else }}articles{{ end }}
+              </span>
+            </div>
+            
+            <!-- Decorative Line -->
+            <div class="hero-divider mt-4">
+              <span class="divider-line"></span>
+              <i class="bi bi-diamond-fill text-warning"></i>
+              <span class="divider-line"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<h1 class="display-2 text-center text-primary text-wrap">{{ .Title }}</h1>
+  <!-- Posts Grid Section -->
+  <section class="posts-section py-5">
+    <div class="container">
+      <!-- Filter/Sort Bar (Optional) -->
+      <div class="filter-bar mb-5" data-aos="fade-up">
+        <div class="row align-items-center">
+          <div class="col-md-8">
+            <h2 class="h4 mb-0">
+              <i class="bi bi-grid-3x3-gap text-primary"></i>
+              Tous les articles
+            </h2>
+          </div>
+          <div class="col-md-4 text-md-end">
+            <span class="text-muted">Triés par date</span>
+          </div>
+        </div>
+      </div>
 
-{{ range .Pages }}
-<h2 class="mx-auto"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-<p>{{ .Date.Format "January 2, 2006" }}</p>
-<div class="mx-auto"> {{ .Content }} </div>
-</article>
-<hr class="border border-danger border-1 opacity-50" />
-{{ end }}
-<hr>
+      <!-- Posts Cards Grid -->
+      <div class="row g-4">
+        {{ range $index, $post := .Pages }}
+        <div class="col-lg-6 col-xl-4" data-aos="fade-up" data-aos-delay="{{ mul $index 50 }}">
+          <article class="post-card-modern h-100">
+            <!-- Card Header with Image/Color -->
+            <div class="card-header-modern">
+              {{ if $post.Params.image }}
+              <div class="card-image">
+                <img src="{{ $post.Params.image }}" alt="{{ $post.Title }}" loading="lazy">
+                <div class="image-overlay"></div>
+              </div>
+              {{ else }}
+              <div class="card-gradient"></div>
+              {{ end }}
+              
+              <!-- Date Badge -->
+              <div class="date-badge">
+                <div class="date-day">{{ dateFormat "02" $post.Date }}</div>
+                <div class="date-month">{{ dateFormat "Jan" $post.Date }}</div>
+              </div>
+            </div>
+
+            <!-- Card Body -->
+            <div class="card-body-modern p-4">
+              <!-- Title -->
+              <h3 class="post-title-modern mb-3">
+                <a href="{{ $post.RelPermalink }}" class="text-decoration-none">
+                  {{ $post.Title }}
+                </a>
+              </h3>
+
+              <!-- Meta Information -->
+              <div class="post-meta-modern mb-3">
+                {{ if $post.Params.auteur }}
+                <div class="meta-item">
+                  <i class="bi bi-person-circle"></i>
+                  <span>{{ $post.Params.auteur }}</span>
+                </div>
+                {{ end }}
+                
+                {{ if $post.Params.villages }}
+                <div class="meta-item">
+                  <i class="bi bi-geo-alt"></i>
+                  <span>{{ index $post.Params.villages 0 }}</span>
+                </div>
+                {{ end }}
+              </div>
+
+              <!-- Excerpt -->
+              {{ with $post.Summary }}
+              <p class="post-excerpt-modern text-muted mb-4">
+                {{ . | truncate 120 }}
+              </p>
+              {{ end }}
+
+              <!-- Tags -->
+              {{ with $post.Params.tags }}
+              <div class="post-tags-modern mb-3">
+                {{ range first 3 . }}
+                <span class="tag-badge">
+                  <i class="bi bi-tag-fill"></i>
+                  {{ . }}
+                </span>
+                {{ end }}
+              </div>
+              {{ end }}
+
+              <!-- Read More Button -->
+              <a href="{{ $post.RelPermalink }}" class="btn-read-more">
+                Lire l'article
+                <i class="bi bi-arrow-right-short"></i>
+              </a>
+            </div>
+
+            <!-- Card Footer Accent -->
+            <div class="card-footer-accent"></div>
+          </article>
+        </div>
+        {{ end }}
+      </div>
+
+      <!-- Empty State -->
+      {{ if eq (len .Pages) 0 }}
+      <div class="empty-state text-center py-5">
+        <div class="empty-icon mb-4">
+          <i class="bi bi-inbox"></i>
+        </div>
+        <h3 class="h4 mb-3">Aucun article dans cette catégorie</h3>
+        <p class="text-muted mb-4">Il n'y a pas encore d'articles publiés dans cette catégorie.</p>
+        <a href="/" class="btn btn-primary">
+          <i class="bi bi-house"></i>
+          Retour à l'accueil
+        </a>
+      </div>
+      {{ end }}
+    </div>
+  </section>
+</div>
+
+<!-- Styles -->
+<style>
+/* Hero Section */
+.category-hero {
+  min-height: 450px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+.gradient-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+}
+
+.pattern-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  animation: patternMove 20s ease-in-out infinite;
+}
+
+@keyframes patternMove {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(20px, 20px);
+  }
+}
+
+.category-icon-wrapper {
+  display: inline-block;
+}
+
+.icon-circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  animation: iconFloat 3s ease-in-out infinite;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+.icon-circle i {
+  font-size: 3rem;
+  color: white;
+}
+
+@keyframes iconFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.badge-custom {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.hero-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.divider-line {
+  width: 80px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* Filter Bar */
+.filter-bar {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Modern Post Cards */
+.post-card-modern {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.post-card-modern:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(102, 126, 234, 0.25);
+}
+
+/* Card Header */
+.card-header-modern {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.post-card-modern:hover .card-image img {
+  transform: scale(1.1);
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
+}
+
+.card-gradient {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  position: relative;
+}
+
+.card-gradient::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+}
+
+/* Date Badge */
+.date-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: white;
+  width: 65px;
+  height: 65px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+
+.date-day {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #667eea;
+  line-height: 1;
+}
+
+.date-month {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #764ba2;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+/* Card Body */
+.card-body-modern {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.post-title-modern {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}
+
+.post-title-modern a {
+  color: #2c3e50;
+  transition: color 0.3s ease;
+}
+
+.post-title-modern a:hover {
+  color: #667eea;
+}
+
+/* Meta Information */
+.post-meta-modern {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.875rem;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #6c757d;
+}
+
+.meta-item i {
+  color: #667eea;
+}
+
+/* Excerpt */
+.post-excerpt-modern {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  flex: 1;
+}
+
+/* Tags */
+.post-tags-modern {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag-badge {
+  background: #f0f0ff;
+  color: #667eea;
+  padding: 0.35rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: all 0.3s ease;
+}
+
+.tag-badge:hover {
+  background: #667eea;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.tag-badge i {
+  font-size: 0.7rem;
+}
+
+/* Read More Button */
+.btn-read-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #667eea;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin-top: auto;
+}
+
+.btn-read-more:hover {
+  color: #764ba2;
+  gap: 0.75rem;
+}
+
+.btn-read-more i {
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.btn-read-more:hover i {
+  transform: translateX(5px);
+}
+
+/* Card Footer Accent */
+.card-footer-accent {
+  height: 5px;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  transition: transform 0.4s ease;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.post-card-modern:hover .card-footer-accent {
+  transform: scaleX(1);
+}
+
+/* Empty State */
+.empty-state {
+  background: white;
+  border-radius: 20px;
+  padding: 4rem 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.empty-icon i {
+  font-size: 5rem;
+  color: #e0e0e0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .category-hero {
+    min-height: 350px;
+  }
+  
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .icon-circle {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .icon-circle i {
+    font-size: 2.5rem;
+  }
+  
+  .card-header-modern {
+    height: 180px;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .post-card-modern,
+  .btn-read-more,
+  .card-image img,
+  .icon-circle {
+    animation: none;
+    transition: none;
+  }
+}
+</style>
+
 {{ end }}
