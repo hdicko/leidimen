@@ -230,5 +230,17 @@ disableLatLong = false
 [caches]
   [caches.images]
     dir = ':cacheDir/images'
-    
+
+# Media types configuration for audio files
+[mediaTypes]
+  [mediaTypes."audio/mpeg"]
+    suffixes = ["mp3"]
+  [mediaTypes."audio/aac"]
+    suffixes = ["aac"]
+  [mediaTypes."audio/ogg"]
+    suffixes = ["ogg"]
+  [mediaTypes."audio/wav"]
+    suffixes = ["wav"]
+
+
 

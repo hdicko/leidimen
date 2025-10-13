@@ -63,15 +63,23 @@
         </div>
         {{ end }}
 
-        <!-- Videos -->
-        {{ with .Resources.ByType "video" }}
+        <!-- Videos & Audio -->
+        {{ $hasVideos := .Resources.ByType "video" }}
+        {{ $hasMedia := false }}
+        {{ range .Resources }}
+          {{ $ext := path.Ext .Name }}
+          {{ if or (eq $ext ".mp4") (eq $ext ".webm") (eq $ext ".mp3") (eq $ext ".aac") (eq $ext ".ogg") (eq $ext ".wav") (eq $ext ".m4a") }}
+            {{ $hasMedia = true }}
+          {{ end }}
+        {{ end }}
+        {{ if or $hasVideos $hasMedia }}
         <div class="mb-5" data-aos="fade-up" data-aos-delay="200">
           <div class="section-header text-center mb-4">
             <h2 class="section-title">
               <i class="bi bi-play-circle text-danger"></i>
-              Vidéos
+              Vidéos & Audio
             </h2>
-            <p class="text-muted">Explorez en vidéo</p>
+            <p class="text-muted">Explorez en vidéo et audio</p>
           </div>
           {{ partial "util/villages-videos" $ }}
         </div>

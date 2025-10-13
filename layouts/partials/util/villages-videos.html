@@ -1,8 +1,13 @@
 <!-- Modern Village Videos and Audio Gallery with Fancy Effects -->
 {{ $videos := .Resources.ByType "video" }}
-{{ $audios := .Resources.ByType "audio" }}
-{{ $mediaFiles := union $videos $audios }}
-{{ with $mediaFiles }}
+{{ $allMedia := slice }}
+{{ range .Resources }}
+  {{ $ext := path.Ext .Name }}
+  {{ if or (eq $ext ".mp4") (eq $ext ".webm") (eq $ext ".mp3") (eq $ext ".aac") (eq $ext ".ogg") (eq $ext ".wav") (eq $ext ".m4a") }}
+    {{ $allMedia = $allMedia | append . }}
+  {{ end }}
+{{ end }}
+{{ with $allMedia }}
 <div class="village-videos-section">
   <!-- Section Header -->
   <div class="videos-header text-center mb-5" data-aos="fade-up">
