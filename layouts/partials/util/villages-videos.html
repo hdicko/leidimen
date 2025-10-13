@@ -41,13 +41,10 @@
           <video 
             class="video-player-modern" 
             controls 
-            controlsList="nodownload"
             preload="metadata"
-            poster=""
             onplay="this.parentElement.classList.add('playing')"
             onpause="this.parentElement.classList.remove('playing')">
             <source src="{{ $video.RelPermalink }}" type="video/mp4" />
-            <source src="{{ $video.RelPermalink }}" type="video/webm" />
             Votre navigateur ne supporte pas la lecture de vidéos.
           </video>
           
