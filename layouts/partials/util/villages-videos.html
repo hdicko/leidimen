@@ -1,18 +1,420 @@
-{{/** videos **/}}
-<div class="container text-center">
-  <div class="row justify-content-center">
-    {{ with .Resources.ByType "video" }}
-    <h1 class="text-center fs-4 mb-1 mt-5">
-      <mark>Quelques videos</mark>
-    </h1>
-    {{ range . }} {{ $video := . }}
-    <div class="col-12 col-md-6 d-flex justify-content-center mb-3">
-      <div class="p-3">
-        <video class="object-fit-fill" controls poster="image.png" width="320">
-          <source src="{{ $video.RelPermalink }}" type="video/mp4" />
-        </video>
+<!-- Modern Village Videos Gallery with Fancy Effects -->
+{{ with .Resources.ByType "video" }}
+<div class="village-videos-section">
+  <!-- Section Header -->
+  <div class="videos-header text-center mb-5" data-aos="fade-up">
+    <div class="header-decoration mb-3">
+      <span class="decoration-icon">
+        <i class="bi bi-play-circle-fill"></i>
+      </span>
+    </div>
+    <h2 class="videos-title">
+      <span class="title-gradient">Galerie Vidéos</span>
+    </h2>
+    <div class="videos-subtitle">
+      <span class="video-count-badge">
+        <i class="bi bi-camera-video"></i>
+        {{ len . }} {{ if eq (len .) 1 }}vidéo{{ else }}vidéos{{ end }}
+      </span>
+    </div>
+    <div class="title-underline"></div>
+  </div>
+
+  <!-- Videos Grid -->
+  <div class="modern-videos-grid">
+    {{ range $index, $video := . }}
+    <div class="video-item-wrapper" data-aos="fade-up" data-aos-delay="{{ mul $index 50 }}">
+      <div class="video-card-modern">
+        <!-- Video Container -->
+        <div class="video-container-modern">
+          <!-- Play Button Overlay (before playing) -->
+          <div class="play-overlay">
+            <div class="play-button-wrapper">
+              <div class="play-button-circle">
+                <i class="bi bi-play-fill"></i>
+              </div>
+            </div>
+            <div class="play-text">Cliquez pour lire</div>
+          </div>
+
+          <!-- Video Element -->
+          <video 
+            class="video-player-modern" 
+            controls 
+            controlsList="nodownload"
+            preload="metadata"
+            poster=""
+            onplay="this.parentElement.classList.add('playing')"
+            onpause="this.parentElement.classList.remove('playing')">
+            <source src="{{ $video.RelPermalink }}" type="video/mp4" />
+            <source src="{{ $video.RelPermalink }}" type="video/webm" />
+            Votre navigateur ne supporte pas la lecture de vidéos.
+          </video>
+          
+          <!-- Decorative Border -->
+          <div class="video-border-effect"></div>
+        </div>
+
+        <!-- Video Info -->
+        <div class="video-info-modern">
+          <div class="video-meta">
+            <span class="video-number">
+              <i class="bi bi-film"></i>
+              Vidéo {{ add $index 1 }}
+            </span>
+            <span class="video-badge">
+              <i class="bi bi-badge-hd"></i>
+              HD
+            </span>
+          </div>
+        </div>
       </div>
     </div>
-    {{ end }} {{ end }}
+    {{ end }}
   </div>
 </div>
+
+<!-- Styles -->
+<style>
+/* Videos Section */
+.village-videos-section {
+  padding: 3rem 0;
+  position: relative;
+  margin-top: 3rem;
+}
+
+/* Header Styling */
+.videos-header {
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.videos-header .decoration-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+  font-size: 2rem;
+  box-shadow: 0 8px 25px rgba(245, 87, 108, 0.3);
+  animation: videoIconPulse 2s ease-in-out infinite;
+}
+
+@keyframes videoIconPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 8px 25px rgba(245, 87, 108, 0.3);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 12px 35px rgba(245, 87, 108, 0.4);
+  }
+}
+
+.videos-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.videos-title .title-gradient {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.videos-subtitle {
+  margin: 1rem 0;
+}
+
+.video-count-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, rgba(240, 147, 251, 0.1) 0%, rgba(245, 87, 108, 0.1) 100%);
+  padding: 0.6rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  color: #f5576c;
+  border: 2px solid rgba(245, 87, 108, 0.2);
+  transition: all 0.3s ease;
+}
+
+.video-count-badge:hover {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(245, 87, 108, 0.3);
+}
+
+.videos-header .title-underline {
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%);
+  margin: 1.5rem auto 0;
+  border-radius: 2px;
+  animation: underlineExpand 1s ease-out;
+}
+
+/* Videos Grid */
+.modern-videos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2.5rem;
+  padding: 0 1rem;
+}
+
+/* Video Item */
+.video-item-wrapper {
+  position: relative;
+}
+
+.video-card-modern {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.video-card-modern:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 50px rgba(240, 147, 251, 0.25);
+}
+
+/* Video Container */
+.video-container-modern {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  overflow: hidden;
+}
+
+/* Video Player */
+.video-player-modern {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.video-card-modern:hover .video-player-modern {
+  transform: scale(1.02);
+}
+
+/* Play Overlay */
+.play-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(240, 147, 251, 0.9) 0%, rgba(245, 87, 108, 0.9) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.video-container-modern.playing .play-overlay {
+  opacity: 0;
+}
+
+.play-button-wrapper {
+  margin-bottom: 1rem;
+}
+
+.play-button-circle {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid rgba(255, 255, 255, 0.5);
+  animation: playButtonPulse 2s ease-in-out infinite;
+  transition: all 0.3s ease;
+}
+
+.video-card-modern:hover .play-button-circle {
+  background: rgba(255, 255, 255, 0.35);
+  transform: scale(1.1);
+}
+
+@keyframes playButtonPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 20px rgba(255, 255, 255, 0);
+  }
+}
+
+.play-button-circle i {
+  font-size: 2.5rem;
+  color: white;
+  margin-left: 5px;
+}
+
+.play-text {
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Decorative Border */
+.video-border-effect {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  border: 3px solid rgba(255, 255, 255, 0.5);
+  border-radius: 12px;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 0.4s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.video-card-modern:hover .video-border-effect {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Video Info */
+.video-info-modern {
+  padding: 1.25rem;
+  background: white;
+  border-top: 2px solid #f5f5f5;
+}
+
+.video-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.video-number {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #f5576c;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.video-card-modern:hover .video-number {
+  color: #f093fb;
+}
+
+.video-number i {
+  font-size: 1.1rem;
+}
+
+.video-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  box-shadow: 0 2px 10px rgba(245, 87, 108, 0.2);
+}
+
+.video-badge i {
+  font-size: 0.9rem;
+}
+
+/* Video Controls Styling */
+.video-player-modern::-webkit-media-controls-panel {
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .modern-videos-grid {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .modern-videos-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .videos-title {
+    font-size: 2rem;
+  }
+  
+  .videos-header .decoration-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+  
+  .play-button-circle {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .play-button-circle i {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .videos-title {
+    font-size: 1.75rem;
+  }
+  
+  .modern-videos-grid {
+    gap: 1.5rem;
+  }
+}
+
+/* Accessibility */
+.video-player-modern:focus {
+  outline: 3px solid #f5576c;
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .video-card-modern,
+  .play-button-circle,
+  .video-border-effect,
+  .videos-header .decoration-icon {
+    animation: none;
+    transition: none;
+  }
+}
+
+/* Loading State */
+.video-player-modern {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+</style>
+{{ end }}
