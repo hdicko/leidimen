@@ -1,74 +1,445 @@
 {{ define "main"}}
-<hr class="border border-danger border-1 opacity-50" />
-<p class="fs-2 text-center badge text-bg-info">layouts/villages/term.html.html</p>
-<hr class="border border-danger border-2 opacity-50 " />
 
-
-<!-- Groups content by month according to the "date" field in front matter -->
-<h1 class="dipslay-2 text-center font-monospace text-decoration-underline fst-italic mb-2 ">{{ .Title }}
-</h1>
-
-{{/** images **/}}
-<section>
-    {{ partial "util/villages-images" . }}
-
-    {{/** videos **/}}
-    {{ partial "util/villages-videos" .}}
-
-    {{/** content **/}}
-    <div class="container text-center">
-        <div class="row align-items-start">
-            <div class="col-12 ">
-                {{ .Content }}
-            </div>
-        </div>
+<!-- Modern Village Page -->
+<div class="village-page">
+  <!-- Hero Section with Gradient Background -->
+  <section class="village-hero position-relative overflow-hidden">
+    <div class="hero-bg-effects">
+      <div class="gradient-overlay"></div>
+      <div class="floating-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+      </div>
     </div>
-</section>
+    
+    <div class="container position-relative z-3">
+      <div class="row justify-content-center">
+        <div class="col-lg-10 text-center">
+          <div class="hero-content" data-aos="fade-up">
+            <div class="village-icon mb-4">
+              <i class="bi bi-geo-alt-fill"></i>
+            </div>
+            <h1 class="display-3 fw-bold text-white mb-3">{{ .Title }}</h1>
+            <div class="hero-decoration">
+              <span class="decoration-line"></span>
+              <i class="bi bi-star-fill text-warning"></i>
+              <span class="decoration-line"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section>
-    {{/** related posts **/}}
-    <h1 class="lead text-center mt-4 mb-2">
-        <mark> Posts sur {{ .Title }} </mark>
-    </h1>
-    <div class="container px-4 px-lg-5 mt-3" data-aos="fade-up">
-        {{ range .Data.Pages.GroupByDate "2006-01" "asc" }}
-        {{ range .Pages }}
-        <div class="row gx-4 gx-lg-5 justify-content-center ">
-            <div class="col-md-10 col-lg-8 col-xl-7  mb-2 text-danger border-start border-primary opacity-75">
-                <div class="post-preview">
-                    <a href="{{ .RelPermalink }}">
-                        <h2> {{ .Title }}</h2>
-                    </a>
-                    <p class="post-subtitle fs-6 text-info-emphasis text-decoration-none text-body-secondary">
-                        {{.Summary }}</p>
-                    <h6>Posted by {{ .Params.auteur }}</h6>
-                    <a href="{{ .RelPermalink}}" class="btn ">Date: {{ dateFormat "02 Jan 2006 15:04 MST"
-                        .Date.Local }}</a>
-                    </a>
-                    </p>
+  <!-- Village Content Section -->
+  <section class="village-content py-5">
+    <div class="container">
+      {{ if .Content }}
+      <div class="row justify-content-center mb-5">
+        <div class="col-lg-10">
+          <div class="content-card glass-effect p-5" data-aos="fade-up">
+            <div class="content-body">
+              {{ .Content }}
+            </div>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+
+      <!-- Media Section (Images & Videos) -->
+      <div class="media-section mb-5">
+        <!-- Images -->
+        {{ with .Resources.ByType "image" }}
+        <div class="mb-5" data-aos="fade-up" data-aos-delay="100">
+          <div class="section-header text-center mb-4">
+            <h2 class="section-title">
+              <i class="bi bi-images text-primary"></i>
+              Galerie Photos
+            </h2>
+            <p class="text-muted">Découvrez {{ $.Title }} en images</p>
+          </div>
+          {{ partial "util/villages-images" $ }}
+        </div>
+        {{ end }}
+
+        <!-- Videos -->
+        {{ with .Resources.ByType "video" }}
+        <div class="mb-5" data-aos="fade-up" data-aos-delay="200">
+          <div class="section-header text-center mb-4">
+            <h2 class="section-title">
+              <i class="bi bi-play-circle text-danger"></i>
+              Vidéos
+            </h2>
+            <p class="text-muted">Explorez en vidéo</p>
+          </div>
+          {{ partial "util/villages-videos" $ }}
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Posts Section -->
+  {{ with .Data.Pages }}
+  <section class="related-posts-section py-5 bg-light">
+    <div class="container">
+      <div class="section-header text-center mb-5" data-aos="fade-up">
+        <h2 class="display-5 fw-bold mb-3">
+          <i class="bi bi-newspaper text-primary"></i>
+          Actualités de {{ $.Title }}
+        </h2>
+        <p class="lead text-muted">Suivez les dernières nouvelles et événements</p>
+      </div>
+
+      <div class="row g-4">
+        {{ range $index, $group := .GroupByDate "2006-01" "desc" }}
+        {{ range $pageIndex, $page := $group.Pages }}
+        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="{{ mul $pageIndex 50 }}">
+          <article class="post-card glass-effect h-100">
+            <div class="post-card-body p-4">
+              <!-- Post Header -->
+              <div class="post-header mb-3">
+                <div class="post-meta d-flex align-items-center gap-3 mb-3">
+                  <span class="badge bg-primary">
+                    <i class="bi bi-calendar3"></i>
+                    {{ dateFormat "2 Jan 2006" $page.Date }}
+                  </span>
+                  {{ if $page.Params.auteur }}
+                  <span class="text-muted">
+                    <i class="bi bi-person-circle"></i>
+                    {{ $page.Params.auteur }}
+                  </span>
+                  {{ end }}
                 </div>
-            </div>
-        </div>
-        {{ end }}
-        {{ end }}
-    </div>
-</section>
+                
+                <h3 class="post-title">
+                  <a href="{{ $page.RelPermalink }}" class="text-decoration-none text-dark">
+                    {{ $page.Title }}
+                  </a>
+                </h3>
+              </div>
 
-<section>
-    <!--paginator -->
-    {{ $paginator := .Paginate (where .Pages "Type" "posts") }}
-    {{/** pagination **/}}
-    <div class="d-sm-flex d-md-flex d-lg-flex d-xl-flex justify-content-center">
-        <div class="row font-sans mt-4">
-            <div class="col-md-12 mt-10">
-                <nav aria-label="Page navigation">
-                    <div class="pagination justify-content-left">
-                        {{ template "_internal/pagination.html" . }}
-                    </div>
-                </nav>
+              <!-- Post Excerpt -->
+              {{ with $page.Summary }}
+              <p class="post-excerpt text-muted mb-3">{{ . | truncate 150 }}</p>
+              {{ end }}
+
+              <!-- Post Footer -->
+              <div class="post-footer d-flex justify-content-between align-items-center">
+                <a href="{{ $page.RelPermalink }}" class="btn btn-outline-primary btn-sm">
+                  Lire la suite
+                  <i class="bi bi-arrow-right ms-1"></i>
+                </a>
+                
+                {{ with $page.Params.categories }}
+                <div class="post-categories">
+                  {{ range first 2 . }}
+                  <span class="badge bg-secondary">{{ . }}</span>
+                  {{ end }}
+                </div>
+                {{ end }}
+              </div>
             </div>
+            
+            <!-- Decorative Border -->
+            <div class="post-card-border"></div>
+          </article>
         </div>
+        {{ end }}
+        {{ end }}
+      </div>
+
+      <!-- Pagination -->
+      {{ if gt (len .) 10 }}
+      <div class="pagination-wrapper mt-5">
+        <nav aria-label="Page navigation">
+          {{ template "_internal/pagination.html" $ }}
+        </nav>
+      </div>
+      {{ end }}
     </div>
-</section>
+  </section>
+  {{ end }}
+</div>
+
+<!-- Styles -->
+<style>
+/* Hero Section */
+.village-hero {
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.hero-bg-effects {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+.gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 100%);
+}
+
+.floating-shapes {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.shape {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  animation: float 20s infinite ease-in-out;
+}
+
+.shape-1 {
+  width: 300px;
+  height: 300px;
+  top: -100px;
+  left: -50px;
+  animation-delay: 0s;
+}
+
+.shape-2 {
+  width: 200px;
+  height: 200px;
+  bottom: -50px;
+  right: 10%;
+  animation-delay: 5s;
+}
+
+.shape-3 {
+  width: 150px;
+  height: 150px;
+  top: 50%;
+  right: -50px;
+  animation-delay: 10s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-30px) rotate(180deg);
+  }
+}
+
+.village-icon {
+  font-size: 4rem;
+  color: white;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.hero-decoration {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.decoration-line {
+  width: 60px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Glass Effect Cards */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.glass-effect:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15);
+}
+
+/* Content Card */
+.content-card {
+  overflow: hidden;
+}
+
+.content-body {
+  line-height: 1.8;
+  color: #333;
+}
+
+.content-body h1, .content-body h2, .content-body h3 {
+  color: #667eea;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.content-body p {
+  margin-bottom: 1rem;
+}
+
+/* Section Headers */
+.section-header {
+  margin-bottom: 3rem;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+/* Post Cards */
+.post-card {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(102, 126, 234, 0.1);
+}
+
+.post-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(102, 126, 234, 0.2) !important;
+}
+
+.post-card-border {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.post-card:hover .post-card-border {
+  transform: scaleX(1);
+}
+
+.post-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.post-title a {
+  transition: color 0.3s ease;
+}
+
+.post-title a:hover {
+  color: #667eea !important;
+}
+
+.post-meta {
+  font-size: 0.875rem;
+}
+
+.post-excerpt {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.post-categories .badge {
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* Buttons */
+.btn-outline-primary {
+  border-width: 2px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-color: transparent;
+  transform: translateX(5px);
+}
+
+/* Pagination */
+.pagination-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.pagination-wrapper .pagination {
+  gap: 0.5rem;
+}
+
+.pagination-wrapper .page-link {
+  border-radius: 10px;
+  border: 2px solid #667eea;
+  color: #667eea;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.pagination-wrapper .page-link:hover {
+  background: #667eea;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.pagination-wrapper .page-item.active .page-link {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-color: transparent;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .village-hero {
+    min-height: 300px;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .village-icon {
+    font-size: 3rem;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+  }
+  
+  .post-title {
+    font-size: 1.25rem;
+  }
+}
+
+/* Animation delays for staggered appearance */
+[data-aos] {
+  pointer-events: auto;
+}
+</style>
 
 {{ end }} {{/** end main **/}}
