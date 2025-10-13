@@ -1,0 +1,64 @@
+{{ define "main" }}
+
+<section class="gallery-detail py-5">
+  <div class="container">
+    <!-- Header -->
+    <div class="text-center mb-5">
+      <h1 class="display-4 fw-bold mb-3">{{ .Title }}</h1>
+      {{ with .Content }}
+      <div class="lead text-muted mb-4">
+        {{ . }}
+      </div>
+      {{ end }}
+      <a href="/galleries/" class="btn btn-outline-primary">
+        <i class="bi bi-arrow-left"></i> Retour aux galeries
+      </a>
+    </div>
+
+    <!-- Gallery Grid -->
+    {{ with .Resources.ByType "image" }}
+    <div class="row g-3">
+      {{ range . }}
+      {{ $img := . }}
+      {{ $thumb := $img.Fill "400x300" }}
+      <div class="col-6 col-md-4 col-lg-3">
+        <a href="{{ $img.RelPermalink }}" data-fancybox="gallery" class="d-block gallery-item">
+          <img src="{{ $thumb.RelPermalink }}" class="img-fluid rounded shadow-sm" alt="{{ $img.Name }}">
+        </a>
+      </div>
+      {{ end }}
+    </div>
+    {{ else }}
+    <div class="alert alert-info text-center">
+      <i class="bi bi-info-circle"></i> Aucune image dans cette galerie pour le moment.
+    </div>
+    {{ end }}
+  </div>
+</section>
+
+<style>
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+</style>
+
+{{ end }}

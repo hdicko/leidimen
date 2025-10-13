@@ -1,0 +1,71 @@
+{{ define "main" }}
+
+<section class="galleries-section py-5">
+  <div class="container">
+    <!-- Header -->
+    <div class="text-center mb-5">
+      <h1 class="display-4 fw-bold mb-3">{{ .Title }}</h1>
+      <p class="lead text-muted">{{ .Description }}</p>
+    </div>
+
+    <!-- Gallery Grid -->
+    <div class="row g-4">
+      {{ range .Pages }}
+      <div class="col-md-6 col-lg-4">
+        <div class="card gallery-card h-100 shadow-sm">
+          <!-- Thumbnail from first image -->
+          {{ with .Resources.ByType "image" }}
+            {{ $firstImage := index . 0 }}
+            {{ if $firstImage }}
+              {{ $thumb := $firstImage.Fill "600x400" }}
+              <img src="{{ $thumb.RelPermalink }}" class="card-img-top" alt="{{ $.Title }}" style="height: 250px; object-fit: cover;">
+            {{ end }}
+          {{ end }}
+          
+          <div class="card-body">
+            <h5 class="card-title">{{ .Title }}</h5>
+            {{ with .Summary }}
+            <p class="card-text text-muted">{{ . }}</p>
+            {{ end }}
+            
+            <!-- Image count -->
+            {{ $imageCount := len (.Resources.ByType "image") }}
+            <p class="text-muted small">
+              <i class="bi bi-images"></i> {{ $imageCount }} {{ if eq $imageCount 1 }}photo{{ else }}photos{{ end }}
+            </p>
+          </div>
+          
+          <div class="card-footer bg-transparent border-0 pb-3">
+            <a href="{{ .RelPermalink }}" class="btn btn-primary w-100">
+              <i class="bi bi-eye"></i> Voir la galerie
+            </a>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<style>
+.gallery-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.gallery-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+}
+
+.gallery-card .card-img-top {
+  transition: transform 0.3s ease;
+}
+
+.gallery-card:hover .card-img-top {
+  transform: scale(1.05);
+}
+</style>
+
+{{ end }}
