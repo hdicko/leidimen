@@ -1,9 +1,17 @@
 ---
-title: "Post213"
-date: 2023-08-27T20:37:50+02:00
+title: Ecole de Douentza
+date: 2025-10-10
+lastmod: 2025-10-10
+author: Hama Pathe Ameri Diona
 draft: false
+description: Juste pour tester
+image: /images/uploads/background.jpg
+villages:
+  - douentza
+  - diona
+categories:
+  - mathematiques
 tags:
   - blog
 ---
-
-# This is post 20 - Just for testing
+## ***T﻿esting une nouvelle note***
