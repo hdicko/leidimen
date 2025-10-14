@@ -160,6 +160,186 @@
   {{ partial "post_preview"}}
 
   */}}
+
+<style>
+/* Modern Details/Summary Styling for Posts */
+details {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border-radius: 16px;
+  padding: 0;
+  margin: 2rem 0;
+  border: 2px solid #e2e8f0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+details:hover {
+  border-color: #667eea;
+  box-shadow: 0 8px 30px rgba(102, 126, 234, 0.15);
+  transform: translateY(-2px);
+}
+
+details[open] {
+  border-color: #667eea;
+  box-shadow: 0 10px 40px rgba(102, 126, 234, 0.2);
+}
+
+summary {
+  cursor: pointer;
+  padding: 1.5rem 2rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e293b;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  transition: all 0.3s ease;
+  -webkit-user-select: none;
+  user-select: none;
+  list-style: none;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary::after {
+  content: '▼';
+  font-size: 1rem;
+  color: #667eea;
+  transition: transform 0.3s ease;
+  margin-left: 1rem;
+  flex-shrink: 0;
+}
+
+details[open] summary::after {
+  transform: rotate(180deg);
+}
+
+summary:hover {
+  padding-left: 2.25rem;
+}
+
+summary::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 16px 0 0 16px;
+  transform: scaleY(0);
+  transition: transform 0.3s ease;
+}
+
+summary:hover::before,
+details[open] summary::before {
+  transform: scaleY(1);
+}
+
+details .details-content {
+  padding: 2rem;
+  background: white;
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+details .details-content h2 {
+  color: #1e293b;
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid #667eea;
+  display: inline-block;
+}
+
+details .details-content h2:first-child {
+  margin-top: 0;
+}
+
+details .details-content p {
+  color: #475569;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+details .details-content ul {
+  margin-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+details .details-content li {
+  color: #475569;
+  line-height: 1.8;
+  margin-bottom: 0.5rem;
+  position: relative;
+  padding-left: 0.5rem;
+}
+
+details .details-content li::marker {
+  color: #667eea;
+  font-weight: bold;
+}
+
+details .details-content strong {
+  color: #1e293b;
+  font-weight: 600;
+}
+
+details .details-content a {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border-bottom: 2px solid transparent;
+}
+
+details .details-content a:hover {
+  color: #764ba2;
+  border-bottom-color: #764ba2;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  details {
+    margin: 1.5rem 0;
+    border-radius: 12px;
+  }
+
+  summary {
+    padding: 1.25rem 1.5rem;
+    font-size: 1.1rem;
+  }
+
+  details .details-content {
+    padding: 1.5rem;
+  }
+
+  details .details-content h2 {
+    font-size: 1.25rem;
+  }
+}
+</style>
+
 </body>
 
 {{ end }}
