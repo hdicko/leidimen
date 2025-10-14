@@ -1,11 +1,11 @@
 ---
-title: "Hamadoun S. Dicko"
+title: "Hamadoun Pathe Ameri Diona Dicko"
 date: 2025-08-19T11:00:00Z
 draft: false
-slug: "hs"
+slug: "hpad"
 weight: 8
 card:
-  image: "/img/hd-thumb.jpg"
+  image: "images/hpad-card.jpg"
   fonction: "Informaticien senior / DevOps"
   membre: "bureau"
   presentation: "Ingénieur systèmes et DevOps — ancien de DEC, Compaq et HP"
