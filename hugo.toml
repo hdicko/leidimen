@@ -241,6 +241,13 @@ disableLatLong = false
     suffixes = ["ogg"]
   [mediaTypes."audio/wav"]
     suffixes = ["wav"]
+    
 
-
+[module]
+  [[module.mounts]]
+    source = 'assets'
+    target = 'assets'
+  [[module.mounts]]
+    source = 'static'
+    target = 'assets'
 

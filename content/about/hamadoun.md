@@ -3,6 +3,18 @@
 date: "2019-11-05T15:44:50+01:00"
 draft: false
 
+# photo
+featured_image: images/hd.jpg
+image: ""
+
+# slug
+slug: hd
+
+# titre
+title: Hamadoun Dicko
+weight: 8
+
+
 # Author
 author:
   display_name: Hamadi Pathe Ameri Diona
@@ -14,7 +26,7 @@ card:
   devise: "Liberté, Égalité, Fraternité et Solidarité"
   image: images/hd-thumb.jpg
   membre: "Membre du CA"
-  presentation: "Hamadoun Dicko — Informaticien, DevOps & Sysadmin"
+  presentation: "Membre de Leidimen depuis sa création. Support technique"
 
 # Description
 description: "Informaticien expérimenté avec une carrière internationale chez DEC, Compaq et HP — spécialisé en systèmes, réseaux et DevOps."
@@ -102,33 +114,18 @@ villages:
   - diona
   - douentza
 
-# photo
-featured_image: images/hd.jpg
-image: ""
 
-# slug
-slug: hd
 
-# titre
-title: Hamadoun Dicko
-weight: 8
-
-# Resources
-resources:
-  - src: "*/yummy-cupcake.jpg"
-    title: "Yummy Cupcake"
-    name: cupcake-1
-  - src: "*/shiny-cupcake.jpg"
-    title: "Shiny Glaze"
-  - src: "*/*.jpg"
-    params:
-      credits: Myself the cook!
 ---
 
 <!-- Professional LinkedIn-style profile for Hamadoun Dicko -->
 
 {{< myimage src="images/hd-thumb.jpg" >}}
 
+
+---
+
+{{< details summary="See the details" >}}
 ## Résumé professionnel
 
 Informaticien senior, ingénieur systèmes et DevOps avec plus de 20 ans d'expérience dans l'industrie informatique. Au cours de sa carrière, Hamadoun a travaillé pour Digital Equipment Corporation (DEC), Compaq, puis HP après la fusion, où il a occupé des postes techniques et d'ingénierie système, contribuant à la maintenance d'infrastructures critiques, aux migrations de datacenters et à l'automatisation d'opérations à grande échelle.
@@ -165,5 +162,4 @@ Hamadoun apporte son expertise technique à l'association Leidimen en assurant l
 
 - Email: <dicko.hamadoun@gmail.com>
 - Twitter: [@HamadounDicko](https://www.twitter.com/@HamadounDicko)
-
----
+{{< /details >}}

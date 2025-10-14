@@ -4,7 +4,7 @@ date: 2025-08-19T10:00:00Z
 draft: false
 auteur: "Équipe Leidimen"
 description: "Lancement d'un nouveau projet d'alphabétisation dans le village de Dorool"
-featured_image: "/img/leidimen-logo.jpg"
+featured_image: "images/leidimen-logo.jpg"
 categories:
   - "Éducation"
   - "Projets"
@@ -35,3 +35,4 @@ Le projet débutera officiellement en septembre 2025 avec l'arrivée du matérie
 ---
 
 *Pour soutenir ce projet, contactez-nous via notre formulaire de contact.*
+

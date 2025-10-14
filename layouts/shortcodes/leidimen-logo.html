@@ -1,5 +1,4 @@
-{{ $image := resources.GetMatch "img/dorool/ecole/extension.jpg" }}
-<p>the image is {{ $image }}</p>
+{{ $image := resources.GetMatch "images/leidimen-logo.jpg" }}
 {{ with $image }}
 <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" />
 {{ end }}

@@ -32,10 +32,6 @@ Commentaire by Olivier — 6 mars 2013 @ 19:52
 
 😉
 
-Commentaire by David — 6 mars 2013 @ 21:22
-
-RSS feed for comments on this post.
-
-Sorry, the comment form is closed at this time.
-
 - [Paris](/leidimen/posts/paris/)
+
+
