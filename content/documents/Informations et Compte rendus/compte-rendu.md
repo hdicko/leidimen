@@ -4,10 +4,6 @@ draft: false
 title: Compte rendu de reunions
 ---
 
-Comptes rendus de Reunions
-{ .text-center .fs-4}
-
-# Compte rendu de reunions
 
 - [Rapport 2019](/documents/leidimen/rapport-2019.pdf)
 {.text-muted .lead .fst-italic .fw-bold .mb-2  .mb-4}

@@ -163,3 +163,31 @@ Hamadoun apporte son expertise technique à l'association Leidimen en assurant l
 - Email: <dicko.hamadoun@gmail.com>
 - Twitter: [@HamadounDicko](https://www.twitter.com/@HamadounDicko)
 {{< /details >}}
+
+{{< alert "twitter" >}}
+Don't for on Twitter.
+{{< /alert >}}
+
+{{< alert icon="bug" cardColor="#e63946" iconColor="#1d3557" textColor="#f1faee" >}}
+**Warning!** This action is destructive!
+{{< /alert >}}
+
+{{< alert "twitter" >}}
+Don't forget to [follow me](https://twitter.com/nunocoracao) on Twitter.
+{{< /alert >}}
+
+{{< alert icon="fire" cardColor="#e63946" iconColor="#1d3557" textColor="#f1faee" >}}
+This is an error!
+{{< /alert >}}
+
+{{< typeit >}}
+Lorem ipsum dolor sit amet
+{{< /typeit >}}
+
+{{< typeit
+  tag=h1
+  lifeLike=true
+>}}
+Dicko Hamadi Pathe Ameri Diona
+{{< /typeit >}}
+

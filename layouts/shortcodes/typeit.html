@@ -1,4 +1,11 @@
-{{- $content := split .Inner "\n" -}}
+{{- $rawContent := split .Inner "\n" -}}
+{{- $content := slice -}}
+{{- range $rawContent -}}
+  {{- $line := trim . " \t\r\n" -}}
+  {{- if ne $line "" -}}
+    {{- $content = $content | append $line -}}
+  {{- end -}}
+{{- end -}}
 {{- $initialString := .Get "initialString" | default "" -}}
 {{- $speed := .Get "speed" | default 100 -}}
 {{- $lifeLike := .Get "lifeLike" | default false -}}
@@ -26,6 +33,17 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
+      {{- if eq (len $content) 1 }}
+      new TypeIt("#{{ $id }}", {
+        strings: "{{ index $content 0 }}",
+        speed: {{ $speed }},
+        lifeLike: {{ $lifeLike }},
+        startDelay: {{ $startDelay }},
+        breakLines: {{ $breakLines }},
+        waitUntilVisible: {{ $waitUntilVisible }},
+        loop: {{ $loop }}
+      }).go();
+      {{- else }}
       new TypeIt("#{{ $id }}", {
         strings: {{ $content | jsonify }},
         speed: {{ $speed }},
@@ -35,5 +53,6 @@
         waitUntilVisible: {{ $waitUntilVisible }},
         loop: {{ $loop }}
       }).go();
+      {{- end }}
     });
 </script>
