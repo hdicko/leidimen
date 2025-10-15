@@ -12,8 +12,8 @@ title: Informations
 - [Site officiel de la ville de Bondoufle (Essonne)](https://www.ville-bondoufle.fr/ "Site officiel de la ville de Bondoufle")
 {.text-muted .lead .fst-italic .fw-bold .mb-2  .mb-4}
 
-- [SCHEMA LOCAL D’AMENAGEMENT DU TERRITOIRE DU CERCLE DE DOUENTZA 2012-2032](/leidimen/documents/Douentza/Douentza1.pdf)
+- [SCHEMA LOCAL D’AMENAGEMENT DU TERRITOIRE DU CERCLE DE DOUENTZA 2012-2032](/documents/Douentza/Douentza1.pdf)
 {.text-muted .lead .fst-italic .fw-bold .mb-2 .mb-4}
 
-- [Association pour le développement et la promotion de l’éducation au Korarou](/leidimen/documents/leidimen/Asso.pdf)
+- [Association pour le développement et la promotion de l’éducation au Korarou](/documents/leidimen/Asso.pdf)
 {.text-muted .lead .fst-italic .fw-bold .mb-2 .mb-4}
