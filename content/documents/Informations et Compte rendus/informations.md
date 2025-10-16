@@ -1,8 +1,13 @@
 ---
-author: Hamadoun Dicko
+title: "Informations"
+description: "Liens utiles et informations sur les villes et projets"
 date: "2019-11-13T15:32:40+01:00"
 draft: false
-title: Informations
+author: "Hamadoun Dicko"
+type: "page"
+layout: "single"
+slug: "informations"
+weight: 0
 ---
 
 

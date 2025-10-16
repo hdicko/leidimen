@@ -1,13 +1,20 @@
 ---
-title: "Reunion Mennecy Octobre 2007"
+title: "Réunion Mennecy Octobre 2007"
 date: 2007-10-28T20:37:50+02:00
 draft: false
-tags:
-  - blog
-  - reunion
-auteur: Moussa - Hamassala David Dicko
+description: "Réunion à Mennecy avec une dizaine de membres"
+author: "Moussa - Hamassala David Dicko"
+slug: "reunion-mennecy-oct-2007"
+featured_image: "/img/reunions/reunion-mennecy1.jpeg"
+weight: 0
 
-type: posts
+categories: []
+
+tags:
+  - "blog"
+  - "reunion"
+
+villages: []
 ---
 
 {{< myimage src="/img/reunions/reunion-mennecy1.jpeg" >}}

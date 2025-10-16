@@ -1,13 +1,20 @@
 ---
-title: "La rentrée à Dorool"
+title: "La rentrée scolaire à Dorool 2008"
 date: 2008-10-21T20:37:50+02:00
 draft: false
+description: "Rentrée scolaire à Dorool - Un instituteur a été nommé"
+author: "Moussa Dicko"
+slug: "rentree-scolaire-dorool-2008"
+featured_image: "/img/dorool/rentree-scolaire-dorool-2008.jpg"
+weight: 0
+
+categories: []
+
 tags:
-  - blog
-auteur: "Moussa Dicko"
+  - "blog"
 
 villages:
-  - dorool
+  - "dorool"
 ---
 
 # Rentree scolaire

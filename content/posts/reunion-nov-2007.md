@@ -1,11 +1,20 @@
 ---
-title: "Reunion Novembre 2007"
-date: 2023-08-27T20:37:50+02:00
+title: "Réunion Novembre 2007"
+date: 2007-11-26T20:37:50+02:00
 draft: false
+description: "Réunion à Cachan - Vote du budget annuel et projets prioritaires"
+author: "Moussa et Eva"
+slug: "reunion-nov-2007"
+featured_image: "/img/reunions/tissuamical.jpg"
+weight: 0
+
+categories: []
+
 tags:
-  - blog
-  - reunion
-auteur: Moussa et Eva
+  - "blog"
+  - "reunion"
+
+villages: []
 ---
 
 {{< myimage src="/img/reunions/tissuamical.jpg" >}}

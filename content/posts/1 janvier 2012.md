@@ -1,19 +1,21 @@
 ---
-draft: false
-auteur: Melina Dicko
-title: Nouvelle AI created by claude
+title: "Nouvelle AI created by claude"
 date: 2025-10-10
-lastmod: 2025-10-10
-author: Hamadoun Dicko
-villages:
-  - dorool
-  - douentza
-slug: ecole de dorool
-description: Cet article est créer par l'agent AI claude
-moods:
-  - inspire
+draft: false
+description: "Cet article est créé par l'agent AI claude"
+author: "Hamadoun Dicko"
+slug: "ecole-de-dorool"
+featured_image: ""
+weight: 0
+
+categories: []
+
 tags:
-  - blog
-type: posts
+  - "blog"
+  - "inspire"
+
+villages:
+  - "dorool"
+  - "douentza"
 ---
 ***A﻿I Claude content***

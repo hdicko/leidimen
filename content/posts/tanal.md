@@ -2,13 +2,24 @@
 title: "Post21 tous les villages"
 date: 2023-08-27T20:37:50+02:00
 draft: false
-auteur: Cisse
+description: "Ce post concerne tous les villages - Douentza, Diona et environs, Debere, Boundoucoli et Dorool et environs"
+author: "Cisse"
+slug: "tanal-villages"
+featured_image: ""
+weight: 0
+
+categories: []
+
 tags:
-  - blog
+  - "blog"
 
 villages:
-  - Tanal
-types: posts
+  - "Tanal"
+  - "Douentza"
+  - "Diona"
+  - "Debere"
+  - "Boundoucoli"
+  - "Dorool"
 ---
 
 Ce post 21 concerne tous les villages - Douentza, Diona et environs, Debere, Boundoucoli et Dorool et environs

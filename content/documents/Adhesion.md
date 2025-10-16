@@ -1,9 +1,13 @@
 ---
-color: blue
+title: "Adhésion"
+description: "Coordonnées et informations pour adhérer à l'association Leidimen"
 date: "2019-11-06T10:08:23+01:00"
 draft: false
-menu: main
-title: Adhesion
+author: ""
+type: "page"
+layout: "single"
+slug: "adhesion"
+weight: 0
 ---
 
 Coordonnées

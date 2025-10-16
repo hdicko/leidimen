@@ -1,11 +1,24 @@
 ---
-title: "Reunion sept 2007"
+title: "Réunion septembre 2007"
 date: 2007-09-27T20:37:50+02:00
 draft: false
+description: "Voyage associatif au Mali 2007 et Fête des associations"
+author: "Aissa - Eva"
+slug: "reunion-sept-2007"
+featured_image: ""
+weight: 0
+
+categories: []
+
 tags:
-  - blog
-  - reunion
-auteur: Aissa - Eva
+  - "blog"
+  - "reunion"
+
+villages:
+  - "douentza"
+  - "debere"
+  - "boundoucoli"
+  - "diona"
 ---
 
 27 septembre 2007

@@ -1,7 +1,13 @@
 ---
+title: "Compte rendu de réunions"
+description: "Rapports annuels et comptes rendus de l'association Leidimen"
 date: "2019-11-06T10:12:09+01:00"
 draft: false
-title: Compte rendu de reunions
+author: ""
+type: "page"
+layout: "single"
+slug: "compte-rendu"
+weight: 0
 ---
 
 

@@ -1,26 +1,20 @@
 ---
-# titre du post
-title: "Compte rendu de reunion"
-
-# date de creation du post
+title: "Compte rendu de réunion"
 date: 2011-07-04T20:37:50+02:00
-
-# dev
 draft: false
-
-# taxonomy
-tags:
-  - blog
-  - reunion
-
-# type
-type: posts
-
-# slug
+description: "Compte rendu de réunion"
+author: "Hamassala David @ 18:30"
 slug: "cr-2010"
+featured_image: ""
+weight: 0
 
-#auteur du post
-auteur: Hamassala David @ 18:30
+categories: []
+
+tags:
+  - "blog"
+  - "reunion"
+
+villages: []
 ---
 
 Compte-rendu d’activité 2010

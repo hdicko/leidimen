@@ -2,12 +2,19 @@
 title: "Envoi du matériel informatique à Bamako"
 date: 2007-01-15T20:37:50+02:00
 draft: false
-tags:
-  - blog
-  - info
-auteur: Aissa Dicko
+description: "Chargement du matériel informatique direction Bamako"
+author: "Aissa Dicko"
+slug: "envoi-materiel-informatique-bamako-2007"
+featured_image: ""
+weight: 0
 
-type: posts
+categories: []
+
+tags:
+  - "blog"
+  - "info"
+
+villages: []
 ---
 
 Chargement du matériel informatique direction Bamako

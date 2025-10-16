@@ -3,8 +3,11 @@ title: "Politique de Confidentialité"
 description: "Protection de vos données personnelles et respect de votre vie privée"
 date: 2025-10-14
 draft: false
+author: ""
 type: "page"
 layout: "single"
+slug: "politique-confidentialite"
+weight: 0
 ---
 
 ## 1. Introduction et engagement

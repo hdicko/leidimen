@@ -3,8 +3,11 @@ title: "Mentions Légales"
 description: "Informations légales et réglementaires de l'association Leidimen"
 date: 2025-10-14
 draft: false
+author: ""
 type: "page"
 layout: "single"
+slug: "mentions-legales"
+weight: 0
 ---
 
 ## 1. Identification de l'association

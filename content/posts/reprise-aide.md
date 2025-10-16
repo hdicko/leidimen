@@ -1,26 +1,26 @@
 ---
-title: Reprise Aide au Developpement
-auteur: Hamassala David Dicko
+title: "Reprise Aide au Développement"
 date: "2013-03-06T14:30:00+01:00"
-description: Reprise d'aide
 draft: false
-image: images/bureau-leidimen.jpg
-linkTitle: reprise de l'aide au developpement
-slug: aide
-tags:
-  - blog
-  - leidimen
-villages:
-  - douentza
-  - diona
-  - boundoucoli
-  - debere
-  - dorool
-categories:
-  - informations
-type: posts
-
+description: "Reprise d'aide au développement"
+author: "Hamassala David Dicko"
+slug: "aide"
+featured_image: "images/bureau-leidimen.jpg"
 weight: 8
+
+categories:
+  - "informations"
+
+tags:
+  - "blog"
+  - "leidimen"
+
+villages:
+  - "douentza"
+  - "diona"
+  - "boundoucoli"
+  - "debere"
+  - "dorool"
 ---
 {{< details summary="See the details" >}}
 Le Mali n’est pas encore stable, ni militairement, ni politiquement, cependant sur ces deux points, la situation s’améliore néanmoins rapidement.

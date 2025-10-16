@@ -1,17 +1,21 @@
 ---
-title: Ecole de Douentza
+title: "École de Douentza"
 date: 2025-10-10
-lastmod: 2025-10-10
-author: Hama Pathe Ameri Diona
 draft: false
-description: Juste pour tester
-image: /images/uploads/background.jpg
-villages:
-  - douentza
-  - diona
+description: "Juste pour tester"
+author: "Hama Pathe Ameri Diona"
+slug: "ecole-douentza"
+featured_image: "/images/uploads/background.jpg"
+weight: 0
+
 categories:
-  - mathematiques
+  - "mathematiques"
+
 tags:
-  - blog
+  - "blog"
+
+villages:
+  - "douentza"
+  - "diona"
 ---
 ## ***T﻿esting une nouvelle note***

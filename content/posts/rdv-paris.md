@@ -1,23 +1,21 @@
 ---
+title: "RDV Paris"
 date: "2013-03-05T14:30:00+01:00"
-title: RDV Paris
 draft: false
-
-#Author
-auteur: Hamassala David Dicko
-
-#categories
-categories:
-  - informations
-tags:
-  - blog
-  - leidimen
-
-# type
-type: posts
-
-# Page weight
+description: "Événement printemps parisien le long des berges du canal"
+author: "Hamassala David Dicko"
+slug: "rdv-paris"
+featured_image: ""
 weight: 9
+
+categories:
+  - "informations"
+
+tags:
+  - "blog"
+  - "leidimen"
+
+villages: []
 ---
 
 Nous contemplons l’idée d’un évènement sur le printemps parisien, pourquoi pas le long des berges du canal.
