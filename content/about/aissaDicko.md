@@ -1,15 +1,33 @@
 ---
+title: "Aissa Dicko"
 date: "2019-11-05T15:45:33+01:00"
-description: La solidarite au coeur de mes preocupations
 draft: false
-title: Aissa Dicko
+description: "La solidarité au coeur de mes préoccupations - Présidente de Leidimen"
+slug: "aissa"
+weight: 10
 
 card:
-  devise: "Ma devise est : Liberté - Égalité - Fraternité et Solidarité"
-  image: images/aissa-logo.jpg
-  membre: Membre fondateur - President de Leidimen
-  presentation: Presidente de leidimen
-  type: membre
+  image: "images/aissa-logo.jpg"
+  fonction: "Présidente"
+  membre: "Membre fondateur"
+  presentation: "Présidente de Leidimen"
+  ville: ""
+  pays: ""
+  email: ""
+  tel: ""
+  devise: "Liberté - Égalité - Fraternité et Solidarité"
+  specialites: []
+
+experience: []
+
+categories:
+  - "gauche"
+  - "leidimen"
+  - "CA"
+
+tags:
+  - "Bondoufle"
+---
 
 cascade:
   banner: img/logo/leidimen-logo.jpg

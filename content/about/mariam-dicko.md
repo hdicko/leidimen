@@ -2,6 +2,10 @@
 title: "Mariam Dicko"
 date: 2025-08-19T10:00:00Z
 draft: false
+description: "Membre du CA spécialisée en éducation et formation"
+slug: "mariam-dicko"
+weight: 0
+
 card:
   image: "images/mariam-dicko.jpg"
   fonction: "membre du CA"
@@ -11,13 +15,18 @@ card:
   pays: "France"
   email: "mariam.dicko@leidimen.org"
   tel: "+33 6 12 34 56 78"
+  devise: ""
   specialites:
     - "Enseignement"
     - "Anglais"
     - "Formation"
     - "Coordination de projets"
+
+experience: []
+
 categories:
   - "CA"
+tags: []
 ---
 
 ## Présentation

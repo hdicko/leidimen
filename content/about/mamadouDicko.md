@@ -1,28 +1,31 @@
 ---
+title: "Mamadou Dicko"
 date: "2019-11-05T15:45:05+01:00"
-description: 'L’ÉCOLOGIE : UNE URGENCE VITALE, UNE CHANCE HISTORIQUE !'
 draft: false
-title: Mamadou Dicko
-slug: Mamadou
+description: "L'ÉCOLOGIE : UNE URGENCE VITALE, UNE CHANCE HISTORIQUE !"
+slug: "Mamadou"
+weight: 40
 
 card:
-  devise: 'L’ÉCOLOGIE : UNE URGENCE VITALE, UNE CHANCE HISTORIQUE !'
-  image: images/mamadou-logo-thumb.jpg
-  membre: Membre du CA
-  presentation: Membre de Leidimen depuis sa creation
+  image: "images/mamadou-logo-thumb.jpg"
+  fonction: "Membre du CA"
+  membre: "Membre du CA"
+  presentation: "Membre de Leidimen depuis sa création"
+  ville: ""
+  pays: ""
+  email: ""
+  tel: ""
+  devise: "L'ÉCOLOGIE : UNE URGENCE VITALE, UNE CHANCE HISTORIQUE !"
+  specialites: []
 
-# categories 
+experience: []
+
 categories:
-- leidimen
-- membre du CA
-categories_weight: 40
+  - "leidimen"
+  - "membre du CA"
 
-
-#taxonomies
 tags:
-  - Bondoufle
-tags_weight: 40
-
+  - "Bondoufle"
 ---
 
 

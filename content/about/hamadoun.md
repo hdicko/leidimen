@@ -1,37 +1,28 @@
 ---
-# Date
+title: "Hamadoun Dicko"
 date: "2019-11-05T15:44:50+01:00"
 draft: false
-
-# photo
-featured_image: images/hd.jpg
-image: ""
-
-# slug
-slug: hd
-
-# titre
-title: Hamadoun Dicko
+description: "Informaticien expérimenté avec une carrière internationale chez DEC, Compaq et HP — spécialisé en systèmes, réseaux et DevOps."
+slug: "hd"
 weight: 8
 
-
-# Author
-author:
-  display_name: Hamadi Pathe Ameri Diona
-  family_name: Dicko
-  given_name: Hamadoun
-
-# Carte de visite
 card:
-  devise: "Liberté, Égalité, Fraternité et Solidarité"
-  image: images/hd-thumb.jpg
+  image: "images/hd-thumb.jpg"
+  fonction: "Membre du CA"
   membre: "Membre du CA"
   presentation: "Membre de Leidimen depuis sa création. Support technique"
+  ville: ""
+  pays: ""
+  email: ""
+  tel: ""
+  devise: "Liberté, Égalité, Fraternité et Solidarité"
+  specialites:
+    - "Systèmes"
+    - "Réseaux"
+    - "DevOps"
+    - "Automatisation"
 
-# Description
-description: "Informaticien expérimenté avec une carrière internationale chez DEC, Compaq et HP — spécialisé en systèmes, réseaux et DevOps."
-
-# Timeline d'expériences
+experience
 experience:
   - date: "2019"
     title: "Co-fondateur de Leidimen"
@@ -90,32 +81,23 @@ experience:
       - "Stockage"
       - "Administration"
 
-# Categories - tags et moods
 categories:
-  - Gauche
-  - meb
-  - CA
-
-moods:
-  - douentza
-  - Mathematiques
-  - Informatique
-  - Cinema
-  - Poesie
-  - Lecture
+  - "Gauche"
+  - "meb"
+  - "CA"
 
 tags:
-  - PS
-  - meb
-  - mennecy
-  - leidimen
-
-villages:
-  - diona
-  - douentza
-
-
-
+  - "PS"
+  - "meb"
+  - "mennecy"
+  - "leidimen"
+  - "douentza"
+  - "Mathematiques"
+  - "Informatique"
+  - "Cinema"
+  - "Poesie"
+  - "Lecture"
+  - "diona"
 ---
 
 <!-- Professional LinkedIn-style profile for Hamadoun Dicko -->

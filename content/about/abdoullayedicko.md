@@ -1,29 +1,25 @@
 ---
+title: "Abdoulaye Dicko"
 date: "2019-11-05T15:45:53+01:00"
-description: l'humain d'abord!
 draft: false
-title: Abdoulaye Dicko
-# presenation card
-card:
-  devise: Creation entreprenerial et Solidarite
-  image: images/abdoulaye.dicko-thumb.jpg
-  membre: Membre fondateur
-  presentation: Membre fondateur de leidimen
-
-# taxonomies
-categories:
-  - leidimen
-  - CA
-categories_weight: 20
-moods:
-  - macaron
-tags:
-  - Bondoufle
-tags_weight: 20
-
-image: images/abdoulaye.dicko.jpg
-
+description: "L'humain d'abord! Membre fondateur de Leidimen"
+slug: "Abdoulaye"
 weight: 20
+
+card:
+  image: "images/abdoulaye.dicko-thumb.jpg"
+  fonction: "Membre fondateur"
+  membre: "Membre fondateur"
+  presentation: "Membre fondateur de leidimen"
+  ville: ""
+  pays: ""
+  email: ""
+  tel: ""
+  devise: "Creation entreprenerial et Solidarite"
+  specialites:
+    - "Management"
+    - "Leadership"
+    - "Entrepreneuriat"
 
 experience:
   - date: "2007"
@@ -39,12 +35,13 @@ experience:
     icon: "bi-gem"
     description: "A lancé sa propre marque pour partager sa passion de la pâtisserie et des produits d'exception."
 
-slug: Abdoulaye
-resources:
-  - src: "example.jpg"
-    params:
-      licence: MIT
-      caption: "Some more information about this image"
+categories:
+  - "leidimen"
+  - "CA"
+
+tags:
+  - "Bondoufle"
+  - "macaron"
 ---
 
 {{< myimage src="images/abdoulaye.dicko.jpg" >}}
