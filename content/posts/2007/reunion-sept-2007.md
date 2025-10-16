@@ -5,7 +5,7 @@ draft: false
 description: "Voyage associatif au Mali 2007 et Fête des associations"
 author: "Aissa - Eva"
 slug: "reunion-sept-2007"
-featured_image: ""
+featured_image: "/img/logo/leidimen-logo-ai.jpeg"
 weight: 0
 
 categories: []
@@ -53,4 +53,4 @@ je vous informe que Leïdimen participera à la fête des associations de Bondou
 
 A dimanche !!!
 
-PS : Toute aide sera la bienvenue aissadicko /chez/ yahoo.fr
+PS : Toute aide sera la bienvenue aissadicko@yahoo.fr

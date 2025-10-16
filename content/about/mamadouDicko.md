@@ -22,7 +22,7 @@ experience: []
 
 categories:
   - "leidimen"
-  - "membre du CA"
+  - "CA"
 
 tags:
   - "Bondoufle"

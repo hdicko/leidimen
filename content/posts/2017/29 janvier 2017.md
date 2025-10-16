@@ -5,7 +5,7 @@ draft: false
 description: "Nouvelles de janvier 2017"
 author: "Moussa Dicko"
 slug: "nouvelles-janvier-2017"
-featured_image: ""
+featured_image: "/img/logo/leidimen-logo-ai.jpeg"
 weight: 0
 
 categories: []

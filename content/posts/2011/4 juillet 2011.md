@@ -5,7 +5,7 @@ draft: false
 description: "Compte rendu de réunion"
 author: "Hamassala David @ 18:30"
 slug: "cr-2010"
-featured_image: ""
+featured_image: "/img/logo/leidimen-logo-ai.jpeg"
 weight: 0
 
 categories: []
@@ -19,6 +19,7 @@ villages: []
 
 Compte-rendu d’activité 2010
 { .font-effect-shadow-multiple .p-2 .text-dark .bg-opacity-10 }
-Pour ceux qui ne pouvaient être présents <!--more--> à l’assemblée générale début 2011, voici le compte-rendu d’activité 2010 à télécharger
+
+Pour ceux qui ne pouvaient être présents à l’assemblée générale début 2011, voici le compte-rendu d’activité 2010 à télécharger dans documents et compte-rendu
 
 Commentaires fermés :sleeping: :ok: :clipperton_island: :mali:

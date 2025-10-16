@@ -5,6 +5,4 @@ draft: false
 author: "Hamadoun Dicko"
 ---
 
-{{< load-photoswipe >}}
-
 {{< gallery >}}

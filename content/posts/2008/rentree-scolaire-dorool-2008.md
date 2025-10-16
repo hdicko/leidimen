@@ -5,7 +5,7 @@ draft: false
 description: "Rentrée scolaire à Dorool - Un instituteur a été nommé"
 author: "Moussa Dicko"
 slug: "rentree-scolaire-dorool-2008"
-featured_image: "/img/dorool/rentree-scolaire-dorool-2008.jpg"
+featured_image: "/img/logo/leidimen-logo-ai.jpeg"
 weight: 0
 
 categories: []

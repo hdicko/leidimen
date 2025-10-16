@@ -5,7 +5,7 @@ draft: false
 description: "Reprise d'aide au développement"
 author: "Hamassala David Dicko"
 slug: "aide"
-featured_image: "images/bureau-leidimen.jpg"
+featured_image: "/images/bureau-leidimen.jpg"
 weight: 8
 
 categories:

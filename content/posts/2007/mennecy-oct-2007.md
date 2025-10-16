@@ -5,7 +5,7 @@ draft: false
 description: "Réunion à Mennecy avec une dizaine de membres"
 author: "Moussa - Hamassala David Dicko"
 slug: "reunion-mennecy-oct-2007"
-featured_image: "/img/reunions/reunion-mennecy1.jpeg"
+featured_image: "/img/reunions/reunion-mennecy2.jpeg"
 weight: 0
 
 categories: []

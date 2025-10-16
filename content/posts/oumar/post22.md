@@ -1,5 +1,5 @@
 ---
-title: "blog post22 : New friend"
+title: "Chez Oumar Hamadoun Bamako - Mali"
 date: "2023-06-30T17:01:15+02:00"
 draft: false
 
@@ -13,3 +13,5 @@ type: posts
 
 weight: 22
 ---
+
+### Chez Oumar ###

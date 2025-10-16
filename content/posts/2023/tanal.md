@@ -5,7 +5,7 @@ draft: false
 description: "Ce post concerne tous les villages - Douentza, Diona et environs, Debere, Boundoucoli et Dorool et environs"
 author: "Cisse"
 slug: "tanal-villages"
-featured_image: ""
+featured_image: "/img/logo/leidimen-logo-ai.jpeg"
 weight: 0
 
 categories: []

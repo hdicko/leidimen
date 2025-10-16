@@ -5,7 +5,7 @@ draft: false
 description: "Lancement d'un nouveau projet d'alphabétisation dans le village de Dorool"
 author: "Équipe Leidimen"
 slug: "projet-educatif-dorool-2025"
-featured_image: "images/leidimen-logo.jpg"
+featured_image: "/img/logo/leidimen-logo-ai.jpeg"
 weight: 0
 
 categories:

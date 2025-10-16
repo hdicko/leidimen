@@ -21,8 +21,6 @@ card:
     - "Réseaux"
     - "DevOps"
     - "Automatisation"
-
-experience
 experience:
   - date: "2019"
     title: "Co-fondateur de Leidimen"

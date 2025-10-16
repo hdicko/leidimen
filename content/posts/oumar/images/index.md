@@ -8,5 +8,4 @@ Auteur: "Aissa"
 Quelques images des élèves de l'école de Dorool
 {.text-bg-danger .text-center}
 
-{{< load-photoswipe >}}
 {{< gallery  caption-effect="slide" hover-effect="grow" >}}

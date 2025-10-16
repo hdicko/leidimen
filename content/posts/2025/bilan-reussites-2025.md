@@ -5,7 +5,7 @@ draft: false
 description: "Bilan des actions menées cette année entre Bondoufle et les villages du Mali"
 author: "Bureau Leidimen"
 slug: "bilan-reussites-2025"
-featured_image: "/img/leidimen-logo.jpg"
+featured_image: "/img/logo/leidimen-logo.jpg"
 weight: 0
 
 categories:
@@ -19,6 +19,8 @@ tags:
 
 villages: []
 ---
+
+
 
 ## Une année riche en réalisations
 

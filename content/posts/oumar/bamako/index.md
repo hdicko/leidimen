@@ -7,5 +7,4 @@ title: Images - Vacances a Bamako chez Mr et Mme Dicko
 Quelques images: Famille Dicko
 {.text-bg-danger .text-center}
 
-{{< load-photoswipe >}}
 {{< gallery  caption-effect="slide" hover-effect="grow" >}}

@@ -5,7 +5,7 @@ draft: false
 description: "Nos villages de coeur autour de Diona la capitale"
 author: "Hamadoun"
 slug: "diambana-villages"
-featured_image: "/img/hd-thumb.jpg"
+featured_image: "/images/leidimen-logo-thumb.jpg"
 weight: 0
 
 categories: []

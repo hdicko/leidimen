@@ -328,7 +328,7 @@
     <div class="related-grid">
       {{ $currentPage := . }}
       {{ $relatedPages := where .Site.RegularPages "Section" "about" }}
-      {{ range first 3 (where $relatedPages ".Permalink" "!=" $currentPage.Permalink) }}
+      {{ range first 5 (where $relatedPages ".Permalink" "!=" $currentPage.Permalink) }}
       {{ $memberImage := resources.Get .Params.card.image }}
       <div class="related-card-ctx7">
         <div class="related-photo">
