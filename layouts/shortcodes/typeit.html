@@ -1,3 +1,34 @@
+{{/*
+  TypeIt Shortcode
+  
+  Purpose: Create typing animation effects for text
+  Library: TypeIt v8.7.1 (https://www.typeitjs.com/)
+  
+  Usage:
+    typeit speed=50 lifeLike=true
+    Your text here
+    Multiple lines supported
+    /typeit
+  
+  Parameters:
+    - initialString: Text to display initially (default: "")
+    - speed: Typing speed in ms (default: 100)
+    - lifeLike: Human-like typing variation (default: false)
+    - startDelay: Delay before starting in ms (default: 0)
+    - breakLines: Preserve line breaks (default: true)
+    - waitUntilVisible: Wait until element is visible (default: true)
+    - loop: Loop the animation (default: false)
+    - class: CSS classes to add
+    - tag: HTML tag to use (default: "div")
+  
+  Features:
+    - Auto-generates unique ID for each instance
+    - Handles single-line and multi-line text
+    - Supports custom styling via class parameter
+    - Loads TypeIt library from CDN
+*/}}
+
+{{/* Parse content and remove empty lines */}}
 {{- $rawContent := split .Inner "\n" -}}
 {{- $content := slice -}}
 {{- range $rawContent -}}
@@ -6,6 +37,8 @@
     {{- $content = $content | append $line -}}
   {{- end -}}
 {{- end -}}
+
+{{/* Get parameters with defaults */}}
 {{- $initialString := .Get "initialString" | default "" -}}
 {{- $speed := .Get "speed" | default 100 -}}
 {{- $lifeLike := .Get "lifeLike" | default false -}}
@@ -19,20 +52,24 @@
 {{- end -}}
 {{- $tag := .Get "tag" | default "div" -}}
 
+{{/* Generate unique ID */}}
 {{ $id := delimit (slice "typeit" (partial "functions/uid.html" .)) "-" }}
 
+{{/* Build HTML attributes */}}
 {{- $attrs := printf `id="%v"` $id -}}
 {{- with $classList -}}
   {{- $attrs = delimit $classList " " | printf `%v class="%v"` $attrs -}}
 {{- end -}}
 
+{{/* Render initial container */}}
 {{ printf `<%v %v>%s</%v>` $tag $attrs $initialString $tag | safeHTML }}
 
-<!-- Load TypeIt library -->
+<!-- Load TypeIt library from CDN -->
 <script src="https://cdn.jsdelivr.net/npm/typeit@8.7.1/dist/index.umd.js"></script>
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
+      {{/* Single string: output as plain string without JSON array */}}
       {{- if eq (len $content) 1 }}
       new TypeIt("#{{ $id }}", {
         strings: "{{ index $content 0 }}",
@@ -43,6 +80,7 @@
         waitUntilVisible: {{ $waitUntilVisible }},
         loop: {{ $loop }}
       }).go();
+      {{/* Multiple strings: output as JSON array */}}
       {{- else }}
       new TypeIt("#{{ $id }}", {
         strings: {{ $content | jsonify }},

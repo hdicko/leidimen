@@ -1,36 +1,52 @@
+{{/*
+  Base Template (baseof.html)
+  
+  Purpose: Master template for all pages
+  This is the foundation layout that wraps all other templates.
+  
+  Structure:
+  1. HTML head with meta tags and CSS
+  2. Navbar navigation
+  3. Association banner
+  4. Main content block (defined in child templates)
+  5. Footer
+  6. Scripts (Bootstrap, jQuery, custom JS)
+  7. Netlify Identity Widget
+  
+  Child templates override the "main" block to provide page-specific content.
+  
+  Features:
+  - Responsive design with Bootstrap 5
+  - Light/dark theme support (data-bs-theme)
+  - Multilingual support
+  - Netlify CMS integration
+*/}}
 <!doctype html>
 <html lang="{{ .Site.Language.Lang | default " en" }}" data-bs-theme="light">
 
 <head>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   {{ partial "head.html" . }}
 </head>
 
 <body>
-
-  {{/** {{ partial "theme-mode"}} **/}}
-  {{/** navbar **/}}
+  <!-- Navigation bar -->
   {{- partial "navbar.html" . -}}
 
-  {{/** bandeau association **/}}
-
+  <!-- Association banner -->
   {{ partial "association.html" .}}
-  <!-- block header  changing theme - dark  light 
-  {{- partial "theme.html" . -}}
-  -->
 
-  <!-- block main -->
+  <!-- Main content block - Override this in child templates -->
   {{ block "main" . }} {{ end }}
 
-  <!-- block footer -->
+  <!-- Footer block - Can be overridden if needed -->
   {{ block "footer" . }} {{ partial "footer.html" . }} {{ end }}
 
-  <!-- site scripts -->
+  <!-- Load site-wide JavaScript -->
   {{ partial "scripts.html" }}
 
-  <!-- Netlify Identity Widget -->
+  <!-- Netlify Identity Widget for CMS authentication -->
   <script>
     if (window.netlifyIdentity) {
       window.netlifyIdentity.on("init", user => {

@@ -1,3 +1,30 @@
+{{/*
+  Gallery Shortcode
+  
+  Purpose: Display a responsive image gallery with PhotoSwipe lightbox
+  Usage: gallery (no parameters needed)
+  
+  Features:
+  - Auto-loads PhotoSwipe library (only once per page using scratch)
+  - Processes all images from page resources
+  - Creates responsive thumbnails (400x500 webp)
+  - Generates lightbox links to full-size images
+  
+  Image Processing:
+  - Format: WebP for better compression
+  - Size: 400x500 pixels
+  - Quality: 85
+  - Algorithm: Lanczos (high quality)
+  - Anchor: Top (for portraits)
+  
+  Dependencies:
+  - photoswipe-resources.html partial (loads CSS/JS)
+  - photoswipe-structure.html partial (HTML structure)
+  - Page.Scratch for duplicate prevention
+  
+  Note: PhotoSwipe is loaded only once per page, even with multiple galleries.
+*/}}
+
 {{/* Auto-load photoswipe for galleries */}}
 {{- if not ($.Page.Scratch.Get "photoswipeloaded") -}}
 {{ $.Page.Scratch.Set "photoswipeloaded" 1 }}
@@ -5,13 +32,16 @@
 {{ partial "photoswipe-structure.html" . }}
 {{- end -}}
 
+{{/* Get all images from page resources */}}
 {{- $image := (.Page.Resources.ByType "image") -}}
-{{/* $image := ( .Page.Resources.Match "posts/images/paris/*") */}}
+
+{{/* Process each image */}}
 {{- with $image -}}
 {{- range . -}}
-{{/* {{ $resized := .Fill "300x230 q20" }} */}}
+{{/* Create responsive thumbnail: 400x500px WebP, quality 85, Lanczos resampling */}}
 {{- $resized := .Fill "400x500 top webp q85 lanczos" -}}
-{{/* <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt=""> */}}
+
+{{/* Generate lightbox link with thumbnail */}}
 <a href="{{ .Permalink }}" data-lightbox="roadtrip" title="View Image">
   <img class="img-fluid rounded shadow p-3 bg-body-tertiary mx-auto" src="{{ $resized.Permalink }}" />
 </a>
