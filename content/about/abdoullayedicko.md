@@ -10,53 +10,92 @@ card:
   image: "images/abdoulaye.dicko-thumb.jpg"
   fonction: "Membre fondateur"
   membre: "Membre fondateur"
-  presentation: "Membre fondateur de leidimen"
-  ville: ""
-  pays: ""
-  email: ""
+  presentation: "Membre fondateur de Leidimen"
+  ville: "Bondoufle"
+  pays: "France"
+  email: "abd-dicko@hotmail.fr"
   tel: ""
-  devise: "Creation entreprenerial et Solidarite"
+  devise: "Création entrepreneuriale et Solidarité"
   specialites:
     - "Management"
     - "Leadership"
     - "Entrepreneuriat"
+    - "Innovation"
 
 experience:
   - date: "2007"
     title: "Co-fondateur de Leidimen"
+    description: "Participation à la création de l'association pour renforcer les liens entre Bondoufle et le Mali"
+    category: "Associatif"
     icon: "bi-people-fill"
-    description: "A participé à la création de l'association pour renforcer les liens entre Bondoufle et le Mali."
-  - date: "2015 - Aujourd'hui"
+    achievements:
+      - "Co-fondation de l'association Leidimen"
+      - "Développement des liens France-Mali"
+      - "Mobilisation de la communauté"
+    skills:
+      - "Gestion associative"
+      - "Relations internationales"
+      - "Mobilisation communautaire"
+
+  - date: "2015-2025"
     title: "Senior Manager chez Lundano"
+    description: "Expertise en management et leadership pour piloter des équipes et des projets stratégiques"
+    category: "Professionnel"
     icon: "bi-briefcase-fill"
-    description: "Apporte son expertise en management et leadership à l'entreprise."
+    achievements:
+      - "Direction d'équipes multiculturelles"
+      - "Pilotage de projets stratégiques"
+      - "Développement du leadership"
+    skills:
+      - "Management d'équipe"
+      - "Leadership"
+      - "Stratégie d'entreprise"
+      - "Gestion de projet"
+
   - date: "2020"
     title: "Créateur de Macaron x Addict"
+    description: "Création d'une marque pour partager la passion de la pâtisserie et des produits d'exception"
+    category: "Entrepreneurial"
     icon: "bi-gem"
-    description: "A lancé sa propre marque pour partager sa passion de la pâtisserie et des produits d'exception."
+    achievements:
+      - "Lancement de la marque Macaron x Addict"
+      - "Développement de produits d'exception"
+      - "Collaboration avec producteurs de qualité"
+    skills:
+      - "Entrepreneuriat"
+      - "Innovation produit"
+      - "Marketing"
+      - "Pâtisserie"
 
 categories:
   - "leidimen"
   - "CA"
+  - "fondateur"
 
 tags:
   - "Bondoufle"
+  - "Mali"
   - "macaron"
+  - "entrepreneuriat"
 ---
 
 {{< myimage src="images/abdoulaye.dicko.jpg" >}}
-Abdoulaye Dicko : <abd-dicko@hotmail.fr>
+
+## Abdoulaye Dicko - Membre fondateur de Leidimen
+
+Abdoulaye Dicko est membre fondateur de l'association Leidimen depuis 2007. Avec sa devise **"Création entrepreneuriale et Solidarité"**, il allie son expertise professionnelle en management à son engagement solidaire.
+
+### Parcours professionnel
+
+Senior Manager chez Lundano depuis 2015, Abdoulaye apporte son expertise en leadership et management stratégique. En 2020, il a créé **Macaron x Addict**, une marque dédiée à la pâtisserie d'exception, reflétant sa passion pour l'innovation et les produits de qualité.
+
+### Engagement associatif
+
+Membre actif de Leidimen, Abdoulaye participe activement au renforcement des liens entre Bondoufle et le Mali, mobilisant la communauté autour des projets de développement et d'éducation.
 
 ---
 
-# Abdoulaye Dicko
-
-- Membre fondateur de Leidimen
-- Actif
-- Senior Manager chez Lundano
-- créateur de la marque Macaron x Addict pour partager ma passion de ce fabuleux biscuit et ma soif de rencontre avec des producteurs d'exceptions.
-
-# Macarons intraitables [^1]
+## Recette des Macarons inratables [^1]
 
 ## ÉTAPE 1
 

@@ -11,50 +11,77 @@ card:
   fonction: "Présidente"
   membre: "Membre fondateur"
   presentation: "Présidente de Leidimen"
-  ville: ""
-  pays: ""
+  ville: "Bondoufle"
+  pays: "France"
   email: ""
   tel: ""
   devise: "Liberté - Égalité - Fraternité et Solidarité"
-  specialites: []
+  specialites:
+    - "Gestion associative"
+    - "Coordination de projets"
+    - "Relations internationales"
 
-experience: []
+experience:
+  - date: "2019"
+    title: "Présidente de Leidimen"
+    description: "Fondation et direction de l'association Leidimen, coordination de l'ensemble des projets de solidarité et d'aide au développement"
+    category: "Associatif"
+    icon: "bi-heart-fill"
+    achievements:
+      - "Création et structuration de l'association"
+      - "Coordination des projets éducatifs au Mali"
+      - "Organisation d'événements culturels et de collecte"
+    skills:
+      - "Gestion associative"
+      - "Coordination de projets"
+      - "Relations internationales"
+      - "Collecte de fonds"
+
+  - date: "2019-2024"
+    title: "Projets éducatifs à Dorool"
+    description: "Mise en place et suivi des projets de soutien à l'école du village de Dorool"
+    category: "Éducation"
+    icon: "bi-book-fill"
+    achievements:
+      - "Fourniture de matériel scolaire"
+      - "Soutien aux enseignants"
+      - "Amélioration des infrastructures scolaires"
+    skills:
+      - "Gestion de projet éducatif"
+      - "Suivi budgétaire"
+      - "Relations avec les communautés locales"
+
+  - date: "2020-2024"
+    title: "Actions culturelles France-Mali"
+    description: "Organisation d'événements culturels pour promouvoir les échanges entre la France et le Mali"
+    category: "Culturel"
+    icon: "bi-globe2"
+    achievements:
+      - "Organisation de soirées culturelles"
+      - "Promotion de la culture malienne"
+      - "Renforcement des liens communautaires"
+    skills:
+      - "Événementiel"
+      - "Communication interculturelle"
+      - "Mobilisation communautaire"
 
 categories:
-  - "gauche"
   - "leidimen"
   - "CA"
+  - "bureau"
 
 tags:
   - "Bondoufle"
----
-
-cascade:
-  banner: img/logo/leidimen-logo.jpg
-
-image: img/logo/leidimen-logo.jpg
-
-categories_weight: 10
-# Taxonomies
-categories:
-  - gauche
-  - leidimen
-  - CA
-tags:
-  - Bondoufle
-tags_weight: 10
-
-weight: 10
-
-slug: aissa
-
+  - "présidente"
+  - "Mali"
 ---
 
 {{< myimage src="images/aissa-logo.jpg" >}}
 
----
+## Présidente de Leidimen
 
-- Presidente de Leidimen
-- Membre fondatrice
+Aissa Dicko est la présidente et membre fondatrice de l'association Leidimen. Passionnée par les valeurs de solidarité et d'entraide, elle coordonne l'ensemble des projets de l'association, notamment les initiatives éducatives au Mali.
+
+Sa devise : **"Liberté - Égalité - Fraternité et Solidarité"** reflète son engagement profond pour le développement et l'éducation dans les villages maliens.
 
 

@@ -8,25 +8,90 @@ weight: 0
 
 card:
   image: "images/mariam-dicko.jpg"
-  fonction: "membre du CA"
-  membre: "bureau"
+  fonction: "Membre du CA"
+  membre: "Membre du CA"
   presentation: "Membre du CA spécialisée en éducation et formation"
   ville: "Paris"
   pays: "France"
   email: "mariam.dicko@leidimen.org"
   tel: "+33 6 12 34 56 78"
-  devise: ""
+  devise: "L'éducation est un pont entre les cultures"
   specialites:
     - "Enseignement"
     - "Anglais"
     - "Formation"
     - "Coordination de projets"
 
-experience: []
+experience:
+  - date: "2020"
+    title: "Membre du CA de Leidimen"
+    description: "Membre du Conseil d'Administration apportant une expertise en éducation et formation"
+    category: "Associatif"
+    icon: "bi-heart-fill"
+    achievements:
+      - "Coordination des projets éducatifs"
+      - "Formation linguistique des bénévoles"
+      - "Liaison avec les partenaires éducatifs internationaux"
+      - "Développement de programmes d'alphabétisation"
+    skills:
+      - "Gestion de projet éducatif"
+      - "Coordination internationale"
+      - "Formation de formateurs"
+
+  - date: "2015-2024"
+    title: "Professeure d'anglais au Lycée Jean Moulin"
+    description: "Enseignement de l'anglais dans le secondaire avec une approche interculturelle"
+    category: "Professionnel"
+    icon: "bi-book-fill"
+    achievements:
+      - "Enseignement de l'anglais niveau secondaire"
+      - "Développement de méthodes pédagogiques innovantes"
+      - "Accompagnement des élèves en difficulté"
+    skills:
+      - "Enseignement"
+      - "Pédagogie"
+      - "Anglais"
+      - "Évaluation"
+
+  - date: "2018-2020"
+    title: "Coordinatrice programme d'échange France-Mali"
+    description: "Coordination d'un programme d'échange éducatif entre la France et l'Afrique de l'Ouest"
+    category: "International"
+    icon: "bi-globe2"
+    achievements:
+      - "Organisation d'échanges éducatifs bilatéraux"
+      - "Partenariats avec institutions maliennes"
+      - "Sensibilisation aux défis éducatifs africains"
+    skills:
+      - "Coordination internationale"
+      - "Gestion de partenariats"
+      - "Relations interculturelles"
+
+  - date: "2012-2015"
+    title: "Formatrice en anglais pour adultes"
+    description: "Formation linguistique en anglais au Centre de formation professionnelle"
+    category: "Formation"
+    icon: "bi-mortarboard-fill"
+    achievements:
+      - "Formation en anglais professionnel"
+      - "Adaptation des programmes aux besoins adultes"
+      - "Suivi individuel des apprenants"
+    skills:
+      - "Formation adultes"
+      - "Anglais professionnel"
+      - "Pédagogie adaptée"
 
 categories:
+  - "leidimen"
   - "CA"
-tags: []
+  - "éducation"
+
+tags:
+  - "Paris"
+  - "Mali"
+  - "éducation"
+  - "anglais"
+  - "formation"
 ---
 
 ## Présentation
