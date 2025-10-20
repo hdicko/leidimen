@@ -1,64 +1,60 @@
 ---
-title: "Madio Dicko"
-date: "2025-10-20T12:00:00+01:00"
 draft: false
-description: "Bénévole actif de l'association Leidimen"
-slug: "madio"
-weight: 50
-
-card:
-  image: "images/default-avatar.jpg"
-  fonction: "Bénévole"
-  membre: "Bénévole"
-  presentation: "Bénévole actif de l'association Leidimen"
-  ville: "Mennecy"
-  pays: "France"
-  email: ""
-  tel: ""
-  devise: "Ensemble pour un avenir meilleur"
-  specialites:
-    - "Engagement associatif"
-    - "Solidarité"
-    - "Action communautaire"
-
 experience:
   - date: "2025"
-    title: "Bénévole chez Leidimen"
-    description: "Participation active aux actions et projets de l'association pour soutenir les villages maliens"
-    category: "Associatif"
-    icon: "bi-heart-fill"
+    title: Bénévole chez Leidimen
+    description: Participation active aux actions et projets de l'association pour
+      soutenir les villages maliens
+    category: Associatif
+    icon: bi-heart-fill
     achievements:
-      - "Engagement dans les projets solidaires"
-      - "Participation aux événements de l'association"
-      - "Soutien aux initiatives de développement"
+      - Engagement dans les projets solidaires
+      - Participation aux événements de l'association
+      - Soutien aux initiatives de développement
     skills:
-      - "Bénévolat"
-      - "Engagement citoyen"
-      - "Travail d'équipe"
-
+      - Bénévolat
+      - Engagement citoyen
+      - Travail d'équipe
   - date: "2025"
-    title: "Actions de solidarité"
-    description: "Contribution aux actions de solidarité entre la France et le Mali"
-    category: "Solidarité"
-    icon: "bi-people-fill"
+    title: Actions de solidarité
+    description: Contribution aux actions de solidarité entre la France et le Mali
+    category: Solidarité
+    icon: bi-people-fill
     achievements:
-      - "Participation aux collectes"
-      - "Organisation d'événements"
-      - "Sensibilisation communautaire"
+      - Participation aux collectes
+      - Organisation d'événements
+      - Sensibilisation communautaire
     skills:
-      - "Organisation"
-      - "Communication"
-      - "Mobilisation"
-
+      - Organisation
+      - Communication
+      - Mobilisation
+slug: madio
+title: Madio Dicko
+date: 2025-10-20T12:00:00+01:00
+card:
+  membre: Bénévole
+  devise: Ensemble pour un avenir meilleur
+  pays: France
+  fonction: Bénévole
+  ville: Mennecy
+  specialites:
+    - Engagement associatif
+    - Solidarité
+    - Action communautaire
+  presentation: Bénévole actif de l'association Leidimen
+  tel: ""
+  image: /images/uploads/image0.jpeg
+  email: ""
 categories:
-  - "leidimen"
-  - "bénévole"
-
+  - leidimen
+  - bénévole
+weight: 50
 tags:
-  - "Mennecy"
-  - "solidarité"
-  - "Mali"
-  - "bénévolat"
+  - Mennecy
+  - solidarité
+  - Mali
+  - bénévolat
+description: Bénévole actif de l'association Leidimen
 ---
 
 {{< myimage src="images/default-avatar.jpg" >}}
