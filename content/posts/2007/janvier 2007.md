@@ -5,7 +5,7 @@ draft: false
 description: "Chargement du matériel informatique direction Bamako"
 author: "Aissa Dicko"
 slug: "envoi-materiel-informatique-bamako-2007"
-featured_image: "img/infos/ordi.jpg"
+featured_image: "/img/infos/ordi.jpg"
 weight: 0
 
 categories: []
