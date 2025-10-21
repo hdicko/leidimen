@@ -21,79 +21,35 @@ villages: []
 
 En janvier 2007, nous avons préparé et expédié 10 ordinateurs pour le lycée de Douentza. Voici les étapes de préparation et d'envoi de ce matériel informatique précieux.
 
-<div class="container my-5">
-  <div class="row row-cols-1 row-cols-md-2 g-4">
-    <div class="col">
-      <div class="card h-100 shadow-sm hover-card">
-        <a href="/img/infos/prep1.jpeg" data-lightbox="materiel-informatique" data-title="Préparation du matériel - Étape 1">
-          <img src="/img/infos/prep1.jpeg" class="card-img-top" alt="Préparation du matériel informatique" style="object-fit: cover; height: 300px;">
-        </a>
-        <div class="card-body">
-          <h5 class="card-title">📦 Préparation du matériel</h5>
-          <p class="card-text">Tri et conditionnement des ordinateurs avant l'expédition vers Bamako.</p>
-        </div>
-      </div>
-    </div>
-    
-    <div class="col">
-      <div class="card h-100 shadow-sm hover-card">
-        <a href="/img/infos/prep2.jpeg" data-lightbox="materiel-informatique" data-title="Vérification et emballage">
-          <img src="/img/infos/prep2.jpeg" class="card-img-top" alt="Vérification du matériel" style="object-fit: cover; height: 300px;">
-        </a>
-        <div class="card-body">
-          <h5 class="card-title">✅ Vérification</h5>
-          <p class="card-text">Contrôle qualité et emballage sécurisé de chaque ordinateur.</p>
-        </div>
-      </div>
-    </div>
-    
-    <div class="col">
-      <div class="card h-100 shadow-sm hover-card">
-        <a href="/img/infos/prep3.jpeg" data-lightbox="materiel-informatique" data-title="Finalisation des cartons">
-          <img src="/img/infos/prep3.jpeg" class="card-img-top" alt="Finalisation de l'emballage" style="object-fit: cover; height: 300px;">
-        </a>
-        <div class="card-body">
-          <h5 class="card-title">📋 Finalisation</h5>
-          <p class="card-text">Étiquetage et préparation finale des cartons pour l'expédition.</p>
-        </div>
-      </div>
-    </div>
-    
-    <div class="col">
-      <div class="card h-100 shadow-sm hover-card">
-        <a href="/img/infos/envoi.jpeg" data-lightbox="materiel-informatique" data-title="Départ du matériel vers Bamako">
-          <img src="/img/infos/envoi.jpeg" class="card-img-top" alt="Envoi vers Bamako" style="object-fit: cover; height: 300px;">
-        </a>
-        <div class="card-body">
-          <h5 class="card-title">🚚 Expédition</h5>
-          <p class="card-text">Départ du matériel informatique direction Bamako, Mali.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+{{< image-gallery >}}
 
-<style>
-.hover-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-}
+{{< gallery-item 
+    src="/img/infos/prep1.jpeg" 
+    title="Préparation du matériel" 
+    description="Tri et conditionnement des ordinateurs avant l'expédition vers Bamako."
+    icon="📦"
+>}}
 
-.hover-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15) !important;
-}
+{{< gallery-item 
+    src="/img/infos/prep2.jpeg" 
+    title="Vérification" 
+    description="Contrôle qualité et emballage sécurisé de chaque ordinateur."
+    icon="✅"
+>}}
 
-.hover-card a {
-  text-decoration: none;
-  color: inherit;
-}
+{{< gallery-item 
+    src="/img/infos/prep3.jpeg" 
+    title="Finalisation" 
+    description="Étiquetage et préparation finale des cartons pour l'expédition."
+    icon="📋"
+>}}
 
-.hover-card img {
-  transition: transform 0.3s ease;
-}
+{{< gallery-item 
+    src="/img/infos/envoi.jpeg" 
+    title="Expédition" 
+    description="Départ du matériel informatique direction Bamako, Mali."
+    icon="🚚"
+>}}
 
-.hover-card:hover img {
-  transform: scale(1.05);
-}
-</style>
+{{< /image-gallery >}}
+
