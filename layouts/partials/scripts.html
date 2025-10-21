@@ -141,3 +141,9 @@
 
 <!-- https://trvswgnr.github.io/bs5-lightbox/  -->
 <script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.3/dist/index.bundle.min.js"></script>
+
+<!-- Dark Mode Toggle -->
+{{ $darkmode := resources.Get "js/darkmode.js" }}
+{{ if $darkmode }}
+<script src="{{ $darkmode.RelPermalink }}"></script>
+{{ end }}

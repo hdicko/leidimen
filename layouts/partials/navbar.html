@@ -65,6 +65,14 @@
         {{- end -}}
         {{- end -}}
         {{- end -}}
+        
+        <!-- Dark Mode Toggle -->
+        <li class="nav-item ms-2">
+          <button id="darkModeToggle" class="btn btn-outline-secondary border-0 rounded-circle p-2" 
+                  aria-label="Toggle dark mode" title="Toggle dark mode">
+            <i class="bi bi-moon-fill" id="darkModeIcon"></i>
+          </button>
+        </li>
       </ul>
     </div>
   </div>
@@ -161,5 +169,95 @@
 /* Hover effect for non-active nav items */
 .hover-bg-light:hover {
   background-color: rgba(13, 110, 253, 0.1) !important;
+}
+
+/* Dark Mode Toggle Button */
+#darkModeToggle {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+#darkModeToggle:hover {
+  background-color: rgba(13, 110, 253, 0.1);
+  transform: rotate(15deg);
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+}
+
+body.dark-mode .navbar {
+  background-color: #2d2d2d !important;
+  border-bottom: 1px solid #404040;
+}
+
+body.dark-mode .navbar-brand span {
+  color: #4da6ff !important;
+}
+
+body.dark-mode .nav-link {
+  color: #e0e0e0 !important;
+}
+
+body.dark-mode .nav-link.active {
+  background-color: #4da6ff !important;
+  color: #ffffff !important;
+}
+
+body.dark-mode .nav-link:not(.active):hover {
+  background-color: rgba(77, 166, 255, 0.2) !important;
+}
+
+body.dark-mode .dropdown-menu {
+  background-color: #2d2d2d;
+  border: 1px solid #404040;
+}
+
+body.dark-mode .dropdown-item {
+  color: #e0e0e0;
+}
+
+body.dark-mode .dropdown-item:hover {
+  background-color: rgba(77, 166, 255, 0.2);
+}
+
+body.dark-mode .dropdown-item.active {
+  background-color: #4da6ff;
+  color: #ffffff;
+}
+
+body.dark-mode .bg-light {
+  background-color: #2d2d2d !important;
+}
+
+body.dark-mode .breadcrumb {
+  background-color: #2d2d2d;
+}
+
+body.dark-mode .breadcrumb-item,
+body.dark-mode .breadcrumb-item a {
+  color: #4da6ff;
+}
+
+body.dark-mode .breadcrumb-item.active {
+  color: #e0e0e0;
+}
+
+body.dark-mode .card {
+  background-color: #2d2d2d;
+  border-color: #404040;
+  color: #e0e0e0;
+}
+
+body.dark-mode .shadow,
+body.dark-mode .shadow-sm,
+body.dark-mode .shadow-lg {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5) !important;
 }
 </style>
