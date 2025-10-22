@@ -65,8 +65,33 @@
     {{ $imageURL = printf "%s/%s" $path $file }}
   {{ end }}
 
-  <div class="fancybox">
-    <a data-fancybox="{{ $gallery }}" href="{{ $imageURL }}" data-caption="{{ $caption }}"><img src="{{ $imageURL }}" alt="{{ $caption }}"></a>
-    <!--<div class="caption">{{ $caption }}</div>-->
+  <div class="fancybox-item">
+    <a data-fancybox="{{ $gallery }}" href="{{ $imageURL }}" data-caption="{{ $caption }}">
+      <img src="{{ $imageURL }}" alt="{{ $caption }}" class="fancybox-thumbnail">
+    </a>
   </div>
 {{ end }}
+
+<style>
+.fancybox-item {
+  display: inline-block;
+  margin: 10px;
+}
+
+.fancybox-thumbnail {
+  max-width: 300px;
+  max-height: 300px;
+  width: auto;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.fancybox-thumbnail:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+}
+</style>

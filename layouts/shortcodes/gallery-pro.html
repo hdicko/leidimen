@@ -1,0 +1,133 @@
+{{- $gallery := .Get "gallery" | default "default" -}}
+{{- $images := .Page.Resources.ByType "image" -}}
+
+<div class="souvenir-gallery">
+  <div class="gallery-header">
+    <h2 class="gallery-title">📸 Galerie de Souvenirs</h2>
+    <p class="gallery-description">{{ .Get "description" | default "Une collection de photos souvenirs." }}</p>
+  </div>
+
+  <div class="gallery-grid">
+    {{- range $images -}}
+      {{- $caption := .Title | default .Name -}}
+      <div class="gallery-card">
+        <div class="fancybox-item">
+          <a data-fancybox="{{ $gallery }}" href="{{ .Permalink }}" data-caption="{{ $caption }}">
+            <img src="{{ .Permalink }}" alt="{{ $caption }}" class="fancybox-thumbnail" loading="lazy">
+          </a>
+        </div>
+        <div class="card-caption">{{ $caption }}</div>
+      </div>
+    {{- end -}}
+  </div>
+</div>
+
+<style>
+.souvenir-gallery {
+  padding: 2rem 0;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.gallery-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.gallery-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.gallery-description {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.gallery-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+}
+
+.gallery-card .fancybox-item {
+  margin: 0;
+  display: block;
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+  background: #f8f9fa;
+}
+
+.gallery-card .fancybox-thumbnail {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  object-fit: cover;
+  border-radius: 0;
+  box-shadow: none;
+  transition: transform 0.4s ease;
+}
+
+.gallery-card .fancybox-thumbnail:hover {
+  transform: scale(1.08);
+  box-shadow: none;
+}
+
+.card-caption {
+  padding: 1.2rem;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #34495e;
+  font-weight: 500;
+  background: #ffffff;
+  border-top: 2px solid #e9ecef;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .gallery-title {
+    font-size: 2rem;
+  }
+  
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .gallery-card .fancybox-item {
+    height: 240px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+</style>
