@@ -1,0 +1,16 @@
+{{/* Process image path for shortcodes */}}
+{{ $path := $.Scratch.Get "path" }}
+
+{{ if eq $path "title" }}
+  {{/* Use page title as path */}}
+  {{ $.Scratch.Set "path" (printf "/img/%s" (.Page.LinkTitle | urlize)) }}
+{{ else if eq $path "date" }}
+  {{/* Use year/month from date as path */}}
+  {{ $.Scratch.Set "path" (printf "/img/%s/%s" (.Page.Date.Format "2006") (.Page.Date.Format "01")) }}
+{{ else if eq $path "." }}
+  {{/* Current directory - use page resources */}}
+  {{ $.Scratch.Set "path" "" }}
+{{ else }}
+  {{/* Use explicit path as-is */}}
+  {{ $.Scratch.Set "path" $path }}
+{{ end }}

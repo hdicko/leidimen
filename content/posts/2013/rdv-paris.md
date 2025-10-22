@@ -28,12 +28,6 @@ Je viendrai avec de grands jetons de poker en plastique qui vont assez loin quan
 
 Commentaire by Olivier — 6 mars 2013 @ 19:52
 
-😉
+😉{{< /details >}}
 
-- [Paris](/leidimen/posts/paris/) 
-
-
-
-{{< /details >}}
-
-I
+- [Paris](/posts/paris/)

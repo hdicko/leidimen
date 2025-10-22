@@ -21,4 +21,4 @@ villages:
 
 
 
-![construction ecole de Dorool](/images/bureau-leidimen.jpg?&class=border,shadow)
+![Bureau de leidimen](/images/bureau-leidimen.jpg?&class=border,shadow)
