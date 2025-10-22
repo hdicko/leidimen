@@ -63,7 +63,7 @@
   type: "village"
   description: "Village rural dans la région de Douentza"
   population: 1500
-  projects: []
+  projects: ["Fournitures scolaires"]
 
 - name: "Tacouti"
   latitude: 14.9750
@@ -71,7 +71,7 @@
   type: "village"
   description: "Village rural dans la région de Douentza"
   population: 1200
-  projects: []
+  projects: ["Fournitures scolaires"]
 
 - name: "N'Dumpa"
   latitude: 15.1167
@@ -79,4 +79,4 @@
   type: "village"
   description: "Village rural dans la région de Douentza"
   population: 1800
-  projects: []
+  projects: ["Fournitures scolaires"]
