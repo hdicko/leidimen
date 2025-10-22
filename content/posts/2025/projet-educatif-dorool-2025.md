@@ -21,6 +21,11 @@ villages:
   - "dorool"
 ---
 
+
+
+
+
+{{< details summary="lire tout l'article" >}}
 ## Un nouveau défi éducatif
 
 L'association Leidimen lance un ambitieux projet d'alphabétisation dans le village de Dorool, au Mali. Cette initiative vise à réduire l'analphabétisme et à donner aux jeunes et aux adultes les outils nécessaires pour leur développement personnel et professionnel.
@@ -42,4 +47,4 @@ Le projet débutera officiellement en septembre 2025 avec l'arrivée du matérie
 ---
 
 *Pour soutenir ce projet, contactez-nous via notre formulaire de contact.*
-
+{{< /details >}}

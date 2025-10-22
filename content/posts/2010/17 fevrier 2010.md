@@ -21,5 +21,6 @@ villages:
 {.display .text-center}
 
 ---
-
+{{< details summary="lire tout l'article" >}}
 Financé en partie par le Conseil Général de l’Essonne, ce projet consiste à surcreuser un puits qui existe déjà dans le village. Les travaux ont dû être suspendus pendant l’hivernage à cause des fortes pluies. Ils ont repris en janvier 2010 et s’achèveront dans les mois à venir.
+{{< /details >}}

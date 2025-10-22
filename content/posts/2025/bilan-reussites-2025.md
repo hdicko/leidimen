@@ -21,7 +21,7 @@ villages: []
 ---
 
 
-
+{{< details summary="lire tout l'article" >}}
 ## Une année riche en réalisations
 
 L'année 2025 a été marquée par de nombreuses réussites dans nos actions de solidarité entre Bondoufle et les villages du Mali. Retour sur nos principales réalisations.
@@ -51,3 +51,4 @@ Ces réussites n'auraient pas été possibles sans le soutien de nos donateurs, 
 ---
 
 *Rejoignez-nous pour construire ensemble un avenir meilleur.*
+{{< /details >}}
