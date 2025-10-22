@@ -46,12 +46,73 @@
 <!-- Posts Grid Section -->
 <section class="posts-section py-5">
   <div class="container">
-    {{ $paginator := .Paginate .Pages }}
+    
+    <!-- Search and Filters Section -->
+    <div class="row mb-5">
+      <div class="col-lg-10 mx-auto">
+        <div class="card border-0 shadow-sm search-card">
+          <div class="card-body p-4">
+            <h5 class="card-title mb-3 fw-bold">
+              <i class="bi bi-search me-2"></i>Rechercher et filtrer
+            </h5>
+            <div class="row g-3 align-items-end">
+              <!-- Search by Title -->
+              <div class="col-md-6">
+                <label for="searchTitle" class="form-label fw-semibold">Rechercher par titre</label>
+                <input type="search" class="form-control form-control-lg" id="searchTitle" 
+                       placeholder="Tapez un mot-clé du titre..." autocomplete="off">
+              </div>
+              
+              <!-- Filter by Year -->
+              <div class="col-md-3">
+                <label for="filterYear" class="form-label fw-semibold">Année</label>
+                <select class="form-select form-select-lg" id="filterYear">
+                  <option value="">Toutes les années</option>
+                  {{ $years := slice }}
+                  {{ range .Pages }}
+                    {{ $year := .Date.Format "2006" }}
+                    {{ if not (in $years $year) }}
+                      {{ $years = $years | append $year }}
+                    {{ end }}
+                  {{ end }}
+                  {{ range sort $years "value" "desc" }}
+                    <option value="{{ . }}">{{ . }}</option>
+                  {{ end }}
+                </select>
+              </div>
+              
+              <!-- Sort Options -->
+              <div class="col-md-3">
+                <label for="sortPosts" class="form-label fw-semibold">Trier par</label>
+                <select class="form-select form-select-lg" id="sortPosts">
+                  <option value="date-desc">Plus récents</option>
+                  <option value="date-asc">Plus anciens</option>
+                  <option value="title">Titre (A-Z)</option>
+                </select>
+              </div>
+            </div>
+            
+            <!-- Reset Button -->
+            <div class="mt-3">
+              <button type="button" class="btn btn-outline-secondary" id="resetFilters">
+                <i class="bi bi-arrow-counterclockwise me-1"></i>Réinitialiser
+              </button>
+              <span class="ms-3 text-muted" id="resultsCount"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     
     <!-- Posts Grid -->
-    <div class="posts-grid mb-5">
-      {{ range $index, $post := $paginator.Pages }}
-      <article class="post-card-ctx7" data-aos="fade-up" data-aos-delay="{{ mul $index 100 }}">
+    <div class="posts-grid mb-5" id="postsGrid">
+      {{ range $index, $post := .Pages }}
+      <article class="post-card-ctx7" 
+               data-aos="fade-up" 
+               data-aos-delay="{{ mul $index 100 }}"
+               data-title="{{ $post.Title | lower }}"
+               data-date="{{ $post.Date.Format "2006-01-02" }}"
+               data-year="{{ $post.Date.Format "2006" }}">
         <div class="post-card-inner">
           <!-- Post Header -->
           <div class="post-header">
@@ -121,85 +182,110 @@
       {{ end }}
     </div>
     
-    <!-- Context7 Modern Pagination -->
-    {{ if gt $paginator.TotalPages 1 }}
-    <div class="pagination-ctx7">
-      <nav aria-label="Pagination Navigation" class="pagination-nav">
-        <div class="pagination-container">
-          
-          <!-- Previous Page -->
-          {{ if $paginator.HasPrev }}
-          <a href="{{ $paginator.Prev.URL }}" class="pagination-btn pagination-prev" aria-label="Page précédente">
-            <i class="bi bi-chevron-left"></i>
-            <span class="btn-text">Précédent</span>
-          </a>
-          {{ else }}
-          <span class="pagination-btn pagination-prev disabled">
-            <i class="bi bi-chevron-left"></i>
-            <span class="btn-text">Précédent</span>
-          </span>
-          {{ end }}
-          
-          <!-- Page Numbers -->
-          <div class="pagination-numbers">
-            {{ $currentPage := $paginator.PageNumber }}
-            {{ $totalPages := $paginator.TotalPages }}
-            
-            <!-- First page -->
-            {{ if gt $currentPage 3 }}
-            <a href="{{ $paginator.First.URL }}" class="pagination-number">1</a>
-            {{ if gt $currentPage 4 }}
-            <span class="pagination-ellipsis">...</span>
-            {{ end }}
-            {{ end }}
-            
-            <!-- Pages around current -->
-            {{ range $paginator.Pagers }}
-              {{ $pageNum := .PageNumber }}
-              {{ if and (ge $pageNum (sub $currentPage 2)) (le $pageNum (add $currentPage 2)) }}
-                {{ if eq $pageNum $currentPage }}
-                <span class="pagination-number active" aria-current="page">{{ $pageNum }}</span>
-                {{ else }}
-                <a href="{{ .URL }}" class="pagination-number">{{ $pageNum }}</a>
-                {{ end }}
-              {{ end }}
-            {{ end }}
-            
-            <!-- Last page -->
-            {{ if lt $currentPage (sub $totalPages 2) }}
-            {{ if lt $currentPage (sub $totalPages 3) }}
-            <span class="pagination-ellipsis">...</span>
-            {{ end }}
-            <a href="{{ $paginator.Last.URL }}" class="pagination-number">{{ $totalPages }}</a>
-            {{ end }}
-          </div>
-          
-          <!-- Next Page -->
-          {{ if $paginator.HasNext }}
-          <a href="{{ $paginator.Next.URL }}" class="pagination-btn pagination-next" aria-label="Page suivante">
-            <span class="btn-text">Suivant</span>
-            <i class="bi bi-chevron-right"></i>
-          </a>
-          {{ else }}
-          <span class="pagination-btn pagination-next disabled">
-            <span class="btn-text">Suivant</span>
-            <i class="bi bi-chevron-right"></i>
-          </span>
-          {{ end }}
+    <!-- No Results Message -->
+    <div id="noResults" class="text-center py-5 d-none">
+      <div class="card border-0 shadow-sm p-5">
+        <div class="text-muted">
+          <div class="display-1 mb-3">🔍</div>
+          <h4 class="mb-3">Aucun article trouvé</h4>
+          <p class="mb-4">Aucun article ne correspond à vos critères de recherche.</p>
+          <button type="button" class="btn btn-primary" onclick="document.getElementById('resetFilters').click()">
+            <i class="bi bi-arrow-counterclockwise me-1"></i>Réinitialiser les filtres
+          </button>
         </div>
-        
-        <!-- Pagination Info -->
-        <div class="pagination-info">
-          <span class="pagination-stats">
-            Page {{ $paginator.PageNumber }} sur {{ $paginator.TotalPages }} 
-            ({{ len $paginator.Pages }} articles sur {{ $paginator.TotalNumberOfElements }})
-          </span>
-        </div>
-      </nav>
+      </div>
     </div>
-    {{ end }}
   </div>
 </section>
+
+<!-- Search and Filter Script -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('searchTitle');
+  const yearFilter = document.getElementById('filterYear');
+  const sortSelect = document.getElementById('sortPosts');
+  const resetBtn = document.getElementById('resetFilters');
+  const postsGrid = document.getElementById('postsGrid');
+  const noResults = document.getElementById('noResults');
+  const resultsCount = document.getElementById('resultsCount');
+  const postCards = Array.from(document.querySelectorAll('.post-card-ctx7'));
+
+  console.log('Posts search initialized:', postCards.length, 'articles found');
+
+  function filterAndSortPosts() {
+    const searchTerm = searchInput.value.toLowerCase().trim();
+    const selectedYear = yearFilter.value;
+    const sortBy = sortSelect.value;
+    
+    console.log('Filtering:', { searchTerm, selectedYear, sortBy });
+    
+    // Filter posts
+    let visiblePosts = postCards.filter(card => {
+      const title = card.dataset.title;
+      const year = card.dataset.year;
+      
+      const matchesSearch = !searchTerm || title.includes(searchTerm);
+      const matchesYear = !selectedYear || year === selectedYear;
+      
+      const isVisible = matchesSearch && matchesYear;
+      card.style.display = isVisible ? 'block' : 'none';
+      return isVisible;
+    });
+
+    console.log('Visible posts:', visiblePosts.length);
+
+    // Sort visible posts
+    visiblePosts.sort((a, b) => {
+      if (sortBy === 'date-desc') {
+        return b.dataset.date.localeCompare(a.dataset.date);
+      } else if (sortBy === 'date-asc') {
+        return a.dataset.date.localeCompare(b.dataset.date);
+      } else if (sortBy === 'title') {
+        return a.dataset.title.localeCompare(b.dataset.title);
+      }
+      return 0;
+    });
+
+    // Reorder in DOM
+    visiblePosts.forEach(card => postsGrid.appendChild(card));
+
+    // Update results count
+    const totalPosts = postCards.length;
+    const visibleCount = visiblePosts.length;
+    
+    if (visibleCount === totalPosts) {
+      resultsCount.textContent = `${totalPosts} article${totalPosts > 1 ? 's' : ''} au total`;
+    } else {
+      resultsCount.textContent = `${visibleCount} article${visibleCount > 1 ? 's' : ''} sur ${totalPosts}`;
+    }
+
+    // Show/hide no results message
+    if (visiblePosts.length === 0) {
+      postsGrid.style.display = 'none';
+      noResults.classList.remove('d-none');
+    } else {
+      postsGrid.style.display = 'grid';
+      noResults.classList.add('d-none');
+    }
+  }
+
+  function resetFilters() {
+    searchInput.value = '';
+    yearFilter.value = '';
+    sortSelect.value = 'date-desc';
+    filterAndSortPosts();
+  }
+
+  // Event listeners
+  searchInput.addEventListener('input', filterAndSortPosts);
+  yearFilter.addEventListener('change', filterAndSortPosts);
+  sortSelect.addEventListener('change', filterAndSortPosts);
+  resetBtn.addEventListener('click', resetFilters);
+
+  // Initial count
+  filterAndSortPosts();
+});
+</script>
 
 <!-- Context7 Posts Styles -->
 <style>
@@ -256,6 +342,7 @@
 
 .glass-card {
   background: rgba(255, 255, 255, 0.25);
+  -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 20px;
@@ -305,6 +392,42 @@
 
 .posts-section {
   background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+/* Search Card Styles */
+.search-card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.search-card:hover {
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.search-card .card-title {
+  color: #1f2937;
+  font-size: 1.25rem;
+}
+
+.search-card .form-label {
+  color: #4b5563;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+.search-card .form-control,
+.search-card .form-select {
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.search-card .form-control:focus,
+.search-card .form-select:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
 }
 
 .posts-grid {

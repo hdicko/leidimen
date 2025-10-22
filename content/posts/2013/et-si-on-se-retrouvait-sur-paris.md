@@ -13,8 +13,10 @@ image: "/posts/2013/paris-event-2013.jpg"
 
 ![Printemps à Paris](/posts/2013/paris-event-2013.jpg)
 
+{{< details summary="Voir toute l'info" >}}
 Nous contemplons l'idée d'un événement sur le printemps parisien, pourquoi pas le long des berges du canal.
 
 Bonne humeur, jetons de poker, boules… Donnez-nous des idées pour organiser une très belle journée ensemble.
 
 On vous tient au courant. À très bientôt!
+😉{{< /details >}}
