@@ -1,0 +1,194 @@
+{{ define "main" }}
+{{ $terms := .Data.Terms }}
+{{ $totalVillages := len $.Site.Data.villages.mali_villages }}
+{{ $totalPages := 0 }}
+{{ range $t := $terms }}{{ $totalPages = add $totalPages $t.Count }}{{ end }}
+
+<!-- Hero Section -->
+<section class="bg-primary text-white py-5 mb-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-8">
+        <h1 class="display-4 fw-bold mb-3">🏘️ {{ .Title | default "Villages" }}</h1>
+        <p class="lead mb-0">Découvrez {{ $totalVillages }} villages de la région de Douentza avec {{ $totalPages }} contenus au total</p>
+      </div>
+      <div class="col-lg-4 text-lg-end">
+        <div class="d-flex justify-content-lg-end justify-content-start gap-3 mt-3 mt-lg-0">
+          <div class="text-center">
+            <div class="h2 fw-bold mb-0">{{ $totalVillages }}</div>
+            <small>Villages</small>
+          </div>
+          <div class="text-center">
+            <div class="h2 fw-bold mb-0">{{ $totalPages }}</div>
+            <small>Contenus</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container mb-5">
+  <!-- Search and Filters -->
+  <div class="row mb-4">
+    <div class="col-lg-8 mx-auto">
+      <div class="card border-0 shadow-sm">
+        <div class="card-body p-4">
+          <div class="row g-3 align-items-end">
+            <div class="col-md-8">
+              <label for="searchTerms" class="form-label fw-semibold">Rechercher</label>
+              <input type="search" class="form-control form-control-lg" id="searchTerms" 
+                     placeholder="Filtrer par nom de village..." autocomplete="off">
+            </div>
+            <div class="col-md-4">
+              <label for="sortTerms" class="form-label fw-semibold">Trier par</label>
+              <select class="form-select form-select-lg" id="sortTerms" title="Options de tri">
+                <option value="count">Nombre de contenus</option>
+                <option value="name">Ordre alphabétique</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Villages Grid -->
+  <div class="row g-4" id="termsContainer">
+    {{/* First, show all villages from data file */}}
+    {{ range $index, $village := $.Site.Data.villages.mali_villages }}
+    {{ $villageSlug := $village.name | lower | urlize }}
+    {{ $taxonomyTerm := index $.Data.Terms $villageSlug }}
+    {{ $contentCount := 0 }}
+    {{ if $taxonomyTerm }}{{ $contentCount = $taxonomyTerm.Count }}{{ end }}
+    
+    <div class="col-lg-4 col-md-6 term-card" data-name="{{ $village.name | lower }}" data-count="{{ $contentCount }}">
+      <div class="card h-100 border-0 shadow-sm hover-shadow">
+        <div class="card-header bg-light border-0 d-flex justify-content-between align-items-center">
+          <h5 class="card-title mb-0 fw-bold text-primary">
+            {{ $village.name }}
+            {{ if eq $village.type "chef-lieu" }}<i class="bi bi-building ms-2 text-muted" title="Chef-lieu"></i>{{ end }}
+          </h5>
+          <span class="badge bg-primary rounded-pill">{{ $contentCount }}</span>
+        </div>
+        <div class="card-body">
+          <p class="text-muted small mb-3">
+            {{ if gt $contentCount 0 }}
+              {{ $contentCount }} contenu{{ if gt $contentCount 1 }}s{{ end }} disponible{{ if gt $contentCount 1 }}s{{ end }}
+            {{ else }}
+              Village de la région de Douentza
+            {{ end }}
+          </p>
+          
+          <div class="mb-3">
+            <p class="small mb-2"><i class="bi bi-geo-alt me-1"></i>{{ $village.description }}</p>
+            {{ if $village.population }}
+            <p class="small mb-2"><i class="bi bi-people me-1"></i>Population: {{ $village.population | lang.FormatNumber 0 }} habitants</p>
+            {{ end }}
+            {{ if $village.projects }}
+            <p class="small mb-0"><i class="bi bi-tools me-1"></i>Projets: {{ delimit $village.projects ", " }}</p>
+            {{ end }}
+          </div>
+          
+          {{ if $taxonomyTerm }}
+          {{ $pages := $taxonomyTerm.Pages }}
+          {{ if $pages }}
+          <div class="mb-3">
+            <h6 class="fw-semibold mb-2">Contenus récents :</h6>
+            <ul class="list-unstyled mb-0">
+              {{- range first 3 $pages -}}
+              <li class="mb-1">
+                <a href="{{ .Permalink }}" class="text-decoration-none text-dark">
+                  <small>{{ .Title | truncate 40 }}</small>
+                </a>
+              </li>
+              {{- end -}}
+              {{- if gt (len $pages) 3 -}}
+              <li class="text-muted small">
+                +{{ sub (len $pages) 3 }} autre{{ if gt (sub (len $pages) 3) 1 }}s{{ end }}
+              </li>
+              {{- end -}}
+            </ul>
+          </div>
+          {{ end }}
+          {{ end }}
+        </div>
+        <div class="card-footer bg-transparent border-0 pt-0">
+          <a href="{{ $.Site.LanguagePrefix | absURL }}/{{ $.Data.Plural }}/{{ $villageSlug }}/" 
+             class="btn btn-primary btn-sm w-100">
+            →&nbsp;&nbsp;Voir {{ if gt $contentCount 0 }}tout{{ else }}le village{{ end }}
+          </a>
+        </div>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+
+  <!-- No Results Message -->
+  <div id="noResults" class="text-center py-5 d-none">
+    <div class="text-muted">
+      <div class="display-1 mb-3">🔍</div>
+      <h4>Aucun résultat trouvé</h4>
+      <p>Essayez de modifier votre recherche ou vos filtres.</p>
+    </div>
+  </div>
+</div>
+
+<style>
+.hover-shadow {
+  transition: all 0.2s ease-in-out;
+}
+.hover-shadow:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+.card-header {
+  border-radius: 0.375rem 0.375rem 0 0 !important;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('searchTerms');
+  const sortSelect = document.getElementById('sortTerms');
+  const container = document.getElementById('termsContainer');
+  const noResults = document.getElementById('noResults');
+  const termCards = Array.from(document.querySelectorAll('.term-card'));
+
+  function filterAndSort() {
+    const searchTerm = searchInput.value.toLowerCase().trim();
+    const sortBy = sortSelect.value;
+    
+    // Filter cards
+    const visibleCards = termCards.filter(card => {
+      const name = card.dataset.name;
+      const isVisible = !searchTerm || name.includes(searchTerm);
+      card.style.display = isVisible ? 'block' : 'none';
+      return isVisible;
+    });
+
+    // Sort visible cards
+    visibleCards.sort((a, b) => {
+      if (sortBy === 'name') {
+        return a.dataset.name.localeCompare(b.dataset.name);
+      } else {
+        return parseInt(b.dataset.count) - parseInt(a.dataset.count);
+      }
+    });
+
+    // Reorder in DOM
+    visibleCards.forEach(card => container.appendChild(card));
+
+    // Show/hide no results message
+    if (visibleCards.length === 0) {
+      noResults.classList.remove('d-none');
+    } else {
+      noResults.classList.add('d-none');
+    }
+  }
+
+  searchInput.addEventListener('input', filterAndSort);
+  sortSelect.addEventListener('change', filterAndSort);
+});
+</script>
+{{ end }} {{/* end main */}}
