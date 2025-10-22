@@ -12,3 +12,6 @@ type: posts
 
 weight: 20
 ---
+
+
+{{< gallery  caption-effect="slide" hover-effect="grow" >}}

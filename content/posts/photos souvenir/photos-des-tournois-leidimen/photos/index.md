@@ -5,4 +5,6 @@ draft: false
 author: "Moussa Dicko"
 ---
 
-{{< gallery >}}
+
+
+{{< gallery  caption-effect="slide" hover-effect="grow" >}}

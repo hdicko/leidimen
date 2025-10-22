@@ -185,6 +185,11 @@ disableLatLong = false
     pre = "<i class='fa fa-handshake-o'></i>"
     weight = 45
   [[menu.main]]
+    name = 'Partenaires'
+    pageRef = '/partenaires'
+    pre = "<i class='fa fa-handshake'></i>"
+    weight = 46
+  [[menu.main]]
     name = 'Services'
     identifier = "Services"
     weight = 40 
