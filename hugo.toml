@@ -170,10 +170,20 @@ disableLatLong = false
     pre = "<i class='fa fa-folder'></i>"
     weight = 30
   [[menu.main]]
+    name = 'Villages'
+    pageRef = '/villages'
+    pre = "<i class='fa fa-map-marker'></i>"
+    weight = 35
+  [[menu.main]]
     name = 'Posts'
     pageRef = '/posts'
     pre = "<i class='fa fa-blog'></i>"
     weight = 40
+  [[menu.main]]
+    name = 'Adhésion'
+    pageRef = '/documents/adhesion'
+    pre = "<i class='fa fa-handshake-o'></i>"
+    weight = 45
   [[menu.main]]
     name = 'Services'
     identifier = "Services"

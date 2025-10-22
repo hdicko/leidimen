@@ -278,6 +278,9 @@ Résumé et perspectives...
 - Diona
 - Dorool
 - Douentza
+- Manko
+- N'Dumpa
+- Tacouti
 - Tanal
 
 **Comment sélectionner :**

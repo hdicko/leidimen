@@ -208,7 +208,7 @@
     }
   </style>
 
-{{ else if eq .Title "Adhesion" }}
+{{ else if or (eq .Title "Adhesion") (eq .Title "Adhésion") }}
   <!-- Adhesion Layout -->
   <div class="container-flex">
     <div class="row">

@@ -1,0 +1,12 @@
+{{/*
+  Details Shortcode
+  
+  Purpose: Create a collapsible details/summary HTML5 element
+  Usage: {{< details "Summary text" >}}Content{{< /details >}}
+*/}}
+<details{{ with .Get "class" }} class="{{ . }}"{{ end }}{{ if .Get "open" }} open{{ end }}>
+  <summary>{{ .Get 0 | default "Details" }}</summary>
+  <div class="details-content">
+    {{ .Inner | markdownify }}
+  </div>
+</details>

@@ -4,7 +4,7 @@ date: {{ .Date }}
 type: "membre"
 draft: false
 tags: ["ps", "meb", "leidimen"]
-villages: ["douentza", "diona", "boundoucoli", "debere", "dorool"]
+villages: ["douentza", "diona", "debere", "dorool", "diambana", "darawal", "tanal", "manko", "tacouti", "ndumpa"]
 categories: ["association"]
 image: ""
 description: "Pour une solidarite"

@@ -40,6 +40,9 @@ collections:
           - {label: "Diona", value: "diona"}
           - {label: "Dorool", value: "dorool"}
           - {label: "Douentza", value: "douentza"}
+          - {label: "Manko", value: "manko"}
+          - {label: "N'Dumpa", value: "ndumpa"}
+          - {label: "Tacouti", value: "tacouti"}
           - {label: "Tanal", value: "tanal"}
       - label: "Humeur/Mood"
         name: "moods"

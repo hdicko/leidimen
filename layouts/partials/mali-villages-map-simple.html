@@ -727,15 +727,20 @@ document.addEventListener('DOMContentLoaded', function() {
     let map;
     let markersLayer;
     
-    // Static villages data - properly centered on Douentza region
+    // Villages data from Hugo data file
     const villages = [
-      { name: "Douentza", lat: 15.0032, lng: -2.9498, type: "chef-lieu", description: "Chef-lieu de cercle, centre administratif de la région", population: 28000, projects: ["école", "santé", "eau"] },
-      { name: "Darawal", lat: 15.1245, lng: -2.8932, type: "village", description: "Village rural avec école primaire", population: 2500, projects: ["puits", "école"] },
-      { name: "Debere", lat: 14.9876, lng: -2.9234, type: "village", description: "Village agricole et d'élevage", population: 1800, projects: ["agriculture", "élevage"] },
-      { name: "Diambana", lat: 15.0567, lng: -2.8765, type: "village", description: "Village avec centre de santé communautaire", population: 3200, projects: ["santé", "eau", "éducation"] },
-      { name: "Diona", lat: 14.9234, lng: -3.0123, type: "village", description: "Village pastoral et agricole", population: 1600, projects: ["eau", "agriculture"] },
-      { name: "Dorool", lat: 15.0789, lng: -2.9567, type: "village", description: "Village avec école communautaire", population: 2100, projects: ["école", "formation"] },
-      { name: "Tanal", lat: 15.1123, lng: -2.9789, type: "village", description: "Village avec projet de développement rural", population: 1900, projects: ["développement rural", "coopératives"] }
+      {{- range $index, $village := $.Site.Data.villages.mali_villages -}}
+      {{- if $index -}},{{- end -}}
+      {
+        name: {{ $village.name | jsonify }},
+        lat: {{ $village.latitude }},
+        lng: {{ $village.longitude }},
+        type: {{ $village.type | jsonify }},
+        description: {{ $village.description | jsonify }},
+        population: {{ $village.population | default 0 }},
+        projects: {{ $village.projects | jsonify }}
+      }
+      {{- end -}}
     ];
 
     // Initialize map

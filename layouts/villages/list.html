@@ -1,6 +1,6 @@
 {{ define "main" }}
 {{ $terms := .Data.Terms }}
-{{ $totalTerms := len $terms }}
+{{ $totalVillages := len $.Site.Data.villages.mali_villages }}
 {{ $totalPages := 0 }}
 {{ range $t := $terms }}{{ $totalPages = add $totalPages $t.Count }}{{ end }}
 
@@ -10,12 +10,12 @@
     <div class="row align-items-center">
       <div class="col-lg-8">
         <h1 class="display-4 fw-bold mb-3">🏘️ {{ .Title | default "Villages" }}</h1>
-        <p class="lead mb-0">Découvrez {{ $totalTerms }} villages contenant {{ $totalPages }} contenus au total</p>
+        <p class="lead mb-0">Découvrez {{ $totalVillages }} villages de la région de Douentza avec {{ $totalPages }} contenus au total</p>
       </div>
       <div class="col-lg-4 text-lg-end">
         <div class="d-flex justify-content-lg-end justify-content-start gap-3 mt-3 mt-lg-0">
           <div class="text-center">
-            <div class="h2 fw-bold mb-0">{{ $totalTerms }}</div>
+            <div class="h2 fw-bold mb-0">{{ $totalVillages }}</div>
             <small>Villages</small>
           </div>
           <div class="text-center">
@@ -55,40 +55,68 @@
 
   <!-- Villages Grid -->
   <div class="row g-4" id="termsContainer">
-    {{ range $key, $value := .Data.Terms.ByCount }}
-    <div class="col-lg-4 col-md-6 term-card" data-name="{{ $value.Name | lower }}" data-count="{{ $value.Count }}">
+    {{/* First, show all villages from data file */}}
+    {{ range $index, $village := $.Site.Data.villages.mali_villages }}
+    {{ $villageSlug := $village.name | lower | urlize }}
+    {{ $taxonomyTerm := index $.Data.Terms $villageSlug }}
+    {{ $contentCount := 0 }}
+    {{ if $taxonomyTerm }}{{ $contentCount = $taxonomyTerm.Count }}{{ end }}
+    
+    <div class="col-lg-4 col-md-6 term-card" data-name="{{ $village.name | lower }}" data-count="{{ $contentCount }}">
       <div class="card h-100 border-0 shadow-sm hover-shadow">
         <div class="card-header bg-light border-0 d-flex justify-content-between align-items-center">
-          <h5 class="card-title mb-0 fw-bold text-primary">{{ $value.Name }}</h5>
-          <span class="badge bg-primary rounded-pill">{{ $value.Count }}</span>
+          <h5 class="card-title mb-0 fw-bold text-primary">
+            {{ $village.name }}
+            {{ if eq $village.type "chef-lieu" }}<i class="bi bi-building ms-2 text-muted" title="Chef-lieu"></i>{{ end }}
+          </h5>
+          <span class="badge bg-primary rounded-pill">{{ $contentCount }}</span>
         </div>
         <div class="card-body">
-          <p class="text-muted small mb-3">{{ $value.Count }} contenu{{ if gt $value.Count 1 }}s{{ end }} disponible{{ if gt $value.Count 1 }}s{{ end }}</p>
+          <p class="text-muted small mb-3">
+            {{ if gt $contentCount 0 }}
+              {{ $contentCount }} contenu{{ if gt $contentCount 1 }}s{{ end }} disponible{{ if gt $contentCount 1 }}s{{ end }}
+            {{ else }}
+              Village de la région de Douentza
+            {{ end }}
+          </p>
           
-          {{ if $value.WeightedPages }}
+          <div class="mb-3">
+            <p class="small mb-2"><i class="bi bi-geo-alt me-1"></i>{{ $village.description }}</p>
+            {{ if $village.population }}
+            <p class="small mb-2"><i class="bi bi-people me-1"></i>Population: {{ $village.population | lang.FormatNumber 0 }} habitants</p>
+            {{ end }}
+            {{ if $village.projects }}
+            <p class="small mb-0"><i class="bi bi-tools me-1"></i>Projets: {{ delimit $village.projects ", " }}</p>
+            {{ end }}
+          </div>
+          
+          {{ if $taxonomyTerm }}
+          {{ $pages := $taxonomyTerm.Pages }}
+          {{ if $pages }}
           <div class="mb-3">
             <h6 class="fw-semibold mb-2">Contenus récents :</h6>
             <ul class="list-unstyled mb-0">
-              {{- range first 3 $value.WeightedPages -}}
+              {{- range first 3 $pages -}}
               <li class="mb-1">
                 <a href="{{ .Permalink }}" class="text-decoration-none text-dark">
                   <small>{{ .Title | truncate 40 }}</small>
                 </a>
               </li>
               {{- end -}}
-              {{- if gt (len $value.WeightedPages) 3 -}}
+              {{- if gt (len $pages) 3 -}}
               <li class="text-muted small">
-                +{{ sub (len $value.WeightedPages) 3 }} autre{{ if gt (sub (len $value.WeightedPages) 3) 1 }}s{{ end }}
+                +{{ sub (len $pages) 3 }} autre{{ if gt (sub (len $pages) 3) 1 }}s{{ end }}
               </li>
               {{- end -}}
             </ul>
           </div>
           {{ end }}
+          {{ end }}
         </div>
         <div class="card-footer bg-transparent border-0 pt-0">
-          <a href="{{ $.Site.LanguagePrefix | absURL }}/{{ $.Data.Plural }}/{{ $value.Name | urlize }}/" 
+          <a href="{{ $.Site.LanguagePrefix | absURL }}/{{ $.Data.Plural }}/{{ $villageSlug }}/" 
              class="btn btn-primary btn-sm w-100">
-            →&nbsp;&nbsp;Voir tout
+            →&nbsp;&nbsp;Voir {{ if gt $contentCount 0 }}tout{{ else }}le village{{ end }}
           </a>
         </div>
       </div>

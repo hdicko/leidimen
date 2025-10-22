@@ -56,3 +56,27 @@
   description: "Village avec projet de développement rural"
   population: 1900
   projects: ["développement rural", "coopératives"]
+
+- name: "Manko"
+  latitude: 15.0283
+  longitude: -2.9894
+  type: "village"
+  description: "Village rural dans la région de Douentza"
+  population: 1500
+  projects: []
+
+- name: "Tacouti"
+  latitude: 14.9750
+  longitude: -2.8833
+  type: "village"
+  description: "Village rural dans la région de Douentza"
+  population: 1200
+  projects: []
+
+- name: "N'Dumpa"
+  latitude: 15.1167
+  longitude: -2.9500
+  type: "village"
+  description: "Village rural dans la région de Douentza"
+  population: 1800
+  projects: []
