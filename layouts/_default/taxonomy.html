@@ -1,22 +1,50 @@
+{{/* 
+  Template: _default/taxonomy.html
+  Purpose: Display all pages for a specific taxonomy term
+  Context: Taxonomy term pages (e.g., /categories/education/, /villages/dorool/)
+  
+  Features:
+  - Image gallery from page resources (with Fancybox)
+  - Image processing (fit 600x400)
+  - EXIF data display (date)
+  - List of all pages with this taxonomy term
+  - Summary rendering for each page
+  - Debug borders and labels
+  
+  Image Processing:
+  - Searches for image resources in content/TAXONOMY/TERM/
+  - Processes images to 600x400 fit
+  - Creates clickable gallery with Fancybox
+  
+  Page Listing:
+  - Ranges through all pages tagged with this term
+  - Renders each page using summary.html partial
+  - Shows page title with link
+  
+  Note: This is a development template with visible debug elements
+*/}}
+
 {{ define "main" }}
 <main>
-
-  <!--Taxonomies  -->
-  <hr class="border border-danger border-1 opacity-50" />
-  <p class="fs-2 text-center badge text-bg-info">_default/taxonomy.html</p>
-  <hr class="border border-danger border-2 opacity-50 " />
-
-
-  {{/** Add taxonomy images in content/TAXONOMY/TERM/<images resources> **/}}
+  {{/* 
+    Image Gallery Section
+    Add taxonomy images in content/TAXONOMY/TERM/<images resources>
+    Example: content/villages/dorool/photo1.jpg
+  */}}
     {{ with .Resources.ByType "image" }}
     {{ range . }}
     {{ $img := . }}
 
+    {{/* Process image - fit to 600x400 dimensions */}}
     {{/** {{ $alt := $img.Resize "300x160" }} **/}}
     {{ $alt := $img.Process "fit 600x400" }}
+    
+    {{/* Fancybox gallery link */}}
     <a data-fancybox="gallery" data-src="{{ $alt.RelPermalink }}">
       <img src="{{ $alt.RelPermalink }}" />
     </a>
+    
+    {{/* Display EXIF data if available */}}
     {{ with $img.Exif }}
     <ul>
       {{ with .Date }}<li>Date: {{ .Format "January 02, 2006" }}</li>{{ end }}
@@ -25,9 +53,17 @@
     {{ end }}
     {{ end }}
 
+    {{/* Debug separator */}}
     <hr class="border border-danger border-2 opacity-50 " />
+    
     <div>
+      {{/* Example of accessing specific taxonomy */}}
       {{ $pages := site.Taxonomies.categories.gauche }}
+      
+      {{/* 
+        Commented debug info - useful for development
+        Shows: Title, Kind, Type, Site, Page, Section, Data.Pages
+      */}}
       {{/** $pages := index site.Taxonomies "categories" "villages" }}
       <span class="badge text-bg-info">
         Title: {{ .Title }} --
@@ -38,7 +74,11 @@
         Section:{{ .Section }} Data Pages: {{ .Data.Pages }}</span>
       **/}}
 
-      <!-- ranges through each of the content files associated with a particular taxonomy term and renders the summary.html content view -->
+      {{/* 
+        Page List Section
+        Ranges through each of the content files associated with a particular 
+        taxonomy term and renders the summary.html content view 
+      */}}
       <hr class="border border-danger border-1 opacity-50" />
       <p class="fs-2 text-center badge text-bg-info">
         Render pages with summary _default/taxonomy.html
@@ -47,6 +87,12 @@
 
       <div class="d-flex flex-column">
         <div class="row">
+          {{/* 
+            Loop through all pages with this taxonomy term
+            - Displays page title
+            - Renders summary using summary.html partial
+            - Links to full page
+          */}}
           {{ range .Pages }}
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 mb-5">
             <h3>{{ .Title }}</h3>

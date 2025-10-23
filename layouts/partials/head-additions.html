@@ -1,3 +1,20 @@
+{{/* 
+  Partial: head-additions.html
+  Purpose: Additional head content for theme toggle functionality
+  Context: Included in <head> section via baseof.html
+  
+  Features:
+  - Theme toggle button (light/dark mode switcher)
+  - Positioned in container with margin
+  
+  Note: This should probably be moved to body content rather than head,
+  or the button should be removed from here as it's a visible UI element.
+  
+  Dependencies:
+  - assets/js/darkmode.js for theme toggle functionality
+*/}}
+
 <div class="container mb-5 mt-3">
+  {{/* Theme toggle button - switches between light and dark mode */}}
   <button id="theme-toggle" class="btn btn-primary">Toggle Theme</button>
 </div>

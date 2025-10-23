@@ -1,6 +1,6 @@
 ---
 title: "Aissa Dicko"
-date: "2019-11-05T15:45:33+01:00"
+date: "2006-10-05T15:45:33+01:00"
 draft: false
 description: "La solidarité au coeur de mes préoccupations - Présidente de Leidimen"
 slug: "aissa"
@@ -10,7 +10,7 @@ card:
   image: "images/aissa-logo.jpg"
   fonction: "Présidente"
   membre: "Membre fondateur"
-  presentation: "Présidente de Leidimen"
+  presentation: "Présidente fondatrice de Leidimen"
   ville: "Bondoufle"
   pays: "France"
   email: ""
@@ -22,8 +22,8 @@ card:
     - "Relations internationales"
 
 experience:
-  - date: "2019"
-    title: "Présidente de Leidimen"
+  - date: "2006"
+    title: "Présidente fondatrice de Leidimen"
     description: "Fondation et direction de l'association Leidimen, coordination de l'ensemble des projets de solidarité et d'aide au développement"
     category: "Associatif"
     icon: "bi-heart-fill"
@@ -37,7 +37,7 @@ experience:
       - "Relations internationales"
       - "Collecte de fonds"
 
-  - date: "2019-2024"
+  - date: "2020-2024"
     title: "Projets éducatifs à Dorool"
     description: "Mise en place et suivi des projets de soutien à l'école du village de Dorool"
     category: "Éducation"
@@ -51,7 +51,7 @@ experience:
       - "Suivi budgétaire"
       - "Relations avec les communautés locales"
 
-  - date: "2020-2024"
+  - date: "2024-2025"
     title: "Actions culturelles France-Mali"
     description: "Organisation d'événements culturels pour promouvoir les échanges entre la France et le Mali"
     category: "Culturel"

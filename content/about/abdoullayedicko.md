@@ -95,7 +95,9 @@ Membre actif de Leidimen, Abdoulaye participe activement au renforcement des lie
 
 ---
 
-## Recette des Macarons inratables [^1]
+{{< details "Recette des Macarons intraitables" >}}
+
+# Recette des Macarons intraitables [^1]
 
 ## ÉTAPE 1
 
@@ -136,3 +138,5 @@ Il ne reste plus qu'à les fourrer avec la ganache de votre choix ! Par exemple,
 Bon appétit !
 
 [^1]: https://www.marmiton.org/recettes/recette_macarons-inratables_72497.aspx
+
+{{< /details >}}

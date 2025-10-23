@@ -105,34 +105,13 @@ tags:
 
 ---
 
-{{< details summary="See the details" >}}
-## Résumé professionnel
-
-Informaticien senior, ingénieur systèmes et DevOps avec plus de 20 ans d'expérience dans l'industrie informatique. Au cours de sa carrière, Hamadoun a travaillé pour Digital Equipment Corporation (DEC), Compaq, puis HP après la fusion, où il a occupé des postes techniques et d'ingénierie système, contribuant à la maintenance d'infrastructures critiques, aux migrations de datacenters et à l'automatisation d'opérations à grande échelle.
-
-## Expériences clés
-
-- DEC (Digital Equipment Corporation) — Ingénieur systèmes (1999–2002)
-  - Administration de serveurs Unix/Linux, gestion de stockage et support d'infrastructures techniques pour clients enterprise.
-
-- Compaq — Ingénieur Senior (2002–2005)
-  - Déploiements de solutions matérielles et logicielles, intégration d'environnements hétérogènes et assistance technique avancée.
-
-- HP (post-fusion) — Ingénieur Systèmes / DevOps (2005–2015)
-  - Automatisation des tâches d'exploitation, conception de scripts et outils de déploiement, participation à projets de migration et amélioration des processus ITIL.
-
-## Compétences
-
-- Administration Unix/Linux (RH/CentOS/Debian)
-- Scripting (Bash, Python)
-- DevOps & CI/CD (Jenkins, Git, Ansible)
-- Virtualisation & Containers (VMware, Docker)
-- Réseaux et sécurité opérationnelle
-- Supervision & monitoring (Nagios, Zabbix)
-
-## Formation
-
-- Diplôme en Informatique / Génie logiciel (Université / École locale)
+{{< details "A propos de moi" >}}
+{{< typeit
+  tag=h1
+  lifeLike=true
+>}}
+Dicko Hamadi Pathe Ameri Diona
+{{< /typeit >}}
 
 ## Engagement associatif
 
@@ -143,31 +122,3 @@ Hamadoun apporte son expertise technique à l'association Leidimen en assurant l
 - Email: <dicko.hamadoun@gmail.com>
 - Twitter: [@HamadounDicko](https://www.twitter.com/@HamadounDicko)
 {{< /details >}}
-
-{{< alert "twitter" >}}
-Don't for on Twitter.
-{{< /alert >}}
-
-{{< alert icon="bug" cardColor="#e63946" iconColor="#1d3557" textColor="#f1faee" >}}
-**Warning!** This action is destructive!
-{{< /alert >}}
-
-{{< alert "twitter" >}}
-Don't forget to [follow me](https://twitter.com/nunocoracao) on Twitter.
-{{< /alert >}}
-
-{{< alert icon="fire" cardColor="#e63946" iconColor="#1d3557" textColor="#f1faee" >}}
-This is an error!
-{{< /alert >}}
-
-{{< typeit >}}
-Lorem ipsum dolor sit amet
-{{< /typeit >}}
-
-{{< typeit
-  tag=h1
-  lifeLike=true
->}}
-Dicko Hamadi Pathe Ameri Diona
-{{< /typeit >}}
-

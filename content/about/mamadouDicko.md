@@ -1,6 +1,6 @@
 ---
 title: "Mamadou Dicko"
-date: "2019-11-05T15:45:05+01:00"
+date: "2006-10-05T15:45:05+01:00"
 draft: false
 description: "L'ÉCOLOGIE : UNE URGENCE VITALE, UNE CHANCE HISTORIQUE !"
 slug: "Mamadou"
@@ -80,6 +80,8 @@ tags:
 
 {{< myimage src="images/mamadou-logo.jpg" >}}
 
+{{< details "Engagements" >}}
+
 ## Mamadou Dicko - Membre fondateur de Leidimen
 
 Mamadou Dicko est membre fondateur et membre du conseil d'administration de l'association Leidimen depuis 2019. Son engagement est guidé par une conviction profonde : **"L'ÉCOLOGIE : UNE URGENCE VITALE, UNE CHANCE HISTORIQUE !"**
@@ -92,4 +94,4 @@ Fervent défenseur de l'écologie et du développement durable, Mamadou œuvre p
 
 Membre actif du conseil d'administration, Mamadou participe à l'organisation d'événements solidaires et au renforcement des liens entre Bondoufle et le Mali. Son engagement citoyen inspire et mobilise la communauté autour des projets de développement.
 
-
+{{< /details >}}

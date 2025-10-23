@@ -1,10 +1,33 @@
+{{/* 
+  Template: _default/terms.html
+  Purpose: Display all terms in a taxonomy (e.g., all tags, all categories, all villages)
+  Context: Taxonomy terms listing page (e.g., /tags/, /categories/, /villages/)
+  
+  Features:
+  - Hero section with stats (total terms & total pages)
+  - Search/filter functionality (live search by term name)
+  - Sort options (by count or alphabetically)
+  - Card-based grid layout with hover effects
+  - Shows recent content for each term (max 3)
+  - Responsive design with Bootstrap 5
+  
+  Data available:
+  - .Data.Terms: Collection of all terms in this taxonomy
+  - .Data.Plural: Plural name of the taxonomy (e.g., "tags", "villages")
+  - $value.Name: Term name
+  - $value.Count: Number of pages tagged with this term
+  - $value.WeightedPages: Pages associated with this term
+*/}}
+
 {{ define "main" }}
+
+{{/* Calculate statistics for the hero section */}}
 {{ $terms := .Data.Terms }}
 {{ $totalTerms := len $terms }}
 {{ $totalPages := 0 }}
 {{ range $t := $terms }}{{ $totalPages = add $totalPages $t.Count }}{{ end }}
 
-<!-- Hero Section -->
+{{/* Hero Section - Displays taxonomy title and statistics */}}
 <section class="bg-primary text-white py-5 mb-5">
   <div class="container">
     <div class="row align-items-center">
@@ -13,6 +36,7 @@
         <p class="lead mb-0">Découvrez {{ $totalTerms }} {{ .Data.Plural }} contenant {{ $totalPages }} éléments au total</p>
       </div>
       <div class="col-lg-4 text-lg-end">
+        {{/* Statistics badges showing total terms and total content items */}}
         <div class="d-flex justify-content-lg-end justify-content-start gap-3 mt-3 mt-lg-0">
           <div class="text-center">
             <div class="h2 fw-bold mb-0">{{ $totalTerms }}</div>
@@ -29,17 +53,19 @@
 </section>
 
 <div class="container mb-5">
-  <!-- Search and Filters -->
+  {{/* Search and Filter Controls */}}
   <div class="row mb-4">
     <div class="col-lg-8 mx-auto">
       <div class="card border-0 shadow-sm">
         <div class="card-body p-4">
           <div class="row g-3 align-items-end">
+            {{/* Search input - filters terms by name in real-time */}}
             <div class="col-md-8">
               <label for="searchTerms" class="form-label fw-semibold">Rechercher</label>
               <input type="search" class="form-control form-control-lg" id="searchTerms" 
                      placeholder="Filtrer par nom..." autocomplete="off">
             </div>
+            {{/* Sort selector - sorts by count (default) or alphabetically */}}
             <div class="col-md-4">
               <label for="sortTerms" class="form-label fw-semibold">Trier par</label>
               <select class="form-select form-select-lg" id="sortTerms" title="Options de tri">
@@ -53,18 +79,26 @@
     </div>
   </div>
 
-  <!-- Terms Grid -->
+  {{/* Terms Grid - Displays each term as a card */}}
   <div class="row g-4" id="termsContainer">
+    {{/* 
+      Loop through all terms, sorted by count (most popular first)
+      - data-name: lowercase name for search filtering
+      - data-count: number of pages for sorting
+    */}}
     {{ range $key, $value := .Data.Terms.ByCount }}
     <div class="col-lg-4 col-md-6 term-card" data-name="{{ $value.Name | lower }}" data-count="{{ $value.Count }}">
       <div class="card h-100 border-0 shadow-sm hover-shadow">
+        {{/* Card header with term name and count badge */}}
         <div class="card-header bg-light border-0 d-flex justify-content-between align-items-center">
           <h5 class="card-title mb-0 fw-bold text-primary">{{ $value.Name }}</h5>
           <span class="badge bg-primary rounded-pill">{{ $value.Count }}</span>
         </div>
         <div class="card-body">
+          {{/* Pluralization: "1 contenu disponible" vs "5 contenus disponibles" */}}
           <p class="text-muted small mb-3">{{ $value.Count }} contenu{{ if gt $value.Count 1 }}s{{ end }} disponible{{ if gt $value.Count 1 }}s{{ end }}</p>
           
+          {{/* Display up to 3 recent pages tagged with this term */}}
           {{ if $value.WeightedPages }}
           <div class="mb-3">
             <h6 class="fw-semibold mb-2">Contenus récents :</h6>
@@ -76,6 +110,7 @@
                 </a>
               </li>
               {{- end -}}
+              {{/* Show count of remaining pages if more than 3 exist */}}
               {{- if gt (len $value.WeightedPages) 3 -}}
               <li class="text-muted small">
                 +{{ sub (len $value.WeightedPages) 3 }} autre{{ if gt (sub (len $value.WeightedPages) 3) 1 }}s{{ end }}
@@ -85,6 +120,7 @@
           </div>
           {{ end }}
         </div>
+        {{/* Footer with "View all" button linking to term's page */}}
         <div class="card-footer bg-transparent border-0 pt-0">
           <a href="{{ $.Site.LanguagePrefix | absURL }}/{{ $.Data.Plural }}/{{ $value.Name | urlize }}/" 
              class="btn btn-primary btn-sm w-100">
@@ -96,7 +132,7 @@
     {{ end }}
   </div>
 
-  <!-- No Results Message -->
+  {{/* No Results Message - Shown when search returns no matches */}}
   <div id="noResults" class="text-center py-5 d-none">
     <div class="text-muted">
       <div class="display-1 mb-3">🔍</div>
@@ -106,6 +142,7 @@
   </div>
 </div>
 
+{{/* CSS Styles - Card hover effects and border radius */}}
 <style>
 .hover-shadow {
   transition: all 0.2s ease-in-out;
@@ -119,6 +156,13 @@
 }
 </style>
 
+{{/* 
+  JavaScript - Client-side filtering and sorting
+  - Real-time search filtering by term name
+  - Dynamic sorting (by count or alphabetically)
+  - Shows/hides "no results" message
+  - DOM manipulation for sorting (reorders cards)
+*/}}
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   const searchInput = document.getElementById('searchTerms');
@@ -127,11 +171,15 @@ document.addEventListener('DOMContentLoaded', function() {
   const noResults = document.getElementById('noResults');
   const termCards = Array.from(document.querySelectorAll('.term-card'));
 
+  /**
+   * filterAndSort - Main function to filter and sort term cards
+   * Called on search input or sort selection change
+   */
   function filterAndSort() {
     const searchTerm = searchInput.value.toLowerCase().trim();
     const sortBy = sortSelect.value;
     
-    // Filter cards
+    // Filter cards based on search term
     const visibleCards = termCards.filter(card => {
       const name = card.dataset.name;
       const isVisible = !searchTerm || name.includes(searchTerm);
@@ -139,19 +187,21 @@ document.addEventListener('DOMContentLoaded', function() {
       return isVisible;
     });
 
-    // Sort visible cards
+    // Sort visible cards based on selected option
     visibleCards.sort((a, b) => {
       if (sortBy === 'name') {
+        // Alphabetical sort using locale comparison
         return a.dataset.name.localeCompare(b.dataset.name);
       } else {
+        // Count sort (descending - highest first)
         return parseInt(b.dataset.count) - parseInt(a.dataset.count);
       }
     });
 
-    // Reorder in DOM
+    // Reorder cards in DOM to match sorted order
     visibleCards.forEach(card => container.appendChild(card));
 
-    // Show/hide no results message
+    // Show/hide no results message based on visible cards
     if (visibleCards.length === 0) {
       noResults.classList.remove('d-none');
     } else {
@@ -159,7 +209,10 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
+  // Event listeners for real-time filtering and sorting
   searchInput.addEventListener('input', filterAndSort);
   sortSelect.addEventListener('change', filterAndSort);
-});</script>
- {{ end }} {{/* end main */}}
+});
+</script>
+
+{{ end }} {{/* end main */}}

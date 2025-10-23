@@ -1,10 +1,43 @@
+{{/* 
+  Template: villages/list.html
+  Purpose: List page for all villages in the Douentza region
+  Context: /villages/ - displays all village terms with data from YAML
+  
+  Features:
+  - Hero section with statistics (total villages, total content)
+  - Search/filter functionality (by village name)
+  - Sort options (by content count or alphabetically)
+  - Village cards grid with:
+    - Village name + chef-lieu indicator
+    - Content count badge
+    - Village description, population, projects
+    - Recent content links (max 3)
+    - Map/view button
+  - Data integration from data/villages/mali_villages.yaml
+  - Responsive grid layout
+  - Hover effects on cards
+  
+  Data Sources:
+  - $.Site.Data.villages.mali_villages: Village master data (YAML)
+  - $.Data.Terms: Taxonomy terms with content count
+  
+  Dependencies:
+  - Bootstrap 5 + Bootstrap Icons
+  - JavaScript for search/filter functionality
+*/}}
+
 {{ define "main" }}
 {{ $terms := .Data.Terms }}
 {{ $totalVillages := len $.Site.Data.villages.mali_villages }}
 {{ $totalPages := 0 }}
 {{ range $t := $terms }}{{ $totalPages = add $totalPages $t.Count }}{{ end }}
 
-<!-- Hero Section -->
+{{/* 
+  ========================================
+  HERO SECTION - Villages Overview
+  ========================================
+  Displays total village count and total content count
+*/}}
 <section class="bg-primary text-white py-5 mb-5">
   <div class="container">
     <div class="row align-items-center">

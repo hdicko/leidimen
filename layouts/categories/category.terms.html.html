@@ -1,19 +1,66 @@
+{{/* 
+  Template: categories/category.terms.html.html
+  Purpose: Display all categories in an accordion layout
+  Context: /categories/ page - shows all category terms with their content
+  
+  Features:
+  - Bootstrap accordion component (collapsible panels)
+  - Categories sorted by count (most popular first)
+  - Each category shows:
+    - Category name
+    - Count badge (number of items)
+    - "View all" link to category page
+    - List of all pages in that category
+  
+  Layout:
+  - Debug borders visible (red/success colors)
+  - Centered container (lg-8, md-10)
+  - Accordion items with collapse behavior
+  
+  Data Structure:
+  - .Data.Terms.ByCount: Categories sorted by item count (descending)
+  - $value.Name: Category name
+  - $value.Count: Number of items in category
+  - $value.WeightedPages: All pages tagged with this category
+  
+  Note: This appears to be a development/debug template with visible borders
+*/}}
+
 {{ define "main" }}
+
+{{/* Debug header - Visual separator for template identification */}}
 <hr class="border border-danger border-1 opacity-50" />
 <p class="fs-2 text-center badge text-bg-info">
   layouts/categories/category.terms.html.html
 </p>
 <hr class="border border-danger border-2 opacity-50" />
 
+{{/* Store data context for use inside loops */}}
 {{ $data := .Data }}
+
 <div class="container-flex mt-3" role="main">
   <div
     class="col-lg-8 mx-auto col-md-10 offset-md-1 border border-success border-5 rounded-5"
   >
     <article class="post-preview">
+      {{/* 
+        Bootstrap Accordion Component
+        Each category is an accordion item that can be expanded/collapsed
+      */}}
       <div class="accordion" id="accordion">
+        {{/* 
+          Loop through all category terms sorted by count (most popular first)
+          $key: Index
+          $value: Category object with Name, Count, WeightedPages
+        */}}
         {{ range $key, $value := .Data.Terms.ByCount }}
         <div class="accordion-item">
+          {{/* 
+            Accordion Header - Category name with count badge
+            - Clickable button to expand/collapse
+            - Shows category name and item count
+            - Default state: collapsed
+          */}}
           <h2 class="accordion-header" id="headingOne">
             <button
               class="accordion-button collapsed"
@@ -23,6 +70,7 @@
             >
               <h4 class="accordion-header ms-2">
                 {{ $value.Name }}
+                {{/* Count badge - shows number of items in this category */}}
                 <span
                   class="badge rounded-pill text-bg-light position-absolute text-end"
                   >{{ $value.Count }}</span
@@ -30,16 +78,34 @@
               </h4>
             </button>
           </h2>
+          
+          {{/* 
+            Accordion Body - Category content (hidden by default)
+            - "View all" link to category archive page
+            - List of all pages in this category
+          */}}
           <div
             id="collapse{{ $value.Name }}"
             class="accordion-collapse collapse"
           >
             <div class="accordion-body">
+              {{/* 
+                "View all" link - Goes to category archive page
+                URL format: /categories/{category-name}/
+                Uses urlize to create URL-safe slug
+              */}}
               <a
                 href="{{ $.Site.LanguagePrefix | absURL }}/{{ $data.Plural }}/{{ $value.Name | urlize }}/"
                 class="post-title list-group-item view-all"
                 >View all</a
               >
+              
+              {{/* 
+                List of pages in this category
+                - Each item is a clickable link
+                - Shows page title
+                - Links to page permalink
+              */}}
               <div class="list-group">
                 {{ range $item := $value.WeightedPages }}
                 <a href="{{$item.Permalink}}" class="list-group-item"

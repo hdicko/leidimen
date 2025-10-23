@@ -1,6 +1,6 @@
 ---
 title: "Hamassala Dicko"
-date: "2021-01-25T22:35:49+01:00"
+date: "2006-10-25T22:35:49+01:00"
 draft: false
 description: "La solidarité au coeur de mes préoccupations - Trésorière de Leidimen"
 slug: "David"
@@ -10,20 +10,21 @@ card:
   image: "images/david-logo-thumb.jpg"
   fonction: "Trésorière"
   membre: "Membre du CA"
-  presentation: "Trésorière de Leidimen"
-  ville: "Bondoufle"
+  presentation: "Trésorier de Leidimen"
+  ville: "Paris"
   pays: "France"
-  email: ""
+  email: "david.dicko@menopresto.net"
   tel: ""
   devise: "Liberté - Égalité - Fraternité et Solidarité"
   specialites:
     - "Gestion financière"
     - "Comptabilité associative"
     - "Suivi budgétaire"
+    - "donateur"
 
 experience:
   - date: "2019"
-    title: "Trésorière de Leidimen"
+    title: "Trésorier de Leidimen"
     description: "Gestion financière de l'association Leidimen, suivi des comptes et des budgets des projets"
     category: "Associatif"
     icon: "bi-calculator-fill"
@@ -69,10 +70,12 @@ categories:
   - "leidimen"
   - "CA"
   - "bureau"
+  - "fondateur"
+
 
 tags:
   - "Leidimen"
-  - "trésorière"
+  - "trésorier"
   - "Mali"
 ---
 
@@ -80,6 +83,6 @@ tags:
 
 ## Trésorière de Leidimen
 
-Hamassala Dicko est trésorière et membre fondatrice de l'association Leidimen. Elle assure la gestion financière de l'association avec rigueur et transparence, garantissant le bon usage des fonds collectés pour les projets de solidarité.
+Hamassala Dicko est trésorier et membre fondateur de l'association Leidimen. il assure la gestion financière de l'association avec rigueur et transparence, garantissant le bon usage des fonds collectés pour les projets de solidarité.
 
 Sa devise : **"Liberté - Égalité - Fraternité et Solidarité"** guide son engagement au service du développement et de l'éducation dans les villages maliens.

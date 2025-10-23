@@ -1,8 +1,60 @@
+{{/* 
+  Template: about/single.html
+  Purpose: Individual team member profile page with Context7 design
+  Context: /about/{member-name}/ - displays detailed member information
+  
+  Key Features:
+  - Hero section with member photo and glassmorphism effects
+  - Animated background with floating particles
+  - Status badges (Founder/Bureau/Member) with icons
+  - Member info (name, role, bio, quote)
+  - Statistics counter animation (years, domains, dedication)
+  - Interactive buttons (Contact, Back to Team)
+  - Professional timeline with experience cards
+  - Sidebar with member info and action buttons
+  - Related members section (shows 5 other team members)
+  - Dynamic asset loading (SCSS + JS)
+  - Fully responsive with AOS animations
+  
+  Data Structure (from frontmatter):
+  - card.image: Member photo path
+  - card.membre: Member role(s)
+  - card.presentation: Short bio
+  - card.devise: Member quote/motto
+  - categories: Role categories (CA, fondateur, etc.)
+  - experience[]: Array of experiences
+    - date: Year or period
+    - title: Position title
+    - description: Description
+    - category: Type (Professionnel, Associatif)
+    - icon: Bootstrap icon class
+    - achievements[]: List of achievements
+    - skills[]: List of skills/technologies
+  
+  Dependencies:
+  - Bootstrap 5 + Bootstrap Icons
+  - AOS (Animate On Scroll)
+  - assets/scss/pages/profile.scss (optional)
+  - assets/js/profile.js (optional)
+*/}}
+
 {{ define "main" }}
-<!-- Context7 Individual Profile Page -->
+{{/* Context7 Individual Profile Page */}}
 {{ $image := resources.Get .Params.card.image }}
 
-<!-- Hero Profile Section with Glassmorphism -->
+{{/* 
+  ========================================
+  HERO PROFILE SECTION - Glassmorphism
+  ========================================
+  Features:
+  - Split layout: photo (left) + info (right)
+  - Animated gradient background with floating particles
+  - Member photo with status ring indicator
+  - Floating badge (Founder/Bureau/Member)
+  - Member name, role, description, quote
+  - Statistics (years, domains, dedication %)
+  - Action buttons (Contact, Back to Team)
+*/}}
 <section class="profile-hero-ctx7 position-relative overflow-hidden">
   <!-- Animated Background -->
   <div class="profile-bg-effects">
@@ -18,7 +70,13 @@
   
   <div class="container position-relative z-2">
     <div class="row align-items-center min-vh-75">
-      <!-- Profile Photo Column -->
+      {{/* 
+        Profile Photo Column - Left side
+        - Main photo resized to 400x400 with center crop
+        - Placeholder icon if no image
+        - Status ring with role-specific indicator (Founder/Bureau/Member)
+        - Floating badge with icon
+      */}}
       <div class="col-lg-5 text-center mb-5 mb-lg-0">
         <div class="profile-photo-container" data-aos="zoom-in">
           <!-- Main Photo -->
@@ -73,7 +131,14 @@
         </div>
       </div>
       
-      <!-- Profile Info Column -->
+      {{/* 
+        Profile Info Column - Right side
+        - Member name and role
+        - Description/bio
+        - Quote (if available)
+        - Statistics counters (commented out in current version)
+        - Action buttons (Contact, Back to Team)
+      */}}
       <div class="col-lg-7">
         <div class="profile-info-ctx7" data-aos="fade-left">
           <!-- Name & Title -->
@@ -103,7 +168,7 @@
           </div>
           {{ end }}
           
-          <!-- Stats Row -->
+          <!-- Stats Row 
           <div class="profile-stats">
             <div class="stat-item">
               <div class="stat-number" data-count="{{ now.Year | sub .Date.Year }}">0</div>
@@ -118,7 +183,8 @@
               <div class="stat-label">% Dévouement</div>
             </div>
           </div>
-          
+          -->
+          <div class="profile-stats">
           <!-- Action Buttons -->
           <div class="profile-actions">
             <button class="btn-ctx7-primary" onclick="openContactModal('{{ .Title }}')">
@@ -137,12 +203,20 @@
   </div>
 </section>
 
-<!-- Main Content Section -->
+{{/* 
+  ========================================
+  MAIN CONTENT SECTION
+  ========================================
+  Two-column layout:
+  - Left (8 cols): Main content + Experience timeline
+  - Right (4 cols): Sidebar with info and actions
+*/}}
 <section class="profile-content-ctx7 py-5">
   <div class="container">
     <div class="row">
       <!-- Main Content -->
       <div class="col-lg-8">
+        {{/* About Section - Main content from markdown */}}
         <div class="content-card-ctx7">
           <div class="content-header">
             <div class="content-icon">
@@ -163,6 +237,16 @@
           </div>
         </div>
 
+        {{/* 
+          Experience Timeline Section
+          Only displays if .Params.experience array exists
+          Features:
+          - Visual timeline with date badges
+          - Experience cards with icon, title, category
+          - Achievements list (optional)
+          - Skills tags (optional)
+          - AOS staggered animations (150ms delay per card)
+        */}}
         {{ if .Params.experience }}
         <div class="content-card-ctx7 mt-4">
           <div class="content-header">
@@ -174,6 +258,7 @@
           </div>
           <div class="content-body">
             <div class="timeline-visual-ctx7">
+              {{/* Loop through experience array with staggered animation */}}
               {{ range $index, $exp := .Params.experience }}
               <div class="timeline-card-ctx7" data-aos="fade-up" data-aos-delay="{{ mul $index 150 }}">
                 <!-- Date Badge -->
@@ -198,6 +283,7 @@
                   
                   <div class="experience-content">
                     <p class="experience-description">{{ .description }}</p>
+                    {{/* Achievements list (optional) */}}
                     {{ if .achievements }}
                     <div class="experience-achievements">
                       <h6><i class="bi bi-trophy"></i> Réalisations</h6>
@@ -209,6 +295,7 @@
                     </div>
                     {{ end }}
                     
+                    {{/* Skills tags (optional) */}}
                     {{ if .skills }}
                     <div class="experience-skills">
                       <h6><i class="bi bi-gear"></i> Compétences</h6>
@@ -236,9 +323,16 @@
         {{ end }}
       </div>
       
-      <!-- Sidebar -->
+      {{/* 
+        ========================================
+        SIDEBAR - Right Column
+        ========================================
+        Features:
+        - Info card (member since, status, categories)
+        - Actions card (contact, share, view all members)
+      */}}
       <div class="col-lg-4">
-        <!-- Info Card -->
+        {{/* Info Card - Member details */}}
         <div class="sidebar-card-ctx7 mb-4">
           <div class="card-header-ctx7">
             <h5>
@@ -283,7 +377,7 @@
           </div>
         </div>
         
-        <!-- Actions Card -->
+        {{/* Actions Card - Interactive buttons */}}
         <div class="sidebar-card-ctx7">
           <div class="card-header-ctx7">
             <h5>
@@ -317,7 +411,16 @@
   </div>
 </section>
 
-<!-- Related Members Section -->
+{{/* 
+  ========================================
+  RELATED MEMBERS SECTION
+  ========================================
+  Features:
+  - Shows 5 other team members (excludes current member)
+  - Responsive grid layout
+  - Member cards with photo, name, role
+  - Link to each member's profile
+*/}}
 <section class="related-members-ctx7 py-5 bg-light">
   <div class="container">
     <div class="section-header text-center mb-5">
@@ -326,6 +429,13 @@
     </div>
     
     <div class="related-grid">
+      {{/* 
+        Find related members:
+        1. Get all pages from "about" section
+        2. Exclude current page
+        3. Show first 5 results
+        4. Display with 150x150 resized photos
+      */}}
       {{ $currentPage := . }}
       {{ $relatedPages := where .Site.RegularPages "Section" "about" }}
       {{ range first 5 (where $relatedPages ".Permalink" "!=" $currentPage.Permalink) }}
@@ -355,6 +465,17 @@
   </div>
 </section>
 
+{{/* 
+  ========================================
+  ASSET LOADING - Dynamic CSS & JS
+  ========================================
+  Conditionally loads:
+  - assets/scss/pages/profile.scss (minified + fingerprinted)
+  - assets/js/profile.js (minified + fingerprinted)
+  
+  Only loads if files exist in assets folder
+  Includes integrity hash for security
+*/}}
 {{/* Asset Loading */}}
 {{ $styles := "" }}
 {{ if (resources.Get "scss/pages/profile.scss") }}
@@ -372,6 +493,17 @@
   <script src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}" defer></script>
 {{ end }}
 
+{{/* 
+  ========================================
+  INLINE STYLES - Page-specific CSS
+  ========================================
+  Includes:
+  - Related members grid (responsive layout)
+  - Timeline component styles
+  - Hover effects and transitions
+  - Responsive breakpoints
+  - Additional Context7 design elements
+*/}}
 <style>
 /* Related Members Grid */
 .related-grid {

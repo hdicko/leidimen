@@ -1,20 +1,73 @@
+{{/* 
+  Partial: post_meta.html
+  Purpose: Display post metadata (date, reading time, word count, comments)
+  Context: Used in post templates to show article information
+  
+  Features:
+  - Formatted date (last modified or publish date)
+  - Reading time estimate (if enabled in config)
+  - Word count (if enabled in config)
+  - Comment count from Staticman (if enabled)
+  - Translation links (if page is translated)
+  
+  Configuration Options (from site params):
+  - Site.Params.dateformat: Date format string
+  - Site.Params.readingTime: Show reading time (boolean)
+  - Site.Params.wordCount: Show word count (boolean)
+  - Site.Params.staticman: Enable Staticman comments (boolean)
+  
+  i18n Keys Used:
+  - dateFormat, readingTime, readTime, words, moreComment, oneComment,
+    translationsSeparator, translationsLabel
+  
+  Dependencies:
+  - Site.Data.comments: Comment data from Staticman
+  - translation_link.html partial (for multilingual sites)
+*/}}
+
 <span class="post-meta">
+  {{/* Date formatting */}}
   {{ $lastmodstr := default (i18n "dateFormat") .Site.Params.dateformat |
   .Lastmod.Format }} {{ $datestr := default (i18n "dateFormat")
-  .Site.Params.dateformat | .Date.Format }} &nbsp;{{ $datestr }} {{ if
-  .Site.Params.readingTime }} &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;{{
-  i18n "readingTime" }}{{ .ReadingTime }}&nbsp;{{ i18n "readTime" }} {{ end }}
-  {{ if .Site.Params.wordCount }} &nbsp;|&nbsp;<i class="fas fa-book"></i
-  >&nbsp;{{ .WordCount }}&nbsp;{{ i18n "words" }} {{ end }} {{- if
-  .Site.Params.staticman -}} &nbsp;|&nbsp;<i class="fas fa-comment"></i>&nbsp;
-  {{ $slug := replace .RelPermalink "/" "" }} {{ if .Site.Data.comments }} {{
-  $comments := index $.Site.Data.comments $slug }} {{ if $comments }} {{ if gt
-  (len $comments) 1 }} {{ len $comments }} {{ i18n "moreComment" }} {{ else }}
-  {{ len $comments }} {{ i18n "oneComment" }} {{ end }} {{ else }} 0 {{ i18n
-  "oneComment" }} {{ end }} {{ end }} {{ end }} {{ if .IsTranslated -}} {{-
-  $sortedTranslations := sort .Translations "Site.Language.Weight" -}} {{-
-  $links := apply $sortedTranslations "partial" "translation_link.html" "." -}}
-  {{- $cleanLinks := apply $links "chomp" "." -}} {{- $linksOutput := delimit
-  $cleanLinks (i18n "translationsSeparator") -}} &nbsp;&bull;&nbsp;{{ i18n
-  "translationsLabel" }}{{ $linksOutput }} {{- end }}
+  .Site.Params.dateformat | .Date.Format }} 
+  
+  {{/* Display formatted date */}}
+  &nbsp;{{ $datestr }} 
+  
+  {{/* Reading time (if enabled) */}}
+  {{ if .Site.Params.readingTime }} 
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;{{ i18n "readingTime" }}{{ .ReadingTime }}&nbsp;{{ i18n "readTime" }} 
+  {{ end }}
+  
+  {{/* Word count (if enabled) */}}
+  {{ if .Site.Params.wordCount }} 
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;{{ .WordCount }}&nbsp;{{ i18n "words" }} 
+  {{ end }} 
+  
+  {{/* Staticman comment count (if enabled) */}}
+  {{- if .Site.Params.staticman -}} 
+    &nbsp;|&nbsp;<i class="fas fa-comment"></i>&nbsp;
+    {{ $slug := replace .RelPermalink "/" "" }} 
+    {{ if .Site.Data.comments }} 
+      {{ $comments := index $.Site.Data.comments $slug }} 
+      {{ if $comments }} 
+        {{ if gt (len $comments) 1 }} 
+          {{ len $comments }} {{ i18n "moreComment" }} 
+        {{ else }} 
+          {{ len $comments }} {{ i18n "oneComment" }} 
+        {{ end }} 
+      {{ else }} 
+        0 {{ i18n "oneComment" }} 
+      {{ end }} 
+    {{ end }} 
+  {{ end }} 
+  
+  {{/* Translation links (if page is translated) */}}
+  {{ if .IsTranslated -}} 
+    {{- $sortedTranslations := sort .Translations "Site.Language.Weight" -}} 
+    {{- $links := apply $sortedTranslations "partial" "translation_link.html" "." -}}
+    {{- $cleanLinks := apply $links "chomp" "." -}} 
+    {{- $linksOutput := delimit $cleanLinks (i18n "translationsSeparator") -}} 
+    &nbsp;&bull;&nbsp;{{ i18n "translationsLabel" }}{{ $linksOutput }} 
+  {{- end }}
 </span>

@@ -1,62 +1,57 @@
+{{/* 
+  Template: _default/single.html
+  Purpose: Default single page layout for individual content pages
+  Context: Used when no specific layout is defined for a content type
+  
+  This template renders:
+  - Page title (centered)
+  - Main content (markdown processed to HTML)
+  - Comments section (Disqus if configured)
+  
+  Applied to:
+  - Generic pages without specific layout
+  - Fallback for any content type
+  
+  Note: More specific layouts override this (e.g., posts/single.html, about/single.html)
+*/}}
+
 {{ define "main" }}
-{{/* <hr class="border border-danger border-2 opacity-50" />
-<p>Menus loaded from _default/single</p> */}}
 
 <section>
-  {{/* <hr class="border border-danger border-2 opacity-50" />
-  <p>loading title and content of the _defaults/single.html</p>
-  <hr class="border border-danger border-2 opacity-50" /> */}}
-  <!-- Title and Content of the page -->
+  
+  {{/* Main Content Container */}}
   <div class="container-flex">
     <div class="row">
       <div class="col-sm-12">
+        {{/* Page Title - Centered heading */}}
         <h1 class="text-center">{{ .Title }}</h1>
+        
+        {{/* 
+          Main Content - Markdown rendered to HTML
+          .Content contains the page's markdown content
+          markdownify processes any markdown syntax in the output
+        */}}
         <p>{{ .Content | markdownify }}</p>
       </div>
     </div>
   </div>
 
-  <!--  accessing the data -->
-  {{/* <hr class="border border-danger border-2 opacity-50" />
-  <p>Accessing data</p>
-  <hr class="border border-danger border-2 opacity-50" />
-
-  <h1 class="text-center">Adherents</h1>
-  <hr class="border border-danger border-2 opacity-5" />
-  <table class="table">
-    <thead>
-      <tr class="">
-        <th scope="col"></th>
-        <th scope="col">nom</th>
-        <th scope="col">fonction</th>
-        <th scope="col">Tel</th>
-        <th scope="col">email</th>
-        <th scope="col">addresse</th>
-      </tr>
-    </thead>
-    <tbody>
-      {{ range .Site.Data.membres.adherents }}
-      <tr>
-        <th scope="row"></th>
-        <td>{{ .nom }}</td>
-        <td>{{ .fonction }}</td>
-        <td>{{ .Tel }}</td>
-        <td>{{ .email }}</td>
-        <td>{{ .adresse }}</td>
-      </tr>
-      {{ end }}
-    </tbody>
-  </table> */}}
-
-  <!-- Comments Section -->
+  {{/* 
+    Comments Section - Disqus Integration
+    - Only displays if Disqus shortname is configured in hugo.toml
+    - Uses Hugo's internal Disqus template
+    - Shows fallback message if comments are disabled
+  */}}
   <div class="container mt-5 mb-5">
     <div class="row">
       <div class="col-lg-8 mx-auto">
         <hr class="my-4" />
         <h3 class="mb-4">Commentaires</h3>
         {{ if .Site.Config.Services.Disqus.Shortname }}
+          {{/* Load Hugo's internal Disqus template */}}
           {{ template "_internal/disqus.html" . }}
         {{ else }}
+          {{/* Fallback message when comments are not enabled */}}
           <p class="text-muted">Les commentaires ne sont pas activés pour le moment.</p>
         {{ end }}
       </div>

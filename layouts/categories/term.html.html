@@ -1,8 +1,45 @@
+{{/* 
+  Template: categories/term.html.html
+  Purpose: Display all posts for a specific category term
+  Context: /categories/{category-name}/ - shows posts in a category
+  
+  Features:
+  - Hero section with gradient background
+  - Category icon and title
+  - Post count badge
+  - Decorative elements
+  - Modern card grid layout
+  - Post cards with:
+    - Image or gradient background
+    - Date badge
+    - Title, excerpt
+    - Author, reading time, villages tags
+    - View button
+  - AOS staggered animations
+  - Hover effects
+  - Responsive design
+  
+  Dependencies:
+  - Bootstrap 5 + Bootstrap Icons
+  - AOS (Animate On Scroll)
+  - Custom CSS included inline
+*/}}
+
 {{ define "main"}}
 
-<!-- Modern Category Page with Cards -->
+{{/* Modern Category Page with Cards */}}
 <div class="category-page">
-  <!-- Hero Section -->
+  {{/* 
+    ========================================
+    HERO SECTION - Category Header
+    ========================================
+    Features:
+    - Gradient background with pattern overlay
+    - Category icon in circle
+    - Category title (display-3)
+    - Post count badge
+    - Decorative divider with diamond icon
+  */}}
   <section class="category-hero position-relative overflow-hidden">
     <div class="hero-background">
       <div class="gradient-layer"></div>
@@ -43,7 +80,16 @@
     </div>
   </section>
 
-  <!-- Posts Grid Section -->
+  {{/* 
+    ========================================
+    POSTS GRID SECTION
+    ========================================
+    Features:
+    - Filter/sort bar (informational)
+    - Card grid layout (3 columns on XL, 2 on LG, 1 on mobile)
+    - AOS staggered animations (50ms delay per card)
+    - Post cards with image/gradient + date badge + meta
+  */}}
   <section class="posts-section py-5">
     <div class="container">
       <!-- Filter/Sort Bar (Optional) -->

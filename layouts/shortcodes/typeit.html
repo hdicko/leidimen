@@ -78,7 +78,9 @@
         startDelay: {{ $startDelay }},
         breakLines: {{ $breakLines }},
         waitUntilVisible: {{ $waitUntilVisible }},
-        loop: {{ $loop }}
+        loop: {{ $loop }},
+        cursor: false,
+        html: true
       }).go();
       {{/* Multiple strings: output as JSON array */}}
       {{- else }}
@@ -89,7 +91,9 @@
         startDelay: {{ $startDelay }},
         breakLines: {{ $breakLines }},
         waitUntilVisible: {{ $waitUntilVisible }},
-        loop: {{ $loop }}
+        loop: {{ $loop }},
+        cursor: false,
+        html: true
       }).go();
       {{- end }}
     });

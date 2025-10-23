@@ -1,5 +1,45 @@
+{{/* 
+  Template: about/list.html
+  Purpose: Team members listing page with advanced Context7 design system
+  Context: /about/ section - displays all team members with filtering and search
+  
+  Key Features:
+  - Hero section with glassmorphism effects and animated background
+  - Dynamic statistics (member count, years active, engagement)
+  - Smart search with live suggestions
+  - Filter pills (All, Founders, Bureau, Members)
+  - Team cards grid with member details
+  - Contact modal integration
+  - Call-to-action section for new members
+  - Fully responsive with AOS animations
+  - Custom CSS with Context7 design tokens
+  
+  Data Structure (from frontmatter):
+  - card.image: Member photo
+  - card.membre: Member role(s)
+  - card.presentation: Short bio
+  - card.devise: Member quote/motto
+  - categories: Role categories (CA, fondateur, etc.)
+  
+  Dependencies:
+  - Bootstrap 5
+  - Bootstrap Icons
+  - AOS (Animate On Scroll)
+  - Custom JavaScript for search/filter
+*/}}
+
 {{ define "main" }}
-<!-- Context7 Hero Section with Glassmorphism -->
+
+{{/* 
+  ========================================
+  HERO SECTION - Glassmorphism Design
+  ========================================
+  Features:
+  - Animated floating shapes background
+  - Glass-effect card with gradient text
+  - Statistics counter animation
+  - CTA buttons (Discover Team, Join Us)
+*/}}
 <section class="context7-hero position-relative overflow-hidden">
   <!-- Animated Background -->
   <div class="hero-bg position-absolute w-100 h-100">
@@ -82,7 +122,21 @@
   </div>
 </section>
 
-<!-- Context7 Smart Filter Section -->
+{{/* 
+  ========================================
+  SMART FILTER SECTION
+  ========================================
+  Features:
+  - Real-time search with smart suggestions dropdown
+  - Filter pills with dynamic counts (All, Founders, Bureau, Members)
+  - Results counter
+  - Clear search button
+  
+  Search targets:
+  - Member name
+  - Role/position
+  - Skills/competencies
+*/}}
 <section class="filter-section position-relative">
   <div class="container">
     <div class="row justify-content-center">
@@ -145,7 +199,27 @@
   </div>
 </section>
 
-<!-- Context7 Team Cards Grid -->
+{{/* 
+  ========================================
+  TEAM CARDS GRID SECTION
+  ========================================
+  Features:
+  - Responsive grid layout (3 columns desktop, 2 tablet, 1 mobile)
+  - Member cards with glassmorphism effects
+  - Photo with placeholder fallback
+  - Status badges (Founder/Bureau/Member)
+  - Member info (name, role, bio, quote)
+  - Category tags
+  - Mini stats (years, roles)
+  - Action buttons (View profile, Contact)
+  - AOS staggered animations
+  - "No results" state for filtered searches
+  
+  Data attributes for filtering:
+  - data-name: Member name (lowercase)
+  - data-role: Member role (lowercase)
+  - data-categories: Categories space-separated (lowercase)
+*/}}
 <section class="team-section py-5" id="team-section">
   <div class="container">
     <!-- Section Header -->
@@ -158,20 +232,37 @@
       </p>
     </div>
     
-    <!-- Team Grid with Staggered Animation -->
-                                                                                                                                                                                                                                                                                                                                                                                    <div class="team-grid" id="membersGrid">
+    {{/* Team Grid with Staggered Animation */}}
+    <div class="team-grid" id="membersGrid">
+      {{/* 
+        Loop through all member pages
+        Image processing logic:
+        1. If image path starts with "/" → use as-is (static file)
+        2. Otherwise → process as Hugo resource (resize to 400x400)
+        3. If no image → show placeholder icon
+      */}}
       {{ range $index, $member := .RegularPages }}
       {{ $image := "" }}
       {{ if $member.Params.card.image }}
         {{ if hasPrefix $member.Params.card.image "/" }}
+          {{/* Static image path */}}
           {{ $image = $member.Params.card.image }}
         {{ else }}
+          {{/* Hugo resource - resize to 400x400 */}}
           {{ $imageResource := resources.Get $member.Params.card.image }}
           {{ if $imageResource }}
             {{ $image = ($imageResource.Resize "400x400 center").RelPermalink }}
           {{ end }}
         {{ end }}
       {{ end }}
+      {{/* 
+        Card data attributes for filtering:
+        - data-name: Member name (lowercase)
+        - data-role: Role from card.membre (lowercase)
+        - data-categories: Space-separated categories (lowercase)
+        - data-aos: Animation on scroll trigger
+        - data-aos-delay: Staggered delay (index * 100ms)
+      */}}
       <div class="team-card-wrapper" 
            data-name="{{ $member.Title | lower }}" 
            data-role="{{ $member.Params.card.membre | lower }}"
@@ -288,7 +379,7 @@
       {{ end }}
     </div>
     
-    <!-- No Results State -->
+    {{/* No Results State - Shown when search/filter returns empty */}}
     <div id="noResults" class="no-results d-none">
       <div class="no-results-content">
         <div class="no-results-icon">
@@ -305,7 +396,20 @@
   </div>
 </section>
 
-<!-- Context7 Call-to-Action Section -->
+{{/* 
+  ========================================
+  CALL-TO-ACTION SECTION
+  ========================================
+  Features:
+  - Gradient background with floating elements
+  - CTA buttons (Become Member, Learn More)
+  - Social proof links (Facebook, Twitter, LinkedIn)
+  - Responsive layout with glassmorphism
+  
+  Links:
+  - /documents/adhesion/ - Membership form
+  - /documents/ - General information
+*/}}
 <section class="cta-section position-relative overflow-hidden">
   <div class="cta-bg-effects">
     <div class="cta-gradient"></div>
@@ -378,6 +482,26 @@
   </div>
 </section>
 
+{{/* 
+  ========================================
+  CSS STYLES - Context7 Design System
+  ========================================
+  Includes:
+  - CSS custom properties (design tokens)
+  - Global animations (@keyframes float, pulse, rotate, etc.)
+  - Hero section styles (glassmorphism, floating shapes)
+  - Filter section styles (search, pills, suggestions)
+  - Team card styles (hover effects, badges, transitions)
+  - CTA section styles (gradients, floating elements)
+  - Responsive breakpoints
+  - Accessibility styles (focus states, reduced motion)
+  
+  Design System:
+  - Primary colors: Indigo/Purple gradient
+  - Glass effects: rgba with backdrop-filter blur
+  - Shadows: Layered box-shadows for depth
+  - Animations: Smooth transitions with cubic-bezier easing
+*/}}
 <style>
 /* Context7 Design System for About Page */
 :root {
@@ -1309,6 +1433,46 @@
 }
 </style>
 
+{{/* 
+  ========================================
+  JAVASCRIPT - Interactive Functionality
+  ========================================
+  
+  Class: Context7AboutPage
+  Main controller for all page interactions
+  
+  Features:
+  1. Search functionality
+     - Real-time filtering as user types
+     - Smart suggestions dropdown
+     - Clear button
+  
+  2. Filter pills
+     - Click to filter by role (All, Founders, Bureau, Members)
+     - Dynamic count updates
+     - Active state management
+  
+  3. Animations
+     - Counter animation for statistics
+     - Intersection Observer for scroll animations
+     - Staggered card entrance
+  
+  4. Accessibility
+     - Keyboard navigation support
+     - Focus management
+     - ARIA labels
+  
+  5. Contact modal
+     - Member contact form
+     - Dynamic data population
+  
+  Methods:
+  - extractMemberData(): Builds searchable data from DOM
+  - filterMembers(): Applies search + filter logic
+  - updateFilterCounts(): Updates pill badges
+  - animateCounters(): Number counting animation
+  - setupIntersectionObserver(): Scroll-triggered animations
+*/}}
 <script>
 // Context7 Enhanced About Page Functionality
 class Context7AboutPage {
@@ -1349,14 +1513,14 @@ class Context7AboutPage {
   }
   
   setupEventListeners() {
-    // Search functionality
+    // Search functionality - Debounced input for performance
     this.searchInput.addEventListener('input', debounce(() => {
       this.searchTerm = this.searchInput.value.toLowerCase();
       this.updateSearchClear();
       this.filterMembers();
     }, 300));
     
-    // Clear search
+    // Clear search button
     this.searchClear.addEventListener('click', () => {
       this.searchInput.value = '';
       this.searchTerm = '';
@@ -1365,7 +1529,7 @@ class Context7AboutPage {
       this.searchInput.focus();
     });
     
-    // Filter pills
+    // Filter pills click handlers
     this.filterPills.forEach(pill => {
       pill.addEventListener('click', () => {
         this.setActiveFilter(pill);
@@ -1374,7 +1538,7 @@ class Context7AboutPage {
       });
     });
     
-    // Smooth scroll for hero button
+    // Global function: Smooth scroll for hero button
     window.scrollToSection = (sectionId) => {
       const section = document.getElementById(sectionId);
       if (section) {
@@ -1385,12 +1549,12 @@ class Context7AboutPage {
       }
     };
     
-    // Contact modal function
+    // Global function: Open contact modal for specific member
     window.openContactModal = (memberName) => {
       this.showContactModal(memberName);
     };
     
-    // Clear filters function
+    // Global function: Reset all filters and search
     window.clearFilters = () => {
       this.searchInput.value = '';
       this.searchTerm = '';
@@ -1414,19 +1578,37 @@ class Context7AboutPage {
     activeButton.classList.add('active');
   }
   
+  /**
+   * filterMembers - Core filtering logic
+   * Applies both search term AND filter pill criteria
+   * 
+   * Search logic (OR):
+   * - Member name contains search term
+   * - Member role contains search term  
+   * - Member categories contain search term
+   * 
+   * Filter logic (OR):
+   * - "all" shows everyone
+   * - Otherwise checks role or categories match filter
+   * 
+   * Combined with AND: (matchesSearch && matchesFilter)
+   */
   filterMembers() {
     let visibleCount = 0;
     
     this.memberData.forEach(member => {
+      // Search matching - checks name, role, categories
       const matchesSearch = !this.searchTerm || 
                            member.name.includes(this.searchTerm) || 
                            member.role.includes(this.searchTerm) ||
                            member.categories.includes(this.searchTerm);
       
+      // Filter pill matching - checks role or categories
       const matchesFilter = this.currentFilter === 'all' || 
                            member.role.includes(this.currentFilter) || 
                            member.categories.includes(this.currentFilter);
       
+      // Show/hide based on both criteria
       if (matchesSearch && matchesFilter) {
         this.showMember(member.element);
         visibleCount++;
@@ -1439,11 +1621,18 @@ class Context7AboutPage {
     this.toggleNoResults(visibleCount === 0);
   }
   
+  /**
+   * showMember - Reveals a member card with fade-in
+   */
   showMember(element) {
     element.classList.remove('hide', 'filtering');
     element.style.display = '';
   }
   
+  /**
+   * hideMember - Hides a member card with fade-out animation
+   * Uses delayed style.display for smooth transition
+   */
   hideMember(element) {
     element.classList.add('filtering');
     setTimeout(() => {
@@ -1454,10 +1643,14 @@ class Context7AboutPage {
     }, 300);
   }
   
+  /**
+   * updateResultsCount - Updates and animates the results counter
+   * Adds scale bounce effect to draw attention
+   */
   updateResultsCount(count) {
     this.resultsCount.textContent = count;
     
-    // Animate counter
+    // Animate counter - scale bounce effect
     const counter = this.resultsCount;
     counter.style.transform = 'scale(1.2)';
     counter.style.color = 'var(--context7-primary)';
@@ -1468,6 +1661,9 @@ class Context7AboutPage {
     }, 300);
   }
   
+  /**
+   * toggleNoResults - Shows/hides "no results" message
+   */
   toggleNoResults(show) {
     if (show) {
       this.noResults.classList.remove('d-none');

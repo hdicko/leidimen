@@ -57,7 +57,6 @@ tags:
 description: Bénévole actif de l'association Leidimen
 ---
 
-{{< myimage src="images/default-avatar.jpg" >}}
 
 ## Madio Dicko - Bénévole de Leidimen
 

@@ -38,6 +38,7 @@ experience:
 categories:
   - "leidimen"
   - "fondateur"
+  - "Bureau"
 
 tags:
   - "Bondoufle"
