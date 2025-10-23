@@ -5,9 +5,13 @@ set -e
 
 printf "\033[0;32mDeploying updates to GitHub...\033[0m\n"
 
+# Check Hugo version
+echo "Using Hugo version:"
+./node_modules/.bin/hugo/hugo version
+
 # 1. Clean and Build the project
 rm -rf public
-hugo
+./node_modules/.bin/hugo/hugo --gc --minify
 
 # 2. Navigate to the public directory
 cd public

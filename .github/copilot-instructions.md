@@ -4,7 +4,7 @@
 This is a Hugo-based static site for **Leidimen**, a French solidarity association supporting villages in the Douentza region of Mali. The site features bilingual content, Netlify CMS integration, and custom taxonomies for organizing content by villages, moods, categories, and tags.
 
 **Tech Stack:**
-- Hugo 0.122.0 (local) / 0.151.0 (Netlify)
+- Hugo 0.152.1 (local & Netlify - unified version)
 - Bootstrap 5.3.8 + Bootstrap Icons
 - Dart Sass for SCSS processing
 - PhotoSwipe for image galleries
@@ -132,10 +132,10 @@ draft: false
 ```
 
 ### Hugo Version Management
-- **Local**: Hugo 0.122.0 installed via npm `hugo-installer` package
-- **Netlify**: Hugo 0.151.0 (configured in `netlify.toml`)
+- **Local & Netlify**: Hugo 0.152.1 (unified version)
 - Version pinned in `package.json` under `otherDependencies.hugo`
-- **Always test locally before deploying** due to version differences
+- Netlify version configured in `netlify.toml` (HUGO_VERSION)
+- **Unified version eliminates compatibility issues**
 - Hugo binary location: `node_modules/.bin/hugo/hugo` (auto-installed on `npm install`)
 
 **Running Hugo commands:**
@@ -283,7 +283,7 @@ Hugo data files are accessible in templates via `.Site.Data`:
 1. **Taxonomy values must be lowercase** in frontmatter (e.g., `villages: ["dorool"]` not `["Dorool"]`)
 2. **PhotoSwipe loading must use Page.Scratch** to prevent duplicates—never call partials directly
 3. **baseURL includes `/leidimen/` subdirectory**—use `.RelPermalink` not `.Permalink` for relative paths
-4. **Hugo version differences** between local (0.122.0) and Netlify (0.151.0)—test builds on both
+4. **Hugo version unified at 0.152.1**—same version local and Netlify for consistency
 5. **Content in `content/posts/` must use `type: "posts"`** in frontmatter for proper routing
 6. **Gallery shortcode requires page resources**—images must be in same folder as `index.md`, not `static/`
 7. **Netlify CMS media folder** is `static/images/uploads/`—these are NOT page resources
