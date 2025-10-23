@@ -140,10 +140,10 @@
     
           {{ $page := .Site.GetPage "/about/" }}
         
-          <a href="/leidimen/about" class="btn btn-primary btn-lg rounded-pill me-3 mb-2">
+          <a href="{{ "/about/" | relURL }}" class="btn btn-primary btn-lg rounded-pill me-3 mb-2">
             <i class="bi bi-people me-2"></i>Découvrir l'équipe
           </a>
-          <a href="/leidimen/documents/" class="btn btn-outline-primary btn-lg rounded-pill mb-2">
+          <a href="{{ "/documents/" | relURL }}" class="btn btn-outline-primary btn-lg rounded-pill mb-2">
             <i class="bi bi-file-text me-2"></i>Nos documents
           </a>
         </div>
