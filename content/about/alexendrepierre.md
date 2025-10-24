@@ -7,7 +7,7 @@ slug: "alexendre-pierre"
 weight: 50
 
 card:
-  image: ""
+  image: "images/alexandre.webp"
   fonction: "Membre fondateur"
   membre: "Membre fondateur"
   presentation: "Membre fondateur de Leidimen"

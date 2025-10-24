@@ -81,8 +81,17 @@ tags:
 
 {{< myimage src="images/david-logo.jpg" >}}
 
-## Trésorière de Leidimen
+{{< details "A propos de moi" >}}
+{{< typeit
+  tag=h1
+  lifeLike=true
+>}}
+Hamassala Hamadoun Pathe Ameri Diona Dicko
+{{< /typeit >}}
+
+## Trésorier de Leidimen
 
 Hamassala Dicko est trésorier et membre fondateur de l'association Leidimen. il assure la gestion financière de l'association avec rigueur et transparence, garantissant le bon usage des fonds collectés pour les projets de solidarité.
 
 Sa devise : **"Liberté - Égalité - Fraternité et Solidarité"** guide son engagement au service du développement et de l'éducation dans les villages maliens.
+{{< /details >}}
