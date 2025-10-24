@@ -1,107 +1,512 @@
 {{/* 
   Template: _default/taxonomy.html
-  Purpose: Display all pages for a specific taxonomy term
+  Purpose: Display all pages for a specific taxonomy term with Context7 professional design
   Context: Taxonomy term pages (e.g., /categories/education/, /villages/dorool/)
   
   Features:
-  - Image gallery from page resources (with Fancybox)
-  - Image processing (fit 600x400)
-  - EXIF data display (date)
-  - List of all pages with this taxonomy term
-  - Summary rendering for each page
-  - Debug borders and labels
+  - Context7 hero section with gradient background and floating shapes
+  - Glass-morphism effect cards
+  - Professional image gallery with PhotoSwipe
+  - Advanced statistics display
+  - Posts grid with modern cards
+  - Hover effects and animations
+  - AOS (Animate On Scroll) integration
+  - Responsive design
   
   Image Processing:
-  - Searches for image resources in content/TAXONOMY/TERM/
-  - Processes images to 600x400 fit
-  - Creates clickable gallery with Fancybox
+  - Thumbnails: 400x300px for gallery
+  - Full images: Original size for lightbox
+  - PhotoSwipe lightbox integration
   
   Page Listing:
-  - Ranges through all pages tagged with this term
-  - Renders each page using summary.html partial
-  - Shows page title with link
+  - Modern card layout with featured images
+  - Post metadata (date, author, categories)
+  - Excerpt display with truncation
+  - Read more buttons
   
-  Note: This is a development template with visible debug elements
+  Dependencies:
+  - Bootstrap 5 + Bootstrap Icons
+  - Context7 design system
+  - PhotoSwipe for image gallery
+  - AOS (Animate On Scroll)
 */}}
 
 {{ define "main" }}
-<main>
-  {{/* 
-    Image Gallery Section
-    Add taxonomy images in content/TAXONOMY/TERM/<images resources>
-    Example: content/villages/dorool/photo1.jpg
-  */}}
-    {{ with .Resources.ByType "image" }}
-    {{ range . }}
-    {{ $img := . }}
 
-    {{/* Process image - fit to 600x400 dimensions */}}
-    {{/** {{ $alt := $img.Resize "300x160" }} **/}}
-    {{ $alt := $img.Process "fit 600x400" }}
-    
-    {{/* Fancybox gallery link */}}
-    <a data-fancybox="gallery" data-src="{{ $alt.RelPermalink }}">
-      <img src="{{ $alt.RelPermalink }}" />
-    </a>
-    
-    {{/* Display EXIF data if available */}}
-    {{ with $img.Exif }}
-    <ul>
-      {{ with .Date }}<li>Date: {{ .Format "January 02, 2006" }}</li>{{ end }}
-    </ul>
-    {{ end }}
-    {{ end }}
-    {{ end }}
-
-    {{/* Debug separator */}}
-    <hr class="border border-danger border-2 opacity-50 " />
-    
-    <div>
-      {{/* Example of accessing specific taxonomy */}}
-      {{ $pages := site.Taxonomies.categories.gauche }}
-      
-      {{/* 
-        Commented debug info - useful for development
-        Shows: Title, Kind, Type, Site, Page, Section, Data.Pages
-      */}}
-      {{/** $pages := index site.Taxonomies "categories" "villages" }}
-      <span class="badge text-bg-info">
-        Title: {{ .Title }} --
-        Kind: {{ .Kind }} --
-        Type: {{ .Type }}
-        Site: {{ .Site }}
-        Page: {{ .Page }}
-        Section:{{ .Section }} Data Pages: {{ .Data.Pages }}</span>
-      **/}}
-
-      {{/* 
-        Page List Section
-        Ranges through each of the content files associated with a particular 
-        taxonomy term and renders the summary.html content view 
-      */}}
-      <hr class="border border-danger border-1 opacity-50" />
-      <p class="fs-2 text-center badge text-bg-info">
-        Render pages with summary _default/taxonomy.html
-      </p>
-      <hr class="border border-danger border-2 opacity-50" />
-
-      <div class="d-flex flex-column">
-        <div class="row">
-          {{/* 
-            Loop through all pages with this taxonomy term
-            - Displays page title
-            - Renders summary using summary.html partial
-            - Links to full page
-          */}}
-          {{ range .Pages }}
-          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 mb-5">
-            <h3>{{ .Title }}</h3>
-            {{ .Render "summary" }}
-            <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
+<!-- Context7 Hero Section -->
+<section class="taxonomy-hero-ctx7 position-relative overflow-hidden">
+  <div class="hero-bg-effects">
+    <div class="gradient-overlay"></div>
+    <div class="floating-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+    </div>
+  </div>
+  
+  <div class="container position-relative z-3">
+    <div class="row justify-content-center">
+      <div class="col-lg-10 text-center">
+        <div class="glass-card hero-card p-5" data-aos="fade-up">
+          <!-- Taxonomy Icon -->
+          <div class="taxonomy-icon mb-4">
+            {{ if eq .Data.Singular "category" }}
+              <i class="bi bi-bookmark-fill"></i>
+            {{ else if eq .Data.Singular "village" }}
+              <i class="bi bi-geo-alt-fill"></i>
+            {{ else if eq .Data.Singular "mood" }}
+              <i class="bi bi-emoji-smile-fill"></i>
+            {{ else if eq .Data.Singular "tag" }}
+              <i class="bi bi-tag-fill"></i>
+            {{ else }}
+              <i class="bi bi-folder-fill"></i>
+            {{ end }}
           </div>
-          {{ end }}
+          
+          <h1 class="hero-title display-3 fw-bold mb-4 text-white">
+            {{ .Title }}
+          </h1>
+          
+          <!-- Stats Row -->
+          <div class="stats-row d-flex justify-content-center gap-4 flex-wrap">
+            <div class="stat-item glass-effect p-3 rounded-4">
+              <div class="stat-number">{{ len .Pages }}</div>
+              <div class="stat-label">{{ if eq (len .Pages) 1 }}Article{{ else }}Articles{{ end }}</div>
+            </div>
+            {{ if .Resources.ByType "image" }}
+            <div class="stat-item glass-effect p-3 rounded-4">
+              <div class="stat-number">{{ len (.Resources.ByType "image") }}</div>
+              <div class="stat-label">{{ if eq (len (.Resources.ByType "image")) 1 }}Photo{{ else }}Photos{{ end }}</div>
+            </div>
+            {{ end }}
+          </div>
         </div>
       </div>
     </div>
-</main>
+  </div>
+</section>
+
+<!-- Image Gallery Section (if images exist) -->
+{{ with .Resources.ByType "image" }}
+<section class="gallery-section py-5 bg-light">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <h2 class="section-title fw-bold">
+        <i class="bi bi-images text-primary me-2"></i>
+        Galerie Photos
+      </h2>
+      <p class="text-muted">Découvrez {{ len . }} {{ if eq (len .) 1 }}image{{ else }}images{{ end }} dans cette collection</p>
+    </div>
+    
+    <div class="row g-4">
+      {{ range $index, $img := . }}
+      {{ $thumb := $img.Fill "400x300 center webp q85" }}
+      <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="{{ mul $index 50 }}">
+        <a href="{{ $img.RelPermalink }}" 
+           data-pswp-width="{{ $img.Width }}" 
+           data-pswp-height="{{ $img.Height }}"
+           class="gallery-item d-block position-relative overflow-hidden rounded-3 shadow-sm"
+           target="_blank">
+          <img src="{{ $thumb.RelPermalink }}" 
+               class="img-fluid w-100" 
+               alt="{{ $img.Title }}"
+               loading="lazy">
+          <div class="gallery-overlay">
+            <i class="bi bi-zoom-in"></i>
+          </div>
+          {{ with $img.Exif }}
+          {{ with .Date }}
+          <div class="gallery-date">
+            <i class="bi bi-calendar3"></i>
+            {{ .Format "02 Jan 2006" }}
+          </div>
+          {{ end }}
+          {{ end }}
+        </a>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+{{- if not ($.Page.Scratch.Get "photoswipeloaded") -}}
+{{ $.Page.Scratch.Set "photoswipeloaded" 1 }}
+{{ partial "photoswipe-resources.html" . }}
+{{ partial "photoswipe-structure.html" . }}
+{{- end -}}
+{{ end }}
+
+<!-- Content Section -->
+<section class="content-section py-5">
+  <div class="container">
+    {{ if .Pages }}
+    <div class="text-center mb-5" data-aos="fade-up">
+      <h2 class="section-title fw-bold">
+        <i class="bi bi-newspaper text-primary me-2"></i>
+        Publications
+      </h2>
+      <p class="text-muted">{{ len .Pages }} {{ if eq (len .Pages) 1 }}article{{ else }}articles{{ end }} dans cette catégorie</p>
+    </div>
+
+    <div class="row g-4">
+      {{ range $index, $page := .Pages }}
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="{{ mul $index 50 }}">
+        <article class="post-card glass-effect h-100 overflow-hidden rounded-4">
+          <!-- Featured Image -->
+          {{ with $page.Params.image }}
+          <div class="post-image position-relative">
+            <img src="{{ . | relURL }}" 
+                 class="w-100" 
+                 alt="{{ $page.Title }}"
+                 style="height: 200px; object-fit: cover;">
+            <div class="post-overlay"></div>
+          </div>
+          {{ end }}
+          
+          <div class="post-body p-4">
+            <!-- Post Meta -->
+            <div class="post-meta d-flex align-items-center gap-3 mb-3 flex-wrap">
+              <span class="badge bg-primary">
+                <i class="bi bi-calendar3"></i>
+                {{ $page.Date.Format "02 Jan 2006" }}
+              </span>
+              {{ with $page.Params.auteur }}
+              <span class="text-muted small">
+                <i class="bi bi-person-circle"></i>
+                {{ . }}
+              </span>
+              {{ end }}
+            </div>
+            
+            <!-- Post Title -->
+            <h3 class="post-title h5 mb-3">
+              <a href="{{ $page.RelPermalink }}" class="text-decoration-none text-dark stretched-link">
+                {{ $page.Title }}
+              </a>
+            </h3>
+            
+            <!-- Post Excerpt -->
+            {{ with $page.Summary }}
+            <p class="post-excerpt text-muted mb-3">
+              {{ . | truncate 120 }}
+            </p>
+            {{ end }}
+            
+            <!-- Post Footer -->
+            <div class="post-footer d-flex justify-content-between align-items-center">
+              <span class="read-more text-primary fw-semibold">
+                Lire la suite <i class="bi bi-arrow-right ms-1"></i>
+              </span>
+              
+              {{ with $page.Params.categories }}
+              <div class="post-categories">
+                {{ range first 2 . }}
+                <span class="badge bg-light text-dark border">{{ . }}</span>
+                {{ end }}
+              </div>
+              {{ end }}
+            </div>
+          </div>
+          
+          <!-- Decorative Border -->
+          <div class="post-border"></div>
+        </article>
+      </div>
+      {{ end }}
+    </div>
+    {{ else }}
+    <!-- Empty State -->
+    <div class="text-center py-5" data-aos="fade-up">
+      <div class="empty-state">
+        <i class="bi bi-inbox display-1 text-muted mb-3"></i>
+        <h3 class="text-muted">Aucun contenu disponible</h3>
+        <p class="text-muted">Il n'y a pas encore de publications dans cette catégorie.</p>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+</section>
+
+<!-- Styles -->
+<style>
+/* Context7 Hero Section */
+.taxonomy-hero-ctx7 {
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 5rem 0;
+}
+
+.hero-bg-effects {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+.gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.floating-shapes {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.shape {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  animation: float 20s infinite ease-in-out;
+}
+
+.shape-1 {
+  width: 300px;
+  height: 300px;
+  top: -100px;
+  left: -50px;
+}
+
+.shape-2 {
+  width: 200px;
+  height: 200px;
+  bottom: -50px;
+  right: 10%;
+  animation-delay: 5s;
+}
+
+.shape-3 {
+  width: 150px;
+  height: 150px;
+  top: 50%;
+  right: -50px;
+  animation-delay: 10s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-30px) rotate(180deg); }
+}
+
+/* Glass Effect */
+.glass-card, .glass-effect {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.glass-effect:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15);
+}
+
+/* Hero Elements */
+.taxonomy-icon {
+  font-size: 4rem;
+  color: white;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.hero-title {
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+}
+
+.stats-row {
+  margin-top: 2rem;
+}
+
+.stat-item {
+  min-width: 120px;
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #667eea;
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Section Titles */
+.section-title {
+  font-size: 2rem;
+  color: #1e293b;
+  margin-bottom: 1rem;
+}
+
+/* Gallery */
+.gallery-item {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
+}
+
+.gallery-item img {
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+.gallery-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(102, 126, 234, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
+
+.gallery-overlay i {
+  color: white;
+  font-size: 2.5rem;
+}
+
+.gallery-date {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.75rem;
+}
+
+/* Post Cards */
+.post-card {
+  position: relative;
+  border: 1px solid rgba(102, 126, 234, 0.1);
+  transition: all 0.3s ease;
+}
+
+.post-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(102, 126, 234, 0.2) !important;
+}
+
+.post-image {
+  overflow: hidden;
+}
+
+.post-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.3) 100%);
+}
+
+.post-title a {
+  transition: color 0.3s ease;
+}
+
+.post-title a:hover {
+  color: #667eea !important;
+}
+
+.post-meta {
+  font-size: 0.875rem;
+}
+
+.post-excerpt {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.read-more {
+  font-size: 0.875rem;
+  transition: transform 0.3s ease;
+}
+
+.post-card:hover .read-more {
+  transform: translateX(5px);
+}
+
+.post-border {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.post-card:hover .post-border {
+  transform: scaleX(1);
+}
+
+/* Empty State */
+.empty-state {
+  padding: 3rem 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .taxonomy-hero-ctx7 {
+    min-height: 300px;
+    padding: 3rem 0;
+  }
+  
+  .taxonomy-icon {
+    font-size: 3rem;
+  }
+  
+  .hero-title {
+    font-size: 2rem !important;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+  }
+  
+  .stat-number {
+    font-size: 1.5rem;
+  }
+}
+</style>
+
 {{ end }}

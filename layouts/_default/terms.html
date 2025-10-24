@@ -122,7 +122,7 @@
         </div>
         {{/* Footer with "View all" button linking to term's page */}}
         <div class="card-footer bg-transparent border-0 pt-0">
-          <a href="{{ $.Site.LanguagePrefix | absURL }}/{{ $.Data.Plural }}/{{ $value.Name | urlize }}/" 
+          <a href="{{ $value.Page.RelPermalink }}" 
              class="btn btn-primary btn-sm w-100">
             →&nbsp;&nbsp;Voir tout
           </a>

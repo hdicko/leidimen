@@ -9,7 +9,7 @@
     <ul>
       {{ $data := .Data }} {{ range $key, $value := .Data.Terms }}
       <li>
-        <a href="{{ $data.Plural }}/{{ $key | urlize }}">{{ $key }}</a>
+        <a href="{{ $value.Page.RelPermalink }}">{{ $key }}</a>
         {{ len $value }}
       </li>
       {{ end }}
@@ -22,7 +22,7 @@
     <h1 id="title">{{ .Title }}</h1>
     {{ $data := .Data }} {{ range $key,$value := .Data.Terms.ByCount }}
     <h2>
-      <a href="{{ $data.Plural }}/{{ $value.Name | urlize }}"
+      <a href="{{ $value.Page.RelPermalink }}"
         >{{ $value.Name }}</a
       >
       {{ $value.Count }}
