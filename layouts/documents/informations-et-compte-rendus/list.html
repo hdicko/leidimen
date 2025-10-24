@@ -1,3 +1,47 @@
+{{/* 
+  Template: documents/informations-et-compte-rendus/list.html
+  Purpose: Listing page for Informations et Comptes rendus section
+  Context: Displays all meeting reports and important information documents as cards
+  
+  Features:
+  - Section header with danger-themed badge (red)
+  - Responsive card grid (2 columns desktop, 1 mobile)
+  - Conditional icons based on document type:
+    * info-circle (blue) - Informations
+    * journal-check (green) - Compte rendu
+    * file-earmark-text (cyan) - Other
+  - Type badges for categorization
+  - Document metadata (date, author if available)
+  - Excerpt/description display
+  - CTA buttons to view documents
+  - Empty state message when no documents
+  - Hover effects (shadow, scale)
+  
+  Data Structure:
+  - .Title: Section title (Informations et Comptes rendus)
+  - .Pages: All documents in this section
+  - Document fields:
+    * .Title: Document name
+    * .Summary: Auto-generated excerpt
+    * .Date: Publication date
+    * .Params.author: Optional author
+    * .RelPermalink: Document URL
+  
+  Dependencies:
+  - Bootstrap 5 + Bootstrap Icons
+  - Custom CSS for hover effects (embedded)
+  
+  Card Layout:
+  - Header: Icon + Type badge
+  - Body: Title, date, author, excerpt
+  - Footer: View document button
+  
+  Design:
+  - Light gray background
+  - Red accent color (danger) for section badge
+  - Professional card styling with hover effects
+*/}}
+
 {{ define "main" }}
 <!-- Informations et Comptes rendus Section -->
 <div class="container-fluid bg-light py-5">

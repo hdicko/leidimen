@@ -1,3 +1,42 @@
+{{/* 
+  Template: documents/single.html
+  Purpose: Individual document page template with professional legal layout
+  Context: Displays single official document (legal notices, privacy policy, adhesion forms)
+  
+  Features:
+  - Conditional styling for legal documents (Mentions Légales, Politique de Confidentialité)
+  - Professional hero section with animated icon
+  - Document icon based on type (shield-check for legal, lock for privacy)
+  - Last update date display
+  - Gradient background (light blue tones)
+  - Clean, readable content card
+  - Back button to documents listing
+  - Floating icon animation
+  - Responsive centered layout
+  
+  Data Structure:
+  - .Title: Document title
+  - .Description: Document subtitle/description
+  - .Date: Last modification date
+  - .Content: Document body (legal text, policies)
+  
+  Dependencies:
+  - Bootstrap 5 + Bootstrap Icons
+  - Custom CSS embedded in template
+  
+  Conditional Logic:
+  - Special layout triggers if title matches "Mentions Légales" or "Politique de Confidentialité"
+  - Different icons for different document types
+  - Fallback to default layout for other documents
+  
+  Design:
+  - Gradient background: #f8fafc to #e8eef5
+  - Hero with floating icon (3s animation loop)
+  - Max-width content card (col-lg-10 col-xl-9)
+  - Professional typography and spacing
+  - Rounded pill buttons
+*/}}
+
 {{ define "main" }}
 
 {{ if or (eq .Title "Mentions Légales") (eq .Title "Politique de Confidentialité") }}

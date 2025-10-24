@@ -1,3 +1,42 @@
+{{/* 
+  Template: documents/informations-et-compte-rendus/single.html
+  Purpose: Individual document page within Informations et Comptes rendus section
+  Context: Displays single information document or meeting report with breadcrumb navigation
+  
+  Features:
+  - Breadcrumb navigation (Documents → Informations et Comptes rendus → Current document)
+  - Conditional icon and badge based on document type:
+    * info-circle (blue) - Informations pages
+    * journal-check (green) - Compte rendu pages
+    * file-earmark-text (cyan) - Other documents
+  - Author and date metadata
+  - Professional header with badge
+  - Clean content card with markdown rendering
+  - Download/PDF links section
+  - Back button to parent section
+  - Responsive layout
+  
+  Data Structure:
+  - .Title: Document title
+  - .Content: Document body
+  - .Date: Publication/modification date
+  - .Params.author: Document author
+  - .Params.pdf_url: Optional PDF download link
+  - .RelPermalink: Used for conditional styling
+  - .Site.GetPage: For breadcrumb parent links
+  
+  Dependencies:
+  - Bootstrap 5 + Bootstrap Icons
+  - Hugo .Site.GetPage for navigation
+  
+  Layout:
+  - Breadcrumb at top
+  - Centered header with badge
+  - Content card (max-width col-lg-10)
+  - Optional download section
+  - Back navigation button
+*/}}
+
 {{ define "main" }}
 <!-- Individual Document in Informations Section -->
 <div class="container-fluid bg-light py-5">

@@ -1,3 +1,51 @@
+{{/* 
+  Template: documents/list.html
+  Purpose: Documents listing page with professional card layout
+  Context: Displays all official association documents with categorized icons and descriptions
+  
+  Features:
+  - Professional header with badge and title
+  - Document cards in responsive grid (3 columns desktop, 2 tablet, 1 mobile)
+  - Dynamic icon assignment based on document type:
+    * shield-check (blue) - Mentions légales
+    * shield-lock (green) - Politique de confidentialité
+    * person-plus (yellow) - Adhésion
+    * journal-text (red) - Informations et compte rendus
+    * file-earmark-text (cyan) - Other documents
+  - Type badges for categorization
+  - Document metadata (date, update info)
+  - Hover effects (shadow, scale, border)
+  - Call-to-action buttons
+  - Empty state message when no documents
+  - Sub-pages listing for documents with children
+  
+  Data Structure:
+  - .Title: Section title (Documents)
+  - .Pages: All document pages
+  - Document fields:
+    * .Title: Document name
+    * .Description: Short description
+    * .Summary: Auto-generated excerpt
+    * .Date: Publication date
+    * .Pages: Sub-pages (for nested documents)
+    * .RelPermalink: Document URL
+  
+  Dependencies:
+  - Bootstrap 5 + Bootstrap Icons
+  - Custom CSS embedded in template
+  
+  Card Layout:
+  - Header: Icon + Type badge
+  - Body: Title, description, metadata
+  - Footer: CTA button, sub-pages count
+  
+  Design:
+  - Light gray background (#f8f9fa)
+  - Card hover effects (transform, shadow, border color change)
+  - Professional color scheme matching document types
+  - Responsive grid with gap-4 spacing
+*/}}
+
 {{ define "main" }}
 <!-- Professional Documents Section -->
 <div class="container-fluid bg-light py-5">

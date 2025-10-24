@@ -1,3 +1,39 @@
+{{/* 
+  Template: posts/single.html.html
+  Purpose: Individual blog post display template
+  Context: Displays single blog post with title, date, author, and content
+  
+  Features:
+  - Post title with primary background
+  - Publication date in localized format (02 Jan 2006 15:04 MST)
+  - Author attribution from .Params.auteur
+  - Markdown content rendering
+  - AOS animation (flip-left effect)
+  - Bootstrap responsive layout
+  
+  Data Structure:
+  - .Title: Post title
+  - .Date: Publication date
+  - .Content: Post body content (markdownified)
+  - .Params.auteur: Author name
+  
+  Dependencies:
+  - Bootstrap 5 for grid system
+  - AOS (Animate On Scroll) library
+  
+  Code Notes:
+  - Extensive commented-out debug code for resource loading (scripts, styles, images)
+  - Page resources loading system (.Resources.GetMatch) disabled but preserved
+  - Image processing examples commented out (.Fit, base64Encode)
+  - These debug sections can be re-enabled for development/troubleshooting
+  
+  Layout:
+  - Container-fluid for full width
+  - Responsive columns: col-sm-4 col-md-6 col-xxl-12
+  - Primary colored header
+  - Content rendered as markdown
+*/}}
+
 {{ define "main" }}
 
 <body>

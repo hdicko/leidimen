@@ -1,3 +1,41 @@
+{{/* 
+  Template: villages/village.terms.html.html
+  Purpose: Villages taxonomy listing page (all villages overview)
+  Context: Displays all villages from data/villages/mali_villages.yaml with search, filter, and sort capabilities
+  
+  Features:
+  - Dynamic village count from YAML data file
+  - Total content count across all villages
+  - Smart search with live filtering by village name
+  - Sort by name (alphabetical) or content count
+  - Village cards with details (population, projects, recent content)
+  - Special badge for chef-lieu villages
+  - Responsive grid layout (3 columns desktop, 2 tablet, 1 mobile)
+  - Hover effects with shadow animations
+  - No results message when search yields nothing
+  
+  Data Structure:
+  - $.Site.Data.villages.mali_villages: Array of village objects from YAML
+    * name: Village name
+    * type: "village" or "chef-lieu"
+    * description: Village description
+    * latitude, longitude: GPS coordinates
+    * population: Number of inhabitants
+    * projects: Array of project names
+  - $.Data.Terms: Hugo taxonomy terms for villages with content count
+  - $taxonomyTerm.Pages: Posts tagged with specific village
+  
+  Dependencies:
+  - Bootstrap 5 + Bootstrap Icons
+  - data/villages/mali_villages.yaml (external data file)
+  - JavaScript for search and sort functionality
+  
+  Card Layout:
+  - Header: Village name + content count badge
+  - Body: Description, population, projects, recent content links
+  - Footer: CTA button to village page
+*/}}
+
 {{ define "main" }}
 {{ $terms := .Data.Terms }}
 {{ $totalVillages := len $.Site.Data.villages.mali_villages }}

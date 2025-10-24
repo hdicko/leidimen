@@ -1,3 +1,41 @@
+{{/* 
+  Template: gallery/single.html
+  Purpose: Alternative individual gallery page template (fuller version)
+  Context: Displays single photo gallery with header, image grid, and Fancybox lightbox
+  
+  Features:
+  - Prominent header with gallery title and description
+  - Back button to galleries listing
+  - Responsive image grid (4 columns desktop, 3 tablet, 2 mobile)
+  - Automatic image thumbnail generation (400x300 crop)
+  - Fancybox lightbox with captions
+  - Hover overlay with zoom icon
+  - Image counter showing total photos
+  - Lazy loading for performance
+  - Fallback message when gallery is empty
+  
+  Data Structure:
+  - .Title: Gallery title
+  - .Content: Gallery description (lead text)
+  - .Resources.ByType "image": All image page resources
+  
+  Dependencies:
+  - Fancybox library (must be loaded in page)
+  - Bootstrap 5 + Bootstrap Icons
+  - Hugo image processing (.Fill)
+  
+  Image Processing:
+  - Thumbnails: 400x300px crop using Hugo .Fill
+  - Full images: Original size via RelPermalink
+  - All images must be page resources (in same folder as index.md)
+  
+  Differences from galleries/single.html:
+  - This version shows the header (title, description, back button)
+  - Includes zoom overlay effect
+  - Displays total image count
+  - Has lazy loading attribute
+*/}}
+
 {{ define "main" }}
 
 <section class="gallery-detail py-5">

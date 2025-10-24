@@ -1,3 +1,38 @@
+{{/* 
+  Template: villages/term.html
+  Purpose: Individual village page template with modern design
+  Context: Displays single village information with hero section, content, media gallery, and related posts
+  
+  Features:
+  - Animated hero section with gradient background and floating shapes
+  - Village icon animation (pulse effect)
+  - Glass-morphism effect on content cards
+  - Image gallery (PhotoSwipe compatible via villages-images partial)
+  - Video/audio media section
+  - Related posts grid with cards
+  - AOS (Animate On Scroll) integration
+  - Responsive design with mobile optimization
+  
+  Data Structure:
+  - .Title: Village name
+  - .Content: Village description/content
+  - .Resources: Page resources (images, videos, audio files)
+  - .Data.Pages: Related posts tagged with this village
+  
+  Dependencies:
+  - Bootstrap 5 + Bootstrap Icons
+  - AOS (Animate On Scroll)
+  - Partials: util/villages-images, util/villages-videos
+  - Internal pagination template
+  
+  Design:
+  - Hero with gradient (purple tones: #667eea to #764ba2)
+  - Floating animated shapes in background
+  - Glass effect cards with backdrop filter
+  - Post cards with hover effects and decorative borders
+  - Custom pagination styling
+*/}}
+
 {{ define "main"}}
 
 <!-- Modern Village Page -->

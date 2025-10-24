@@ -1,4 +1,52 @@
-{{/* Context7 Posts List Template with Modern Pagination */}}
+{{/* 
+  Template: posts/list.html.html
+  Purpose: Blog posts listing page with Context7 design system
+  Context: Displays all blog posts with search, filters, pagination, and modern UI
+  
+  Features:
+  - Context7 hero section with gradient background and floating particles
+  - Glass-morphism effect cards
+  - Animated icon (journal-text)
+  - Statistics display (total articles, years of activity)
+  - Advanced search by title, year, category, and village
+  - Posts grid with cards (image, title, excerpt, metadata)
+  - Pagination with modern styling
+  - Hover effects and transitions
+  - Responsive design (3 columns desktop, 2 tablet, 1 mobile)
+  - No results message when filters yield nothing
+  - Related content tags (categories, villages)
+  
+  Data Structure:
+  - .Pages: All blog posts
+  - .Paginator: Hugo pagination object
+  - Post fields:
+    * .Title, .Date, .Summary
+    * .Params.auteur: Author name
+    * .Params.categories: Array of categories
+    * .Params.villages: Array of village tags
+    * .Params.image: Featured image URL
+  
+  Dependencies:
+  - Bootstrap 5 + Bootstrap Icons
+  - Context7 design system (custom CSS)
+  - JavaScript for search/filter functionality
+  - Hugo pagination (.Paginator)
+  
+  Search/Filter:
+  - Real-time client-side filtering
+  - Search by title (case-insensitive)
+  - Filter by year dropdown
+  - Filter by category dropdown
+  - Filter by village dropdown
+  - Combined filtering (AND logic)
+  
+  Design Elements:
+  - Gradient backgrounds (purple tones)
+  - Glass-effect cards with backdrop blur
+  - Floating particle animations
+  - Hover scale and shadow effects
+  - Custom pagination styling
+*/}}
 {{ define "main" }}
 
 <!-- Context7 Hero Section for Posts -->
