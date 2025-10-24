@@ -7,7 +7,7 @@ slug: "raphael-pierre"
 weight: 52
 
 card:
-  image: ""
+  image: "images/raphael.jpg"
   fonction: "Membre fondateur"
   membre: "Membre fondateur"
   presentation: "Membre fondateur de Leidimen"

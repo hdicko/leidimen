@@ -7,7 +7,7 @@ slug: "kevin-pierre"
 weight: 51
 
 card:
-  image: ""
+  image: "images/kevin.jpg"
   fonction: "Membre fondateur"
   membre: "Membre fondateur"
   presentation: "Membre fondateur de Leidimen"

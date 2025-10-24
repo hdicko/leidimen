@@ -7,7 +7,7 @@ slug: "mariam-dicko"
 weight: 0
 
 card:
-  image: "images/mariam-dicko.jpg"
+  image: "images/mariam.dicko.jpg"
   fonction: "Membre du CA"
   membre: "Membre du CA"
   presentation: "Membre du CA spécialisée en éducation et formation"
