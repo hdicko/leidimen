@@ -266,3 +266,13 @@ disableLatLong = false
     source = 'static'
     target = 'assets'
 
+# Minification configuration
+# Disable JS minification to preserve ES6 syntax (arrow functions, spread operators)
+# HTML and CSS minification remain enabled
+[minify]
+  disableJS = true
+  disableCSS = false
+  disableHTML = false
+  disableJSON = false
+  disableSVG = false
+  disableXML = false
