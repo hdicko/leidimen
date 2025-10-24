@@ -81,6 +81,14 @@ tags:
 
 {{< myimage src="images/abdoulaye.dicko.jpg" >}}
 
+{{< details "Voir le detail" >}}
+{{< typeit
+  tag=h1
+  lifeLike=true
+>}}
+Abdoulaye Dicko
+{{< /typeit >}}
+
 ## Abdoulaye Dicko - Membre fondateur de Leidimen
 
 Abdoulaye Dicko est membre fondateur de l'association Leidimen depuis 2007. Avec sa devise **"Création entrepreneuriale et Solidarité"**, il allie son expertise professionnelle en management à son engagement solidaire.
@@ -93,9 +101,11 @@ Senior Manager chez Lundano depuis 2015, Abdoulaye apporte son expertise en lead
 
 Membre actif de Leidimen, Abdoulaye participe activement au renforcement des liens entre Bondoufle et le Mali, mobilisant la communauté autour des projets de développement et d'éducation.
 
+{{< /details >}}
+
 ---
 
-{{< details "Recette des Macarons intraitables" >}}
+{{< details "Vous voulez préparer des Macarons intraitables" >}}
 
 # Recette des Macarons intraitables [^1]
 

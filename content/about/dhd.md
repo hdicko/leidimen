@@ -81,7 +81,7 @@ tags:
 
 {{< myimage src="images/david-logo.jpg" >}}
 
-{{< details "A propos de moi" >}}
+{{< details "Voir le detail" >}}
 {{< typeit
   tag=h1
   lifeLike=true

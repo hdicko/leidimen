@@ -78,10 +78,18 @@ tags:
 
 {{< myimage src="images/aissa-logo.jpg" >}}
 
+{{< details "A propos de moi" >}}
+{{< typeit
+  tag=h1
+  lifeLike=true
+>}}
+Dicko Aissa
+{{< /typeit >}}
+
 ## Présidente de Leidimen
 
 Aissa Dicko est la présidente et membre fondatrice de l'association Leidimen. Passionnée par les valeurs de solidarité et d'entraide, elle coordonne l'ensemble des projets de l'association, notamment les initiatives éducatives au Mali.
 
 Sa devise : **"Liberté - Égalité - Fraternité et Solidarité"** reflète son engagement profond pour le développement et l'éducation dans les villages maliens.
 
-
+{{< /details >}}
