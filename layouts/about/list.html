@@ -2169,10 +2169,12 @@ class Context7AboutPage {
 // Utility functions
 function debounce(func, wait) {
   let timeout;
-  return function executedFunction(...args) {
-    const later = () => {
+  return function executedFunction() {
+    const context = this;
+    const args = arguments;
+    const later = function() {
       clearTimeout(timeout);
-      func(...args);
+      func.apply(context, args);
     };
     clearTimeout(timeout);
     timeout = setTimeout(later, wait);
