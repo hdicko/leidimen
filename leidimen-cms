@@ -1,0 +1,15 @@
+#!/bin/bash
+# Wrapper bash pour leidimen-cms.py
+# Usage: ./leidimen-cms [command]
+
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+cd "$SCRIPT_DIR"
+
+# Vérifier que Python 3 est installé
+if ! command -v python3 &> /dev/null; then
+    echo "❌ Python 3 n'est pas installé"
+    exit 1
+fi
+
+# Lancer le CMS
+python3 leidimen-cms.py "$@"
