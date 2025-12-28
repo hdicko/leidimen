@@ -1,0 +1,11 @@
+{{- $data := dict "title" .Title "kind" .Kind "url" .Permalink "taxonomy" .Data.Plural "term" .Data.Term "count" (len .Pages) -}}
+{{- $pages := slice -}}
+{{- range .Pages -}}
+  {{- $item := dict "title" .Title "date" .Date "url" .Permalink "summary" .Summary "type" .Type -}}
+  {{- if .Params.image -}}
+    {{- $item = merge $item (dict "image" .Params.image) -}}
+  {{- end -}}
+  {{- $pages = $pages | append $item -}}
+{{- end -}}
+{{- $data = merge $data (dict "pages" $pages) -}}
+{{- $data | jsonify -}}

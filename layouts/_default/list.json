@@ -1,0 +1,22 @@
+{{- $pages := .Pages -}}
+{{- $data := slice -}}
+{{- range $pages -}}
+  {{- $item := dict "title" .Title "date" .Date "url" .Permalink "summary" .Summary "type" .Type -}}
+  {{- if .Params.image -}}
+    {{- $item = merge $item (dict "image" .Params.image) -}}
+  {{- end -}}
+  {{- if .Params.description -}}
+    {{- $item = merge $item (dict "description" .Params.description) -}}
+  {{- end -}}
+  {{- if .Params.categories -}}
+    {{- $item = merge $item (dict "categories" .Params.categories) -}}
+  {{- end -}}
+  {{- if .Params.tags -}}
+    {{- $item = merge $item (dict "tags" .Params.tags) -}}
+  {{- end -}}
+  {{- if .Params.villages -}}
+    {{- $item = merge $item (dict "villages" .Params.villages) -}}
+  {{- end -}}
+  {{- $data = $data | append $item -}}
+{{- end -}}
+{{- $data | jsonify -}}

@@ -1,0 +1,20 @@
+{{- $data := dict "title" .Title "date" .Date "url" .Permalink "content" .Content "summary" .Summary "type" .Type -}}
+{{- if .Params.image -}}
+  {{- $data = merge $data (dict "image" .Params.image) -}}
+{{- end -}}
+{{- if .Params.description -}}
+  {{- $data = merge $data (dict "description" .Params.description) -}}
+{{- end -}}
+{{- if .Params.categories -}}
+  {{- $data = merge $data (dict "categories" .Params.categories) -}}
+{{- end -}}
+{{- if .Params.tags -}}
+  {{- $data = merge $data (dict "tags" .Params.tags) -}}
+{{- end -}}
+{{- if .Params.villages -}}
+  {{- $data = merge $data (dict "villages" .Params.villages) -}}
+{{- end -}}
+{{- if .Params.moods -}}
+  {{- $data = merge $data (dict "moods" .Params.moods) -}}
+{{- end -}}
+{{- $data | jsonify -}}
