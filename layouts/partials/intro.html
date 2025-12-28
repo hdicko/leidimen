@@ -1,20 +1,106 @@
-<!-- Context7 Professional Intro Section -->
-<section class="intro-section-ctx7 py-5">
-  <div class="container">
-    <!-- Hero Header -->
-    <div class="intro-hero-ctx7 text-center mb-5">
-      <div class="hero-content-ctx7">
-        <span class="hero-badge-ctx7 badge bg-primary mb-3 px-4 py-2 fs-6">
-          <i class="bi bi-heart me-2"></i>Association Humanitaire
+<!-- Modern Professional Landing Page -->
+
+<!-- Hero Section with Background -->
+<section class="hero-modern position-relative overflow-hidden">
+  <div class="hero-background"></div>
+  <div class="hero-overlay"></div>
+  
+  <div class="container position-relative" style="z-index: 10;">
+    <div class="row align-items-center min-vh-100 py-5">
+      <div class="col-lg-6 text-white mb-5 mb-lg-0">
+        <span class="hero-badge d-inline-block mb-3 px-4 py-2">
+          <i class="bi bi-heart-fill me-2"></i>Solidarité & Développement
         </span>
-        <h1 class="hero-title-ctx7 display-6 fw-bold mb-4">
-          Découvrez <span class="text-primary">Leidimen</span>
+        <h1 class="display-3 fw-bold mb-4 hero-title">
+          Ensemble pour les villages de <span class="text-warning">Douentza</span>
         </h1>
-        <p class="hero-subtitle-ctx7 text-muted mb-4 mx-auto fs-6">
-          Une association dédiée au développement et à la solidarité, agissant pour un avenir meilleur
+        <p class="lead mb-4 opacity-90">
+          Leidimen agit depuis des années pour améliorer les conditions de vie dans les villages du Mali. 
+          Éducation, santé, infrastructure - chaque action compte.
         </p>
+        <div class="d-flex flex-wrap gap-3 mb-4">
+          <a href="{{ "/about/" | relURL }}" class="btn btn-warning btn-lg px-4 rounded-pill shadow">
+            <i class="bi bi-people-fill me-2"></i>Découvrir l'équipe
+          </a>
+          <a href="{{ "/posts/" | relURL }}" class="btn btn-outline-light btn-lg px-4 rounded-pill">
+            <i class="bi bi-newspaper me-2"></i>Nos actualités
+          </a>
+        </div>
+        <div class="d-flex gap-4 flex-wrap">
+          <div class="stat-item">
+            <div class="stat-number">10</div>
+            <div class="stat-label">Villages soutenus</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">15+</div>
+            <div class="stat-label">Années d'action</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">50+</div>
+            <div class="stat-label">Projets réalisés</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="hero-image-wrapper">
+          <img src="/images/uploads/default.jpeg" alt="Villages Mali" class="img-fluid rounded-4 shadow-lg">
+        </div>
       </div>
     </div>
+  </div>
+  
+  <div class="scroll-indicator">
+    <i class="bi bi-chevron-down"></i>
+  </div>
+</section>
+
+<!-- Impact Statistics -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-3 col-6">
+        <div class="impact-card text-center p-4">
+          <div class="impact-icon mb-3">
+            <i class="bi bi-book-fill"></i>
+          </div>
+          <h3 class="impact-number mb-2">20+</h3>
+          <p class="impact-label mb-0">Écoles construites</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-6">
+        <div class="impact-card text-center p-4">
+          <div class="impact-icon mb-3">
+            <i class="bi bi-hospital-fill"></i>
+          </div>
+          <h3 class="impact-number mb-2">5</h3>
+          <p class="impact-label mb-0">Centres de santé</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-6">
+        <div class="impact-card text-center p-4">
+          <div class="impact-icon mb-3">
+            <i class="bi bi-droplet-fill"></i>
+          </div>
+          <h3 class="impact-number mb-2">15</h3>
+          <p class="impact-label mb-0">Puits d'eau</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-6">
+        <div class="impact-card text-center p-4">
+          <div class="impact-icon mb-3">
+            <i class="bi bi-people-fill"></i>
+          </div>
+          <h3 class="impact-number mb-2">5000+</h3>
+          <p class="impact-label mb-0">Bénéficiaires</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Main Content Sections -->
+<section class="intro-section-ctx7 py-5">
+  <div class="container">
 
     <!-- Professional Accordion -->
     <div class="accordion accordion-ctx7" id="accordionLeidimen">
@@ -130,30 +216,273 @@
     </div>
 
     <!-- Call to Action -->
-    <div class="cta-section-ctx7 text-center mt-5">
-      <div class="cta-card-ctx7 p-5 rounded-4">
-        <h3 class="fw-bold mb-3 fs-4">Rejoignez notre mission</h3>
-        <p class="text-muted mb-4 fs-6">
-          Ensemble, nous pouvons faire la différence et construire un avenir plus solidaire
-        </p>
-        <div class="cta-buttons-ctx7">
-    
-          {{ $page := .Site.GetPage "/about/" }}
-        
-          <a href="{{ "/about/" | relURL }}" class="btn btn-primary btn-lg rounded-pill me-3 mb-2">
-            <i class="bi bi-people me-2"></i>Découvrir l'équipe
-          </a>
-          <a href="{{ "/documents/" | relURL }}" class="btn btn-outline-primary btn-lg rounded-pill mb-2">
-            <i class="bi bi-file-text me-2"></i>Nos documents
-          </a>
+    <div class="cta-section-modern text-center mt-5">
+      <div class="cta-card-modern p-5 rounded-4 position-relative overflow-hidden">
+        <div class="cta-background"></div>
+        <div class="position-relative" style="z-index: 2;">
+          <h2 class="fw-bold mb-3 text-white">Rejoignez notre mission</h2>
+          <p class="text-white opacity-90 mb-4 fs-5">
+            Ensemble, nous pouvons faire la différence et construire un avenir plus solidaire
+          </p>
+          <div class="cta-buttons-ctx7">
+            <a href="{{ "/about/" | relURL }}" class="btn btn-light btn-lg rounded-pill me-3 mb-2 px-5">
+              <i class="bi bi-people me-2"></i>Découvrir l'équipe
+            </a>
+            <a href="{{ "/documents/" | relURL }}" class="btn btn-outline-light btn-lg rounded-pill mb-2 px-5">
+              <i class="bi bi-file-text me-2"></i>Nos documents
+            </a>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- Recent Projects Grid -->
+<section class="py-5 bg-white">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="display-5 fw-bold mb-3">Nos derniers projets</h2>
+      <p class="text-muted fs-5">Découvrez les réalisations qui changent des vies</p>
+    </div>
+    
+    {{ with .Site.GetPage "/posts" }}
+      {{ $posts := .RegularPages | first 3 }}
+      {{ if $posts }}
+      <div class="row g-4">
+        {{ range $posts }}
+        <div class="col-md-4">
+          <div class="project-card h-100">
+            {{ if .Params.image }}
+            <div class="project-image">
+              <img src="{{ .Params.image | relURL }}" alt="{{ .Title }}" class="w-100">
+              <div class="project-overlay">
+                <span class="project-category">
+                  {{ if .Params.categories }}{{ index .Params.categories 0 }}{{ end }}
+                </span>
+              </div>
+            </div>
+            {{ end }}
+            <div class="project-content p-4">
+              <div class="project-meta mb-2">
+                <span class="text-muted small">
+                  <i class="bi bi-calendar3 me-1"></i>{{ .Date.Format "02 Jan 2006" }}
+                </span>
+                {{ if .Params.villages }}
+                <span class="text-muted small ms-3">
+                  <i class="bi bi-geo-alt me-1"></i>{{ index .Params.villages 0 }}
+                </span>
+                {{ end }}
+              </div>
+              <h3 class="project-title h5 mb-3">{{ .Title }}</h3>
+              <p class="project-excerpt text-muted mb-3">{{ .Params.description | default .Summary | truncate 100 }}</p>
+              <a href="{{ .Permalink }}" class="btn btn-sm btn-outline-primary rounded-pill">
+                Lire la suite <i class="bi bi-arrow-right ms-1"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+      
+      <div class="text-center mt-5">
+        <a href="{{ "/posts/" | relURL }}" class="btn btn-primary btn-lg rounded-pill px-5">
+          Voir tous les projets <i class="bi bi-arrow-right ms-2"></i>
+        </a>
+      </div>
+      {{ else }}
+      <div class="text-center py-5">
+        <p class="text-muted">Aucun projet disponible pour le moment.</p>
+      </div>
+      {{ end }}
+    {{ end }}
+  </div>
+</section>
+
+<!-- Villages Map Section -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="display-5 fw-bold mb-3">Les villages que nous soutenons</h2>
+      <p class="text-muted fs-5">10 villages dans la région de Douentza, Mali</p>
+    </div>
+    
+    <div class="row g-3">
+      {{ $villages := slice "Dorool" "Diona" "Debere" "Diambana" "Darawal" "Douentza" "Tanal" "Manko" "Tacouti" "N'Dumpa" }}
+      {{ range $villages }}
+      <div class="col-md-4 col-sm-6">
+        <div class="village-card p-3 rounded-3">
+          <div class="d-flex align-items-center">
+            <div class="village-icon me-3">
+              <i class="bi bi-geo-alt-fill"></i>
+            </div>
+            <div>
+              <h5 class="mb-0">{{ . }}</h5>
+              <small class="text-muted">Région de Douentza</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
 <style>
-/* Context7 Professional Intro Styles */
+/* Modern Hero Section */
+.hero-modern {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #60a5fa 100%);
+  position: relative;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:rgb(59,130,246);stop-opacity:0.3" /><stop offset="100%" style="stop-color:rgb(30,58,138);stop-opacity:0.3" /></linearGradient></defs><path d="M0,300 Q300,100 600,300 T1200,300 L1200,600 L0,600 Z" fill="url(%23grad1)"/></svg>');
+  background-size: cover;
+  opacity: 0.5;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(30, 58, 138, 0.2);
+}
+
+.hero-badge {
+  background: rgba(251, 191, 36, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  color: #fbbf24;
+  font-weight: 600;
+  border-radius: 50px;
+  animation: float-badge 3s ease-in-out infinite;
+}
+
+@keyframes float-badge {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.hero-title {
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fbbf24;
+  text-shadow: 0 2px 10px rgba(251, 191, 36, 0.5);
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.8);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hero-image-wrapper {
+  animation: fadeInRight 1s ease-out 0.3s both;
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.hero-image-wrapper img {
+  border: 4px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.5s ease;
+}
+
+.hero-image-wrapper:hover img {
+  transform: scale(1.05) rotate(2deg);
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 2rem;
+  animation: bounce 2s infinite;
+  z-index: 10;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translate(-50%, 0); }
+  50% { transform: translate(-50%, 10px); }
+}
+
+/* Impact Statistics */
+.impact-card {
+  background: white;
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.impact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.impact-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #3b82f6 0%, #1e3a8a 100%);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.impact-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1e3a8a;
+  margin: 0;
+}
+
+.impact-label {
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* Accordion Styles */
 .intro-section-ctx7 {
   background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
   min-height: 80vh;
@@ -310,40 +639,135 @@
   margin-bottom: 1.25rem;
 }
 
-/* Call to Action */
-.cta-section-ctx7 {
+/* CTA Section Modern */
+.cta-section-modern {
   position: relative;
   z-index: 2;
 }
 
-.cta-card-ctx7 {
-  background: white;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-  border: 1px solid #e2e8f0;
+.cta-card-modern {
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+  box-shadow: 0 20px 60px rgba(30, 58, 138, 0.3);
   position: relative;
-  overflow: hidden;
+  border: none;
 }
 
-.cta-card-ctx7::before {
-  content: '';
+.cta-background {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 4px;
-  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1.5" fill="white" opacity="0.1"/></pattern></defs><rect width="800" height="400" fill="url(%23dots)"/></svg>');
+  opacity: 1;
 }
 
 .cta-buttons-ctx7 .btn {
   font-weight: 600;
   padding: 0.75rem 2rem;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .cta-buttons-ctx7 .btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
+
+/* Project Cards */
+.project-card {
+  background: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e2e8f0;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.project-image {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.1);
+}
+
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, transparent 50%);
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 1rem;
+}
+
+.project-category {
+  background: rgba(59, 130, 246, 0.9);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.project-content {
+  background: white;
+}
+
+.project-title {
+  color: #1e293b;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.project-excerpt {
+  line-height: 1.6;
+}
+
+/* Village Cards */
+.village-card {
+  background: white;
+  border: 2px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.village-card:hover {
+  border-color: #3b82f6;
+  background: #f8fafc;
+  transform: translateX(5px);
+}
+
+.village-icon {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #3b82f6 0%, #1e3a8a 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.25rem;
+}
+
+/* Existing Accordion Styles Continue */
 
 /* Animations */
 @keyframes float-gentle {
@@ -376,6 +800,130 @@
 @keyframes pulse-heart {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.2); }
+}
+
+/* Dark Mode Styles */
+body.dark-mode .intro-section-ctx7 {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+}
+
+body.dark-mode .hero-title-ctx7 {
+  color: #f1f5f9;
+}
+
+body.dark-mode .hero-subtitle-ctx7 {
+  color: #cbd5e1;
+}
+
+body.dark-mode .accordion-item-ctx7 {
+  background: #1e293b;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .accordion-button-ctx7 {
+  background: #1e293b;
+  color: #f1f5f9;
+}
+
+body.dark-mode .accordion-text-ctx7 p {
+  color: #94a3b8;
+}
+
+body.dark-mode .accordion-button-ctx7:not(.collapsed) .accordion-text-ctx7 p {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+body.dark-mode .accordion-body-ctx7 {
+  background: #0f172a;
+  border-top-color: #334155;
+}
+
+body.dark-mode .content-wrapper-ctx7 h1,
+body.dark-mode .content-wrapper-ctx7 h2,
+body.dark-mode .content-wrapper-ctx7 h3 {
+  color: #f1f5f9;
+}
+
+body.dark-mode .content-wrapper-ctx7 p {
+  color: #cbd5e1;
+}
+
+body.dark-mode .impact-card {
+  background: #1e293b;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .impact-number {
+  color: #60a5fa;
+}
+
+body.dark-mode .impact-label {
+  color: #94a3b8;
+}
+
+body.dark-mode .project-card {
+  background: #1e293b;
+  border-color: #334155;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .project-card:hover {
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .project-content {
+  background: #1e293b;
+}
+
+body.dark-mode .project-title {
+  color: #f1f5f9;
+}
+
+body.dark-mode .project-excerpt {
+  color: #cbd5e1;
+}
+
+body.dark-mode .project-meta .text-muted {
+  color: #94a3b8 !important;
+}
+
+body.dark-mode .village-card {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+body.dark-mode .village-card:hover {
+  background: #0f172a;
+  border-color: #3b82f6;
+}
+
+body.dark-mode .village-card h5 {
+  color: #f1f5f9;
+}
+
+body.dark-mode .village-card .text-muted {
+  color: #94a3b8 !important;
+}
+
+body.dark-mode .bg-light {
+  background: #0f172a !important;
+}
+
+body.dark-mode .bg-white {
+  background: #1e293b !important;
+}
+
+body.dark-mode .text-muted {
+  color: #94a3b8 !important;
+}
+
+body.dark-mode h2.display-5,
+body.dark-mode h2.display-4 {
+  color: #f1f5f9;
+}
+
+body.dark-mode .separator-line-ctx7 {
+  background: linear-gradient(90deg, transparent, #475569, transparent);
 }
 
 /* Responsive Design */
