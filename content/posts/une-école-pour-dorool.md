@@ -5,7 +5,7 @@ lastmod: 2025-12-29
 author: Leidimen
 draft: false
 description: ""
-image: https://leidimen.com/wp-content/uploads/2007/11/dsc00003-small.JPG
+image: /images/uploads/ecole-dorool.jpeg
 ---
 Voici **Ibrahim**, **Faadi**, **Leyla** et **Issa**.
 
