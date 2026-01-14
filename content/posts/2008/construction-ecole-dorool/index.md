@@ -23,7 +23,7 @@ Les habitants de Dorool ont accueilli le projet avec enthousiasme : **tous les p
 
 ![Liste d'inscription des élèves](inscription.jpg)
 
-*Mamadou établissant la liste des futurs élèves*
+_Mamadou établissant la liste des futurs élèves_
 
 ### Les futurs élèves
 

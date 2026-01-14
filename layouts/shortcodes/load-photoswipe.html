@@ -1,31 +1,30 @@
-{{/*
-  Load PhotoSwipe Shortcode
-  
+{{/* Load PhotoSwipe Shortcode
+
   Purpose: Manually load PhotoSwipe library for custom galleries
   Usage: load-photoswipe (no parameters)
   Source: https://github.com/liwenyip/hugo-easy-gallery/
-  
+
   When to use:
   - Use this when you need PhotoSwipe but NOT using the gallery shortcode
   - The gallery shortcode auto-loads PhotoSwipe, so no need to call this
-  
+
   Features:
   - Prevents duplicate loading using Page.Scratch
   - Loads all PhotoSwipe dependencies (CSS/JS)
   - Adds PhotoSwipe HTML structure to page
-  
+
   Dependencies:
   - photoswipe-resources.html partial
   - photoswipe-structure.html partial
-  
+
   Note: This shortcode is backwards compatible with hugo-easy-gallery.
 */}}
 
+
 <!-- Prevent this shortcode from being loaded more than once per page -->
 {{ if not ($.Page.Scratch.Get "photoswipeloaded") }}
-{{ $.Page.Scratch.Set "photoswipeloaded" 1 }}
+  {{ $.Page.Scratch.Set "photoswipeloaded" 1 }}
 
-{{ partial "photoswipe-resources.html" . }}
-{{ partial "photoswipe-structure.html" . }}
-
+  {{ partial "photoswipe-resources.html" . }}
+  {{ partial "photoswipe-structure.html" . }}
 {{ end }}

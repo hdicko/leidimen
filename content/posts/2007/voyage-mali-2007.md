@@ -23,14 +23,17 @@ Au programme : **Bamako**, **Douentza**, **Debere**, **Boundoucoli**, **Diona**�
 ## Les projets en cours
 
 ### 📚 Éducation
+
 - **Fournitures scolaires** pour les écoles
 - **10 ordinateurs** pour le lycée de Douentza
 
 ### 🌾 Sécurité alimentaire
+
 - **Banque de grains** à Diona
 - **Banque de grains** à Debere
 
 ### 💰 Développement économique
+
 - **Banque de microcrédits** pour les femmes à Debere
 - **Maraîchage** à Diona
 

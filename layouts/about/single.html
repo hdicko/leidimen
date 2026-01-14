@@ -41,6 +41,7 @@
 {{ define "main" }}
 {{/* Context7 Individual Profile Page */}}
 {{ $image := resources.Get .Params.card.image }}
+{{ $anchor := .Params.card.imageAnchor | default "center" }}
 
 {{/* 
   ========================================
@@ -82,7 +83,7 @@
           <!-- Main Photo -->
           <div class="main-photo-wrapper">
             {{ if $image }}
-            <img src="{{ ($image.Resize "400x400 center").RelPermalink }}" 
+            <img src="{{ ($image.Resize (printf "400x400 %s" $anchor)).RelPermalink }}" 
                  class="profile-main-photo" 
                  alt="{{ .Title }}">
             {{ else }}
@@ -443,7 +444,8 @@
       <div class="related-card-ctx7">
         <div class="related-photo">
           {{ if $memberImage }}
-          <img src="{{ ($memberImage.Resize "150x150 center").RelPermalink }}"
+          {{ $sidebarAnchor := .Params.card.imageAnchor | default "center" }}
+          <img src="{{ ($memberImage.Resize (printf "150x150 %s" $sidebarAnchor)).RelPermalink }}"
                alt="{{ .Title }}">
           {{ else }}
           <div class="related-placeholder">

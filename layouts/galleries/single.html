@@ -1,8 +1,7 @@
-{{/* 
-  Template: galleries/single.html
+{{/* Template: galleries/single.html
   Purpose: Individual gallery page template
   Context: Displays single photo gallery with image grid and Fancybox lightbox
-  
+
   Features:
   - Responsive image grid (4 columns desktop, 3 tablet, 2 mobile)
   - Automatic image thumbnail generation (400x300 crop)
@@ -10,86 +9,92 @@
   - Hover scale effect on gallery items
   - Fallback message when gallery is empty
   - Commented-out header section (title, description, back button)
-  
+
   Data Structure:
   - .Title: Gallery title (currently not displayed)
   - .Content: Gallery description (currently not displayed)
   - .Resources.ByType "image": All image page resources
-  
+
   Dependencies:
   - Fancybox library (must be loaded in page)
   - Bootstrap 5 for grid system
   - Hugo image processing (.Fill)
-  
+
   Image Processing:
   - Thumbnails: 400x300px crop using Hugo .Fill
   - Full images: Original size via RelPermalink
   - All images must be page resources (in same folder as index.md)
-  
+
   Note: Header section is commented out. Uncomment lines 6-16 to show title and back button.
 */}}
 
 {{ define "main" }}
 
-<section class="gallery-detail py-5">
-  <div class="container">
-    <!-- Header -->
-    <!-- <div class="text-center mb-5">
+  <section class="gallery-detail py-5">
+    <div class="container">
+      <!-- Header -->
+      <!-- <div class="text-center mb-5">
       <h1 class="display-4 fw-bold mb-3">{{ .Title }}</h1>
       {{ with .Content }}
-      <div class="lead text-muted mb-4">
-        {{ . }}
-      </div>
+        <div class="lead text-muted mb-4">
+          {{ . }}
+        </div>
       {{ end }}
       <a href="{{ "/galleries/" | relURL }}" class="btn btn-outline-primary">
         <i class="bi bi-arrow-left"></i> Retour aux galeries
       </a>
     </div> -->
 
-    <!-- Gallery Grid -->
-    {{ with .Resources.ByType "image" }}
-    <div class="row g-3">
-      {{ range . }}
-      {{ $img := . }}
-      {{ $thumb := $img.Fill "400x300" }}
-      <div class="col-6 col-md-4 col-lg-3">
-        <a href="{{ $img.RelPermalink }}" data-fancybox="gallery" class="d-block gallery-item">
-          <img src="{{ $thumb.RelPermalink }}" class="img-fluid rounded shadow-sm" alt="{{ $img.Name }}">
-        </a>
-      </div>
+      <!-- Gallery Grid -->
+      {{ with .Resources.ByType "image" }}
+        <div class="row g-3">
+          {{ range . }}
+            {{ $img := . }}
+            {{ $thumb := $img.Fill "400x300" }}
+            <div class="col-6 col-md-4 col-lg-3">
+              <a
+                href="{{ $img.RelPermalink }}"
+                data-fancybox="gallery"
+                class="d-block gallery-item">
+                <img
+                  src="{{ $thumb.RelPermalink }}"
+                  class="img-fluid rounded shadow-sm"
+                  alt="{{ $img.Name }}" />
+              </a>
+            </div>
+          {{ end }}
+        </div>
+      {{ else }}
+        <div class="alert alert-info text-center">
+          <i class="bi bi-info-circle"></i> Aucune image dans cette galerie pour
+          le moment.
+        </div>
       {{ end }}
     </div>
-    {{ else }}
-    <div class="alert alert-info text-center">
-      <i class="bi bi-info-circle"></i> Aucune image dans cette galerie pour le moment.
-    </div>
-    {{ end }}
-  </div>
-</section>
+  </section>
 
-<style>
-.gallery-item {
-  position: relative;
-  overflow: hidden;
-  border-radius: 8px;
-  display: block;
-  transition: transform 0.3s ease;
-}
+  <style>
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      display: block;
+      transition: transform 0.3s ease;
+    }
 
-.gallery-item:hover {
-  transform: scale(1.05);
-}
+    .gallery-item:hover {
+      transform: scale(1.05);
+    }
 
-.gallery-item img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
+    .gallery-item img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
 
-.gallery-item:hover img {
-  transform: scale(1.1);
-}
-</style>
-
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+  </style>
 {{ end }}

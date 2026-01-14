@@ -20,13 +20,56 @@ collections:
     editor:
       preview: false
     fields:
-      - {label: "Titre", name: "title", widget: "string", required: true, hint: "Le titre de l'article"}
-      - {label: "Date de publication", name: "date", widget: "datetime", format: "YYYY-MM-DD", required: true}
-      - {label: "Dernière modification", name: "lastmod", widget: "datetime", format: "YYYY-MM-DD", required: false}
-      - {label: "Auteur", name: "author", widget: "string", default: "Leidimen", required: false}
-      - {label: "Brouillon", name: "draft", widget: "boolean", default: false, required: false, hint: "Cochez pour masquer l'article du site"}
-      - {label: "Description courte", name: "description", widget: "text", required: false, hint: "Description pour SEO et aperçu (150-160 caractères recommandés)"}
-      - {label: "Image principale", name: "image", widget: "image", required: false, hint: "Image de couverture de l'article"}
+      - {
+          label: "Titre",
+          name: "title",
+          widget: "string",
+          required: true,
+          hint: "Le titre de l'article",
+        }
+      - {
+          label: "Date de publication",
+          name: "date",
+          widget: "datetime",
+          format: "YYYY-MM-DD",
+          required: true,
+        }
+      - {
+          label: "Dernière modification",
+          name: "lastmod",
+          widget: "datetime",
+          format: "YYYY-MM-DD",
+          required: false,
+        }
+      - {
+          label: "Auteur",
+          name: "author",
+          widget: "string",
+          default: "Leidimen",
+          required: false,
+        }
+      - {
+          label: "Brouillon",
+          name: "draft",
+          widget: "boolean",
+          default: false,
+          required: false,
+          hint: "Cochez pour masquer l'article du site",
+        }
+      - {
+          label: "Description courte",
+          name: "description",
+          widget: "text",
+          required: false,
+          hint: "Description pour SEO et aperçu (150-160 caractères recommandés)",
+        }
+      - {
+          label: "Image principale",
+          name: "image",
+          widget: "image",
+          required: false,
+          hint: "Image de couverture de l'article",
+        }
       - label: "Villages concernés"
         name: "villages"
         widget: "select"
@@ -34,16 +77,16 @@ collections:
         required: false
         hint: "Sélectionnez les villages concernés par cet article"
         options:
-          - {label: "Darawal", value: "darawal"}
-          - {label: "Debere", value: "debere"}
-          - {label: "Diambana", value: "diambana"}
-          - {label: "Diona", value: "diona"}
-          - {label: "Dorool", value: "dorool"}
-          - {label: "Douentza", value: "douentza"}
-          - {label: "Manko", value: "manko"}
-          - {label: "N'Dumpa", value: "ndumpa"}
-          - {label: "Tacouti", value: "tacouti"}
-          - {label: "Tanal", value: "tanal"}
+          - { label: "Darawal", value: "darawal" }
+          - { label: "Debere", value: "debere" }
+          - { label: "Diambana", value: "diambana" }
+          - { label: "Diona", value: "diona" }
+          - { label: "Dorool", value: "dorool" }
+          - { label: "Douentza", value: "douentza" }
+          - { label: "Manko", value: "manko" }
+          - { label: "N'Dumpa", value: "ndumpa" }
+          - { label: "Tacouti", value: "tacouti" }
+          - { label: "Tanal", value: "tanal" }
       - label: "Humeur/Mood"
         name: "moods"
         widget: "select"
@@ -51,14 +94,26 @@ collections:
         required: false
         hint: "Ajoutez une humeur à l'article"
         options:
-          - {label: "Heureux", value: "heureux"}
-          - {label: "Triste", value: "triste"}
-          - {label: "Inspiré", value: "inspire"}
-          - {label: "Motivé", value: "motive"}
-          - {label: "Reconnaissant", value: "reconnaissant"}
-      - {label: "Catégories", name: "categories", widget: "list", required: false, hint: "Ex: Éducation, Santé, Infrastructure"}
-      - {label: "Tags", name: "tags", widget: "list", required: false, hint: "Mots-clés pour l'article"}
-      - {label: "Contenu", name: "body", widget: "markdown", required: true}
+          - { label: "Heureux", value: "heureux" }
+          - { label: "Triste", value: "triste" }
+          - { label: "Inspiré", value: "inspire" }
+          - { label: "Motivé", value: "motive" }
+          - { label: "Reconnaissant", value: "reconnaissant" }
+      - {
+          label: "Catégories",
+          name: "categories",
+          widget: "list",
+          required: false,
+          hint: "Ex: Éducation, Santé, Infrastructure",
+        }
+      - {
+          label: "Tags",
+          name: "tags",
+          widget: "list",
+          required: false,
+          hint: "Mots-clés pour l'article",
+        }
+      - { label: "Contenu", name: "body", widget: "markdown", required: true }
 
   # ===== TEAM MEMBERS COLLECTION =====
   - name: "team"
@@ -70,30 +125,99 @@ collections:
     editor:
       preview: false
     fields:
-      - {label: "Nom complet", name: "title", widget: "string", required: true}
-      - {label: "Date d'ajout", name: "date", widget: "datetime", format: "YYYY-MM-DD", default: ""}
+      - {
+          label: "Nom complet",
+          name: "title",
+          widget: "string",
+          required: true,
+        }
+      - {
+          label: "Date d'ajout",
+          name: "date",
+          widget: "datetime",
+          format: "YYYY-MM-DD",
+          default: "",
+        }
       - label: "Informations carte"
         name: "card"
         widget: "object"
         fields:
-          - {label: "Photo", name: "image", widget: "image", required: false, hint: "Photo du membre (format carré recommandé)"}
-          - {label: "Fonction", name: "fonction", widget: "string", required: true, hint: "Ex: Président, Trésorier, Membre actif"}
+          - {
+              label: "Photo",
+              name: "image",
+              widget: "image",
+              required: false,
+              hint: "Photo du membre (format carré recommandé)",
+            }
+          - {
+              label: "Fonction",
+              name: "fonction",
+              widget: "string",
+              required: true,
+              hint: "Ex: Président, Trésorier, Membre actif",
+            }
           - label: "Statut"
             name: "membre"
             widget: "select"
             options: ["fondateur", "bureau", "adherent", "bienfaiteur"]
             default: "adherent"
             required: true
-          - {label: "Ville", name: "ville", widget: "string", required: false}
-          - {label: "Pays", name: "pays", widget: "string", default: "France", required: false}
-          - {label: "Email", name: "email", widget: "string", required: false}
-          - {label: "Téléphone", name: "tel", widget: "string", required: false}
-          - {label: "LinkedIn", name: "linkedin", widget: "string", required: false, hint: "URL du profil LinkedIn"}
-          - {label: "Devise personnelle", name: "devise", widget: "string", required: false}
-          - {label: "Spécialités", name: "specialites", widget: "list", required: false, hint: "Compétences ou domaines d'expertise"}
-      - {label: "Catégories", name: "categories", widget: "list", required: false, hint: "Ex: CA, Bureau, Membres"}
-      - {label: "Ordre d'affichage", name: "weight", widget: "number", default: 100, required: false, hint: "Plus le nombre est petit, plus le membre apparaît en premier"}
-      - {label: "Biographie", name: "body", widget: "markdown", required: false}
+          - { label: "Ville", name: "ville", widget: "string", required: false }
+          - {
+              label: "Pays",
+              name: "pays",
+              widget: "string",
+              default: "France",
+              required: false,
+            }
+          - { label: "Email", name: "email", widget: "string", required: false }
+          - {
+              label: "Téléphone",
+              name: "tel",
+              widget: "string",
+              required: false,
+            }
+          - {
+              label: "LinkedIn",
+              name: "linkedin",
+              widget: "string",
+              required: false,
+              hint: "URL du profil LinkedIn",
+            }
+          - {
+              label: "Devise personnelle",
+              name: "devise",
+              widget: "string",
+              required: false,
+            }
+          - {
+              label: "Spécialités",
+              name: "specialites",
+              widget: "list",
+              required: false,
+              hint: "Compétences ou domaines d'expertise",
+            }
+      - {
+          label: "Catégories",
+          name: "categories",
+          widget: "list",
+          required: false,
+          hint: "Ex: CA, Bureau, Membres",
+        }
+      - {
+          label: "Ordre d'affichage",
+          name: "weight",
+          widget: "number",
+          default: 100,
+          required: false,
+          hint: "Plus le nombre est petit, plus le membre apparaît en premier",
+        }
+      - {
+          label: "Biographie",
+          name: "body",
+          widget: "markdown",
+          required: false,
+        }
 
   # ===== VILLAGES COLLECTION =====
   - name: "villages"
@@ -105,23 +229,67 @@ collections:
     editor:
       preview: false
     fields:
-      - {label: "Nom du village", name: "title", widget: "string", required: true}
-      - {label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", required: true}
-      - {label: "Description courte", name: "description", widget: "text", required: false, hint: "Brève description du village"}
-      - {label: "Image principale", name: "image", widget: "image", required: false}
-      - {label: "Population", name: "population", widget: "number", required: false}
-      - {label: "Région", name: "region", widget: "string", default: "Douentza", required: false}
-      - {label: "Coordonnées GPS", name: "coordinates", widget: "string", required: false, hint: "Format: latitude, longitude"}
+      - {
+          label: "Nom du village",
+          name: "title",
+          widget: "string",
+          required: true,
+        }
+      - {
+          label: "Date",
+          name: "date",
+          widget: "datetime",
+          format: "YYYY-MM-DD",
+          required: true,
+        }
+      - {
+          label: "Description courte",
+          name: "description",
+          widget: "text",
+          required: false,
+          hint: "Brève description du village",
+        }
+      - {
+          label: "Image principale",
+          name: "image",
+          widget: "image",
+          required: false,
+        }
+      - {
+          label: "Population",
+          name: "population",
+          widget: "number",
+          required: false,
+        }
+      - {
+          label: "Région",
+          name: "region",
+          widget: "string",
+          default: "Douentza",
+          required: false,
+        }
+      - {
+          label: "Coordonnées GPS",
+          name: "coordinates",
+          widget: "string",
+          required: false,
+          hint: "Format: latitude, longitude",
+        }
       - label: "Projets en cours"
         name: "projects"
         widget: "list"
         required: false
         hint: "Liste des projets actifs dans le village"
         fields:
-          - {label: "Nom du projet", name: "name", widget: "string"}
-          - {label: "Description", name: "description", widget: "text"}
-          - {label: "Année", name: "year", widget: "number", required: false}
-      - {label: "Contenu détaillé", name: "body", widget: "markdown", required: false}
+          - { label: "Nom du projet", name: "name", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Année", name: "year", widget: "number", required: false }
+      - {
+          label: "Contenu détaillé",
+          name: "body",
+          widget: "markdown",
+          required: false,
+        }
 
   # ===== DOCUMENTS COLLECTION =====
   - name: "documents"
@@ -133,16 +301,42 @@ collections:
     editor:
       preview: false
     fields:
-      - {label: "Titre", name: "title", widget: "string", required: true}
-      - {label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", required: true}
+      - { label: "Titre", name: "title", widget: "string", required: true }
+      - {
+          label: "Date",
+          name: "date",
+          widget: "datetime",
+          format: "YYYY-MM-DD",
+          required: true,
+        }
       - label: "Type de document"
         name: "type"
         widget: "select"
-        options: ["Rapport", "Politique", "Guide", "Formulaire", "Compte-rendu", "Statuts", "Adhésion"]
+        options:
+          [
+            "Rapport",
+            "Politique",
+            "Guide",
+            "Formulaire",
+            "Compte-rendu",
+            "Statuts",
+            "Adhésion",
+          ]
         required: false
-      - {label: "Description", name: "description", widget: "text", required: false}
-      - {label: "Fichier PDF", name: "file", widget: "file", required: false, hint: "Téléchargez le document PDF"}
-      - {label: "Contenu", name: "body", widget: "markdown", required: false}
+      - {
+          label: "Description",
+          name: "description",
+          widget: "text",
+          required: false,
+        }
+      - {
+          label: "Fichier PDF",
+          name: "file",
+          widget: "file",
+          required: false,
+          hint: "Téléchargez le document PDF",
+        }
+      - { label: "Contenu", name: "body", widget: "markdown", required: false }
 
   # ===== GALLERIES COLLECTION =====
   - name: "galleries"
@@ -154,18 +348,60 @@ collections:
     editor:
       preview: false
     fields:
-      - {label: "Titre de la galerie", name: "title", widget: "string", required: true}
-      - {label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", required: true}
-      - {label: "Description", name: "description", widget: "text", required: false}
-      - {label: "Lieu", name: "location", widget: "string", required: false, hint: "Ex: Paris, Dorool, etc."}
-      - {label: "Image de couverture", name: "coverImage", widget: "image", required: false}
+      - {
+          label: "Titre de la galerie",
+          name: "title",
+          widget: "string",
+          required: true,
+        }
+      - {
+          label: "Date",
+          name: "date",
+          widget: "datetime",
+          format: "YYYY-MM-DD",
+          required: true,
+        }
+      - {
+          label: "Description",
+          name: "description",
+          widget: "text",
+          required: false,
+        }
+      - {
+          label: "Lieu",
+          name: "location",
+          widget: "string",
+          required: false,
+          hint: "Ex: Paris, Dorool, etc.",
+        }
+      - {
+          label: "Image de couverture",
+          name: "coverImage",
+          widget: "image",
+          required: false,
+        }
       - label: "Photos de la galerie"
         name: "images"
         widget: "list"
         required: false
         hint: "Ajoutez toutes les photos de la galerie"
         fields:
-          - {label: "Image", name: "src", widget: "image"}
-          - {label: "Légende", name: "caption", widget: "string", required: false}
-          - {label: "Crédit photo", name: "credit", widget: "string", required: false}
-      - {label: "Contenu additionnel", name: "body", widget: "markdown", required: false}
+          - { label: "Image", name: "src", widget: "image" }
+          - {
+              label: "Légende",
+              name: "caption",
+              widget: "string",
+              required: false,
+            }
+          - {
+              label: "Crédit photo",
+              name: "credit",
+              widget: "string",
+              required: false,
+            }
+      - {
+          label: "Contenu additionnel",
+          name: "body",
+          widget: "markdown",
+          required: false,
+        }

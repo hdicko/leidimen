@@ -12,7 +12,7 @@ weight: 0
 
 ⚖️ **Mentions Légales**
 
-*Dernière mise à jour : 14 octobre 2025 • Version 2.0*
+_Dernière mise à jour : 14 octobre 2025 • Version 2.0_
 
 ---
 
@@ -34,13 +34,13 @@ weight: 0
 
 ### 📋 Informations générales
 
-| | |
-|---|---|
-| **Dénomination sociale** | Association Leidimen |
-| **Forme juridique** | Association loi 1901 |
-| **Siège social** | 14, rue des Pommiers<br>91070 Bondoufle, France |
-| **Email** | leidimen@gmail.com |
-| **Directeur de publication** | Le Président de l'association |
+|                              |                                                 |
+| ---------------------------- | ----------------------------------------------- |
+| **Dénomination sociale**     | Association Leidimen                            |
+| **Forme juridique**          | Association loi 1901                            |
+| **Siège social**             | 14, rue des Pommiers<br>91070 Bondoufle, France |
+| **Email**                    | leidimen@gmail.com                              |
+| **Directeur de publication** | Le Président de l'association                   |
 
 ### 🎯 Objet social
 
@@ -57,6 +57,7 @@ Développer et renforcer les liens de solidarité entre Bondoufle (France) et le
 ## 2. Hébergement du site web
 
 ### 🌐 GitHub Pages
+
 **Hébergeur principal**
 
 GitHub, Inc.  
@@ -64,6 +65,7 @@ GitHub, Inc.
 [Site web](https://pages.github.com)
 
 ### Netlify
+
 **Déploiement secondaire**
 
 Pour une disponibilité optimale et des performances accrues.
@@ -100,6 +102,7 @@ Pour une disponibilité optimale et des performances accrues.
 #### Liens entrants ✅
 
 La création de liens vers notre site est autorisée sous conditions :
+
 - Pas de framing
 - Mention claire de la source
 - Identification de l'origine du contenu
@@ -165,7 +168,7 @@ Pour exercer vos droits, contactez-nous :
 - **Email** : leidimen@gmail.com
 - **Courrier** : 14 rue des Pommiers, 91070 Bondoufle
 
-*Réponse sous 1 mois • Copie d'identité requise*
+_Réponse sous 1 mois • Copie d'identité requise_
 
 ### 📞 Réclamation
 
@@ -195,11 +198,11 @@ Configurez vos cookies dans les paramètres de votre navigateur (Chrome, Firefox
 
 ## 7. Droit applicable et juridiction
 
-| Aspect | Détail |
-|--------|--------|
-| **Loi applicable** | Droit français |
-| **Médiation** | Solution amiable privilégiée |
-| **Juridiction** | Tribunaux français compétents |
+| Aspect             | Détail                        |
+| ------------------ | ----------------------------- |
+| **Loi applicable** | Droit français                |
+| **Médiation**      | Solution amiable privilégiée  |
+| **Juridiction**    | Tribunaux français compétents |
 
 ---
 
@@ -226,4 +229,4 @@ Pour toute question concernant ces mentions légales ou le fonctionnement du sit
 
 ---
 
-*Document mis à jour le 14 octobre 2025 - Version 2.0*
+_Document mis à jour le 14 octobre 2025 - Version 2.0_

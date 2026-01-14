@@ -1,279 +1,387 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Leidimen CMS - Gestion de Contenu</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <i class="bi bi-journal-text"></i> Leidimen CMS
-            </a>
-            <span class="navbar-text text-white">
-                <i class="bi bi-github"></i> hdicko/leidimen
-            </span>
-        </div>
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <i class="bi bi-journal-text"></i> Leidimen CMS
+        </a>
+        <span class="navbar-text text-white">
+          <i class="bi bi-github"></i> hdicko/leidimen
+        </span>
+      </div>
     </nav>
 
     <div class="container mt-4">
-        <div class="row">
-            <!-- Sidebar -->
-            <div class="col-md-3">
-                <div class="card">
-                    <div class="card-header bg-dark text-white">
-                        <i class="bi bi-list-task"></i> Actions
-                    </div>
-                    <div class="list-group list-group-flush">
-                        <a href="#" class="list-group-item list-group-item-action active" data-view="create-post">
-                            <i class="bi bi-file-earmark-plus"></i> Nouveau Post
-                        </a>
-                        <a href="#" class="list-group-item list-group-item-action" data-view="create-gallery">
-                            <i class="bi bi-images"></i> Nouvelle Galerie
-                        </a>
-                        <a href="#" class="list-group-item list-group-item-action" data-view="list-posts">
-                            <i class="bi bi-list-ul"></i> Liste des Posts
-                        </a>
-                        <a href="#" class="list-group-item list-group-item-action" data-view="settings">
-                            <i class="bi bi-gear"></i> Paramètres
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Stats -->
-                <div class="card mt-3">
-                    <div class="card-header bg-success text-white">
-                        <i class="bi bi-graph-up"></i> Statistiques
-                    </div>
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between">
-                            <span>Posts:</span>
-                            <strong id="stats-posts">-</strong>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <span>Villages:</span>
-                            <strong id="stats-villages">10</strong>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <span>Membres:</span>
-                            <strong id="stats-members">-</strong>
-                        </div>
-                    </div>
-                </div>
+      <div class="row">
+        <!-- Sidebar -->
+        <div class="col-md-3">
+          <div class="card">
+            <div class="card-header bg-dark text-white">
+              <i class="bi bi-list-task"></i> Actions
             </div>
-
-            <!-- Main Content -->
-            <div class="col-md-9">
-                <!-- Create Post View -->
-                <div id="view-create-post" class="content-view">
-                    <div class="card">
-                        <div class="card-header bg-primary text-white">
-                            <h4 class="mb-0"><i class="bi bi-file-earmark-plus"></i> Créer un Nouveau Post</h4>
-                        </div>
-                        <div class="card-body">
-                            <form id="createPostForm">
-                                <div class="row">
-                                    <div class="col-md-8">
-                                        <div class="mb-3">
-                                            <label for="postTitle" class="form-label">Titre *</label>
-                                            <input type="text" class="form-control" id="postTitle" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="mb-3">
-                                            <label for="postDate" class="form-label">Date *</label>
-                                            <input type="date" class="form-control" id="postDate" required>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="mb-3">
-                                            <label for="postVillage" class="form-label">Village(s) *</label>
-                                            <select class="form-select" id="postVillage" multiple size="5" required>
-                                                <option value="dorool">Dorool</option>
-                                                <option value="diona">Diona</option>
-                                                <option value="debere">Debere</option>
-                                                <option value="diambana">Diambana</option>
-                                                <option value="darawal">Darawal</option>
-                                                <option value="douentza">Douentza</option>
-                                                <option value="tanal">Tanal</option>
-                                                <option value="manko">Manko</option>
-                                                <option value="tacouti">Tacouti</option>
-                                                <option value="n'dumpa">N'Dumpa</option>
-                                            </select>
-                                            <small class="text-muted">Maintenez Ctrl/Cmd pour sélectionner plusieurs</small>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="mb-3">
-                                            <label for="postCategory" class="form-label">Catégorie *</label>
-                                            <select class="form-select" id="postCategory" required>
-                                                <option value="">Choisir...</option>
-                                                <option value="Éducation">Éducation</option>
-                                                <option value="Santé">Santé</option>
-                                                <option value="Infrastructure">Infrastructure</option>
-                                                <option value="Agriculture">Agriculture</option>
-                                                <option value="Culture">Culture</option>
-                                                <option value="Événement">Événement</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="mb-3">
-                                            <label for="postMood" class="form-label">Mood *</label>
-                                            <select class="form-select" id="postMood" required>
-                                                <option value="">Choisir...</option>
-                                                <option value="heureux">😊 Heureux</option>
-                                                <option value="triste">😢 Triste</option>
-                                                <option value="inspiré">💡 Inspiré</option>
-                                                <option value="motivé">💪 Motivé</option>
-                                                <option value="reconnaissant">🙏 Reconnaissant</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="mb-3">
-                                    <label for="postTags" class="form-label">Tags</label>
-                                    <input type="text" class="form-control" id="postTags" placeholder="école, projet, construction (séparés par virgules)">
-                                </div>
-
-                                <div class="mb-3">
-                                    <label for="postDescription" class="form-label">Description SEO *</label>
-                                    <textarea class="form-control" id="postDescription" rows="2" maxlength="160" required></textarea>
-                                    <small class="text-muted">150-160 caractères recommandés. <span id="descLength">0</span>/160</small>
-                                </div>
-
-                                <div class="mb-3">
-                                    <label for="postImage" class="form-label">Image de couverture</label>
-                                    <input type="text" class="form-control" id="postImage" placeholder="/images/uploads/mon-image.jpg">
-                                    <small class="text-muted">Chemin relatif depuis static/</small>
-                                </div>
-
-                                <div class="mb-3">
-                                    <label for="postContent" class="form-label">Contenu (Markdown) *</label>
-                                    <textarea class="form-control" id="postContent" rows="15" required></textarea>
-                                    <small class="text-muted">Vous pouvez utiliser la syntaxe Markdown</small>
-                                </div>
-
-                                <div class="mb-3">
-                                    <div class="form-check form-switch">
-                                        <input class="form-check-input" type="checkbox" id="postDraft">
-                                        <label class="form-check-label" for="postDraft">
-                                            Enregistrer comme brouillon
-                                        </label>
-                                    </div>
-                                </div>
-
-                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                    <button type="button" class="btn btn-secondary" id="previewBtn">
-                                        <i class="bi bi-eye"></i> Prévisualiser
-                                    </button>
-                                    <button type="submit" class="btn btn-primary" id="submitBtn">
-                                        <i class="bi bi-cloud-upload"></i> Créer et Publier
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-
-                    <!-- Preview Section -->
-                    <div class="card mt-3 d-none" id="previewSection">
-                        <div class="card-header bg-info text-white">
-                            <h5 class="mb-0"><i class="bi bi-eye"></i> Prévisualisation</h5>
-                        </div>
-                        <div class="card-body">
-                            <pre id="previewContent" class="bg-light p-3"></pre>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Create Gallery View -->
-                <div id="view-create-gallery" class="content-view d-none">
-                    <div class="card">
-                        <div class="card-header bg-primary text-white">
-                            <h4 class="mb-0"><i class="bi bi-images"></i> Créer une Galerie Photo</h4>
-                        </div>
-                        <div class="card-body">
-                            <div class="alert alert-info">
-                                <i class="bi bi-info-circle"></i> Cette fonctionnalité permet de créer une galerie avec upload d'images multiples. À venir prochainement !
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- List Posts View -->
-                <div id="view-list-posts" class="content-view d-none">
-                    <div class="card">
-                        <div class="card-header bg-primary text-white">
-                            <h4 class="mb-0"><i class="bi bi-list-ul"></i> Posts Récents</h4>
-                        </div>
-                        <div class="card-body">
-                            <div id="postsList">
-                                <div class="text-center">
-                                    <div class="spinner-border" role="status">
-                                        <span class="visually-hidden">Chargement...</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Settings View -->
-                <div id="view-settings" class="content-view d-none">
-                    <div class="card">
-                        <div class="card-header bg-primary text-white">
-                            <h4 class="mb-0"><i class="bi bi-gear"></i> Paramètres</h4>
-                        </div>
-                        <div class="card-body">
-                            <h5>Configuration GitHub</h5>
-                            <div class="mb-3">
-                                <label class="form-label">Repository</label>
-                                <input type="text" class="form-control" value="hdicko/leidimen" readonly>
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Branche</label>
-                                <input type="text" class="form-control" value="main" readonly>
-                            </div>
-                            <div class="alert alert-warning">
-                                <i class="bi bi-exclamation-triangle"></i> L'authentification GitHub se fait via le serveur backend MCP.
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="list-group list-group-flush">
+              <a
+                href="#"
+                class="list-group-item list-group-item-action active"
+                data-view="create-post">
+                <i class="bi bi-file-earmark-plus"></i> Nouveau Post
+              </a>
+              <a
+                href="#"
+                class="list-group-item list-group-item-action"
+                data-view="create-gallery">
+                <i class="bi bi-images"></i> Nouvelle Galerie
+              </a>
+              <a
+                href="#"
+                class="list-group-item list-group-item-action"
+                data-view="list-posts">
+                <i class="bi bi-list-ul"></i> Liste des Posts
+              </a>
+              <a
+                href="#"
+                class="list-group-item list-group-item-action"
+                data-view="settings">
+                <i class="bi bi-gear"></i> Paramètres
+              </a>
             </div>
+          </div>
+
+          <!-- Stats -->
+          <div class="card mt-3">
+            <div class="card-header bg-success text-white">
+              <i class="bi bi-graph-up"></i> Statistiques
+            </div>
+            <div class="card-body">
+              <div class="d-flex justify-content-between">
+                <span>Posts:</span>
+                <strong id="stats-posts">-</strong>
+              </div>
+              <div class="d-flex justify-content-between">
+                <span>Villages:</span>
+                <strong id="stats-villages">10</strong>
+              </div>
+              <div class="d-flex justify-content-between">
+                <span>Membres:</span>
+                <strong id="stats-members">-</strong>
+              </div>
+            </div>
+          </div>
         </div>
+
+        <!-- Main Content -->
+        <div class="col-md-9">
+          <!-- Create Post View -->
+          <div id="view-create-post" class="content-view">
+            <div class="card">
+              <div class="card-header bg-primary text-white">
+                <h4 class="mb-0">
+                  <i class="bi bi-file-earmark-plus"></i> Créer un Nouveau Post
+                </h4>
+              </div>
+              <div class="card-body">
+                <form id="createPostForm">
+                  <div class="row">
+                    <div class="col-md-8">
+                      <div class="mb-3">
+                        <label for="postTitle" class="form-label"
+                          >Titre *</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="postTitle"
+                          required />
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="mb-3">
+                        <label for="postDate" class="form-label">Date *</label>
+                        <input
+                          type="date"
+                          class="form-control"
+                          id="postDate"
+                          required />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <label for="postVillage" class="form-label"
+                          >Village(s) *</label
+                        >
+                        <select
+                          class="form-select"
+                          id="postVillage"
+                          multiple
+                          size="5"
+                          required>
+                          <option value="dorool">Dorool</option>
+                          <option value="diona">Diona</option>
+                          <option value="debere">Debere</option>
+                          <option value="diambana">Diambana</option>
+                          <option value="darawal">Darawal</option>
+                          <option value="douentza">Douentza</option>
+                          <option value="tanal">Tanal</option>
+                          <option value="manko">Manko</option>
+                          <option value="tacouti">Tacouti</option>
+                          <option value="n'dumpa">N'Dumpa</option>
+                        </select>
+                        <small class="text-muted"
+                          >Maintenez Ctrl/Cmd pour sélectionner plusieurs</small
+                        >
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="mb-3">
+                        <label for="postCategory" class="form-label"
+                          >Catégorie *</label
+                        >
+                        <select class="form-select" id="postCategory" required>
+                          <option value="">Choisir...</option>
+                          <option value="Éducation">Éducation</option>
+                          <option value="Santé">Santé</option>
+                          <option value="Infrastructure">Infrastructure</option>
+                          <option value="Agriculture">Agriculture</option>
+                          <option value="Culture">Culture</option>
+                          <option value="Événement">Événement</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="mb-3">
+                        <label for="postMood" class="form-label">Mood *</label>
+                        <select class="form-select" id="postMood" required>
+                          <option value="">Choisir...</option>
+                          <option value="heureux">😊 Heureux</option>
+                          <option value="triste">😢 Triste</option>
+                          <option value="inspiré">💡 Inspiré</option>
+                          <option value="motivé">💪 Motivé</option>
+                          <option value="reconnaissant">
+                            🙏 Reconnaissant
+                          </option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="postTags" class="form-label">Tags</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="postTags"
+                      placeholder="école, projet, construction (séparés par virgules)" />
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="postDescription" class="form-label"
+                      >Description SEO *</label
+                    >
+                    <textarea
+                      class="form-control"
+                      id="postDescription"
+                      rows="2"
+                      maxlength="160"
+                      required></textarea>
+                    <small class="text-muted"
+                      >150-160 caractères recommandés.
+                      <span id="descLength">0</span>/160</small
+                    >
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="postImage" class="form-label"
+                      >Image de couverture</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="postImage"
+                      placeholder="/images/uploads/mon-image.jpg" />
+                    <small class="text-muted"
+                      >Chemin relatif depuis static/</small
+                    >
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="postContent" class="form-label"
+                      >Contenu (Markdown) *</label
+                    >
+                    <textarea
+                      class="form-control"
+                      id="postContent"
+                      rows="15"
+                      required></textarea>
+                    <small class="text-muted"
+                      >Vous pouvez utiliser la syntaxe Markdown</small
+                    >
+                  </div>
+
+                  <div class="mb-3">
+                    <div class="form-check form-switch">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="postDraft" />
+                      <label class="form-check-label" for="postDraft">
+                        Enregistrer comme brouillon
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      id="previewBtn">
+                      <i class="bi bi-eye"></i> Prévisualiser
+                    </button>
+                    <button
+                      type="submit"
+                      class="btn btn-primary"
+                      id="submitBtn">
+                      <i class="bi bi-cloud-upload"></i> Créer et Publier
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <!-- Preview Section -->
+            <div class="card mt-3 d-none" id="previewSection">
+              <div class="card-header bg-info text-white">
+                <h5 class="mb-0"><i class="bi bi-eye"></i> Prévisualisation</h5>
+              </div>
+              <div class="card-body">
+                <pre id="previewContent" class="bg-light p-3"></pre>
+              </div>
+            </div>
+          </div>
+
+          <!-- Create Gallery View -->
+          <div id="view-create-gallery" class="content-view d-none">
+            <div class="card">
+              <div class="card-header bg-primary text-white">
+                <h4 class="mb-0">
+                  <i class="bi bi-images"></i> Créer une Galerie Photo
+                </h4>
+              </div>
+              <div class="card-body">
+                <div class="alert alert-info">
+                  <i class="bi bi-info-circle"></i> Cette fonctionnalité permet
+                  de créer une galerie avec upload d'images multiples. À venir
+                  prochainement !
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- List Posts View -->
+          <div id="view-list-posts" class="content-view d-none">
+            <div class="card">
+              <div class="card-header bg-primary text-white">
+                <h4 class="mb-0">
+                  <i class="bi bi-list-ul"></i> Posts Récents
+                </h4>
+              </div>
+              <div class="card-body">
+                <div id="postsList">
+                  <div class="text-center">
+                    <div class="spinner-border" role="status">
+                      <span class="visually-hidden">Chargement...</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Settings View -->
+          <div id="view-settings" class="content-view d-none">
+            <div class="card">
+              <div class="card-header bg-primary text-white">
+                <h4 class="mb-0"><i class="bi bi-gear"></i> Paramètres</h4>
+              </div>
+              <div class="card-body">
+                <h5>Configuration GitHub</h5>
+                <div class="mb-3">
+                  <label class="form-label">Repository</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    value="hdicko/leidimen"
+                    readonly />
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Branche</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    value="main"
+                    readonly />
+                </div>
+                <div class="alert alert-warning">
+                  <i class="bi bi-exclamation-triangle"></i> L'authentification
+                  GitHub se fait via le serveur backend MCP.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Toast Notifications -->
     <div class="toast-container position-fixed bottom-0 end-0 p-3">
-        <div id="successToast" class="toast align-items-center text-white bg-success border-0" role="alert">
-            <div class="d-flex">
-                <div class="toast-body">
-                    <i class="bi bi-check-circle"></i> <span id="successMessage"></span>
-                </div>
-                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
-            </div>
+      <div
+        id="successToast"
+        class="toast align-items-center text-white bg-success border-0"
+        role="alert">
+        <div class="d-flex">
+          <div class="toast-body">
+            <i class="bi bi-check-circle"></i> <span id="successMessage"></span>
+          </div>
+          <button
+            type="button"
+            class="btn-close btn-close-white me-2 m-auto"
+            data-bs-dismiss="toast"></button>
         </div>
-        <div id="errorToast" class="toast align-items-center text-white bg-danger border-0" role="alert">
-            <div class="d-flex">
-                <div class="toast-body">
-                    <i class="bi bi-exclamation-circle"></i> <span id="errorMessage"></span>
-                </div>
-                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
-            </div>
+      </div>
+      <div
+        id="errorToast"
+        class="toast align-items-center text-white bg-danger border-0"
+        role="alert">
+        <div class="d-flex">
+          <div class="toast-body">
+            <i class="bi bi-exclamation-circle"></i>
+            <span id="errorMessage"></span>
+          </div>
+          <button
+            type="button"
+            class="btn-close btn-close-white me-2 m-auto"
+            data-bs-dismiss="toast"></button>
         </div>
+      </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="app.js"></script>
-</body>
+  </body>
 </html>

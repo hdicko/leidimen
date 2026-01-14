@@ -117,18 +117,18 @@ cd cms-web
 
 ## 📊 Comparaison des 3 systèmes
 
-| Critère | CMS Web 🆕 | CLI Python | Netlify CMS |
-|---------|------------|------------|-------------|
-| **Interface** | Web moderne | Terminal | Web standard |
-| **Installation** | npm install | Prêt à l'emploi | Déjà intégré |
-| **Authentification** | 🚧 À ajouter | Locale | ✅ Netlify Identity |
-| **Accessible en ligne** | ❌ Local | ❌ Local | ✅ Oui |
-| **Upload images** | 🚧 À venir | ❌ Non | ✅ Oui |
-| **Prévisualisation** | ✅ Markdown | ✅ Markdown | ✅ HTML |
-| **Commit auto** | ✅ Oui | ✅ Oui | ✅ Oui |
-| **Statistiques** | ✅ Oui | ❌ Non | ❌ Non |
-| **Personnalisation** | ✅ Total | ✅ Total | ⚠️ Limitée |
-| **Difficulté** | ⭐⭐ Moyen | ⭐ Facile | ⭐ Facile |
+| Critère                 | CMS Web 🆕   | CLI Python      | Netlify CMS         |
+| ----------------------- | ------------ | --------------- | ------------------- |
+| **Interface**           | Web moderne  | Terminal        | Web standard        |
+| **Installation**        | npm install  | Prêt à l'emploi | Déjà intégré        |
+| **Authentification**    | 🚧 À ajouter | Locale          | ✅ Netlify Identity |
+| **Accessible en ligne** | ❌ Local     | ❌ Local        | ✅ Oui              |
+| **Upload images**       | 🚧 À venir   | ❌ Non          | ✅ Oui              |
+| **Prévisualisation**    | ✅ Markdown  | ✅ Markdown     | ✅ HTML             |
+| **Commit auto**         | ✅ Oui       | ✅ Oui          | ✅ Oui              |
+| **Statistiques**        | ✅ Oui       | ❌ Non          | ❌ Non              |
+| **Personnalisation**    | ✅ Total     | ✅ Total        | ⚠️ Limitée          |
+| **Difficulté**          | ⭐⭐ Moyen   | ⭐ Facile       | ⭐ Facile           |
 
 ---
 
@@ -245,4 +245,4 @@ Le projet Leidimen dispose maintenant de **3 outils complémentaires** pour gér
 
 **🏛️ Leidimen** - Association de Solidarité avec les villages de Douentza, Mali
 
-*Créé le 4 novembre 2025*
+_Créé le 4 novembre 2025_

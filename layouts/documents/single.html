@@ -1,8 +1,7 @@
-{{/* 
-  Template: documents/single.html
+{{/* Template: documents/single.html
   Purpose: Individual document page template with professional legal layout
   Context: Displays single official document (legal notices, privacy policy, adhesion forms)
-  
+
   Features:
   - Conditional styling for legal documents (Mentions Légales, Politique de Confidentialité)
   - Professional hero section with animated icon
@@ -13,22 +12,22 @@
   - Back button to documents listing
   - Floating icon animation
   - Responsive centered layout
-  
+
   Data Structure:
   - .Title: Document title
   - .Description: Document subtitle/description
   - .Date: Last modification date
   - .Content: Document body (legal text, policies)
-  
+
   Dependencies:
   - Bootstrap 5 + Bootstrap Icons
   - Custom CSS embedded in template
-  
+
   Conditional Logic:
   - Special layout triggers if title matches "Mentions Légales" or "Politique de Confidentialité"
   - Different icons for different document types
   - Fallback to default layout for other documents
-  
+
   Design:
   - Gradient background: #f8fafc to #e8eef5
   - Hero with floating icon (3s animation loop)
@@ -39,230 +38,237 @@
 
 {{ define "main" }}
 
-{{ if or (eq .Title "Mentions Légales") (eq .Title "Politique de Confidentialité") }}
-  <!-- Legal Document Professional Layout -->
-  <div class="legal-document-wrapper">
-    <div class="container py-5">
-      <!-- Hero Section -->
-      <div class="legal-hero text-center mb-5">
-        <div class="legal-icon mb-4">
-          {{ if eq .Title "Mentions Légales" }}
-            <i class="bi bi-shield-check"></i>
-          {{ else }}
-            <i class="bi bi-lock-fill"></i>
-          {{ end }}
-        </div>
-        <h1 class="legal-title mb-3">{{ .Title }}</h1>
-        <p class="legal-subtitle text-muted">{{ .Description }}</p>
-        <div class="legal-date text-muted mt-3">
-          <i class="bi bi-calendar-event me-2"></i>
-          Dernière mise à jour : {{ .Date.Format "2 January 2006" }}
-        </div>
-      </div>
-
-      <!-- Content -->
-      <div class="row justify-content-center">
-        <div class="col-lg-10 col-xl-9">
-          <div class="legal-content-card">
-            <div class="legal-content">
-              {{ .Content }}
-            </div>
+  {{ if or (eq .Title "Mentions Légales") (eq .Title "Politique de Confidentialité") }}
+    <!-- Legal Document Professional Layout -->
+    <div class="legal-document-wrapper">
+      <div class="container py-5">
+        <!-- Hero Section -->
+        <div class="legal-hero text-center mb-5">
+          <div class="legal-icon mb-4">
+            {{ if eq .Title "Mentions Légales" }}
+              <i class="bi bi-shield-check"></i>
+            {{ else }}
+              <i class="bi bi-lock-fill"></i>
+            {{ end }}
           </div>
+          <h1 class="legal-title mb-3">{{ .Title }}</h1>
+          <p class="legal-subtitle text-muted">{{ .Description }}</p>
+          <div class="legal-date text-muted mt-3">
+            <i class="bi bi-calendar-event me-2"></i>
+            Dernière mise à jour :
+            {{ .Date.Format "2 January 2006" }}
+          </div>
+        </div>
 
-          <!-- Back to Documents -->
-          <div class="text-center mt-5">
-            <a href="{{ "/documents/" | relURL }}" class="btn btn-outline-primary btn-lg rounded-pill">
-              <i class="bi bi-arrow-left me-2"></i>Retour aux documents
-            </a>
+        <!-- Content -->
+        <div class="row justify-content-center">
+          <div class="col-lg-10 col-xl-9">
+            <div class="legal-content-card">
+              <div class="legal-content">
+                {{ .Content }}
+              </div>
+            </div>
+
+            <!-- Back to Documents -->
+            <div class="text-center mt-5">
+              <a
+                href="{{ "/documents/" | relURL }}"
+                class="btn btn-outline-primary btn-lg rounded-pill">
+                <i class="bi bi-arrow-left me-2"></i>Retour aux documents
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <style>
-    /* Legal Document Styles */
-    .legal-document-wrapper {
-      background: linear-gradient(135deg, #f8fafc 0%, #e8eef5 100%);
-      min-height: 100vh;
-    }
-
-    .legal-hero {
-      position: relative;
-      padding: 3rem 0;
-    }
-
-    .legal-icon {
-      font-size: 4rem;
-      color: #3b82f6;
-      animation: float-legal 3s ease-in-out infinite;
-    }
-
-    .legal-title {
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: #1e293b;
-      margin-bottom: 1rem;
-    }
-
-    .legal-subtitle {
-      font-size: 1.125rem;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    .legal-date {
-      font-size: 0.9rem;
-      padding: 0.5rem 1.5rem;
-      background: rgba(255, 255, 255, 0.6);
-      border-radius: 50px;
-      display: inline-block;
-      -webkit-backdrop-filter: blur(10px);
-      backdrop-filter: blur(10px);
-    }
-
-    .legal-content-card {
-      background: white;
-      border-radius: 20px;
-      padding: 3rem;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.8);
-    }
-
-    .legal-content h1 {
-      font-size: 2rem;
-      font-weight: 700;
-      color: #1e293b;
-      margin-top: 2.5rem;
-      margin-bottom: 1.5rem;
-      padding-bottom: 0.75rem;
-      border-bottom: 3px solid #3b82f6;
-    }
-
-    .legal-content h2 {
-      font-size: 1.5rem;
-      font-weight: 600;
-      color: #334155;
-      margin-top: 2rem;
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-    }
-
-    .legal-content h2::before {
-      content: "";
-      display: inline-block;
-      width: 4px;
-      height: 1.5rem;
-      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-      margin-right: 0.75rem;
-      border-radius: 2px;
-    }
-
-    .legal-content h3 {
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: #475569;
-      margin-top: 1.5rem;
-      margin-bottom: 0.75rem;
-    }
-
-    .legal-content p {
-      font-size: 1rem;
-      line-height: 1.8;
-      color: #475569;
-      margin-bottom: 1.25rem;
-    }
-
-    .legal-content strong {
-      color: #1e293b;
-      font-weight: 600;
-    }
-
-    .legal-content ul, .legal-content ol {
-      margin-left: 1.5rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .legal-content li {
-      margin-bottom: 0.75rem;
-      line-height: 1.7;
-      color: #475569;
-    }
-
-    .legal-content a {
-      color: #3b82f6;
-      text-decoration: none;
-      font-weight: 500;
-      transition: all 0.3s ease;
-    }
-
-    .legal-content a:hover {
-      color: #2563eb;
-      text-decoration: underline;
-    }
-
-    .legal-content hr {
-      border: 0;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, #cbd5e1, transparent);
-      margin: 2rem 0;
-    }
-
-    /* Info Boxes */
-    .legal-content blockquote {
-      background: #f1f5f9;
-      border-left: 4px solid #3b82f6;
-      padding: 1.25rem 1.5rem;
-      margin: 1.5rem 0;
-      border-radius: 8px;
-    }
-
-    @keyframes float-legal {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-10px); }
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .legal-content-card {
-        padding: 2rem 1.5rem;
+    <style>
+      /* Legal Document Styles */
+      .legal-document-wrapper {
+        background: linear-gradient(135deg, #f8fafc 0%, #e8eef5 100%);
+        min-height: 100vh;
       }
 
-      .legal-title {
-        font-size: 2rem;
+      .legal-hero {
+        position: relative;
+        padding: 3rem 0;
       }
 
       .legal-icon {
-        font-size: 3rem;
+        font-size: 4rem;
+        color: #3b82f6;
+        animation: float-legal 3s ease-in-out infinite;
+      }
+
+      .legal-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #1e293b;
+        margin-bottom: 1rem;
+      }
+
+      .legal-subtitle {
+        font-size: 1.125rem;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .legal-date {
+        font-size: 0.9rem;
+        padding: 0.5rem 1.5rem;
+        background: rgba(255, 255, 255, 0.6);
+        border-radius: 50px;
+        display: inline-block;
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+      }
+
+      .legal-content-card {
+        background: white;
+        border-radius: 20px;
+        padding: 3rem;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.8);
       }
 
       .legal-content h1 {
-        font-size: 1.75rem;
+        font-size: 2rem;
+        font-weight: 700;
+        color: #1e293b;
+        margin-top: 2.5rem;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.75rem;
+        border-bottom: 3px solid #3b82f6;
       }
 
       .legal-content h2 {
-        font-size: 1.25rem;
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #334155;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
       }
-    }
-  </style>
 
-{{ else if or (eq .Title "Adhesion") (eq .Title "Adhésion") }}
-  <!-- Adhesion Layout -->
-  <div class="container-flex">
-    <div class="row">
-      <div class="col">{{ .Content }}</div>
-    </div>
-  </div>
-  {{ partial "mali-villages-map-interactive.html" . }}
+      .legal-content h2::before {
+        content: "";
+        display: inline-block;
+        width: 4px;
+        height: 1.5rem;
+        background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+        margin-right: 0.75rem;
+        border-radius: 2px;
+      }
 
-{{ else }}
-  <!-- Default Document Layout -->
-  <div class="container py-5">
-    <div class="row">
-      <div class="col">{{ .Content }}</div>
+      .legal-content h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: #475569;
+        margin-top: 1.5rem;
+        margin-bottom: 0.75rem;
+      }
+
+      .legal-content p {
+        font-size: 1rem;
+        line-height: 1.8;
+        color: #475569;
+        margin-bottom: 1.25rem;
+      }
+
+      .legal-content strong {
+        color: #1e293b;
+        font-weight: 600;
+      }
+
+      .legal-content ul,
+      .legal-content ol {
+        margin-left: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .legal-content li {
+        margin-bottom: 0.75rem;
+        line-height: 1.7;
+        color: #475569;
+      }
+
+      .legal-content a {
+        color: #3b82f6;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      .legal-content a:hover {
+        color: #2563eb;
+        text-decoration: underline;
+      }
+
+      .legal-content hr {
+        border: 0;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, #cbd5e1, transparent);
+        margin: 2rem 0;
+      }
+
+      /* Info Boxes */
+      .legal-content blockquote {
+        background: #f1f5f9;
+        border-left: 4px solid #3b82f6;
+        padding: 1.25rem 1.5rem;
+        margin: 1.5rem 0;
+        border-radius: 8px;
+      }
+
+      @keyframes float-legal {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .legal-content-card {
+          padding: 2rem 1.5rem;
+        }
+
+        .legal-title {
+          font-size: 2rem;
+        }
+
+        .legal-icon {
+          font-size: 3rem;
+        }
+
+        .legal-content h1 {
+          font-size: 1.75rem;
+        }
+
+        .legal-content h2 {
+          font-size: 1.25rem;
+        }
+      }
+    </style>
+  {{ else if or (eq .Title "Adhesion") (eq .Title "Adhésion") }}
+    <!-- Adhesion Layout -->
+    <div class="container-flex">
+      <div class="row">
+        <div class="col">{{ .Content }}</div>
+      </div>
     </div>
-  </div>
-{{ end }}
+    {{ partial "mali-villages-map-interactive.html" . }}
+  {{ else }}
+    <!-- Default Document Layout -->
+    <div class="container py-5">
+      <div class="row">
+        <div class="col">{{ .Content }}</div>
+      </div>
+    </div>
+  {{ end }}
 
 {{ end }}

@@ -1,25 +1,23 @@
-{{/*
-  Gallery Item Shortcode
-  
+{{/* Gallery Item Shortcode
+
   Purpose: Individual gallery item for use within image-gallery shortcode
-  
+
   Parameters:
   - src: Image source path (required)
   - title: Card title (required)
   - description: Card description text (required)
   - icon: Emoji or icon to display before title (optional)
   - alt: Alt text for image (optional, defaults to title)
-  
-  Usage:
-  {{< gallery-item 
-      src="/img/photo.jpg" 
-      title="Photo Title" 
-      description="Description of the photo"
-      icon="📸"
-      alt="Alternative text"
-  >}}
-*/}}
 
+  Usage:
+  {{< gallery-item
+  src="/img/photo.jpg"
+  title="Photo Title"
+  description="Description of the photo"
+  icon="📸"
+  alt="Alternative text"
+>}}
+*/}}
 {{ $src := .Get "src" }}
 {{ $title := .Get "title" }}
 {{ $description := .Get "description" }}
@@ -27,14 +25,22 @@
 {{ $alt := default $title (.Get "alt") }}
 {{ $dataTitle := printf "%s - %s" $title $description }}
 
+
 <div class="col">
   <div class="card h-100 shadow-sm gallery-card">
-    <a href="{{ $src }}" data-lightbox="image-gallery" data-title="{{ $dataTitle }}">
-      <img src="{{ $src }}" class="card-img-top" alt="{{ $alt }}" loading="lazy">
+    <a
+      href="{{ $src }}"
+      data-lightbox="image-gallery"
+      data-title="{{ $dataTitle }}">
+      <img
+        src="{{ $src }}"
+        class="card-img-top"
+        alt="{{ $alt }}"
+        loading="lazy" />
     </a>
     <div class="card-body">
       <h5 class="card-title">
-        {{ if $icon }}{{ $icon }} {{ end }}{{ $title }}
+        {{ if $icon }}{{ $icon }}{{ end }}{{ $title }}
       </h5>
       <p class="card-text">{{ $description }}</p>
     </div>

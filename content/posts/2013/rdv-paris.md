@@ -17,6 +17,7 @@ tags:
 
 villages: []
 ---
+
 {{< details summary="Voir toute l'info" >}}
 Nous contemplons l’idée d’un évènement sur le printemps parisien, pourquoi pas le long des berges du canal.
 Bonne humeur, jetons de poker, boules… Donnez-nous des idées pour organiser une très belle journée ensemble.
@@ -30,4 +31,4 @@ Commentaire by Olivier — 6 mars 2013 @ 19:52
 
 😉{{< /details >}}
 
-- [Paris](/posts/paris/)
+- [Paris](/galleries/paris/)

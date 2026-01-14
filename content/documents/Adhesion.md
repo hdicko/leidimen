@@ -11,10 +11,10 @@ weight: 0
 Coordonnées
 {.text-muted .lead .fst-italic .fs-2 .text-center .fw-bold .bg-primary-subtle .border .rounded-3 .mb-2 .fs-2 }
 ♦ Email  <association@leidimen.com>
-{.text-muted .lead .fst-italic .fw-bold .mb-2  .text-center }
+{.text-muted .lead .fst-italic .fw-bold .mb-2 .text-center }
 
 ♦ Adresse postale Association Leidimen, 14 rue des Pommiers, 91070 Bondoufle.
-{.text-muted .lead .fst-italic .fw-bold .mb-2  }
+{.text-muted .lead .fst-italic .fw-bold .mb-2 }
 
 N’hésitez surtout pas à nous contacter pour toute question, remarque, suggestion, ou simplement pour nous encourager !
 {.text-muted .lead .fst-italic .fw-bold .mb-2 .fs-5 .text-center }
@@ -33,7 +33,3 @@ Devenir membre actif, c’est participer à la vie associative de Leïdimen. Nou
 
 Notre cercle d'intervention se situe au centre du Mali dans la région de Douentza.
 {.text-muted .lead .fst-italic .fs-2 .text-center .fw-bold .bg-primary-subtle .border .rounded-3 .mb-2 .fs-2 }
-
-
-
-

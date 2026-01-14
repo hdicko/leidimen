@@ -82,10 +82,7 @@ tags:
 {{< myimage src="images/abdoulaye.dicko.jpg" >}}
 
 {{< details "Voir le detail" >}}
-{{< typeit
-  tag=h1
-  lifeLike=true
->}}
+{{< typeit tag=h1 lifeLike=true >}}
 Abdoulaye Dicko
 {{< /typeit >}}
 

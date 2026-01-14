@@ -14,12 +14,8 @@ categories:
   - "bureau"
 ---
 
-
 {{< details "A propos de moi" >}}
-{{< typeit
-  tag=h1
-  lifeLike=true
->}}
+{{< typeit tag=h1 lifeLike=true >}}
 Marc Dicko
 {{< /typeit >}}
 

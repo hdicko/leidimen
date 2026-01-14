@@ -39,7 +39,7 @@ Une équipe de bénévoles motivés s'est retroussé les manches pour :
 </div>
 </div>
 
-*Nos bénévoles en plein travail d'inventaire*
+_Nos bénévoles en plein travail d'inventaire_
 
 ---
 
@@ -87,4 +87,4 @@ Si ce genre d'action vous intéresse, **n'hésitez pas à nous en faire part** !
 💼 **Aucune compétence spécifique** requise, juste de la bonne volonté  
 ⏰ **Quelques heures de votre temps** peuvent faire une grande différence
 
-*Ensemble, préparons l'avenir éducatif des jeunes Maliens !* 🌍✨
+_Ensemble, préparons l'avenir éducatif des jeunes Maliens !_ 🌍✨

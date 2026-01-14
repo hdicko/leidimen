@@ -5,6 +5,7 @@
 ### Modifications apportées
 
 #### 1. Nettoyage des fichiers inutilisés
+
 - ✅ Supprimé `layouts/shortcodes/load-photoswipe-theme.html.bak`
 - ✅ Supprimé `layouts/_default/list-backup.html`
 - ✅ Supprimé `layouts/_default/list-original.html`
@@ -16,6 +17,7 @@
 #### 2. Refactoring PhotoSwipe - Architecture modulaire
 
 **Problème identifié:**
+
 - Code PhotoSwipe dupliqué dans `gallery.html` et `load-photoswipe.html`
 - ~100 lignes de code répétées
 - Maintenance difficile
@@ -24,21 +26,25 @@
 Création de 2 partials réutilisables :
 
 **`layouts/partials/photoswipe-resources.html`**
+
 - Charge jQuery
 - Charge les CSS PhotoSwipe
 - Charge les JS PhotoSwipe
 - Charge le script d'initialisation
 
 **`layouts/partials/photoswipe-structure.html`**
+
 - Structure HTML du lightbox PhotoSwipe
 - Conteneur pswp avec tous les contrôles
 - Réutilisable dans tous les contextes
 
 **Fichiers refactorisés:**
+
 - ✅ `layouts/shortcodes/gallery.html` - Réduit de ~55 lignes à 5 lignes
 - ✅ `layouts/shortcodes/load-photoswipe.html` - Réduit de ~107 lignes à 12 lignes
 
 **Avantages:**
+
 - ✅ DRY (Don't Repeat Yourself)
 - ✅ Maintenance centralisée
 - ✅ Mise à jour facile des versions PhotoSwipe
@@ -77,6 +83,7 @@ layouts/
 ### Tests requis
 
 Après ce refactoring, vérifier:
+
 1. Les galeries d'images fonctionnent correctement
 2. Le lightbox PhotoSwipe s'ouvre et fonctionne
 3. Pas d'erreur de chargement double

@@ -13,6 +13,7 @@ moods: ["Heureux", "Inspiré"]
 ## Un événement culturel majeur
 
 ### 📅 Samedi 7 juillet 2007
+
 ### 📍 Théâtre de Verdure au Heysel - Bruxelles
 
 ---
@@ -42,6 +43,7 @@ Il y aura également une **rencontre entre musiciens belges et musiciens africai
 ## Programme du festival
 
 ### 🎤 Conférence de presse
+
 **Thème** : L'immigration et l'intégration  
 **Intervenants** : Conférenciers d'Afrique, d'Europe et des États-Unis
 
@@ -70,6 +72,7 @@ Les fonds collectés lors de ce festival vont servir à **construire deux école
 ### 🤝 Soutiens
 
 Le festival bénéficie du soutien de :
+
 - Toutes les régions belges
 - La Ville de Bruxelles
 - STIBSN Bruxelles
@@ -88,4 +91,4 @@ Le festival bénéficie du soutien de :
 
 ---
 
-*Une célébration de la culture peule et de la solidarité afro-européenne, au service de l'éducation en Afrique.*
+_Une célébration de la culture peule et de la solidarité afro-européenne, au service de l'éducation en Afrique._

@@ -19,6 +19,7 @@ villages:
 ---
 
 ## 📅 26 février 2007
+
 ### 💻 Les 10 ordinateurs sont arrivés à Bamako !
 
 <div class="alert alert-success shadow-sm mb-4" role="alert">
@@ -64,18 +65,8 @@ villages:
 
 {{< image-gallery >}}
 
-{{< gallery-item 
-    src="/img/art-musique/desfes_band_02.jpg" 
-    title="Bayefall Gnawa Band" 
-    description="Le groupe en action, mêlant traditions sénégalaises et marocaines dans un style unique."
-    icon="🎸"
->}}
+{{< gallery-item src="/img/art-musique/desfes_band_02.jpg" title="Bayefall Gnawa Band" description="Le groupe en action, mêlant traditions sénégalaises et marocaines dans un style unique." icon="🎸" >}}
 
-{{< gallery-item 
-    src="/img/art-musique/thierry_01.jpg" 
-    title="Thierry de Bayefall Gnawa" 
-    description="Membre talentueux du groupe, incarnant la fusion des cultures musicales."
-    icon="🎤"
->}}
+{{< gallery-item src="/img/art-musique/thierry_01.jpg" title="Thierry de Bayefall Gnawa" description="Membre talentueux du groupe, incarnant la fusion des cultures musicales." icon="🎤" >}}
 
 {{< /image-gallery >}}

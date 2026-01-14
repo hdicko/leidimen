@@ -11,11 +11,13 @@ Netlify CMS est maintenant configuré pour le site Leidimen. Vous pouvez gérer 
 ### 1. Démarrer les serveurs (en développement local)
 
 **Terminal 1 - Proxy Netlify CMS:**
+
 ```bash
 npx netlify-cms-proxy-server
 ```
 
 **Terminal 2 - Hugo:**
+
 ```bash
 hugo server -D
 # ou utilisez votre script
@@ -25,6 +27,7 @@ hugo server -D
 ### 2. Accéder à l'interface d'administration
 
 Ouvrir dans votre navigateur:
+
 - **Local:** http://localhost:1313/leidimen/admin/
 - **Production:** https://hdicko.github.io/leidimen/admin/ (après déploiement)
 
@@ -40,11 +43,13 @@ Ouvrir dans votre navigateur:
 4. Remplir le formulaire:
 
 **Champs obligatoires:**
+
 - **Titre:** Le titre de votre article
 - **Date de publication:** Sélectionner la date
 - **Contenu:** Rédiger l'article en Markdown
 
 **Champs recommandés:**
+
 - **Description courte:** Pour le SEO (150-160 caractères)
 - **Image principale:** Télécharger une image (max 2MB)
 - **Villages concernés:** Sélectionner dans la liste
@@ -138,6 +143,7 @@ Expliquer le contexte et pourquoi ce sujet est important pour Leidimen et les co
 ### Point clé 1
 
 Développement détaillé du premier aspect avec:
+
 - Des faits concrets
 - Des chiffres si disponibles
 - Des témoignages
@@ -158,6 +164,7 @@ Troisième élément avec des détails pertinents.
 ## 📊 Résultats / Impact
 
 Présenter les résultats obtenus ou attendus:
+
 - Impact quantitatif (nombres, statistiques)
 - Impact qualitatif (améliorations, changements)
 - Bénéficiaires directs et indirects
@@ -187,21 +194,26 @@ Projets futurs, prochaines étapes, ou comment contribuer.
 ## 🎨 Éléments de contenu disponibles
 
 ### Titres et sections
+
 ```markdown
 ## Titre niveau 2
+
 ### Titre niveau 3
+
 #### Titre niveau 4
 ```
 
 ### Mise en forme du texte
+
 ```markdown
 **Texte en gras**
-*Texte en italique*
-***Texte gras et italique***
+_Texte en italique_
+**_Texte gras et italique_**
 ~~Texte barré~~
 ```
 
 ### Listes
+
 ```markdown
 - Liste à puces
 - Item 2
@@ -212,35 +224,41 @@ Projets futurs, prochaines étapes, ou comment contribuer.
 ```
 
 ### Liens et images
+
 ```markdown
 [Texte du lien](https://example.com)
 ![Texte alternatif de l'image](/images/photo.jpg)
 ```
 
 ### Citations
+
 ```markdown
 > Citation importante
 > Sur plusieurs lignes
 ```
 
 ### Tableaux
+
 ```markdown
 | Colonne 1 | Colonne 2 | Colonne 3 |
-|-----------|-----------|-----------|
+| --------- | --------- | --------- |
 | Donnée 1  | Donnée 2  | Donnée 3  |
 | Donnée 4  | Donnée 5  | Donnée 6  |
 ```
 
 ### Shortcodes Hugo disponibles
+
 ```markdown
 {{< figure src="/images/photo.jpg" title="Légende" >}}
 
 {{< youtube VIDEO_ID >}}
 
 {{< highlight python >}}
+
 # Code avec coloration syntaxique
+
 def hello():
-    print("Hello!")
+print("Hello!")
 {{< /highlight >}}
 ```
 
@@ -249,26 +267,31 @@ def hello():
 ## 📁 Collections disponibles dans Netlify CMS
 
 ### 1. 📝 Articles (Posts)
+
 - Articles de blog, actualités, rapports d'activité
 - Support complet des taxonomies (villages, moods, catégories, tags)
 - Gestion des images et médias
 
 ### 2. 👥 Équipe (Team Members)
+
 - Profils des membres du bureau et adhérents
 - Photos, fonctions, coordonnées
 - Spécialités et biographies
 
 ### 3. 🏘️ Villages
+
 - Informations sur chaque village
 - Population, coordonnées GPS
 - Projets en cours
 
 ### 4. 📄 Documents
+
 - Rapports, politiques, formulaires
 - Téléchargement de PDF
 - Types: Rapport, Statuts, Adhésion, etc.
 
 ### 5. 📸 Galeries
+
 - Albums photos d'événements
 - Légendes et crédits photo
 - Géolocalisation
@@ -278,14 +301,17 @@ def hello():
 ## 🎯 Bonnes pratiques
 
 ### Pour les titres
+
 ✅ **Bon:** "Inauguration de la nouvelle école de Dorool - Octobre 2025"  
 ❌ **À éviter:** "nouvelle école"
 
 ### Pour les descriptions
+
 ✅ **Bon:** "L'école de Dorool accueille 150 élèves dans ses nouvelles classes équipées grâce au soutien de Leidimen et de ses donateurs."  
 ❌ **À éviter:** "Une école."
 
 ### Pour les images
+
 - **Format:** JPG (photos), PNG (graphiques/logos)
 - **Taille:** Max 2 MB, optimisées pour le web
 - **Dimensions:** 1200x630px pour partage social optimal
@@ -293,6 +319,7 @@ def hello():
 - **Texte alt:** Description pour accessibilité
 
 ### Pour le contenu
+
 - Paragraphes courts (3-4 lignes max)
 - Sous-titres pour structurer
 - Listes pour la lisibilité
@@ -301,6 +328,7 @@ def hello():
 - Chiffres et données concrètes
 
 ### Pour le SEO
+
 - Titre unique et descriptif
 - Description meta de 150-160 caractères
 - URL propre (slug automatique)
@@ -338,6 +366,7 @@ static/admin/
 ### Configuration actuelle (config.yml)
 
 Le fichier `static/admin/config.yml` contient:
+
 - ✅ Backend Git Gateway configuré
 - ✅ Local backend activé pour développement
 - ✅ Médias dans `static/images/uploads/`
@@ -401,6 +430,7 @@ Le fichier `static/admin/config.yml` contient:
 ### Problèmes courants
 
 **1. L'admin ne se charge pas**
+
 ```bash
 # Vérifier que les serveurs sont démarrés
 ps aux | grep hugo
@@ -412,16 +442,19 @@ hugo server -D
 ```
 
 **2. Impossible de sauvegarder**
+
 - Vérifier les permissions Git
 - Vérifier la connexion internet
 - Consulter la console navigateur (F12)
 
 **3. Images ne s'affichent pas**
+
 - Vérifier le chemin: `/images/uploads/nom-fichier.jpg`
 - Vérifier que l'image existe dans `static/images/uploads/`
 - Format supporté: JPG, PNG, GIF
 
 **4. Les modifications ne sont pas visibles**
+
 - Attendre quelques secondes (rebuild auto)
 - Rafraîchir: Ctrl+F5 (Windows) ou Cmd+Shift+R (Mac)
 - Vérifier que `draft: false`

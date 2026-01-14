@@ -28,5 +28,4 @@ draft: false
 2. **Prévisualiser** (optionnel) pour vérifier le Markdown généré
 
 3. Cocher **"Enregistrer comme brouillon"** si vous ne voulez pas publier immédi
-atement
-
+   atement

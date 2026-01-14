@@ -18,4 +18,5 @@ villages:
   - "dorool"
   - "douentza"
 ---
-***A﻿I Claude content***
+
+**_A﻿I Claude content_**

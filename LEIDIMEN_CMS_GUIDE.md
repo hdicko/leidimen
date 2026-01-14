@@ -21,6 +21,7 @@ python3 leidimen-cms.py
 ### 1. Créer un nouveau post (article simple)
 
 Cette option crée un article standard avec :
+
 - Titre
 - Date de publication
 - Villages associés
@@ -41,7 +42,7 @@ Cette option crée un article standard avec :
 📌 Titre du post: Construction d'une école à Dorool
    → Slug: construction-d-une-ecole-a-dorool
 
-📅 Date de publication [2025-11-04]: 
+📅 Date de publication [2025-11-04]:
 
 🏘️  Sélection des villages
 Choisissez le(s) village(s):
@@ -112,6 +113,7 @@ Contenu    : 156 caractères
 Cette option crée une structure de **page bundle** pour les posts avec plusieurs photos.
 
 **Workflow :**
+
 1. Le CMS crée le dossier `content/posts/YEAR/slug/`
 2. Crée le fichier `index.md` avec le frontmatter
 3. Ajoute automatiquement le shortcode `{{< gallery >}}`
@@ -124,7 +126,7 @@ Cette option crée une structure de **page bundle** pour les posts avec plusieur
 📸 CRÉATION D'UN POST AVEC GALERIE
 
 📌 Titre du post: Photos de la fête du village
-📅 Date de publication [2025-11-04]: 
+📅 Date de publication [2025-11-04]:
 🏘️  Villages: dorool
 📂 Catégorie: Culture
 😊 Mood: heureux
@@ -150,22 +152,26 @@ Affiche les 10 derniers posts créés avec leurs chemins.
 ## 🎯 Avantages du CMS
 
 ### ✅ Simplicité
+
 - Interface guidée pas à pas
 - Validation automatique des entrées
 - Pas besoin de connaître la syntaxe YAML
 
 ### ✅ Rapidité
+
 - Création d'un post en 2 minutes
 - Commit et push automatiques
 - Slug généré automatiquement
 
 ### ✅ Cohérence
+
 - Frontmatter standardisé
 - Villages en minuscules (comme requis)
 - Format de date correct
 - Structure de fichiers respectée
 
 ### ✅ Intégration Git
+
 - Commit automatique avec message formaté
 - Push direct sur GitHub
 - Ou option de commit manuel
@@ -173,6 +179,7 @@ Affiche les 10 derniers posts créés avec leurs chemins.
 ## 📝 Données de référence
 
 ### Villages disponibles
+
 - dorool
 - diona
 - debere
@@ -185,6 +192,7 @@ Affiche les 10 derniers posts créés avec leurs chemins.
 - douentza
 
 ### Catégories
+
 - Éducation
 - Santé
 - Infrastructure
@@ -193,6 +201,7 @@ Affiche les 10 derniers posts créés avec leurs chemins.
 - Économie
 
 ### Moods
+
 - heureux
 - triste
 - inspiré
@@ -229,6 +238,7 @@ MOODS = ["heureux", "triste", ..., "nouveau_mood"]
 ## ⚙️ Configuration
 
 Le script détecte automatiquement :
+
 - Le chemin du repository (où se trouve le script)
 - L'owner GitHub (`hdicko`)
 - Le nom du repo (`leidimen`)
@@ -290,16 +300,16 @@ ssh -T git@github.com
 
 ## 📚 Comparaison avec Netlify CMS
 
-| Fonctionnalité | Leidimen CMS (CLI) | Netlify CMS |
-|----------------|-------------------|-------------|
-| Interface | Terminal | Web GUI |
-| Galeries multi-images | ✅ Oui (page bundle) | ❌ Limité |
-| Rapidité | ⚡ Très rapide | 🐌 Plus lent |
-| Offline | ✅ Fonctionne | ❌ Nécessite serveur |
-| Validation | ✅ Stricte | ⚠️ Variable |
-| Learning curve | 📖 Facile | 📖 Très facile |
-| Prévisualisation | ❌ Non | ✅ Oui |
-| Upload images | ❌ Manuel | ✅ Drag & drop |
+| Fonctionnalité        | Leidimen CMS (CLI)   | Netlify CMS          |
+| --------------------- | -------------------- | -------------------- |
+| Interface             | Terminal             | Web GUI              |
+| Galeries multi-images | ✅ Oui (page bundle) | ❌ Limité            |
+| Rapidité              | ⚡ Très rapide       | 🐌 Plus lent         |
+| Offline               | ✅ Fonctionne        | ❌ Nécessite serveur |
+| Validation            | ✅ Stricte           | ⚠️ Variable          |
+| Learning curve        | 📖 Facile            | 📖 Très facile       |
+| Prévisualisation      | ❌ Non               | ✅ Oui               |
+| Upload images         | ❌ Manuel            | ✅ Drag & drop       |
 
 **Recommandation :** Utilisez **Leidimen CMS** pour les galeries et les posts techniques, **Netlify CMS** pour l'édition rapide avec prévisualisation.
 
@@ -331,14 +341,17 @@ Créez des templates pour les types de posts récurrents dans `templates/` :
 
 ```markdown
 # templates/school-opening.md
+
 Nous sommes ravis d'annoncer l'ouverture de l'école de {VILLAGE}.
 
 ## Caractéristiques
+
 - Capacité : {CAPACITY} élèves
 - Salles de classe : {CLASSROOMS}
 - Enseignants : {TEACHERS}
 
 ## Financement
+
 Ce projet a été rendu possible grâce à...
 ```
 
@@ -347,6 +360,7 @@ Puis intégrez-les dans le CMS.
 ## 📞 Support
 
 Pour toute question ou problème :
+
 1. Consultez la documentation Hugo : `hugo.toml`, `QUICK_REFERENCE.md`
 2. Vérifiez les logs Git : `git log --oneline`
 3. Testez en local : `npm run dev`

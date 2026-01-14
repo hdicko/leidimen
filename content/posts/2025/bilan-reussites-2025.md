@@ -20,8 +20,8 @@ tags:
 villages: []
 ---
 
-
 {{< details summary="lire tout l'article" >}}
+
 ## Une année riche en réalisations
 
 L'année 2025 a été marquée par de nombreuses réussites dans nos actions de solidarité entre Bondoufle et les villages du Mali. Retour sur nos principales réalisations.
@@ -40,6 +40,7 @@ Nos actions ont directement bénéficié à plus de 1000 personnes dans la régi
 ### Perspectives 2026
 
 Fort de ces succès, nous préparons déjà les projets pour 2026 avec notamment :
+
 - Extension du réseau d'accès à l'eau
 - Création d'un centre de formation professionnelle
 - Programme d'échange culturel entre jeunes français et maliens
@@ -50,5 +51,5 @@ Ces réussites n'auraient pas été possibles sans le soutien de nos donateurs, 
 
 ---
 
-*Rejoignez-nous pour construire ensemble un avenir meilleur.*
+_Rejoignez-nous pour construire ensemble un avenir meilleur._
 {{< /details >}}

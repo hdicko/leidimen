@@ -7,6 +7,7 @@ title: Documents
 ---
 
 ---
+
 { .border .border-danger .border-2 .opacity-50}
 
 ADPEK - Association pour le developpement et la promotion de l’education de Korarou
@@ -24,13 +25,12 @@ ADPEK - Association pour le developpement et la promotion de l’education de Ko
 
 [Rapport sur la première étape ](leidimen/ADPEK-etape1.pdf)
 
-
 ---
 
 { .border .border-danger .border-2 .opacity-50}
 
 References
-{ .display-6  .text-center}
+{ .display-6 .text-center}
 
 [Reflexions sur le conflit peulh Boni - Douentza](references/conflit-peulh-boni-dtza.pdf)
 
@@ -40,9 +40,7 @@ References
 
 [Le plan d'aménagement de la région de Douentza entre 2012 et 2022](Douentza/Douentza1.pdf)
 
-
 [Alphabet adlan - Wikipedia](fulfulde/fulfulde.pdf)
-
 
 ---
 

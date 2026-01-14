@@ -1,8 +1,9 @@
 # 🚨 ERREUR: Unable to access identity settings
 
 ## ❌ Problème
+
 ```
-Unable to access identity settings. When using git-gateway backend 
+Unable to access identity settings. When using git-gateway backend
 make sure to enable Identity service and Git Gateway.
 ```
 
@@ -13,29 +14,35 @@ Vous devez activer Netlify Identity sur votre site Netlify. Voici les étapes **
 ---
 
 ### **ÉTAPE 1: Aller sur Netlify**
+
 1. Ouvrez votre navigateur
 2. Allez sur: **https://app.netlify.com**
 3. Connectez-vous avec votre compte
 
 ### **ÉTAPE 2: Sélectionner votre site**
+
 1. Dans la liste des sites, cliquez sur **leidimen** (ou votre nom de site)
 
 ### **ÉTAPE 3: Activer Identity**
+
 1. Dans le menu de gauche, cliquez sur **"Site configuration"**
 2. Puis cliquez sur **"Identity"**
 3. Vous verrez un bouton **"Enable Identity"**
 4. **Cliquez dessus** ✅
 
 ### **ÉTAPE 4: Activer Git Gateway**
+
 1. Une fois Identity activé, descendez dans la même page
 2. Trouvez la section **"Services"**
 3. Cliquez sur **"Enable Git Gateway"** ✅
 
 ### **ÉTAPE 5: Configurer la sécurité**
+
 1. Dans **"Registration"**, sélectionnez **"Invite only"** (recommandé)
 2. Cela empêche n'importe qui de créer un compte
 
 ### **ÉTAPE 6: Inviter des utilisateurs**
+
 1. Retournez à l'onglet **"Identity"** (en haut)
 2. Cliquez sur **"Invite users"**
 3. Entrez votre email (et celui des autres admins)

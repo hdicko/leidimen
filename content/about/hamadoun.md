@@ -102,14 +102,10 @@ tags:
 
 {{< myimage src="images/hd-thumb.jpg" >}}
 
-
 ---
 
 {{< details "A propos de moi" >}}
-{{< typeit
-  tag=h1
-  lifeLike=true
->}}
+{{< typeit tag=h1 lifeLike=true >}}
 Dicko Hamadi Pathe Ameri Diona
 {{< /typeit >}}
 
@@ -121,4 +117,4 @@ Hamadoun apporte son expertise technique à l'association Leidimen en assurant l
 
 - Email: <dicko.hamadoun@gmail.com>
 - Twitter: [@HamadounDicko](https://www.twitter.com/@HamadounDicko)
-{{< /details >}}
+  {{< /details >}}

@@ -1,14 +1,13 @@
-{{/* 
-  Template: 404.html
+{{/* Template: 404.html
   Purpose: Error page for non-existent URLs
   Context: Displayed when a page is not found (404 HTTP error)
-  
+
   Features:
   - Large "404" display
   - Error message in French
   - Centered layout with vertical centering
   - Full viewport height
-  
+
   Design:
   - Bootstrap utility classes
   - Bold display heading
@@ -17,24 +16,23 @@
 
 {{ define "main" }}
 
-<body>
-  {{/* 
-    Centered 404 error display
-    - d-flex: Flexbox container
-    - align-items-center: Vertical center
-    - justify-content-center: Horizontal center
-    - vh-100: Full viewport height
-  */}}
-  <div class="d-flex align-items-center justify-content-center vh-100">
-    <div class="text-center">
-      {{/* Large 404 heading */}}
-      <h1 class="display-1 fw-bold">404</h1>
-      
-      {{/* Error message */}}
-      <p class="fs-3">
-        <span class="text-danger">Opps!</span> Cette page n'existe pas
-      </p>
+  <body>
+    {{/* Centered 404 error display
+      - d-flex: Flexbox container
+      - align-items-center: Vertical center
+      - justify-content-center: Horizontal center
+      - vh-100: Full viewport height
+    */}}
+    <div class="d-flex align-items-center justify-content-center vh-100">
+      <div class="text-center">
+        {{/* Large 404 heading */}}
+        <h1 class="display-1 fw-bold">404</h1>
+
+        {{/* Error message */}}
+        <p class="fs-3">
+          <span class="text-danger">Opps!</span> Cette page n'existe pas
+        </p>
+      </div>
     </div>
-  </div>
-</body>
+  </body>
 {{ end }}

@@ -2,10 +2,10 @@
 // Color palette
 $primary: #0464a1;
 $secondary: #adb5bd; // = $gray-500
-$success: #2A9D8F;
-$info: #E9C46A;
-$warning: #F4A261;
-$danger: #E76F51;
+$success: #2a9d8f;
+$info: #e9c46a;
+$warning: #f4a261;
+$danger: #e76f51;
 $light: #dee2e6; // = $gray-300
 $dark: #343a40; // $gray-800
 
@@ -18,17 +18,17 @@ $enable-shadows: true;
 $spacer: 1.5rem;
 $spacers: (
   0: 0,
-  1: $spacer * .25,
-  2: $spacer * .5,
+  1: $spacer * 0.25,
+  2: $spacer * 0.5,
   3: $spacer,
   4: $spacer * 2,
   5: $spacer * 4,
 );
 
 // Border radius
-$border-radius: .5rem;
-$border-radius-sm: .25rem;
-$border-radius-lg: .75rem;
+$border-radius: 0.5rem;
+$border-radius-sm: 0.25rem;
+$border-radius-lg: 0.75rem;
 
 // LAYOUT
 // Breakpoints
@@ -38,7 +38,7 @@ $grid-breakpoints: (
   md: 808px,
   lg: 1032px,
   xl: 1240px,
-  xxl: 1440px
+  xxl: 1440px,
 );
 
 // Container
@@ -47,12 +47,12 @@ $container-max-widths: (
   md: 760px,
   lg: 1000px,
   xl: 1180px,
-  xxl: 1360px
+  xxl: 1360px,
 );
 
 // FORMS
 // Inputs and buttons
-$input-btn-padding-y: .5rem;
+$input-btn-padding-y: 0.5rem;
 $input-btn-padding-x: 1em;
 
 // COMPONENTS
@@ -69,16 +69,16 @@ $dropdown-min-width: 0;
 
 // Modal
 $modal-lg: 900px;
-$modal-backdrop-opacity: .75;
-$modal-fade-transform: rotate(5deg) scale(.9);
+$modal-backdrop-opacity: 0.75;
+$modal-fade-transform: rotate(5deg) scale(0.9);
 
 // Navs
 $nav-link-padding-y: 1rem;
 
 // Progress
 $progress-height: 2rem;
-$progress-bar-animation-timing: .5s linear infinite;
-$progress-bar-transition: width .4s ease;
+$progress-bar-animation-timing: 0.5s linear infinite;
+$progress-bar-transition: width 0.4s ease;
 
 // Spinner
 $spinner-animation-speed: 1s;

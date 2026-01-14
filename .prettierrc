@@ -1,12 +1,8 @@
 {
-  "plugins": [
-    "prettier-plugin-go-template"
-  ],
+  "plugins": ["prettier-plugin-go-template"],
   "overrides": [
     {
-      "files": [
-        "*.html"
-      ],
+      "files": ["*.html"],
       "options": {
         "parser": "go-template",
         "goTemplateBracketSpacing": true,
@@ -14,10 +10,7 @@
       }
     },
     {
-      "files": [
-        "*.js",
-        "*.ts"
-      ],
+      "files": ["*.js", "*.ts"],
       "options": {
         "useTabs": true,
         "printWidth": 120,
@@ -26,4 +19,3 @@
     }
   ]
 }
-

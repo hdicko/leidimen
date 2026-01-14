@@ -103,6 +103,7 @@ Mariam Dicko est un membre dévoué du Conseil d'Administration de l'Association
 Diplômée en Sciences de l'Éducation de l'Université de Paris, Mariam a consacré sa carrière à l'enseignement de l'anglais dans le secondaire. Elle a également participé à plusieurs programmes d'échange éducatif entre la France et l'Afrique de l'Ouest, ce qui lui a donné une compréhension approfondie des défis éducatifs dans la région.
 
 **Expérience clé :**
+
 - **2015-2024** : Professeure d'anglais au Lycée Jean Moulin, Paris
 - **2018-2020** : Coordinatrice du programme d'échange France-Mali
 - **2012-2015** : Formatrice en anglais pour adultes, Centre de formation professionnelle
@@ -112,6 +113,7 @@ Diplômée en Sciences de l'Éducation de l'Université de Paris, Mariam a consa
 Passionnée par l'éducation et le développement rural, Mariam s'investit particulièrement dans les projets éducatifs de l'association. Elle coordonne les initiatives de formation en anglais destinées aux jeunes des villages partenaires et supervise les programmes d'échange culturel.
 
 **Responsabilités au sein de l'association :**
+
 - Coordination des projets éducatifs
 - Formation linguistique des bénévoles
 - Liaison avec les partenaires éducatifs internationaux
@@ -128,7 +130,7 @@ Mariam croit fermement que l'éducation est la clé du développement durable. S
 
 ### Citation
 
-*"L'éducation ne se limite pas à l'apprentissage des langues ou des matières scolaires. C'est un pont entre les cultures, un outil d'émancipation et une source d'espoir pour nos communautés au Mali."*
+_"L'éducation ne se limite pas à l'apprentissage des langues ou des matières scolaires. C'est un pont entre les cultures, un outil d'émancipation et une source d'espoir pour nos communautés au Mali."_
 
 ### Contact et collaboration
 

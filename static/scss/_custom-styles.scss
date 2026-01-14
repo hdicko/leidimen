@@ -1,6 +1,3 @@
-
-
-
 .blog-preview-section {
   padding: 2rem 0;
 }
@@ -75,11 +72,9 @@
   }
 }
 
-
-
 // Customize the left border of the alert component
 .alert {
-  border-left: ($spacer * .5) solid;
+  border-left: ($spacer * 0.5) solid;
 }
 
 // Customize the background color and bottom border of the header of the offcanvas component
@@ -101,53 +96,87 @@ $accordion-icon-color: #007bff;
 }
 
 .gradient-striped {
-@include gradient-striped();
+  @include gradient-striped();
 }
 
 .bg-primary-tinted {
-background-color: tint-color($primary, 90%);
+  background-color: tint-color($primary, 90%);
 }
 
 .bg-primary-shaded {
-background-color: shade-color($primary, 25%);
+  background-color: shade-color($primary, 25%);
 }
 
 // Create a custom jumbotron component that extends various
 // Bootstrap 5 classes
 .jumbotron {
-@extend .bg-light, .py-5, .mb-5, .text-center;
+  @extend .bg-light, .py-5, .mb-5, .text-center;
 }
 
 .footer-border {
-@extend  .text-center, .text-lg-start, .border, .border-5, .border-senary, .rounded, .mt-4, .bg-gray-400!optional;
+  @extend .text-center,
+    .text-lg-start,
+    .border,
+    .border-5,
+    .border-senary,
+    .rounded,
+    .mt-4,
+    .bg-gray-400!optional;
 }
 
 // Create a custom quote component that extends various Bootstrap 5 classes
 .quote {
-@extend .blockquote;
+  @extend .blockquote;
 }
 
 .quote-border {
-  @extend .border-bottom, .border-2, .border-light, .mb-4,
-.pb-4, .border-bottom-md-0, .border-end-md, .border-md-2, .pb-md-0, .mb-md-0, .border-bottom-xl, .border-end-xl-0, .border-xl-2, .pb-xl-4, .mb-xl-4, .border-bottom,
-.border-2, .border-light, .mb-4, .pb-4, .border-bottom-md-0, .border-end-md, .border-md-2, .pb-md-0,
-.mb-md-0, .border-bottom-xl, .border-end-xl-0, .border-xl-2, .pb-xl-4, .mb-xl-4;
+  @extend .border-bottom,
+    .border-2,
+    .border-light,
+    .mb-4,
+    .pb-4,
+    .border-bottom-md-0,
+    .border-end-md,
+    .border-md-2,
+    .pb-md-0,
+    .mb-md-0,
+    .border-bottom-xl,
+    .border-end-xl-0,
+    .border-xl-2,
+    .pb-xl-4,
+    .mb-xl-4,
+    .border-bottom,
+    .border-2,
+    .border-light,
+    .mb-4,
+    .pb-4,
+    .border-bottom-md-0,
+    .border-end-md,
+    .border-md-2,
+    .pb-md-0,
+    .mb-md-0,
+    .border-bottom-xl,
+    .border-end-xl-0,
+    .border-xl-2,
+    .pb-xl-4,
+    .mb-xl-4;
 }
 
 //root
 
 :root {
---bs-primary: red;
---bs-secondary: green;
---bs-success: blue;
---bs-primary-rgb: #{to-rgb(red)};
---bs-secondary-rgb: #{to-rgb(green)};
---bs-success-rgb: #{to-rgb(blue)};
+  --bs-primary: red;
+  --bs-secondary: green;
+  --bs-success: blue;
+  --bs-primary-rgb: #{to-rgb(red)};
+  --bs-secondary-rgb: #{to-rgb(green)};
+  --bs-success-rgb: #{to-rgb(blue)};
 }
 
 .bg-primary {
---bs-bg-opacity: 1;
-background-color: rgba(var(--bs-primary-rgb), var(--bs-
-bg-opacity)) !important;
+  --bs-bg-opacity: 1;
+  background-color: rgba(
+    var(--bs-primary-rgb),
+    var(--bs- bg-opacity)
+  ) !important;
 }
-

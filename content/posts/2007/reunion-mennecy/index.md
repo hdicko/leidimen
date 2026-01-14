@@ -33,6 +33,7 @@ Une rencontre est prévue **fin novembre** afin de définir d'éventuels objecti
 ### Priorités du Conseil d'Administration
 
 Le CA doit se réunir bientôt pour :
+
 - Effectuer un **bilan financier**
 - Prendre des décisions notamment pour la suite des **projets en cours**
 
@@ -61,4 +62,4 @@ Il est important de trouver rapidement des **financements** et de rédiger les *
 
 > Merci à tous les participants pour leur engagement et leurs contributions aux discussions !
 
-*Moussa*
+_Moussa_

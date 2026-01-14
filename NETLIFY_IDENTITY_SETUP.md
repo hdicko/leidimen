@@ -42,6 +42,7 @@ Dans **Identity** → **Registration preferences**, choisissez :
 ### 5. Configurer la confirmation d'email (optionnel)
 
 Dans **Identity** → **Emails**, vous pouvez personnaliser :
+
 - Email de confirmation
 - Email de récupération de mot de passe
 - Email d'invitation
@@ -51,24 +52,29 @@ Dans **Identity** → **Emails**, vous pouvez personnaliser :
 Les fichiers suivants ont été mis à jour pour supporter Netlify Identity :
 
 ### 1. `/static/admin/index.html`
+
 ```html
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 ```
+
 ✅ Déjà présent
 
 ### 2. `/layouts/partials/head.html`
+
 ```html
 <!-- Netlify Identity Widget -->
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 ```
+
 ✅ Ajouté
 
 ### 3. `/layouts/_default/baseof.html`
+
 ```html
 <!-- Netlify Identity Widget -->
 <script>
   if (window.netlifyIdentity) {
-    window.netlifyIdentity.on("init", user => {
+    window.netlifyIdentity.on("init", (user) => {
       if (!user) {
         window.netlifyIdentity.on("login", () => {
           document.location.href = "/admin/";
@@ -78,6 +84,7 @@ Les fichiers suivants ont été mis à jour pour supporter Netlify Identity :
   }
 </script>
 ```
+
 ✅ Ajouté
 
 ## 🚀 Utilisation
@@ -117,6 +124,7 @@ Les fichiers suivants ont été mis à jour pour supporter Netlify Identity :
 ## 🆓 Coût
 
 Netlify Identity est **GRATUIT** jusqu'à :
+
 - 1 000 utilisateurs actifs/mois
 - 5 000 utilisateurs en base de données
 
@@ -129,6 +137,7 @@ Si vous préférez une solution plus simple (moins sécurisée), vous pouvez uti
 ### Option A : Basic Auth sur Netlify (Payant - Pro plan requis)
 
 Dans `netlify.toml` :
+
 ```toml
 [[redirects]]
   from = "/admin/*"
@@ -136,7 +145,7 @@ Dans `netlify.toml` :
   status = 200
   force = true
   headers = {X-From = "Netlify"}
-  
+
 [context.production]
   [context.production.basic_auth]
     username = "admin"
@@ -145,9 +154,10 @@ Dans `netlify.toml` :
 
 ⚠️ Nécessite un plan Netlify Pro ($19/mois)
 
-### Option B : Protection via _headers (Basique)
+### Option B : Protection via \_headers (Basique)
 
 Créer `/static/_headers` :
+
 ```
 /admin/*
   Basic-Auth: admin:votre-mot-de-passe-encodé
@@ -174,16 +184,20 @@ Créer `/static/_headers` :
 ## 🐛 Dépannage
 
 ### Problème : "Cannot read property 'on' of undefined"
+
 **Solution** : Vérifiez que le script Netlify Identity est bien chargé dans `head.html`
 
 ### Problème : Impossible de se connecter
+
 **Solution** : Vérifiez que Git Gateway est activé dans Netlify
 
 ### Problème : Email d'invitation non reçu
+
 **Solution** : Vérifiez les spams, ou renvoyez l'invitation depuis le dashboard
 
 ## 📞 Support
 
 Pour toute question sur Netlify Identity :
+
 - [Netlify Support](https://www.netlify.com/support/)
 - [Netlify Community Forums](https://answers.netlify.com/)

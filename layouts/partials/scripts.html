@@ -2,10 +2,12 @@
 <script
   src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
   integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-  crossorigin="anonymous"
-></script>
+  crossorigin="anonymous"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+  crossorigin="anonymous"></script>
 
 <script src="/js/color-modes.js"></script>
 
@@ -17,8 +19,7 @@
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script
   async
-  src="https://www.googletagmanager.com/gtag/js?id=UA-25295690-1"
-></script>
+  src="https://www.googletagmanager.com/gtag/js?id=UA-25295690-1"></script>
 
 <!--  google API -->
 <script>
@@ -36,8 +37,7 @@
 <script
   src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
   integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-  crossorigin=""
-></script>
+  crossorigin=""></script>
 
 <!-- openstreetmap -->
 <script>
@@ -77,15 +77,13 @@
   src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"
   integrity="sha512-Ixzuzfxv1EqafeQlTCufWfaC6ful6WFqIz4G+dWvK0beHw0NVJwvCKSgafpy5gwNqKmgUfIBraVwkKI+Cz0SEQ=="
   crossorigin="anonymous"
-  referrerpolicy="no-referrer"
-></script>
+  referrerpolicy="no-referrer"></script>
 
 <!-- jquery -->
 <script
   src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"
-></script>
+  crossorigin="anonymous"></script>
 
 <!-- lightbox -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -118,8 +116,7 @@
 <!--  AlpineJS-->
 <script
   defer
-  src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
-></script>
+  src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
 <!-- https://michalsnik.github.io/aos/ -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -132,8 +129,7 @@
   src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
   integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D"
   crossorigin="anonymous"
-  async
-></script>
+  async></script>
 
 <!-- https://userfront.com/docs/quickstart 
       <script defer src="https://cdn.userfront.com/@userfront/toolkit@latest/dist/web-component.umd.js"></script>
@@ -145,5 +141,5 @@
 <!-- Dark Mode Toggle -->
 {{ $darkmode := resources.Get "js/darkmode.js" }}
 {{ if $darkmode }}
-<script src="{{ $darkmode.RelPermalink }}"></script>
+  <script src="{{ $darkmode.RelPermalink }}"></script>
 {{ end }}

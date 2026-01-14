@@ -1,88 +1,107 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Leidimen CMS - Mode Démo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <div class="container mt-5">
-        <div class="alert alert-warning">
-            <h4><i class="bi bi-info-circle"></i> Mode Démo</h4>
-            <p class="mb-0">
-                Cette page permet de tester l'interface sans serveur backend.
-                Les données ne seront pas sauvegardées sur GitHub.
-            </p>
-        </div>
+      <div class="alert alert-warning">
+        <h4><i class="bi bi-info-circle"></i> Mode Démo</h4>
+        <p class="mb-0">
+          Cette page permet de tester l'interface sans serveur backend. Les
+          données ne seront pas sauvegardées sur GitHub.
+        </p>
+      </div>
 
-        <div class="card">
-            <div class="card-header bg-primary text-white">
-                <h4 class="mb-0"><i class="bi bi-play-circle"></i> Test de l'Interface</h4>
-            </div>
-            <div class="card-body">
-                <p>Pour tester le CMS complet avec GitHub :</p>
-                <ol>
-                    <li>Installer Node.js</li>
-                    <li>Configurer le token GitHub dans <code>.env</code></li>
-                    <li>Lancer <code>npm start</code></li>
-                    <li>Ouvrir <a href="http://localhost:3000">http://localhost:3000</a></li>
-                </ol>
-
-                <div class="mt-4">
-                    <a href="index.html" class="btn btn-primary btn-lg">
-                        <i class="bi bi-rocket"></i> Voir l'interface (mode hors-ligne)
-                    </a>
-                </div>
-            </div>
+      <div class="card">
+        <div class="card-header bg-primary text-white">
+          <h4 class="mb-0">
+            <i class="bi bi-play-circle"></i> Test de l'Interface
+          </h4>
         </div>
+        <div class="card-body">
+          <p>Pour tester le CMS complet avec GitHub :</p>
+          <ol>
+            <li>Installer Node.js</li>
+            <li>Configurer le token GitHub dans <code>.env</code></li>
+            <li>Lancer <code>npm start</code></li>
+            <li>
+              Ouvrir <a href="http://localhost:3000">http://localhost:3000</a>
+            </li>
+          </ol>
 
-        <div class="card mt-4">
-            <div class="card-header bg-success text-white">
-                <h4 class="mb-0"><i class="bi bi-check-circle"></i> Fonctionnalités Disponibles</h4>
-            </div>
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-md-6">
-                        <h5>✅ Interface</h5>
-                        <ul>
-                            <li>Formulaire de création de posts</li>
-                            <li>Validation en temps réel</li>
-                            <li>Prévisualisation Markdown</li>
-                            <li>Design responsive</li>
-                            <li>Animations CSS</li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6">
-                        <h5>🔧 Backend (nécessite serveur)</h5>
-                        <ul>
-                            <li>Création sur GitHub</li>
-                            <li>Commit automatique</li>
-                            <li>Statistiques en direct</li>
-                            <li>Liste des posts</li>
-                            <li>API REST</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+          <div class="mt-4">
+            <a href="index.html" class="btn btn-primary btn-lg">
+              <i class="bi bi-rocket"></i> Voir l'interface (mode hors-ligne)
+            </a>
+          </div>
         </div>
+      </div>
 
-        <div class="card mt-4">
-            <div class="card-header bg-info text-white">
-                <h4 class="mb-0"><i class="bi bi-book"></i> Documentation</h4>
-            </div>
-            <div class="card-body">
-                <ul class="list-unstyled">
-                    <li><i class="bi bi-file-earmark-text"></i> <a href="README.md">README.md</a> - Documentation complète</li>
-                    <li><i class="bi bi-lightning"></i> <a href="QUICKSTART.md">QUICKSTART.md</a> - Guide rapide</li>
-                    <li><i class="bi bi-github"></i> <a href="https://github.com/hdicko/leidimen">Repository GitHub</a></li>
-                </ul>
-            </div>
+      <div class="card mt-4">
+        <div class="card-header bg-success text-white">
+          <h4 class="mb-0">
+            <i class="bi bi-check-circle"></i> Fonctionnalités Disponibles
+          </h4>
         </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-6">
+              <h5>✅ Interface</h5>
+              <ul>
+                <li>Formulaire de création de posts</li>
+                <li>Validation en temps réel</li>
+                <li>Prévisualisation Markdown</li>
+                <li>Design responsive</li>
+                <li>Animations CSS</li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              <h5>🔧 Backend (nécessite serveur)</h5>
+              <ul>
+                <li>Création sur GitHub</li>
+                <li>Commit automatique</li>
+                <li>Statistiques en direct</li>
+                <li>Liste des posts</li>
+                <li>API REST</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card mt-4">
+        <div class="card-header bg-info text-white">
+          <h4 class="mb-0"><i class="bi bi-book"></i> Documentation</h4>
+        </div>
+        <div class="card-body">
+          <ul class="list-unstyled">
+            <li>
+              <i class="bi bi-file-earmark-text"></i>
+              <a href="README.md">README.md</a> - Documentation complète
+            </li>
+            <li>
+              <i class="bi bi-lightning"></i>
+              <a href="QUICKSTART.md">QUICKSTART.md</a> - Guide rapide
+            </li>
+            <li>
+              <i class="bi bi-github"></i>
+              <a href="https://github.com/hdicko/leidimen">Repository GitHub</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+  </body>
 </html>

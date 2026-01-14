@@ -11,33 +11,39 @@ Une fonctionnalité de recherche et de filtrage a été ajoutée à la page de l
 ## Fonctionnalités
 
 ### 1. Recherche par Titre
+
 - Champ de recherche en temps réel
 - Recherche insensible à la casse
 - Filtrage instantané pendant la frappe
 - Placeholder : "Tapez un mot-clé du titre..."
 
 ### 2. Filtre par Année
+
 - Menu déroulant avec toutes les années disponibles
 - Option "Toutes les années" par défaut
 - Liste générée dynamiquement depuis les posts existants
 - Triée de la plus récente à la plus ancienne
 
 ### 3. Options de Tri
+
 - **Plus récents** : Articles triés par date décroissante (défaut)
 - **Plus anciens** : Articles triés par date croissante
 - **Titre (A-Z)** : Articles triés alphabétiquement par titre
 
 ### 4. Compteur de Résultats
+
 - Affiche le nombre d'articles visibles
 - Format : "X articles sur Y" quand filtrage actif
 - Format : "Y articles au total" sans filtrage
 
 ### 5. Bouton de Réinitialisation
+
 - Réinitialise tous les filtres d'un clic
 - Icône : flèche circulaire (bi-arrow-counterclockwise)
 - Restaure l'état par défaut
 
 ### 6. Message "Aucun Résultat"
+
 - Affiché quand aucun article ne correspond aux critères
 - Icône de recherche 🔍
 - Bouton de réinitialisation intégré
@@ -46,9 +52,11 @@ Une fonctionnalité de recherche et de filtrage a été ajoutée à la page de l
 ## Implémentation Technique
 
 ### Fichier Modifié
+
 - `/home/dicko/dev/hugo/hugo_sites/leidimen/layouts/posts/list.html.html`
 
 ### Structure HTML Ajoutée
+
 ```html
 <!-- Search and Filters Section -->
 <div class="row mb-5">
@@ -68,13 +76,17 @@ Une fonctionnalité de recherche et de filtrage a été ajoutée à la page de l
 ```
 
 ### Attributs Data Ajoutés aux Cartes
+
 Chaque carte d'article (`post-card-ctx7`) possède maintenant :
+
 - `data-title` : Titre en minuscules pour la recherche
 - `data-date` : Date au format ISO (YYYY-MM-DD)
 - `data-year` : Année de publication (YYYY)
 
 ### JavaScript
+
 Fonctionnalité côté client pour :
+
 - Filtrage en temps réel des articles
 - Tri dynamique de la grille
 - Mise à jour du compteur de résultats
@@ -82,7 +94,9 @@ Fonctionnalité côté client pour :
 - Affichage/masquage du message "Aucun résultat"
 
 ### CSS
+
 Styles ajoutés pour :
+
 - Carte de recherche avec effet de survol
 - Champs de formulaire avec focus stylisé
 - Transitions fluides (cubic-bezier)
@@ -92,6 +106,7 @@ Styles ajoutés pour :
 ## Comportement
 
 ### Interactions
+
 1. **Recherche active** :
    - La pagination est masquée automatiquement
    - Tous les articles matchants sont affichés sur une seule page
@@ -108,6 +123,7 @@ Styles ajoutés pour :
    - Emoji 🔍 pour un design convivial
 
 ### Performance
+
 - Filtrage côté client (instantané)
 - Pas de rechargement de page
 - Réordonnancement DOM efficace avec `appendChild`
@@ -124,6 +140,7 @@ Styles ajoutés pour :
 ## Responsive Design
 
 La fonctionnalité est entièrement responsive :
+
 - Layout adaptatif sur mobile (col-md-6, col-md-3)
 - Champs empilés verticalement sur petits écrans
 - Boutons et textes lisibles sur tous appareils
@@ -185,6 +202,7 @@ La fonctionnalité est entièrement responsive :
 ## URL de Test
 
 La fonctionnalité est accessible à :
+
 - **Local** : http://localhost:1313/leidimen/posts/
 - **Production** : https://hdicko.github.io/leidimen/posts/
 

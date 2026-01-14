@@ -10,11 +10,13 @@
 ## ✅ Checklist pour un nouvel article
 
 ### Obligatoire
+
 - [ ] **Titre** - Clair et descriptif (max 60 caractères)
 - [ ] **Date** - Date de publication
 - [ ] **Contenu** - Corps de l'article en Markdown
 
 ### Recommandé
+
 - [ ] **Description** - 150-160 caractères pour SEO
 - [ ] **Image** - Image de couverture (1200x630px, max 2MB)
 - [ ] **Villages** - Sélectionner les villages concernés
@@ -22,6 +24,7 @@
 - [ ] **Tags** - Mots-clés pour la recherche
 
 ### Optionnel
+
 - [ ] **Auteur** - Par défaut "Leidimen"
 - [ ] **Moods** - Humeur de l'article
 - [ ] **Brouillon** - Cocher pour masquer du site
@@ -62,16 +65,16 @@ Résumé et perspectives...
 
 ## 🎨 Formatage Markdown rapide
 
-| Syntaxe | Résultat |
-|---------|----------|
-| `**gras**` | **gras** |
-| `*italique*` | *italique* |
-| `[lien](url)` | lien cliquable |
-| `![alt](/img.jpg)` | image |
-| `## Titre` | Titre niveau 2 |
-| `- item` | Liste à puces |
-| `1. item` | Liste numérotée |
-| `> citation` | Citation en bloc |
+| Syntaxe            | Résultat         |
+| ------------------ | ---------------- |
+| `**gras**`         | **gras**         |
+| `*italique*`       | _italique_       |
+| `[lien](url)`      | lien cliquable   |
+| `![alt](/img.jpg)` | image            |
+| `## Titre`         | Titre niveau 2   |
+| `- item`           | Liste à puces    |
+| `1. item`          | Liste numérotée  |
+| `> citation`       | Citation en bloc |
 
 ---
 
@@ -135,12 +138,12 @@ Résumé et perspectives...
 
 ## ⚡ Raccourcis
 
-| Action | Raccourci |
-|--------|-----------|
+| Action      | Raccourci      |
+| ----------- | -------------- |
 | Sauvegarder | Ctrl+S (Cmd+S) |
-| Gras | Ctrl+B (Cmd+B) |
-| Italique | Ctrl+I (Cmd+I) |
-| Lien | Ctrl+K (Cmd+K) |
+| Gras        | Ctrl+B (Cmd+B) |
+| Italique    | Ctrl+I (Cmd+I) |
+| Lien        | Ctrl+K (Cmd+K) |
 
 ---
 

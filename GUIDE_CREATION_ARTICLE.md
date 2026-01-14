@@ -1,4 +1,5 @@
 # Guide de Création d'un Nouvel Article
+
 ## Association Leidimen - Netlify CMS
 
 ---
@@ -45,7 +46,6 @@ Ce guide vous explique comment créer un nouvel article pour le site web de l'as
 
 1. **Serveur Hugo démarré**
    - Le site doit être accessible localement
-   
 2. **Serveur Netlify CMS Proxy démarré**
    - Nécessaire pour l'édition en local
 
@@ -84,6 +84,7 @@ hugo server -D
 1. Ouvrir votre navigateur web
 
 2. Accéder à l'URL suivante :
+
    ```
    https://hdicko.github.io/leidimen/admin/
    ```
@@ -107,6 +108,7 @@ Une fois dans l'interface d'administration :
 ### Étape 2 : Le formulaire de création s'affiche
 
 Vous verrez un formulaire avec plusieurs sections :
+
 - Informations principales (Titre, Date, Auteur)
 - Métadonnées SEO (Description, Image)
 - Taxonomies (Villages, Moods, Catégories, Tags)
@@ -123,12 +125,14 @@ Vous verrez un formulaire avec plusieurs sections :
 **Format :** Maximum 60 caractères recommandés pour le SEO
 
 **Conseils :**
+
 - Soyez clair et descriptif
 - Incluez le nom du village si pertinent
 - Évitez les titres trop longs
 - Utilisez des mots-clés importants
 
 **Exemples :**
+
 - ✅ Bon : "Inauguration de la nouvelle école de Dorool - Octobre 2025"
 - ✅ Bon : "Projet de puits à Darawal : Premier bilan positif"
 - ❌ À éviter : "nouvelle école"
@@ -143,12 +147,14 @@ Vous verrez un formulaire avec plusieurs sections :
 **Format :** AAAA-MM-JJ
 
 **Comment remplir :**
+
 1. Cliquer sur le champ date
 2. Un calendrier s'affiche
 3. Sélectionner la date souhaitée
 4. Ou saisir manuellement au format AAAA-MM-JJ (ex: 2025-10-10)
 
 **Conseils :**
+
 - Utilisez la date réelle de l'événement ou de la rédaction
 - Pour un article programmé, utilisez une date future
 - La date influence l'ordre d'affichage des articles
@@ -196,11 +202,13 @@ Résumé et perspectives...
 **Valeur par défaut :** "Leidimen"
 
 **Options :**
+
 - Laisser "Leidimen" pour un article collectif
 - Indiquer le nom du rédacteur si souhaité
 - Format recommandé : "Prénom Nom" ou "Association Leidimen"
 
 **Exemples :**
+
 - "Leidimen"
 - "Hamadoun Dicko"
 - "Équipe Leidimen"
@@ -214,21 +222,24 @@ Résumé et perspectives...
 **Longueur :** 150-160 caractères recommandés
 
 **Utilité :**
+
 - Améliore le référencement SEO
 - S'affiche dans les résultats de recherche Google
 - Apparaît lors du partage sur les réseaux sociaux
 - Donne un aperçu de l'article
 
 **Conseils :**
+
 - Résumez l'article en une phrase
 - Incluez des mots-clés importants
 - Donnez envie de lire la suite
 - Évitez les phrases trop génériques
 
 **Exemples :**
+
 ```
 ✅ Bon :
-"L'école de Dorool accueille 150 élèves dans ses nouvelles classes 
+"L'école de Dorool accueille 150 élèves dans ses nouvelles classes
 équipées grâce au soutien de Leidimen et de ses donateurs."
 
 ❌ À éviter :
@@ -244,12 +255,14 @@ Résumé et perspectives...
 **Formats acceptés :** JPG, PNG, GIF
 
 **Spécifications techniques :**
+
 - **Taille maximale :** 2 MB
 - **Dimensions recommandées :** 1200 x 630 pixels
 - **Format préféré :** JPG pour les photos, PNG pour les graphiques
 - **Ratio d'aspect :** 16:9 ou 1.91:1 (optimal pour réseaux sociaux)
 
 **Comment ajouter une image :**
+
 1. Cliquer sur **"Choose an image"** ou **"Choisir une image"**
 2. Deux options :
    - **Upload** : Télécharger une nouvelle image depuis votre ordinateur
@@ -258,6 +271,7 @@ Résumé et perspectives...
 4. Cliquer sur **"Choose selected"**
 
 **Bonnes pratiques :**
+
 - Utilisez des images de haute qualité
 - Évitez les images floues ou pixelisées
 - Privilégiez des photos avec des personnes (plus engageant)
@@ -284,18 +298,21 @@ Résumé et perspectives...
 - Tanal
 
 **Comment sélectionner :**
+
 1. Cliquer sur le champ "Villages concernés"
 2. Un menu déroulant s'affiche
 3. Cliquer sur un ou plusieurs villages
 4. Les villages sélectionnés apparaissent avec une croix pour les supprimer
 
 **Utilité :**
+
 - Permet de filtrer les articles par village
 - Crée des liens automatiques vers les pages villages
 - Améliore la navigation sur le site
 - Facilite la recherche pour les visiteurs
 
 **Conseils :**
+
 - Sélectionnez tous les villages pertinents
 - Ne sélectionnez que les villages directement concernés
 - Si l'article est général, vous pouvez ne rien sélectionner
@@ -308,6 +325,7 @@ Résumé et perspectives...
 **Type :** Liste libre (vous pouvez ajouter des catégories)
 
 **Catégories suggérées :**
+
 - Éducation
 - Santé
 - Infrastructure
@@ -321,18 +339,21 @@ Résumé et perspectives...
 - Microfinance
 
 **Comment ajouter des catégories :**
+
 1. Cliquer dans le champ "Catégories"
 2. Taper le nom d'une catégorie
 3. Appuyer sur `Entrée` pour valider
 4. Répéter pour ajouter plusieurs catégories
 
 **Conseils :**
+
 - Utilisez 1 à 3 catégories maximum
 - Privilégiez les catégories existantes pour la cohérence
 - Utilisez des noms en français
 - Utilisez une majuscule au début
 
 **Exemples :**
+
 ```
 Article sur une école : Éducation, Infrastructure
 Article sur un puits : Infrastructure, Développement
@@ -347,16 +368,19 @@ Article sur une formation : Formation, Développement
 **Type :** Liste libre
 
 **Différence Tags vs Catégories :**
+
 - **Catégories** : Thèmes généraux (ex: Éducation)
 - **Tags** : Mots-clés spécifiques (ex: école, élèves, manuels)
 
 **Comment ajouter des tags :**
+
 1. Cliquer dans le champ "Tags"
 2. Taper un mot-clé
 3. Appuyer sur `Entrée`
 4. Répéter pour ajouter d'autres tags
 
 **Conseils :**
+
 - Utilisez 3 à 8 tags
 - Utilisez des mots-clés recherchés par les visiteurs
 - Soyez spécifique (ex: "bibliothèque" plutôt que "bâtiment")
@@ -364,13 +388,14 @@ Article sur une formation : Formation, Développement
 - Utilisez le singulier de préférence
 
 **Exemples de tags pertinents :**
+
 ```
 Pour un article sur une école :
-école, éducation, élève, enseignant, classe, manuel, bibliothèque, 
+école, éducation, élève, enseignant, classe, manuel, bibliothèque,
 rentrée scolaire, formation
 
 Pour un article sur un puits :
-puits, eau, hydraulique, village, accès à l'eau, développement, 
+puits, eau, hydraulique, village, accès à l'eau, développement,
 infrastructure
 ```
 
@@ -389,11 +414,13 @@ infrastructure
 - Reconnaissant
 
 **Utilité :**
+
 - Ajoute une dimension émotionnelle à l'article
 - Permet de filtrer les articles par sentiment
 - Crée une connexion avec les lecteurs
 
 **Conseils :**
+
 - Sélectionnez 1 à 2 moods maximum
 - Choisissez le sentiment principal de l'article
 - Optionnel : peut être laissé vide
@@ -407,15 +434,18 @@ infrastructure
 **Valeur par défaut :** Décoché (false)
 
 **Options :**
+
 - ☐ **Décoché** : L'article sera visible sur le site après publication
 - ☑ **Coché** : L'article sera caché du site (mode brouillon)
 
 **Utilité :**
+
 - Permet de sauvegarder un article en cours de rédaction
 - L'article n'apparaît pas sur le site public
 - Utile pour relecture et validation avant publication
 
 **Workflow recommandé :**
+
 1. Cocher "Brouillon" lors de la création
 2. Rédiger et sauvegarder plusieurs fois
 3. Relire et corriger
@@ -430,6 +460,7 @@ infrastructure
 L'éditeur de contenu utilise le **Markdown**, un langage de formatage simple et intuitif.
 
 **Interface de l'éditeur :**
+
 - Barre d'outils avec raccourcis de formatage
 - Zone de texte pour la rédaction
 - Prévisualisation (si disponible)
@@ -442,17 +473,22 @@ L'éditeur de contenu utilise le **Markdown**, un langage de formatage simple et
 
 ```markdown
 ## Titre niveau 2 (principal)
+
 ### Titre niveau 3 (sous-section)
+
 #### Titre niveau 4 (sous-sous-section)
 ```
 
 **Rendu :**
 
 ## Titre niveau 2 (principal)
+
 ### Titre niveau 3 (sous-section)
+
 #### Titre niveau 4 (sous-sous-section)
 
 **Conseils :**
+
 - Ne pas utiliser de titre niveau 1 (#) dans le contenu
 - Le titre niveau 1 est réservé au titre de l'article
 - Utilisez les niveaux de manière hiérarchique
@@ -464,11 +500,12 @@ L'éditeur de contenu utilise le **Markdown**, un langage de formatage simple et
 ```markdown
 Ceci est un premier paragraphe.
 
-Ceci est un second paragraphe. Laissez une ligne vide entre 
+Ceci est un second paragraphe. Laissez une ligne vide entre
 les paragraphes pour les séparer.
 ```
 
 **Conseils :**
+
 - Paragraphes courts (3-4 lignes maximum)
 - Une ligne vide entre chaque paragraphe
 - Évitez les paragraphes trop longs
@@ -479,15 +516,16 @@ les paragraphes pour les séparer.
 
 ```markdown
 **Texte en gras**
-*Texte en italique*
-***Texte en gras et italique***
+_Texte en italique_
+**_Texte en gras et italique_**
 ~~Texte barré~~
 ```
 
 **Rendu :**
+
 - **Texte en gras**
-- *Texte en italique*
-- ***Texte en gras et italique***
+- _Texte en italique_
+- **_Texte en gras et italique_**
 - ~~Texte barré~~
 
 ---
@@ -504,6 +542,7 @@ les paragraphes pour les séparer.
 ```
 
 **Rendu :**
+
 - Premier élément
 - Deuxième élément
 - Troisième élément
@@ -525,6 +564,7 @@ les paragraphes pour les séparer.
 ```
 
 **Rendu :**
+
 1. Première étape
 2. Deuxième étape
 3. Troisième étape
@@ -543,10 +583,12 @@ les paragraphes pour les séparer.
 ```
 
 **Rendu :**
+
 - [Texte du lien](https://example.com)
 - [Page d'accueil](/leidimen/)
 
 **Conseils :**
+
 - Utilisez des liens internes vers d'autres pages du site
 - Utilisez des textes de lien descriptifs
 - Évitez "cliquez ici" comme texte de lien
@@ -560,11 +602,13 @@ les paragraphes pour les séparer.
 ```
 
 **Composants de l'image :**
+
 - `![...]` : Indique que c'est une image
 - `Texte alternatif` : Description pour l'accessibilité
 - `/images/uploads/nom-image.jpg` : Chemin de l'image
 
 **Conseils :**
+
 - Le texte alternatif est important pour l'accessibilité
 - Décrivez ce que montre l'image
 - Utilisez le chemin `/images/uploads/` pour les images téléchargées via CMS
@@ -576,17 +620,19 @@ les paragraphes pour les séparer.
 ```markdown
 > Ceci est une citation importante.
 > Elle peut s'étendre sur plusieurs lignes.
-> 
+>
 > — Auteur de la citation
 ```
 
 **Rendu :**
+
 > Ceci est une citation importante.
 > Elle peut s'étendre sur plusieurs lignes.
-> 
+>
 > — Auteur de la citation
 
 **Utilisation :**
+
 - Témoignages
 - Citations importantes
 - Mise en valeur d'informations
@@ -596,21 +642,22 @@ les paragraphes pour les séparer.
 #### Tableaux
 
 ```markdown
-| Colonne 1     | Colonne 2     | Colonne 3     |
-|---------------|---------------|---------------|
-| Donnée 1      | Donnée 2      | Donnée 3      |
-| Donnée 4      | Donnée 5      | Donnée 6      |
-| Donnée 7      | Donnée 8      | Donnée 9      |
+| Colonne 1 | Colonne 2 | Colonne 3 |
+| --------- | --------- | --------- |
+| Donnée 1  | Donnée 2  | Donnée 3  |
+| Donnée 4  | Donnée 5  | Donnée 6  |
+| Donnée 7  | Donnée 8  | Donnée 9  |
 ```
 
 **Rendu :**
 
 | Colonne 1 | Colonne 2 | Colonne 3 |
-|-----------|-----------|-----------|
+| --------- | --------- | --------- |
 | Donnée 1  | Donnée 2  | Donnée 3  |
 | Donnée 4  | Donnée 5  | Donnée 6  |
 
 **Utilisation :**
+
 - Présentation de données structurées
 - Comparaisons
 - Statistiques
@@ -628,6 +675,7 @@ les paragraphes pour les séparer.
 ---
 
 **Utilisation :**
+
 - Séparer des sections
 - Créer une pause visuelle
 
@@ -640,12 +688,12 @@ Voici une structure complète et harmonisée pour vos articles :
 ```markdown
 ## 📋 Résumé
 
-Paragraphe d'introduction de 2-3 phrases qui résume l'article 
+Paragraphe d'introduction de 2-3 phrases qui résume l'article
 et capte l'attention du lecteur.
 
 ## 🎯 Contexte
 
-Expliquer le contexte et pourquoi ce sujet est important pour 
+Expliquer le contexte et pourquoi ce sujet est important pour
 Leidimen et les communautés concernées.
 
 ### Situation actuelle
@@ -661,6 +709,7 @@ Quels sont les enjeux...
 ### Premier point important
 
 Développement détaillé avec :
+
 - Des faits concrets
 - Des chiffres si disponibles
 - Des témoignages
@@ -718,7 +767,7 @@ Informations sur comment soutenir le projet...
 **📍 Villages concernés :** Dorool, Darawal  
 **🏷️ Tags :** #école #éducation #mali
 
-**📞 Contact :** Pour plus d'informations ou pour soutenir ce projet, 
+**📞 Contact :** Pour plus d'informations ou pour soutenir ce projet,
 contactez-nous à association@leidimen.com
 ```
 
@@ -735,16 +784,19 @@ contactez-nous à association@leidimen.com
 3. L'article est sauvegardé en mode brouillon
 
 **Sauvegarde automatique :**
+
 - Netlify CMS sauvegarde automatiquement toutes les quelques minutes
 - Un indicateur "Saving..." apparaît lors de la sauvegarde
 
 ### 8.2. Prévisualiser
 
 **Option 1 : Prévisualisation dans l'éditeur**
+
 - Certains champs offrent un aperçu en temps réel
 - Le Markdown est rendu dans l'éditeur
 
 **Option 2 : Prévisualisation sur le site**
+
 1. Sauvegarder l'article (même en brouillon)
 2. Ouvrir le site dans un nouvel onglet
 3. Naviguer vers l'article (si publié)
@@ -784,6 +836,7 @@ contactez-nous à association@leidimen.com
 1. Attendre quelques minutes pour le déploiement
 
 2. Ouvrir le site en production :
+
    ```
    https://hdicko.github.io/leidimen/
    ```
@@ -805,6 +858,7 @@ contactez-nous à association@leidimen.com
 ### Exemple 1 : Article sur une rentrée scolaire
 
 **Métadonnées :**
+
 - **Titre :** "Rentrée scolaire 2025 à l'école de Dorool"
 - **Date :** 2025-10-10
 - **Auteur :** "Leidimen"
@@ -820,21 +874,21 @@ contactez-nous à association@leidimen.com
 ```markdown
 ## 📋 Résumé
 
-Cette année, l'école de Dorool a connu une rentrée historique avec 
-150 élèves accueillis et l'inauguration d'une nouvelle bibliothèque 
+Cette année, l'école de Dorool a connu une rentrée historique avec
+150 élèves accueillis et l'inauguration d'une nouvelle bibliothèque
 équipée de 500 livres.
 
 ## 🎯 Contexte
 
-L'éducation est au cœur de notre mission à Leidimen. L'école de Dorool, 
-soutenue depuis 2007, continue de se développer grâce à l'engagement des 
+L'éducation est au cœur de notre mission à Leidimen. L'école de Dorool,
+soutenue depuis 2007, continue de se développer grâce à l'engagement des
 familles et de nos donateurs.
 
 ## 📖 Une rentrée record
 
 ### 150 élèves accueillis
 
-Cette année marque une augmentation de **25%** du nombre d'élèves 
+Cette année marque une augmentation de **25%** du nombre d'élèves
 par rapport à 2024...
 
 [Suite du contenu...]
@@ -845,6 +899,7 @@ par rapport à 2024...
 ### Exemple 2 : Article sur un projet de puits
 
 **Métadonnées :**
+
 - **Titre :** "Nouveau puits à Darawal : Un accès à l'eau pour 500 personnes"
 - **Date :** 2025-09-15
 - **Auteur :** "Équipe Leidimen"
@@ -860,14 +915,14 @@ par rapport à 2024...
 ```markdown
 ## 📋 Résumé
 
-Après 6 mois de travaux, le nouveau puits de Darawal est désormais 
+Après 6 mois de travaux, le nouveau puits de Darawal est désormais
 opérationnel et fournit de l'eau potable à plus de 500 personnes.
 
 ## 🎯 Contexte
 
 ### Le défi de l'eau à Darawal
 
-Avant ce projet, les habitants devaient parcourir plusieurs kilomètres 
+Avant ce projet, les habitants devaient parcourir plusieurs kilomètres
 pour accéder à l'eau...
 
 [Suite du contenu...]
@@ -878,6 +933,7 @@ pour accéder à l'eau...
 ### Exemple 3 : Article témoignage
 
 **Métadonnées :**
+
 - **Titre :** "Témoignage : Aïssata, enseignante à Dorool"
 - **Date :** 2025-08-20
 - **Auteur :** "Leidimen"
@@ -893,14 +949,14 @@ pour accéder à l'eau...
 ```markdown
 ## 📋 Portrait
 
-Aïssata Maïga, 35 ans, enseigne depuis 10 ans à l'école de Dorool. 
-Rencontre avec une femme passionnée qui façonne l'avenir de sa 
+Aïssata Maïga, 35 ans, enseigne depuis 10 ans à l'école de Dorool.
+Rencontre avec une femme passionnée qui façonne l'avenir de sa
 communauté.
 
 ## 🌟 Son parcours
 
-> « J'ai toujours voulu être enseignante. Quand j'étais petite, je 
-> n'avais pas accès à l'école dans mon village. Maintenant, je veux 
+> « J'ai toujours voulu être enseignante. Quand j'étais petite, je
+> n'avais pas accès à l'école dans mon village. Maintenant, je veux
 > offrir cette chance à tous les enfants. »  
 > — Aïssata Maïga, Enseignante
 
@@ -914,6 +970,7 @@ communauté.
 ### Problème 1 : L'interface d'administration ne se charge pas
 
 **Symptômes :**
+
 - Page blanche
 - Erreur "Cannot connect to server"
 - Message "Netlify CMS is not responding"
@@ -921,6 +978,7 @@ communauté.
 **Solutions :**
 
 1. **Vérifier que les serveurs sont démarrés**
+
    ```bash
    # Vérifier les processus en cours
    ps aux | grep hugo
@@ -928,11 +986,12 @@ communauté.
    ```
 
 2. **Redémarrer les serveurs**
+
    ```bash
    # Arrêter les processus
    pkill -f "hugo server"
    pkill -f "netlify-cms-proxy"
-   
+
    # Redémarrer
    npx netlify-cms-proxy-server &
    hugo server -D &
@@ -951,6 +1010,7 @@ communauté.
 ### Problème 2 : Impossible de sauvegarder l'article
 
 **Symptômes :**
+
 - Erreur lors de la sauvegarde
 - Message "Failed to save"
 - Bouton "Save" grisé
@@ -960,6 +1020,7 @@ communauté.
 1. **Vérifier la connexion internet**
 
 2. **Vérifier les permissions Git**
+
    ```bash
    git status
    git config user.name
@@ -981,6 +1042,7 @@ communauté.
 ### Problème 3 : Les images ne s'affichent pas
 
 **Symptômes :**
+
 - Image cassée (icône ❌)
 - Image ne se charge pas
 - Emplacement vide
@@ -993,6 +1055,7 @@ communauté.
    - Extension correcte (.jpg, .png, .gif)
 
 2. **Vérifier que l'image existe**
+
    ```bash
    ls static/images/uploads/
    ```
@@ -1010,6 +1073,7 @@ communauté.
 ### Problème 4 : L'article ne s'affiche pas sur le site
 
 **Symptômes :**
+
 - Article publié mais invisible
 - N'apparaît pas dans la liste
 - Page 404
@@ -1040,6 +1104,7 @@ communauté.
 ### Problème 5 : Le formatage Markdown ne fonctionne pas
 
 **Symptômes :**
+
 - Le texte apparaît brut avec les symboles
 - Pas de mise en forme
 - Les titres ne sont pas formatés
@@ -1052,12 +1117,14 @@ communauté.
    - Syntaxe correcte pour les listes
 
 2. **Exemples de syntaxe correcte :**
+
    ```markdown
    ## Titre (correct)
+
    ##Titre (incorrect - pas d'espace)
-   
+
    - Liste (correct)
-   -Liste (incorrect - pas d'espace)
+     -Liste (incorrect - pas d'espace)
    ```
 
 3. **Utiliser la barre d'outils**
@@ -1073,6 +1140,7 @@ communauté.
 ### Problème 6 : Les modifications ne sont pas sauvegardées
 
 **Symptômes :**
+
 - Les changements disparaissent
 - Version précédente restaurée
 - Perte de contenu
@@ -1100,28 +1168,31 @@ communauté.
 
 ### Annexe A : Raccourcis clavier
 
-| Action | Windows/Linux | Mac |
-|--------|---------------|-----|
-| Sauvegarder | Ctrl + S | Cmd + S |
-| Gras | Ctrl + B | Cmd + B |
-| Italique | Ctrl + I | Cmd + I |
-| Lien | Ctrl + K | Cmd + K |
-| Nouveau | Ctrl + E | Cmd + E |
-| Rechercher | Ctrl + F | Cmd + F |
+| Action      | Windows/Linux | Mac     |
+| ----------- | ------------- | ------- |
+| Sauvegarder | Ctrl + S      | Cmd + S |
+| Gras        | Ctrl + B      | Cmd + B |
+| Italique    | Ctrl + I      | Cmd + I |
+| Lien        | Ctrl + K      | Cmd + K |
+| Nouveau     | Ctrl + E      | Cmd + E |
+| Rechercher  | Ctrl + F      | Cmd + F |
 
 ### Annexe B : Ressources utiles
 
 **Documentation :**
+
 - Hugo : https://gohugo.io/documentation/
 - Netlify CMS : https://www.netlifycms.org/docs/
 - Markdown : https://www.markdownguide.org/
 
 **Outils en ligne :**
+
 - Éditeur Markdown : https://dillinger.io/
 - Compression d'images : https://tinypng.com/
 - Redimensionnement : https://www.iloveimg.com/resize-image
 
 **Support :**
+
 - Email : association@leidimen.com
 - GitHub : https://github.com/hdicko/leidimen
 
@@ -1171,12 +1242,14 @@ Avant de publier, vérifier :
 Vous disposez maintenant de toutes les informations nécessaires pour créer des articles de qualité sur le site de Leidimen.
 
 **Points clés à retenir :**
+
 1. Remplir soigneusement tous les champs importants
 2. Utiliser une structure harmonisée pour le contenu
 3. Sauvegarder régulièrement
 4. Vérifier avant de publier
 
 **Pour aller plus loin :**
+
 - Consultez `NETLIFY_CMS_GUIDE.md` pour des informations détaillées
 - Utilisez `QUICK_REFERENCE.md` pour un aide-mémoire rapide
 - N'hésitez pas à contacter l'équipe technique si nécessaire

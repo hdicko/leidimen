@@ -59,6 +59,7 @@ Votre choix: 1
 ## 📚 Documentation complète
 
 Consultez **[LEIDIMEN_CMS_GUIDE.md](LEIDIMEN_CMS_GUIDE.md)** pour :
+
 - Guide détaillé des fonctionnalités
 - Exemples de sessions
 - Personnalisation
@@ -107,16 +108,16 @@ npm run dev
 
 ## 🆚 Comparaison
 
-| Fonctionnalité | Leidimen CMS | Netlify CMS | Hugo CLI |
-|----------------|--------------|-------------|----------|
-| Interface | Terminal | Web GUI | Terminal |
-| Galeries | ✅ Excellent | ❌ Limité | ⚠️ Manuel |
-| Rapidité | ⚡ 2 min | 🐌 5 min | ⚡ 1 min* |
-| Git intégré | ✅ Auto | ✅ Auto | ❌ Manuel |
-| Validation | ✅ Stricte | ⚠️ Variable | ❌ Aucune |
-| Offline | ✅ Oui | ❌ Non | ✅ Oui |
+| Fonctionnalité | Leidimen CMS | Netlify CMS | Hugo CLI   |
+| -------------- | ------------ | ----------- | ---------- |
+| Interface      | Terminal     | Web GUI     | Terminal   |
+| Galeries       | ✅ Excellent | ❌ Limité   | ⚠️ Manuel  |
+| Rapidité       | ⚡ 2 min     | 🐌 5 min    | ⚡ 1 min\* |
+| Git intégré    | ✅ Auto      | ✅ Auto     | ❌ Manuel  |
+| Validation     | ✅ Stricte   | ⚠️ Variable | ❌ Aucune  |
+| Offline        | ✅ Oui       | ❌ Non      | ✅ Oui     |
 
-\* *Mais nécessite de connaître YAML et la structure*
+\* _Mais nécessite de connaître YAML et la structure_
 
 ## 📞 Questions ?
 

@@ -29,7 +29,7 @@ Ces équipements nous permettront de mieux documenter et présenter nos projets 
 
 ## Remerciements
 
-Encore merci à tous les **participants** pour leur enthousiasme et leur générosité ! 
+Encore merci à tous les **participants** pour leur enthousiasme et leur générosité !
 
 ### Mentions spéciales
 
@@ -42,6 +42,6 @@ Encore merci à tous les **participants** pour leur enthousiasme et leur génér
 
 ## Souvenirs
 
-📸 [Découvrez les photos des tournois](/posts/photos-souvenir/photos-des-tournois-leidimen/)
+📸 [Découvrez les photos des tournois](/galleries/tournois-leidimen/)
 
-*Des moments de convivialité et de partage au service d'une belle cause !*
+_Des moments de convivialité et de partage au service d'une belle cause !_

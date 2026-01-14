@@ -119,6 +119,7 @@ pandoc GUIDE_CREATION_ARTICLE.md -o GUIDE_CREATION_ARTICLE.pdf --pdf-engine=xela
 ## Résultat
 
 Le PDF contiendra :
+
 - ✅ Table des matières automatique
 - ✅ Tous les titres et sous-titres
 - ✅ Mise en forme complète

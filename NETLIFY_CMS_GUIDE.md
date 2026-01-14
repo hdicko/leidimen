@@ -1,6 +1,7 @@
 # Guide d'utilisation de Netlify CMS pour Leidimen
 
 ## 📋 Table des matières
+
 1. [Accéder à Netlify CMS](#accéder-à-netlify-cms)
 2. [Créer un nouvel article](#créer-un-nouvel-article)
 3. [Structure standardisée d'un article](#structure-standardisée-dun-article)
@@ -13,12 +14,15 @@
 ## 🚀 Accéder à Netlify CMS
 
 ### En développement local
+
 1. Démarrer le serveur proxy Netlify CMS :
+
    ```bash
    npx netlify-cms-proxy-server
    ```
 
 2. Dans un autre terminal, démarrer Hugo :
+
    ```bash
    ./dev-server.sh
    # ou
@@ -29,6 +33,7 @@
    - Ouvrir le navigateur : `http://localhost:1313/leidimen/admin/`
 
 ### En production (après déploiement)
+
 - Accéder à : `https://hdicko.github.io/leidimen/admin/`
 - Se connecter avec Netlify Identity (nécessite configuration)
 
@@ -116,6 +121,7 @@ Résumé et perspectives futures.
 ---
 
 **Pour en savoir plus :**
+
 - [Lien vers ressource 1]
 - [Lien vers ressource 2]
 ```
@@ -168,6 +174,7 @@ En parallèle, **trois enseignants** ont bénéficié d'une formation pédagogiq
 ## Perspectives
 
 L'année scolaire 2025-2026 s'annonce prometteuse. Nous prévoyons :
+
 - L'équipement de deux classes supplémentaires
 - L'organisation d'une bibliothèque mobile pour les villages voisins
 - La mise en place d'un programme de soutien scolaire
@@ -190,6 +197,7 @@ Cette belle réussite n'aurait pas été possible sans le soutien de nos adhére
 ### Membres de l'équipe (👥 Équipe)
 
 **Champs importants :**
+
 - Nom complet
 - Photo (format carré recommandé)
 - Fonction (Président, Trésorier, etc.)
@@ -198,6 +206,7 @@ Cette belle réussite n'aurait pas été possible sans le soutien de nos adhére
 - Spécialités
 
 **Exemple de structure :**
+
 ```yaml
 card:
   image: /images/membre-nom.jpg
@@ -215,6 +224,7 @@ card:
 ### Villages (🏘️ Villages)
 
 **Champs importants :**
+
 - Nom du village
 - Population
 - Région (par défaut : Douentza)
@@ -224,6 +234,7 @@ card:
 ### Documents (📄 Documents)
 
 **Types de documents :**
+
 - Rapport
 - Politique
 - Guide
@@ -235,6 +246,7 @@ card:
 ### Galeries (📸 Galeries)
 
 **Structure recommandée :**
+
 - Titre de la galerie
 - Date et lieu
 - Image de couverture
@@ -329,13 +341,15 @@ static/images/uploads/
 
 ### Syntaxe Markdown utile
 
-```markdown
+````markdown
 # Titre niveau 1
+
 ## Titre niveau 2
+
 ### Titre niveau 3
 
 **Texte en gras**
-*Texte en italique*
+_Texte en italique_
 
 [Lien vers une page](https://example.com)
 
@@ -355,6 +369,7 @@ static/images/uploads/
 ```code
 Bloc de code
 ```
+````
 
 ---
 
@@ -363,21 +378,25 @@ Bloc de code
 ### Problèmes courants
 
 **L'admin ne se charge pas**
+
 - Vérifier que le serveur proxy est démarré : `npx netlify-cms-proxy-server`
 - Vérifier que Hugo est démarré : `hugo server -D`
 - Vider le cache du navigateur
 
 **Les images ne s'affichent pas**
+
 - Vérifier le chemin de l'image
 - S'assurer que l'image est dans `static/images/uploads/`
 - Vérifier le format (JPG, PNG, GIF supportés)
 
 **Les modifications ne sont pas visibles**
+
 - Attendre quelques secondes (rebuild automatique)
 - Rafraîchir la page (Ctrl+F5 ou Cmd+Shift+R)
 - Vérifier que le contenu n'est pas en mode brouillon
 
 **Erreur de sauvegarde**
+
 - Vérifier la connexion internet
 - Vérifier les permissions Git
 - Consulter la console du navigateur (F12)
@@ -387,6 +406,7 @@ Bloc de code
 ## 📞 Support
 
 Pour toute question ou problème :
+
 - Email : association@leidimen.com
 - Documentation Hugo : https://gohugo.io/documentation/
 - Documentation Netlify CMS : https://www.netlifycms.org/docs/

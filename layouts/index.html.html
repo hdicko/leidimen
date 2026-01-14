@@ -1,30 +1,28 @@
-{{/* 
-  Template: index.html.html
+{{/* Template: index.html.html
   Purpose: Homepage/Landing page of the site
   Context: Root URL (/) - main entry point
-  
+
   Features:
   - Intro section (loaded from partial)
   - Contact information section
   - Centered layout
-  
+
   Partials Used:
   - intro.html: Main hero/intro section
   - util/contact: Contact form/information
-  
+
   Note: Simple homepage that delegates to partials for content
 */}}
 
-{{/* layout/index.html.html */}} 
+{{/* layout/index.html.html */}}
 {{ define "main" }}
 
-{{/* Page intro section - centered container */}}
-<div class="container-flex text-center mx-auto pb-0">
-  {{ partial "intro.html" }}
-</div>
+  {{/* Page intro section - centered container */}}
+  <div class="container-flex text-center mx-auto pb-0">
+    {{ partial "intro.html" }}
+  </div>
 
-{{/* Contact information section */}}
-{{- partial "util/contact" . -}} 
-
-{{- end -}} 
-{{/** end main **/}}
+  {{/* Contact information section */}}
+  {{- partial "util/contact" . -}}
+{{- end -}}
+{{/* * end main * */}}

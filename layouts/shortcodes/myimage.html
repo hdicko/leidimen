@@ -1,15 +1,14 @@
-{{- $src := .Get "src" -}} {{- $alt := .Get "alt" -}} {{- with .Parent -}}
-<img
-  src="{{ $src }}"
-  class="figure-img img-fluid rounded"
-  alt="{{ $alt }}"
-  loading="lazy"
-/>
+{{- $src := .Get "src" -}} {{- $alt := .Get "alt" -}}
+{{- with .Parent -}}
+  <img
+    src="{{ $src }}"
+    class="figure-img img-fluid rounded"
+    alt="{{ $alt }}"
+    loading="lazy" />
 {{- else -}}
-<img
-  src="{{ $src }}"
-  class="figure-img img-fluid rounded"
-  alt=""
-  loading="lazy"
-/>
+  <img
+    src="{{ $src }}"
+    class="figure-img img-fluid rounded"
+    alt=""
+    loading="lazy" />
 {{- end }}

@@ -1,22 +1,15 @@
 <p class="rouded float-start imag-thumbnail">
   <img
     src="{{ .Destination | safeURL }}"
-    {{-
-    with
-    .Text
+    {{- with
+      .Text
     }}
-    alt="{{ . }}"
-    {{
-    end
-    -}}
-    {{-
-    with
-    .Title
+      alt="{{ . }}"
+    {{ end -}}
+    {{- with
+      .Title
     }}
-    title="{{ . }}"
-    {{
-    end
-    -}}
-  />
+      title="{{ . }}"
+    {{ end -}} />
   {{- /* chomp trailing newline */ -}}
 </p>

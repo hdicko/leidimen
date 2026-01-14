@@ -17,7 +17,7 @@ image: "install.jpg"
 
 ![Installation d'Ubuntu](install.jpg)
 
-*Installation en cours du système d'exploitation Ubuntu*
+_Installation en cours du système d'exploitation Ubuntu_
 
 ---
 
@@ -60,6 +60,6 @@ Ces **10 ordinateurs** équipés d'Ubuntu vont permettre aux lycéens d'accéder
 
 ---
 
-*Ubuntu : Un système d'exploitation africain pour une éducation africaine* 🌍
+_Ubuntu : Un système d'exploitation africain pour une éducation africaine_ 🌍
 
 **Fun fact** : Ubuntu est un mot d'origine bantoue qui signifie "humanité envers les autres" ou "je suis ce que je suis grâce à ce que nous sommes tous". Une philosophie qui correspond parfaitement aux valeurs de Leïdimen ! 💙

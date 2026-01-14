@@ -9,9 +9,4 @@ slug: "galleries"
 weight: 0
 ---
 
-# Content from galleries
-
-{{< divider >}}
-
-{{< load-photoswipe >}}
-{{< gallery >}}
+Découvrez nos collections de photos organisées par événements et projets.

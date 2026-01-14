@@ -1,8 +1,7 @@
-{{/* 
-  Template: gallery/single.html
+{{/* Template: gallery/single.html
   Purpose: Alternative individual gallery page template (fuller version)
   Context: Displays single photo gallery with header, image grid, and Fancybox lightbox
-  
+
   Features:
   - Prominent header with gallery title and description
   - Back button to galleries listing
@@ -13,22 +12,22 @@
   - Image counter showing total photos
   - Lazy loading for performance
   - Fallback message when gallery is empty
-  
+
   Data Structure:
   - .Title: Gallery title
   - .Content: Gallery description (lead text)
   - .Resources.ByType "image": All image page resources
-  
+
   Dependencies:
   - Fancybox library (must be loaded in page)
   - Bootstrap 5 + Bootstrap Icons
   - Hugo image processing (.Fill)
-  
+
   Image Processing:
   - Thumbnails: 400x300px crop using Hugo .Fill
   - Full images: Original size via RelPermalink
   - All images must be page resources (in same folder as index.md)
-  
+
   Differences from galleries/single.html:
   - This version shows the header (title, description, back button)
   - Includes zoom overlay effect
@@ -38,96 +37,110 @@
 
 {{ define "main" }}
 
-<section class="gallery-detail py-5">
-  <div class="container">
-    <!-- Header -->
-    <div class="text-center mb-5">
-      <h1 class="display-4 fw-bold mb-3">{{ .Title }}</h1>
-      {{ with .Content }}
-      <div class="lead text-muted mb-4">
-        {{ . }}
-      </div>
-      {{ end }}
-      <a href="{{ "/galleries/" | relURL }}" class="btn btn-outline-primary mb-4">
-        <i class="bi bi-arrow-left"></i> Retour aux galeries
-      </a>
-    </div>
-
-    <!-- Gallery Grid with Fancybox -->
-    {{ with .Resources.ByType "image" }}
-    <div class="row g-3 mb-5">
-      {{ range . }}
-      {{ $img := . }}
-      {{ $thumb := $img.Fill "400x300" }}
-      <div class="col-6 col-md-4 col-lg-3">
-        <a href="{{ $img.RelPermalink }}" data-fancybox="gallery" data-caption="{{ $img.Name }}" class="d-block gallery-item position-relative">
-          <img src="{{ $thumb.RelPermalink }}" class="img-fluid rounded shadow-sm w-100" alt="{{ $img.Name }}" loading="lazy">
-          <div class="gallery-overlay">
-            <i class="bi bi-zoom-in"></i>
+  <section class="gallery-detail py-5">
+    <div class="container">
+      <!-- Header -->
+      <div class="text-center mb-5">
+        <h1 class="display-4 fw-bold mb-3">{{ .Title }}</h1>
+        {{ with .Content }}
+          <div class="lead text-muted mb-4">
+            {{ . }}
           </div>
+        {{ end }}
+        <a
+          href="{{ "/galleries/" | relURL }}"
+          class="btn btn-outline-primary mb-4">
+          <i class="bi bi-arrow-left"></i> Retour aux galeries
         </a>
       </div>
+
+      <!-- Gallery Grid with Fancybox -->
+      {{ with .Resources.ByType "image" }}
+        <div class="row g-3 mb-5">
+          {{ range . }}
+            {{ $img := . }}
+            {{ $thumb := $img.Fill "400x300" }}
+            <div class="col-6 col-md-4 col-lg-3">
+              <a
+                href="{{ $img.RelPermalink }}"
+                data-fancybox="gallery"
+                data-caption="{{ $img.Name }}"
+                class="d-block gallery-item position-relative">
+                <img
+                  src="{{ $thumb.RelPermalink }}"
+                  class="img-fluid rounded shadow-sm w-100"
+                  alt="{{ $img.Name }}"
+                  loading="lazy" />
+                <div class="gallery-overlay">
+                  <i class="bi bi-zoom-in"></i>
+                </div>
+              </a>
+            </div>
+          {{ end }}
+        </div>
+
+        <div class="text-center text-muted">
+          <p>
+            <i class="bi bi-images"></i> {{ len . }}
+            {{ if eq (len .) 1 }}photo{{ else }}photos{{ end }} dans cette
+            galerie
+          </p>
+        </div>
+      {{ else }}
+        <div class="alert alert-info text-center">
+          <i class="bi bi-info-circle"></i> Aucune image dans cette galerie pour
+          le moment.
+        </div>
       {{ end }}
     </div>
-    
-    <div class="text-center text-muted">
-      <p><i class="bi bi-images"></i> {{ len . }} {{ if eq (len .) 1 }}photo{{ else }}photos{{ end }} dans cette galerie</p>
-    </div>
-    {{ else }}
-    <div class="alert alert-info text-center">
-      <i class="bi bi-info-circle"></i> Aucune image dans cette galerie pour le moment.
-    </div>
-    {{ end }}
-  </div>
-</section>
+  </section>
 
-<style>
-.gallery-item {
-  position: relative;
-  overflow: hidden;
-  border-radius: 12px;
-  display: block;
-  transition: all 0.3s ease;
-}
+  <style>
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      display: block;
+      transition: all 0.3s ease;
+    }
 
-.gallery-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2) !important;
-}
+    .gallery-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2) !important;
+    }
 
-.gallery-item img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
+    .gallery-item img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
 
-.gallery-item:hover img {
-  transform: scale(1.1);
-}
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
 
-.gallery-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
+    .gallery-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
 
-.gallery-item:hover .gallery-overlay {
-  opacity: 1;
-}
+    .gallery-item:hover .gallery-overlay {
+      opacity: 1;
+    }
 
-.gallery-overlay i {
-  color: white;
-  font-size: 2rem;
-}
-</style>
-
+    .gallery-overlay i {
+      color: white;
+      font-size: 2rem;
+    }
+  </style>
 {{ end }}

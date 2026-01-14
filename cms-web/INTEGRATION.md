@@ -63,11 +63,13 @@ npm start
 ```
 
 **Avantages :**
+
 - ✅ Pas de frais d'hébergement
 - ✅ Contrôle total
 - ✅ Configuration facile
 
 **Inconvénients :**
+
 - ❌ Accessible uniquement sur votre machine
 - ❌ Nécessite Node.js installé
 
@@ -106,6 +108,7 @@ https://hdicko.github.io/leidimen/cms/
 ```
 
 **Configuration nécessaire :**
+
 - Ajouter le CMS dans `static/cms/`
 - Configurer le serveur backend séparément
 - Ajouter authentification pour sécurité
@@ -124,23 +127,29 @@ https://hdicko.github.io/leidimen/cms/
 
 ```javascript
 // Exemple: GitHub OAuth
-const passport = require('passport');
-const GitHubStrategy = require('passport-github2').Strategy;
+const passport = require("passport");
+const GitHubStrategy = require("passport-github2").Strategy;
 
-passport.use(new GitHubStrategy({
-    clientID: process.env.GITHUB_CLIENT_ID,
-    clientSecret: process.env.GITHUB_CLIENT_SECRET,
-    callbackURL: "http://localhost:3000/auth/github/callback"
-  },
-  function(accessToken, refreshToken, profile, done) {
-    // Vérifier que l'utilisateur est autorisé
-    if (profile.username === 'hdicko' || profile.organizations.includes('leidimen')) {
-      return done(null, profile);
-    } else {
-      return done(null, false, { message: 'Unauthorized' });
-    }
-  }
-));
+passport.use(
+  new GitHubStrategy(
+    {
+      clientID: process.env.GITHUB_CLIENT_ID,
+      clientSecret: process.env.GITHUB_CLIENT_SECRET,
+      callbackURL: "http://localhost:3000/auth/github/callback",
+    },
+    function (accessToken, refreshToken, profile, done) {
+      // Vérifier que l'utilisateur est autorisé
+      if (
+        profile.username === "hdicko" ||
+        profile.organizations.includes("leidimen")
+      ) {
+        return done(null, profile);
+      } else {
+        return done(null, false, { message: "Unauthorized" });
+      }
+    },
+  ),
+);
 ```
 
 2. **Utiliser HTTPS** (obligatoire en production)
@@ -152,34 +161,32 @@ passport.use(new GitHubStrategy({
 4. **Ajouter rate limiting**
 
 ```javascript
-const rateLimit = require('express-rate-limit');
+const rateLimit = require("express-rate-limit");
 
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 100 // max 100 requêtes
+  max: 100, // max 100 requêtes
 });
 
-app.use('/api/', limiter);
+app.use("/api/", limiter);
 ```
 
 5. **Logger les actions**
 
 ```javascript
-const winston = require('winston');
+const winston = require("winston");
 
 const logger = winston.createLogger({
-  level: 'info',
+  level: "info",
   format: winston.format.json(),
-  transports: [
-    new winston.transports.File({ filename: 'cms.log' })
-  ]
+  transports: [new winston.transports.File({ filename: "cms.log" })],
 });
 
 // Logger chaque création de post
-logger.info('Post created', { 
-  user: req.user.username, 
+logger.info("Post created", {
+  user: req.user.username,
   path: req.body.path,
-  timestamp: new Date()
+  timestamp: new Date(),
 });
 ```
 
@@ -214,17 +221,17 @@ Ajouter un tracking pour voir l'utilisation :
 let stats = {
   postsCreated: 0,
   lastCreated: null,
-  users: []
+  users: [],
 };
 
-app.post('/api/create-post', async (req, res) => {
+app.post("/api/create-post", async (req, res) => {
   // ... création du post ...
-  
+
   stats.postsCreated++;
   stats.lastCreated = new Date();
-  
+
   // Sauvegarder les stats
-  fs.writeFileSync('stats.json', JSON.stringify(stats));
+  fs.writeFileSync("stats.json", JSON.stringify(stats));
 });
 ```
 
@@ -252,12 +259,14 @@ Ajouter une nouvelle section au guide existant :
 Interface web moderne avec formulaire graphique.
 
 **Avantages:**
+
 - Interface moderne et intuitive
 - Prévisualisation en temps réel
 - Validation des champs
 - Commit automatique sur GitHub
 
 **Comment utiliser:**
+
 1. `cd cms-web && npm start`
 2. Ouvrir http://localhost:3000
 3. Remplir le formulaire

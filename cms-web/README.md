@@ -45,6 +45,7 @@ PORT=3000
 ```
 
 **Créer un token GitHub :**
+
 - Aller sur https://github.com/settings/tokens
 - Cliquer sur "Generate new token (classic)"
 - Cocher la permission `repo` (Full control)
@@ -88,6 +89,7 @@ Naviguer vers : http://localhost:3000
 4. Cliquer sur **"Créer et Publier"**
 
 Le post sera automatiquement :
+
 - Créé dans `content/posts/YYYY/slug.md`
 - Commité sur GitHub
 - Publié sur le site (après build)
@@ -99,6 +101,7 @@ Cliquer sur **"Liste des Posts"** dans la sidebar pour voir les 10 derniers post
 ### Statistiques
 
 La sidebar affiche en temps réel :
+
 - Nombre de posts
 - Nombre de villages
 - Nombre de membres de l'équipe
@@ -140,12 +143,15 @@ cms-web/
 ## 🔧 API Endpoints
 
 ### `GET /api/health`
+
 Health check du serveur
 
 ### `POST /api/create-post`
+
 Créer ou mettre à jour un post
 
 **Body:**
+
 ```json
 {
   "path": "content/posts/2025/mon-article.md",
@@ -156,9 +162,11 @@ Créer ou mettre à jour un post
 ```
 
 ### `GET /api/stats`
+
 Récupérer les statistiques du site
 
 **Response:**
+
 ```json
 {
   "posts": 42,
@@ -168,9 +176,11 @@ Récupérer les statistiques du site
 ```
 
 ### `GET /api/posts`
+
 Liste des 10 posts les plus récents
 
 **Response:**
+
 ```json
 [
   {
@@ -188,12 +198,14 @@ Liste des 10 posts les plus récents
 ## 🎨 Technologies utilisées
 
 **Frontend:**
+
 - HTML5 / CSS3
 - JavaScript (ES6+)
 - Bootstrap 5.3
 - Bootstrap Icons
 
 **Backend:**
+
 - Node.js
 - Express.js
 - Octokit (GitHub API)
@@ -224,6 +236,7 @@ cat .env
 ### Erreur "401 Unauthorized"
 
 Le token GitHub est invalide ou manquant :
+
 - Vérifier que `GITHUB_TOKEN` est dans `.env`
 - Régénérer un token sur GitHub
 - Vérifier que le token a la permission `repo`

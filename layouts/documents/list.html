@@ -1,44 +1,43 @@
-{{/* 
-  Template: documents/list.html
+{{/* Template: documents/list.html
   Purpose: Documents listing page with professional card layout
   Context: Displays all official association documents with categorized icons and descriptions
-  
+
   Features:
   - Professional header with badge and title
   - Document cards in responsive grid (3 columns desktop, 2 tablet, 1 mobile)
   - Dynamic icon assignment based on document type:
-    * shield-check (blue) - Mentions légales
-    * shield-lock (green) - Politique de confidentialité
-    * person-plus (yellow) - Adhésion
-    * journal-text (red) - Informations et compte rendus
-    * file-earmark-text (cyan) - Other documents
+  * shield-check (blue) - Mentions légales
+  * shield-lock (green) - Politique de confidentialité
+  * person-plus (yellow) - Adhésion
+  * journal-text (red) - Informations et compte rendus
+  * file-earmark-text (cyan) - Other documents
   - Type badges for categorization
   - Document metadata (date, update info)
   - Hover effects (shadow, scale, border)
   - Call-to-action buttons
   - Empty state message when no documents
   - Sub-pages listing for documents with children
-  
+
   Data Structure:
   - .Title: Section title (Documents)
   - .Pages: All document pages
   - Document fields:
-    * .Title: Document name
-    * .Description: Short description
-    * .Summary: Auto-generated excerpt
-    * .Date: Publication date
-    * .Pages: Sub-pages (for nested documents)
-    * .RelPermalink: Document URL
-  
+  * .Title: Document name
+  * .Description: Short description
+  * .Summary: Auto-generated excerpt
+  * .Date: Publication date
+  * .Pages: Sub-pages (for nested documents)
+  * .RelPermalink: Document URL
+
   Dependencies:
   - Bootstrap 5 + Bootstrap Icons
   - Custom CSS embedded in template
-  
+
   Card Layout:
   - Header: Icon + Type badge
   - Body: Title, description, metadata
   - Footer: CTA button, sub-pages count
-  
+
   Design:
   - Light gray background (#f8f9fa)
   - Card hover effects (transform, shadow, border color change)
@@ -47,398 +46,413 @@
 */}}
 
 {{ define "main" }}
-<!-- Professional Documents Section -->
-<div class="container-fluid bg-light py-5">
-  <div class="container">
-    
-    <!-- Page Header -->
-    <div class="text-center mb-5">
-      <div class="d-inline-flex align-items-center bg-primary bg-opacity-10 px-4 py-2 rounded-pill mb-3">
-        <i class="bi bi-folder2-open text-primary me-2"></i>
-        <span class="text-primary fw-semibold">Documentation officielle</span>
+  <!-- Professional Documents Section -->
+  <div class="container-fluid bg-light py-5">
+    <div class="container">
+      <!-- Page Header -->
+      <div class="text-center mb-5">
+        <div
+          class="d-inline-flex align-items-center bg-primary bg-opacity-10 px-4 py-2 rounded-pill mb-3">
+          <i class="bi bi-folder2-open text-primary me-2"></i>
+          <span class="text-primary fw-semibold">Documentation officielle</span>
+        </div>
+        <h1 class="display-5 fw-bold text-dark mb-3">{{ .Title }}</h1>
+        <p class="lead text-muted">
+          Accédez à tous les documents officiels de l'association Leidimen
+        </p>
       </div>
-      <h1 class="display-5 fw-bold text-dark mb-3">{{ .Title }}</h1>
-      <p class="lead text-muted">
-        Accédez à tous les documents officiels de l'association Leidimen
-      </p>
-    </div>
 
-    <!-- Professional Document Cards -->
-    <div class="row g-4 mb-5">
-      {{ range .Pages }}
-      <div class="col-md-6 col-lg-4">
-        <div class="document-card card border-0 shadow-sm h-100">
-          <div class="card-body p-4 d-flex flex-column">
-            
-            <!-- Document Icon & Type -->
-            <div class="d-flex align-items-center mb-3">
-              <div class="document-icon me-3">
-                {{ if in .RelPermalink "mentions-legales" }}
-                  <i class="bi bi-shield-check text-primary fs-2"></i>
-                {{ else }}
-                  {{ if in .RelPermalink "politique-confidentialite" }}
-                    <i class="bi bi-shield-lock text-success fs-2"></i>
-                  {{ else }}
-                    {{ if in .RelPermalink "adhesion" }}
-                      <i class="bi bi-person-plus text-warning fs-2"></i>
-                    {{ else }}
-                      {{ if in .RelPermalink "informations-et-compte-rendus" }}
-                        <i class="bi bi-journal-text text-danger fs-2"></i>
-                      {{ else }}
-                        <i class="bi bi-file-earmark-text text-info fs-2"></i>
-                      {{ end }}
-                    {{ end }}
-                  {{ end }}
-                {{ end }}
-              </div>
-              <div class="flex-grow-1">
-                <span class="badge bg-light text-dark border fw-normal small">
-                  {{ if in .RelPermalink "mentions-legales" }}
-                    Document légal
-                  {{ else }}
-                    {{ if in .RelPermalink "politique-confidentialite" }}
-                      Confidentialité
-                    {{ else }}
-                      {{ if in .RelPermalink "adhesion" }}
-                        Adhésion
-                      {{ else }}
-                        {{ if in .RelPermalink "informations-et-compte-rendus" }}
-                          Comptes rendus
-                        {{ else }}
-                          Document officiel
-                        {{ end }}
-                      {{ end }}
-                    {{ end }}
-                  {{ end }}
-                </span>
-              </div>
-            </div>
-
-            <!-- Document Title -->
-            <h5 class="card-title fw-bold mb-3 text-dark">{{ .Title }}</h5>
-            
-            <!-- Document Description -->
-            <p class="card-text text-muted mb-4 flex-grow-1">
-              {{ with .Description }}
-                {{ . | truncate 120 }}
-              {{ else }}
-                {{ if in .RelPermalink "informations-et-compte-rendus" }}
-                  Accédez aux comptes rendus de réunions et informations importantes de l'association.
-                {{ else }}
-                  {{ .Summary | truncate 120 }}
-                {{ end }}
-              {{ end }}
-            </p>
-
-            <!-- Document Meta Info -->
-            <div class="d-flex justify-content-between align-items-center mb-3 text-muted small">
-              <span>
-                <i class="bi bi-calendar3 me-1"></i>
-                {{ .Date.Format "Jan 2006" }}
-              </span>
-              <span>
-                <i class="bi bi-clock me-1"></i>
-                {{ if in .RelPermalink "informations-et-compte-rendus" }}
-                  Section
-                {{ else }}
-                  {{ .ReadingTime }} min
-                {{ end }}
-              </span>
-            </div>
-
-            <!-- Action Button -->
-            <div class="mt-auto">
-              <a href="{{ .RelPermalink }}" class="btn professional-btn w-100 d-flex align-items-center justify-content-center">
-                <i class="bi bi-arrow-right-circle me-2"></i>
-                <span class="fw-semibold">
-                  {{ if in .RelPermalink "adhesion" }}
-                    Adhérer maintenant
-                  {{ else }}
+      <!-- Professional Document Cards -->
+      <div class="row g-4 mb-5">
+        {{ range .Pages }}
+          <div class="col-md-6 col-lg-4">
+            <div class="document-card card border-0 shadow-sm h-100">
+              <div class="card-body p-4 d-flex flex-column">
+                <!-- Document Icon & Type -->
+                <div class="d-flex align-items-center mb-3">
+                  <div class="document-icon me-3">
                     {{ if in .RelPermalink "mentions-legales" }}
-                      Consulter les mentions
+                      <i class="bi bi-shield-check text-primary fs-2"></i>
                     {{ else }}
                       {{ if in .RelPermalink "politique-confidentialite" }}
-                        Lire la politique
+                        <i class="bi bi-shield-lock text-success fs-2"></i>
                       {{ else }}
-                        {{ if in .RelPermalink "informations-et-compte-rendus" }}
-                          Voir les comptes rendus
+                        {{ if in .RelPermalink "adhesion" }}
+                          <i class="bi bi-person-plus text-warning fs-2"></i>
                         {{ else }}
-                          Voir le document
+                          {{ if in .RelPermalink "informations-et-compte-rendus" }}
+                            <i class="bi bi-journal-text text-danger fs-2"></i>
+                          {{ else }}
+                            <i
+                              class="bi bi-file-earmark-text text-info fs-2"></i>
+                          {{ end }}
                         {{ end }}
                       {{ end }}
                     {{ end }}
-                  {{ end }}
-                </span>
-              </a>
-            </div>
+                  </div>
+                  <div class="flex-grow-1">
+                    <span
+                      class="badge bg-light text-dark border fw-normal small">
+                      {{ if in .RelPermalink "mentions-legales" }}
+                        Document légal
+                      {{ else }}
+                        {{ if in .RelPermalink "politique-confidentialite" }}
+                          Confidentialité
+                        {{ else }}
+                          {{ if in .RelPermalink "adhesion" }}
+                            Adhésion
+                          {{ else }}
+                            {{ if in .RelPermalink "informations-et-compte-rendus" }}
+                              Comptes rendus
+                            {{ else }}
+                              Document officiel
+                            {{ end }}
+                          {{ end }}
+                        {{ end }}
+                      {{ end }}
+                    </span>
+                  </div>
+                </div>
 
-          </div>
-          
-          <!-- Card Footer with Priority Indicator -->
-          <div class="card-footer bg-transparent border-0 px-4 pb-4">
-            <div class="d-flex align-items-center">
-              {{ if in .RelPermalink "adhesion" }}
-                <span class="badge bg-warning text-dark fw-normal">
-                  <i class="bi bi-star-fill me-1"></i>
-                  Action recommandée
-                </span>
-              {{ else }}
-                {{ if or (in .RelPermalink "mentions-legales") (in .RelPermalink "politique-confidentialite") }}
-                  <span class="badge bg-primary fw-normal">
-                    <i class="bi bi-info-circle me-1"></i>
-                    Information légale
+                <!-- Document Title -->
+                <h5 class="card-title fw-bold mb-3 text-dark">{{ .Title }}</h5>
+
+                <!-- Document Description -->
+                <p class="card-text text-muted mb-4 flex-grow-1">
+                  {{ with .Description }}
+                    {{ . | truncate 120 }}
+                  {{ else }}
+                    {{ if in .RelPermalink "informations-et-compte-rendus" }}
+                      Accédez aux comptes rendus de réunions et informations
+                      importantes de l'association.
+                    {{ else }}
+                      {{ .Summary | truncate 120 }}
+                    {{ end }}
+                  {{ end }}
+                </p>
+
+                <!-- Document Meta Info -->
+                <div
+                  class="d-flex justify-content-between align-items-center mb-3 text-muted small">
+                  <span>
+                    <i class="bi bi-calendar3 me-1"></i>
+                    {{ .Date.Format "Jan 2006" }}
                   </span>
-                {{ else }}
-                  {{ if in .RelPermalink "informations-et-compte-rendus" }}
-                    <span class="badge bg-danger fw-normal">
-                      <i class="bi bi-journal-check me-1"></i>
-                      Comptes rendus
+                  <span>
+                    <i class="bi bi-clock me-1"></i>
+                    {{ if in .RelPermalink "informations-et-compte-rendus" }}
+                      Section
+                    {{ else }}
+                      {{ .ReadingTime }} min
+                    {{ end }}
+                  </span>
+                </div>
+
+                <!-- Action Button -->
+                <div class="mt-auto">
+                  <a
+                    href="{{ .RelPermalink }}"
+                    class="btn professional-btn w-100 d-flex align-items-center justify-content-center">
+                    <i class="bi bi-arrow-right-circle me-2"></i>
+                    <span class="fw-semibold">
+                      {{ if in .RelPermalink "adhesion" }}
+                        Adhérer maintenant
+                      {{ else }}
+                        {{ if in .RelPermalink "mentions-legales" }}
+                          Consulter les mentions
+                        {{ else }}
+                          {{ if in .RelPermalink "politique-confidentialite" }}
+                            Lire la politique
+                          {{ else }}
+                            {{ if in .RelPermalink "informations-et-compte-rendus" }}
+                              Voir les comptes rendus
+                            {{ else }}
+                              Voir le document
+                            {{ end }}
+                          {{ end }}
+                        {{ end }}
+                      {{ end }}
+                    </span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Card Footer with Priority Indicator -->
+              <div class="card-footer bg-transparent border-0 px-4 pb-4">
+                <div class="d-flex align-items-center">
+                  {{ if in .RelPermalink "adhesion" }}
+                    <span class="badge bg-warning text-dark fw-normal">
+                      <i class="bi bi-star-fill me-1"></i>
+                      Action recommandée
                     </span>
                   {{ else }}
-                    <span class="badge bg-light text-dark border fw-normal">
-                      <i class="bi bi-file-text me-1"></i>
-                      Document standard
-                    </span>
+                    {{ if or (in .RelPermalink "mentions-legales") (in .RelPermalink "politique-confidentialite") }}
+                      <span class="badge bg-primary fw-normal">
+                        <i class="bi bi-info-circle me-1"></i>
+                        Information légale
+                      </span>
+                    {{ else }}
+                      {{ if in .RelPermalink "informations-et-compte-rendus" }}
+                        <span class="badge bg-danger fw-normal">
+                          <i class="bi bi-journal-check me-1"></i>
+                          Comptes rendus
+                        </span>
+                      {{ else }}
+                        <span class="badge bg-light text-dark border fw-normal">
+                          <i class="bi bi-file-text me-1"></i>
+                          Document standard
+                        </span>
+                      {{ end }}
+                    {{ end }}
                   {{ end }}
-                {{ end }}
-              {{ end }}
+                </div>
+              </div>
+            </div>
+          </div>
+        {{ end }}
+      </div>
+
+      <!-- Additional Content Section -->
+      {{ if .Content }}
+        <div class="content-section mb-5">
+          <div class="card border-0 shadow-sm bg-white">
+            <div class="card-body p-5">
+              <h3 class="h4 text-primary mb-4 d-flex align-items-center">
+                <i class="bi bi-info-circle me-2"></i>
+                Informations complémentaires
+              </h3>
+              <div class="content-area">
+                {{ .Content }}
+              </div>
             </div>
           </div>
         </div>
-      </div>
       {{ end }}
-    </div>
 
-    <!-- Additional Content Section -->
-    {{ if .Content }}
-    <div class="content-section mb-5">
-      <div class="card border-0 shadow-sm bg-white">
-        <div class="card-body p-5">
-          <h3 class="h4 text-primary mb-4 d-flex align-items-center">
-            <i class="bi bi-info-circle me-2"></i>
-            Informations complémentaires
+
+      <!-- Document Images Gallery -->
+      {{ with .Resources.ByType "image" }}
+        <div class="gallery-section">
+          <h3
+            class="h4 text-center mb-4 d-flex align-items-center justify-content-center">
+            <i class="bi bi-images me-2 text-info"></i>
+            Galerie des documents
           </h3>
-          <div class="content-area">
-            {{ .Content }}
-          </div>
-        </div>
-      </div>
-    </div>
-    {{ end }}
-
-    <!-- Document Images Gallery -->
-    {{ with .Resources.ByType "image" }}
-    <div class="gallery-section">
-      <h3 class="h4 text-center mb-4 d-flex align-items-center justify-content-center">
-        <i class="bi bi-images me-2 text-info"></i>
-        Galerie des documents
-      </h3>
-      <div class="row g-3">
-        {{ range . }}
-        {{ $img := . }}
-        {{ $thumb := $img.Resize "300x200" }}
-        <div class="col-md-4 col-lg-3">
-          <div class="gallery-item card border-0 shadow-sm">
-            <a data-fancybox="gallery" data-src="{{ $img.RelPermalink }}" class="text-decoration-none">
-              <img src="{{ $thumb.RelPermalink }}" class="card-img-top gallery-image" alt="Document image">
-              <div class="card-body p-2 text-center">
-                <small class="text-muted">{{ $img.Name }}</small>
+          <div class="row g-3">
+            {{ range . }}
+              {{ $img := . }}
+              {{ $thumb := $img.Resize "300x200" }}
+              <div class="col-md-4 col-lg-3">
+                <div class="gallery-item card border-0 shadow-sm">
+                  <a
+                    data-fancybox="gallery"
+                    data-src="{{ $img.RelPermalink }}"
+                    class="text-decoration-none">
+                    <img
+                      src="{{ $thumb.RelPermalink }}"
+                      class="card-img-top gallery-image"
+                      alt="Document image" />
+                    <div class="card-body p-2 text-center">
+                      <small class="text-muted">{{ $img.Name }}</small>
+                    </div>
+                  </a>
+                </div>
               </div>
-            </a>
+            {{ end }}
           </div>
         </div>
-        {{ end }}
-      </div>
+      {{ end }}
+
     </div>
-    {{ end }}
-
   </div>
-</div>
 
-<!-- Professional Styles -->
-<style>
-/* Document Cards */
-.document-card {
-  transition: all 0.3s ease;
-  border-radius: 12px;
-  overflow: hidden;
-}
+  <!-- Professional Styles -->
+  <style>
+    /* Document Cards */
+    .document-card {
+      transition: all 0.3s ease;
+      border-radius: 12px;
+      overflow: hidden;
+    }
 
-.document-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1) !important;
-}
+    .document-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1) !important;
+    }
 
-.document-icon {
-  width: 60px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-  border-radius: 12px;
-  transition: all 0.3s ease;
-}
+    .document-icon {
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      border-radius: 12px;
+      transition: all 0.3s ease;
+    }
 
-.document-card:hover .document-icon {
-  transform: scale(1.1);
-  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
-}
+    .document-card:hover .document-icon {
+      transform: scale(1.1);
+      background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+    }
 
-/* Professional Buttons */
-.professional-btn {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border: none;
-  border-radius: 8px;
-  color: white;
-  padding: 12px 24px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  text-decoration: none;
-  position: relative;
-  overflow: hidden;
-}
+    /* Professional Buttons */
+    .professional-btn {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border: none;
+      border-radius: 8px;
+      color: white;
+      padding: 12px 24px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+    }
 
-.professional-btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
-  transition: left 0.3s ease;
-  z-index: 1;
-}
+    .professional-btn::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+      transition: left 0.3s ease;
+      z-index: 1;
+    }
 
-.professional-btn:hover::before {
-  left: 0;
-}
+    .professional-btn:hover::before {
+      left: 0;
+    }
 
-.professional-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
-  color: white;
-}
+    .professional-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+      color: white;
+    }
 
-.professional-btn * {
-  position: relative;
-  z-index: 2;
-}
+    .professional-btn * {
+      position: relative;
+      z-index: 2;
+    }
 
-/* Card Animations */
-.document-card .card-body {
-  position: relative;
-  z-index: 1;
-}
+    /* Card Animations */
+    .document-card .card-body {
+      position: relative;
+      z-index: 1;
+    }
 
-.document-card::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, transparent 0%, rgba(102, 126, 234, 0.02) 100%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
-}
+    .document-card::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(
+        135deg,
+        transparent 0%,
+        rgba(102, 126, 234, 0.02) 100%
+      );
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
 
-.document-card:hover::after {
-  opacity: 1;
-}
+    .document-card:hover::after {
+      opacity: 1;
+    }
 
-/* Badge Styles */
-.badge {
-  font-size: 0.75rem;
-  padding: 0.4em 0.8em;
-  border-radius: 6px;
-}
+    /* Badge Styles */
+    .badge {
+      font-size: 0.75rem;
+      padding: 0.4em 0.8em;
+      border-radius: 6px;
+    }
 
-/* Content Area */
-.content-area {
-  line-height: 1.7;
-}
+    /* Content Area */
+    .content-area {
+      line-height: 1.7;
+    }
 
-.content-area h1,
-.content-area h2,
-.content-area h3 {
-  color: #2c3e50;
-  margin-bottom: 1rem;
-}
+    .content-area h1,
+    .content-area h2,
+    .content-area h3 {
+      color: #2c3e50;
+      margin-bottom: 1rem;
+    }
 
-.content-area p {
-  margin-bottom: 1rem;
-  color: #555;
-}
+    .content-area p {
+      margin-bottom: 1rem;
+      color: #555;
+    }
 
-.content-area a {
-  color: #667eea;
-  text-decoration: none;
-  font-weight: 500;
-}
+    .content-area a {
+      color: #667eea;
+      text-decoration: none;
+      font-weight: 500;
+    }
 
-.content-area a:hover {
-  color: #764ba2;
-  text-decoration: underline;
-}
+    .content-area a:hover {
+      color: #764ba2;
+      text-decoration: underline;
+    }
 
-/* Gallery Styles */
-.gallery-item {
-  transition: transform 0.3s ease;
-  border-radius: 8px;
-  overflow: hidden;
-}
+    /* Gallery Styles */
+    .gallery-item {
+      transition: transform 0.3s ease;
+      border-radius: 8px;
+      overflow: hidden;
+    }
 
-.gallery-item:hover {
-  transform: scale(1.05);
-}
+    .gallery-item:hover {
+      transform: scale(1.05);
+    }
 
-.gallery-image {
-  height: 200px;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
+    .gallery-image {
+      height: 200px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
 
-.gallery-item:hover .gallery-image {
-  transform: scale(1.1);
-}
+    .gallery-item:hover .gallery-image {
+      transform: scale(1.1);
+    }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .document-card {
-    margin-bottom: 1.5rem;
-  }
-  
-  .professional-btn {
-    padding: 10px 20px;
-    font-size: 0.9rem;
-  }
-  
-  .document-icon {
-    width: 50px;
-    height: 50px;
-  }
-  
-  .document-icon i {
-    font-size: 1.5rem !important;
-  }
-}
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .document-card {
+        margin-bottom: 1.5rem;
+      }
 
-/* Page Header Animation */
-.display-5 {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
+      .professional-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+      }
 
-/* Section Spacing */
-.content-section,
-.gallery-section {
-  margin-top: 3rem;
-}
-</style>
+      .document-icon {
+        width: 50px;
+        height: 50px;
+      }
 
+      .document-icon i {
+        font-size: 1.5rem !important;
+      }
+    }
+
+    /* Page Header Animation */
+    .display-5 {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Section Spacing */
+    .content-section,
+    .gallery-section {
+      margin-top: 3rem;
+    }
+  </style>
 {{ end }}

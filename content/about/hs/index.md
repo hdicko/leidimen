@@ -96,10 +96,7 @@ description: "Profil professionnel — Ingénieur systèmes, DevOps et administr
 ---
 
 {{< details "À propos de moi" >}}
-{{< typeit
-  tag=h1
-  lifeLike=true
->}}
+{{< typeit tag=h1 lifeLike=true >}}
 Hamadoun Pathe Ameri Diona Dicko
 {{< /typeit >}}
 

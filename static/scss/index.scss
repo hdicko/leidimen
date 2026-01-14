@@ -1,4 +1,3 @@
-
 // Leidimen Custom SCSS
 // Bootstrap and Bootstrap Icons are loaded via CDN in the HTML head
 
@@ -22,17 +21,17 @@
   --ctx7-gray-700: #374151;
   --ctx7-gray-800: #1f2937;
   --ctx7-gray-900: #111827;
-  
+
   // Gradient colors
   --ctx7-gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   --ctx7-gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
   --ctx7-gradient-accent: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-  
+
   // Glassmorphism
   --ctx7-glass-bg: rgba(255, 255, 255, 0.25);
   --ctx7-glass-border: rgba(255, 255, 255, 0.18);
   --ctx7-glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  
+
   // Animations
   --ctx7-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --ctx7-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -85,7 +84,7 @@
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   transition: var(--ctx7-transition);
-  
+
   &:hover {
     transform: translateY(-10px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
@@ -100,14 +99,14 @@
   height: 200px;
   overflow: hidden;
   position: relative;
-  
+
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: var(--ctx7-transition);
   }
-  
+
   &:hover img {
     transform: scale(1.1);
   }
@@ -119,7 +118,11 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.3));
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0.3)
+  );
 }
 
 .post-meta {
@@ -129,19 +132,20 @@
   gap: 1rem;
   font-size: 0.875rem;
   color: var(--ctx7-gray-600);
-  
-  .post-date, .post-author {
+
+  .post-date,
+  .post-author {
     display: flex;
     align-items: center;
     gap: 0.5rem;
   }
-  
+
   .post-categories {
     display: flex;
     gap: 0.5rem;
     flex-wrap: wrap;
   }
-  
+
   .category-tag {
     background: var(--ctx7-gradient-accent);
     color: white;
@@ -158,14 +162,14 @@
 
 .post-title {
   margin-bottom: 1rem;
-  
+
   a {
     color: var(--ctx7-dark);
     text-decoration: none;
     font-weight: 700;
     font-size: 1.25rem;
     transition: var(--ctx7-transition);
-    
+
     &:hover {
       color: var(--ctx7-primary);
     }
@@ -192,7 +196,7 @@
   text-decoration: none;
   font-weight: 600;
   transition: var(--ctx7-transition);
-  
+
   &:hover {
     color: var(--ctx7-secondary);
     transform: translateX(5px);
@@ -202,7 +206,7 @@
 .post-stats {
   color: var(--ctx7-gray-500);
   font-size: 0.875rem;
-  
+
   .read-time {
     display: flex;
     align-items: center;
@@ -236,14 +240,14 @@
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   transition: var(--ctx7-transition);
   font-weight: 500;
-  
+
   &:hover:not(.disabled) {
     background: var(--ctx7-primary);
     color: white;
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(99, 102, 241, 0.3);
   }
-  
+
   &.disabled {
     opacity: 0.5;
     cursor: not-allowed;
@@ -270,13 +274,13 @@
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   transition: var(--ctx7-transition);
   font-weight: 500;
-  
+
   &:hover {
     background: var(--ctx7-primary);
     color: white;
     transform: scale(1.1);
   }
-  
+
   &.active {
     background: var(--ctx7-gradient-primary);
     color: white;
@@ -311,20 +315,20 @@
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-  
+
   .pagination-container {
     flex-wrap: wrap;
     gap: 0.5rem;
   }
-  
+
   .pagination-btn .btn-text {
     display: none;
   }
-  
+
   .pagination-numbers {
     gap: 0.25rem;
   }
-  
+
   .pagination-number {
     width: 2.5rem;
     height: 2.5rem;

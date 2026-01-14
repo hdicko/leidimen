@@ -3,7 +3,8 @@ draft: false
 experience:
   - date: "2025"
     title: Bénévole chez Leidimen
-    description: Participation active aux actions et projets de l'association pour
+    description:
+      Participation active aux actions et projets de l'association pour
       soutenir les villages maliens
     category: Associatif
     icon: bi-heart-fill
@@ -44,6 +45,7 @@ card:
   presentation: Bénévole actif de l'association Leidimen
   tel: ""
   image: /images/uploads/image0.jpeg
+  imageAnchor: top
   email: ""
 categories:
   - leidimen
@@ -56,7 +58,6 @@ tags:
   - bénévolat
 description: Bénévole actif de l'association Leidimen
 ---
-
 
 ## Madio Dicko - Bénévole de Leidimen
 
@@ -72,4 +73,4 @@ En tant que bénévole, Madio participe aux événements, aux collectes et aux d
 
 ---
 
-*Pour contacter Madio ou en savoir plus sur son engagement, n'hésitez pas à contacter l'association.*
+_Pour contacter Madio ou en savoir plus sur son engagement, n'hésitez pas à contacter l'association._

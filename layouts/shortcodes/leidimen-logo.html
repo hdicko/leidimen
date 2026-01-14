@@ -1,4 +1,4 @@
 {{ $image := resources.GetMatch "images/leidimen-logo.jpg" }}
 {{ with $image }}
-<img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" />
+  <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" />
 {{ end }}

@@ -40,6 +40,7 @@ L'association **Créasac** de l'Université d'Évry Val d'Essonne a participé �
 Vous pourrez également découvrir et acquérir des **objets artisanaux** authentiques lors de l'expo-vente organisée devant le théâtre.
 
 Une opportunité unique de :
+
 - Découvrir l'artisanat traditionnel malien
 - Soutenir les artisans locaux
 - Ramener un morceau du Mali chez vous
@@ -72,4 +73,4 @@ Programmation diversifiée sur plusieurs semaines
 
 ---
 
-*Une semaine spéciale pour célébrer l'art, la culture et l'artisanat malien en Île-de-France. Une belle opportunité de connexion entre nos deux pays !* 🌍✨
+_Une semaine spéciale pour célébrer l'art, la culture et l'artisanat malien en Île-de-France. Une belle opportunité de connexion entre nos deux pays !_ 🌍✨

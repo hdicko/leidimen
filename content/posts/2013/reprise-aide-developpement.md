@@ -9,6 +9,7 @@ tags: []
 villages: []
 moods: []
 ---
+
 {{< details summary="lire tout l'article" >}}
 Le Mali n'est pas encore stable, ni militairement, ni politiquement – sur ces deux points, la situation s'améliore néanmoins rapidement.
 

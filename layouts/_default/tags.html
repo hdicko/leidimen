@@ -1,44 +1,43 @@
-{{/* 
-  Template: _default/tags.html
+{{/* Template: _default/tags.html
   Purpose: Display all tags associated with the current page
   Context: Single page view
-  
+
   This template demonstrates two different approaches:
   1. Simple unordered list of all tags
   2. Comma-delimited inline list
-  
+
   Note: This appears to be a debug/development template with visible borders
 */}}
 
 {{ define "main" }}
-{{/* 
-  Method 1: Simple list of tags
-  - Loops through all tags associated with this page
-  - Each tag is rendered as a clickable link
-  - Uses RelPermalink for proper URL generation
-*/}}
-<ul class="">
-  {{ range .GetTerms "tags" }}
-  <li class="list">
-    <a href="{{ .RelPermalink }}" class=""> {{- .LinkTitle -}} </a>
-  </li>
-  {{ end }}
-</ul>
+  {{/* Method 1: Simple list of tags
+    - Loops through all tags associated with this page
+    - Each tag is rendered as a clickable link
+    - Uses RelPermalink for proper URL generation
+  */}}
+  <ul class="">
+    {{ range .GetTerms "tags" }}
+      <li class="list">
+        <a href="{{ .RelPermalink }}" class=""> {{- .LinkTitle -}} </a>
+      </li>
+    {{ end }}
+  </ul>
 
-{{/* 
-  Method 2: Comma-delimited inline list
-  - Alternative rendering: "Villages: dorool, diona, debere"
-  - Uses a custom taxonomy ("villages" in this example)
-  - Adds commas between items using $k index
-  - More compact presentation suitable for single-line display
-*/}}
-{{ $taxonomy := "villages" }} {{ with .GetTerms $taxonomy }}
-<p>
-  {{ (site.GetPage $taxonomy).LinkTitle }}: {{ range $k, $_ := . -}} {{ if $k
-  }},{{ end }}
-  <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
-  {{- end }}
-</p>
-{{ end }}
+  {{/* Method 2: Comma-delimited inline list
+    - Alternative rendering: "Villages: dorool, diona, debere"
+    - Uses a custom taxonomy ("villages" in this example)
+    - Adds commas between items using $k index
+    - More compact presentation suitable for single-line display
+  */}}
+  {{ $taxonomy := "villages" }}
+  {{ with .GetTerms $taxonomy }}
+    <p>
+      {{ (site.GetPage $taxonomy).LinkTitle }}:
+      {{ range $k, $_ := . -}}
+        {{ if $k }},{{ end }}
+        <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+      {{- end }}
+    </p>
+  {{ end }}
 
 {{ end }}

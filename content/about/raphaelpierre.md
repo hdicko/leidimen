@@ -52,4 +52,4 @@ Raphael Pierre est membre fondateur de l'association Leidimen depuis 2019. Il pa
 
 Engagé pour la solidarité et le développement, Raphael contribue aux actions de l'association et soutient les initiatives en faveur des villages maliens.
 
-*Profil en cours de mise à jour.*
+_Profil en cours de mise à jour._

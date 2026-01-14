@@ -63,6 +63,7 @@ cd cms-web
 ```
 
 Le script va :
+
 1. ✅ Vérifier Node.js
 2. ✅ Installer les dépendances
 3. ✅ Créer le fichier .env
@@ -271,17 +272,17 @@ PORT=3001
 
 ## 📊 Comparaison avec Netlify CMS
 
-| Fonctionnalité | Leidimen CMS Web | Netlify CMS |
-|----------------|------------------|-------------|
-| Interface graphique | ✅ Moderne | ✅ Standard |
-| Commit automatique | ✅ Via API | ✅ Via Git Gateway |
-| Prévisualisation | ✅ Markdown | ✅ HTML |
-| Upload d'images | 🚧 À venir | ✅ Oui |
-| Galeries photos | 🚧 À venir | ❌ Non |
-| Statistiques | ✅ En temps réel | ❌ Non |
-| Installation | ✅ Simple (npm) | ✅ Intégré |
-| Personnalisation | ✅ Total | ⚠️ Limitée |
-| Authentification | 🚧 À ajouter | ✅ Netlify Identity |
+| Fonctionnalité      | Leidimen CMS Web | Netlify CMS         |
+| ------------------- | ---------------- | ------------------- |
+| Interface graphique | ✅ Moderne       | ✅ Standard         |
+| Commit automatique  | ✅ Via API       | ✅ Via Git Gateway  |
+| Prévisualisation    | ✅ Markdown      | ✅ HTML             |
+| Upload d'images     | 🚧 À venir       | ✅ Oui              |
+| Galeries photos     | 🚧 À venir       | ❌ Non              |
+| Statistiques        | ✅ En temps réel | ❌ Non              |
+| Installation        | ✅ Simple (npm)  | ✅ Intégré          |
+| Personnalisation    | ✅ Total         | ⚠️ Limitée          |
+| Authentification    | 🚧 À ajouter     | ✅ Netlify Identity |
 
 ## 🎯 Prochaines étapes (TODO)
 

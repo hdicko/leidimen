@@ -163,12 +163,12 @@ Description de ma galerie...
 
 ## 🔧 Comparaison des méthodes
 
-| Méthode | Difficulté | Galerie Photos | Upload Images | Auto-commit | Interface |
-|---------|------------|----------------|---------------|-------------|-----------|
-| **CMS Web** 🆕 | ⭐ Facile | 🚧 Bientôt | 🚧 Bientôt | ✅ Oui | ✅ Moderne |
-| **Netlify CMS** | ⭐ Facile | ❌ Non | ✅ Oui | ✅ Oui | ✅ Standard |
-| **Hugo Archetype** | ⭐⭐ Moyen | ✅ Oui | ❌ Manuel | ❌ Manuel | ❌ Terminal |
-| **Page Bundle** | ⭐⭐⭐ Avancé | ✅✅ Oui | ❌ Manuel | ❌ Manuel | ❌ Terminal |
+| Méthode            | Difficulté    | Galerie Photos | Upload Images | Auto-commit | Interface   |
+| ------------------ | ------------- | -------------- | ------------- | ----------- | ----------- |
+| **CMS Web** 🆕     | ⭐ Facile     | 🚧 Bientôt     | 🚧 Bientôt    | ✅ Oui      | ✅ Moderne  |
+| **Netlify CMS**    | ⭐ Facile     | ❌ Non         | ✅ Oui        | ✅ Oui      | ✅ Standard |
+| **Hugo Archetype** | ⭐⭐ Moyen    | ✅ Oui         | ❌ Manuel     | ❌ Manuel   | ❌ Terminal |
+| **Page Bundle**    | ⭐⭐⭐ Avancé | ✅✅ Oui       | ❌ Manuel     | ❌ Manuel   | ❌ Terminal |
 
 ---
 
@@ -261,4 +261,3 @@ Si vous rencontrez un problème :
 ## Dernière mise à jour
 
 29 octobre 2025
-

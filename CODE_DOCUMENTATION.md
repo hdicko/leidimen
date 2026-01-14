@@ -42,28 +42,26 @@ leidimen/
 ### Layouts
 
 #### Base Templates
+
 - **`layouts/_default/baseof.html`**
   - Master template wrapping all pages
   - Defines the HTML structure (head, body, footer)
   - Loads global partials (navbar, footer, scripts)
-  
 - **`layouts/_default/single.html`**
   - Template for individual pages
   - Used when no specific layout is defined
-  
 - **`layouts/_default/list.html`**
   - Template for listing pages (empty, uses specific layouts)
 
 #### Specialized Templates
+
 - **`layouts/about/single.html`**
   - Team member profile pages
   - Displays card info, experience timeline, skills
   - Features: AOS animations, responsive grid, related members
-  
 - **`layouts/posts/list.html.html`**
   - Blog post listing page
   - Pagination, filtering, featured posts
-  
 - **`layouts/galleries/single.html`**
   - Photo gallery pages
   - PhotoSwipe integration for lightbox
@@ -75,23 +73,18 @@ Reusable components included in multiple templates:
 - **`layouts/partials/head.html`**
   - HTML `<head>` section
   - Meta tags, CSS links, SEO
-  
 - **`layouts/partials/navbar.html`**
   - Site navigation menu
   - Mobile responsive
-  
 - **`layouts/partials/footer.html`**
   - Site footer
   - Contact info, social links
-  
 - **`layouts/partials/scripts.html`**
   - JavaScript loading
   - Bootstrap, jQuery, custom scripts
-  
 - **`layouts/partials/photoswipe-resources.html`** ⭐ NEW
   - PhotoSwipe library loading (CSS/JS)
   - Centralized resource management
-  
 - **`layouts/partials/photoswipe-structure.html`** ⭐ NEW
   - PhotoSwipe HTML structure
   - Lightbox UI elements
@@ -101,26 +94,25 @@ Reusable components included in multiple templates:
 Custom Hugo shortcodes for content enhancement:
 
 #### Gallery & Images
+
 - **`gallery.html`** ⭐ REFACTORED
   - Auto-loads PhotoSwipe
   - Processes page resources
   - Creates responsive thumbnails
   - Usage: `{{< gallery >}}`
-  
 - **`load-photoswipe.html`** ⭐ REFACTORED
   - Manual PhotoSwipe loading
   - Use when NOT using {{< gallery >}}
   - Usage: `{{< load-photoswipe >}}`
-  
 - **`figure.html`**
   - Enhanced figure/image display
   - hugo-easy-gallery compatible
-  
 - **`myimage.html`**
   - Simple responsive image
   - Bootstrap styling
 
 #### Text Effects
+
 - **`typeit.html`** ⭐ DOCUMENTED
   - Typing animation effect
   - Uses TypeIt library v8.7.1
@@ -128,18 +120,18 @@ Custom Hugo shortcodes for content enhancement:
   - Usage: `{{< typeit >}}Your text{{< /typeit >}}`
 
 #### Content Enhancement
+
 - **`alert.html`**
   - Styled alert boxes
   - Custom colors and icons
-  
 - **`divider.html`**
   - Decorative section dividers
 
 #### Media
+
 - **`video.html`**
   - Responsive video embedding
   - YouTube, Vimeo support
-  
 - **`carousel.html`**
   - Bootstrap carousel for featured content
 
@@ -150,9 +142,8 @@ Custom Hugo shortcodes for content enhancement:
 ```html
 <!-- HTML comments visible in source -->
 
-{{/* Hugo template comments (not in output) */}}
-
-{{- /* Remove whitespace before/after */ -}}
+{{/* Hugo template comments (not in output) */}} {{- /* Remove whitespace
+before/after */ -}}
 ```
 
 ### Naming Conventions
@@ -182,11 +173,13 @@ Custom Hugo shortcodes for content enhancement:
 ## Image Processing
 
 ### Gallery Images
+
 ```go
 {{- $resized := .Fill "400x500 top webp q85 lanczos" -}}
 ```
 
 Parameters:
+
 - **Size**: 400x500 pixels
 - **Anchor**: top (for portraits)
 - **Format**: WebP (modern, efficient)
@@ -194,6 +187,7 @@ Parameters:
 - **Algorithm**: Lanczos (best quality resampling)
 
 ### Best Practices
+
 - Use WebP for web images (better compression)
 - Quality 85 is optimal (good quality, reasonable size)
 - Lanczos provides best resampling quality
@@ -310,6 +304,7 @@ villages:
 ## Debugging Tips
 
 ### Hugo Server
+
 ```bash
 # Run development server
 ./dev-server.sh
@@ -340,6 +335,7 @@ hugo server -D --bind 127.0.0.1 --port 1313
    - Clear browser cache
 
 ### Viewing Generated HTML
+
 ```bash
 # Build site to public/
 hugo
@@ -351,17 +347,20 @@ cat public/path/to/page/index.html
 ## Performance Optimization
 
 ### Image Optimization
+
 - Use WebP format (supported by all modern browsers)
 - Set quality to 85 (good balance)
 - Use responsive sizes (Hugo's image processing)
 - Lazy load images (`loading="lazy"`)
 
 ### JavaScript
+
 - Load libraries from CDN (cached across sites)
 - Use defer/async attributes
 - Minimize custom JavaScript
 
 ### CSS
+
 - Use Sass for organization
 - Minimize and compile for production
 - Leverage Bootstrap's utility classes
@@ -371,11 +370,13 @@ cat public/path/to/page/index.html
 ### Before Making Changes
 
 1. **Create a branch**
+
    ```bash
    git checkout -b feature/your-feature
    ```
 
 2. **Test locally**
+
    ```bash
    ./dev-server.sh
    ```
@@ -407,18 +408,21 @@ Commit types: `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore`
 ## Resources
 
 ### Documentation
+
 - [Hugo Docs](https://gohugo.io/documentation/)
 - [Bootstrap 5](https://getbootstrap.com/docs/5.0/)
 - [PhotoSwipe](https://photoswipe.com/documentation/)
 - [TypeIt](https://www.typeitjs.com/)
 
 ### Tools
+
 - [Hugo Easy Gallery](https://github.com/liwenyip/hugo-easy-gallery/)
 - [Netlify CMS](https://www.netlifycms.org/docs/)
 
 ## Changelog
 
 ### 2025-10-20: Major Refactoring
+
 - Created modular PhotoSwipe partials
 - Refactored gallery.html and load-photoswipe.html
 - Removed 7 unused files
@@ -427,7 +431,8 @@ Commit types: `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore`
 - Standardized team member profiles (8 files)
 
 ### 2025-10: Content Standardization
-- Standardized all about/*.md profiles
+
+- Standardized all about/\*.md profiles
 - Standardized posts, documents, galleries
 - Fixed TypeIt shortcode
 - Added grid layout for team members
@@ -435,6 +440,7 @@ Commit types: `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore`
 ## Support
 
 For questions or issues:
+
 1. Check this documentation
 2. Review existing code for examples
 3. Consult Hugo documentation

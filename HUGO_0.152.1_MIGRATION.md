@@ -13,11 +13,13 @@ Unifier la version de Hugo utilisée en développement local et sur Netlify pour
 ## 📊 Changements de Version
 
 ### Avant
+
 - **Local**: Hugo 0.122.0 (via npm hugo-installer)
 - **Netlify**: Hugo 0.151.0 (via netlify.toml)
 - **Problème**: Différences de comportement entre environnements
 
 ### Après
+
 - **Local**: Hugo 0.152.1 (via npm hugo-installer)
 - **Netlify**: Hugo 0.152.1 (via netlify.toml)
 - **Résultat**: Version unifiée, builds identiques
@@ -25,6 +27,7 @@ Unifier la version de Hugo utilisée en développement local et sur Netlify pour
 ## 📝 Fichiers Modifiés
 
 ### 1. `package.json`
+
 ```json
 "otherDependencies": {
   "hugo": "0.152.1"  // était 0.122.0
@@ -32,21 +35,25 @@ Unifier la version de Hugo utilisée en développement local et sur Netlify pour
 ```
 
 ### 2. `netlify.toml`
+
 ```toml
 HUGO_VERSION = "0.152.1"  // était 0.151.0
 ```
 
 ### 3. `dev-server.sh`
+
 - Ajout de la vérification de version
 - Utilisation de `./node_modules/.bin/hugo/hugo` au lieu de `hugo` système
 - Affichage de la version au démarrage
 
 ### 4. `deploy.sh`
+
 - Utilisation de `./node_modules/.bin/hugo/hugo` pour le build
 - Ajout du check de version avant déploiement
 - Options de build: `--gc --minify`
 
 ### 5. `.github/copilot-instructions.md`
+
 - Mise à jour de toutes les références de version
 - Suppression de la note sur les différences de version
 - Ajout de la section sur la version unifiée
@@ -54,6 +61,7 @@ HUGO_VERSION = "0.152.1"  // était 0.151.0
 ## 🆕 Nouveau Fichier
 
 ### `test-hugo-compatibility.sh`
+
 Script de test automatisé complet avec 10 étapes de validation:
 
 1. ✅ **Vérification version Hugo** - Confirme v0.152.1
@@ -70,6 +78,7 @@ Script de test automatisé complet avec 10 étapes de validation:
 ## 🧪 Résultats des Tests
 
 ### Build Statistics
+
 ```
 Pages générées      : 296
 Articles (posts)    : 46
@@ -80,12 +89,14 @@ Avertissements      : 6 (normaux)
 ```
 
 ### Taxonomies Validées
+
 - ✅ `villages` - 10 villages (Dorool, Diona, Debere, etc.)
 - ✅ `categories` - Éducation, Santé, Infrastructure
 - ✅ `tags` - Mots-clés variés
 - ✅ `moods` - Heureux, Motivé, Reconnaissant, etc.
 
 ### Fichiers Critiques
+
 - ✅ `public/index.html` - Page d'accueil
 - ✅ `public/posts/` - 46 articles
 - ✅ `public/villages/` - Pages villages
@@ -96,21 +107,25 @@ Avertissements      : 6 (normaux)
 ## ✅ Avantages de la Migration
 
 ### 1. Cohérence des Builds
+
 - Même version partout = comportement identique
 - Plus de surprises lors du déploiement
 - Builds reproductibles
 
 ### 2. Maintenance Simplifiée
+
 - Une seule version à maintenir
 - Mises à jour synchronisées
 - Documentation claire
 
 ### 3. Tests Automatisés
+
 - Script de validation complet
 - Détection précoce des problèmes
 - Confiance avant déploiement
 
 ### 4. Performance
+
 - Build rapide: ~424ms
 - 296 pages générées
 - Minification efficace
@@ -118,6 +133,7 @@ Avertissements      : 6 (normaux)
 ## 🔧 Commandes Mises à Jour
 
 ### Développement Local
+
 ```bash
 # Démarrer le serveur (utilise Hugo 0.152.1)
 ./dev-server.sh
@@ -130,6 +146,7 @@ npm run dev
 ```
 
 ### Build Production
+
 ```bash
 # Build local
 npm run build
@@ -139,6 +156,7 @@ npm run build
 ```
 
 ### Vérifications
+
 ```bash
 # Version Hugo
 ./node_modules/.bin/hugo/hugo version
@@ -150,6 +168,7 @@ npm run build
 ## 📈 Impact sur le Workflow
 
 ### Avant
+
 1. ❌ Développer localement (v0.122.0)
 2. ❌ Push vers GitHub
 3. ❌ Netlify build (v0.151.0) - risque d'incompatibilité
@@ -157,6 +176,7 @@ npm run build
 5. ❌ Debugging si problème de version
 
 ### Après
+
 1. ✅ Développer localement (v0.152.1)
 2. ✅ Tester automatiquement (`./test-hugo-compatibility.sh`)
 3. ✅ Push vers GitHub
@@ -166,17 +186,20 @@ npm run build
 ## 🎯 Prochaines Étapes
 
 ### Immédiat
+
 - [x] Migration vers 0.152.1
 - [x] Tests de compatibilité
 - [x] Documentation mise à jour
 - [x] Commit et push
 
 ### Court Terme
+
 - [ ] Déploiement Netlify automatique
 - [ ] Vérification du site en production
 - [ ] Monitoring des performances
 
 ### Maintenance Future
+
 - [ ] Veille sur les versions Hugo
 - [ ] Mises à jour régulières (avec tests)
 - [ ] Amélioration du script de test
@@ -184,6 +207,7 @@ npm run build
 ## 🚀 Déploiement Netlify
 
 La mise à jour de `netlify.toml` déclenchera automatiquement:
+
 1. Installation de Hugo 0.152.1
 2. Installation de Dart Sass 1.93.2
 3. Build avec `hugo --gc --minify`
@@ -194,6 +218,7 @@ La mise à jour de `netlify.toml` déclenchera automatiquement:
 ## 📚 Documentation Mise à Jour
 
 Tous les documents suivants ont été mis à jour:
+
 - ✅ `.github/copilot-instructions.md` - Instructions Copilot
 - ✅ `package.json` - Dépendances npm
 - ✅ `netlify.toml` - Configuration Netlify

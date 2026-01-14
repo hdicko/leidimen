@@ -10,13 +10,11 @@ slug: "compte-rendu"
 weight: 0
 ---
 
-
 - [Rapport 2019](/documents/leidimen/rapport-2019.pdf)
-{.text-muted .lead .fst-italic .fw-bold .mb-2  .mb-4}
+  {.text-muted .lead .fst-italic .fw-bold .mb-2 .mb-4}
 
 - [Rapport 2023](/documents/leidimen/rapport-2023.pdf)
-{.text-muted .lead .fst-italic .fw-bold .mb-2  .mb-4}
+  {.text-muted .lead .fst-italic .fw-bold .mb-2 .mb-4}
 
 - [Rapport Etape 1- 2024](/documents/leidimen/ADPEK-etape1.pdf)
-{.text-muted .lead .fst-italic .fw-bold .mb-2  .mb-4}
-
+  {.text-muted .lead .fst-italic .fw-bold .mb-2 .mb-4}

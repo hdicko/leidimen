@@ -72,7 +72,6 @@ categories:
   - "bureau"
   - "fondateur"
 
-
 tags:
   - "Leidimen"
   - "trésorier"
@@ -82,10 +81,7 @@ tags:
 {{< myimage src="images/david-logo.jpg" >}}
 
 {{< details "Voir le detail" >}}
-{{< typeit
-  tag=h1
-  lifeLike=true
->}}
+{{< typeit tag=h1 lifeLike=true >}}
 Hamassala Hamadoun Pathe Ameri Diona Dicko
 {{< /typeit >}}
 

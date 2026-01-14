@@ -12,7 +12,7 @@ moods: ["Heureux"]
 
 ## Une nouvelle image pour notre association
 
-Comme vous l'avez sans doute remarqué, **notre site Internet a fait peau neuve** ! 
+Comme vous l'avez sans doute remarqué, **notre site Internet a fait peau neuve** !
 
 Nous sommes ravis de vous présenter ce nouveau design qui améliore l'expérience de navigation et met en valeur nos projets et nos actions au Mali.
 

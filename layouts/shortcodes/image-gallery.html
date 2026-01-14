@@ -1,25 +1,22 @@
-{{/*
-  Image Gallery Shortcode
-  
+{{/* Image Gallery Shortcode
+
   Purpose: Display a professional, responsive image gallery with Bootstrap cards and Lightbox
-  
-  Usage: 
-  {{< image-gallery >}}
-  {{< gallery-item 
-      src="/img/path/image.jpg" 
-      title="Card Title" 
-      description="Description text"
-      icon="📦" 
-  >}}
-  {{< /image-gallery >}}
-  
-  Features:
-  - Responsive Bootstrap grid (1 col mobile, 2 cols tablet/desktop)
-  - Card-based layout with hover effects
-  - Lightbox integration for full-size viewing
-  - Custom icons and descriptions for each image
-  - Professional animations and shadows
-*/}}
+
+  Usage:
+  {{< image-gallery
+>}}
+{{< gallery-item
+  src="/img/path/image.jpg"
+  title="Card Title"
+  description="Description text"
+  icon="📦"
+>}}
+{{< /image-gallery >}}
+
+Features: - Responsive Bootstrap grid (1 col mobile, 2 cols tablet/desktop) -
+Card-based layout with hover effects - Lightbox integration for full-size
+viewing - Custom icons and descriptions for each image - Professional animations
+and shadows */}}
 
 <div class="container my-5">
   <div class="row row-cols-1 row-cols-md-2 g-4">
@@ -28,47 +25,49 @@
 </div>
 
 <style>
-.gallery-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-  border: none;
-  overflow: hidden;
-}
+  .gallery-card {
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+    cursor: pointer;
+    border: none;
+    overflow: hidden;
+  }
 
-.gallery-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15) !important;
-}
+  .gallery-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
+  }
 
-.gallery-card a {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-}
+  .gallery-card a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
 
-.gallery-card img {
-  transition: transform 0.3s ease;
-  object-fit: cover;
-  height: 300px;
-  width: 100%;
-}
+  .gallery-card img {
+    transition: transform 0.3s ease;
+    object-fit: cover;
+    height: 300px;
+    width: 100%;
+  }
 
-.gallery-card:hover img {
-  transform: scale(1.05);
-}
+  .gallery-card:hover img {
+    transform: scale(1.05);
+  }
 
-.gallery-card .card-body {
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-}
+  .gallery-card .card-body {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  }
 
-.gallery-card .card-title {
-  font-weight: 600;
-  color: #2c3e50;
-  margin-bottom: 0.5rem;
-}
+  .gallery-card .card-title {
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+  }
 
-.gallery-card .card-text {
-  color: #6c757d;
-  font-size: 0.95rem;
-}
+  .gallery-card .card-text {
+    color: #6c757d;
+    font-size: 0.95rem;
+  }
 </style>

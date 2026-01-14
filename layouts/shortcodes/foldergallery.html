@@ -18,17 +18,24 @@
 
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
-/>
+  href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
 <div class="gallery">
-  {{ $base := .Get "src" }} {{ $path := print "static/" (.Get "src") }} {{ range
-  (readDir $path) }} {{- $thumbext := "-thumb" }} {{- $isthumb := .Name | findRE
-  ($thumbext | printf "%s\\.") }}<!-- is the current file a thumbnail image? -->
-  {{- $isimg := lower .Name | findRE "\\.(gif|jpg|jpeg|tiff|png|bmp|webp)" }}<!-- is the current file an image? -->
-  {{- if and $isimg (not $isthumb) }} {{- $thumb := .Name | replaceRE "(\\.)"
-  ($thumbext | printf "%s.") }}
-  <a data-fancybox="gallery" href="/{{ $base }}/{{ .Name }}">
-    <img src="/{{ $base }}/{{ $thumb }}" /> <br />
-  </a>
-  {{- end }} {{ end }}
+  {{ $base := .Get "src" }} {{ $path := print "static/" (.Get "src") }}
+  {{ range
+    (readDir $path)
+  }}
+    {{- $thumbext := "-thumb" }}
+    {{- $isthumb := .Name | findRE
+      ($thumbext | printf "%s\\.")
+    }}<!-- is the current file a thumbnail image? -->
+    {{- $isimg := lower .Name | findRE "\\.(gif|jpg|jpeg|tiff|png|bmp|webp)" }}<!-- is the current file an image? -->
+    {{- if and $isimg (not $isthumb) }}
+      {{- $thumb := .Name | replaceRE "(\\.)"
+        ($thumbext | printf "%s.")
+      }}
+      <a data-fancybox="gallery" href="/{{ $base }}/{{ .Name }}">
+        <img src="/{{ $base }}/{{ $thumb }}" /> <br />
+      </a>
+    {{- end }}
+  {{ end }}
 </div>

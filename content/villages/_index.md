@@ -8,5 +8,5 @@ draft: false
 #    title: Nos villages
 ---
 
-Taxonomy villages content: content/villages/_index.md
+Taxonomy villages content: content/villages/\_index.md
 {.fs-3 .text-center}

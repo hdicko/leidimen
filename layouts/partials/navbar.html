@@ -1,18 +1,28 @@
-<!-- Professional Navigation Bar -->
+<!-- Modern Horizontal Navigation Bar -->
 {{ $current := . }}
 
-<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top" id="mainNavbar">
   <div class="container">
     <!-- Brand/Logo -->
-    <div class="navbar-brand d-flex align-items-center">
-      <img src="{{ "images/leidimen-logo.jpg" | relURL }}" alt="Leidimen" height="40" width="40" class="rounded-circle me-2">
-      <span class="fw-bold text-primary fs-4">Leidimen</span>
-    </div>
+    <a href="/" class="navbar-brand d-flex align-items-center">
+      <img
+        src="{{ "images/leidimen-logo.jpg" | relURL }}"
+        alt="Leidimen"
+        height="40"
+        width="40"
+        class="rounded-circle me-2" />
+      <span class="fw-bold text-primary">Leidimen</span>
+    </a>
 
-    <!-- Mobile Toggle Button -->
-    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" 
-            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" 
-            aria-label="Toggle navigation">
+    <!-- Mobile Toggle -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -20,57 +30,63 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto align-items-lg-center">
         {{- range $i, $e := .Site.Menus.main -}}
-        {{- if .HasChildren -}}
-        <li class="nav-item dropdown me-2">
-          <a class="nav-link dropdown-toggle fw-semibold px-3 py-2 rounded-pill {{ if $.HasMenuCurrent "main" . }}active bg-primary text-white{{ else }}text-dark hover-bg-light{{ end }}" 
-             href="#" id="navbarDropdown-{{- $i -}}" role="button" 
-             data-bs-toggle="dropdown" aria-expanded="false">
-            {{- if .Pre }}{{ .Pre | safeHTML }}&nbsp;{{ end -}}{{ .Name }}
-          </a>
-          <ul class="dropdown-menu border-0 shadow-lg rounded-3 mt-2" aria-labelledby="navbarDropdown-{{- $i -}}">
-            {{- range .Children -}}
-            {{- if eq .Params.disabled true -}}
-            <li>
-              <a class="dropdown-item text-muted disabled" href="#" tabindex="-1" aria-disabled="true">
+          {{- if .HasChildren -}}
+            <li class="nav-item dropdown me-2">
+              <a
+                class="nav-link dropdown-toggle fw-semibold {{ if $.HasMenuCurrent "main" . }}active{{ end }}"
+                href="#"
+                id="navbarDropdown-{{- $i -}}"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false">
                 {{- if .Pre }}{{ .Pre | safeHTML }}&nbsp;{{ end -}}{{ .Name }}
               </a>
+              <ul class="dropdown-menu shadow-sm" aria-labelledby="navbarDropdown-{{- $i -}}">
+                {{- range .Children -}}
+                  {{- if eq .Params.divider true -}}
+                    <li><hr class="dropdown-divider" /></li>
+                  {{- else if ne .Params.disabled true -}}
+                    <li>
+                      <a
+                        class="dropdown-item {{ if $.IsMenuCurrent "main" . }}active{{ end }}"
+                        href="{{ .URL }}"
+                        {{ if .Params.rel }}rel="{{ .Params.rel }}"{{ end }}
+                        {{ if eq .Params.rel "external" }}target="_blank"{{ end }}>
+                        {{- if .Pre }}{{ .Pre | safeHTML }}&nbsp;{{ end -}}
+                        {{ .Name }}
+                        {{- if eq .Params.rel "external" }}&nbsp;<i class="bi bi-box-arrow-up-right"></i>{{ end }}
+                      </a>
+                    </li>
+                  {{- end -}}
+                {{- end -}}
+              </ul>
             </li>
-            {{- else if eq .Params.divider true -}}
-            <li><hr class="dropdown-divider my-2"></li>
-            {{- else -}}
-            <li>
-              <a class="dropdown-item py-2 px-3 {{ if $.IsMenuCurrent "main" . }}active bg-primary text-white{{ end }}" 
-                 href="{{ .URL }}"{{ if .Params.rel }} rel="{{ .Params.rel }}"{{ end }}{{ if eq .Params.rel "external" }} target="_blank"{{ end }}>
-                {{- if .Pre }}{{ .Pre | safeHTML }}&nbsp;{{ end -}}{{ .Name }}{{- if eq .Params.rel "external" }}&nbsp;↗{{ end }}
-              </a>
-            </li>
+          {{- else -}}
+            {{- if ne .Params.disabled true -}}
+              <li class="nav-item me-2">
+                <a
+                  class="nav-link fw-semibold {{ if $.IsMenuCurrent "main" . }}active{{ end }}"
+                  href="{{ .URL }}"
+                  {{ if .Params.rel }}rel="{{ .Params.rel }}"{{ end }}
+                  {{ if eq .Params.rel "external" }}target="_blank"{{ end }}>
+                  {{- if .Pre }}{{ .Pre | safeHTML }}&nbsp;{{ end -}}
+                  {{ .Name }}
+                  {{- if eq .Params.rel "external" }}&nbsp;<i class="bi bi-box-arrow-up-right"></i>{{ end }}
+                </a>
+              </li>
             {{- end -}}
-            {{- end -}}
-          </ul>
-        </li>
-        {{- else -}}
-        {{- if eq .Params.disabled true -}}
-        <li class="nav-item me-2">
-          <a class="nav-link text-muted disabled px-3 py-2" href="#" tabindex="-1" aria-disabled="true">
-            {{- if .Pre }}{{ .Pre | safeHTML }}&nbsp;{{ end -}}{{ .Name }}
-          </a>
-        </li>
-        {{- else -}}
-        <li class="nav-item me-2">
-          <a class="nav-link fw-semibold px-3 py-2 rounded-pill {{ if $.IsMenuCurrent "main" . }}active bg-primary text-white{{ else }}text-dark hover-bg-light{{ end }}" 
-             href="{{ .URL }}"{{ if .Params.rel }} rel="{{ .Params.rel }}"{{ end }}{{ if eq .Params.rel "external" }} target="_blank"{{ end }}>
-            {{- if .Pre }}{{ .Pre | safeHTML }}&nbsp;{{ end -}}{{ .Name }}{{- if eq .Params.rel "external" }}&nbsp;↗{{ end }}
-          </a>
-        </li>
+          {{- end -}}
         {{- end -}}
-        {{- end -}}
-        {{- end -}}
-        
+
         <!-- Dark Mode Toggle -->
         <li class="nav-item ms-2">
-          <button id="darkModeToggle" class="btn btn-outline-secondary border-0 rounded-circle p-2" 
-                  aria-label="Toggle dark mode" title="Toggle dark mode">
-            <i class="bi bi-moon-fill" id="darkModeIcon"></i>
+          <button
+            id="darkModeToggle"
+            class="btn btn-sm btn-outline-secondary rounded-circle"
+            aria-label="Toggle dark mode"
+            title="Changer le thème"
+            style="width: 36px; height: 36px;">
+            <i class="bi bi-moon-stars" id="darkModeIcon"></i>
           </button>
         </li>
       </ul>
@@ -80,184 +96,181 @@
 
 <!-- Enhanced Breadcrumb Navigation -->
 {{- if not .IsHome -}}
-<nav aria-label="breadcrumb" class="bg-light border-bottom">
-  <div class="container">
-    <ol class="breadcrumb py-3 mb-0">
-      <li class="breadcrumb-item">
-        <a href="/" class="text-decoration-none text-primary fw-medium">
-          🏠&nbsp;Accueil
-        </a>
-      </li>
-      {{- if .Parent -}}
-      <li class="breadcrumb-item">
-        <a href="{{ .Parent.Permalink }}" class="text-decoration-none text-primary fw-medium">
-          {{ .Parent.Title }}
-        </a>
-      </li>
-      {{- end -}}
-      <li class="breadcrumb-item active fw-semibold" aria-current="page">
-        {{ .Title }}
-      </li>
-    </ol>
-  </div>
-</nav>
+  <nav aria-label="breadcrumb" class="bg-light border-bottom">
+    <div class="container">
+      <ol class="breadcrumb py-3 mb-0">
+        <li class="breadcrumb-item">
+          <a href="/" class="text-decoration-none text-primary fw-medium">
+            🏠&nbsp;Accueil
+          </a>
+        </li>
+        {{- if .Parent -}}
+          <li class="breadcrumb-item">
+            <a
+              href="{{ .Parent.Permalink }}"
+              class="text-decoration-none text-primary fw-medium">
+              {{ .Parent.Title }}
+            </a>
+          </li>
+        {{- end -}}
+        <li class="breadcrumb-item active fw-semibold" aria-current="page">
+          {{ .Title }}
+        </li>
+      </ol>
+    </div>
+  </nav>
 {{- end -}}
 
+
 <style>
-/* Professional Navigation Styles */
-.navbar-brand {
-  transition: transform 0.2s ease;
-}
-
-.navbar-brand:hover {
-  transform: scale(1.02);
-}
-
-.nav-link {
-  transition: all 0.2s ease;
-  position: relative;
-}
-
-.nav-link:not(.active):hover {
-  background-color: rgba(13, 110, 253, 0.1) !important;
-  transform: translateY(-1px);
-}
-
-.dropdown-menu {
-  animation: fadeInDown 0.2s ease;
-}
-
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
+  /* Simple Modern Navigation */
+  .navbar {
+    transition: all 0.3s ease;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+
+  .navbar.scrolled {
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
   }
-}
 
-.dropdown-item {
-  transition: all 0.2s ease;
-}
+  .navbar-brand:hover {
+    transform: scale(1.05);
+    transition: transform 0.2s ease;
+  }
 
-.dropdown-item:hover:not(.disabled) {
-  background-color: rgba(13, 110, 253, 0.1);
-  transform: translateX(5px);
-}
-
-.breadcrumb-item + .breadcrumb-item::before {
-  content: "›";
-  font-weight: bold;
-  color: #6c757d;
-}
-
-/* Mobile Optimizations */
-@media (max-width: 991.98px) {
   .nav-link {
-    margin-bottom: 0.5rem;
-    text-align: center;
+    position: relative;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem !important;
+    border-radius: 8px;
   }
-  
-  .navbar-nav .btn {
-    margin-top: 1rem;
-    width: 100%;
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
   }
-}
 
-/* Hover effect for non-active nav items */
-.hover-bg-light:hover {
-  background-color: rgba(13, 110, 253, 0.1) !important;
-}
+  .nav-link:hover::after {
+    width: 80%;
+  }
 
-/* Dark Mode Toggle Button */
-#darkModeToggle {
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-}
+  .nav-link.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white !important;
+  }
 
-#darkModeToggle:hover {
-  background-color: rgba(13, 110, 253, 0.1);
-  transform: rotate(15deg);
-}
+  .nav-link.active::after {
+    display: none;
+  }
 
-/* Dark Mode Styles */
-body.dark-mode {
-  background-color: #1a1a1a;
-  color: #e0e0e0;
-}
+  .dropdown-menu {
+    border: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+  }
 
-body.dark-mode .navbar {
-  background-color: #2d2d2d !important;
-  border-bottom: 1px solid #404040;
-}
+  .dropdown-item {
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    transition: all 0.2s ease;
+  }
 
-body.dark-mode .navbar-brand span {
-  color: #4da6ff !important;
-}
+  .dropdown-item:hover {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+    transform: translateX(5px);
+  }
 
-body.dark-mode .nav-link {
-  color: #e0e0e0 !important;
-}
+  .dropdown-item.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+  }
 
-body.dark-mode .nav-link.active {
-  background-color: #4da6ff !important;
-  color: #ffffff !important;
-}
+  #darkModeToggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
 
-body.dark-mode .nav-link:not(.active):hover {
-  background-color: rgba(77, 166, 255, 0.2) !important;
-}
+  #darkModeToggle:hover {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-color: transparent;
+    transform: rotate(15deg);
+  }
 
-body.dark-mode .dropdown-menu {
-  background-color: #2d2d2d;
-  border: 1px solid #404040;
-}
+  /* Mobile responsive */
+  @media (max-width: 991.98px) {
+    .nav-link {
+      text-align: center;
+      margin: 0.25rem 0;
+    }
+    
+    .dropdown-menu {
+      border: none;
+      box-shadow: none;
+      background: transparent;
+    }
+  }
 
-body.dark-mode .dropdown-item {
-  color: #e0e0e0;
-}
+  /* Dark Mode */
+  [data-bs-theme="dark"] .navbar {
+    background: rgba(26, 32, 44, 0.95) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
 
-body.dark-mode .dropdown-item:hover {
-  background-color: rgba(77, 166, 255, 0.2);
-}
+  [data-bs-theme="dark"] .nav-link {
+    color: #e2e8f0 !important;
+  }
 
-body.dark-mode .dropdown-item.active {
-  background-color: #4da6ff;
-  color: #ffffff;
-}
+  [data-bs-theme="dark"] .nav-link.active {
+    color: white !important;
+  }
 
-body.dark-mode .bg-light {
-  background-color: #2d2d2d !important;
-}
+  [data-bs-theme="dark"] .dropdown-menu {
+    background: rgba(26, 32, 44, 0.95);
+  }
 
-body.dark-mode .breadcrumb {
-  background-color: #2d2d2d;
-}
+  [data-bs-theme="dark"] .dropdown-item {
+    color: #e2e8f0;
+  }
 
-body.dark-mode .breadcrumb-item,
-body.dark-mode .breadcrumb-item a {
-  color: #4da6ff;
-}
-
-body.dark-mode .breadcrumb-item.active {
-  color: #e0e0e0;
-}
-
-body.dark-mode .card {
-  background-color: #2d2d2d;
-  border-color: #404040;
-  color: #e0e0e0;
-}
-
-body.dark-mode .shadow,
-body.dark-mode .shadow-sm,
-body.dark-mode .shadow-lg {
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5) !important;
-}
+  [data-bs-theme="dark"] .dropdown-item.active {
+    color: white;
+  }
 </style>
+
+<script>
+// Navbar scroll effect
+window.addEventListener('scroll', () => {
+  const navbar = document.getElementById('mainNavbar');
+  if (window.scrollY > 50) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+});
+
+// Auto close mobile menu on link click
+document.addEventListener('DOMContentLoaded', () => {
+  const navLinks = document.querySelectorAll('.navbar-nav .nav-link, .dropdown-item');
+  const navbarToggler = document.querySelector('.navbar-toggler');
+  const navbarCollapse = document.getElementById('navbarNav');
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (window.innerWidth < 992 && navbarCollapse.classList.contains('show')) {
+        navbarToggler.click();
+      }
+    });
+  });
+});
+</script>

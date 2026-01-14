@@ -17,7 +17,7 @@ Après des semaines de préparation, le grand jour est arrivé : **le matériel 
 
 ![Chargement du matériel](envoi.jpg)
 
-*Chargement du matériel informatique direction Bamako*
+_Chargement du matériel informatique direction Bamako_
 
 ---
 
@@ -47,14 +47,14 @@ Les ordinateurs ont été soigneusement remballés dans des **cartons tout neufs
 </div>
 </div>
 
-*Emballage minutieux des ordinateurs par nos bénévoles*
+_Emballage minutieux des ordinateurs par nos bénévoles_
 
 ---
 
 ## Remerciements
 
 > **Encore une fois, merci aux bénévoles !!!!**
-> 
+>
 > Votre investissement et votre engagement permettent de concrétiser ce projet qui va transformer l'enseignement au lycée de Douentza.
 
 ---
@@ -65,4 +65,4 @@ Ces 10 ordinateurs vont permettre aux lycéens de Douentza d'accéder aux **tech
 
 📍 **Destination finale** : Lycée de Douentza, région de Mopti, Mali 🇲🇱
 
-*Suivez-nous pour connaître l'arrivée du matériel et sa mise en service !*
+_Suivez-nous pour connaître l'arrivée du matériel et sa mise en service !_

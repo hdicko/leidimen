@@ -7,6 +7,7 @@ draft: false
 description: ""
 image: /images/uploads/ecole-dorool.jpeg
 ---
+
 Voici **Ibrahim**, **Faadi**, **Leyla** et **Issa**.
 
 Ces quatre enfants sont originaires de Dorool, village de la [région de Mopti](https://leidimen.com/zone-daction/villages), situé dans le cercle de Douentza.
@@ -25,8 +26,8 @@ La réalisation du projet a déjà commencé : deux classes ont été construite
 
 Vous souhaitez participer à la réalisation de ce projet ? Plusieurs solutions s’offrent à vous. Vous pouvez nous aider :
 
-* **en** **faisant un don**, qui permettra de construire l’école, d’acheter le matériel scolaire et de payer les premiers salaires de l’instituteur
-* en choisissant de **parrainer un enfant de Dorool**. Le parrainage constitue un geste sur le long terme : chaque parrain s’engage en effet à verser 15 euros par mois, et offre ainsi à un enfant une scolarisation régulière, un repas quotidien, mais aussi des soins médicaux si nécessaire.\
+- **en** **faisant un don**, qui permettra de construire l’école, d’acheter le matériel scolaire et de payer les premiers salaires de l’instituteur
+- en choisissant de **parrainer un enfant de Dorool**. Le parrainage constitue un geste sur le long terme : chaque parrain s’engage en effet à verser 15 euros par mois, et offre ainsi à un enfant une scolarisation régulière, un repas quotidien, mais aussi des soins médicaux si nécessaire.\
   Si vous êtes intéressés par le parrainage, contactez-nous : contact@leïdimen.com.
 
 66% de la somme que vous versez à l’association est déductible d’impôts. Par exemple, les parrains ne paieront effectivement que 5 euros par mois !

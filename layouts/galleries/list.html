@@ -1,8 +1,7 @@
-{{/* 
-  Template: galleries/list.html
+{{/* Template: galleries/list.html
   Purpose: List page for all galleries
   Context: /galleries/ - displays all gallery collections
-  
+
   Features:
   - Grid layout of gallery cards (3 columns on desktop)
   - Thumbnail from first image in each gallery
@@ -11,12 +10,12 @@
   - Hover effects (lift + shadow)
   - Call-to-action button to view gallery
   - Responsive design (mobile, tablet, desktop)
-  
+
   Image Handling:
   - Searches for first image resource in gallery
   - Processes to 600x400 fill (crops to fit)
   - Fixed height (250px) with object-fit cover
-  
+
   Dependencies:
   - Bootstrap 5
   - Bootstrap Icons
@@ -25,94 +24,97 @@
 
 {{ define "main" }}
 
-<section class="galleries-section py-5">
-  <div class="container">
-    {{/* Header Section */}}
-    <div class="text-center mb-5">
-      <h1 class="display-4 fw-bold mb-3">{{ .Title }}</h1>
-      <p class="lead text-muted">{{ .Description }}</p>
-    </div>
-
-    {{/* 
-      Gallery Grid
-      - 3 columns on large screens (col-lg-4)
-      - 2 columns on medium screens (col-md-6)
-      - 1 column on small screens
-      - Gap between cards (g-4)
-    */}}
-    <div class="row g-4">
-      {{/* Loop through all gallery pages */}}
-      {{ range .Pages }}
-      <div class="col-md-6 col-lg-4">
-        <div class="card gallery-card h-100 shadow-sm">
-          {{/* 
-            Thumbnail from first image
-            - Gets first image resource from gallery
-            - Processes to 600x400 fill
-            - Fixed height 250px with object-fit cover
-          */}}
-          {{ with .Resources.ByType "image" }}
-            {{ $firstImage := index . 0 }}
-            {{ if $firstImage }}
-              {{ $thumb := $firstImage.Fill "600x400" }}
-              <img src="{{ $thumb.RelPermalink }}" class="card-img-top" alt="{{ $.Title }}" style="height: 250px; object-fit: cover;">
-            {{ end }}
-          {{ end }}
-          
-          {{/* Card Body - Gallery info */}}
-          <div class="card-body">
-            <h5 class="card-title">{{ .Title }}</h5>
-            {{/* Summary/description (optional) */}}
-            {{ with .Summary }}
-            <p class="card-text text-muted">{{ . }}</p>
-            {{ end }}
-            
-            {{/* Image count display */}}
-            {{ $imageCount := len (.Resources.ByType "image") }}
-            <p class="text-muted small">
-              <i class="bi bi-images"></i> {{ $imageCount }} {{ if eq $imageCount 1 }}photo{{ else }}photos{{ end }}
-            </p>
-          </div>
-          
-          {{/* Card Footer - View gallery button */}}
-          <div class="card-footer bg-transparent border-0 pb-3">
-            <a href="{{ .RelPermalink }}" class="btn btn-primary w-100">
-              <i class="bi bi-eye"></i> Voir la galerie
-            </a>
-          </div>
-        </div>
+  <section class="galleries-section py-5">
+    <div class="container">
+      {{/* Header Section */}}
+      <div class="text-center mb-5">
+        <h1 class="display-4 fw-bold mb-3">{{ .Title }}</h1>
+        <p class="lead text-muted">{{ .Description }}</p>
       </div>
-      {{ end }}
+
+      {{/* Gallery Grid
+        - 3 columns on large screens (col-lg-4)
+        - 2 columns on medium screens (col-md-6)
+        - 1 column on small screens
+        - Gap between cards (g-4)
+      */}}
+      <div class="row g-4">
+        {{/* Loop through all gallery pages */}}
+        {{ range .Pages }}
+          <div class="col-md-6 col-lg-4">
+            <div class="card gallery-card h-100 shadow-sm">
+              {{/* Thumbnail from first image
+                - Gets first image resource from gallery
+                - Processes to 600x400 fill
+                - Fixed height 250px with object-fit cover
+              */}}
+              {{ with .Resources.ByType "image" }}
+                {{ $firstImage := index . 0 }}
+                {{ if $firstImage }}
+                  {{ $thumb := $firstImage.Fill "600x400" }}
+                  <img
+                    src="{{ $thumb.RelPermalink }}"
+                    class="card-img-top"
+                    alt="{{ $.Title }}"
+                    style="height: 250px; object-fit: cover;" />
+                {{ end }}
+              {{ end }}
+
+              {{/* Card Body - Gallery info */}}
+              <div class="card-body">
+                <h5 class="card-title">{{ .Title }}</h5>
+                {{/* Summary/description (optional) */}}
+                {{ with .Summary }}
+                  <p class="card-text text-muted">{{ . }}</p>
+                {{ end }}
+
+                {{/* Image count display */}}
+                {{ $imageCount := len (.Resources.ByType "image") }}
+                <p class="text-muted small">
+                  <i class="bi bi-images"></i> {{ $imageCount }}
+                  {{ if eq $imageCount 1 }}photo{{ else }}photos{{ end }}
+                </p>
+              </div>
+
+              {{/* Card Footer - View gallery button */}}
+              <div class="card-footer bg-transparent border-0 pb-3">
+                <a href="{{ .RelPermalink }}" class="btn btn-primary w-100">
+                  <i class="bi bi-eye"></i> Voir la galerie
+                </a>
+              </div>
+            </div>
+          </div>
+        {{ end }}
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-{{/* 
-  Custom Styles - Gallery card interactions
-  - Smooth hover transitions
-  - Lift effect on hover
-  - Enhanced shadow on hover
-  - Image zoom effect on hover
-*/}}
-<style>
-.gallery-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border-radius: 12px;
-  overflow: hidden;
-}
+  {{/* Custom Styles - Gallery card interactions
+    - Smooth hover transitions
+    - Lift effect on hover
+    - Enhanced shadow on hover
+    - Image zoom effect on hover
+  */}}
+  <style>
+    .gallery-card {
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+      border-radius: 12px;
+      overflow: hidden;
+    }
 
-.gallery-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
-}
+    .gallery-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+    }
 
-.gallery-card .card-img-top {
-  transition: transform 0.3s ease;
-}
+    .gallery-card .card-img-top {
+      transition: transform 0.3s ease;
+    }
 
-.gallery-card:hover .card-img-top {
-  transform: scale(1.05);
-}
-</style>
-
+    .gallery-card:hover .card-img-top {
+      transform: scale(1.05);
+    }
+  </style>
 {{ end }}
