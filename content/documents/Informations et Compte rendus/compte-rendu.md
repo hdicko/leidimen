@@ -18,3 +18,6 @@ weight: 0
 
 - [Rapport Etape 1- 2024](/documents/leidimen/ADPEK-etape1.pdf)
   {.text-muted .lead .fst-italic .fw-bold .mb-2 .mb-4}
+
+- [Rapport 2025](/documents/leidimen/rapport-2025.pdf)
+  {.text-muted .lead .fst-italic .fw-bold .mb-2 .mb-4}
