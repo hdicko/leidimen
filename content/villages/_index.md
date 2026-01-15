@@ -1,12 +1,16 @@
 ---
 date: "2023-08-19T22:35:25+02:00"
 draft: false
-# menu:
-#  main:
-#    name: Villages
-#    weight: 120
-#    title: Nos villages
+title: "Villages de la Région de Douentza - Nos Zones d'Intervention"
+description: "Découvrez les villages de la région de Douentza au Mali où Leidimen intervient : Dorool, Diona, Debere, Diambana et autres. Projets, populations et actions locales."
+keywords:
+  - villages Mali
+  - Douentza
+  - Dorool
+  - Diona
+  - Debere
+  - zone d'intervention
 ---
 
-Taxonomy villages content: content/villages/\_index.md
+Découvrez les villages de la région de Douentza où notre association intervient pour soutenir le développement local.
 {.fs-3 .text-center}

@@ -1,11 +1,12 @@
 baseURL = 'https://hdicko.github.io/leidimen/'
 relativeURLs = false
-languageCode = "en-us"
-title = "Leidimen"
+languageCode = "fr-FR"
+defaultContentLanguage = "fr"
+title = "Leidimen - Association de Solidarité Mali"
 disqusShortname = "leidimen"
 pagination.pagerSize = 8
 image = "images/leidimen-logo.jpg"
-description = "Solidarite Bondoufle - Mali (Region de Douentza)"
+description = "Association de solidarité soutenant les villages de la région de Douentza au Mali. Projets d'éducation, santé et développement durable."
 enableInlineShortcodes = true
 enableEmoji = true
 assetDir = "static"
@@ -15,7 +16,7 @@ tel = "+33603751327"
 
 
 [sitemap]
-  changefreq = "monthly"
+  changefreq = "weekly"
   priority = 0.5
   filename = "sitemap.xml"
 
@@ -127,7 +128,7 @@ disableLatLong = false
   email = "association@leidimen.com"
   address = "Association Leidimen, 14 rue des Pommiers, 91070 Bondoufle."
   tel= "+33603751327"
-  avatarurl = "/img/leidimen-logo.jpg"
+  avatarurl = "/images/leidimen-logo.jpg"
   
  
 
@@ -160,8 +161,8 @@ disableLatLong = false
     weight = 10
     pre = "<i class='fa fa-home'></i>"
   [[menu.main]]
-    name = 'Nous'
-    pageRef = '/about'
+    name = 'Equipe'
+    pageRef = '/equipe'
     pre = "<i class='fa fa-id-card'></i>"
     weight = 20
   [[menu.main]]
@@ -175,7 +176,7 @@ disableLatLong = false
     pre = "<i class='fa fa-map-marker'></i>"
     weight = 35
   [[menu.main]]
-    name = 'Posts'
+    name = 'Actualités'
     pageRef = '/posts'
     pre = "<i class='fa fa-blog'></i>"
     weight = 40

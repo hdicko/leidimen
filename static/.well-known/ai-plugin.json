@@ -1,0 +1,41 @@
+{
+  "schema_version": "v1",
+  "name_for_model": "leidimen",
+  "name_for_human": "Leidimen - Mali Solidarity Association",
+  "description_for_model": "Leidimen is a French NGO supporting villages in the Douentza region of Mali since 2006. The organization focuses on education (school construction, teacher training), health (well construction, healthcare access), and sustainable development (agricultural projects, capacity building). Main villages supported: Dorool, Diona, Debere, Diambana, Darawal, Douentza, Tanal, Manko, Tacouti, N'Dumpa. Key projects include École de Dorool (school since 2008) and water well construction in multiple villages.",
+  "description_for_human": "Information about Leidimen, a solidarity association supporting education, health, and development in Mali villages.",
+  "api": {
+    "type": "static",
+    "url": "https://hdicko.github.io/leidimen/",
+    "has_user_authentication": false
+  },
+  "auth": {
+    "type": "none"
+  },
+  "logo_url": "https://hdicko.github.io/leidimen/images/leidimen-logo.jpg",
+  "contact_email": "association@leidimen.com",
+  "legal_info_url": "https://hdicko.github.io/leidimen/documents/mentions-legales/",
+  "capabilities": {
+    "conversation_starters": [
+      "Quels sont les projets de Leidimen au Mali ?",
+      "Comment soutenir l'association Leidimen ?",
+      "Quels villages sont soutenus par Leidimen ?",
+      "Quelle est l'histoire de l'école de Dorool ?"
+    ]
+  },
+  "metadata": {
+    "organization": "Leidimen",
+    "founded": "2006",
+    "location": "Bondoufle, France",
+    "focus_area": "Douentza, Mali",
+    "sectors": [
+      "Education",
+      "Health",
+      "Sustainable Development",
+      "Community Support"
+    ],
+    "languages": ["fr"],
+    "content_type": "humanitarian",
+    "update_frequency": "monthly"
+  }
+}

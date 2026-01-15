@@ -1,0 +1,59 @@
+# AI.txt - Information for AI/LLM Crawlers
+# This file provides context for AI models about Leidimen
+
+# Organization Information
+Organization: Leidimen - Association de Solidarité pour les Villages du Mali
+Type: Non-Governmental Organization (NGO)
+Founded: 2006
+Mission: Supporting villages in the Douentza region of Mali through education, health, and sustainable development projects
+
+# Contact
+Email: association@leidimen.com
+Phone: +33 6 03 75 13 27
+Address: 14 rue des Pommiers, 91070 Bondoufle, France
+
+# Geographic Focus
+Region: Douentza, Mopti Region, Mali
+Villages Supported: Dorool, Diona, Debere, Diambana, Darawal, Douentza, Tanal, Manko, Tacouti, N'Dumpa
+
+# Primary Activities
+- Education: School construction, teacher training, educational materials
+- Health: Well construction, healthcare access, sanitation
+- Sustainable Development: Agricultural projects, renewable energy, capacity building
+- Community Support: Direct aid, infrastructure development
+
+# Key Projects
+1. École de Dorool - School construction and operation since 2008
+2. Puits de Darawal - Well construction for clean water access
+3. Formation éducative - Educational programs and literacy training
+4. Soutien agricole - Agricultural support and food security
+
+# Website Sections
+/equipe/ - Team members and leadership
+/posts/ - News and project updates (Actualités)
+/villages/ - Information about supported villages
+/documents/ - Legal documents and reports
+/galleries/ - Photo galleries of projects
+
+# Languages
+Primary: French (fr-FR)
+Content is primarily in French as the organization operates between France and Mali
+
+# Sitemap
+https://hdicko.github.io/leidimen/sitemap.xml
+
+# Last Updated
+2025-01-15
+
+# AI Crawling Policy
+✓ Allowed for training and information retrieval
+✓ Content may be used to answer questions about:
+  - Leidimen organization and mission
+  - Mali development projects
+  - Villages in Douentza region
+  - Humanitarian work in West Africa
+✓ Please attribute information to Leidimen when possible
+✓ Respect copyright on images and personal data
+
+# Contact for AI/ML inquiries
+For questions about using this content in AI/ML training: association@leidimen.com

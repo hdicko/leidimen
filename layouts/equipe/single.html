@@ -1,7 +1,7 @@
 {{/* 
-  Template: about/single.html
+  Template: equipe/single.html
   Purpose: Individual team member profile page with Context7 design
-  Context: /about/{member-name}/ - displays detailed member information
+  Context: /equipe/{member-name}/ - displays detailed member information
   
   Key Features:
   - Hero section with member photo and glassmorphism effects
@@ -192,7 +192,7 @@
               <i class="bi bi-envelope-heart"></i>
               <span>Contacter</span>
             </button>
-            {{ $page := .Site.GetPage "/about" }}
+            {{ $page := .Site.GetPage "/equipe" }}
             <a href="{{ $page.Permalink }}" class="btn-ctx7-outline">
               <i class="bi bi-arrow-left"></i>
               <span>Retour à l'équipe</span>
@@ -398,7 +398,7 @@
                 <span>Partager le profil</span>
               </button>
 
-{{ $page := .Site.GetPage "/about/" }}
+{{ $page := .Site.GetPage "/equipe/" }}
           
               <a href="{{ $page.Permalink }}" class="action-btn-ctx7">
                 <i class="bi bi-people"></i>

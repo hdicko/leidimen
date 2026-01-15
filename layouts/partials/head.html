@@ -1,9 +1,12 @@
 <!doctype html>
-<html lang="en" class="h-100" data-bs-theme="auto">
+<html lang="fr" class="h-100" data-bs-theme="auto">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="author" content="Association Leidimen" />
+    <meta name="geo.region" content="FR-91" />
+    <meta name="geo.placename" content="Bondoufle" />
 
     {{/* NOTE: the Site's title, and if there is a page title, that is set too */}}
     <title>
@@ -25,6 +28,85 @@
         {{ end }}
       {{ end }}" />
     {{ hugo.Generator }}
+    
+    {{/* Open Graph / Facebook Meta Tags */}}
+    <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
+    <meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}" />
+    <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}" />
+    <meta property="og:url" content="{{ .Permalink }}" />
+    <meta property="og:site_name" content="{{ .Site.Title }}" />
+    <meta property="og:locale" content="fr_FR" />
+    {{ with .Params.image }}<meta property="og:image" content="{{ . | absURL }}" />{{ else }}<meta property="og:image" content="{{ "images/leidimen-logo.jpg" | absURL }}" />{{ end }}
+    
+    {{/* Twitter Card Meta Tags */}}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}" />
+    <meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}" />
+    {{ with .Params.image }}<meta name="twitter:image" content="{{ . | absURL }}" />{{ else }}<meta name="twitter:image" content="{{ "images/leidimen-logo.jpg" | absURL }}" />{{ end }}
+    
+    {{/* Canonical URL */}}
+    <link rel="canonical" href="{{ .Permalink }}" />
+    
+    {{/* Keywords */}}
+    {{ with .Params.tags }}<meta name="keywords" content="{{ delimit . ", " }}, Mali, Douentza, solidarité, association humanitaire" />{{ else }}<meta name="keywords" content="Leidimen, Mali, Douentza, solidarité, éducation, santé, développement durable, association humanitaire, Afrique" />{{ end }}
+    
+    {{/* AI/LLM specific metadata */}}
+    <meta name="ai:context" content="Leidimen is a French NGO supporting villages in Douentza region, Mali, through education, health and sustainable development projects since 2006" />
+    <meta name="ai:purpose" content="humanitarian organization website" />
+    <meta name="ai:geographic_focus" content="Douentza, Mopti Region, Mali, West Africa" />
+    <meta name="ai:languages" content="fr-FR" />
+    <meta name="ai:contact" content="association@leidimen.com" />
+    <meta name="ai:founded" content="2006" />
+    <link rel="ai-plugin" href="{{ ".well-known/ai-plugin.json" | absURL }}" type="application/json" />
+    <link rel="alternate" type="text/plain" href="{{ "ai.txt" | absURL }}" title="AI Information" />
+    
+    {{/* Structured Data - JSON-LD */}}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "NGO",
+      "name": "Leidimen",
+      "alternateName": "Association Leidimen",
+      "description": "{{ .Site.Params.description }}",
+      "foundingDate": "2006",
+      "url": "{{ .Site.BaseURL }}",
+      "logo": "{{ "images/leidimen-logo.jpg" | absURL }}",
+      "email": "{{ .Site.Params.email }}",
+      "telephone": "{{ .Site.Params.tel }}",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "14 rue des Pommiers",
+        "addressLocality": "Bondoufle",
+        "postalCode": "91070",
+        "addressCountry": "FR"
+      },
+      "areaServed": {
+        "@type": "Place",
+        "name": "Douentza, Mali",
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "15.0060",
+          "longitude": "-2.9490"
+        }
+      },
+      "sameAs": [
+        "https://github.com/hdicko/leidimen"
+      ],
+      "knowsAbout": [
+        "Education in Mali",
+        "Healthcare access in rural Africa",
+        "Sustainable development",
+        "Water well construction",
+        "School construction",
+        "Community development in Douentza region"
+      ],
+      "memberOf": {
+        "@type": "Organization",
+        "name": "French humanitarian organizations"
+      }
+    }
+    </script>
+    
     {{/* NOTE: For Production make sure you add
       `HUGO_ENV="production"` before your build command
     */}}
@@ -33,7 +115,7 @@
     }}
     {{ $public := not .Params.private }}
     {{ if and $production $public }}
-      <meta name="robots" content="index, follow" />
+      <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     {{ else }}
       <meta name="robots" content="noindex, nofollow" />
     {{ end }}

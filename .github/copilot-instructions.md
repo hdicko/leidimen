@@ -2,16 +2,17 @@
 
 ## Project Overview
 
-This is a Hugo-based static site for **Leidimen**, a French solidarity association supporting villages in the Douentza region of Mali. The site features bilingual content, Netlify CMS integration, and custom taxonomies for organizing content by villages, moods, categories, and tags.
+This is a Hugo-based static site for **Leidimen**, a French solidarity association supporting villages in the Douentza region of Mali. The site features multilingual content, Netlify CMS integration, and custom taxonomies for organizing content by villages, moods, categories, and tags.
 
 **Tech Stack:**
 
-- Hugo 0.152.1 (local & Netlify - unified version)
-- Bootstrap 5.3.8 + Bootstrap Icons
-- Dart Sass for SCSS processing
+- Hugo 0.152.1 (unified local & Netlify version via hugo-installer)
+- Bootstrap 5.3.8 + Bootstrap Icons 1.13.1
+- Dart Sass 1.93.2 for SCSS processing
 - PhotoSwipe for image galleries
 - Netlify CMS for content management
 - GitHub Pages + Netlify (dual deployment)
+- Prettier with go-template plugin for code formatting
 
 ## Architecture & Key Concepts
 
@@ -28,8 +29,11 @@ Hugo is configured with **4 custom taxonomies** (see `hugo.toml` line 73-76):
 
 ### Content Structure
 
-- **Posts**: `content/posts/` - Organized by year or topic subdirectories
-  - Example: `content/posts/2024/my-article.md` or `content/posts/Hammadoun/souvenir/index.md`
+- **Posts**: `content/posts/` - **Organized by YEAR** (e.g., `2024/`, `2025/`) as primary structure
+  - Standard posts: `content/posts/2024/my-article.md`
+  - Bundle posts with images: `content/posts/2024/my-gallery/index.md` (images as page resources)
+  - Legacy: Some posts exist in topic directories (`Hammadoun/souvenir/`) from WordPress migration
+  - **Convention**: New posts MUST go in year-based directories for consistency and maintainability
   - Use `index.md` for bundle pages with images as page resources
 - **Team profiles**: `content/about/` - Member profiles with card metadata
   - Each member gets a file like `abdoullayedicko.md`
@@ -138,6 +142,26 @@ npm run dev
    hugo new posts/2025/my-article.md  # Uses archetype/post.md template
    ```
 
+**When to use each CMS:**
+
+- **cms-web** (Node.js interface):
+  - ✅ Best for: Developers with Node.js, need for real-time validation and Markdown preview
+  - ✅ Fastest workflow for batch content creation
+  - ✅ Direct GitHub API commits (no Netlify Identity setup needed)
+  - ❌ Requires: Node.js installed, GitHub token configured, local environment
+  
+- **Netlify CMS** (Web interface):
+  - ✅ Best for: Non-technical editors, production environment, image uploads
+  - ✅ Drag-and-drop image uploads to `static/images/uploads/`
+  - ✅ Works remotely via browser (no local setup)
+  - ❌ Requires: Netlify Identity authentication, internet connection
+  
+- **Hugo CLI** (Archetypes):
+  - ✅ Best for: Developers comfortable with CLI, quick drafts, automated scripts
+  - ✅ Fastest for experienced Hugo users
+  - ✅ Full control over frontmatter and file structure
+  - ❌ Requires: Hugo installed, manual frontmatter editing
+
 ### Code Formatting
 
 ```bash
@@ -149,6 +173,91 @@ npm run format:write   # Auto-format all files
 - Formats `.html` files in `layouts/`, `.scss` in `assets/`, `.md` in `content/`
 - Configuration in `.prettierrc` (if exists) or `package.json`
 - **Always format before committing** to maintain consistency
+
+### Migration Scripts
+
+Python scripts for migrating legacy WordPress content (leidimen.com archives 2006-2017):
+
+**Available scripts:**
+
+- `migrate-wordpress-posts.py` - Migrate posts from WordPress archives by date
+  - Scrapes posts from https://leidimen.com archives (2006-2017)
+  - Converts HTML to Markdown with Hugo shortcodes
+  - Creates posts in year-based directories: `content/posts/YYYY/slug.md`
+  - Maps WordPress categories to Hugo taxonomies
+  - Usage: `python3 migrate-wordpress-posts.py`
+
+- `migrate-wordpress-galleries.py` - Migrate photo galleries from WordPress
+  - Creates Hugo page bundles with `index.md` + images
+  - Generates PhotoSwipe-compatible gallery structure
+  - Output: `content/galleries/{slug}/index.md`
+  - Usage: `python3 migrate-wordpress-galleries.py`
+
+- `migrate-wordpress-categories.py` - Migrate posts by WordPress categories
+  - Targets specific categories: Divers, News, Réunions, Sorties
+  - Maps WordPress categories to Hugo taxonomies
+  - Usage: `python3 migrate-wordpress-categories.py`
+
+- `update-image-links.py` - Update WordPress image URLs to local paths
+  - Converts `leidimen.com/wp-content/uploads/YYYY/MM/image.jpg` → `/images/wordpress/YYYY-MM-image.jpg`
+  - Runs in-place updates on existing Markdown files
+  - Usage: `python3 update-image-links.py`
+
+- `download-all-wordpress-images.py` - Download images from WordPress URLs
+  - Scans content files for WordPress image URLs
+  - Downloads to `static/images/wordpress/`
+  - Usage: `python3 download-all-wordpress-images.py`
+
+**Migration workflow (for new WordPress imports):**
+```bash
+# 1. Migrate posts
+python3 migrate-wordpress-posts.py
+
+# 2. Update image links in content
+python3 update-image-links.py
+
+# 3. Download referenced images
+python3 download-all-wordpress-images.py
+
+# 4. Test build
+npm run build
+```
+
+### Testing Procedures
+
+Comprehensive testing script: `test-hugo-compatibility.sh`
+
+**What it tests:**
+
+1. **Hugo version verification** - Ensures Hugo 0.152.1 is installed
+2. **Development build** - Tests `hugo server` starts without errors
+3. **Production build** - Tests minification and optimization
+4. **File generation** - Verifies critical files exist:
+   - `public/index.html`
+   - `public/posts/` with post pages
+   - `public/css/` with stylesheets
+5. **Minification** - Validates HTML/CSS compression
+6. **Taxonomies** - Checks villages, categories, tags, moods directories
+7. **Image processing** - Verifies Hugo image pipeline works
+8. **Shortcodes** - Tests custom shortcode rendering
+9. **RSS/JSON feeds** - Validates output formats
+10. **Sitemap** - Checks sitemap.xml generation
+
+**Running tests:**
+```bash
+# Full compatibility test suite
+./test-hugo-compatibility.sh
+
+# Quick validation workflow
+npm run build              # Build site
+npm run format:check       # Check code formatting
+./dev-server.sh            # Manual browser testing
+```
+
+**Test before deploying:**
+```bash
+./test-hugo-compatibility.sh && ./deploy.sh
+```
 
 ## Project-Specific Conventions
 
@@ -173,18 +282,19 @@ draft: false
 
 - **Local & Netlify**: Hugo 0.152.1 (unified version)
 - Version pinned in `package.json` under `otherDependencies.hugo`
-- Netlify version configured in `netlify.toml` (HUGO_VERSION)
+- Netlify version configured in `netlify.toml` (HUGO_VERSION=0.152.1)
 - **Unified version eliminates compatibility issues**
-- Hugo binary location: `node_modules/.bin/hugo/hugo` (auto-installed on `npm install`)
+- Hugo binary location: `node_modules/.bin/hugo/hugo` (auto-installed via `hugo-installer` on `npm install`)
+- **Critical**: Always run `npm install` after cloning to install Hugo binary locally
 
 **Running Hugo commands:**
 
 ```bash
-# Use npm scripts (recommended)
-npm run dev
-npm run build
+# Use npm scripts (recommended - uses exec-bin wrapper)
+npm run dev      # hugo server --disableFastRender --gc
+npm run build    # hugo --gc --cleanDestinationDir --minify
 
-# Or use the wrapper script
+# Or use the wrapper script (overrides baseURL for local dev)
 ./dev-server.sh
 
 # Direct hugo binary (after npm install)
@@ -200,7 +310,7 @@ Located at `static/admin/config.yml`:
 - Media folder: `static/images/uploads/`
 - Collections: Posts, About, Galleries, Villages, Documents
 
-### Custom Shortcodes (23 available)
+### Custom Shortcodes (24 available)
 
 Key shortcodes in `layouts/shortcodes/`:
 
@@ -227,10 +337,12 @@ Key shortcodes in `layouts/shortcodes/`:
 
 **Special:**
 
-- `{{< alert type="info" >}}Message{{< /alert >}}` - Bootstrap alerts
+- `{{< alert type="info" >}}Message{{< /alert >}}` - Bootstrap alerts (types: info, warning, danger, success)
 - `{{< icon name="heart" >}}` - Bootstrap icons inline
 - `{{< leidimen-logo >}}` - Association logo
 - `{{< typeit >}}Animated text{{< /typeit >}}` - Typing animation
+- `{{< details "Summary" >}}Content{{< /details >}}` - Collapsible content
+- `{{< carousel >}}` - Image carousel
 
 ## Integration Points
 
@@ -398,6 +510,14 @@ Hugo data files are accessible in templates via `.Site.Data`:
 3. Build site: `npm run build` (check for errors)
 4. Verify taxonomy values are lowercase
 5. Test galleries work (PhotoSwipe loads correctly)
+
+**Common build errors:**
+
+- **"can't find page resource"**: Image not in same folder as `index.md`
+- **"taxonomy not found"**: Check taxonomy name in `hugo.toml` matches frontmatter
+- **"template not found"**: Verify `type: "posts"` in frontmatter
+- **SCSS compile error**: Check Dart Sass is installed/accessible
+- **baseURL issues**: Verify `/leidimen/` path in production URLs
 
 **Common build errors:**
 
