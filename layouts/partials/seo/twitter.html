@@ -1,0 +1,23 @@
+{{/* Twitter Card Meta Tags */}}
+<meta name="twitter:card" content="summary_large_image" />
+<meta
+  name="twitter:title"
+  content="{{ if .IsHome }}
+    {{ .Site.Title }}
+  {{ else }}
+    {{ .Title }}
+  {{ end }}" />
+<meta
+  name="twitter:description"
+  content="{{ with .Description }}
+    {{ . }}
+  {{ else }}
+    {{ .Site.Params.description }}
+  {{ end }}" />
+{{ with .Params.image }}
+  <meta name="twitter:image" content="{{ . | absURL }}" />
+{{ else }}
+  <meta
+    name="twitter:image"
+    content="{{ "images/leidimen-logo.jpg" | absURL }}" />
+{{ end }}

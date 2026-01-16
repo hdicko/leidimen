@@ -1,0 +1,46 @@
+{{/* Structured Data - JSON-LD for NGO */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NGO",
+  "name": "Leidimen",
+  "alternateName": "Association Leidimen",
+  "description": "{{ .Site.Params.description }}",
+  "foundingDate": "2006",
+  "url": "{{ .Site.BaseURL }}",
+  "logo": "{{ "images/leidimen-logo.jpg" | absURL }}",
+  "email": "{{ .Site.Params.email }}",
+  "telephone": "{{ .Site.Params.tel }}",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "14 rue des Pommiers",
+    "addressLocality": "Bondoufle",
+    "postalCode": "91070",
+    "addressCountry": "FR"
+  },
+  "areaServed": {
+    "@type": "Place",
+    "name": "Douentza, Mali",
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "15.0060",
+      "longitude": "-2.9490"
+    }
+  },
+  "sameAs": [
+    "https://github.com/hdicko/leidimen"
+  ],
+  "knowsAbout": [
+    "Education in Mali",
+    "Healthcare access in rural Africa",
+    "Sustainable development",
+    "Water well construction",
+    "School construction",
+    "Community development in Douentza region"
+  ],
+  "memberOf": {
+    "@type": "Organization",
+    "name": "French humanitarian organizations"
+  }
+}
+</script>
