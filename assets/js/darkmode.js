@@ -1,6 +1,7 @@
 /**
  * Dark Mode Toggle
  * Manages dark/light theme switching and persists user preference
+ * Synchronizes both body.dark-mode class and data-bs-theme attribute
  */
 
 (function () {
@@ -9,27 +10,26 @@
 	const darkModeToggle = document.getElementById('darkModeToggle');
 	const darkModeIcon = document.getElementById('darkModeIcon');
 	const body = document.body;
+	const htmlElement = document.documentElement;
 
 	// Check for saved user preference or default to light mode
 	const currentTheme = localStorage.getItem('theme') || 'light';
 
 	// Apply the saved theme on page load
 	if (currentTheme === 'dark') {
-		body.classList.add('dark-mode');
-		updateIcon(true);
+		applyDarkMode(true);
 	}
 
 	// Toggle dark mode on button click
 	if (darkModeToggle) {
 		darkModeToggle.addEventListener('click', function () {
-			body.classList.toggle('dark-mode');
-			const isDarkMode = body.classList.contains('dark-mode');
+			const isDarkMode = !body.classList.contains('dark-mode');
+			
+			// Apply the theme
+			applyDarkMode(isDarkMode);
 
 			// Save the user's preference
 			localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
-
-			// Update the icon
-			updateIcon(isDarkMode);
 
 			// Add a subtle animation
 			this.style.transform = 'rotate(360deg)';
@@ -37,6 +37,20 @@
 				this.style.transform = 'rotate(0deg)';
 			}, 300);
 		});
+	}
+
+	// Function to apply dark mode consistently
+	function applyDarkMode(isDark) {
+		if (isDark) {
+			body.classList.add('dark-mode');
+			htmlElement.setAttribute('data-bs-theme', 'dark');
+			body.setAttribute('data-bs-theme', 'dark');
+		} else {
+			body.classList.remove('dark-mode');
+			htmlElement.setAttribute('data-bs-theme', 'light');
+			body.setAttribute('data-bs-theme', 'light');
+		}
+		updateIcon(isDark);
 	}
 
 	// Update the icon based on the current mode
@@ -59,14 +73,15 @@
 		darkModeMediaQuery.addEventListener('change', function (e) {
 			// Only auto-switch if user hasn't manually set a preference
 			if (!localStorage.getItem('theme')) {
-				if (e.matches) {
-					body.classList.add('dark-mode');
-					updateIcon(true);
-				} else {
-					body.classList.remove('dark-mode');
-					updateIcon(false);
-				}
+				applyDarkMode(e.matches);
 			}
 		});
 	}
+
+	// Expose function globally for backward compatibility
+	window.myFunction = function() {
+		const isDarkMode = !body.classList.contains('dark-mode');
+		applyDarkMode(isDarkMode);
+		localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+	};
 })();

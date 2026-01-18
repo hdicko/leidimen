@@ -10,8 +10,6 @@ slug: "informations"
 weight: 0
 ---
 
-- [Site officiel de la ville de Mennecy (Essonne)](http://www.mennecy.fr/ "Site officiel de la ville de Mennecy")
-  {.text-muted .lead .fst-italic .fw-bold .mb-2 .mt-4}
 
 - [Site officiel de la ville de Bondoufle (Essonne)](https://www.ville-bondoufle.fr/ "Site officiel de la ville de Bondoufle")
   {.text-muted .lead .fst-italic .fw-bold .mb-2 .mb-4}

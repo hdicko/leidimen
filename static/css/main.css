@@ -4,7 +4,7 @@ body {
   font-size: 1.2rem;
   color: #344854;
   position: relative;
-  background: #ffffff;
+  background: #fafbfc;
   display: flex;
   flex-flow: column;
   min-height: 100vh;
@@ -101,24 +101,24 @@ div.panel-body a.list-group-item.view-all {
 }
 
 ::-moz-selection {
-  color: white;
+  color: #fafbfc;
   text-shadow: none;
   background: #ed1b2f;
 }
 
 ::selection {
-  color: white;
+  color: #fafbfc;
   text-shadow: none;
   background: #ed1b2f;
 }
 
 img::selection {
-  color: white;
+  color: #fafbfc;
   background: transparent;
 }
 
 img::-moz-selection {
-  color: white;
+  color: #fafbfc;
   background: transparent;
 }
 
