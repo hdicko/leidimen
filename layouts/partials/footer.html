@@ -125,7 +125,7 @@
           {{ with .Site.Params.address }}
             <div class="contact-item mb-3">
               <div class="d-flex align-items-start">
-                <i class="bi bi-geo-alt-fill text-primary me-3 mt-1"></i>
+                <i class="bi bi-geo-alt-fill me-3 mt-1 footer-icon-muted"></i>
                 <div>
                   <h6 class="fw-semibold mb-1 text-white">Adresse</h6>
                   <p class="text-light mb-0 small">{{ . }}</p>
@@ -139,7 +139,7 @@
           {{ with .Site.Params.tel }}
             <div class="contact-item mb-3">
               <div class="d-flex align-items-center">
-                <i class="bi bi-telephone-fill text-primary me-3"></i>
+                <i class="bi bi-telephone-fill me-3 footer-icon-muted"></i>
                 <div>
                   <h6 class="fw-semibold mb-1 text-white">Téléphone</h6>
                   <a
@@ -157,7 +157,7 @@
           {{ with .Site.Params.email }}
             <div class="contact-item mb-3">
               <div class="d-flex align-items-center">
-                <i class="bi bi-envelope-fill text-primary me-3"></i>
+                <i class="bi bi-envelope-fill me-3 footer-icon-muted"></i>
                 <div>
                   <h6 class="fw-semibold mb-1 text-white">Email</h6>
                   <a
@@ -169,29 +169,6 @@
               </div>
             </div>
           {{ end }}
-
-
-          <!-- Newsletter Signup -->
-          <div class="newsletter-signup mt-4">
-            <h6 class="fw-semibold mb-3 text-white">✉️ Newsletter</h6>
-            <form class="d-flex" onsubmit="return false;">
-              <input
-                type="email"
-                class="form-control form-control-sm rounded-start"
-                placeholder="Votre email"
-                required />
-              <button
-                type="submit"
-                class="btn btn-primary btn-sm rounded-end"
-                title="S'abonner à la newsletter"
-                aria-label="S'abonner">
-                <i class="bi bi-send"></i>
-              </button>
-            </form>
-            <small class="text-muted mt-1 d-block"
-              >Restez informé de nos actions</small
-            >
-          </div>
         </div>
       </div>
     </div>
@@ -209,7 +186,7 @@
             Tous droits réservés.
           </p>
           <!-- Since Year -->
-          <span class="badge bg-primary rounded-pill">
+          <span class="badge rounded-pill footer-badge">
             Depuis {{ 2007 }} • {{ now.Year | sub 2007 }} ans de solidarité
           </span>
         </div>
@@ -285,7 +262,7 @@
     <div class="row mt-4">
       <div class="col-12 text-center">
         <div
-          class="solidarity-message p-3 rounded bg-primary bg-opacity-10 border border-primary border-opacity-25">
+          class="solidarity-message p-3 rounded">
           <p class="mb-0 text-light fw-medium">
             🤝
             <em
@@ -416,11 +393,6 @@
     text-align: center;
   }
 
-  .newsletter-signup .form-control:focus {
-    border-color: #667eea;
-    box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
-  }
-
   .back-to-top {
     width: 40px;
     height: 40px;
@@ -531,43 +503,6 @@
     footerSections.forEach((section) => {
       observer.observe(section);
     });
-
-    // Newsletter form handling
-    const newsletterForm = document.querySelector(".newsletter-signup form");
-    if (newsletterForm) {
-      newsletterForm.addEventListener("submit", function (e) {
-        e.preventDefault();
-        const email = this.querySelector('input[type="email"]').value;
-
-        if (email) {
-          // Simulate newsletter signup
-          const button = this.querySelector("button");
-          const originalHTML = button.innerHTML;
-
-          button.innerHTML = '<i class="bi bi-check"></i>';
-          button.classList.remove("btn-primary");
-          button.classList.add("btn-success");
-
-          setTimeout(() => {
-            button.innerHTML = originalHTML;
-            button.classList.remove("btn-success");
-            button.classList.add("btn-primary");
-            this.querySelector("input").value = "";
-          }, 2000);
-
-          // Show success message
-          const small = this.querySelector("small");
-          const originalText = small.textContent;
-          small.textContent = "Merci ! Inscription confirmée.";
-          small.classList.add("text-success");
-
-          setTimeout(() => {
-            small.textContent = originalText;
-            small.classList.remove("text-success");
-          }, 3000);
-        }
-      });
-    }
 
     // Smooth scrolling for footer links
     document

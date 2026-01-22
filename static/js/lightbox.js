@@ -136,17 +136,17 @@ document.addEventListener('DOMContentLoaded', function () {
 	elements.forEach((element) => {
 		element.addEventListener('click', function (event) {
 			event.preventDefault();
+			var href = this.getAttribute('href');
+			var title = this.getAttribute('title') || '';
 			document.getElementById('lightbox').innerHTML =
-				'<a id="close"></a><a id="next">&rsaquo;</a><a id="prev">&lsaquo;</a><div class="img" style="background: url(\'' +
-				this.getAttribute('href') +
-				'\') center center / contain no-repeat;" title="' +
-				this.getAttribute('title') +
-				'" ><img src="' +
-				this.getAttribute('href') +
+				'<a id="close"></a><a id="next">&rsaquo;</a><a id="prev">&lsaquo;</a><div class="img" title="' +
+				title +
+				'"><img class="lightbox-img" src="' +
+				href +
 				'" alt="' +
-				this.getAttribute('title') +
+				title +
 				'" /></div><span>' +
-				this.getAttribute('title') +
+				title +
 				'</span>';
 			document.getElementById('lightbox').style.display = 'block';
 

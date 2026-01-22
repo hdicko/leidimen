@@ -9,6 +9,4 @@ slug: "souvenirs-hammadoun"
 weight: 0
 ---
 
-{{< load-photoswipe >}}
-
-{{< gallery >}}
+Photos et souvenirs de Hammadoun Dicko.

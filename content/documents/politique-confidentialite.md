@@ -673,12 +673,12 @@ Pour plus d'informations, consultez :
 
 ---
 
-<div style="text-align: center; margin-top: 3rem; padding: 2rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; color: white;">
-  <h3 style="color: white; margin-bottom: 1rem;">🔒 Votre confiance est notre priorité</h3>
-  <p style="margin-bottom: 1.5rem; opacity: 0.95;">
+<div class="policy-hero adhesion-card-gradient adhesion-text text-center mt-4 p-4 rounded-3">
+  <h3 class="adhesion-hero-title mb-2">🔒 Votre confiance est notre priorité</h3>
+  <p class="adhesion-note mb-3">
     Nous nous engageons à protéger vos données personnelles avec le plus haut niveau de sécurité et de transparence.
   </p>
-  <p style="margin: 0; font-size: 0.9rem; opacity: 0.9;">
+  <p class="mb-0 small opacity-90">
     <strong>📅 Dernière mise à jour :</strong> 14 octobre 2025<br>
     <strong>📋 Version :</strong> 2.0<br>
     <strong>✅ Conforme RGPD</strong> (UE 2016/679)

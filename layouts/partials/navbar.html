@@ -82,10 +82,10 @@
         <li class="nav-item ms-2">
           <button
             id="darkModeToggle"
-            class="btn btn-sm btn-outline-secondary rounded-circle"
+            class="btn btn-sm btn-outline-secondary rounded-circle icon-btn-size"
             aria-label="Toggle dark mode"
             title="Changer le thème"
-            style="width: 36px; height: 36px;">
+            >
             <i class="bi bi-moon-stars" id="darkModeIcon"></i>
           </button>
         </li>
@@ -122,105 +122,7 @@
 {{- end -}}
 
 
-<style>
-  /* Simple Modern Navigation */
-  .navbar {
-    transition: all 0.3s ease;
-  }
-
-  .navbar.scrolled {
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-  }
-
-  .navbar-brand:hover {
-    transform: scale(1.05);
-    transition: transform 0.2s ease;
-  }
-
-  .nav-link {
-    position: relative;
-    transition: all 0.3s ease;
-    padding: 0.5rem 1rem !important;
-    border-radius: 8px;
-  }
-
-  .nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 0;
-    height: 2px;
-    background: linear-gradient(90deg, #667eea, #764ba2);
-    transition: all 0.3s ease;
-    transform: translateX(-50%);
-  }
-
-  .nav-link:hover::after {
-    width: 80%;
-  }
-
-  .nav-link.active {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white !important;
-  }
-
-  .nav-link.active::after {
-    display: none;
-  }
-
-  .dropdown-menu {
-    border: none;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    border-radius: 12px;
-    padding: 0.5rem;
-    margin-top: 0.5rem;
-  }
-
-  .dropdown-item {
-    border-radius: 8px;
-    padding: 0.5rem 1rem;
-    transition: all 0.2s ease;
-  }
-
-  .dropdown-item:hover {
-    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
-    transform: translateX(5px);
-  }
-
-  .dropdown-item.active {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-  }
-
-  #darkModeToggle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-  }
-
-  #darkModeToggle:hover {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    border-color: transparent;
-    transform: rotate(15deg);
-  }
-
-  /* Mobile responsive */
-  @media (max-width: 991.98px) {
-    .nav-link {
-      text-align: center;
-      margin: 0.25rem 0;
-    }
-    
-    .dropdown-menu {
-      border: none;
-      box-shadow: none;
-      background: transparent;
-    }
-  }
-
+  <style>
   /* Dark Mode */
   [data-bs-theme="dark"] .navbar {
     background: rgba(29, 36, 51, 0.95) !important;
@@ -253,7 +155,7 @@
     background: #5b9cff;
     color: #fafbfc;
   }
-</style>
+  </style>
 
 <script>
 // Navbar scroll effect

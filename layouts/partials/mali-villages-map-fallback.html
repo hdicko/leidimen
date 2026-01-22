@@ -45,11 +45,9 @@
               </iframe>
 
               <!-- Fallback for when iframe doesn't work -->
-              <div id="mapFallback" class="map-fallback" style="display: none;">
+              <div id="mapFallback" class="map-fallback d-none">
                 <div class="fallback-content">
-                  <i
-                    class="bi bi-map"
-                    style="font-size: 3rem; color: #10b981; margin-bottom: 1rem;"></i>
+                  <i class="bi bi-map map-fallback-icon text-success mb-3"></i>
                   <h5>Région de Douentza, Mali</h5>
                   <p>Centre du Mali - Coordonnées: 15.0032°N, 2.9498°W</p>
                   <a
@@ -783,47 +781,24 @@
       // Simple notification function
       const notification = document.createElement("div");
       notification.className = "notification-ctx7";
-      notification.style.cssText = `
-      position: fixed;
-      top: 2rem;
-      right: 2rem;
-      z-index: 9999;
-      background: white;
-      border-radius: 12px;
-      padding: 1rem 1.5rem;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-      border-left: 4px solid ${type === "success" ? "#10b981" : type === "info" ? "#6366f1" : "#f59e0b"};
-      max-width: 300px;
-      animation: slideIn 0.3s ease;
-    `;
+      notification.className = `notification-ctx7 notification-${type}`;
 
       notification.innerHTML = `
-      <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
-        <i class="bi ${type === "success" ? "bi-check-circle" : type === "info" ? "bi-info-circle" : "bi-exclamation-triangle"}" 
-           style="color: ${type === "success" ? "#10b981" : type === "info" ? "#6366f1" : "#f59e0b"}; font-size: 1.25rem; margin-top: 0.125rem;"></i>
+      <div class="notification-ctx7">
+        <i class="bi ${type === "success" ? "bi-check-circle" : type === "info" ? "bi-info-circle" : "bi-exclamation-triangle"} notification-icon notification-icon--${type}"></i>
         <div>
-          <h6 style="margin: 0 0 0.25rem 0; color: #1e293b; font-weight: 600;">${title}</h6>
-          <p style="margin: 0; color: #6b7280; font-size: 0.875rem;">${message}</p>
+          <h6 class="notification-title">${title}</h6>
+          <p class="notification-message">${message}</p>
         </div>
       </div>
     `;
 
-      const style = document.createElement("style");
-      style.textContent = `
-      @keyframes slideIn {
-        from { transform: translateX(100%); opacity: 0; }
-        to { transform: translateX(0); opacity: 1; }
-      }
-    `;
-      if (!document.querySelector("style[data-notifications]")) {
-        style.setAttribute("data-notifications", "true");
-        document.head.appendChild(style);
-      }
+      // Notification styles are provided by centralized SCSS; no inline injection needed.
 
       document.body.appendChild(notification);
 
       setTimeout(() => {
-        notification.style.animation = "slideIn 0.3s ease reverse";
+        notification.classList.add('notification-hide');
         setTimeout(() => notification.remove(), 300);
       }, 3000);
     }

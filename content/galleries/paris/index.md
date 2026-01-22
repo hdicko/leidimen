@@ -9,8 +9,4 @@ slug: "paris"
 weight: 0
 ---
 
-# Content from galleries
-
-{{<divider>}}
-{{< load-photoswipe >}}
-{{< gallery >}}
+Galerie de photos de Paris.

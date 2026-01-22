@@ -5,7 +5,7 @@
   <div class="hero-background"></div>
   <div class="hero-overlay"></div>
 
-  <div class="container position-relative" style="z-index: 10;">
+  <div class="container position-relative stack-top">
     <div class="row align-items-center min-vh-100 py-5">
       <div class="col-lg-6 text-white mb-5 mb-lg-0">
         <span class="hero-badge d-inline-block mb-3 px-4 py-2">
@@ -172,7 +172,7 @@
       <div
         class="cta-card-modern p-5 rounded-4 position-relative overflow-hidden">
         <div class="cta-background"></div>
-        <div class="position-relative" style="z-index: 2;">
+        <div class="position-relative stack-above">
           <h2 class="fw-bold mb-3 text-white">Rejoignez notre mission</h2>
           <p class="text-white opacity-90 mb-4 fs-5">
             Ensemble, nous pouvons faire la différence et construire un avenir
@@ -317,7 +317,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:rgb(59,130,246);stop-opacity:0.3" /><stop offset="100%" style="stop-color:rgb(30,58,138);stop-opacity:0.3" /></linearGradient></defs><path d="M0,300 Q300,100 600,300 T1200,300 L1200,600 L0,600 Z" fill="url(%23grad1)"/></svg>');
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="rgb(59,130,246)" stop-opacity="0.3" /><stop offset="100%" stop-color="rgb(30,58,138)" stop-opacity="0.3" /></linearGradient></defs><path d="M0,300 Q300,100 600,300 T1200,300 L1200,600 L0,600 Z" fill="url(%23grad1)"/></svg>');
     background-size: cover;
     opacity: 0.5;
   }
@@ -914,9 +914,10 @@
       padding: 1rem;
     }
   }
-</style>
+  </style>
+  {{/* Styles moved to assets/scss/_skill-refactor.scss */}}
 
-<script>
+  <script>
   // Context7 Professional Intro Enhancements
   document.addEventListener("DOMContentLoaded", function () {
     // Smooth accordion transitions

@@ -825,9 +825,9 @@ document.addEventListener('DOMContentLoaded', function() {
       console.error('Error initializing map:', error);
       // Show fallback message
       mapElement.innerHTML = `
-        <div style="height: 400px; display: flex; align-items: center; justify-content: center; background: #f8fafc; border-radius: 1rem; border: 2px dashed #cbd5e1;">
-          <div style="text-align: center; color: #64748b;">
-            <i class="bi bi-map" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+        <div class="map-fallback d-flex align-items-center justify-content-center">
+          <div class="map-fallback-content text-center text-muted">
+            <i class="bi bi-map map-fallback-icon mb-3"></i>
             <h5>Carte interactive en cours de chargement...</h5>
             <p>Veuillez patienter ou rafraîchir la page</p>
           </div>

@@ -94,8 +94,7 @@
         <!-- Village Info Panel -->
         <div
           id="villageInfoPanel"
-          class="village-info-panel-ctx7"
-          style="display: none;">
+          class="village-info-panel-ctx7 d-none">
           <div class="panel-header-ctx7">
             <h5 id="panelTitle"></h5>
             <button id="closePanelBtn" class="close-btn-ctx7">
@@ -971,8 +970,8 @@ document.addEventListener('DOMContentLoaded', function() {
     } catch (error) {
       console.error('Erreur lors du chargement de la carte:', error);
       loadingIndicator.innerHTML = `
-        <div class="loading-spinner-ctx7" style="display: none;"></div>
-        <p>Erreur de chargement de la carte</p>
+        <div class="loading-spinner-ctx7 d-none"></div>
+            showNotification('Carte chargée', 'Tous les villages ont été placés sur la carte', 'success', true);
         <button onclick="initMap()" class="btn btn-success btn-sm mt-2">Réessayer</button>
       `;
     }
@@ -1267,27 +1266,14 @@ document.addEventListener('DOMContentLoaded', function() {
   function showNotification(title, message, type = 'info') {
     const notification = document.createElement('div');
     notification.className = 'notification-ctx7';
-    notification.style.cssText = `
-      position: fixed;
-      top: 2rem;
-      right: 2rem;
-      z-index: 9999;
-      background: white;
-      border-radius: 12px;
-      padding: 1rem 1.5rem;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-      border-left: 4px solid ${type === 'success' ? '#10b981' : type === 'info' ? '#6366f1' : '#f59e0b'};
-      max-width: 300px;
-      animation: slideIn 0.3s ease;
-    `;
+    notification.className = `notification-ctx7 notification-${type}`;
 
     notification.innerHTML = `
-      <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
-        <i class="bi ${type === 'success' ? 'bi-check-circle' : type === 'info' ? 'bi-info-circle' : 'bi-exclamation-triangle'}"
-           style="color: ${type === 'success' ? '#10b981' : type === 'info' ? '#6366f1' : '#f59e0b'}; font-size: 1.25rem; margin-top: 0.125rem;"></i>
+      <div class="notification-ctx7">
+        <i class="bi ${type === 'success' ? 'bi-check-circle' : type === 'info' ? 'bi-info-circle' : 'bi-exclamation-triangle'} notification-icon notification-icon--${type}"></i>
         <div>
-          <h6 style="margin: 0 0 0.25rem 0; color: #1e293b; font-weight: 600;">${title}</h6>
-          <p style="margin: 0; color: #6b7280; font-size: 0.875rem;">${message}</p>
+          <h6 class="notification-title">${title}</h6>
+          <p class="notification-message">${message}</p>
         </div>
       </div>
     `;
@@ -1295,7 +1281,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.body.appendChild(notification);
 
     setTimeout(() => {
-      notification.style.animation = 'slideIn 0.3s ease reverse';
+      notification.classList.add('notification-hide');
       setTimeout(() => notification.remove(), 300);
     }, 3000);
   }

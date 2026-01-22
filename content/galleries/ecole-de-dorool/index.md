@@ -11,5 +11,4 @@ weight: 0
 
 Photos de l'école de Dorool - Construction et vie scolaire.
 
-{{< load-photoswipe >}}
 {{< gallery >}}

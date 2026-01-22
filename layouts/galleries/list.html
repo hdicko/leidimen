@@ -55,16 +55,21 @@
                   <img
                     src="{{ $thumb.RelPermalink }}"
                     class="card-img-top"
-                    alt="{{ $.Title }}"
-                    style="height: 250px; object-fit: cover;" />
+                    alt="{{ $.Title }}" />
                 {{ end }}
               {{ end }}
 
               {{/* Card Body - Gallery info */}}
               <div class="card-body">
                 <h5 class="card-title">{{ .Title }}</h5>
-                {{/* Summary/description (optional) */}}
+                {{/* Summary/description (optional) - Commented out to avoid loading PhotoSwipe multiple times
                 {{ with .Summary }}
+                  <p class="card-text text-muted">{{ . }}</p>
+                {{ end }}
+                */}}
+                
+                {{/* Display description from frontmatter instead of summary */}}
+                {{ with .Description }}
                   <p class="card-text text-muted">{{ . }}</p>
                 {{ end }}
 
@@ -95,26 +100,5 @@
     - Enhanced shadow on hover
     - Image zoom effect on hover
   */}}
-  <style>
-    .gallery-card {
-      transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
-      border-radius: 12px;
-      overflow: hidden;
-    }
-
-    .gallery-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
-    }
-
-    .gallery-card .card-img-top {
-      transition: transform 0.3s ease;
-    }
-
-    .gallery-card:hover .card-img-top {
-      transform: scale(1.05);
-    }
-  </style>
+  <!-- Styles moved to assets/scss/_skill-refactor.scss -->
 {{ end }}

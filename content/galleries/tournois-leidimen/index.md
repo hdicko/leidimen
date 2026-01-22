@@ -5,15 +5,18 @@ type: "gallery"
 villages: ['douentza']
 categories: ["Culture"]
 tags: ["photos", "archive", "galerie"]
-description: "Photos des tournois de poker organisés au profit de Leïdimen"
+description: "Photos des tournois de poker et PES organisés au profit de Leïdimen"
 draft: false
+slug: "tournois-leidimen"
+weight: 0
 source: "https://leidimen.com/photos/photos-des-tournois-leidimen"
 ---
 
-Photos des tournois de poker organisés au profit de Leïdimen
+# Photos des tournois Leïdimen
 
-## Galerie photos
+Au cours du mois de juillet 2007, deux tournois ont été organisés au profit de Leïdimen : un tournoi de PES (Pro Evolution Soccer) et un tournoi de poker. Ces événements conviviaux ont permis de financer en partie le vidéoprojecteur et le disque dur externe de l'association.
 
+{{<divider>}}
 {{< gallery >}}
 
 <!-- Images originales (liens WordPress) -->

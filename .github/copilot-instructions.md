@@ -35,9 +35,10 @@ Hugo is configured with **4 custom taxonomies** (see `hugo.toml` line 73-76):
   - Legacy: Some posts exist in topic directories (`Hammadoun/souvenir/`) from WordPress migration
   - **Convention**: New posts MUST go in year-based directories for consistency and maintainability
   - Use `index.md` for bundle pages with images as page resources
-- **Team profiles**: `content/about/` - Member profiles with card metadata
+- **Team profiles**: `content/equipe/` - Member profiles with card metadata
   - Each member gets a file like `abdoullayedicko.md`
   - Requires frontmatter: `card: {image, name, title, member, description, social}`
+  - Note: Directory is `equipe` (French for "team"), not `about`
 - **Galleries**: `content/galleries/` - Photo collections using PhotoSwipe
   - Structure: `galleries/gallery-name/index.md` + images in same folder
   - Images MUST be page resources (not in `static/`) for gallery shortcode to work
@@ -51,7 +52,7 @@ Hugo is configured with **4 custom taxonomies** (see `hugo.toml` line 73-76):
 
 - **Base template**: `layouts/_default/baseof.html` - Master wrapper with navbar, footer, Netlify Identity
 - **Specialized layouts**:
-  - `layouts/about/single.html` - Team profiles with timeline, skills, AOS animations
+  - `layouts/equipe/single.html` - Team profiles with timeline, skills, AOS animations
   - `layouts/galleries/single.html` - PhotoSwipe integration
   - `layouts/posts/list.html.html` - Blog listing with pagination
 
@@ -310,39 +311,27 @@ Located at `static/admin/config.yml`:
 - Media folder: `static/images/uploads/`
 - Collections: Posts, About, Galleries, Villages, Documents
 
-### Custom Shortcodes (24 available)
+### Custom Shortcodes
 
 Key shortcodes in `layouts/shortcodes/`:
 
 **Gallery & Images:**
 
 - `{{< gallery >}}` - Auto photo gallery from page resources (auto-loads PhotoSwipe)
+- `{{< gallery-pro >}}` - Professional gallery with advanced options
+- `{{< image-gallery >}}` - Alternative image gallery implementation
+- `{{< gallery-item >}}` - Individual gallery item (used within image-gallery)
 - `{{< load-photoswipe >}}` - Manual PhotoSwipe loading (use BEFORE custom galleries)
-- `{{< figure src="/path/img.jpg" title="Caption" >}}` - Enhanced figure with caption
-- `{{< image src="/path/img.jpg" alt="text" >}}` - Responsive image with lazy loading
-- `{{< imgproc "image.jpg" "resize" "400x400" >}}` - Process page resource images
-- `{{< fancybox >}}` - Alternative lightbox (deprecated, use gallery instead)
+- `{{< image >}}` - Responsive image with lazy loading
+- `{{< myimage >}}` - Custom image shortcode variant
 
-**Media:**
+**Layout & UI:**
 
-- `{{< youtube id="VIDEO_ID" >}}` - Embedded YouTube video
-- `{{< video src="/videos/file.mp4" >}}` - HTML5 video player
-- `{{< openstreetmap lat="15.47" lon="-3.27" zoom="12" >}}` - Embedded OSM map
-
-**Layout:**
-
-- `{{< columns >}}{{< column >}}...{{< /column >}}{{< /columns >}}` - Multi-column layouts
 - `{{< divider >}}` - Horizontal separator
-- `{{< colored-text color="primary" >}}Text{{< /colored-text >}}` - Colored text
-
-**Special:**
-
-- `{{< alert type="info" >}}Message{{< /alert >}}` - Bootstrap alerts (types: info, warning, danger, success)
-- `{{< icon name="heart" >}}` - Bootstrap icons inline
-- `{{< leidimen-logo >}}` - Association logo
-- `{{< typeit >}}Animated text{{< /typeit >}}` - Typing animation
 - `{{< details "Summary" >}}Content{{< /details >}}` - Collapsible content
-- `{{< carousel >}}` - Image carousel
+- `{{< typeit >}}Animated text{{< /typeit >}}` - Typing animation
+
+**Note:** Hugo provides built-in shortcodes (figure, youtube, etc.) that can be used without custom implementations.
 
 ## Integration Points
 
@@ -421,7 +410,7 @@ Hugo data files are accessible in templates via `.Site.Data`:
 
 ### Adding a Team Member
 
-1. Create file: `content/about/firstname-lastname.md`
+1. Create file: `content/equipe/firstname-lastname.md`
 2. Required frontmatter structure:
    ```yaml
    ---
@@ -441,7 +430,7 @@ Hugo data files are accessible in templates via `.Site.Data`:
    ---
    ```
 3. Image goes to `static/images/team/` (not page resource)
-4. Layout uses AOS animations and timeline components
+4. Layout at `layouts/equipe/single.html` uses AOS animations and timeline components
 
 ### Troubleshooting Gallery Issues
 
@@ -473,7 +462,7 @@ Hugo data files are accessible in templates via `.Site.Data`:
 **Templates:**
 
 - `layouts/_default/baseof.html` - Master wrapper with Netlify Identity integration
-- `layouts/about/single.html` - Team profiles with AOS animations, timeline, skills
+- `layouts/equipe/single.html` - Team profiles with AOS animations, timeline, skills
 - `layouts/galleries/single.html` - Gallery pages with PhotoSwipe
 - `layouts/posts/list.html.html` - Blog listing with pagination
 - `layouts/partials/photoswipe-resources.html` - PhotoSwipe CSS/JS loader
@@ -482,7 +471,7 @@ Hugo data files are accessible in templates via `.Site.Data`:
 **Content Templates:**
 
 - `archetypes/post.md` - Template for `hugo new posts/...`
-- `archetypes/about.md` - Template for team member profiles
+- `archetypes/about.md` - Template for team member profiles (creates in equipe/)
 - `archetypes/default.md` - Fallback template
 
 **Scripts:**
@@ -496,10 +485,14 @@ Hugo data files are accessible in templates via `.Site.Data`:
 
 - `QUICK_REFERENCE.md` - Content creation guide for non-technical editors
 - `CODE_DOCUMENTATION.md` - Detailed code architecture documentation
+- `CONTENT_CREATION_GUIDE.md` - Complete guide for content creation workflows
 - `NETLIFY_CMS_GUIDE.md` - CMS usage instructions
-- `GUIDE_CREATION_ARTICLE.md` - Article creation workflow
-- `CMS_OVERVIEW.md` - Overview of all CMS options (Netlify CMS + cms-web)
+- `SEARCH_FEATURE.md` - Search functionality documentation
+- `SEO_LLM_OPTIMIZATION_SUMMARY.md` - SEO and AI optimization strategies
+- `HUGO_0.152.1_MIGRATION.md` - Hugo version migration notes
 - `cms-web/README.md` - Web CMS interface documentation with API integration
+- `cms-web/QUICKSTART.md` - Quick start guide for cms-web
+- `cms-web/INTEGRATION.md` - CMS integration details
 
 ## Testing & Validation
 

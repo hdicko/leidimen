@@ -38,7 +38,7 @@ villages:
   <div class="col-md-6">
     <div class="card shadow-lg border-0">
       <a href="/img/infos/ordi.jpg" data-lightbox="ordinateurs" data-title="Les 10 ordinateurs prêts pour Douentza">
-        <img src="/img/infos/ordi.jpg" class="card-img-top rounded" alt="Ordinateurs pour le lycée de Douentza" style="object-fit: cover; max-height: 400px;">
+        <img src="/img/infos/ordi.jpg" class="card-img-top rounded post-thumb-alt" alt="Ordinateurs pour le lycée de Douentza">
       </a>
       <div class="card-body bg-light">
         <p class="card-text text-center mb-0">
@@ -55,7 +55,7 @@ villages:
 
 ## 🎵 Art et Musique - 1er Février 2007
 
-<div class="card border-0 shadow-sm mb-4" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+<div class="card border-0 shadow-sm mb-4 accent-hero">
   <div class="card-body text-white p-4">
     <h4 class="card-title mb-3">🎭 Diversité culturelle et musicale</h4>
     <p class="card-text">Leïdimen rassemble des personnes d'origines diverses par des liens d'amitiés et de solidarité. On saluera dans ce cadre le groupe <strong>Bayefall Gnawa</strong> et le chanteur <strong>Nuru Kane</strong> qui réunit des artistes talentueux de différents horizons.</p>

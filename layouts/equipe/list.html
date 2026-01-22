@@ -345,29 +345,17 @@
                 <!-- Quote Section -->
                 {{ if $member.Params.card.devise }}
                   <div class="member-quote">
-                    <blockquote>
-                      <i class="bi bi-quote quote-icon"></i>
-                      <p>{{ $member.Params.card.devise }}</p>
-                    </blockquote>
+                    <div class="quote-icon">
+                      <i class="bi bi-quote"></i>
+                    </div>
+                    <p>"{{ $member.Params.card.devise }}"</p>
                   </div>
                 {{ end }}
 
-
-                <!-- Tags & Categories -->
-                <div class="member-tags">
-                  {{ if $member.Params.categories }}
-                    {{ range $member.Params.categories }}
-                      <span class="tag">{{ . }}</span>
-                    {{ end }}
-                  {{ end }}
-                </div>
-
-                <!-- Member Stats Mini -->
+                <!-- Member Stats -->
                 <div class="member-stats">
                   <div class="stat">
-                    <span class="stat-number"
-                      >{{ now.Year | sub $member.Date.Year }}+</span
-                    >
+                    <span class="stat-number">{{ now.Year | sub $member.Date.Year }}</span>
                     <span class="stat-label">années</span>
                   </div>
                   <div class="stat">

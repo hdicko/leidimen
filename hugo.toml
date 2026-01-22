@@ -12,7 +12,7 @@ enableEmoji = true
 assetDir = "static"
 address = "Association Leidimen, 14 rue des Pommiers, 91070 Bondoufle."
 email = "association@leidimen.com"
-tel = "+33603751327"
+tel = "+33 6 XX XX XX XX"
 
 
 [sitemap]
@@ -127,7 +127,7 @@ disableLatLong = false
   author = ""
   email = "association@leidimen.com"
   address = "Association Leidimen, 14 rue des Pommiers, 91070 Bondoufle."
-  tel= "+33603751327"
+  tel= "+33 6 XX XX XX XX"
   avatarurl = "/images/leidimen-logo.jpg"
   
  

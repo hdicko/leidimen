@@ -103,7 +103,7 @@ Nous travaillons en collaboration avec des associations de villages, des ONG au 
 
 <div class="mt-3 p-3 bg-light rounded">
 <p class="mb-1 small"><i class="bi bi-envelope-fill me-2"></i><strong>Email :</strong> <a href="mailto:capong2005@yahoo.org">capong2005@yahoo.org</a></p>
-<p class="mb-0 small"><i class="bi bi-telephone-fill me-2"></i><strong>Tél :</strong> +223 674 83 87</p>
+<p class="mb-0 small"><i class="bi bi-telephone-fill me-2"></i><strong>Tél :</strong> +223 XX XX XX XX</p>
 </div>
 </div>
 </div>
@@ -157,7 +157,7 @@ Nous travaillons en collaboration avec des associations de villages, des ONG au 
 <div class="col-md-6 col-lg-3">
 <div class="card h-100 border-0 shadow-sm text-center">
 <div class="card-body">
-<i class="bi bi-building text-primary" style="font-size: 3rem;"></i>
+<i class="bi bi-building text-primary partner-icon-large"></i>
 <h5 class="mt-3">Conseil Général de l'Essonne</h5>
 <hr>
 <p class="small text-muted">Contribution à la construction du puits à Darawal et à l'achat de fournitures scolaires</p>
@@ -168,7 +168,7 @@ Nous travaillons en collaboration avec des associations de villages, des ONG au 
 <div class="col-md-6 col-lg-3">
 <div class="card h-100 border-0 shadow-sm text-center">
 <div class="card-body">
-<i class="bi bi-house-heart text-primary" style="font-size: 3rem;"></i>
+<i class="bi bi-house-heart text-primary partner-icon-large"></i>
 <h5 class="mt-3">Mairie de Chatou</h5>
 <p class="small text-muted">(Yvelines)</p>
 <hr>
@@ -180,7 +180,7 @@ Nous travaillons en collaboration avec des associations de villages, des ONG au 
 <div class="col-md-6 col-lg-3">
 <div class="card h-100 border-0 shadow-sm text-center">
 <div class="card-body">
-<i class="bi bi-trophy text-warning" style="font-size: 3rem;"></i>
+<i class="bi bi-trophy text-warning partner-icon-large"></i>
 <h5 class="mt-3">Direction Jeunesse-Sport PACA</h5>
 <p class="small text-muted">Concours "Envie d'agir"</p>
 <hr>
@@ -192,7 +192,7 @@ Nous travaillons en collaboration avec des associations de villages, des ONG au 
 <div class="col-md-6 col-lg-3">
 <div class="card h-100 border-0 shadow-sm text-center">
 <div class="card-body">
-<i class="bi bi-arrow-up-circle text-success" style="font-size: 3rem;"></i>
+<i class="bi bi-arrow-up-circle text-success partner-icon-large"></i>
 <h5 class="mt-3">Autres bailleurs</h5>
 <hr>
 <p class="small text-muted">Nous continuons d'élargir notre réseau de partenaires financiers : subventions publiques et mécénats privés</p>

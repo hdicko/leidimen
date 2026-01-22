@@ -189,18 +189,16 @@
                     <div class="post-image position-relative">
                       <img
                         src="{{ $resized.RelPermalink }}"
-                        class="w-100"
-                        alt="{{ $page.Title }}"
-                        style="height: 200px; object-fit: cover;" />
+                        class="w-100 post-thumb"
+                        alt="{{ $page.Title }}" />
                       <div class="post-overlay"></div>
                     </div>
                   {{ else }}
                     <div class="post-image position-relative">
                       <img
                         src="{{ $imagePath | relURL }}"
-                        class="w-100"
-                        alt="{{ $page.Title }}"
-                        style="height: 200px; object-fit: cover;" />
+                        class="w-100 post-thumb"
+                        alt="{{ $page.Title }}" />
                       <div class="post-overlay"></div>
                     </div>
                   {{ end }}
@@ -552,28 +550,6 @@
       padding: 3rem 1rem;
     }
 
-    /* Responsive */
-    @media (max-width: 768px) {
-      .taxonomy-hero-ctx7 {
-        min-height: 300px;
-        padding: 3rem 0;
-      }
-
-      .taxonomy-icon {
-        font-size: 3rem;
-      }
-
-      .hero-title {
-        font-size: 2rem !important;
-      }
-
-      .section-title {
-        font-size: 1.5rem;
-      }
-
-      .stat-number {
-        font-size: 1.5rem;
-      }
-    }
-  </style>
+</style>
+{{/* Styles moved to assets/scss/_skill-refactor.scss */}}
 {{ end }}
