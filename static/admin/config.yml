@@ -16,7 +16,13 @@ collections:
     label_singular: "Article"
     folder: "content/posts"
     create: true
-    slug: "{{slug}}"
+    slug: "{{year}}/{{slug}}"
+    path: "{{year}}/{{slug}}"
+    media_folder: ""
+    public_folder: ""
+    nested:
+      depth: 100
+      summary: "{{title}}"
     editor:
       preview: false
     fields:
@@ -119,9 +125,11 @@ collections:
   - name: "team"
     label: "👥 Équipe"
     label_singular: "Membre"
-    folder: "content/about"
+    folder: "content/equipe"
     create: true
     slug: "{{slug}}"
+    extension: "md"
+    format: "yaml-frontmatter"
     editor:
       preview: false
     fields:
@@ -226,6 +234,11 @@ collections:
     folder: "content/villages"
     create: true
     slug: "{{slug}}"
+    extension: "md"
+    format: "yaml-frontmatter"
+    path: "{{slug}}/_index"
+    media_folder: ""
+    public_folder: ""
     editor:
       preview: false
     fields:
@@ -298,6 +311,8 @@ collections:
     folder: "content/documents"
     create: true
     slug: "{{slug}}"
+    extension: "md"
+    format: "yaml-frontmatter"
     editor:
       preview: false
     fields:
@@ -345,6 +360,11 @@ collections:
     folder: "content/galleries"
     create: true
     slug: "{{slug}}"
+    extension: "md"
+    format: "yaml-frontmatter"
+    path: "{{slug}}/index"
+    media_folder: ""
+    public_folder: ""
     editor:
       preview: false
     fields:
