@@ -64,6 +64,7 @@
       <!-- Sub-sections Cards -->
       <div class="row g-4 mb-5">
         {{ range .Pages }}
+          {{ if and (ne .Kind "section") (.Date.Year) (ne .Date.Year 1) }}
           <div class="col-md-6">
             <div class="card border-0 shadow-sm h-100 subsection-card">
               <div class="card-body p-4">
@@ -155,6 +156,7 @@
               </div>
             </div>
           </div>
+          {{ end }}
         {{ end }}
       </div>
 

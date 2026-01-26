@@ -1,156 +1,211 @@
-function is_youtubelink(url) {
-	var p =
+/**
+ * Utility functions for detecting and handling different types of media links
+ */
+
+/**
+ * Check if URL is a valid YouTube link and extract video ID
+ * @param {string} url - The URL to check
+ * @returns {string|false} - Video ID if valid YouTube URL, false otherwise
+ */
+const isYoutubeLink = (url) => {
+	const pattern =
 		/^(?:https?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/;
-	return url.match(p) ? RegExp.$1 : false;
-}
-function is_imagelink(url) {
-	var p = /([a-z\-_0-9\/\:\.]*\.(jpg|jpeg|png|gif))/i;
-	return url.match(p) ? true : false;
-}
-function is_vimeolink(url, el) {
-	var id = false;
-	var xmlhttp = new XMLHttpRequest();
-	xmlhttp.onreadystatechange = function () {
-		if (xmlhttp.readyState == XMLHttpRequest.DONE) {
-			// XMLHttpRequest.DONE == 4
-			if (xmlhttp.status == 200) {
-				var response = JSON.parse(xmlhttp.responseText);
-				id = response.video_id;
-				console.log(id);
-				el.classList.add('lightbox-vimeo');
-				el.setAttribute('data-id', id);
+	const match = url.match(pattern);
+	return match ? match[1] : false;
+};
 
-				el.addEventListener('click', function (event) {
-					event.preventDefault();
-					document.getElementById('lightbox').innerHTML =
-						'<a id="close"></a><a id="next">&rsaquo;</a><a id="prev">&lsaquo;</a><div class="videoWrapperContainer"><div class="videoWrapper"><iframe src="https://player.vimeo.com/video/' +
-						el.getAttribute('data-id') +
-						'/?autoplay=1&byline=0&title=0&portrait=0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div></div>';
-					document.getElementById('lightbox').style.display = 'block';
+/**
+ * Check if URL points to an image file
+ * @param {string} url - The URL to check
+ * @returns {boolean} - True if URL is an image, false otherwise
+ */
+const isImageLink = (url) => {
+	const pattern = /([a-z\-_0-9\/\:\.]*\.(jpg|jpeg|png|gif|webp))/i;
+	return pattern.test(url);
+};
 
-					setGallery(this);
-				});
-			} else if (xmlhttp.status == 400) {
-				alert('There was an error 400');
-			} else {
-				alert('something else other than 200 was returned');
-			}
+/**
+ * Check if URL is a Vimeo link and setup lightbox handler
+ * @param {string} url - The Vimeo URL
+ * @param {HTMLElement} el - The link element
+ */
+const isVimeoLink = async (url, el) => {
+	try {
+		const response = await fetch(`https://vimeo.com/api/oembed.json?url=${encodeURIComponent(url)}`);
+
+		if (!response.ok) {
+			console.error(`Vimeo API error: ${response.status}`);
+			return;
 		}
-	};
-	xmlhttp.open('GET', 'https://vimeo.com/api/oembed.json?url=' + url, true);
-	xmlhttp.send();
-}
-function setGallery(el) {
-	var elements = document.body.querySelectorAll('.gallery');
-	elements.forEach((element) => {
+
+		const data = await response.json();
+		const videoId = data.video_id;
+
+		el.classList.add('lightbox-vimeo');
+		el.setAttribute('data-id', videoId);
+
+		el.addEventListener('click', (event) => {
+			event.preventDefault();
+			const lightbox = document.getElementById('lightbox');
+			lightbox.innerHTML = `
+				<a id="close"></a>
+				<a id="next">&rsaquo;</a>
+				<a id="prev">&lsaquo;</a>
+				<div class="videoWrapperContainer">
+					<div class="videoWrapper">
+						<iframe 
+							src="https://player.vimeo.com/video/${el.getAttribute('data-id')}/?autoplay=1&byline=0&title=0&portrait=0" 
+							webkitallowfullscreen 
+							mozallowfullscreen 
+							allowfullscreen>
+						</iframe>
+					</div>
+				</div>
+			`;
+			lightbox.style.display = 'block';
+			setGallery(el);
+		});
+	} catch (error) {
+		console.error('Error fetching Vimeo data:', error);
+	}
+};
+
+/**
+ * Set up gallery navigation for the current lightbox element
+ * @param {HTMLElement} el - The clicked element
+ */
+const setGallery = (el) => {
+	// Remove gallery class from all elements
+	document.querySelectorAll('.gallery').forEach((element) => {
 		element.classList.remove('gallery');
 	});
-	if (el.closest('ul, p')) {
-		var link_elements = el.closest('ul, p').querySelectorAll("a[class*='lightbox-']");
-		link_elements.forEach((link_element) => {
-			link_element.classList.remove('current');
-		});
-		link_elements.forEach((link_element) => {
-			if (el.getAttribute('href') == link_element.getAttribute('href')) {
-				link_element.classList.add('current');
-			}
-		});
-		if (link_elements.length > 1) {
-			document.getElementById('lightbox').classList.add('gallery');
-			link_elements.forEach((link_element) => {
-				link_element.classList.add('gallery');
-			});
-		}
-		var currentkey;
-		var gallery_elements = document.querySelectorAll('a.gallery');
-		Object.keys(gallery_elements).forEach(function (k) {
-			if (gallery_elements[k].classList.contains('current')) currentkey = k;
-		});
-		if (currentkey == gallery_elements.length - 1) var nextkey = 0;
-		else var nextkey = parseInt(currentkey) + 1;
-		if (currentkey == 0) var prevkey = parseInt(gallery_elements.length - 1);
-		else var prevkey = parseInt(currentkey) - 1;
-		document.getElementById('next').addEventListener('click', function () {
-			gallery_elements[nextkey].click();
-		});
-		document.getElementById('prev').addEventListener('click', function () {
-			gallery_elements[prevkey].click();
-		});
+
+	const parentContainer = el.closest('ul, p');
+	if (!parentContainer) return;
+
+	const linkElements = Array.from(parentContainer.querySelectorAll("a[class*='lightbox-']"));
+
+	// Reset current class on all links
+	linkElements.forEach((link) => link.classList.remove('current'));
+
+	// Set current link
+	const currentLink = linkElements.find((link) => link.getAttribute('href') === el.getAttribute('href'));
+	if (currentLink) {
+		currentLink.classList.add('current');
 	}
-}
 
-document.addEventListener('DOMContentLoaded', function () {
-	//create lightbox div in the footer
-	var newdiv = document.createElement('div');
-	newdiv.setAttribute('id', 'lightbox');
-	document.body.appendChild(newdiv);
+	// Enable gallery mode if there are multiple items
+	if (linkElements.length > 1) {
+		const lightbox = document.getElementById('lightbox');
+		lightbox.classList.add('gallery');
+		linkElements.forEach((link) => link.classList.add('gallery'));
 
-	//add classes to links to be able to initiate lightboxes
-	var elements = document.querySelectorAll('a');
-	elements.forEach((element) => {
-		var url = element.getAttribute('href');
-		if (url) {
-			if (url.indexOf('vimeo') !== -1 && !element.classList.contains('no-lightbox')) {
-				is_vimeolink(url, element);
-			}
-			if (is_youtubelink(url) && !element.classList.contains('no-lightbox')) {
-				element.classList.add('lightbox-youtube');
-				element.setAttribute('data-id', is_youtubelink(url));
-			}
-			if (is_imagelink(url) && !element.classList.contains('no-lightbox')) {
-				element.classList.add('lightbox-image');
-				var href = element.getAttribute('href');
-				var filename = href.split('/').pop();
-				var split = filename.split('.');
-				var name = split[0];
-				element.setAttribute('title', name);
-			}
+		// Setup navigation
+		const galleryElements = document.querySelectorAll('a.gallery');
+		const currentIndex = Array.from(galleryElements).findIndex((item) => item.classList.contains('current'));
+
+		if (currentIndex === -1) return;
+
+		const nextIndex = (currentIndex + 1) % galleryElements.length;
+		const prevIndex = (currentIndex - 1 + galleryElements.length) % galleryElements.length;
+
+		const nextButton = document.getElementById('next');
+		const prevButton = document.getElementById('prev');
+
+		if (nextButton && prevButton) {
+			nextButton.addEventListener('click', () => galleryElements[nextIndex].click());
+			prevButton.addEventListener('click', () => galleryElements[prevIndex].click());
+		}
+	}
+};
+
+/**
+ * Initialize lightbox functionality on DOM load
+ */
+document.addEventListener('DOMContentLoaded', () => {
+	// Create lightbox container
+	const lightboxDiv = document.createElement('div');
+	lightboxDiv.setAttribute('id', 'lightbox');
+	document.body.appendChild(lightboxDiv);
+
+	// Process all links and add appropriate lightbox classes
+	const links = document.querySelectorAll('a');
+	links.forEach((link) => {
+		const url = link.getAttribute('href');
+		if (!url || link.classList.contains('no-lightbox')) return;
+
+		// Check for Vimeo links
+		if (url.includes('vimeo')) {
+			isVimeoLink(url, link);
+		}
+
+		// Check for YouTube links
+		const youtubeId = isYoutubeLink(url);
+		if (youtubeId) {
+			link.classList.add('lightbox-youtube');
+			link.setAttribute('data-id', youtubeId);
+		}
+
+		// Check for image links
+		if (isImageLink(url)) {
+			link.classList.add('lightbox-image');
+			const filename = url.split('/').pop();
+			const name = filename.split('.')[0];
+			link.setAttribute('title', name);
 		}
 	});
 
-	//remove the clicked lightbox
-	document.getElementById('lightbox').addEventListener('click', function (event) {
-		if (event.target.id != 'next' && event.target.id != 'prev') {
-			this.innerHTML = '';
-			document.getElementById('lightbox').style.display = 'none';
+	// Close lightbox on background click
+	lightboxDiv.addEventListener('click', (event) => {
+		if (event.target.id !== 'next' && event.target.id !== 'prev') {
+			lightboxDiv.innerHTML = '';
+			lightboxDiv.style.display = 'none';
 		}
 	});
 
-	//add the youtube lightbox on click
-	var elements = document.querySelectorAll('a.lightbox-youtube');
-	elements.forEach((element) => {
-		element.addEventListener('click', function (event) {
+	// Setup YouTube lightbox handlers
+	const youtubeLinks = document.querySelectorAll('a.lightbox-youtube');
+	youtubeLinks.forEach((link) => {
+		link.addEventListener('click', (event) => {
 			event.preventDefault();
-			document.getElementById('lightbox').innerHTML =
-				'<a id="close"></a><a id="next">&rsaquo;</a><a id="prev">&lsaquo;</a><div class="videoWrapperContainer"><div class="videoWrapper"><iframe src="https://www.youtube.com/embed/' +
-				this.getAttribute('data-id') +
-				'?autoplay=1&showinfo=0&rel=0"></iframe></div>';
-			document.getElementById('lightbox').style.display = 'block';
-
-			setGallery(this);
+			const videoId = link.getAttribute('data-id');
+			lightboxDiv.innerHTML = `
+				<a id="close"></a>
+				<a id="next">&rsaquo;</a>
+				<a id="prev">&lsaquo;</a>
+				<div class="videoWrapperContainer">
+					<div class="videoWrapper">
+						<iframe 
+							src="https://www.youtube.com/embed/${videoId}?autoplay=1&showinfo=0&rel=0"
+							allowfullscreen>
+						</iframe>
+					</div>
+				</div>
+			`;
+			lightboxDiv.style.display = 'block';
+			setGallery(link);
 		});
 	});
 
-	//add the image lightbox on click
-	var elements = document.querySelectorAll('a.lightbox-image');
-	elements.forEach((element) => {
-		element.addEventListener('click', function (event) {
+	// Setup image lightbox handlers
+	const imageLinks = document.querySelectorAll('a.lightbox-image');
+	imageLinks.forEach((link) => {
+		link.addEventListener('click', (event) => {
 			event.preventDefault();
-			var href = this.getAttribute('href');
-			var title = this.getAttribute('title') || '';
-			document.getElementById('lightbox').innerHTML =
-				'<a id="close"></a><a id="next">&rsaquo;</a><a id="prev">&lsaquo;</a><div class="img" title="' +
-				title +
-				'"><img class="lightbox-img" src="' +
-				href +
-				'" alt="' +
-				title +
-				'" /></div><span>' +
-				title +
-				'</span>';
-			document.getElementById('lightbox').style.display = 'block';
+			const href = link.getAttribute('href');
+			const title = link.getAttribute('title') || '';
 
-			setGallery(this);
+			lightboxDiv.innerHTML = `
+				<a id="close"></a>
+				<a id="next">&rsaquo;</a>
+				<a id="prev">&lsaquo;</a>
+				<div class="img" title="${title}">
+					<img class="lightbox-img" src="${href}" alt="${title}" />
+				</div>
+				<span>${title}</span>
+			`;
+			lightboxDiv.style.display = 'block';
+			setGallery(link);
 		});
 	});
 });

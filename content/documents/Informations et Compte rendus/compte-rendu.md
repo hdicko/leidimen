@@ -189,7 +189,3 @@ Consultez nos rapports d'activités et comptes rendus annuels pour suivre l'évo
   </div>
 </div>
 
-<div class="alert alert-info border-0 shadow-sm mt-5" role="alert">
-  <i class="bi bi-info-circle me-2"></i>
-  <strong>Information :</strong> Les rapports sont disponibles au format PDF. Vous avez besoin d'un lecteur PDF pour les consulter.
-</div>
