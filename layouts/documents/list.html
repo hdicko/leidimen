@@ -66,150 +66,154 @@
       <div class="row g-4 mb-5">
         {{ range .Pages }}
           {{ if and .Title (ne .Date.Year 1) }}
-          <div class="col-md-6 col-lg-4">
-            <div class="document-card card border-0 shadow-sm h-100">
-              <div class="card-body p-4 d-flex flex-column">
-                <!-- Document Icon & Type -->
-                <div class="d-flex align-items-center mb-3">
-                  <div class="document-icon me-3">
-                    {{ if in .RelPermalink "mentions-legales" }}
-                      <i class="bi bi-shield-check text-primary fs-2"></i>
-                    {{ else }}
-                      {{ if in .RelPermalink "politique-confidentialite" }}
-                        <i class="bi bi-shield-lock text-success fs-2"></i>
-                      {{ else }}
-                        {{ if in .RelPermalink "adhesion" }}
-                          <i class="bi bi-person-plus text-warning fs-2"></i>
-                        {{ else }}
-                          {{ if in .RelPermalink "informations-et-compte-rendus" }}
-                            <i class="bi bi-journal-text text-danger fs-2"></i>
-                          {{ else }}
-                            <i
-                              class="bi bi-file-earmark-text text-info fs-2"></i>
-                          {{ end }}
-                        {{ end }}
-                      {{ end }}
-                    {{ end }}
-                  </div>
-                  <div class="flex-grow-1">
-                    <span
-                      class="badge bg-light text-dark border fw-normal small">
+            <div class="col-md-6 col-lg-4">
+              <div class="document-card card border-0 shadow-sm h-100">
+                <div class="card-body p-4 d-flex flex-column">
+                  <!-- Document Icon & Type -->
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="document-icon me-3">
                       {{ if in .RelPermalink "mentions-legales" }}
-                        Document légal
+                        <i class="bi bi-shield-check text-primary fs-2"></i>
                       {{ else }}
                         {{ if in .RelPermalink "politique-confidentialite" }}
-                          Confidentialité
+                          <i class="bi bi-shield-lock text-success fs-2"></i>
                         {{ else }}
                           {{ if in .RelPermalink "adhesion" }}
-                            Adhésion
+                            <i class="bi bi-person-plus text-warning fs-2"></i>
                           {{ else }}
                             {{ if in .RelPermalink "informations-et-compte-rendus" }}
-                              Comptes rendus
+                              <i
+                                class="bi bi-journal-text text-danger fs-2"></i>
                             {{ else }}
-                              Document officiel
+                              <i
+                                class="bi bi-file-earmark-text text-info fs-2"></i>
                             {{ end }}
                           {{ end }}
                         {{ end }}
+                      {{ end }}
+                    </div>
+                    <div class="flex-grow-1">
+                      <span
+                        class="badge bg-light text-dark border fw-normal small">
+                        {{ if in .RelPermalink "mentions-legales" }}
+                          Document légal
+                        {{ else }}
+                          {{ if in .RelPermalink "politique-confidentialite" }}
+                            Confidentialité
+                          {{ else }}
+                            {{ if in .RelPermalink "adhesion" }}
+                              Adhésion
+                            {{ else }}
+                              {{ if in .RelPermalink "informations-et-compte-rendus" }}
+                                Comptes rendus
+                              {{ else }}
+                                Document officiel
+                              {{ end }}
+                            {{ end }}
+                          {{ end }}
+                        {{ end }}
+                      </span>
+                    </div>
+                  </div>
+
+                  <!-- Document Title -->
+                  <h5 class="card-title fw-bold mb-3 text-dark">
+                    {{ .Title }}
+                  </h5>
+
+                  <!-- Document Description -->
+                  <p class="card-text text-muted mb-4 flex-grow-1">
+                    {{ with .Description }}
+                      {{ . | truncate 120 }}
+                    {{ else }}
+                      {{ if in .RelPermalink "informations-et-compte-rendus" }}
+                        Accédez aux comptes rendus de réunions et informations
+                        importantes de l'association.
+                      {{ else }}
+                        {{ .Summary | truncate 120 }}
+                      {{ end }}
+                    {{ end }}
+                  </p>
+
+                  <!-- Document Meta Info -->
+                  <div
+                    class="d-flex justify-content-between align-items-center mb-3 text-muted small">
+                    <span>
+                      <i class="bi bi-calendar3 me-1"></i>
+                      {{ .Date.Format "Jan 2006" }}
+                    </span>
+                    <span>
+                      <i class="bi bi-clock me-1"></i>
+                      {{ if in .RelPermalink "informations-et-compte-rendus" }}
+                        Section
+                      {{ else }}
+                        {{ .ReadingTime }} min
                       {{ end }}
                     </span>
                   </div>
-                </div>
 
-                <!-- Document Title -->
-                <h5 class="card-title fw-bold mb-3 text-dark">{{ .Title }}</h5>
-
-                <!-- Document Description -->
-                <p class="card-text text-muted mb-4 flex-grow-1">
-                  {{ with .Description }}
-                    {{ . | truncate 120 }}
-                  {{ else }}
-                    {{ if in .RelPermalink "informations-et-compte-rendus" }}
-                      Accédez aux comptes rendus de réunions et informations
-                      importantes de l'association.
-                    {{ else }}
-                      {{ .Summary | truncate 120 }}
-                    {{ end }}
-                  {{ end }}
-                </p>
-
-                <!-- Document Meta Info -->
-                <div
-                  class="d-flex justify-content-between align-items-center mb-3 text-muted small">
-                  <span>
-                    <i class="bi bi-calendar3 me-1"></i>
-                    {{ .Date.Format "Jan 2006" }}
-                  </span>
-                  <span>
-                    <i class="bi bi-clock me-1"></i>
-                    {{ if in .RelPermalink "informations-et-compte-rendus" }}
-                      Section
-                    {{ else }}
-                      {{ .ReadingTime }} min
-                    {{ end }}
-                  </span>
-                </div>
-
-                <!-- Action Button -->
-                <div class="mt-auto">
-                  <a
-                    href="{{ .RelPermalink }}"
-                    class="btn professional-btn w-100 d-flex align-items-center justify-content-center">
-                    <i class="bi bi-arrow-right-circle me-2"></i>
-                    <span class="fw-semibold">
-                      {{ if in .RelPermalink "adhesion" }}
-                        Adhérer maintenant
-                      {{ else }}
-                        {{ if in .RelPermalink "mentions-legales" }}
-                          Consulter les mentions
+                  <!-- Action Button -->
+                  <div class="mt-auto">
+                    <a
+                      href="{{ .RelPermalink }}"
+                      class="btn professional-btn w-100 d-flex align-items-center justify-content-center">
+                      <i class="bi bi-arrow-right-circle me-2"></i>
+                      <span class="fw-semibold">
+                        {{ if in .RelPermalink "adhesion" }}
+                          Adhérer maintenant
                         {{ else }}
-                          {{ if in .RelPermalink "politique-confidentialite" }}
-                            Lire la politique
+                          {{ if in .RelPermalink "mentions-legales" }}
+                            Consulter les mentions
                           {{ else }}
-                            {{ if in .RelPermalink "informations-et-compte-rendus" }}
-                              Voir les comptes rendus
+                            {{ if in .RelPermalink "politique-confidentialite" }}
+                              Lire la politique
                             {{ else }}
-                              Voir le document
+                              {{ if in .RelPermalink "informations-et-compte-rendus" }}
+                                Voir les comptes rendus
+                              {{ else }}
+                                Voir le document
+                              {{ end }}
                             {{ end }}
                           {{ end }}
                         {{ end }}
-                      {{ end }}
-                    </span>
-                  </a>
+                      </span>
+                    </a>
+                  </div>
                 </div>
-              </div>
 
-              <!-- Card Footer with Priority Indicator -->
-              <div class="card-footer bg-transparent border-0 px-4 pb-4">
-                <div class="d-flex align-items-center">
-                  {{ if in .RelPermalink "adhesion" }}
-                    <span class="badge bg-warning text-dark fw-normal">
-                      <i class="bi bi-star-fill me-1"></i>
-                      Action recommandée
-                    </span>
-                  {{ else }}
-                    {{ if or (in .RelPermalink "mentions-legales") (in .RelPermalink "politique-confidentialite") }}
-                      <span class="badge bg-primary fw-normal">
-                        <i class="bi bi-info-circle me-1"></i>
-                        Information légale
+                <!-- Card Footer with Priority Indicator -->
+                <div class="card-footer bg-transparent border-0 px-4 pb-4">
+                  <div class="d-flex align-items-center">
+                    {{ if in .RelPermalink "adhesion" }}
+                      <span class="badge bg-warning text-dark fw-normal">
+                        <i class="bi bi-star-fill me-1"></i>
+                        Action recommandée
                       </span>
                     {{ else }}
-                      {{ if in .RelPermalink "informations-et-compte-rendus" }}
-                        <span class="badge bg-danger fw-normal">
-                          <i class="bi bi-journal-check me-1"></i>
-                          Comptes rendus
+                      {{ if or (in .RelPermalink "mentions-legales") (in .RelPermalink "politique-confidentialite") }}
+                        <span class="badge bg-primary fw-normal">
+                          <i class="bi bi-info-circle me-1"></i>
+                          Information légale
                         </span>
                       {{ else }}
-                        <span class="badge bg-light text-dark border fw-normal">
-                          <i class="bi bi-file-text me-1"></i>
-                          Document standard
-                        </span>
+                        {{ if in .RelPermalink "informations-et-compte-rendus" }}
+                          <span class="badge bg-danger fw-normal">
+                            <i class="bi bi-journal-check me-1"></i>
+                            Comptes rendus
+                          </span>
+                        {{ else }}
+                          <span
+                            class="badge bg-light text-dark border fw-normal">
+                            <i class="bi bi-file-text me-1"></i>
+                            Document standard
+                          </span>
+                        {{ end }}
                       {{ end }}
                     {{ end }}
-                  {{ end }}
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
           {{ end }}
         {{ end }}
       </div>

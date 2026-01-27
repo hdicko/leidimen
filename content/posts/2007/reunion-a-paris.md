@@ -1,7 +1,7 @@
 ---
 title: "Réunion à Paris"
 date: 2007-06-25
-villages: ['dorool']
+villages: ["dorool"]
 categories: ["Culture"]
 tags: ["archive", "wordpress", "News Leidimen", "Réunions"]
 description: "Réunion à Paris"

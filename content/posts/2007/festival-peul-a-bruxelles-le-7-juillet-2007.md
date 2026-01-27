@@ -1,7 +1,7 @@
 ---
 title: "Festival Peul à Bruxelles le 7 juillet 2007"
 date: 2007-06-26
-villages: ['douentza']
+villages: ["douentza"]
 categories: ["Culture"]
 tags: ["archive", "wordpress", "Sorties"]
 description: "Festival Peul à Bruxelles le 7 juillet 2007"

@@ -1,7 +1,7 @@
 ---
 title: "Assemblée générale du 9 février 2008"
 date: 2008-02-05
-villages: ['douentza']
+villages: ["douentza"]
 categories: ["Culture"]
 tags: ["archive", "wordpress", "Divers"]
 description: "Assemblée générale du 9 février 2008"

@@ -1,7 +1,7 @@
 ---
 title: "Opération cartons Acte II"
 date: 2006-09-30
-villages: ['douentza']
+villages: ["douentza"]
 categories: ["Culture"]
 tags: ["archive", "wordpress", "News Leidimen"]
 description: "Opération cartons Acte II"

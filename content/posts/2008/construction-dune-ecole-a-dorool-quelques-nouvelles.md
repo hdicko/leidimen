@@ -1,7 +1,7 @@
 ---
 title: "Construction d’une école à Dorool : quelques nouvelles"
 date: 2008-02-21
-villages: ['dorool']
+villages: ["dorool"]
 categories: ["Éducation"]
 tags: ["archive", "wordpress", "News Leidimen", "école", "dorool"]
 description: "Construction d’une école à Dorool : quelques nouvelles"

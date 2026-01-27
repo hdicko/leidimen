@@ -14,7 +14,7 @@ education:
     color: "#3498db"
     priority: 1
     villages: ["dorool", "douentza", "diambana", "diona"]
-    
+
   - id: "fournitures"
     name: "Fournitures scolaires"
     category: "Éducation"
@@ -23,7 +23,7 @@ education:
     color: "#3498db"
     priority: 1
     villages: ["manko", "tacouti", "ndumpa", "dorool"]
-    
+
   - id: "formation"
     name: "Formation des enseignants"
     category: "Éducation"
@@ -32,7 +32,7 @@ education:
     color: "#3498db"
     priority: 2
     villages: ["dorool", "douentza"]
-    
+
   - id: "informatique"
     name: "Équipement informatique"
     category: "Éducation"
@@ -41,7 +41,7 @@ education:
     color: "#3498db"
     priority: 3
     villages: ["douentza"]
-    
+
   - id: "bibliothèque"
     name: "Bibliothèques scolaires"
     category: "Éducation"
@@ -63,7 +63,7 @@ sante:
     color: "#e74c3c"
     priority: 1
     villages: ["douentza", "diambana"]
-    
+
   - id: "pharmacie"
     name: "Pharmacie communautaire"
     category: "Santé"
@@ -72,7 +72,7 @@ sante:
     color: "#e74c3c"
     priority: 2
     villages: []
-    
+
   - id: "prévention"
     name: "Campagnes de prévention"
     category: "Santé"
@@ -81,7 +81,7 @@ sante:
     color: "#e74c3c"
     priority: 2
     villages: []
-    
+
   - id: "hygiène"
     name: "Hygiène et assainissement"
     category: "Santé"
@@ -103,7 +103,7 @@ eau:
     color: "#1abc9c"
     priority: 1
     villages: ["darawal", "diona", "diambana", "douentza"]
-    
+
   - id: "eau"
     name: "Accès à l'eau potable"
     category: "Eau"
@@ -112,7 +112,7 @@ eau:
     color: "#1abc9c"
     priority: 1
     villages: ["douentza", "diambana", "diona"]
-    
+
   - id: "irrigation"
     name: "Systèmes d'irrigation"
     category: "Eau"
@@ -121,7 +121,7 @@ eau:
     color: "#1abc9c"
     priority: 3
     villages: []
-    
+
   - id: "gestion-eau"
     name: "Gestion de l'eau"
     category: "Eau"
@@ -143,7 +143,7 @@ agriculture:
     color: "#27ae60"
     priority: 2
     villages: ["debere", "diona"]
-    
+
   - id: "élevage"
     name: "Élevage"
     category: "Agriculture"
@@ -152,7 +152,7 @@ agriculture:
     color: "#27ae60"
     priority: 2
     villages: ["debere"]
-    
+
   - id: "maraîchage"
     name: "Jardins maraîchers"
     category: "Agriculture"
@@ -161,7 +161,7 @@ agriculture:
     color: "#27ae60"
     priority: 3
     villages: []
-    
+
   - id: "semences"
     name: "Banques de semences"
     category: "Agriculture"
@@ -170,7 +170,7 @@ agriculture:
     color: "#27ae60"
     priority: 3
     villages: []
-    
+
   - id: "formation-agricole"
     name: "Formation agricole"
     category: "Agriculture"
@@ -192,7 +192,7 @@ developpement:
     color: "#f39c12"
     priority: 2
     villages: ["tanal"]
-    
+
   - id: "coopératives"
     name: "Coopératives villageoises"
     category: "Développement"
@@ -201,7 +201,7 @@ developpement:
     color: "#f39c12"
     priority: 2
     villages: ["tanal"]
-    
+
   - id: "microfinance"
     name: "Microfinance"
     category: "Développement"
@@ -210,7 +210,7 @@ developpement:
     color: "#f39c12"
     priority: 3
     villages: []
-    
+
   - id: "artisanat"
     name: "Artisanat local"
     category: "Développement"
@@ -219,7 +219,7 @@ developpement:
     color: "#f39c12"
     priority: 3
     villages: []
-    
+
   - id: "commerce"
     name: "Commerce équitable"
     category: "Développement"
@@ -241,7 +241,7 @@ infrastructure:
     color: "#95a5a6"
     priority: 2
     villages: []
-    
+
   - id: "électricité"
     name: "Électrification"
     category: "Infrastructure"
@@ -250,7 +250,7 @@ infrastructure:
     color: "#95a5a6"
     priority: 3
     villages: []
-    
+
   - id: "routes"
     name: "Pistes rurales"
     category: "Infrastructure"
@@ -259,7 +259,7 @@ infrastructure:
     color: "#95a5a6"
     priority: 3
     villages: []
-    
+
   - id: "bâtiment"
     name: "Construction"
     category: "Infrastructure"
@@ -281,7 +281,7 @@ culture:
     color: "#9b59b6"
     priority: 3
     villages: []
-    
+
   - id: "culture"
     name: "Événements culturels"
     category: "Culture"
@@ -290,7 +290,7 @@ culture:
     color: "#9b59b6"
     priority: 3
     villages: []
-    
+
   - id: "jeunesse"
     name: "Activités jeunesse"
     category: "Culture"
@@ -299,7 +299,7 @@ culture:
     color: "#9b59b6"
     priority: 3
     villages: []
-    
+
   - id: "femmes"
     name: "Autonomisation des femmes"
     category: "Culture"
@@ -321,7 +321,7 @@ environnement:
     color: "#16a085"
     priority: 2
     villages: []
-    
+
   - id: "environnement"
     name: "Protection environnementale"
     category: "Environnement"
@@ -330,7 +330,7 @@ environnement:
     color: "#16a085"
     priority: 3
     villages: []
-    
+
   - id: "énergie-renouvelable"
     name: "Énergies renouvelables"
     category: "Environnement"
@@ -339,7 +339,7 @@ environnement:
     color: "#16a085"
     priority: 3
     villages: []
-    
+
   - id: "gestion-déchets"
     name: "Gestion des déchets"
     category: "Environnement"
@@ -359,10 +359,10 @@ metadata:
     1: "Priorité maximale - projets actifs"
     2: "Priorité élevée - projets planifiés"
     3: "Priorité moyenne - développement futur"
-  
+
   active_villages: 10
   project_years: "2006-2026"
-  
+
   categories_list:
     - name: "Éducation"
       color: "#3498db"
@@ -388,26 +388,25 @@ metadata:
     - name: "Environnement"
       color: "#16a085"
       projects: 4
-
 # =======================
 # USAGE INSTRUCTIONS
 # =======================
-# 
+#
 # In posts about projects, reference skills like:
-# 
+#
 # frontmatter:
 #   title: "Construction d'une école à Dorool"
 #   projects: ["école", "fournitures"]
 #   villages: ["dorool"]
 #   categories: ["Éducation"]
-# 
+#
 # In village pages, list active projects:
-# 
+#
 # frontmatter:
 #   title: "Village de Dorool"
 #   active_projects:
 #     - école
 #     - formation
 #     - fournitures
-# 
+#
 # This ensures consistency across all project documentation.

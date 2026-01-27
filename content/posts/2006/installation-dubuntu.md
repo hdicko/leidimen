@@ -1,7 +1,7 @@
 ---
 title: "Installation d’Ubuntu"
 date: 2006-12-20
-villages: ['douentza']
+villages: ["douentza"]
 categories: ["Culture"]
 tags: ["archive", "wordpress", "News Leidimen"]
 description: "Installation d’Ubuntu"

@@ -2,7 +2,7 @@
 title: "Photos des tournois Leïdimen"
 date: 2007-10-01
 type: "gallery"
-villages: ['douentza']
+villages: ["douentza"]
 categories: ["Culture"]
 tags: ["photos", "archive", "galerie"]
 description: "Photos des tournois de poker et PES organisés au profit de Leïdimen"

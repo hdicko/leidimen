@@ -106,7 +106,8 @@
             Galerie Photos
           </h2>
           <p class="text-muted">
-            Découvrez {{ len . }}
+            Découvrez
+            {{ len . }}
             {{ if eq (len .) 1 }}image{{ else }}images{{ end }} dans cette
             collection
           </p>
@@ -549,7 +550,6 @@
     .empty-state {
       padding: 3rem 1rem;
     }
-
-</style>
-{{/* Styles moved to assets/scss/_skill-refactor.scss */}}
+  </style>
+  {{/* Styles moved to assets/scss/_skill-refactor.scss */}}
 {{ end }}

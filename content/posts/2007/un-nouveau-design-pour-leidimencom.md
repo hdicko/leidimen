@@ -1,7 +1,7 @@
 ---
 title: "Un nouveau design pour Leïdimen.com !"
 date: 2007-12-06
-villages: ['douentza']
+villages: ["douentza"]
 categories: ["Santé"]
 tags: ["archive", "wordpress", "Divers"]
 description: "Un nouveau design pour Leïdimen.com !"

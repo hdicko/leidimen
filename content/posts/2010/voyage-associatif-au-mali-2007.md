@@ -1,7 +1,7 @@
 ---
 title: "Voyage associatif au Mali 2007"
 date: 2010-01-01
-villages: ['diona', 'debere', 'douentza']
+villages: ["diona", "debere", "douentza"]
 categories: ["Éducation"]
 tags: ["archive", "wordpress", "news"]
 description: "Voyage associatif au Mali 2007"

@@ -1,7 +1,7 @@
 ---
 title: "Réunion à Bondoufle le 30.06.07"
 date: 2007-07-02
-villages: ['douentza']
+villages: ["douentza"]
 categories: ["Culture"]
 tags: ["archive", "wordpress", "News Leidimen", "Réunions"]
 description: "Réunion à Bondoufle le 30.06.07"

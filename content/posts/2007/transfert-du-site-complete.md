@@ -1,7 +1,7 @@
 ---
 title: "Transfert du site complété"
 date: 2007-06-09
-villages: ['douentza']
+villages: ["douentza"]
 categories: ["Culture"]
 tags: ["archive", "wordpress", "Divers"]
 description: "Transfert du site complété"

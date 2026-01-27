@@ -1,7 +1,7 @@
 ---
 title: "nouvelle news 2017"
 date: 2010-01-01
-villages: ['douentza']
+villages: ["douentza"]
 categories: ["Éducation"]
 tags: ["archive", "wordpress", "news"]
 description: "nouvelle news 2017"
@@ -10,6 +10,7 @@ source: "https://leidimen.com/nouvelle-news-2017"
 ---
 
 Bonjour,
+
  
 Nous avons des nouvelles à partager.
 [

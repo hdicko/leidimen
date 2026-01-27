@@ -28,21 +28,29 @@
         {{ end }}
       {{ end }}" />
     {{ hugo.Generator }}
-    
+
     {{/* SEO Meta Tags - Modular partials */}}
     {{ partial "seo/opengraph.html" . }}
     {{ partial "seo/twitter.html" . }}
-    
+
     {{/* Canonical URL */}}
     <link rel="canonical" href="{{ .Permalink }}" />
-    
+
     {{/* Keywords */}}
-    {{ with .Params.tags }}<meta name="keywords" content="{{ delimit . ", " }}, Mali, Douentza, solidarité, association humanitaire" />{{ else }}<meta name="keywords" content="Leidimen, Mali, Douentza, solidarité, éducation, santé, développement durable, association humanitaire, Afrique" />{{ end }}
-    
+    {{ with .Params.tags }}
+      <meta
+        name="keywords"
+        content="{{ delimit . ", " }}, Mali, Douentza, solidarité, association humanitaire" />
+    {{ else }}
+      <meta
+        name="keywords"
+        content="Leidimen, Mali, Douentza, solidarité, éducation, santé, développement durable, association humanitaire, Afrique" />
+    {{ end }}
+
     {{/* AI/LLM and Structured Data */}}
     {{ partial "seo/ai-meta.html" . }}
     {{ partial "seo/json-ld.html" . }}
-    
+
     {{/* NOTE: For Production make sure you add
       `HUGO_ENV="production"` before your build command
     */}}
@@ -51,7 +59,9 @@
     }}
     {{ $public := not .Params.private }}
     {{ if and $production $public }}
-      <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+      <meta
+        name="robots"
+        content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     {{ else }}
       <meta name="robots" content="noindex, nofollow" />
     {{ end }}
@@ -76,6 +86,7 @@
 
     <!-- custimize boostrap -->
     {{- partial "libsass" . -}}
+
 
     <!-- fancybox -->
     <link

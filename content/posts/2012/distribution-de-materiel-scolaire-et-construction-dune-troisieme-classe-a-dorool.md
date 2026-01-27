@@ -1,7 +1,7 @@
 ---
 title: "Distribution de matériel scolaire et construction d’une troisième classe à Dorool"
 date: 2012-01-01
-villages: ['dorool', 'manko']
+villages: ["dorool", "manko"]
 categories: ["Éducation"]
 tags: ["archive", "wordpress", "News Leidimen"]
 description: "Distribution de matériel scolaire et construction d’une troisième classe à Dorool"

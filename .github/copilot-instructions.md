@@ -150,13 +150,11 @@ npm run dev
   - ✅ Fastest workflow for batch content creation
   - ✅ Direct GitHub API commits (no Netlify Identity setup needed)
   - ❌ Requires: Node.js installed, GitHub token configured, local environment
-  
 - **Netlify CMS** (Web interface):
   - ✅ Best for: Non-technical editors, production environment, image uploads
   - ✅ Drag-and-drop image uploads to `static/images/uploads/`
   - ✅ Works remotely via browser (no local setup)
   - ❌ Requires: Netlify Identity authentication, internet connection
-  
 - **Hugo CLI** (Archetypes):
   - ✅ Best for: Developers comfortable with CLI, quick drafts, automated scripts
   - ✅ Fastest for experienced Hugo users
@@ -210,6 +208,7 @@ Python scripts for migrating legacy WordPress content (leidimen.com archives 200
   - Usage: `python3 download-all-wordpress-images.py`
 
 **Migration workflow (for new WordPress imports):**
+
 ```bash
 # 1. Migrate posts
 python3 migrate-wordpress-posts.py
@@ -245,6 +244,7 @@ Comprehensive testing script: `test-hugo-compatibility.sh`
 10. **Sitemap** - Checks sitemap.xml generation
 
 **Running tests:**
+
 ```bash
 # Full compatibility test suite
 ./test-hugo-compatibility.sh
@@ -256,6 +256,7 @@ npm run format:check       # Check code formatting
 ```
 
 **Test before deploying:**
+
 ```bash
 ./test-hugo-compatibility.sh && ./deploy.sh
 ```

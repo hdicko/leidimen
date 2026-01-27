@@ -1,7 +1,7 @@
 ---
 title: "Réunion à Cachan"
 date: 2007-11-26
-villages: ['douentza']
+villages: ["douentza"]
 categories: ["Culture"]
 tags: ["archive", "wordpress", "News Leidimen", "Réunions"]
 description: "Réunion à Cachan"

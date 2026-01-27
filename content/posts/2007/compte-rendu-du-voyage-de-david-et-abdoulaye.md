@@ -1,7 +1,7 @@
 ---
 title: "Compte-rendu du voyage de David et Abdoulaye"
 date: 2007-11-11
-villages: ['douentza']
+villages: ["douentza"]
 categories: ["Culture"]
 tags: ["archive", "wordpress", "News Leidimen"]
 description: "Compte-rendu du voyage de David et Abdoulaye"

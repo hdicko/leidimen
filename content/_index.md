@@ -26,8 +26,9 @@ Accompagner les populations locales dans leurs projets de développement collect
 ## Nos Zones d'Intervention
 
 Nous intervenons dans plusieurs villages de la région de Douentza :
+
 - Dorool
-- Diona  
+- Diona
 - Debere
 - Diambana
 - Douentza

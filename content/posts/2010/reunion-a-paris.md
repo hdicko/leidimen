@@ -1,7 +1,7 @@
 ---
 title: "Réunion à Paris"
 date: 2010-01-01
-villages: ['dorool', 'diona', 'debere', 'darawal', 'douentza']
+villages: ["dorool", "diona", "debere", "darawal", "douentza"]
 categories: ["Éducation"]
 tags: ["archive", "wordpress", "news"]
 description: "Réunion à Paris"

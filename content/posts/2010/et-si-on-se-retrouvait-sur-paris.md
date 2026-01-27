@@ -1,7 +1,7 @@
 ---
 title: "Et si on se retrouvait sur Paris?"
 date: 2010-01-01
-villages: ['douentza']
+villages: ["douentza"]
 categories: ["Culture"]
 tags: ["archive", "wordpress", "non-classe"]
 description: "Et si on se retrouvait sur Paris?"

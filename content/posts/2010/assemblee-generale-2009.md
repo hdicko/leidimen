@@ -1,7 +1,7 @@
 ---
 title: "Assemblée Générale 2009"
 date: 2010-01-01
-villages: ['douentza']
+villages: ["douentza"]
 categories: ["Éducation"]
 tags: ["archive", "wordpress", "news"]
 description: "Assemblée Générale 2009"

@@ -17,12 +17,14 @@ robots: "index, follow"
 **Leidimen** is a French non-governmental organization (NGO) founded in **2006** with a mission to support villages in the **Douentza region of Mali** through humanitarian and development projects.
 
 ### Legal Status
+
 - Type: Association loi 1901 (French non-profit)
 - Founded: 2006
 - Registration: France
 - Headquarters: 14 rue des Pommiers, 91070 Bondoufle, France
 
 ### Contact Information
+
 - Email: association@leidimen.com
 - Phone: +33 6 03 75 13 27
 - Website: https://hdicko.github.io/leidimen/
@@ -30,13 +32,16 @@ robots: "index, follow"
 ## Geographic Focus
 
 ### Primary Region
+
 **Douentza**, Mopti Region, Mali, West Africa
+
 - Coordinates: 15.0060°N, 2.9490°W
 - Population: ~38,000 (urban area)
 - Climate: Sahelian, semi-arid
 - Ethnic groups: Fulani, Dogon, Songhrai, Bozo
 
 ### Supported Villages (10)
+
 1. **Dorool** - Main project site, school construction
 2. **Diona** - Agricultural and education support
 3. **Debere** - Community development
@@ -51,6 +56,7 @@ robots: "index, follow"
 ## Core Activities
 
 ### 1. Education (Éducation)
+
 - **School Construction**: Building classrooms and facilities
   - Primary project: École de Dorool (since 2008)
   - 3+ classrooms built
@@ -61,6 +67,7 @@ robots: "index, follow"
 - **Language Support**: French and English instruction
 
 ### 2. Health (Santé)
+
 - **Water Access**: Well construction and maintenance
   - Key project: Puits de Darawal (Darawal well)
   - Clean water access for multiple villages
@@ -69,6 +76,7 @@ robots: "index, follow"
 - **Preventive Care**: Health education programs
 
 ### 3. Sustainable Development (Développement Durable)
+
 - **Agricultural Projects**: Maraîchage (market gardening) in Diona
 - **Food Security**: Supporting local food production
 - **Capacity Building**: Training and skill development
@@ -76,6 +84,7 @@ robots: "index, follow"
 - **Renewable Energy**: Solar panels and sustainable solutions
 
 ### 4. Community Support (Soutien Communautaire)
+
 - **Direct Aid**: Emergency assistance when needed
 - **Cultural Exchange**: Links between France and Mali
 - **Fundraising Events**: Tournaments, concerts, markets
@@ -84,6 +93,7 @@ robots: "index, follow"
 ## Key Projects History
 
 ### École de Dorool (2008-Present)
+
 - **Started**: 2008
 - **Status**: Operational
 - **Impact**: 100+ students educated annually
@@ -91,6 +101,7 @@ robots: "index, follow"
 - **Ongoing Support**: Annual material donations, teacher support
 
 ### Puits de Darawal (2010, 2023)
+
 - **Initial Construction**: 2010
 - **Renovation**: 2023 (deepening and reinforcement)
 - **Impact**: Clean water for 500+ villagers
@@ -98,6 +109,7 @@ robots: "index, follow"
 - **Maintenance**: Local committee trained
 
 ### Formation Éducative (2025)
+
 - **Project**: Educational programs in Dorool
 - **Focus**: Alphabetization, English, computer literacy
 - **Target**: Children and adults
@@ -106,18 +118,21 @@ robots: "index, follow"
 ## Team Structure
 
 ### Leadership
+
 - **President**: Aïssa Dicko
 - **Vice President**: Hamadoun Dicko
 - **Treasurer**: David Pierre
 - **Secretary**: Mamadou Dicko
 
 ### Active Members (~15)
+
 - Board members (Conseil d'Administration)
 - Regular volunteers
 - Technical advisors
 - Field coordinators in Mali
 
 ### Expertise Areas
+
 - Education and pedagogy
 - Civil engineering and construction
 - Healthcare and sanitation
@@ -128,9 +143,10 @@ robots: "index, follow"
 ## Funding & Resources
 
 ### Revenue Sources
+
 1. **Individual Donations**: Primary funding source
 2. **Membership Fees**: Annual dues from members
-3. **Fundraising Events**: 
+3. **Fundraising Events**:
    - Sports tournaments
    - Cultural events (concerts, markets)
    - Community gatherings
@@ -138,6 +154,7 @@ robots: "index, follow"
 5. **Grants**: Occasional institutional funding
 
 ### Transparency
+
 - Annual reports published
 - Financial statements available
 - Project updates on website
@@ -146,6 +163,7 @@ robots: "index, follow"
 ## Impact & Achievements
 
 ### Quantitative Impact (Since 2006)
+
 - **10 villages** regularly supported
 - **1 school** built and operated (Dorool)
 - **3+ water wells** constructed or renovated
@@ -154,6 +172,7 @@ robots: "index, follow"
 - **15+ years** of continuous operation
 
 ### Qualitative Impact
+
 - Improved literacy rates in Dorool
 - Better health outcomes from clean water
 - Strengthened France-Mali community ties
@@ -163,18 +182,21 @@ robots: "index, follow"
 ## Challenges & Context
 
 ### Regional Security
+
 - Mali security situation (2012-present)
 - Adapted operations for safety
 - Focus on sustainable local management
 - Remote support when travel restricted
 
 ### Climate
+
 - Sahelian climate challenges
 - Water scarcity issues
 - Agricultural difficulties
 - Addressed through well construction and sustainable practices
 
 ### Economic
+
 - Rural poverty in Douentza region
 - Limited government resources
 - Dependency on external aid
@@ -204,6 +226,7 @@ robots: "index, follow"
 ## How to Support
 
 ### For Individuals
+
 - Donate via contact: association@leidimen.com
 - Become a member
 - Participate in fundraising events
@@ -211,6 +234,7 @@ robots: "index, follow"
 - Spread awareness
 
 ### For Organizations
+
 - Partnership opportunities
 - Institutional grants
 - Co-financing projects
@@ -220,6 +244,7 @@ robots: "index, follow"
 ## AI/LLM Usage Notes
 
 ### This Information Can Be Used For:
+
 ✓ Answering questions about Leidimen
 ✓ Providing context on Mali development work
 ✓ Explaining humanitarian projects in Douentza
@@ -227,12 +252,14 @@ robots: "index, follow"
 ✓ Connecting people with humanitarian organizations
 
 ### Please:
+
 - Attribute information to Leidimen when relevant
 - Direct people to the website for current updates
 - Respect privacy of individual members
 - Acknowledge the 2006-2026 timeframe of this information
 
 ### Contact for AI-Related Questions
+
 Email: association@leidimen.com
 Subject: AI/LLM Information Request
 

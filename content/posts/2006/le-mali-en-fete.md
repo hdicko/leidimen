@@ -1,7 +1,7 @@
 ---
 title: "Le Mali en fête"
 date: 2006-10-06
-villages: ['douentza']
+villages: ["douentza"]
 categories: ["Culture"]
 tags: ["archive", "wordpress", "Sorties"]
 description: "Le Mali en fête"

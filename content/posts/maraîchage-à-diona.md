@@ -23,7 +23,6 @@ Il s’agit d’une activité économique pratiquée depuis des siècles par les
 Si cette activité se répand doucement dans la région, c’est parce qu’elle est **particulièrement rentable.** Sous réserve d’une attention et d’une irrigation quotidiennes, la terre se prête particulièrement bien à la culture de toutes sortes de petits légumes. C’est le tabac, l’oignon et l’ail qui offrent la plus forte marge bénéficiaire, tandis que de nombreux autres légumes ne sont jamais vendus au marché mais servent de **compléments à l’alimentation en mil et en riz.**\
 La plus grande barrière à cette activité est l’effort physique important qu’elle requiert pour irriguer la terre quotidiennement. En saison sèche, la parcelle cultivée doit nécessairement se trouver aux abords d’un puits et il faut souvent que plusieurs personnes se relaient pour l’exploiter.
 
-
 ## À Diona
 
 Au bord du lac Korarou, le village de Diona bénéficie d'une position exceptionnelle. Les rives du lac se retirent chaque année au cours de la saison sèche, laissant place à une terre très riche, particulièrement propice à la culture de légumes. De plus, l'eau est accessible à des profondeurs raisonnables. Toutes les expériences de maraîchage autour du lac ont été couronnées de succès.

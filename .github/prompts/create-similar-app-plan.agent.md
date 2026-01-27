@@ -8,11 +8,13 @@ version: 1.0.0
 # Plan: Create Hugo-Based Non-Profit Organization Website
 
 ## Project Overview
+
 Build a multilingual static website similar to Leidimen for non-profit organizations, featuring content management, photo galleries, team profiles, and geographic data integration.
 
 ## Phase 1: Project Setup & Foundation
 
 ### 1.1 Initialize Hugo Project
+
 - [ ] Install Hugo 0.152.1+ using hugo-installer package
 - [ ] Create new Hugo site: `hugo new site project-name`
 - [ ] Initialize git repository
@@ -20,6 +22,7 @@ Build a multilingual static website similar to Leidimen for non-profit organizat
 - [ ] Configure netlify.toml for deployment
 
 ### 1.2 Configure Hugo Settings
+
 - [ ] Define custom taxonomies in hugo.toml:
   - Tags (general keywords)
   - Categories (content classification)
@@ -30,6 +33,7 @@ Build a multilingual static website similar to Leidimen for non-profit organizat
 - [ ] Configure markup options (Goldmark, syntax highlighting)
 
 ### 1.3 Development Environment
+
 - [ ] Create dev-server.sh script with baseURL override
 - [ ] Set up npm scripts (dev, build, format)
 - [ ] Configure Prettier with go-template plugin
@@ -38,6 +42,7 @@ Build a multilingual static website similar to Leidimen for non-profit organizat
 ## Phase 2: Core Architecture
 
 ### 2.1 Layout System
+
 - [ ] Create baseof.html master template with:
   - Navigation bar
   - Footer
@@ -50,6 +55,7 @@ Build a multilingual static website similar to Leidimen for non-profit organizat
   - pagination.html
 
 ### 2.2 Content Types
+
 - [ ] Posts section with year-based organization
 - [ ] Team/About pages with profile cards
 - [ ] Gallery pages with PhotoSwipe integration
@@ -57,6 +63,7 @@ Build a multilingual static website similar to Leidimen for non-profit organizat
 - [ ] Documents section (legal, reports)
 
 ### 2.3 Archetypes
+
 - [ ] Create post.md archetype with required frontmatter
 - [ ] Create about.md archetype for team profiles
 - [ ] Create gallery archetype for photo collections
@@ -65,16 +72,18 @@ Build a multilingual static website similar to Leidimen for non-profit organizat
 ## Phase 3: Frontend & Assets
 
 ### 3.1 CSS Framework
+
 - [ ] Install Bootstrap 5.3.8+ via CDN or npm
 - [ ] Install Bootstrap Icons
 - [ ] Set up Dart Sass for SCSS processing
 - [ ] Create main SCSS structure:
-  - Variables (_variables.scss)
-  - Components (_components.scss)
-  - Pages (_pages.scss)
-  - Utilities (_utilities.scss)
+  - Variables (\_variables.scss)
+  - Components (\_components.scss)
+  - Pages (\_pages.scss)
+  - Utilities (\_utilities.scss)
 
 ### 3.2 JavaScript Components
+
 - [ ] Theme switcher (dark/light mode)
 - [ ] Interactive maps (Leaflet or similar)
 - [ ] PhotoSwipe gallery initialization
@@ -82,6 +91,7 @@ Build a multilingual static website similar to Leidimen for non-profit organizat
 - [ ] Lazy loading images
 
 ### 3.3 Gallery System
+
 - [ ] Install PhotoSwipe library
 - [ ] Create gallery shortcode with Page.Scratch pattern
 - [ ] Create photoswipe-resources.html partial
@@ -91,6 +101,7 @@ Build a multilingual static website similar to Leidimen for non-profit organizat
 ## Phase 4: Data Management
 
 ### 4.1 Data Files Structure
+
 - [ ] Create data/locations/ directory with YAML files:
   - Geographic coordinates
   - Population data
@@ -100,6 +111,7 @@ Build a multilingual static website similar to Leidimen for non-profit organizat
 - [ ] Set up data integration in templates
 
 ### 4.2 Content Management
+
 - [ ] Set up Netlify CMS:
   - Configure static/admin/config.yml
   - Define collections for all content types
@@ -113,6 +125,7 @@ Build a multilingual static website similar to Leidimen for non-profit organizat
 ## Phase 5: Custom Features
 
 ### 5.1 Shortcodes
+
 - [ ] {{< gallery >}} - Auto photo gallery
 - [ ] {{< image >}} - Responsive image with lazy loading
 - [ ] {{< divider >}} - Visual separators
@@ -121,12 +134,14 @@ Build a multilingual static website similar to Leidimen for non-profit organizat
 - [ ] Custom shortcodes specific to organization needs
 
 ### 5.2 Taxonomies & Lists
+
 - [ ] Create taxonomy list templates
 - [ ] Create taxonomy term templates
 - [ ] Implement filtering and sorting
 - [ ] Add pagination for long lists
 
 ### 5.3 Maps Integration
+
 - [ ] Choose mapping library (Leaflet, Mapbox, Google Maps)
 - [ ] Create map partial templates
 - [ ] Integrate location data from data files
@@ -135,6 +150,7 @@ Build a multilingual static website similar to Leidimen for non-profit organizat
 ## Phase 6: Content Creation
 
 ### 6.1 Migration Tools (if applicable)
+
 - [ ] Create WordPress migration scripts:
   - migrate-wordpress-posts.py
   - migrate-wordpress-galleries.py
@@ -143,6 +159,7 @@ Build a multilingual static website similar to Leidimen for non-profit organizat
   - update-image-links.py
 
 ### 6.2 Initial Content
+
 - [ ] Write about/mission page
 - [ ] Create team member profiles
 - [ ] Add location pages with descriptions
@@ -151,6 +168,7 @@ Build a multilingual static website similar to Leidimen for non-profit organizat
 - [ ] Add legal documents (GDPR, privacy policy)
 
 ### 6.3 Media Assets
+
 - [ ] Prepare team photos (optimize for web)
 - [ ] Organize gallery images by event/topic
 - [ ] Create social media preview images
@@ -159,6 +177,7 @@ Build a multilingual static website similar to Leidimen for non-profit organizat
 ## Phase 7: SEO & Optimization
 
 ### 7.1 SEO Implementation
+
 - [ ] Configure Open Graph meta tags
 - [ ] Set up Twitter Card metadata
 - [ ] Create XML sitemap
@@ -167,6 +186,7 @@ Build a multilingual static website similar to Leidimen for non-profit organizat
 - [ ] Create robots.txt and ai.txt
 
 ### 7.2 Performance Optimization
+
 - [ ] Enable Hugo minification
 - [ ] Implement image lazy loading
 - [ ] Use WebP format with fallbacks
@@ -174,6 +194,7 @@ Build a multilingual static website similar to Leidimen for non-profit organizat
 - [ ] Enable gzip/brotli compression
 
 ### 7.3 Accessibility
+
 - [ ] Add ARIA labels to interactive elements
 - [ ] Ensure keyboard navigation works
 - [ ] Test with screen readers
@@ -183,6 +204,7 @@ Build a multilingual static website similar to Leidimen for non-profit organizat
 ## Phase 8: Testing & Quality
 
 ### 8.1 Testing Scripts
+
 - [ ] Create test-hugo-compatibility.sh:
   - Hugo version verification
   - Development build test
@@ -194,6 +216,7 @@ Build a multilingual static website similar to Leidimen for non-profit organizat
   - Shortcode rendering test
 
 ### 8.2 Manual Testing
+
 - [ ] Test all forms and interactions
 - [ ] Verify responsive design on devices
 - [ ] Test gallery functionality
@@ -202,6 +225,7 @@ Build a multilingual static website similar to Leidimen for non-profit organizat
 - [ ] Test CMS interface
 
 ### 8.3 Code Quality
+
 - [ ] Run Prettier formatting
 - [ ] Validate HTML (W3C validator)
 - [ ] Check CSS with linter
@@ -211,6 +235,7 @@ Build a multilingual static website similar to Leidimen for non-profit organizat
 ## Phase 9: Deployment
 
 ### 9.1 Deployment Setup
+
 - [ ] Configure GitHub Pages:
   - Create gh-pages branch
   - Set up GitHub Actions workflow
@@ -223,12 +248,14 @@ Build a multilingual static website similar to Leidimen for non-profit organizat
 - [ ] Choose primary deployment method
 
 ### 9.2 Domain & DNS
+
 - [ ] Register domain name
 - [ ] Configure DNS records
 - [ ] Set up SSL certificate
 - [ ] Test domain resolution
 
 ### 9.3 Monitoring & Analytics
+
 - [ ] Set up analytics (privacy-friendly options)
 - [ ] Configure error tracking
 - [ ] Set up uptime monitoring
@@ -237,18 +264,21 @@ Build a multilingual static website similar to Leidimen for non-profit organizat
 ## Phase 10: Documentation
 
 ### 10.1 User Documentation
+
 - [ ] QUICK_REFERENCE.md for editors
 - [ ] CONTENT_CREATION_GUIDE.md
 - [ ] NETLIFY_CMS_GUIDE.md
 - [ ] CMS web interface documentation
 
 ### 10.2 Developer Documentation
+
 - [ ] CODE_DOCUMENTATION.md with architecture
 - [ ] README.md with setup instructions
 - [ ] DEPLOYMENT.md with deployment steps
 - [ ] Comment complex code sections
 
 ### 10.3 Project-Specific Files
+
 - [ ] Create .github/copilot-instructions.md
 - [ ] Document custom taxonomies
 - [ ] Explain data file structure
@@ -257,6 +287,7 @@ Build a multilingual static website similar to Leidimen for non-profit organizat
 ## Phase 11: Launch & Maintenance
 
 ### 11.1 Pre-Launch Checklist
+
 - [ ] All content reviewed and approved
 - [ ] All links tested and working
 - [ ] Forms tested and submissions work
@@ -265,12 +296,14 @@ Build a multilingual static website similar to Leidimen for non-profit organizat
 - [ ] Team trained on CMS usage
 
 ### 11.2 Launch
+
 - [ ] Deploy to production
 - [ ] Verify all functionality works
 - [ ] Monitor for errors in first 24-48 hours
 - [ ] Announce to stakeholders
 
 ### 11.3 Ongoing Maintenance
+
 - [ ] Regular content updates
 - [ ] Hugo version updates (test first)
 - [ ] Dependency updates (Bootstrap, PhotoSwipe, etc.)
@@ -281,26 +314,31 @@ Build a multilingual static website similar to Leidimen for non-profit organizat
 ## Key Technologies Stack
 
 ### Core
+
 - Hugo 0.152.1+ (Static Site Generator)
 - Git (Version Control)
 - npm (Package Management)
 
 ### Frontend
+
 - Bootstrap 5.3.8+ (CSS Framework)
 - Bootstrap Icons (Icon Library)
 - Dart Sass 1.93.2+ (CSS Preprocessing)
 - PhotoSwipe (Image Gallery)
 
 ### Content Management
+
 - Netlify CMS (Git-backed CMS)
 - OR custom Node.js CMS with GitHub API
 
 ### Deployment
+
 - GitHub Pages (Free hosting)
 - Netlify (Alternative with CI/CD)
 - Netlify Identity (Authentication)
 
 ### Development Tools
+
 - Prettier + go-template plugin (Code formatting)
 - Python scripts (Migration tools)
 - Bash scripts (Deployment automation)

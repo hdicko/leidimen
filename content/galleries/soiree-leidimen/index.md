@@ -2,7 +2,7 @@
 title: "Photos de la soirée Leïdimen"
 date: 2008-05-01
 type: "gallery"
-villages: ['douentza']
+villages: ["douentza"]
 categories: ["Culture"]
 tags: ["photos", "archive", "galerie"]
 description: "Photos de la soirée organisée par Leïdimen en 2008"

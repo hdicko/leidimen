@@ -1,7 +1,7 @@
 ---
 title: "Ecole de Dorool : des nouvelles en images"
 date: 2010-02-12
-villages: ['dorool']
+villages: ["dorool"]
 categories: ["Éducation"]
 tags: ["archive", "wordpress", "News Leidimen"]
 description: "Ecole de Dorool : des nouvelles en images"

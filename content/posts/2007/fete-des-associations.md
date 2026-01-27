@@ -1,7 +1,7 @@
 ---
 title: "Fête des associations"
 date: 2007-09-11
-villages: ['douentza']
+villages: ["douentza"]
 categories: ["Culture"]
 tags: ["archive", "wordpress", "News Leidimen"]
 description: "Fête des associations"

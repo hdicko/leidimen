@@ -1,7 +1,7 @@
 ---
 title: "Assemblée Générale 2009"
 date: 2009-02-15
-villages: ['douentza']
+villages: ["douentza"]
 categories: ["Culture"]
 tags: ["archive", "wordpress", "News Leidimen", "Réunions"]
 description: "Assemblée Générale 2009"

@@ -1,7 +1,7 @@
 ---
 title: "Actu musique"
 date: 2007-02-01
-villages: ['douentza']
+villages: ["douentza"]
 categories: ["Culture"]
 tags: ["archive", "wordpress", "Sorties"]
 description: "Actu musique"

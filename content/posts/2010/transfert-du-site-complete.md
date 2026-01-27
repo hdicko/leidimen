@@ -1,7 +1,7 @@
 ---
 title: "Transfert du site complété"
 date: 2010-01-01
-villages: ['douentza']
+villages: ["douentza"]
 categories: ["Culture"]
 tags: ["archive", "wordpress", "non-classe"]
 description: "Transfert du site complété"

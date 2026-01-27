@@ -30,12 +30,14 @@ Un prompt personnalisé est une instruction réutilisable que vous pouvez sauveg
 ### 1. Ouvrir GitHub Copilot Chat
 
 Dans Visual Studio Code, ouvrez le panneau de chat Copilot en utilisant :
+
 - Raccourci clavier : `Ctrl+Alt+I` (Linux/Windows) ou `Cmd+Alt+I` (Mac)
 - Ou depuis la barre latérale : cliquez sur l'icône Copilot
 
 ### 2. Travailler sur une Tâche Spécifique
 
 Commencez par travailler avec Copilot sur une tâche concrète. Par exemple :
+
 - Créer un article de blog avec des taxonomies spécifiques
 - Configurer un composant Hugo
 - Structurer du contenu avec des métadonnées
@@ -68,6 +70,7 @@ pour les éléments variables...
 ### 5. Sauvegarder le Prompt
 
 Le prompt est créé dans un fichier non sauvegardé (`untitled:nomDuPrompt.prompt.md`). Sauvegardez-le :
+
 - Dans `.github/prompts/` pour votre projet
 - Ou dans `~/.vscode/prompts/` pour une utilisation globale
 
@@ -96,16 +99,19 @@ Voici comment nous avons créé le prompt `createHugoBlogPost` :
 ## Bonnes Pratiques
 
 ### Nommage des Prompts
+
 - Utilisez le **camelCase** : `createBlogPost`, `fixImageGallery`
 - Soyez **descriptif** mais **concis** (1-3 mots)
 - Utilisez des verbes d'action : `generate`, `create`, `fix`, `update`
 
 ### Description
+
 - **1 phrase maximum**
 - **15 mots ou moins**
 - Soyez précis sur l'objectif
 
 ### Instructions
+
 - Utilisez des **placeholders** génériques
 - Incluez des **exemples** concrets
 - Structurez avec des **sections numérotées**

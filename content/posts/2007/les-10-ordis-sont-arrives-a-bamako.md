@@ -1,7 +1,7 @@
 ---
 title: "Les 10 ordis sont arrivés à Bamako !"
 date: 2007-02-26
-villages: ['douentza']
+villages: ["douentza"]
 categories: ["Culture"]
 tags: ["archive", "wordpress", "News Leidimen"]
 description: "Les 10 ordis sont arrivés à Bamako !"

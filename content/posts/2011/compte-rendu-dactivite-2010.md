@@ -1,7 +1,7 @@
 ---
 title: "Compte-rendu d’activité 2010"
 date: 2011-07-04
-villages: ['douentza']
+villages: ["douentza"]
 categories: ["Culture"]
 tags: ["archive", "wordpress", "Divers"]
 description: "Compte-rendu d’activité 2010"

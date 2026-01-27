@@ -65,97 +65,99 @@
       <div class="row g-4 mb-5">
         {{ range .Pages }}
           {{ if and (ne .Kind "section") (.Date.Year) (ne .Date.Year 1) }}
-          <div class="col-md-6">
-            <div class="card border-0 shadow-sm h-100 subsection-card">
-              <div class="card-body p-4">
-                <!-- Section Icon -->
-                <div class="d-flex align-items-center mb-3">
-                  <div class="subsection-icon me-3">
-                    {{ if in .RelPermalink "informations" }}
-                      <i class="bi bi-info-circle text-primary fs-2"></i>
-                    {{ else }}
-                      {{ if in .RelPermalink "compte-rendu" }}
-                        <i class="bi bi-journal-check text-success fs-2"></i>
-                      {{ else }}
-                        <i class="bi bi-file-earmark-text text-info fs-2"></i>
-                      {{ end }}
-                    {{ end }}
-                  </div>
-                  <div class="flex-grow-1">
-                    <span
-                      class="badge bg-light text-dark border fw-normal small">
+            <div class="col-md-6">
+              <div class="card border-0 shadow-sm h-100 subsection-card">
+                <div class="card-body p-4">
+                  <!-- Section Icon -->
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="subsection-icon me-3">
                       {{ if in .RelPermalink "informations" }}
-                        Informations utiles
+                        <i class="bi bi-info-circle text-primary fs-2"></i>
                       {{ else }}
                         {{ if in .RelPermalink "compte-rendu" }}
-                          Comptes rendus
+                          <i class="bi bi-journal-check text-success fs-2"></i>
                         {{ else }}
-                          Document
+                          <i class="bi bi-file-earmark-text text-info fs-2"></i>
                         {{ end }}
+                      {{ end }}
+                    </div>
+                    <div class="flex-grow-1">
+                      <span
+                        class="badge bg-light text-dark border fw-normal small">
+                        {{ if in .RelPermalink "informations" }}
+                          Informations utiles
+                        {{ else }}
+                          {{ if in .RelPermalink "compte-rendu" }}
+                            Comptes rendus
+                          {{ else }}
+                            Document
+                          {{ end }}
+                        {{ end }}
+                      </span>
+                    </div>
+                  </div>
+
+                  <!-- Section Title -->
+                  <h4 class="card-title fw-bold mb-3 text-dark">
+                    {{ .Title }}
+                  </h4>
+
+                  <!-- Section Description -->
+                  <p class="card-text text-muted mb-4">
+                    {{ with .Description }}
+                      {{ . }}
+                    {{ else }}
+                      {{ if in .RelPermalink "informations" }}
+                        Liens et informations utiles pour l'association et ses
+                        partenaires.
+                      {{ else }}
+                        {{ if in .RelPermalink "compte-rendu" }}
+                          Consultez les comptes rendus des réunions et
+                          assemblées générales.
+                        {{ else }}
+                          {{ .Summary | truncate 150 }}
+                        {{ end }}
+                      {{ end }}
+                    {{ end }}
+                  </p>
+
+                  <!-- Meta Information -->
+                  <div
+                    class="d-flex justify-content-between align-items-center mb-3 text-muted small">
+                    <span>
+                      <i class="bi bi-calendar3 me-1"></i>
+                      {{ .Date.Format "2 Jan 2006" }}
+                    </span>
+                    <span>
+                      <i class="bi bi-person me-1"></i>
+                      {{ with .Params.author }}
+                        {{ . }}
+                      {{ else }}
+                        Association
                       {{ end }}
                     </span>
                   </div>
-                </div>
 
-                <!-- Section Title -->
-                <h4 class="card-title fw-bold mb-3 text-dark">{{ .Title }}</h4>
-
-                <!-- Section Description -->
-                <p class="card-text text-muted mb-4">
-                  {{ with .Description }}
-                    {{ . }}
-                  {{ else }}
-                    {{ if in .RelPermalink "informations" }}
-                      Liens et informations utiles pour l'association et ses
-                      partenaires.
-                    {{ else }}
-                      {{ if in .RelPermalink "compte-rendu" }}
-                        Consultez les comptes rendus des réunions et assemblées
-                        générales.
+                  <!-- Action Button -->
+                  <a
+                    href="{{ .RelPermalink }}"
+                    class="btn btn-outline-primary w-100 d-flex align-items-center justify-content-center">
+                    <i class="bi bi-arrow-right-circle me-2"></i>
+                    <span class="fw-semibold">
+                      {{ if in .RelPermalink "informations" }}
+                        Voir les informations
                       {{ else }}
-                        {{ .Summary | truncate 150 }}
+                        {{ if in .RelPermalink "compte-rendu" }}
+                          Lire les comptes rendus
+                        {{ else }}
+                          Consulter
+                        {{ end }}
                       {{ end }}
-                    {{ end }}
-                  {{ end }}
-                </p>
-
-                <!-- Meta Information -->
-                <div
-                  class="d-flex justify-content-between align-items-center mb-3 text-muted small">
-                  <span>
-                    <i class="bi bi-calendar3 me-1"></i>
-                    {{ .Date.Format "2 Jan 2006" }}
-                  </span>
-                  <span>
-                    <i class="bi bi-person me-1"></i>
-                    {{ with .Params.author }}
-                      {{ . }}
-                    {{ else }}
-                      Association
-                    {{ end }}
-                  </span>
+                    </span>
+                  </a>
                 </div>
-
-                <!-- Action Button -->
-                <a
-                  href="{{ .RelPermalink }}"
-                  class="btn btn-outline-primary w-100 d-flex align-items-center justify-content-center">
-                  <i class="bi bi-arrow-right-circle me-2"></i>
-                  <span class="fw-semibold">
-                    {{ if in .RelPermalink "informations" }}
-                      Voir les informations
-                    {{ else }}
-                      {{ if in .RelPermalink "compte-rendu" }}
-                        Lire les comptes rendus
-                      {{ else }}
-                        Consulter
-                      {{ end }}
-                    {{ end }}
-                  </span>
-                </a>
               </div>
             </div>
-          </div>
           {{ end }}
         {{ end }}
       </div>

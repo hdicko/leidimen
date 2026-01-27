@@ -1,7 +1,7 @@
 ---
 title: "Réunion à Mennecy"
 date: 2007-10-28
-villages: ['douentza']
+villages: ["douentza"]
 categories: ["Culture"]
 tags: ["archive", "wordpress", "News Leidimen", "Réunions"]
 description: "Réunion à Mennecy"

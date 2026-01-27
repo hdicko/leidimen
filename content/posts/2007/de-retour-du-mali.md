@@ -1,7 +1,7 @@
 ---
 title: "De retour du Mali!"
 date: 2007-10-23
-villages: ['douentza']
+villages: ["douentza"]
 categories: ["Santé"]
 tags: ["archive", "wordpress", "News Leidimen"]
 description: "De retour du Mali!"

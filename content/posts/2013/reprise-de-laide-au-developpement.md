@@ -1,7 +1,7 @@
 ---
 title: "Reprise de l’aide au développement"
 date: 2013-03-05
-villages: ['douentza']
+villages: ["douentza"]
 categories: ["Culture"]
 tags: ["archive", "wordpress", "Divers"]
 description: "Reprise de l’aide au développement"

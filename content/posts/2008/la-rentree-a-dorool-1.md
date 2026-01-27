@@ -1,7 +1,7 @@
 ---
 title: "La rentrée à Dorool"
 date: 2008-10-21
-villages: ['dorool']
+villages: ["dorool"]
 categories: ["Éducation"]
 tags: ["archive", "wordpress", "News Leidimen"]
 description: "La rentrée à Dorool"

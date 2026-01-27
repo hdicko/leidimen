@@ -1,7 +1,7 @@
 ---
 title: "Compte-rendu du voyage de David et Abdoulaye"
 date: 2010-01-01
-villages: ['diona', 'debere', 'tanal', 'manko', 'tacouti', 'douentza']
+villages: ["diona", "debere", "tanal", "manko", "tacouti", "douentza"]
 categories: ["Éducation"]
 tags: ["archive", "wordpress", "news"]
 description: "Compte-rendu du voyage de David et Abdoulaye"

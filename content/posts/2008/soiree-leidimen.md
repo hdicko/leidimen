@@ -1,7 +1,7 @@
 ---
 title: "Soirée leïdimen"
 date: 2008-04-10
-villages: ['douentza']
+villages: ["douentza"]
 categories: ["Culture"]
 tags: ["archive", "wordpress", "Divers", "News Leidimen", "Sorties"]
 description: "Soirée leïdimen"

@@ -1,7 +1,7 @@
 ---
 title: "Surcreusement de puits dans le village de Darawal"
 date: 2010-02-12
-villages: ['darawal']
+villages: ["darawal"]
 categories: ["Santé"]
 tags: ["archive", "wordpress", "Divers"]
 description: "Surcreusement de puits dans le village de Darawal"

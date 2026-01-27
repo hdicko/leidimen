@@ -1,7 +1,7 @@
 ---
 title: "Nouveau site"
 date: 2007-06-05
-villages: ['douentza']
+villages: ["douentza"]
 categories: ["Santé"]
 tags: ["archive", "wordpress", "Divers"]
 description: "Nouveau site"

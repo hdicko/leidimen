@@ -1,7 +1,7 @@
 ---
 title: "Une occasion de rencontrer l’association “Villages Dogons”"
 date: 2007-10-09
-villages: ['douentza']
+villages: ["douentza"]
 categories: ["Éducation"]
 tags: ["archive", "wordpress", "Divers", "Sorties"]
 description: "Une occasion de rencontrer l’association “Villages Dogons”"

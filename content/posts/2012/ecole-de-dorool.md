@@ -1,7 +1,7 @@
 ---
 title: "Images de l'École et des élèves de Dorool"
 date: 2012-01-01
-villages: ['dorool']
+villages: ["dorool"]
 categories: ["Éducation"]
 tags: ["archive", "wordpress", "Divers"]
 description: "Ecole de Dorool"

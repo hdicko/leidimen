@@ -1,7 +1,7 @@
 ---
 title: "Construction d’une école à Dorool : quelques nouvelles"
 date: 2010-01-01
-villages: ['dorool']
+villages: ["dorool"]
 categories: ["Éducation"]
 tags: ["archive", "wordpress", "news"]
 description: "Construction d’une école à Dorool : quelques nouvelles"
@@ -15,7 +15,7 @@ Au mois de décembre, nous vous avons fait part de notre volonté de [construire
 
  
 Mamadou a établi une liste des futurs élèves, dont voici quelques photos :
- [/images/wordpress/2008-02-dsc04581.jpg](/images/wordpress/2008-02-dsc04581.jpg)
+[/images/wordpress/2008-02-dsc04581.jpg](/images/wordpress/2008-02-dsc04581.jpg)
 [
 ![dsc04581.jpg](//leidimen.com/wp-content/uploads/2008/02/dsc04581.jpg)
 ](/images/wordpress/2008-02-dsc04581.jpg)
@@ -23,7 +23,7 @@ Mamadou a établi une liste des futurs élèves, dont voici quelques photos :
 [
 ![enfants](//leidimen.com/wp-content/uploads/2008/02/dsc04578.jpg)
 ](/images/wordpress/2008-02-dsc04578.jpg)
- Le chantier avance rapidement : les hommes construisent actuellement les briques en banco avec lesquelles ils bâtiront l’école. La salle de classe devrait être prête pour la rentrée prochaine. Voici quelques images du chantier (vous pouvez cliquer dessus pour les agrandir) :
+Le chantier avance rapidement : les hommes construisent actuellement les briques en banco avec lesquelles ils bâtiront l’école. La salle de classe devrait être prête pour la rentrée prochaine. Voici quelques images du chantier (vous pouvez cliquer dessus pour les agrandir) :
 [
 ![muret_briques](//leidimen.com/wp-content/uploads/2008/02/dsc04620.thumbnail.jpg)
 ](/images/wordpress/2008-02-dsc04620.jpg)[

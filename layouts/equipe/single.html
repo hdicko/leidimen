@@ -40,8 +40,13 @@
 
 {{ define "main" }}
 {{/* Context7 Individual Profile Page */}}
+
+{{/* Template variables */}}
 {{ $image := resources.Get .Params.card.image }}
 {{ $anchor := .Params.card.imageAnchor | default "center" }}
+{{ $isFounder := in .Params.card.membre "fondateur" }}
+{{ $isBureau := in .Params.categories "CA" }}
+{{ $isMember := and (not $isFounder) (not $isBureau) }}
 
 {{/* 
   ========================================
@@ -94,39 +99,39 @@
             
             <!-- Status Ring -->
             <div class="status-ring">
-              {{ if in .Params.card.membre "fondateur" }}
-              <div class="status-indicator status-founder">
-                <i class="bi bi-star-fill"></i>
-              </div>
-              {{ else if in .Params.categories "CA" }}
-              <div class="status-indicator status-bureau">
-                <i class="bi bi-shield-check-fill"></i>
-              </div>
+              {{ if $isFounder }}
+                <div class="status-indicator status-founder">
+                  <i class="bi bi-star-fill"></i>
+                </div>
+              {{ else if $isBureau }}
+                <div class="status-indicator status-bureau">
+                  <i class="bi bi-shield-check-fill"></i>
+                </div>
               {{ else }}
-              <div class="status-indicator status-member">
-                <i class="bi bi-person-check-fill"></i>
-              </div>
+                <div class="status-indicator status-member">
+                  <i class="bi bi-person-check-fill"></i>
+                </div>
               {{ end }}
             </div>
           </div>
           
           <!-- Floating Badge -->
           <div class="floating-badge">
-            {{ if in .Params.card.membre "fondateur" }}
-            <span class="badge-ctx7 badge-founder-ctx7">
-              <i class="bi bi-crown-fill"></i>
-              <span>Fondateur</span>
-            </span>
-            {{ else if in .Params.categories "CA" }}
-            <span class="badge-ctx7 badge-bureau-ctx7">
-              <i class="bi bi-shield-fill"></i>
-              <span>Bureau</span>
-            </span>
+            {{ if $isFounder }}
+              <span class="badge-ctx7 badge-founder-ctx7">
+                <i class="bi bi-crown-fill"></i>
+                <span>Fondateur</span>
+              </span>
+            {{ else if $isBureau }}
+              <span class="badge-ctx7 badge-bureau-ctx7">
+                <i class="bi bi-shield-fill"></i>
+                <span>Bureau</span>
+              </span>
             {{ else }}
-            <span class="badge-ctx7 badge-member-ctx7">
-              <i class="bi bi-people-fill"></i>
-              <span>Membre</span>
-            </span>
+              <span class="badge-ctx7 badge-member-ctx7">
+                <i class="bi bi-people-fill"></i>
+                <span>Membre</span>
+              </span>
             {{ end }}
           </div>
         </div>
@@ -187,13 +192,13 @@
           -->
           <div class="profile-stats">
           <!-- Action Buttons -->
+          {{ $equipePage := .Site.GetPage "/equipe" }}
           <div class="profile-actions">
             <button class="btn-ctx7-primary" onclick="openContactModal('{{ .Title }}')">
               <i class="bi bi-envelope-heart"></i>
               <span>Contacter</span>
             </button>
-            {{ $page := .Site.GetPage "/equipe" }}
-            <a href="{{ $page.Permalink }}" class="btn-ctx7-outline">
+            <a href="{{ $equipePage.Permalink }}" class="btn-ctx7-outline">
               <i class="bi bi-arrow-left"></i>
               <span>Retour à l'équipe</span>
             </a>
@@ -397,10 +402,8 @@
                 <i class="bi bi-share"></i>
                 <span>Partager le profil</span>
               </button>
-
-{{ $page := .Site.GetPage "/equipe/" }}
           
-              <a href="{{ $page.Permalink }}" class="action-btn-ctx7">
+              <a href="{{ $equipePage.Permalink }}" class="action-btn-ctx7">
                 <i class="bi bi-people"></i>
                 <span>Voir tous les membres</span>
               </a>
@@ -438,7 +441,7 @@
         4. Display with 150x150 resized photos
       */}}
       {{ $currentPage := . }}
-      {{ $relatedPages := where .Site.RegularPages "Section" "about" }}
+      {{ $relatedPages := where .Site.RegularPages "Section" "equipe" }}
       {{ range first 5 (where $relatedPages ".Permalink" "!=" $currentPage.Permalink) }}
       {{ $memberImage := resources.Get .Params.card.image }}
       <div class="related-card-ctx7">
@@ -497,14 +500,11 @@
 
 {{/* 
   ========================================
-  INLINE STYLES - Page-specific CSS
+  PAGE-SPECIFIC STYLES
   ========================================
-  Includes:
-  - Related members grid (responsive layout)
-  - Timeline component styles
-  - Hover effects and transitions
-  - Responsive breakpoints
-  - Additional Context7 design elements
+  Note: Most styles should be moved to assets/scss/pages/equipe-single.scss
+  The following inline styles remain for critical rendering path optimization.
+  TODO: Migrate all styles below to external SCSS file for better maintainability.
 */}}
 <style>
 /* Related Members Grid */

@@ -24,7 +24,7 @@ collections:
     media_folder: ""
     public_folder: ""
     summary: "{{title}} - {{date}}"
-    sortable_fields: ['date', 'title']
+    sortable_fields: ["date", "title"]
     view_filters:
       - label: "Brouillons"
         field: draft
@@ -144,7 +144,7 @@ collections:
     extension: "md"
     format: "yaml-frontmatter"
     summary: "{{title}} - {{card.fonction}}"
-    sortable_fields: ['title', 'weight', 'date']
+    sortable_fields: ["title", "weight", "date"]
     identifier_field: "title"
     editor:
       preview: false
@@ -257,7 +257,7 @@ collections:
     media_folder: ""
     public_folder: ""
     summary: "{{title}} - {{population}} habitants"
-    sortable_fields: ['title', 'population']
+    sortable_fields: ["title", "population"]
     identifier_field: "title"
     editor:
       preview: false
@@ -335,7 +335,7 @@ collections:
     extension: "md"
     format: "yaml-frontmatter"
     summary: "{{title}} - {{type}}"
-    sortable_fields: ['title', 'date', 'type']
+    sortable_fields: ["title", "date", "type"]
     identifier_field: "title"
     editor:
       preview: false
@@ -391,7 +391,7 @@ collections:
     media_folder: ""
     public_folder: ""
     summary: "{{title}} - {{location}} - {{date}}"
-    sortable_fields: ['title', 'date', 'location']
+    sortable_fields: ["title", "date", "location"]
     identifier_field: "title"
     editor:
       preview: false

@@ -36,18 +36,19 @@ Ce guide vous explique comment créer des articles pour le site web de l'associa
 
 ## 2. Choix de la méthode
 
-| Critère | Interface Web CMS | Netlify CMS | Hugo CLI |
-|---------|------------------|-------------|----------|
-| **Niveau technique** | Développeur | Débutant | Expert |
-| **Installation** | Node.js + Token GitHub | Navigateur | Hugo installé |
-| **Interface** | Web moderne | Web intuitive | Terminal |
-| **Upload images** | Manuelle | Drag & drop | Manuelle |
-| **Prévisualisation** | Markdown en temps réel | WYSIWYG | Via serveur Hugo |
-| **Validation** | Formulaire + stats | Formulaire | Manuelle |
-| **Commit** | API GitHub directe | Netlify Identity | Git manuel |
-| **Vitesse** | ⚡⚡⚡ | ⚡⚡ | ⚡⚡⚡ |
+| Critère              | Interface Web CMS      | Netlify CMS      | Hugo CLI         |
+| -------------------- | ---------------------- | ---------------- | ---------------- |
+| **Niveau technique** | Développeur            | Débutant         | Expert           |
+| **Installation**     | Node.js + Token GitHub | Navigateur       | Hugo installé    |
+| **Interface**        | Web moderne            | Web intuitive    | Terminal         |
+| **Upload images**    | Manuelle               | Drag & drop      | Manuelle         |
+| **Prévisualisation** | Markdown en temps réel | WYSIWYG          | Via serveur Hugo |
+| **Validation**       | Formulaire + stats     | Formulaire       | Manuelle         |
+| **Commit**           | API GitHub directe     | Netlify Identity | Git manuel       |
+| **Vitesse**          | ⚡⚡⚡                 | ⚡⚡             | ⚡⚡⚡           |
 
 **Recommandation :**
+
 - Éditeurs de contenu → **Netlify CMS**
 - Développeurs réguliers → **Interface Web CMS**
 - Développeurs experts → **Hugo CLI**
@@ -111,12 +112,14 @@ cd cms-web
 ### 🌐 Accès
 
 **En local :**
+
 ```bash
 npm run dev
 # Puis ouvrir : http://localhost:1313/leidimen/admin/
 ```
 
 **En production :**
+
 ```
 https://hdicko.github.io/leidimen/admin/
 ```
@@ -124,10 +127,12 @@ https://hdicko.github.io/leidimen/admin/
 ### Prérequis
 
 #### Pour le développement local
+
 1. **Serveur Hugo démarré** (`npm run dev`)
 2. **Serveur Netlify CMS Proxy démarré** (`npx netlify-cms-proxy-server`)
 
 #### Pour la production
+
 - Authentification via Netlify Identity (configurée automatiquement)
 
 ### Création d'un article étape par étape
@@ -145,30 +150,37 @@ https://hdicko.github.io/leidimen/admin/
 #### Étape 3 : Champs obligatoires
 
 **Titre** (required)
+
 ```
 Exemple : "Inauguration de l'école de Dorool"
 ```
+
 - Accrocheur et descriptif
 - 50-70 caractères recommandés
 - Sans emojis ni caractères spéciaux
 
 **Date** (required)
+
 ```
 Format : 2025-10-22
 ```
+
 - Date de publication
 - Format YYYY-MM-DD
 - Par défaut : aujourd'hui
 
 **Description** (required)
+
 ```
 Exemple : "L'école de Dorool a été inaugurée en présence des villageois et partenaires. Un moment historique pour l'éducation dans la région."
 ```
+
 - 150-160 caractères (optimal SEO)
 - Résumé concis et attractif
 - Utilisé pour les réseaux sociaux
 
 **Contenu** (required)
+
 ```markdown
 ## 📋 Résumé
 
@@ -194,16 +206,19 @@ Prochaines étapes et développements futurs.
 #### Étape 4 : Métadonnées et taxonomies
 
 **Villages** (required)
+
 ```yaml
 villages:
   - dorool
   - diona
 ```
+
 - Villages concernés par l'article
 - **IMPORTANT** : Utiliser les noms en minuscules
 - Liste disponible : dorool, diona, debere, diambana, darawal, tanal, manko, tacouti, n'dumpa, douentza
 
 **Catégories** (optional)
+
 ```yaml
 categories:
   - Éducation
@@ -211,10 +226,12 @@ categories:
   - Infrastructure
   - Développement
 ```
+
 - Catégories principales du projet
 - 1-3 catégories recommandées
 
 **Tags** (optional)
+
 ```yaml
 tags:
   - école
@@ -222,33 +239,40 @@ tags:
   - jeunesse
   - éducation
 ```
+
 - Mots-clés pour le référencement
 - 3-7 tags recommandés
 - En minuscules
 
 **Moods** (optional)
+
 ```yaml
 moods:
   - heureux
   - inspiré
   - reconnaissant
 ```
+
 - Ton émotionnel de l'article
 - Choix : heureux, triste, inspiré, motivé, reconnaissant
 
 **Image** (optional)
+
 ```yaml
 image: "/images/uploads/inauguration-ecole-dorool.jpg"
 ```
+
 - Image de couverture
 - Upload via Netlify CMS ou chemin manuel
 - Format : JPEG/PNG/WebP
 - Dimensions recommandées : 1200x630px
 
 **Draft** (optional)
+
 ```yaml
 draft: false
 ```
+
 - `false` : Article publié
 - `true` : Brouillon (non visible sur le site)
 
@@ -267,6 +291,7 @@ draft: false
 3. Confirmer la publication
 
 Le CMS crée automatiquement :
+
 - Le fichier Markdown dans `content/posts/YYYY/`
 - Le commit Git avec message descriptif
 - Le push vers GitHub
@@ -337,6 +362,7 @@ content/posts/
 ```
 
 **Convention importante :**
+
 - ✅ Nouveaux posts dans `content/posts/YYYY/`
 - ✅ Bundles avec images : `content/posts/YYYY/mon-article/index.md`
 - ❌ Éviter : posts à la racine de `content/posts/`
@@ -428,11 +454,13 @@ Construction de 2 autres puits dans les villages voisins prévue pour 2026.
 ### Organisation des fichiers
 
 #### Post simple (texte uniquement)
+
 ```
 content/posts/2025/mon-article.md
 ```
 
 #### Post avec images (bundle)
+
 ```
 content/posts/2025/mon-article/
 ├── index.md          ← Le contenu de l'article
@@ -442,6 +470,7 @@ content/posts/2025/mon-article/
 ```
 
 **Avantages des bundles :**
+
 - Images traitées par Hugo (optimisation WebP)
 - Chemins relatifs simples
 - Galeries PhotoSwipe automatiques
@@ -454,24 +483,24 @@ content/posts/2025/mon-article/
 # === MÉTADONNÉES PRINCIPALES ===
 title: "Titre accrocheur et descriptif"
 date: 2025-01-15
-lastmod: 2025-01-16      # Optionnel : date de dernière modification
-author: "Leidimen"        # Optionnel : auteur (défaut: Leidimen)
-draft: false              # false = publié, true = brouillon
+lastmod: 2025-01-16 # Optionnel : date de dernière modification
+author: "Leidimen" # Optionnel : auteur (défaut: Leidimen)
+draft: false # false = publié, true = brouillon
 
 # === SEO & PARTAGE ===
 description: "Description de 150-160 caractères pour le référencement et le partage sur les réseaux sociaux."
-image: "/images/uploads/cover.jpg"  # Image de couverture
-keywords: ["mot1", "mot2"]          # Optionnel : mots-clés supplémentaires
+image: "/images/uploads/cover.jpg" # Image de couverture
+keywords: ["mot1", "mot2"] # Optionnel : mots-clés supplémentaires
 
 # === TAXONOMIES ===
-villages: ["dorool", "diona"]       # IMPORTANT : minuscules
+villages: ["dorool", "diona"] # IMPORTANT : minuscules
 categories: ["Éducation", "Santé"]
 tags: ["école", "formation", "jeunesse"]
 moods: ["heureux", "inspiré"]
 
 # === MÉTADONNÉES AVANCÉES ===
-weight: 1                           # Optionnel : ordre d'affichage
-featured: true                      # Optionnel : article mis en avant
+weight: 1 # Optionnel : ordre d'affichage
+featured: true # Optionnel : article mis en avant
 ---
 ```
 
@@ -483,17 +512,17 @@ featured: true                      # Optionnel : article mis en avant
 
 **Liste complète des villages** (à utiliser en minuscules) :
 
-| Village | Usage | Localisation |
-|---------|-------|--------------|
-| `dorool` | `villages: ["dorool"]` | Commune de Douentza |
-| `diona` | `villages: ["diona"]` | Commune de Douentza |
-| `debere` | `villages: ["debere"]` | Commune de Douentza |
+| Village    | Usage                    | Localisation        |
+| ---------- | ------------------------ | ------------------- |
+| `dorool`   | `villages: ["dorool"]`   | Commune de Douentza |
+| `diona`    | `villages: ["diona"]`    | Commune de Douentza |
+| `debere`   | `villages: ["debere"]`   | Commune de Douentza |
 | `diambana` | `villages: ["diambana"]` | Commune de Douentza |
-| `darawal` | `villages: ["darawal"]` | Commune de Douentza |
-| `tanal` | `villages: ["tanal"]` | Commune de Douentza |
-| `manko` | `villages: ["manko"]` | Commune de Douentza |
-| `tacouti` | `villages: ["tacouti"]` | Commune de Douentza |
-| `n'dumpa` | `villages: ["n'dumpa"]` | Commune de Douentza |
+| `darawal`  | `villages: ["darawal"]`  | Commune de Douentza |
+| `tanal`    | `villages: ["tanal"]`    | Commune de Douentza |
+| `manko`    | `villages: ["manko"]`    | Commune de Douentza |
+| `tacouti`  | `villages: ["tacouti"]`  | Commune de Douentza |
+| `n'dumpa`  | `villages: ["n'dumpa"]`  | Commune de Douentza |
 | `douentza` | `villages: ["douentza"]` | Chef-lieu de cercle |
 
 **Données centralisées** : Les coordonnées GPS, populations et projets sont dans `data/villages/mali_villages.yaml`.
@@ -502,16 +531,17 @@ featured: true                      # Optionnel : article mis en avant
 
 ```yaml
 categories:
-  - Éducation       # Projets scolaires, formation
-  - Santé           # Santé, hygiène, nutrition
-  - Infrastructure  # Construction, eau, électricité
-  - Développement   # Agriculture, économie, social
-  - Culture         # Traditions, événements culturels
+  - Éducation # Projets scolaires, formation
+  - Santé # Santé, hygiène, nutrition
+  - Infrastructure # Construction, eau, électricité
+  - Développement # Agriculture, économie, social
+  - Culture # Traditions, événements culturels
 ```
 
 ### Tags (taxonomy)
 
 Exemples de tags pertinents :
+
 ```yaml
 tags:
   # Éducation
@@ -520,19 +550,19 @@ tags:
   - enseignement
   - étudiants
   - jeunesse
-  
+
   # Santé
   - santé
   - hygiène
   - nutrition
   - soins
-  
+
   # Infrastructure
   - eau
   - puits
   - construction
   - électricité
-  
+
   # Social
   - femmes
   - jeunesse
@@ -543,13 +573,14 @@ tags:
 ### Moods (taxonomy)
 
 Ton émotionnel de l'article :
+
 ```yaml
 moods:
-  - heureux         # Célébration, réussite
-  - triste          # Difficulté, obstacle
-  - inspiré         # Histoire inspirante
-  - motivé          # Appel à l'action
-  - reconnaissant   # Remerciements
+  - heureux # Célébration, réussite
+  - triste # Difficulté, obstacle
+  - inspiré # Histoire inspirante
+  - motivé # Appel à l'action
+  - reconnaissant # Remerciements
 ```
 
 ---
@@ -605,10 +636,11 @@ moods:
 
 ```markdown
 ## Titre niveau 2
+
 ### Titre niveau 3
 
 **Texte en gras**
-*Texte en italique*
+_Texte en italique_
 
 - Liste à puces
 - Deuxième élément
@@ -642,6 +674,7 @@ moods:
 **Cause** : Village en majuscule ou mal orthographié
 
 **Solution** :
+
 ```yaml
 # ❌ Incorrect
 villages: ["Dorool", "DIONA"]
@@ -655,6 +688,7 @@ villages: ["dorool", "diona"]
 **Cause** : Chemin d'image incorrect
 
 **Solutions** :
+
 1. Vérifier que l'image existe dans `static/images/uploads/`
 2. Utiliser chemin absolu : `/images/uploads/photo.jpg`
 3. Pour bundles, utiliser chemin relatif : `photo.jpg`
@@ -664,6 +698,7 @@ villages: ["dorool", "diona"]
 **Cause** : Erreur de syntaxe Markdown ou frontmatter
 
 **Solution** :
+
 1. Vérifier le YAML frontmatter (indentation, quotes)
 2. Vérifier les shortcodes (tags ouverts/fermés)
 3. Consulter les logs : `npm run build`
@@ -671,6 +706,7 @@ villages: ["dorool", "diona"]
 ### Article non visible sur le site
 
 **Causes possibles** :
+
 1. `draft: true` → Changer en `draft: false`
 2. Date future → Utiliser date passée ou présente
 3. Fichier mal placé → Vérifier chemin `content/posts/YYYY/`
@@ -680,6 +716,7 @@ villages: ["dorool", "diona"]
 **Cause** : Images non en tant que Page Resources
 
 **Solution** :
+
 ```
 # ❌ Incorrect
 content/posts/2025/article.md
@@ -695,6 +732,7 @@ content/posts/2025/article/
 ### Netlify CMS : Impossible de se connecter
 
 **Solutions** :
+
 1. **Local** : Vérifier que `npx netlify-cms-proxy-server` est démarré
 2. **Production** : Vérifier Netlify Identity configuré
 3. Vider le cache du navigateur
@@ -705,6 +743,7 @@ content/posts/2025/article/
 **Cause** : Trop de requêtes à l'API GitHub
 
 **Solution** :
+
 1. Attendre 1 heure (reset automatique)
 2. Utiliser un token avec meilleurs quotas
 3. Utiliser Netlify CMS temporairement
@@ -729,6 +768,7 @@ content/posts/2025/article/
 ### Templates et exemples
 
 Consulter les exemples dans :
+
 - `content/posts/2024/` - Articles 2024
 - `content/posts/2025/` - Articles 2025
 - `content/galleries/` - Galeries photos

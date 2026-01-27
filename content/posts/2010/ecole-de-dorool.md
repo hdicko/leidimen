@@ -1,7 +1,7 @@
 ---
 title: "Ecole de Dorool"
 date: 2010-01-01
-villages: ['dorool']
+villages: ["dorool"]
 categories: ["Culture"]
 tags: ["archive", "wordpress", "non-classe"]
 description: "Ecole de Dorool"

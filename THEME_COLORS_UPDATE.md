@@ -43,6 +43,7 @@ Le système de thème clair/sombre a été amélioré avec des couleurs plus nua
 ## Améliorations techniques
 
 ### 1. Variables CSS centralisées
+
 Toutes les couleurs sont maintenant définies dans `/static/css/theme-colors.css` avec des variables CSS natives :
 
 ```css
@@ -61,20 +62,28 @@ body.dark-mode {
 ```
 
 ### 2. Synchronisation améliorée
+
 Le fichier `darkmode.js` a été mis à jour pour :
+
 - Synchroniser `body.dark-mode` et `data-bs-theme`
 - Appliquer les changements de manière cohérente
 - Support des préférences système (prefers-color-scheme)
 
 ### 3. Transitions fluides
+
 Toutes les transitions de couleurs sont maintenant fluides avec :
+
 ```css
 * {
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
 }
 ```
 
 ### 4. Composants couverts
+
 - ✅ Navbar et navigation
 - ✅ Cards et containers
 - ✅ Formulaires et inputs
@@ -97,16 +106,19 @@ Toutes les transitions de couleurs sont maintenant fluides avec :
 - **Raison** : Réduit encore plus la fatigue oculaire, plus de douceur visuelle
 
 ### 2. Teinte bleue cohérente
+
 - Les couleurs ont toutes une légère teinte bleue
 - Crée une harmonie visuelle à travers toute l'interface
 - Reflète l'identité visuelle de Leidimen
 
 ### 3. Contraste optimisé
+
 - Ratio de contraste WCAG AA respecté (4.5:1 minimum pour le texte)
 - Mode sombre : fond `#1a1f2e` + texte `#e8edf2` = ratio 12.5:1
 - Mode clair : fond `#f8f9fa` + texte `#2c3e50` = ratio 11.8:1
 
 ### 4. Ombres adaptées
+
 - Mode clair : ombres légères avec faible opacité
 - Mode sombre : ombres plus prononcées pour la profondeur
 
@@ -143,12 +155,14 @@ Toutes les transitions de couleurs sont maintenant fluides avec :
 ## Accessibilité
 
 ### WCAG 2.1 Level AA
+
 ✅ Contraste texte/fond : > 4.5:1  
 ✅ Contraste UI : > 3:1  
 ✅ Taille de texte minimale respectée  
-✅ Support des préférences système  
+✅ Support des préférences système
 
 ### Préférences utilisateur
+
 - Le choix de thème est sauvegardé dans `localStorage`
 - Détection automatique de `prefers-color-scheme`
 - Transitions fluides pour éviter les flashs
@@ -156,6 +170,7 @@ Toutes les transitions de couleurs sont maintenant fluides avec :
 ## Utilisation
 
 ### Pour les développeurs
+
 Utiliser les variables CSS dans les nouveaux styles :
 
 ```css
@@ -167,18 +182,19 @@ Utiliser les variables CSS dans les nouveaux styles :
 ```
 
 ### Pour les utilisateurs
+
 Le bouton de changement de thème se trouve dans la navbar (icône lune/soleil). Le choix est automatiquement sauvegardé.
 
 ## Comparaison avant/après
 
-| Élément | Avant (sombre) | Après (sombre) | Amélioration |
-|---------|----------------|----------------|--------------|
-| Background principal | `#1a1f2e` | `#1d2433` | Encore plus doux, moins de contraste dur |
-| Texte principal | `#e8edf2` | `#edf0f5` | Plus lumineux sans éblouir |
-| Cards | `#242938` | `#272d3f` | Teinte plus chaude et accueillante |
-| Borders | `#3d4558` | `#3f4758` | Meilleure définition subtile |
-| Accents | `#3b82f6` | `#5b9cff` | Excellente visibilité sur fond sombre |
-| Background clair | `#ffffff` | `#fafbfc` | Blanc doux, repose les yeux |
+| Élément              | Avant (sombre) | Après (sombre) | Amélioration                             |
+| -------------------- | -------------- | -------------- | ---------------------------------------- |
+| Background principal | `#1a1f2e`      | `#1d2433`      | Encore plus doux, moins de contraste dur |
+| Texte principal      | `#e8edf2`      | `#edf0f5`      | Plus lumineux sans éblouir               |
+| Cards                | `#242938`      | `#272d3f`      | Teinte plus chaude et accueillante       |
+| Borders              | `#3d4558`      | `#3f4758`      | Meilleure définition subtile             |
+| Accents              | `#3b82f6`      | `#5b9cff`      | Excellente visibilité sur fond sombre    |
+| Background clair     | `#ffffff`      | `#fafbfc`      | Blanc doux, repose les yeux              |
 
 ## Notes pour l'avenir
 

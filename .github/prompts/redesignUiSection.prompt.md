@@ -62,6 +62,7 @@ Transform a UI section with enhanced visual design including custom color scheme
 ## Example Transformation:
 
 **Before:**
+
 ```html
 <div class="card bg-primary bg-opacity-5">
   <div class="card-body p-4">
@@ -74,8 +75,12 @@ Transform a UI section with enhanced visual design including custom color scheme
 ```
 
 **After:**
+
 ```html
-<div class="card shadow-sm" style="background: linear-gradient(135deg, #7f8c8d 0%, #95a5a6 100%); border-radius: 15px;">
+<div
+  class="card shadow-sm"
+  style="background: linear-gradient(135deg, #7f8c8d 0%, #95a5a6 100%); border-radius: 15px;"
+>
   <div class="card-body p-5">
     <h5 class="text-white fw-bold mb-4">
       <i class="bi bi-signpost-2 me-2"></i>
@@ -88,13 +93,13 @@ Transform a UI section with enhanced visual design including custom color scheme
 </div>
 
 <style>
-.quick-nav-btn {
-  transition: all 0.3s ease;
-  border-radius: 10px;
-}
-.quick-nav-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
+  .quick-nav-btn {
+    transition: all 0.3s ease;
+    border-radius: 10px;
+  }
+  .quick-nav-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
 </style>
 ```

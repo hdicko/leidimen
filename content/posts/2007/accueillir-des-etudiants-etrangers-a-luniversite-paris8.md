@@ -1,7 +1,7 @@
 ---
 title: "Accueillir des étudiants étrangers à l’université Paris8"
 date: 2007-11-23
-villages: ['douentza']
+villages: ["douentza"]
 categories: ["Culture"]
 tags: ["archive", "wordpress", "News Leidimen", "Sorties"]
 description: "Accueillir des étudiants étrangers à l’université Paris8"

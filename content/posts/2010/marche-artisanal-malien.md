@@ -1,7 +1,7 @@
 ---
 title: "Marché artisanal malien"
 date: 2010-01-01
-villages: ['douentza']
+villages: ["douentza"]
 categories: ["Culture"]
 tags: ["archive", "wordpress", "infos-sorties"]
 description: "Marché artisanal malien"

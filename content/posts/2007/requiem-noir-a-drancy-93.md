@@ -1,7 +1,7 @@
 ---
 title: "“Requiem Noir” à Drancy (93)"
 date: 2007-06-11
-villages: ['douentza']
+villages: ["douentza"]
 categories: ["Culture"]
 tags: ["archive", "wordpress", "Sorties"]
 description: "“Requiem Noir” à Drancy (93)"

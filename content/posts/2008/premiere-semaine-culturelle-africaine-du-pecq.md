@@ -1,7 +1,7 @@
 ---
 title: "Première semaine culturelle africaine du Pecq"
 date: 2008-02-20
-villages: ['douentza']
+villages: ["douentza"]
 categories: ["Culture"]
 tags: ["archive", "wordpress", "Sorties"]
 description: "Première semaine culturelle africaine du Pecq"

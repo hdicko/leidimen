@@ -352,10 +352,13 @@
                   </div>
                 {{ end }}
 
+
                 <!-- Member Stats -->
                 <div class="member-stats">
                   <div class="stat">
-                    <span class="stat-number">{{ now.Year | sub $member.Date.Year }}</span>
+                    <span class="stat-number"
+                      >{{ now.Year | sub $member.Date.Year }}</span
+                    >
                     <span class="stat-label">années</span>
                   </div>
                   <div class="stat">

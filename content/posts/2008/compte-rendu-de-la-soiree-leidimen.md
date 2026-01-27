@@ -1,7 +1,7 @@
 ---
 title: "Compte rendu de la soirée Leïdimen"
 date: 2008-05-24
-villages: ['douentza']
+villages: ["douentza"]
 categories: ["Culture"]
 tags: ["archive", "wordpress", "News Leidimen", "Sorties"]
 description: "Compte rendu de la soirée Leïdimen"

@@ -1,7 +1,7 @@
 ---
 title: "Fête des associations du 16 septembre 2007"
 date: 2007-09-25
-villages: ['douentza']
+villages: ["douentza"]
 categories: ["Santé"]
 tags: ["archive", "wordpress", "News Leidimen"]
 description: "Fête des associations du 16 septembre 2007"

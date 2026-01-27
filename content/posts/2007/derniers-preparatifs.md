@@ -1,7 +1,7 @@
 ---
 title: "Derniers préparatifs"
 date: 2007-01-13
-villages: ['douentza']
+villages: ["douentza"]
 categories: ["Culture"]
 tags: ["archive", "wordpress", "News Leidimen"]
 description: "Derniers préparatifs"

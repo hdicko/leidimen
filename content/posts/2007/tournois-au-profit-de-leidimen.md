@@ -1,7 +1,7 @@
 ---
 title: "Tournois au profit de Leïdimen"
 date: 2007-07-29
-villages: ['douentza']
+villages: ["douentza"]
 categories: ["Culture"]
 tags: ["archive", "wordpress", "News Leidimen"]
 description: "Tournois au profit de Leïdimen"

@@ -1,7 +1,7 @@
 ---
 title: "De retour du Mali!"
 date: 2010-01-01
-villages: ['dorool', 'diona', 'debere', 'douentza']
+villages: ["dorool", "diona", "debere", "douentza"]
 categories: ["Éducation"]
 tags: ["archive", "wordpress", "news"]
 description: "De retour du Mali!"
@@ -17,10 +17,10 @@ A Dimanche,
 Hamassala David Dicko
 [
 ![remise boundoucoli](//leidimen.com/wp-content/uploads/2007/10/imgp0531-remise-fournitures-boundoucoli.thumbnail.JPG)
-](/images/wordpress/2007-10-imgp0531-remise-fournitures-boundoucoli.JPG)[ 
+](/images/wordpress/2007-10-imgp0531-remise-fournitures-boundoucoli.JPG)[
 ![Ordis Douentza 1](//leidimen.com/wp-content/uploads/2007/10/imgp0513-small.thumbnail.JPG)
-](/images/wordpress/2007-10-imgp0513-small.JPG)[ 
+](/images/wordpress/2007-10-imgp0513-small.JPG)[
 ![Formation informatique Douetnza](//leidimen.com/wp-content/uploads/2007/10/imgp0522-small.thumbnail.JPG)
-](/images/wordpress/2007-10-imgp0522-small.JPG)[ 
+](/images/wordpress/2007-10-imgp0522-small.JPG)[
 ![Grains, Diona](//leidimen.com/wp-content/uploads/2007/10/imgp0524-chat-du-grains-pour-diona-small.thumbnail.JPG)
 ](/images/wordpress/2007-10-imgp0524-chat-du-grains-pour-diona-small.JPG)

@@ -1,7 +1,7 @@
 ---
 title: "Envoi du matériel informatique à Bamako"
 date: 2007-01-15
-villages: ['douentza']
+villages: ["douentza"]
 categories: ["Culture"]
 tags: ["archive", "wordpress", "News Leidimen"]
 description: "Envoi du matériel informatique à Bamako"

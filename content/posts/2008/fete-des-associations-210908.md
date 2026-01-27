@@ -1,7 +1,7 @@
 ---
 title: "Fête des associations 21/09/08"
 date: 2008-09-14
-villages: ['douentza']
+villages: ["douentza"]
 categories: ["Culture"]
 tags: ["archive", "wordpress", "News Leidimen"]
 description: "Fête des associations 21/09/08"

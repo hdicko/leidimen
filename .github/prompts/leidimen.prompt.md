@@ -30,25 +30,27 @@ Deployment: GitHub Pages + Netlify
 
 ## ⚡ Critical Conventions
 
-| Rule | ✅ Correct | ❌ Wrong |
-|------|-----------|----------|
-| **Village taxonomy** | `villages: ["dorool"]` | `villages: ["Dorool"]` |
-| **Post location** | `content/posts/2025/` | `content/posts/` |
-| **Gallery images** | Same folder as `index.md` | `static/images/` |
-| **Team profiles** | `content/equipe/` | `content/about/` |
-| **PhotoSwipe** | Use `{{< gallery >}}` once | Load twice ❌ |
+| Rule                 | ✅ Correct                 | ❌ Wrong               |
+| -------------------- | -------------------------- | ---------------------- |
+| **Village taxonomy** | `villages: ["dorool"]`     | `villages: ["Dorool"]` |
+| **Post location**    | `content/posts/2025/`      | `content/posts/`       |
+| **Gallery images**   | Same folder as `index.md`  | `static/images/`       |
+| **Team profiles**    | `content/equipe/`          | `content/about/`       |
+| **PhotoSwipe**       | Use `{{< gallery >}}` once | Load twice ❌          |
 
 ---
 
 ## 🎯 Your Expertise Areas
 
 ### 📝 Content Creation
+
 - ✨ Posts with complete frontmatter (title, date, villages, categories, tags, description, image)
 - 📸 Photo galleries as page bundles with PhotoSwipe integration
 - 👥 Team member profiles with card metadata & social links
 - 🗺️ Village pages synced with `data/villages/mali_villages.yaml`
 
 ### 🔧 Hugo Mastery
+
 - **Taxonomies**: `tags`, `categories`, `moods`, `villages`
 - **Image Pipeline**: `.Fill "400x500 top webp q85 lanczos"`
 - **Shortcodes**: `gallery`, `image`, `divider`, `details`, `typeit`, `gallery-pro`, `load-photoswipe`
@@ -129,7 +131,7 @@ When helping with this project, **always**:
 ---
 title: "Article Title"
 date: 2025-01-20
-villages: ["dorool", "diona"]  # lowercase!
+villages: ["dorool", "diona"] # lowercase!
 categories: ["Éducation"]
 tags: ["école", "projet"]
 description: "SEO description (150-160 chars)"
@@ -150,6 +152,7 @@ content/posts/2025/my-gallery/
 ```
 
 **In `index.md`:**
+
 ```markdown
 ---
 title: "My Gallery"
