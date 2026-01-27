@@ -1,381 +1,172 @@
 {{/* 
-  Template: posts/single.html.html
-  Purpose: Individual blog post display template
-  Context: Displays single blog post with title, date, author, and content
+  Template: posts/single.html
+  Purpose: Individual blog post display template with SEO and accessibility enhancements
+  Context: Displays single blog post with semantic HTML, structured data, and responsive design
   
   Features:
-  - Post title with primary background
-  - Publication date in localized format (02 Jan 2006 15:04 MST)
-  - Author attribution from .Params.auteur
-  - Markdown content rendering
-  - AOS animation (flip-left effect)
-  - Bootstrap responsive layout
+  - Semantic HTML5 structure (article, header, time elements)
+  - JSON-LD structured data for SEO (BlogPosting schema)
+  - ARIA labels for accessibility
+  - Lazy loading for images
+  - Social sharing meta tags
+  - Responsive typography and layout
+  - External SCSS for styling
   
   Data Structure:
   - .Title: Post title
   - .Date: Publication date
-  - .Content: Post body content (markdownified)
+  - .Content: Post body content (markdown)
   - .Params.auteur: Author name
+  - .Params.image: Featured image (optional)
+  - .Params.categories: Post categories
+  - .Params.villages: Related villages
+  - .Params.description: SEO description
   
   Dependencies:
   - Bootstrap 5 for grid system
-  - AOS (Animate On Scroll) library
-  
-  Code Notes:
-  - Extensive commented-out debug code for resource loading (scripts, styles, images)
-  - Page resources loading system (.Resources.GetMatch) disabled but preserved
-  - Image processing examples commented out (.Fit, base64Encode)
-  - These debug sections can be re-enabled for development/troubleshooting
-  
-  Layout:
-  - Container-fluid for full width
-  - Responsive columns: col-sm-4 col-md-6 col-xxl-12
-  - Primary colored header
-  - Content rendered as markdown
+  - assets/scss/pages/posts-single.scss
+  - Schema.org structured data
 */}}
 
 {{ define "main" }}
-
-<body>
-
- 
-
-  {{/* load sript */}}
-  <!-- 
-  <hr class="border border-danger border-2 opacity-50">
-  <p>loading scripts.js for single post </p>
-  <hr class="border border-danger border-2 opacity-50">
-
-  {{ with .Resources.GetMatch "script.js" }}
-  {{/* <p>This is the script for post in single.html </p> */}}
-  {{ .Content }}
-  <script>
-    { { .Content | safeJS } }
-  </script>
-  {{ end }}
-
-  {{/* loading style */}}
-  <hr class="border border-danger border-2 opacity-50">
-  <p>loading style.css for single post </p>
-  <hr class="border border-danger border-2 opacity-50">
-
-  {{ with .Resources.GetMatch "*.css" }}
-  <p> {{ .Content |safeCSS }} </p>
-  <style>
-    {
-        {
-        .Content|safeCSS;
-      }
+{{/* Structured Data - JSON-LD for BlogPosting */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": {{ .Title | jsonify }},
+  "datePublished": {{ .Date.Format "2006-01-02T15:04:05Z07:00" | jsonify }},
+  "dateModified": {{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" | jsonify }},
+  "author": {
+    "@type": "Person",
+    "name": {{ default "Association Leidimen" .Params.auteur | jsonify }}
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Leidimen",
+    "logo": {
+      "@type": "ImageObject",
+      "url": {{ "images/leidimen-logo.jpg" | absURL | jsonify }}
     }
-  </style>
+  },
+  {{ with .Params.image }}
+  "image": {{ . | absURL | jsonify }},
   {{ end }}
+  "description": {{ with .Params.description }}{{ . | jsonify }}{{ else }}{{ .Summary | plainify | jsonify }}{{ end }},
+  "url": {{ .Permalink | jsonify }},
+  "wordCount": {{ .WordCount }},
+  "keywords": {{ delimit (union .Params.categories .Params.tags) ", " | jsonify }}
+}
+</script>
 
--->
-  {{/* load image img.png
-  <hr class="border border-danger border-2 opacity-50">
-  <p>loading single images </p>
-  <hr class="border border-danger border-2 opacity-50">
-  */}}
-  {{/*
-  {{ with .Resources.GetMatch "img.png" }}
-
-  <img src="data:{{ .MediaType.Type }};base64,{{ .Content | base64Encode }}" />
-  {{ end }}
-
-  load image eleves.jpg
-
-  <div class="text-center display-flex">
-    {{ $image := .Resources.GetMatch "paris/paris.jpg" }}
-
-    {{ with $image }}
-    {{ $resized := .Fit "600x400" }}
-    <img src="{{ $resized.RelPermalink }}" />
-    {{ end }}
-  </div>
-
-
-  <hr class="border border-danger border-2 opacity-50">
-  <p>Rendred from post/single.html.html Date and content </p>
-  <hr class="border border-danger border-2 opacity-50">
-  */}}
-
-  <div class="container-fluid" data-aos="flip-left">
-    <div class="row border-primary">
-      <div class="col-sm-4 col-md-6 col-xxl-12">
-        <h2 class="text-bg-primary text-center">{{ .Title }}</h2>
-        <h2 class="text-start">Date de publication: <span>{{ dateFormat "02 Jan 2006 15:04 MST" .Date.Local }}</span>
-        </h2>
-        <div>
-          {{ .Content | markdownify }}</div>
-      </div>
-      <div class="col-sm-4 col-md-6 col-xxl-12">
-        <p class="fs-4"> <small class="muted">{{ .Params.auteur }}</small> </p>
+<article class="post-single" itemscope itemtype="https://schema.org/BlogPosting" data-aos="fade-up">
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-10 col-xl-8">
+        {{/* Post Header */}}
+        <header class="post-header mb-5">
+          <h1 class="post-title display-4 fw-bold mb-4" itemprop="headline">{{ .Title }}</h1>
+          
+          {{/* Post Meta */}}
+          <div class="post-meta d-flex flex-wrap align-items-center gap-3 mb-4">
+            <time class="text-muted" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}" itemprop="datePublished">
+              <i class="bi bi-calendar3" aria-hidden="true"></i>
+              <span class="visually-hidden">Publié le </span>
+              {{ .Date.Format "2 January 2006" }}
+            </time>
+            
+            {{ with .Params.auteur }}
+            <span class="text-muted" itemprop="author" itemscope itemtype="https://schema.org/Person">
+              <i class="bi bi-person" aria-hidden="true"></i>
+              <span itemprop="name">{{ . }}</span>
+            </span>
+            {{ end }}
+            
+            {{ with .ReadingTime }}
+            <span class="text-muted">
+              <i class="bi bi-clock" aria-hidden="true"></i>
+              {{ . }} min de lecture
+            </span>
+            {{ end }}
+          </div>
+          
+          {{/* Categories & Villages */}}
+          {{ if or .Params.categories .Params.villages }}
+          <div class="post-taxonomies mb-4">
+            {{ with .Params.categories }}
+            <div class="d-inline-flex flex-wrap gap-2">
+              {{ range . }}
+              <a href="{{ "/categories/" | relURL }}{{ . | urlize }}/" class="badge bg-primary text-decoration-none" rel="category">
+                {{ . }}
+              </a>
+              {{ end }}
+            </div>
+            {{ end }}
+            
+            {{ with .Params.villages }}
+            <div class="d-inline-flex flex-wrap gap-2 ms-2">
+              {{ range . }}
+              <a href="{{ "/villages/" | relURL }}{{ . | urlize }}/" class="badge bg-success text-decoration-none" rel="tag">
+                <i class="bi bi-geo-alt" aria-hidden="true"></i> {{ . }}
+              </a>
+              {{ end }}
+            </div>
+            {{ end }}
+          </div>
+          {{ end }}
+        </header>
+        
+        {{/* Post Content */}}
+        <div class="post-content" itemprop="articleBody">
+          {{ .Content }}
+        </div>
+        
+        {{/* Post Footer */}}
+        <footer class="post-footer mt-5 pt-4 border-top">
+          {{/* Share Buttons */}}
+          <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
+            <div>
+              <strong class="text-muted">Partager :</strong>
+              <div class="btn-group ms-2" role="group" aria-label="Boutons de partage">
+                <a href="https://twitter.com/intent/tweet?url={{ .Permalink | urlquery }}&text={{ .Title | urlquery }}" 
+                   class="btn btn-sm btn-outline-primary" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   aria-label="Partager sur Twitter">
+                  <i class="bi bi-twitter" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.facebook.com/sharer/sharer.php?url={{ .Permalink | urlquery }}" 
+                   class="btn btn-sm btn-outline-primary" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   aria-label="Partager sur Facebook">
+                  <i class="bi bi-facebook" aria-hidden="true"></i>
+                </a>
+                <button class="btn btn-sm btn-outline-primary" 
+                        data-action="copy-link" 
+                        data-url="{{ .Permalink }}"
+                        aria-label="Copier le lien">
+                  <i class="bi bi-link-45deg" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+            
+            {{/* Back to Posts */}}
+            <a href="{{ "/posts/" | relURL }}" class="btn btn-outline-secondary">
+              <i class="bi bi-arrow-left" aria-hidden="true"></i> Retour aux articles
+            </a>
+          </div>
+        </footer>
       </div>
     </div>
   </div>
-  </div>
+</article>
 
-  <!-- 
-  <hr class="border border-danger border-2 opacity-50">
-  List Tags in a Single Page Template
-  <p>List Tags in a post -- Single Page Template</p>
-  <hr class="border border-danger border-2 opacity-50">
-
-  <ul>
-    {{ range (.GetTerms "tags") }}
-    <li><a href="{{ .Permalink }}">Tag: {{ .LinkTitle }}</a></li>
-    {{ end }}
-  </ul>
--->
-  {{/*
-  <hr class="border border-danger border-2 opacity-50">
-  <math>
-    <h2> Un peu de math </h2>
-    <p>voir: https://cortexjs.io/mathlive/guides/static/</p>
-  </math>
-
-  <math-field>x=\frac{-b\pm \sqrt{b^2-4ac}}{2a}</math-field>
-
-  <math-field read-only class="math-inline">
-    x=\frac{-b\pm \sqrt{b^2-4ac}}{2a}
-  </math-field>
-
-  <script type="math/tex; mode=text">
-      =  a
-      \left( x - \frac{-b + \sqrt {b^2-4ac}}{2a} \right)
-      \left( x - \frac{-b - \sqrt {b^2-4ac}}{2a} \right)
-    </script>
-  */}}
-
-  {{/*
-  <hr class="border border-danger border-1 opacity-50">
-  <p class="fs-2 text-center badge text-bg-info">processing all sites taxonomies _default/taxonomy.html</p>
-  <hr class="border border-danger border-2 opacity-50">
-  <ul>
-    {{ range $taxonomy, $terms := site.Taxonomies }}
-    <li>
-      {{ with site.GetPage $taxonomy }}
-      <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
-      {{ end }}
-      <ul>
-        {{ range $term, $weightedPages := $terms }}
-        <li>
-          {{ with site.GetPage (path.Join $taxonomy $term) }}
-          <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
-          {{ end }}
-        </li>
-        <ul>
-          {{ range $weightedPages }}
-          <li>
-            <a href="{{ .RelPermalink }}"> {{ .LinkTitle }}</a>
-          </li>
-          {{ end }}
-        </ul>
-        {{ end }}
-      </ul>
-    </li>
-    {{ end }}
-  </ul>
-
-
-  <hr class="border border-danger border-1 opacity-50">
-  <p class="fs-2  badge text-bg-info ">processing all regular related pages</p>
-  <hr class="border border-danger border-2 opacity-50">
-
-  {{ $related := .Site.RegularPages.Related . | first 10 }}
-  {{ with $related }}
-  <h3>Voir aussi</h3>
-  <ul>
-    {{ range . }}
-    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-    {{ end }}
-  </ul>
-  {{ end }}
-
-  <p> preview</p>
-  {{ partial "post_preview"}}
-
-  */}}
-
-<style>
-/* Modern Details/Summary Styling for Posts */
-details {
-  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-  border-radius: 16px;
-  padding: 0;
-  margin: 2rem 0;
-  border: 2px solid #e2e8f0;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
-  overflow: hidden;
-}
-
-details:hover {
-  border-color: #667eea;
-  box-shadow: 0 8px 30px rgba(102, 126, 234, 0.15);
-  transform: translateY(-2px);
-}
-
-details[open] {
-  border-color: #667eea;
-  box-shadow: 0 10px 40px rgba(102, 126, 234, 0.2);
-}
-
-summary {
-  cursor: pointer;
-  padding: 1.5rem 2rem;
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #1e293b;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: relative;
-  transition: all 0.3s ease;
-  -webkit-user-select: none;
-  user-select: none;
-  list-style: none;
-}
-
-summary::-webkit-details-marker {
-  display: none;
-}
-
-summary::after {
-  content: '▼';
-  font-size: 1rem;
-  color: #667eea;
-  transition: transform 0.3s ease;
-  margin-left: 1rem;
-  flex-shrink: 0;
-}
-
-details[open] summary::after {
-  transform: rotate(180deg);
-}
-
-summary:hover {
-  padding-left: 2.25rem;
-}
-
-summary::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 4px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border-radius: 16px 0 0 16px;
-  transform: scaleY(0);
-  transition: transform 0.3s ease;
-}
-
-summary:hover::before,
-details[open] summary::before {
-  transform: scaleY(1);
-}
-
-details .details-content {
-  padding: 2rem;
-  background: white;
-  animation: slideDown 0.3s ease-out;
-}
-
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-details .details-content h2 {
-  color: #1e293b;
-  font-weight: 700;
-  font-size: 1.5rem;
-  margin-top: 1.5rem;
-  margin-bottom: 1rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 3px solid #667eea;
-  display: inline-block;
-}
-
-details .details-content h2:first-child {
-  margin-top: 0;
-}
-
-details .details-content p {
-  color: #475569;
-  line-height: 1.8;
-  margin-bottom: 1rem;
-}
-
-details .details-content ul {
-  margin-left: 1.5rem;
-  margin-bottom: 1.5rem;
-}
-
-details .details-content li {
-  color: #475569;
-  line-height: 1.8;
-  margin-bottom: 0.5rem;
-  position: relative;
-  padding-left: 0.5rem;
-}
-
-details .details-content li::marker {
-  color: #667eea;
-  font-weight: bold;
-}
-
-details .details-content strong {
-  color: #1e293b;
-  font-weight: 600;
-}
-
-details .details-content a {
-  color: #667eea;
-  text-decoration: none;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  border-bottom: 2px solid transparent;
-}
-
-details .details-content a:hover {
-  color: #764ba2;
-  border-bottom-color: #764ba2;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  details {
-    margin: 1.5rem 0;
-    border-radius: 12px;
-  }
-
-  summary {
-    padding: 1.25rem 1.5rem;
-    font-size: 1.1rem;
-  }
-
-  details .details-content {
-    padding: 1.5rem;
-  }
-
-  details .details-content h2 {
-    font-size: 1.25rem;
-  }
-}
-</style>
-
-</body>
+{{/* Load external styles */}}
+{{ $postStyles := resources.Get "scss/pages/posts-single.scss" }}
+{{ if $postStyles }}
+  {{ $postStyles = $postStyles | toCSS | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $postStyles.RelPermalink }}" integrity="{{ $postStyles.Data.Integrity }}">
+{{ end }}
 
 {{ end }}

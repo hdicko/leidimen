@@ -1,100 +1,134 @@
-{{/* Template: galleries/single.html
-  Purpose: Individual gallery page template
-  Context: Displays single photo gallery with image grid and Fancybox lightbox
-
+{{/* 
+  Template: galleries/single.html
+  Purpose: Individual gallery page with structured data and accessibility enhancements
+  Context: Displays photo gallery with semantic HTML, SEO, and Fancybox lightbox
+  
   Features:
+  - Semantic HTML5 structure with article and figure elements
+  - JSON-LD structured data for ImageGallery schema
+  - ARIA labels and landmarks for accessibility
+  - Lazy loading for images
   - Responsive image grid (4 columns desktop, 3 tablet, 2 mobile)
-  - Automatic image thumbnail generation (400x300 crop)
-  - Fancybox lightbox integration for full-size viewing
-  - Hover scale effect on gallery items
-  - Fallback message when gallery is empty
-  - Commented-out header section (title, description, back button)
-
+  - Fancybox lightbox integration
+  - External SCSS for styling
+  
   Data Structure:
-  - .Title: Gallery title (currently not displayed)
-  - .Content: Gallery description (currently not displayed)
+  - .Title: Gallery title
+  - .Content: Gallery description
+  - .Date: Publication date
   - .Resources.ByType "image": All image page resources
-
+  
   Dependencies:
-  - Fancybox library (must be loaded in page)
+  - Fancybox library for lightbox
   - Bootstrap 5 for grid system
+  - assets/scss/pages/galleries-single.scss
   - Hugo image processing (.Fill)
-
+  
   Image Processing:
-  - Thumbnails: 400x300px crop using Hugo .Fill
+  - Thumbnails: 400x300px crop with WebP
   - Full images: Original size via RelPermalink
-  - All images must be page resources (in same folder as index.md)
-
-  Note: Header section is commented out. Uncomment lines 6-16 to show title and back button.
+  - All images must be page resources
 */}}
 
 {{ define "main" }}
 
-  <section class="gallery-detail py-5">
-    <div class="container">
-      <!-- Header -->
-      <!-- <div class="text-center mb-5">
-      <h1 class="display-4 fw-bold mb-3">{{ .Title }}</h1>
-      {{ with .Content }}
-        <div class="lead text-muted mb-4">
-          {{ . }}
-        </div>
-      {{ end }}
-      <a href="{{ "/galleries/" | relURL }}" class="btn btn-outline-primary">
-        <i class="bi bi-arrow-left"></i> Retour aux galeries
-      </a>
-    </div> -->
+{{/* Structured Data - JSON-LD for ImageGallery */}}
+{{ with .Resources.ByType "image" }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ImageGallery",
+  "name": {{ $.Title | jsonify }},
+  "description": {{ with $.Description }}{{ . | jsonify }}{{ else }}{{ $.Summary | plainify | jsonify }}{{ end }},
+  "datePublished": {{ $.Date.Format "2006-01-02T15:04:05Z07:00" | jsonify }},
+  "url": {{ $.Permalink | jsonify }},
+  "image": [
+    {{ range $i, $img := . }}{{ if $i }},{{ end }}
+    {
+      "@type": "ImageObject",
+      "url": {{ $img.Permalink | jsonify }},
+      "name": {{ $img.Name | jsonify }},
+      "width": {{ $img.Width }},
+      "height": {{ $img.Height }}
+    }
+    {{ end }}
+  ]
+}
+</script>
+{{ end }}
 
-      <!-- Gallery Grid -->
-      {{ with .Resources.ByType "image" }}
-        <div class="row g-3">
-          {{ range . }}
-            {{ $img := . }}
-            {{ $thumb := $img.Fill "400x300" }}
-            <div class="col-6 col-md-4 col-lg-3">
-              <a
-                href="{{ $img.RelPermalink }}"
-                data-fancybox="gallery"
-                class="d-block gallery-item">
-                <img
-                  src="{{ $thumb.RelPermalink }}"
-                  class="img-fluid rounded shadow-sm"
-                  alt="{{ $img.Name }}" />
-              </a>
-            </div>
-          {{ end }}
-        </div>
-      {{ else }}
-        <div class="alert alert-info text-center">
-          <i class="bi bi-info-circle"></i> Aucune image dans cette galerie pour
-          le moment.
+
+<article class="gallery-single" itemscope itemtype="https://schema.org/ImageGallery" data-aos="fade-up">
+  <div class="container py-5">
+    {{/* Gallery Header */}}
+    <header class="gallery-header text-center mb-5">
+      <h1 class="display-4 fw-bold mb-3" itemprop="name">{{ .Title }}</h1>
+      
+      {{ with .Content }}
+      <div class="lead text-muted mb-4" itemprop="description">
+        {{ . }}
+      </div>
+      {{ end }}
+      
+      <div class="gallery-meta text-muted">
+        <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}" itemprop="datePublished">
+          <i class="bi bi-calendar3" aria-hidden="true"></i>
+          <span class="visually-hidden">Publié le </span>
+          {{ .Date.Format "2 January 2006" }}
+        </time>
+        {{ with .Resources.ByType "image" }}
+        <span class="ms-3">
+          <i class="bi bi-images" aria-hidden="true"></i>
+          {{ len . }} {{ if eq (len .) 1 }}photo{{ else }}photos{{ end }}
+        </span>
+        {{ end }}
+      </div>
+      
+      <a href="{{ "/galleries/" | relURL }}" class="btn btn-outline-primary mt-3">
+        <i class="bi bi-arrow-left" aria-hidden="true"></i> Retour aux galeries
+      </a>
+    </header>
+
+    {{/* Gallery Grid */}}
+    {{ with .Resources.ByType "image" }}
+    <div class="row g-3" role="list" aria-label="Galerie de photos">
+      {{ range $index, $img := . }}
+        {{ $thumb := $img.Fill "400x300 webp q85" }}
+        <div class="col-6 col-md-4 col-lg-3" role="listitem">
+          <a
+            href="{{ $img.RelPermalink }}"
+            data-fancybox="gallery"
+            data-caption="{{ $img.Name }}"
+            class="d-block gallery-item"
+            aria-label="Photo {{ add $index 1 }} sur {{ len . }}">
+            <figure class="mb-0">
+              <img
+                src="{{ $thumb.RelPermalink }}"
+                class="img-fluid rounded shadow-sm"
+                alt="{{ with $img.Title }}{{ . }}{{ else }}Photo {{ add $index 1 }}{{ end }}"
+                width="{{ $thumb.Width }}"
+                height="{{ $thumb.Height }}"
+                loading="lazy"
+                itemprop="image" />
+            </figure>
+          </a>
         </div>
       {{ end }}
     </div>
-  </section>
+    {{ else }}
+    <div class="alert alert-info text-center" role="status">
+      <i class="bi bi-info-circle" aria-hidden="true"></i> 
+      Aucune image dans cette galerie pour le moment.
+    </div>
+    {{ end }}
+  </div>
+</article>
 
-  <style>
-    .gallery-item {
-      position: relative;
-      overflow: hidden;
-      border-radius: 8px;
-      display: block;
-      transition: transform 0.3s ease;
-    }
+{{/* Load external styles */}}
+{{ $galleryStyles := resources.Get "scss/pages/galleries-single.scss" }}
+{{ if $galleryStyles }}
+  {{ $galleryStyles = $galleryStyles | toCSS | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $galleryStyles.RelPermalink }}" integrity="{{ $galleryStyles.Data.Integrity }}">
+{{ end }}
 
-    .gallery-item:hover {
-      transform: scale(1.05);
-    }
-
-    .gallery-item img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-      transition: transform 0.3s ease;
-    }
-
-    .gallery-item:hover img {
-      transform: scale(1.1);
-    }
-  </style>
 {{ end }}

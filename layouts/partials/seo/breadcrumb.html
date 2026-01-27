@@ -1,0 +1,42 @@
+{{/* Breadcrumb Structured Data - JSON-LD 
+  Purpose: Provide breadcrumb navigation structure for search engines
+  Usage: Include in pages that have a clear navigation hierarchy
+  
+  Features:
+  - Automatic breadcrumb generation from URL structure
+  - Search engine visibility improvement
+  - Enhanced SERP display
+*/}}
+
+{{ if not .IsHome }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Accueil",
+      "item": "{{ .Site.BaseURL }}"
+    }
+    {{ if .Parent }}
+    ,{
+      "@type": "ListItem",
+      "position": 2,
+      "name": "{{ .Parent.Title }}",
+      "item": "{{ .Parent.Permalink }}"
+    }
+    {{ end }}
+    {{ if not .IsSection }}
+    ,{
+      "@type": "ListItem",
+      "position": {{ if .Parent }}3{{ else }}2{{ end }},
+      "name": "{{ .Title }}",
+      "item": "{{ .Permalink }}"
+    }
+    {{ end }}
+  ]
+}
+</script>
+{{ end }}

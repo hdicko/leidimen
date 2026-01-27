@@ -41,6 +41,35 @@
 {{ define "main" }}
 {{/* Context7 Individual Profile Page */}}
 
+{{/* Structured Data - JSON-LD for Person */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "{{ .Title }}",
+  {{ with .Params.card.image }}"image": "{{ . | absURL }}",{{ end }}
+  "jobTitle": "{{ .Params.card.title }}",
+  "description": "{{ with .Params.card.description }}{{ . }}{{ else }}{{ .Summary | plainify }}{{ end }}",
+  "memberOf": {
+    "@type": "Organization",
+    "name": "Leidimen",
+    "url": "{{ .Site.BaseURL }}"
+  },
+  {{ if in .Params.card.membre "fondateur" }}
+  "foundingDate": "2006",
+  {{ end }}
+  "url": "{{ .Permalink }}",
+  {{ with .Params.card.social }}
+  "sameAs": [
+    {{ range $i, $social := . }}{{ if $i }},{{ end }}"{{ $social.link }}"{{ end }}
+  ],
+  {{ end }}
+  "knowsAbout": [
+    {{ range $i, $skill := .Params.skills }}{{ if $i }},{{ end }}"{{ $skill }}"{{ end }}
+  ]
+}
+</script>
+
 {{/* Template variables */}}
 {{ $image := resources.Get .Params.card.image }}
 {{ $anchor := .Params.card.imageAnchor | default "center" }}

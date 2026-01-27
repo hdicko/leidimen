@@ -1,6 +1,7 @@
 <p class="rouded float-start imag-thumbnail">
   <img
     src="{{ .Destination | safeURL }}"
+    loading="lazy"
     {{- with
       .Text
     }}
