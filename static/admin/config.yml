@@ -16,13 +16,27 @@ collections:
     label_singular: "Article"
     folder: "content/posts"
     create: true
+    delete: true # Permet la suppression des posts
     slug: "{{year}}/{{slug}}"
     path: "{{year}}/{{slug}}"
+    extension: "md"
+    format: "yaml-frontmatter"
     media_folder: ""
     public_folder: ""
+    summary: "{{title}} - {{date}}"
+    sortable_fields: ['date', 'title']
+    view_filters:
+      - label: "Brouillons"
+        field: draft
+        pattern: true
+      - label: "Publiés"
+        field: draft
+        pattern: false
     nested:
       depth: 100
       summary: "{{title}}"
+    meta:
+      - { label: "Chemin du fichier", name: "path", widget: "hidden" }
     editor:
       preview: false
     fields:
@@ -127,9 +141,13 @@ collections:
     label_singular: "Membre"
     folder: "content/equipe"
     create: true
+    delete: true # Permet la suppression
     slug: "{{slug}}"
     extension: "md"
     format: "yaml-frontmatter"
+    summary: "{{title}} - {{card.fonction}}"
+    sortable_fields: ['title', 'weight', 'date']
+    identifier_field: "title"
     editor:
       preview: false
     fields:
@@ -233,12 +251,16 @@ collections:
     label_singular: "Village"
     folder: "content/villages"
     create: true
+    delete: true # Permet la suppression
     slug: "{{slug}}"
     extension: "md"
     format: "yaml-frontmatter"
     path: "{{slug}}/_index"
     media_folder: ""
     public_folder: ""
+    summary: "{{title}} - {{population}} habitants"
+    sortable_fields: ['title', 'population']
+    identifier_field: "title"
     editor:
       preview: false
     fields:
@@ -310,9 +332,13 @@ collections:
     label_singular: "Document"
     folder: "content/documents"
     create: true
+    delete: true # Permet la suppression
     slug: "{{slug}}"
     extension: "md"
     format: "yaml-frontmatter"
+    summary: "{{title}} - {{type}}"
+    sortable_fields: ['title', 'date', 'type']
+    identifier_field: "title"
     editor:
       preview: false
     fields:
@@ -359,12 +385,16 @@ collections:
     label_singular: "Galerie"
     folder: "content/galleries"
     create: true
+    delete: true # Permet la suppression
     slug: "{{slug}}"
     extension: "md"
     format: "yaml-frontmatter"
     path: "{{slug}}/index"
     media_folder: ""
     public_folder: ""
+    summary: "{{title}} - {{location}} - {{date}}"
+    sortable_fields: ['title', 'date', 'location']
+    identifier_field: "title"
     editor:
       preview: false
     fields:
