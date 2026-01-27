@@ -194,7 +194,7 @@
           <!-- Action Buttons -->
           {{ $equipePage := .Site.GetPage "/equipe" }}
           <div class="profile-actions">
-            <button class="btn-ctx7-primary" onclick="openContactModal('{{ .Title }}')">
+            <button class="btn-ctx7-primary" data-action="contact" data-member-name="{{ .Title }}">
               <i class="bi bi-envelope-heart"></i>
               <span>Contacter</span>
             </button>
@@ -393,12 +393,12 @@
           </div>
           <div class="card-body-ctx7">
             <div class="actions-grid">
-              <button class="action-btn-ctx7" onclick="openContactModal('{{ .Title }}')">
+              <button class="action-btn-ctx7" data-action="contact" data-member-name="{{ .Title }}">
                 <i class="bi bi-envelope-heart"></i>
                 <span>Envoyer un message</span>
               </button>
               
-              <button class="action-btn-ctx7" onclick="shareProfile()">
+              <button class="action-btn-ctx7" data-action="share" data-url="{{ .Permalink }}" data-title="{{ .Title }}">
                 <i class="bi bi-share"></i>
                 <span>Partager le profil</span>
               </button>
