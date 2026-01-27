@@ -35,8 +35,6 @@ collections:
     nested:
       depth: 100
       summary: "{{title}}"
-    meta:
-      - { label: "Chemin du fichier", name: "path", widget: "hidden" }
     editor:
       preview: false
     fields:
