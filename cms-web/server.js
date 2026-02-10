@@ -7,16 +7,58 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// Validate required environment variables
+const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
+const REPO_OWNER = process.env.GITHUB_REPO_OWNER || 'hdicko';
+const REPO_NAME = process.env.GITHUB_REPO_NAME || 'leidimen';
+const BRANCH = process.env.GITHUB_BRANCH || 'main';
+
+if (!GITHUB_TOKEN) {
+	console.error('❌ ERROR: GITHUB_TOKEN not found in environment variables');
+	console.error('Please create a .env file with your GitHub token.');
+	console.error('See .env.example for reference.');
+	process.exit(1);
+}
+
+// Rate limiting configuration
+const requestCounts = new Map();
+const RATE_LIMIT_WINDOW = 15 * 60 * 1000; // 15 minutes
+const MAX_REQUESTS = 100;
+
+function rateLimiter(req, res, next) {
+	const ip = req.ip || req.connection.remoteAddress;
+	const now = Date.now();
+	
+	if (!requestCounts.has(ip)) {
+		requestCounts.set(ip, { count: 1, resetTime: now + RATE_LIMIT_WINDOW });
+		return next();
+	}
+	
+	const userData = requestCounts.get(ip);
+	
+	if (now > userData.resetTime) {
+		userData.count = 1;
+		userData.resetTime = now + RATE_LIMIT_WINDOW;
+		return next();
+	}
+	
+	if (userData.count >= MAX_REQUESTS) {
+		return res.status(429).json({
+			error: 'Too many requests',
+			message: 'Rate limit exceeded. Please try again later.',
+			retryAfter: Math.ceil((userData.resetTime - now) / 1000)
+		});
+	}
+	
+	userData.count++;
+	next();
+}
+
 // Middleware
 app.use(cors());
-app.use(bodyParser.json());
+app.use(bodyParser.json({ limit: '10mb' })); // Add size limit
 app.use(express.static('.'));
-
-// GitHub Configuration
-const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
-const REPO_OWNER = 'hdicko';
-const REPO_NAME = 'leidimen';
-const BRANCH = 'main';
+app.use('/api', rateLimiter); // Apply rate limiting to API routes
 
 // Initialize Octokit
 const octokit = new Octokit({

@@ -162,6 +162,9 @@
   </div>
 </article>
 
+{{/* Related Posts for Better Internal Linking */}}
+{{ partial "related-posts.html" . }}
+
 {{/* Load external styles */}}
 {{ $postStyles := resources.Get "scss/pages/posts-single.scss" }}
 {{ if $postStyles }}

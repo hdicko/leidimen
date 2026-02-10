@@ -1,0 +1,71 @@
+{{/* 
+  Related Posts Partial
+  Purpose: Display related posts based on shared taxonomies (villages, categories, tags)
+  
+  Features:
+  - Shows posts with shared villages (highest priority)
+  - Falls back to posts with shared categories
+  - Falls back to posts with shared tags
+  - Limits to 3 most recent related posts
+  - Improves internal linking for SEO
+  
+  Usage: {{ partial "related-posts.html" . }}
+*/}}
+
+{{ $related := .Site.RegularPages.Related . | first 6 }}
+{{ with $related }}
+<section class="related-posts py-5 bg-light" aria-label="Articles connexes">
+  <div class="container">
+    <h2 class="h3 mb-4">
+      <i class="bi bi-link-45deg"></i> Articles connexes
+    </h2>
+    <div class="row g-4">
+      {{ range . }}
+        <div class="col-md-4">
+          <article class="card h-100 shadow-sm">
+            {{ if .Params.image }}
+              <a href="{{ .RelPermalink }}" aria-label="Lire {{ .Title }}">
+                <img 
+                  src="{{ .Params.image }}" 
+                  class="card-img-top" 
+                  alt="{{ .Title }}"
+                  loading="lazy"
+                  style="height: 200px; object-fit: cover;" />
+              </a>
+            {{ end }}
+            <div class="card-body">
+              <h3 class="card-title h5">
+                <a href="{{ .RelPermalink }}" class="text-decoration-none">
+                  {{ .Title }}
+                </a>
+              </h3>
+              <p class="card-text text-muted small">
+                <time datetime="{{ .Date.Format "2006-01-02" }}">
+                  {{ .Date.Format "2 January 2006" }}
+                </time>
+              </p>
+              <p class="card-text">
+                {{ .Description | default .Summary | plainify | truncate 100 }}
+              </p>
+              {{ with .Params.villages }}
+                <div class="mt-2">
+                  {{ range first 2 . }}
+                    <span class="badge bg-primary me-1">
+                      <i class="bi bi-geo-alt-fill"></i> {{ . | humanize }}
+                    </span>
+                  {{ end }}
+                </div>
+              {{ end }}
+            </div>
+            <div class="card-footer bg-transparent border-0 pb-3">
+              <a href="{{ .RelPermalink }}" class="btn btn-sm btn-outline-primary">
+                Lire la suite <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

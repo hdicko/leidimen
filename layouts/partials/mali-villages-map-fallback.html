@@ -778,20 +778,31 @@
     }
 
     function showNotification(title, message, type = "info") {
-      // Simple notification function
+      // Simple notification function using safe DOM creation
       const notification = document.createElement("div");
-      notification.className = "notification-ctx7";
       notification.className = `notification-ctx7 notification-${type}`;
 
-      notification.innerHTML = `
-      <div class="notification-ctx7">
-        <i class="bi ${type === "success" ? "bi-check-circle" : type === "info" ? "bi-info-circle" : "bi-exclamation-triangle"} notification-icon notification-icon--${type}"></i>
-        <div>
-          <h6 class="notification-title">${title}</h6>
-          <p class="notification-message">${message}</p>
-        </div>
-      </div>
-    `;
+      const iconClass = type === "success" ? "bi-check-circle" : 
+                        type === "info" ? "bi-info-circle" : 
+                        "bi-exclamation-triangle";
+      
+      const icon = document.createElement("i");
+      icon.className = `bi ${iconClass} notification-icon notification-icon--${type}`;
+      
+      const contentDiv = document.createElement("div");
+      
+      const titleEl = document.createElement("h6");
+      titleEl.className = "notification-title";
+      titleEl.textContent = title;
+      
+      const messageEl = document.createElement("p");
+      messageEl.className = "notification-message";
+      messageEl.textContent = message;
+      
+      contentDiv.appendChild(titleEl);
+      contentDiv.appendChild(messageEl);
+      notification.appendChild(icon);
+      notification.appendChild(contentDiv);
 
       // Notification styles are provided by centralized SCSS; no inline injection needed.
 

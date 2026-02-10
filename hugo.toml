@@ -80,10 +80,12 @@ tel = "+33 6 XX XX XX XX"
 # Default resample filter used for resizing. Default is Box,
 # a simple and fast averaging filter appropriate for downscaling.
 # See https://github.com/disintegration/imaging
-resampleFilter = "Box"
+# Using Lanczos for better quality (SEO & visual)
+resampleFilter = "Lanczos"
 
-# Default JPEG quality setting. Default is 75.
-quality = 75
+# Default JPEG/WebP quality setting. Default is 75.
+# 85 provides better quality for SEO and visual appeal
+quality = 85
 
 # Anchor used when cropping pictures.
 # Default is "smart" which does Smart Cropping, using https://github.com/muesli/smartcrop
@@ -138,6 +140,9 @@ disableLatLong = false
   # customCSS = ["<absolute path to CSS>", "/static/css/test.css", "<or just load it off the internet>"]
 
 ### params social
+  # Twitter username for Twitter Card meta tags (without @)
+  twitter_username = "HamadounDicko"
+
 [[params.social]]
     name = "facebook"
     icon = "fab fa-facebook"
@@ -269,11 +274,28 @@ disableLatLong = false
 
 # Minification configuration
 # Disable JS minification to preserve ES6 syntax (arrow functions, spread operators)
-# HTML and CSS minification remain enabled
+# HTML and CSS minification remain enabled for better performance
 [minify]
   disableJS = true
   disableCSS = false
   disableHTML = false
   disableJSON = false
   disableSVG = false
+  minifyOutput = true
+  
+  [minify.tdewolff]
+    [minify.tdewolff.html]
+      keepDefaultAttrVals = true
+      keepDocumentTags = true
+      keepEndTags = true
+      keepQuotes = true
+      keepWhitespace = false
+    [minify.tdewolff.css]
+      precision = 1
+      keepCSS2 = true
+
+# Build configuration for performance
+[build]
+  writeStats = true
+  useResourceCacheWhen = "fallback"
   disableXML = false

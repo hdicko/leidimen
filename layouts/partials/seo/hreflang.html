@@ -1,0 +1,33 @@
+{{/* 
+  Multilingual SEO Support - Hreflang Tags
+  Purpose: Prepare for future multilingual content with hreflang tags
+  
+  Features:
+  - Indicates language and regional targeting to search engines
+  - Helps prevent duplicate content issues across languages
+  - Improves international SEO
+  
+  Currently: Single language (fr-FR) with x-default fallback
+  Future: Can expand to support en, en-US, en-GB, etc.
+  
+  Usage: Include in head.html partial
+*/}}
+
+{{/* Current page in French */}}
+<link rel="alternate" hreflang="fr" href="{{ .Permalink }}" />
+<link rel="alternate" hreflang="fr-FR" href="{{ .Permalink }}" />
+
+{{/* Default language for international users */}}
+<link rel="alternate" hreflang="x-default" href="{{ .Permalink }}" />
+
+{{/* Future multilingual support - Uncomment when English content is available
+{{ if .IsTranslated }}
+  {{ range .Translations }}
+    <link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}" />
+  {{ end }}
+{{ end }}
+*/}}
+
+{{/* Language meta tags for better AI/LLM understanding */}}
+<meta property="og:locale" content="fr_FR" />
+<meta property="og:locale:alternate" content="en_US" />

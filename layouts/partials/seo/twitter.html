@@ -1,23 +1,55 @@
-{{/* Twitter Card Meta Tags */}}
+{{/* Twitter Card Meta Tags - Optimized */}}
 <meta name="twitter:card" content="summary_large_image" />
+
+{{/* Site Twitter handle */}}
+{{ with .Site.Params.twitter_username }}
+  <meta name="twitter:site" content="@{{ . }}" />
+{{ end }}
+
+{{/* Page author Twitter handle - if specified in frontmatter */}}
+{{ with .Params.author_twitter }}
+  <meta name="twitter:creator" content="@{{ . }}" />
+{{ end }}
+
+{{/* Title - max 70 characters recommended */}}
 <meta
   name="twitter:title"
   content="{{ if .IsHome }}
     {{ .Site.Title }}
   {{ else }}
-    {{ .Title }}
+    {{ .Title | truncate 70 }}
   {{ end }}" />
-<meta
-  name="twitter:description"
-  content="{{ with .Description }}
-    {{ . }}
-  {{ else }}
-    {{ .Site.Params.description }}
-  {{ end }}" />
-{{ with .Params.image }}
-  <meta name="twitter:image" content="{{ . | absURL }}" />
+
+{{/* Description - max 200 characters for Twitter */}}
+{{ $description := "" }}
+{{ if .Description }}
+  {{ $description = .Description }}
+{{ else if .Summary }}
+  {{ $description = .Summary }}
 {{ else }}
-  <meta
-    name="twitter:image"
-    content="{{ "images/leidimen-logo.jpg" | absURL }}" />
+  {{ $description = .Site.Params.description }}
+{{ end }}
+<meta name="twitter:description" content="{{ $description | plainify | truncate 200 }}" />
+
+{{/* Image - validate and optimize */}}
+{{ $image := "" }}
+{{ if .Params.image }}
+  {{ $image = .Params.image }}
+{{ else if .Resources.GetMatch "cover.*" }}
+  {{ $cover := .Resources.GetMatch "cover.*" }}
+  {{ $image = $cover.Permalink }}
+{{ else }}
+  {{ $image = "images/leidimen-logo.jpg" }}
+{{ end }}
+
+{{/* Process image if it's a page resource */}}
+{{ if and .Params.image (.Resources.GetMatch .Params.image) }}
+  {{ $img := .Resources.GetMatch .Params.image }}
+  {{/* Twitter recommends 1200x628px for large cards */}}
+  {{ $resized := $img.Resize "1200x webp q85 lanczos" }}
+  <meta name="twitter:image" content="{{ $resized.Permalink }}" />
+  <meta name="twitter:image:alt" content="{{ with .Params.image_alt }}{{ . }}{{ else }}{{ .Title }}{{ end }}" />
+{{ else }}
+  <meta name="twitter:image" content="{{ $image | absURL }}" />
+  <meta name="twitter:image:alt" content="{{ with .Params.image_alt }}{{ . }}{{ else }}{{ .Site.Title }}{{ end }}" />
 {{ end }}

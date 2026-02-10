@@ -1,0 +1,58 @@
+{{/* 
+  Schema.org Event markup for events and activities
+  Usage: Include this partial in event pages
+  
+  Provides structured data for event-rich results in search engines
+  Events can be displayed with date, location, and registration info
+  
+  Requirements:
+  - Page frontmatter must have event details
+  
+  Example frontmatter:
+  ---
+  event:
+    name: "Assemblée Générale Leidimen 2026"
+    startDate: "2026-02-15T14:00:00+01:00"
+    endDate: "2026-02-15T18:00:00+01:00"
+    location:
+      name: "Salle des Fêtes de Bondoufle"
+      address: "Bondoufle, 91070, France"
+    description: "Assemblée générale annuelle de l'association"
+    url: "https://hdicko.github.io/leidimen/posts/2026/ag-2026/"
+  ---
+*/}}
+
+{{ with .Params.event }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": {{ .name | jsonify }},
+  "description": {{ .description | jsonify }},
+  "startDate": {{ .startDate | jsonify }},
+  {{ with .endDate }}
+  "endDate": {{ . | jsonify }},
+  {{ end }}
+  "eventStatus": "https://schema.org/EventScheduled",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  {{ with .location }}
+  "location": {
+    "@type": "Place",
+    "name": {{ .name | jsonify }},
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": {{ .address | jsonify }}
+    }
+  },
+  {{ end }}
+  {{ with .url }}
+  "url": {{ . | jsonify }},
+  {{ end }}
+  "organizer": {
+    "@type": "Organization",
+    "name": "Leidimen",
+    "url": "{{ $.Site.BaseURL }}"
+  }
+}
+</script>
+{{ end }}

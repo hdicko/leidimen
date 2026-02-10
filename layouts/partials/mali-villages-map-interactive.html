@@ -967,11 +967,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
     } catch (error) {
       console.error('Erreur lors du chargement de la carte:', error);
-      loadingIndicator.innerHTML = `
-        <div class="loading-spinner-ctx7 d-none"></div>
-            showNotification('Carte chargée', 'Tous les villages ont été placés sur la carte', 'success', true);
-        <button onclick="initMap()" class="btn btn-success btn-sm mt-2">Réessayer</button>
-      `;
+      const errorDiv = document.createElement('div');
+      errorDiv.className = 'alert alert-danger';
+      errorDiv.textContent = 'Erreur lors du chargement de la carte. ';
+      const retryBtn = document.createElement('button');
+      retryBtn.onclick = initMap;
+      retryBtn.className = 'btn btn-success btn-sm mt-2';
+      retryBtn.textContent = 'Réessayer';
+      errorDiv.appendChild(retryBtn);
+      loadingIndicator.textContent = '';
+      loadingIndicator.appendChild(errorDiv);
     }
   }
 
@@ -1166,38 +1171,82 @@ document.addEventListener('DOMContentLoaded', function() {
 
     title.textContent = village.name;
 
-    const projectsHtml = village.projects.length > 0
-      ? `<div class="mb-3">
-           <h6><i class="bi bi-tools me-2"></i>Projets en cours</h6>
-           <div class="d-flex flex-wrap gap-2">
-             ${village.projects.map(p => `<span class="badge bg-success">${p}</span>`).join('')}
-           </div>
-         </div>`
-      : '';
+    // Clear previous content safely
+    body.textContent = '';
 
-    body.innerHTML = `
-      <div class="village-detail-content">
-        <p class="lead">${village.description}</p>
-
-        <div class="row g-3 mb-4">
-          <div class="col-6">
-            <div class="detail-stat">
-              <div class="stat-icon"><i class="bi bi-people"></i></div>
-              <div>
-                <div class="stat-value">${village.population || 'N/A'}</div>
-                <div class="stat-label">habitants</div>
-              </div>
-            </div>
-          </div>
-          <div class="col-6">
-            <div class="detail-stat">
-              <div class="stat-icon"><i class="bi bi-geo"></i></div>
-              <div>
-                <div class="stat-value">${village.type === 'chef-lieu' ? 'Chef-lieu' : 'Village'}</div>
-                <div class="stat-label">statut</div>
-              </div>
-            </div>
-          </div>
+    // Create village detail content structure
+    const detailContent = document.createElement('div');
+    detailContent.className = 'village-detail-content';
+    
+    // Add description
+    const description = document.createElement('p');
+    description.className = 'lead';
+    description.textContent = village.description;
+    detailContent.appendChild(description);
+    
+    // Add statistics row
+    const statsRow = document.createElement('div');
+    statsRow.className = 'row g-3 mb-4';
+    
+    // Population stat
+    const popCol = document.createElement('div');
+    popCol.className = 'col-6';
+    popCol.innerHTML = `
+      <div class="detail-stat">
+        <div class="stat-icon"><i class="bi bi-people"></i></div>
+        <div>
+          <div class="stat-value">${village.population || 'N/A'}</div>
+          <div class="stat-label">habitants</div>
+        </div>
+      </div>
+    `;
+    statsRow.appendChild(popCol);
+    
+    // Status stat
+    const statusCol = document.createElement('div');
+    statusCol.className = 'col-6';
+    statusCol.innerHTML = `
+      <div class="detail-stat">
+        <div class="stat-icon"><i class="bi bi-geo"></i></div>
+        <div>
+          <div class="stat-value">${village.type === 'chef-lieu' ? 'Chef-lieu' : 'Village'}</div>
+          <div class="stat-label">statut</div>
+        </div>
+      </div>
+    `;
+    statsRow.appendChild(statusCol);
+    
+    detailContent.appendChild(statsRow);
+    
+    // Add projects if any
+    if (village.projects.length > 0) {
+      const projectsDiv = document.createElement('div');
+      projectsDiv.className = 'mb-3';
+      projectsDiv.innerHTML = `
+        <h6><i class="bi bi-tools me-2"></i>Projets en cours</h6>
+        <div class="d-flex flex-wrap gap-2">
+          ${village.projects.map(p => `<span class="badge bg-success">${p}</span>`).join('')}
+        </div>
+      `;
+      detailContent.appendChild(projectsDiv);
+    }
+    
+    // Add coordinates section
+    const coordDiv = document.createElement('div');
+    coordDiv.className = 'coordinates-info';
+    coordDiv.innerHTML = `
+      <h6><i class="bi bi-geo-alt me-2"></i>Localisation</h6>
+      <p class="text-muted">
+        Latitude: ${village.latitude.toFixed(6)}<br>
+        Longitude: ${village.longitude.toFixed(6)}
+      </p>
+      <button onclick="openInOSM(${village.latitude}, ${village.longitude})" class="btn btn-outline-primary btn-sm">
+        <i class="bi bi-box-arrow-up-right me-1"></i>Voir dans OpenStreetMap
+      </button>
+    `;
+    detailContent.appendChild(coordDiv);
+    
+    body.appendChild(detailContent);
         </div>
 
         ${projectsHtml}
@@ -1263,16 +1312,29 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function showNotification(title, message, type = 'info') {
     const notification = document.createElement('div');
-    notification.className = 'notification-ctx7';
     notification.className = `notification-ctx7 notification-${type}`;
 
-    notification.innerHTML = `
-      <div class="notification-ctx7">
-        <i class="bi ${type === 'success' ? 'bi-check-circle' : type === 'info' ? 'bi-info-circle' : 'bi-exclamation-triangle'} notification-icon notification-icon--${type}"></i>
-        <div>
-          <h6 class="notification-title">${title}</h6>
-          <p class="notification-message">${message}</p>
-        </div>
+    const iconClass = type === 'success' ? 'bi-check-circle' : 
+                      type === 'info' ? 'bi-info-circle' : 
+                      'bi-exclamation-triangle';
+    
+    const icon = document.createElement('i');
+    icon.className = `bi ${iconClass} notification-icon notification-icon--${type}`;
+    
+    const contentDiv = document.createElement('div');
+    
+    const titleEl = document.createElement('h6');
+    titleEl.className = 'notification-title';
+    titleEl.textContent = title;
+    
+    const messageEl = document.createElement('p');
+    messageEl.className = 'notification-message';
+    messageEl.textContent = message;
+    
+    contentDiv.appendChild(titleEl);
+    contentDiv.appendChild(messageEl);
+    notification.appendChild(icon);
+    notification.appendChild(contentDiv);
       </div>
     `;
 

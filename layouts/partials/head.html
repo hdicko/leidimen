@@ -8,6 +8,9 @@
     <meta name="geo.region" content="FR-91" />
     <meta name="geo.placename" content="Bondoufle" />
 
+    {{/* Performance & Resource Hints */}}
+    {{ partial "performance-hints.html" . }}
+
     {{/* NOTE: the Site's title, and if there is a page title, that is set too */}}
     <title>
       {{ block "title" . }}
@@ -32,6 +35,7 @@
     {{/* SEO Meta Tags - Modular partials */}}
     {{ partial "seo/opengraph.html" . }}
     {{ partial "seo/twitter.html" . }}
+    {{ partial "seo/hreflang.html" . }}
 
     {{/* Canonical URL */}}
     <link rel="canonical" href="{{ .Permalink }}" />
@@ -51,6 +55,9 @@
     {{ partial "seo/ai-meta.html" . }}
     {{ partial "seo/json-ld.html" . }}
     {{ partial "seo/breadcrumb.html" . }}
+    {{ partial "seo/faq-schema.html" . }}
+    {{ partial "seo/event-schema.html" . }}
+    {{ partial "seo/howto-schema.html" . }}
 
     {{/* NOTE: For Production make sure you add
       `HUGO_ENV="production"` before your build command

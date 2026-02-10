@@ -823,16 +823,29 @@ document.addEventListener('DOMContentLoaded', function() {
       console.log('Map initialized successfully');
     } catch (error) {
       console.error('Error initializing map:', error);
-      // Show fallback message
-      mapElement.innerHTML = `
-        <div class="map-fallback d-flex align-items-center justify-content-center">
-          <div class="map-fallback-content text-center text-muted">
-            <i class="bi bi-map map-fallback-icon mb-3"></i>
-            <h5>Carte interactive en cours de chargement...</h5>
-            <p>Veuillez patienter ou rafraîchir la page</p>
-          </div>
-        </div>
-      `;
+      // Show fallback message using safe DOM creation
+      mapElement.textContent = '';
+      const fallbackDiv = document.createElement('div');
+      fallbackDiv.className = 'map-fallback d-flex align-items-center justify-content-center';
+      
+      const contentDiv = document.createElement('div');
+      contentDiv.className = 'map-fallback-content text-center text-muted';
+      
+      const icon = document.createElement('i');
+      icon.className = 'bi bi-map map-fallback-icon mb-3';
+      
+      const heading = document.createElement('h5');
+      heading.textContent = 'Carte interactive en cours de chargement...';
+      
+      const paragraph = document.createElement('p');
+      paragraph.textContent = 'Veuillez patienter ou rafraîchir la page';
+      
+      contentDiv.appendChild(icon);
+      contentDiv.appendChild(heading);
+      contentDiv.appendChild(paragraph);
+      fallbackDiv.appendChild(contentDiv);
+      mapElement.appendChild(fallbackDiv);
+    }
     }
 
     function addVillageMarkers() {

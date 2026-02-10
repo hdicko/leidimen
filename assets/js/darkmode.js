@@ -40,16 +40,22 @@ class DarkModeManager {
 	 * Initialize theme and event listeners
 	 */
 	init() {
-		// Apply saved theme on load
-		const savedTheme = this.getSavedTheme();
-		this.applyTheme(savedTheme);
+		try {
+			// Apply saved theme on load
+			const savedTheme = this.getSavedTheme();
+			this.applyTheme(savedTheme);
 
-		// Setup event listeners
-		this.setupToggleListener();
-		this.setupSystemThemeListener();
+			// Setup event listeners
+			this.setupToggleListener();
+			this.setupSystemThemeListener();
 
-		// Expose global function for backward compatibility
-		window.myFunction = () => this.toggle();
+			// Expose global function for backward compatibility
+			window.myFunction = () => this.toggle();
+		} catch (error) {
+			console.error('DarkMode initialization failed:', error);
+			// Fallback to light theme
+			this.applyTheme(DarkModeManager.THEMES.LIGHT);
+		}
 	}
 
 	/**

@@ -39,12 +39,19 @@
   {{- range . -}}
     {{/* Create responsive thumbnail: 400x500px WebP, quality 85, Lanczos resampling */}}
     {{- $resized := .Fill "400x500 top webp q85 lanczos" -}}
+    {{- $alt := .Title | default (.Name | path.BaseName) | humanize -}}
+    {{- $title := .Params.caption | default $alt -}}
 
-    {{/* Generate lightbox link with thumbnail */}}
-    <a href="{{ .Permalink }}" data-lightbox="roadtrip" title="View Image">
+    {{/* Generate lightbox link with thumbnail and SEO-friendly attributes */}}
+    <a href="{{ .Permalink }}" data-lightbox="roadtrip" title="{{ $title }}" aria-label="Voir {{ $alt }} en grand">
       <img
         class="img-fluid rounded shadow p-3 bg-body-tertiary mx-auto"
-        src="{{ $resized.Permalink }}" />
+        src="{{ $resized.Permalink }}"
+        alt="{{ $alt }}"
+        loading="lazy"
+        decoding="async"
+        width="{{ $resized.Width }}"
+        height="{{ $resized.Height }}" />
     </a>
   {{- end -}}
 {{- end -}}

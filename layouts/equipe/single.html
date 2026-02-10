@@ -513,8 +513,8 @@
 */}}
 {{/* Asset Loading */}}
 {{ $styles := "" }}
-{{ if (resources.Get "scss/pages/profile.scss") }}
-  {{ $styles = resources.Get "scss/pages/profile.scss" | toCSS | minify | fingerprint }}
+{{ with resources.Get "scss/pages/profile.scss" }}
+  {{ $styles = . | toCSS | minify | fingerprint }}
 {{ end }}
 {{ if $styles }}
   <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}">
@@ -522,16 +522,16 @@
 
 {{/* Load equipe-single specific styles */}}
 {{ $equipeSingleStyles := "" }}
-{{ if (resources.Get "scss/pages/equipe-single.scss") }}
-  {{ $equipeSingleStyles = resources.Get "scss/pages/equipe-single.scss" | toCSS | minify | fingerprint }}
+{{ with resources.Get "scss/pages/equipe-single.scss" }}
+  {{ $equipeSingleStyles = . | toCSS | minify | fingerprint }}
 {{ end }}
 {{ if $equipeSingleStyles }}
   <link rel="stylesheet" href="{{ $equipeSingleStyles.RelPermalink }}" integrity="{{ $equipeSingleStyles.Data.Integrity }}">
 {{ end }}
 
 {{ $script := "" }}
-{{ if (resources.Get "js/profile.js") }}
-  {{ $script = resources.Get "js/profile.js" | minify | fingerprint }}
+{{ with resources.Get "js/profile.js" }}
+  {{ $script = . | minify | fingerprint }}
 {{ end }}
 {{ if $script }}
   <script src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}" defer></script>
