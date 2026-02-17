@@ -1,5 +1,24 @@
+/**
+ * Prompts Registration Module
+ * 
+ * This module registers pre-configured prompt templates that guide users through
+ * common Hugo site management tasks. Prompts provide structured instructions and
+ * rules for content creation, ensuring consistency with site conventions.
+ * 
+ * Available Prompts:
+ * - new-post: Guide for creating blog posts with proper frontmatter
+ * - new-gallery: Guide for creating photo galleries
+ * - content-audit: Run comprehensive site content validation
+ */
+
 import { z } from "zod";
 
+/**
+ * Register all prompt templates with the MCP server
+ * 
+ * @param {McpServer} server - The MCP server instance
+ * @param {string} hugoRoot - Root directory of the Hugo site
+ */
 export function registerPrompts(server, hugoRoot) {
   // ═══════════════════════════════════════
   // PROMPT: Create a new post with guidance

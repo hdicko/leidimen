@@ -1,6 +1,41 @@
+/**
+ * Create Gallery Tool
+ * 
+ * Creates a new photo gallery page bundle for the Leidimen site.
+ * Uses Hugo's page bundle structure (folder with index.md) to keep
+ * images as page resources alongside the gallery content.
+ * 
+ * Gallery Structure:
+ * - Directory: content/galleries/slug/
+ * - Index file: content/galleries/slug/index.md
+ * - Images: Place .jpg/.png/.webp files in the same folder
+ * 
+ * The {{< gallery >}} shortcode:
+ * - Auto-detects images from page resources
+ * - Automatically loads PhotoSwipe lightbox library
+ * - Generates responsive thumbnails using Hugo's image processing
+ * 
+ * Important:
+ * - Images MUST be page resources (in bundle folder), not in static/
+ * - Supported formats: .jpg, .jpeg, .png, .webp, .gif
+ * - The gallery shortcode handles all image processing and display
+ */
+
 import fs from "fs/promises";
 import path from "path";
 
+/**
+ * Create a new photo gallery page bundle
+ * 
+ * @param {string} hugoRoot - Root directory of the Hugo site
+ * @param {Object} params - Gallery parameters
+ * @param {string} params.title - Gallery title
+ * @param {string} params.slug - URL slug (e.g., 'soiree-2025')
+ * @param {string} [params.description] - Gallery description
+ * @param {string} [params.date] - Date (YYYY-MM-DD), defaults to today
+ * @param {string[]} [params.villages] - Related villages
+ * @returns {Object} MCP tool response with creation status
+ */
 export async function createGallery(hugoRoot, params) {
   const galleryDir = path.join(
     hugoRoot,

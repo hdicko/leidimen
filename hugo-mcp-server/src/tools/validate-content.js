@@ -1,8 +1,35 @@
+/**
+ * Validate Content Tool
+ * 
+ * Validates Hugo content files for common issues and best practices.
+ * Helps maintain content quality and prevent build errors.
+ * 
+ * Validation Checks:
+ * - Required fields: title, date
+ * - Taxonomy values: villages must be lowercase and from valid list
+ * - Moods: must be from predefined list
+ * - Post type field: posts must have type: "posts"
+ * - SEO: description length (max 160 chars for optimal SEO)
+ * - Image bundles: warn if images exist but file isn't index.md
+ * 
+ * Valid Values:
+ * - Villages: douentza, dorool, diona, debere, diambana, darawal,
+ *            tanal, manko, tacouti, ndumpa
+ * - Moods: heureux, triste, inspire, motive, reconnaissant
+ * 
+ * Common Issues:
+ * - Uppercase villages ("Dorool" → should be "dorool")
+ * - Missing type field in posts/
+ * - Description too long (hurts SEO snippet)
+ * - Images in folder but not using index.md (should be page bundle)
+ */
+
 import fs from "fs/promises";
 import path from "path";
 import matter from "gray-matter";
 import { glob } from "glob";
 
+// Valid taxonomy values - must match hugo.toml configuration
 const VALID_VILLAGES = [
   "douentza",
   "dorool",
@@ -24,11 +51,21 @@ const VALID_MOODS = [
   "reconnaissant",
 ];
 
+/**
+ * Validate content files for common issues
+ * 
+ * @param {string} hugoRoot - Root directory of the Hugo site
+ * @param {Object} params - Validation parameters
+ * @param {string} [params.path] - Specific file or folder to validate (relative to content/)
+ * @returns {Object} MCP tool response with validation results
+ */
 export async function validateContent(hugoRoot, params) {
+  // Determine what to validate: specific path or all content
   const searchPath = params.path
     ? path.join(hugoRoot, "content", params.path)
     : path.join(hugoRoot, "content");
 
+  // Build glob pattern based on whether it's a file or directory
   let pattern;
   try {
     const stat = await fs.stat(searchPath);
@@ -48,20 +85,23 @@ export async function validateContent(hugoRoot, params) {
   }
 
   const files = await glob(pattern);
-  const issues = [];
+  const issues = []; // Collect all validation issues
 
+  // Validate each content file
   for (const file of files) {
     const relativePath = path.relative(
       path.join(hugoRoot, "content"),
       file
     );
     const basename = path.basename(file);
+    // Skip Hugo section index files
     if (basename === "_index.md") continue;
 
     try {
+      // Parse frontmatter from Markdown file
       const raw = await fs.readFile(file, "utf-8");
       const { data: fm } = matter(raw);
-      const fileIssues = [];
+      const fileIssues = []; // Issues for this specific file
 
       // Check: title exists
       if (!fm.title) fileIssues.push("⚠️ Missing title");

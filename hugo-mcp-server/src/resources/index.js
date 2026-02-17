@@ -1,7 +1,28 @@
+/**
+ * Resources Registration Module
+ * 
+ * This module provides read-only access to Hugo site data and configuration.
+ * Resources are static or computed data that can be queried by MCP clients.
+ * 
+ * Available Resources:
+ * - site-config: Hugo configuration from hugo.toml
+ * - villages-data: Village information with coordinates and projects
+ * - taxonomies: Available taxonomy terms (villages, categories, moods, tags)
+ * - cms-config: Netlify CMS configuration
+ * - shortcodes: List of available Hugo shortcodes
+ * - site-stats: Content statistics (post counts, distributions)
+ */
+
 import fs from "fs/promises";
 import path from "path";
 import YAML from "yaml";
 
+/**
+ * Register all resource providers with the MCP server
+ * 
+ * @param {McpServer} server - The MCP server instance
+ * @param {string} hugoRoot - Root directory of the Hugo site
+ */
 export function registerResources(server, hugoRoot) {
   // ═══════════════════════════════════════
   // RESOURCE: Site configuration

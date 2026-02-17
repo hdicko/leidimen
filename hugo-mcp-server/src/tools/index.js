@@ -1,3 +1,17 @@
+/**
+ * Tools Registration Module
+ * 
+ * This module registers all executable tools (operations) with the MCP server.
+ * Tools provide functionality for content creation, site building, validation,
+ * and other site management tasks.
+ * 
+ * Tool Categories:
+ * - Content Creation: create-post, create-team-member, create-gallery
+ * - Site Building: build-site, serve-site
+ * - Content Management: list-content, search-content, get-post-content
+ * - Validation & Updates: validate-content, update-frontmatter
+ */
+
 import { z } from "zod";
 import { createPost } from "./create-post.js";
 import { buildSite } from "./build-site.js";
@@ -10,6 +24,13 @@ import { searchContent } from "./search-content.js";
 import { getPostContent } from "./get-post-content.js";
 import { updateFrontmatter } from "./update-frontmatter.js";
 
+/**
+ * Register all tools with the MCP server
+ * Each tool is defined with a name, description, schema, and handler function
+ * 
+ * @param {McpServer} server - The MCP server instance
+ * @param {string} hugoRoot - Root directory of the Hugo site
+ */
 export function registerTools(server, hugoRoot) {
   // ═══════════════════════════════════════
   // TOOL: Create a new blog post
