@@ -3,7 +3,7 @@ node_modules/
 
 # Hugo build outputs
 public/
-resources/
+/resources/
 
 # Hugo cache
 .hugo_build.lock
