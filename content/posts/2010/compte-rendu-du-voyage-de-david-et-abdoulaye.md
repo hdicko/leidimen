@@ -24,26 +24,26 @@ L’objectif principal du voyage était de livrer les dix ordinateurs au lycée 
 ](/images/wordpress/2007-11-dsc00003-small.JPG)[
 ![imgp0531-remise-fournitures-boundoucoli-small.JPG](//leidimen.com/wp-content/uploads/2007/11/imgp0531-remise-fournitures-boundoucoli-small.thumbnail.JPG)
 ](/images/wordpress/2007-11-imgp0531-remise-fournitures-boundoucoli-small.JPG)Nous avons ensuite quitté Douentza pour les villages de Boundoucoli, Debere, Diona, Manko et Bore. Là aussi, le soutien de Leïdimen dans le domaine de l’éducation s’est traduit par le don de fournitures scolaires dans chacune des écoles primaires. C’est ainsi que les jeunes élèves de Boundoucoli, Debere, Manko, Tacouti, N’Dumpa auront, comme l’année dernière, le matériel nécessaire pour étudier dans de meilleurs conditions. Les élèves de Diona ont été pris en charge comme chaque année par l’association Korarou, avec laquelle nous travaillons.
-[Notre projet : fournitures scolaires aux écoles élémentaires](/projets/fournitures)
+[Notre projet : fournitures scolaires aux écoles élémentaires](/posts/2007/fournitures-scolaires-aux-villages)
 [
 ![grains Diona](//leidimen.com/wp-content/uploads/2007/11/imgp0524-achat-du-grains-pour-diona-small.thumbnail.JPG)
 ](/images/wordpress/2007-11-imgp0524-achat-du-grains-pour-diona-small.JPG)A Diona justement, où nous avons été accueillis très chaleureusement par l’ensemble du village et les gestionnaires de l’association Korarou, nous avons contribué à acheter une tonne de mil et à l’acheminer à la banque communale de céréales juste avant les récoltes, au moment où les réserves sont au plus bas.
-[Notre projet : banque de céréales à Diona et Debere](/projets/grains)
+[Notre projet : banque de céréales à Diona et Debere](/posts/2007/banque-de-grains-pour-dorool-et-diona)
 Enfin, à Debere nous nous sommes entretenus longuement avec les femmes du village qui nous ont donné des nouvelles de la banque de micro-crédit que nous avons initiée au début de l’année. Et c’est un grand succès! Notre contribution a créé l’enthousiasme parmi elles, elles se sont toutes inscrites (400 femmes) auprès de la coordinatrice locale du projet, Kadji Pathé pour démarrer depuis
 [
 ![Kadji et femmes Debere](//leidimen.com/wp-content/uploads/2007/11/imgp0534-kadji-pathe-et-femmes-small.JPG)
 ](/images/wordpress/2007-11-imgp0534-kadji-pathe-et-femmes-small.JPG)
 maintenant presque un an leur propre caisse de micro-crédit. Elles y participent toutes. Le taux de remboursement actuel est de 100% et un taux d’intérêt de 60% a été imposé la première année (afin d’augmenter la caisse au plus vite pour qu’elle réponde à leurs besoins). Ce projet, difficile à mettre en place, est pour le moment un succès étonnant et très encourageant. Réunies autour de Kadji Pathé, présidente de la caisse, ces femmes ont beaucoup de courage,  de détermination, et un sens de l’organisation impressionnant. Nous ne pouvons que les encourager dans cette voie.
-[Notre projet : caisse de micro-crédit à Debere](/projets/intro_microfinance_debere)
+[Notre projet : caisse de micro-crédit à Debere](/posts/2007/microcredit-a-debere)
 A Debere, nous nous sommes également entretenus avec l’association Dental Debere, association de village initiée à la suite de notre voyage en 2005.
 Enfin, quelques excellentes nouvelles :
 • Le village de Boundoucoli vient de construire et d’ouvrir son école élémentaire cette année. Il s’agit d’une école de 3 classes qui a été financée par le fonds [Italie-CILSS](http://www.iao.florence.it/lcdrps/welcome/index.php) en coopération avec l’[UNOPS](http://www.unops.org/unops/). Les élèves de première année (CP) rentrent en classe cette année… D’ici 2009, les trois classes (CP, CE1, CE2) seront opérationnelles.
 • Le village de Tanal vient également d’ouvrir une école élémentaire de 3 classes financée par le même fonds CILSS. Dans les deux cas, il s’agit d’écoles élémentaires. Par le biais d’un comité de gestion scolaire, l’ensemble du village cotise pour payer les professeurs et entretenir l’école.
 • Une centaine de femmes de Diona se sont organisées l’année dernière pour faire du maraîchage  sur les rives du lac Korarou, autour de deux jardins. Leurs premiers résultats sont relativement bons, et elles continueront leurs efforts cette année. L’association Korarou et Leïdimen essaieront de joindre leurs forces pour les soutenir dans cette démarche courageuse.
-[Notre projet : maraîchage à Diona](/projets/maraichage_intro)
+[Notre projet : maraîchage à Diona](/posts/2007/maraichage-a-diona)
 Ce voyage aura suscité le développement de quelques idées de projets supplémentaires que nous vous encourageons à aller visiter sur le site :
-• [Coopérative de productrices de nattes à Diona](/projets/nattes_intro)
-• [Banque d’alimentation pour le bétail à Boundoucoli ](/projets/tourteaux)
+• [Coopérative de productrices de nattes à Diona](/posts/2007/cooperative-nattes-diona)
+• [Banque d'alimentation pour le bétail à Boundoucoli](/posts/2007/banque-alimentation-betail-boundoucoli)
 Voilà pour les quelques nouvelles des villages dans lesquels nous avons pu passer lors de ce voyage.
 Nous devons évidemment remercier tous ceux qui nous ont aidé dans nos projets, nos membres à Bamako (Fama…), le Ministère des Maliens de l’Extérieur qui continue à nous soutenir, les officiels administratifs et scolaires qui nous ont assistés pour le projet informatique, et les associations de village Deental Debere, Karwal Boundoucoli, Korarou…
 Amicalement,

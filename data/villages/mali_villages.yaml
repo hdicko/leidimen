@@ -80,3 +80,11 @@
   description: "Village rural dans la région de Douentza"
   population: 1800
   projects: ["Fournitures scolaires"]
+
+- name: "Boundoucoli"
+  latitude: 15.10468
+  longitude: -3.02825
+  type: "village"
+  description: "Petit village rural à quelques kilomètres de Debere, activités d'élevage"
+  population: 700
+  projects: ["élevage", "alimentation animale", "éducation"]

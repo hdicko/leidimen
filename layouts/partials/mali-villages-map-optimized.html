@@ -1,0 +1,510 @@
+<!-- Optimized Mali Villages Map - Lazy Loading -->
+<section class="map-section-opt py-5">
+  <div class="container">
+    <!-- Map Header -->
+    <div class="row justify-content-center">
+      <div class="col-12">
+        <div class="map-header text-center mb-5">
+          <div class="map-icon-wrapper mb-4">
+            <div class="map-icon">
+              <i class="bi bi-geo-alt"></i>
+            </div>
+          </div>
+
+          <span class="badge bg-success mb-3 px-4 py-2 fs-6">
+            <i class="bi bi-globe me-2"></i>Zone d'intervention
+          </span>
+
+          <h2 class="display-5 fw-bold mb-3">
+            Carte interactive des villages au <span class="text-success">Mali</span>
+          </h2>
+          <p class="lead text-muted">
+            Notre zone d'action est située au centre du pays (Région de Mopti, Cercle de Douentza)
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Map Container - Full Width -->
+    <div class="row">
+      <div class="col-12">
+        <div class="map-container-wrapper mb-5">
+          <div id="mapPlaceholder" class="map-placeholder">
+            <div class="placeholder-content text-center p-5">
+              <div class="mb-4">
+                <i class="bi bi-map fs-1 text-success"></i>
+              </div>
+              <h4>Carte interactive des villages</h4>
+              <p class="text-muted mb-4">
+                Cliquez pour charger la carte interactive avec {{ len $.Site.Data.villages.mali_villages }} villages
+              </p>
+              <button class="btn btn-success btn-lg" id="loadMapBtn">
+                <i class="bi bi-play-circle me-2"></i>
+                Charger la carte interactive
+              </button>
+            </div>
+          </div>
+
+          <!-- Interactive Map (loaded on demand) -->
+          <div id="maliVillagesMapContainer" class="d-none">
+            <div id="maliVillagesMap"></div>
+            <div id="mapLoading" class="map-loading text-center p-5">
+              <div class="spinner-border text-success" role="status">
+                <span class="visually-hidden">Chargement...</span>
+              </div>
+              <p class="mt-3">Chargement de la carte...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Villages Grid -->
+    <div class="row">
+      <div class="col-12">
+        <div class="villages-grid mt-5">
+          <h3 class="text-center mb-4">Nos villages d'intervention</h3>
+          <div class="row g-4">"
+            {{ range $index, $village := $.Site.Data.villages.mali_villages }}
+            <div class="col-lg-4 col-md-6">
+              <div class="village-card h-100" data-village-index="{{ $index }}">
+                <div class="card h-100 shadow-sm">
+                  <div class="card-body">
+                    <div class="d-flex align-items-start mb-3">
+                      <div class="village-icon me-3">
+                        {{ if eq $village.type "chef-lieu" }}
+                        <i class="bi bi-building fs-3 text-success"></i>
+                        {{ else }}
+                        <i class="bi bi-house fs-3 text-primary"></i>
+                        {{ end }}
+                      </div>
+                      <div class="flex-grow-1">
+                        <h5 class="card-title mb-1">{{ $village.name }}</h5>
+                        <span class="badge {{ if eq $village.type "chef-lieu" }}bg-success{{ else }}bg-primary{{ end }}">
+                          {{ if eq $village.type "chef-lieu" }}Chef-lieu{{ else }}Village{{ end }}
+                        </span>
+                      </div>
+                    </div>
+
+                    <p class="card-text text-muted small">{{ $village.description }}</p>
+
+                    <div class="village-stats mt-3">
+                      <div class="d-flex align-items-center mb-2">
+                        <i class="bi bi-people me-2 text-muted"></i>
+                        <small><strong>{{ $village.population | default "N/A" }}</strong> habitants</small>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <i class="bi bi-geo me-2 text-muted"></i>
+                        <small>{{ printf "%.4f, %.4f" $village.latitude $village.longitude }}</small>
+                      </div>
+                    </div>
+
+                    {{ if $village.projects }}
+                    <div class="mt-3">
+                      <small class="text-muted d-block mb-2"><i class="bi bi-tools me-1"></i>Projets:</small>
+                      <div class="d-flex flex-wrap gap-1">
+                        {{ range $village.projects }}
+                        <span class="badge bg-secondary small">{{ . }}</span>
+                        {{ end }}
+                      </div>
+                    </div>
+                    {{ end }}
+
+                    <button class="btn btn-outline-success btn-sm mt-3 w-100 locate-village-btn" data-lat="{{ $village.latitude }}" data-lng="{{ $village.longitude }}" data-name="{{ $village.name }}">
+                      <i class="bi bi-geo-alt me-1"></i>Localiser sur la carte
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Map Statistics -->
+    <div class="row">
+      <div class="col-12">
+        <div class="map-stats mt-5 py-4 bg-light rounded">
+          <div class="row g-4 text-center">
+            <div class="col-md-3 col-6">
+              <div class="stat-box">
+                <h3 class="text-success mb-0">{{ len $.Site.Data.villages.mali_villages }}</h3>
+                <p class="text-muted mb-0">Villages</p>
+              </div>
+            </div>
+            <div class="col-md-3 col-6">
+              <div class="stat-box">
+                <h3 class="text-success mb-0">1</h3>
+                <p class="text-muted mb-0">Région</p>
+              </div>
+            </div>
+            <div class="col-md-3 col-6">
+              <div class="stat-box">
+                {{ $totalPopulation := 0 }}
+                {{ range $.Site.Data.villages.mali_villages }}
+                  {{ $totalPopulation = add $totalPopulation (.population | default 0) }}
+                {{ end }}
+                <h3 class="text-success mb-0">{{ $totalPopulation }}</h3>
+                <p class="text-muted mb-0">Habitants</p>
+              </div>
+            </div>
+            <div class="col-md-3 col-6">
+              <div class="stat-box">
+                {{ $allProjects := slice }}
+                {{ range $.Site.Data.villages.mali_villages }}
+                  {{ range .projects }}
+                    {{ $allProjects = $allProjects | append . }}
+                  {{ end }}
+                {{ end }}
+                {{ $uniqueProjects := $allProjects | uniq }}
+                <h3 class="text-success mb-0">{{ len $uniqueProjects }}</h3>
+                <p class="text-muted mb-0">Types de projets</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .map-section-opt {
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  }
+
+  .map-icon-wrapper {
+    display: inline-block;
+  }
+
+  .map-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+  }
+
+  .map-container-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    min-height: 500px;
+    margin-bottom: 2rem;
+    clear: both;
+  }
+
+  .map-placeholder {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border: 2px dashed #10b981;
+    border-radius: 1rem;
+    min-height: 500px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
+
+  .map-placeholder:hover {
+    border-color: #059669;
+    transform: translateY(-2px);
+    box-shadow: 0 15px 50px rgba(16, 185, 129, 0.15);
+  }
+
+  .placeholder-content {
+    max-width: 500px;
+    width: 100%;
+    padding: 2rem;
+  }
+
+  #maliVillagesMapContainer {
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    height: 500px;
+    background: white;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  }
+
+  #maliVillagesMap {
+    width: 100% !important;
+    height: 500px !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+
+  #mapLoading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    z-index: 2;
+  }
+
+  #mapLoading.d-none {
+    display: none !important;
+  }
+
+  .village-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .village-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .village-card .card {
+    border: none;
+    transition: box-shadow 0.2s ease;
+  }
+
+  .village-card:hover .card {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+  }
+
+  .locate-village-btn {
+    transition: all 0.2s ease;
+  }
+
+  .locate-village-btn:hover {
+    transform: scale(1.05);
+  }
+
+  /* Leaflet overrides when map loads */
+  .leaflet-container {
+    width: 100% !important;
+    height: 100% !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+  }
+
+  .leaflet-pane,
+  .leaflet-map-pane {
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .leaflet-popup-content-wrapper {
+    border-radius: 0.5rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .custom-marker {
+    background: #10b981;
+    border: 3px solid white;
+    border-radius: 50%;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1rem;
+  }
+
+  .custom-marker.chef-lieu {
+    background: #f59e0b;
+  }
+
+  .custom-marker.selected {
+    background: #ef4444;
+    transform: scale(1.2);
+    z-index: 1000 !important;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    #maliVillagesMapContainer,
+    #maliVillagesMap {
+      height: 400px !important;
+    }
+  }
+</style>
+
+<script>
+// Village data
+const villages = [
+  {{ range $index, $village := $.Site.Data.villages.mali_villages }}
+  {
+    index: {{ $index }},
+    name: "{{ $village.name }}",
+    latitude: {{ $village.latitude }},
+    longitude: {{ $village.longitude }},
+    type: "{{ $village.type }}",
+    population: {{ $village.population | default 0 }},
+    description: "{{ $village.description }}",
+    projects: [{{ range $village.projects }}"{{ . }}",{{ end }}]
+  }{{ if ne $index (sub (len $.Site.Data.villages.mali_villages) 1) }},{{ end }}
+  {{ end }}
+];
+
+let map = null;
+let markers = {};
+let mapLoaded = false;
+
+// Load map on demand
+document.getElementById('loadMapBtn')?.addEventListener('click', function() {
+  if (!mapLoaded) {
+    loadMap();
+  }
+});
+
+// Locate village buttons
+document.querySelectorAll('.locate-village-btn').forEach(btn => {
+  btn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    const lat = parseFloat(this.dataset.lat);
+    const lng = parseFloat(this.dataset.lng);
+    const name = this.dataset.name;
+
+    if (!mapLoaded) {
+      loadMap(() => {
+        focusOnVillage(lat, lng, name);
+      });
+    } else {
+      focusOnVillage(lat, lng, name);
+    }
+  });
+});
+
+function loadMap(callback) {
+  const placeholder = document.getElementById('mapPlaceholder');
+  const mapContainer = document.getElementById('maliVillagesMapContainer');
+  const mapLoading = document.getElementById('mapLoading');
+
+  // Hide placeholder, show map container
+  placeholder.classList.add('d-none');
+  mapContainer.classList.remove('d-none');
+
+  // Load Leaflet dynamically
+  if (typeof L === 'undefined') {
+    // Load Leaflet CSS
+    const leafletCSS = document.createElement('link');
+    leafletCSS.rel = 'stylesheet';
+    leafletCSS.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+    leafletCSS.integrity = 'sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=';
+    leafletCSS.crossOrigin = '';
+    document.head.appendChild(leafletCSS);
+
+    // Load Leaflet JS
+    const leafletJS = document.createElement('script');
+    leafletJS.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+    leafletJS.integrity = 'sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=';
+    leafletJS.crossOrigin = '';
+    leafletJS.onload = () => initializeMap(callback);
+    document.head.appendChild(leafletJS);
+  } else {
+    initializeMap(callback);
+  }
+}
+
+function initializeMap(callback) {
+  const mapElement = document.getElementById('maliVillagesMap');
+  const mapLoading = document.getElementById('mapLoading');
+
+  // Small delay to ensure container is rendered
+  setTimeout(() => {
+    try {
+      // Create map centered on Douentza
+      map = L.map('maliVillagesMap', {
+        center: [15.0068, -2.9530],
+        zoom: 10,
+        scrollWheelZoom: true,
+        zoomControl: true
+      });
+
+      // Add OpenStreetMap tiles
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors',
+        maxZoom: 18,
+        minZoom: 8
+      }).addTo(map);
+
+      // Add villages as markers
+      villages.forEach((village) => {
+        const markerIcon = L.divIcon({
+          className: `custom-marker ${village.type === 'chef-lieu' ? 'chef-lieu' : ''}`,
+          html: village.type === 'chef-lieu' ? '<i class="bi bi-building"></i>' : '<i class="bi bi-house"></i>',
+          iconSize: [30, 30],
+          iconAnchor: [15, 15],
+          popupAnchor: [0, -15]
+        });
+
+        const marker = L.marker([village.latitude, village.longitude], {
+          icon: markerIcon
+        }).addTo(map);
+
+        // Popup content
+        const popupContent = `
+          <div class="p-2">
+            <h6 class="fw-bold mb-2">${village.name}</h6>
+            <p class="small mb-2">${village.description}</p>
+            <div class="small">
+              <strong>Population:</strong> ${village.population || 'N/A'}<br>
+              <strong>Type:</strong> ${village.type === 'chef-lieu' ? 'Chef-lieu' : 'Village'}<br>
+              ${village.projects.length > 0 ? `<strong>Projets:</strong> ${village.projects.join(', ')}` : ''}
+            </div>
+          </div>
+        `;
+
+        marker.bindPopup(popupContent);
+        marker.bindTooltip(village.name, { direction: 'top', offset: [0, -15] });
+
+        markers[village.name] = marker;
+      });
+
+      mapLoaded = true;
+
+      // Hide loading indicator and invalidate map size
+      setTimeout(() => {
+        mapLoading.classList.add('d-none');
+        map.invalidateSize();
+      }, 300);
+
+      if (callback) callback();
+
+    } catch (error) {
+      console.error('Erreur lors du chargement de la carte:', error);
+      mapLoading.innerHTML = '<div class="alert alert-danger m-3">Erreur lors du chargement de la carte. Veuillez réessayer.</div>';
+    }
+  }, 100);
+}
+
+function focusOnVillage(lat, lng, name) {
+  if (map) {
+    map.setView([lat, lng], 13);
+    if (markers[name]) {
+      markers[name].openPopup();
+    }
+
+    // Scroll to map
+    document.getElementById('maliVillagesMap').scrollIntoView({
+      behavior: 'smooth',
+      block: 'center'
+    });
+  }
+}
+</script>

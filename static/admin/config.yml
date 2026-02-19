@@ -95,6 +95,7 @@ collections:
         required: false
         hint: "Sélectionnez les villages concernés par cet article"
         options:
+          - { label: "Boundoucoli", value: "boundoucoli" }
           - { label: "Darawal", value: "darawal" }
           - { label: "Debere", value: "debere" }
           - { label: "Diambana", value: "diambana" }
