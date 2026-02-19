@@ -1,13 +1,21 @@
 ---
 title: "Nouveau projet d'extension de l'école de Dorool"
 date: 2026-01-26
-villages: ["dorool"]
-categories: ["Éducation"]
-tags: ["école", "projet", "construction", "éducation"]
-moods: ["Inspiré", "Motivé"]
+draft: false
 description: "Lancement d'un nouveau projet d'extension de l'école de Dorool pour accueillir plus d'élèves et améliorer les conditions d'apprentissage."
 image: "/images/uploads/ecole-dorool-2026.jpg"
-draft: false
+villages:
+  - "dorool"
+categories:
+  - "Éducation"
+tags:
+  - "école"
+  - "projet"
+  - "construction"
+  - "éducation"
+moods:
+  - "inspire"
+  - "motive"
 ---
 
 ## Un nouveau chapitre pour l'éducation à Dorool

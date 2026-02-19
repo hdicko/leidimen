@@ -13,15 +13,11 @@ title: Documents
 ADPEK - Association pour le developpement et la promotion de l’education de Korarou
 { .display-6 .text-center}
 
-[Déclaration D'association de Leidimen](hammadoun/status-de-leidimen.pdf)
+[Déclaration D'association de Leidimen](leidimen/status-de-adpk.pdf)
 
-[Association pour le développement et la promotion de l'éducation de Korarou](leidimen/Asso.pdf)
-
-[Bureau de l'association pour le developpement et la promotion de l'éducation](leidimen/ADPEK-bureau.pdf)
+[Association pour le développement et la promotion de l'éducation de Korarou](leidimen/ADPK-information.pdf)
 
 [Promotion de l’éducation](leidimen/ADPEK-creation.pdf)
-
-[Liste de présence à l'assemblée générale de l'ADPEK - Association pour le developpement et la promotion de l'education de KORAROU](leidimen/list-presence-assemblee-generale.pdf)
 
 [Rapport sur la première étape ](leidimen/ADPEK-etape1.pdf)
 
@@ -34,13 +30,15 @@ References
 
 [Reflexions sur le conflit peulh Boni - Douentza](references/conflit-peulh-boni-dtza.pdf)
 
-[Colonisation et société de cour](references/LHS_175_0039.pdf)
+[Colonisation et société de cour](references/colonisation.pdf)
 
 [L'aristocratie peule et la révolution des clercs musulmans (vallée du Sénégal)](references/histoire-des-noirs.pdf)
 
 [Le plan d'aménagement de la région de Douentza entre 2012 et 2022](Douentza/Douentza1.pdf)
 
 [Alphabet adlan - Wikipedia](fulfulde/fulfulde.pdf)
+
+[L'ARISTOCRATIE PEULE ET LA RÉVOLUTION DES CLERCS MUSULMANS (VALLÉE DU SÉNÉGAL)](fulfulde/KAMARA.pdf)
 
 ---
 

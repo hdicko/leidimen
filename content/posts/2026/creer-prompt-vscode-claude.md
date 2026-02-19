@@ -1,13 +1,19 @@
 ---
 title: "Créer un Nouveau Prompt pour la Création de Blog"
 date: 2026-01-21
-villages: ["douentza"]
-categories: ["Éducation"]
-tags: ["technologie", "formation", "outils"]
-moods: ["motivé"]
-description: "Guide pratique pour créer des prompts personnalisés dans Visual Studio Code avec Claude Sonnet 4.5 pour automatiser la création de contenus."
-image: ""
 draft: false
+description: "Guide pratique pour créer des prompts personnalisés dans Visual Studio Code avec Claude Sonnet 4.5 pour automatiser la création de contenus."
+image: "/images/uploads/default.jpeg"
+villages:
+  - "douentza"
+categories:
+  - "Éducation"
+tags:
+  - "technologie"
+  - "formation"
+  - "outils"
+moods:
+  - "motive"
 ---
 
 ## Introduction

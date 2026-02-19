@@ -1,14 +1,20 @@
 ---
 title: "Maraîchage à Diona 2 via mcp"
 date: 2026-02-16
-type: "posts"
-villages: ["diona"]
-categories: ["Infrastructure"]
-tags: ["maraîchage", "agriculture", "légumes", "irrigation"]
-moods: ["motive"]
+draft: false
 description: "Le maraîchage dans la région de Diona : culture de légumes sur trois mois avec irrigation quotidienne pour pommes de terre, carottes, oignons et autres cultures."
 image: "/images/uploads/diona-maraichage.jpg"
-draft: false
+villages:
+  - "diona"
+categories:
+  - "Infrastructure"
+tags:
+  - "maraîchage"
+  - "agriculture"
+  - "légumes"
+  - "irrigation"
+moods:
+  - "motive"
 ---
 
 ## Le Maraîchage

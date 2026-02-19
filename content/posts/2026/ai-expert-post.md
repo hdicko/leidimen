@@ -1,13 +1,19 @@
 ---
 title: "Intelligence Artificielle et Développement en Milieu Rural"
 date: 2026-01-21
-villages: ["douentza"]
-categories: ["Village"]
-tags: ["AIexpert", "technologie", "innovation"]
-moods: []
-description: "Explorer le potentiel de l'intelligence artificielle pour soutenir les projets de développement dans les villages du Mali."
-image: ""
 draft: false
+description: "Explorer le potentiel de l'intelligence artificielle pour soutenir les projets de développement dans les villages du Mali."
+image: "/images/uploads/default.jpeg"
+villages:
+  - "douentza"
+categories:
+  - "Éducation"
+tags:
+  - "intelligence artificielle"
+  - "technologie"
+  - "innovation"
+moods:
+  - "inspire"
 ---
 
 ## Introduction

@@ -7,7 +7,7 @@ title: Douentza
 References et lectures
 { .bg-secondary .text-center}
 
-[Reflexions sur le conflit peulh Boni - Douentza](/documents/references/conflit-peulh-boni-dtza.pdf)
+[Reflexions sur le conflit peulh Boni - Douentza](/documents/Douentza/conflit-peulh-boni-dtza.pdf)
 { .container .fs-6 .text-center}
 
 [Douentza - Info](/documents/Douentza/Douentza1.pdf)

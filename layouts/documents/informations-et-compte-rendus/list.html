@@ -144,11 +144,11 @@
                     class="btn btn-outline-primary w-100 d-flex align-items-center justify-content-center">
                     <i class="bi bi-arrow-right-circle me-2"></i>
                     <span class="fw-semibold">
-                      {{ if in .RelPermalink "informations" }}
-                        Voir les informations
+                      {{ if eq .Params.slug "compte-rendu" }}
+                        Lire les comptes rendus
                       {{ else }}
-                        {{ if in .RelPermalink "compte-rendu" }}
-                          Lire les comptes rendus
+                        {{ if eq .Params.slug "informations" }}
+                          Voir les informations
                         {{ else }}
                           Consulter
                         {{ end }}
@@ -170,7 +170,7 @@
               <div class="card-body p-5">
                 <h3 class="h4 text-primary mb-4 d-flex align-items-center">
                   <i class="bi bi-geo-alt me-2"></i>
-                  Localisation et informations complémentaires
+                  Localisation de nos villages
                 </h3>
                 <div class="content-area">
                   {{ .Content }}
