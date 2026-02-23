@@ -1,12 +1,17 @@
 ---
-title: "Marché artisanal malien"
+title: Marché artisanal malien
 date: 2010-01-01
-villages: ["douentza"]
-categories: ["Culture"]
-tags: ["archive", "wordpress", "infos-sorties"]
-description: "Marché artisanal malien"
 draft: false
-source: "https://leidimen.com/marche-artisanal-malien"
+description: 'Douentza: Marché artisanal malien - En savoir plus sur nos initiatives en culture.'
+categories:
+- Culture
+tags:
+- archive
+- wordpress
+- infos-sorties
+villages:
+- douentza
+source: https://leidimen.com/marche-artisanal-malien
 ---
 
 Le marché de l’artisanat malien aura lieu du 22 au 29 octobre sur la place de l’agora à Evry (cette place est située dans le centre commercial de l’agora).

@@ -1,13 +1,17 @@
 ---
-title: "Fête des associations 21/09/08"
-date: 2008-09-14T17:01:00+01:00
-author: "Aissa Dicko"
-description: "Invitation à la fête des associations de Bondoufle"
+title: Fête des associations 21/09/08
+date: 2008-09-14 17:01:00+01:00
 draft: false
-categories: ["News Leidimen"]
-tags: ["événement", "bondoufle"]
+description: Fête des associations 21/09/08 - En savoir plus sur nos initiatives en news leidimen.
+author: Aissa Dicko
+categories:
+- News Leidimen
+tags:
+- événement
+- bondoufle
 villages: []
-moods: ["Motivé"]
+moods:
+- Motivé
 ---
 
 Bonjour à tous!

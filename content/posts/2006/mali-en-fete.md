@@ -1,13 +1,22 @@
 ---
-title: "Le Mali en fête"
-date: 2006-10-06T07:09:00+01:00
-author: "Olivier Dicko"
-description: "Le Mali au cœur de l'actualité culturelle en Île-de-France avec le festival Afrik'art"
+title: Le Mali en fête
+date: 2006-10-06 07:09:00+01:00
 draft: false
-categories: ["Sorties"]
-tags: ["culture", "mali", "festival", "artisanat", "musique", "evry"]
+description: Le Mali en fête - En savoir plus sur nos initiatives en sorties.
+author: Olivier Dicko
+categories:
+- Sorties
+tags:
+- culture
+- mali
+- festival
+- artisanat
+- musique
+- evry
 villages: []
-moods: ["Heureux", "Inspiré"]
+moods:
+- Heureux
+- Inspiré
 ---
 
 ## Le Mali au cœur de l'Île-de-France 🇲🇱

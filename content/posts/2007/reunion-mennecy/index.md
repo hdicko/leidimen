@@ -1,14 +1,21 @@
 ---
-title: "Réunion à Mennecy"
-date: 2007-10-28T19:40:00+01:00
-author: "Moussa Dicko"
-description: "Compte-rendu de la réunion du 28 octobre à Mennecy avec retour du voyage au Mali"
+title: Réunion à Mennecy
+date: 2007-10-28 19:40:00+01:00
 draft: false
-categories: ["News Leidimen", "Réunions"]
-tags: ["réunion", "mennecy", "mali", "projets"]
+description: Réunion à Mennecy - En savoir plus sur nos initiatives en news leidimen.
+author: Moussa Dicko
+image: reunion-1.jpg
+categories:
+- News Leidimen
+- Réunions
+tags:
+- réunion
+- mennecy
+- mali
+- projets
 villages: []
-moods: ["Motivé"]
-image: "reunion-1.jpg"
+moods:
+- Motivé
 ---
 
 ## Une réunion productive

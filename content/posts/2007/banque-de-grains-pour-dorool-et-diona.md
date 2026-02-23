@@ -1,13 +1,22 @@
 ---
-title: "Banque de grains pour Dorool et Diona"
+title: Banque de grains pour Dorool et Diona
 date: 2007-11-01
-villages: ["dorool", "diona"]
-categories: ["Agriculture", "Sécurité alimentaire"]
-tags: ["banque de grains", "mil", "riz", "sécurité alimentaire", "agriculture"]
-description: "Projets de soutien aux banques de céréales de Dorool et Diona pour assurer la sécurité alimentaire des villages"
-image: "/images/wordpress/2007-11-imgp0524-achat-du-grains-pour-diona-small.JPG"
 draft: false
-type: "posts"
+description: 'Dorool: Banque de grains pour Dorool et Diona - En savoir plus sur nos initiatives en agriculture.'
+image: /images/wordpress/2007-11-imgp0524-achat-du-grains-pour-diona-small.JPG
+categories:
+- Agriculture
+- Sécurité alimentaire
+tags:
+- banque de grains
+- mil
+- riz
+- sécurité alimentaire
+- agriculture
+villages:
+- dorool
+- diona
+type: posts
 ---
 
 ## Qu'est-ce qu'une banque de céréales ?

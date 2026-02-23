@@ -2,10 +2,15 @@
 title: Une école pour Dorool
 date: 2025-12-29
 lastmod: 2025-12-29
-author: Leidimen
 draft: false
-description: ""
+description: 'Dorool: Une école pour Dorool - En savoir plus sur nos initiatives en actualités.'
+author: Leidimen
 image: /images/uploads/ecole-dorool.jpeg
+categories:
+- Actualités
+villages:
+- dorool
+- diona
 ---
 
 Voici **Ibrahim**, **Faadi**, **Leyla** et **Issa**.

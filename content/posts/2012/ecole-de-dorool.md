@@ -1,12 +1,17 @@
 ---
-title: "Images de l'École et des élèves de Dorool"
+title: Images de l'École et des élèves de Dorool
 date: 2012-01-01
-villages: ["dorool"]
-categories: ["Éducation"]
-tags: ["archive", "wordpress", "Divers"]
-description: "Ecole de Dorool"
 draft: false
-source: "https://leidimen.com/ecole-de-dorool"
+description: 'Dorool: Images de l''École et des élèves de Dorool - En savoir plus sur nos initiatives en éducation.'
+categories:
+- Éducation
+tags:
+- archive
+- wordpress
+- Divers
+villages:
+- dorool
+source: https://leidimen.com/ecole-de-dorool
 ---
 
 Quelques nouvelles en images (vous pouvez cliquer sur les photos pour les agrandir):

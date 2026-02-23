@@ -1,13 +1,20 @@
 ---
-title: "Réunion à Cachan"
-date: 2007-11-26T07:27:00+01:00
-author: "Moussa Dicko"
-description: "Compte-rendu de la réunion du CA du 24 novembre à Cachan"
+title: Réunion à Cachan
+date: 2007-11-26 07:27:00+01:00
 draft: false
-categories: ["News Leidimen", "Réunions"]
-tags: ["réunion", "conseil d'administration", "budget", "projets"]
+description: Réunion à Cachan - En savoir plus sur nos initiatives en news leidimen.
+author: Moussa Dicko
+categories:
+- News Leidimen
+- Réunions
+tags:
+- réunion
+- conseil d'administration
+- budget
+- projets
 villages: []
-moods: ["Motivé"]
+moods:
+- Motivé
 ---
 
 ## Réunion du Conseil d'Administration

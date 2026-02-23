@@ -1,13 +1,23 @@
 ---
-title: "Voyage associatif au Mali 2007"
-date: 2007-09-27T00:59:00+01:00
-author: "Eva Dicko"
-description: "Hamassala David part au Mali du 24 septembre au 6 octobre pour faire avancer les projets"
+title: Voyage associatif au Mali 2007
+date: 2007-09-27 00:59:00+01:00
 draft: false
-categories: ["News Leidimen"]
-tags: ["mali", "voyage", "projets", "villages"]
-villages: ["douentza", "debere", "diona"]
-moods: ["Motivé", "Inspiré"]
+description: 'Douentza: Voyage associatif au Mali 2007 - En savoir plus sur nos initiatives en news leidimen.'
+author: Eva Dicko
+categories:
+- News Leidimen
+tags:
+- mali
+- voyage
+- projets
+- villages
+villages:
+- douentza
+- debere
+- diona
+moods:
+- Motivé
+- Inspiré
 ---
 
 ## Mission au Mali - Septembre/Octobre 2007

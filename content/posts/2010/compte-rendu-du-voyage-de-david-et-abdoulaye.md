@@ -1,12 +1,22 @@
 ---
-title: "Compte-rendu du voyage de David et Abdoulaye"
+title: Compte-rendu du voyage de David et Abdoulaye
 date: 2010-01-01
-villages: ["diona", "debere", "tanal", "manko", "tacouti", "douentza"]
-categories: ["Éducation"]
-tags: ["archive", "wordpress", "news"]
-description: "Compte-rendu du voyage de David et Abdoulaye"
 draft: false
-source: "https://leidimen.com/mon-compte-rendu-de-voyage"
+description: 'Diona: Compte-rendu du voyage de David et Abdoulaye - En savoir plus sur nos initiatives en éducation.'
+categories:
+- Éducation
+tags:
+- archive
+- wordpress
+- news
+villages:
+- diona
+- debere
+- tanal
+- manko
+- tacouti
+- douentza
+source: https://leidimen.com/mon-compte-rendu-de-voyage
 ---
 
 Un grand bonjour à tous!

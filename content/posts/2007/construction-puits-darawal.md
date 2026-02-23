@@ -1,13 +1,20 @@
 ---
-title: "Construction d'un puits à Darawal"
+title: Construction d'un puits à Darawal
 date: 2007-12-01
-villages: ["darawal"]
-categories: ["Infrastructure", "Santé"]
-tags: ["puits", "eau", "santé", "infrastructure"]
-description: "Projet de construction d'un puits à grand diamètre pour fournir de l'eau potable au village de Darawal"
-image: "/images/wordpress/2007-12-puits-3-1.jpg"
 draft: false
-type: "posts"
+description: 'Darawal: Construction d''un puits à Darawal - En savoir plus sur nos initiatives en infrastructure.'
+image: /images/wordpress/2007-12-puits-3-1.jpg
+categories:
+- Infrastructure
+- Santé
+tags:
+- puits
+- eau
+- santé
+- infrastructure
+villages:
+- darawal
+type: posts
 ---
 
 ![Eau sale à Darawal](/images/wordpress/2007-12-puits-3-1.jpg)

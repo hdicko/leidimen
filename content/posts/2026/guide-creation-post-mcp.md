@@ -1,21 +1,21 @@
 ---
-title: "Guide : Créer un post avec le serveur MCP Hugo"
+title: 'Guide : Créer un post avec le serveur MCP Hugo'
 date: 2026-02-17
 draft: false
-description: "Découvrez comment utiliser le serveur MCP pour créer et gérer facilement des articles sur le site Leidimen"
-image: "/images/uploads/default.jpeg"
-villages:
-  - "douentza"
+description: 'Douentza: Guide : Créer un post avec le serveur MCP Hugo - En savoir plus sur nos initiatives en informations.'
+image: /images/uploads/default.jpeg
 categories:
-  - "informations"
+- informations
 tags:
-  - "guide"
-  - "mcp"
-  - "technologie"
-  - "documentation"
+- guide
+- mcp
+- technologie
+- documentation
+villages:
+- douentza
 moods:
-  - "inspire"
-  - "motive"
+- inspire
+- motive
 ---
 
 ## Introduction au serveur MCP Hugo

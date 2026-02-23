@@ -1,21 +1,19 @@
 ---
-title: "Info – Arrivée des ordinateurs à Bamako et info musique"
-date: 2007-02-26T20:37:50+02:00
+title: Info – Arrivée des ordinateurs à Bamako et info musique
+date: 2007-02-26 20:37:50+02:00
 draft: false
-description: "Les 10 ordinateurs sont arrivés à Bamako pour le lycée de Douentza"
-author: "Eva"
-slug: "info-ordi-bamako-2007"
-featured_image: "/img/infos/ordi.jpg"
+description: 'Douentza: Info – Arrivée des ordinateurs à Bamako et info... - En savoir plus sur nos initiatives en actualités.'
+author: Eva
+slug: info-ordi-bamako-2007
 weight: 0
-
-categories: []
-
+image: /img/infos/ordi.jpg
+categories:
+- Actualités
 tags:
-  - "blog"
-  - "info"
-
+- blog
+- info
 villages:
-  - "douentza"
+- douentza
 ---
 
 ## 📅 26 février 2007

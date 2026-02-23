@@ -1,12 +1,17 @@
 ---
-title: "Assemblée Générale 2009"
+title: Assemblée Générale 2009
 date: 2010-01-01
-villages: ["douentza"]
-categories: ["Éducation"]
-tags: ["archive", "wordpress", "news"]
-description: "Assemblée Générale 2009"
 draft: false
-source: "https://leidimen.com/assemblee-generale-2009"
+description: 'Douentza: Assemblée Générale 2009 - En savoir plus sur nos initiatives en éducation.'
+categories:
+- Éducation
+tags:
+- archive
+- wordpress
+- news
+villages:
+- douentza
+source: https://leidimen.com/assemblee-generale-2009
 ---
 
 Bonjour à tous !

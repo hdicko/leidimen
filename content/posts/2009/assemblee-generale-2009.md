@@ -1,10 +1,12 @@
 ---
-title: "Assemblée Générale 2009"
-date: 2009-02-15T17:52:00+01:00
-author: "Melina Dicko"
-description: "L'assemblée générale 2009 aura lieu le samedi 21 février à Bondoufle"
+title: Assemblée Générale 2009
+date: 2009-02-15 17:52:00+01:00
 draft: false
-categories: ["News Leidimen", "Réunions"]
+description: Assemblée Générale 2009 - En savoir plus sur nos initiatives en news leidimen.
+author: Melina Dicko
+categories:
+- News Leidimen
+- Réunions
 tags: []
 villages: []
 moods: []

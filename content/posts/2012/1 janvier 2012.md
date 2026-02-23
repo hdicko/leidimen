@@ -1,22 +1,20 @@
 ---
-title: "Nouvelle AI created by claude"
+title: Nouvelle AI created by claude
 date: 2025-10-10
 draft: false
-description: "Cet article est créé par l'agent AI claude"
-author: "Hamadoun Dicko"
-slug: "ecole-de-dorool"
-featured_image: "/img/logo/leidimen-logo-ai.jpeg"
+description: 'Dorool: Nouvelle AI created by claude - En savoir plus sur nos initiatives en actualités.'
+author: Hamadoun Dicko
+slug: ecole-de-dorool
 weight: 0
-
-categories: []
-
+image: /img/logo/leidimen-logo-ai.jpeg
+categories:
+- Actualités
 tags:
-  - "blog"
-  - "inspire"
-
+- blog
+- inspire
 villages:
-  - "dorool"
-  - "douentza"
+- dorool
+- douentza
 ---
 
 **_A﻿I Claude content_**

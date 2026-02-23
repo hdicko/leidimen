@@ -1,13 +1,20 @@
 ---
-title: "Banque d'alimentation pour le bétail à Boundoucoli"
+title: Banque d'alimentation pour le bétail à Boundoucoli
 date: 2007-11-01
-villages: []
-categories: ["Projet"]
-tags: ["élevage", "bétail", "tourteau", "alimentation animale", "Boundoucoli"]
-description: "Mise en place d'une banque d'aliments pour bétail (tourteau) dans le village de Boundoucoli pour réduire les coûts d'exploitation des éleveurs."
-image: "/images/wordpress/2007-11-dsc01892-small.jpg"
 draft: false
-type: "posts"
+description: Mise en place d'une banque d'aliments pour bétail (tourteau) dans le village de Boundoucoli pour réduire les coûts d'exploitation des éleveurs.
+image: /images/wordpress/2007-11-dsc01892-small.jpg
+categories:
+- Projet
+tags:
+- élevage
+- bétail
+- tourteau
+- alimentation animale
+- Boundoucoli
+villages:
+- boundoucoli
+type: posts
 ---
 
 Le projet consiste en la mise en place d'une banque d'aliments pour bétail (appelés tourteau) dans le village de Boundoucoli. Il permettra de réduire les coûts d'exploitation des éleveurs de Boundoucoli.

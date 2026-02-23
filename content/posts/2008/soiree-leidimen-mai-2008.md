@@ -1,12 +1,20 @@
 ---
-title: "Soirée Leïdimen - 3 mai 2008"
+title: Soirée Leïdimen - 3 mai 2008
 date: 2008-04-10
-categories: ["Événements", "News"]
-tags: ["soirée", "bondoufle", "événement", "défilé", "concert", "fundraising"]
-description: "Soirée au profit de l'association Leïdimen à la salle des fêtes de Bondoufle"
-image: "/images/wordpress/2008-06-soiree_recto.jpg"
 draft: false
-type: "posts"
+description: Soirée Leïdimen - 3 mai 2008 - En savoir plus sur nos initiatives en événements.
+image: /images/wordpress/2008-06-soiree_recto.jpg
+categories:
+- Événements
+- News
+tags:
+- soirée
+- bondoufle
+- événement
+- défilé
+- concert
+- fundraising
+type: posts
 ---
 
 ![Soirée Leidimen](/images/wordpress/2008-06-soiree_recto.jpg)

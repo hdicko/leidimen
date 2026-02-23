@@ -1,12 +1,17 @@
 ---
-title: "nouvelle news 2017"
+title: nouvelle news 2017
 date: 2010-01-01
-villages: ["douentza"]
-categories: ["Éducation"]
-tags: ["archive", "wordpress", "news"]
-description: "nouvelle news 2017"
 draft: false
-source: "https://leidimen.com/nouvelle-news-2017"
+description: 'Douentza: nouvelle news 2017 - En savoir plus sur nos initiatives en éducation.'
+categories:
+- Éducation
+tags:
+- archive
+- wordpress
+- news
+villages:
+- douentza
+source: https://leidimen.com/nouvelle-news-2017
 ---
 
 Bonjour,

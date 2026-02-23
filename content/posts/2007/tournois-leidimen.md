@@ -1,13 +1,20 @@
 ---
-title: "Tournois au profit de Leïdimen"
-date: 2007-07-29T18:32:00+01:00
-author: "Melina Dicko"
-description: "Deux tournois organisés en juillet pour financer du matériel pour l'association"
+title: Tournois au profit de Leïdimen
+date: 2007-07-29 18:32:00+01:00
 draft: false
-categories: ["News Leidimen"]
-tags: ["tournoi", "événement", "financement", "poker"]
+description: Tournois au profit de Leïdimen - En savoir plus sur nos initiatives en news leidimen.
+author: Melina Dicko
+categories:
+- News Leidimen
+tags:
+- tournoi
+- événement
+- financement
+- poker
 villages: []
-moods: ["Heureux", "Reconnaissant"]
+moods:
+- Heureux
+- Reconnaissant
 ---
 
 ## Des événements ludiques au service de la solidarité

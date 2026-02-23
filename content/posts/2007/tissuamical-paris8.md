@@ -1,12 +1,18 @@
 ---
-title: "Accueillir des étudiants étrangers à l'université Paris8"
+title: Accueillir des étudiants étrangers à l'université Paris8
 date: 2007-11-23
-categories: ["Événements", "Solidarité"]
-tags: ["paris8", "étudiants", "interculturel", "tissuamical"]
-description: "Soirée interculturelle TissuAmical à l'Université Paris 8 pour l'accueil des étudiants étrangers"
-image: "/images/wordpress/2008-02-tissuamicla-affiche1.jpg"
 draft: false
-type: "posts"
+description: Accueillir des étudiants étrangers à l'universi... - En savoir plus sur nos initiatives en événements.
+image: /images/wordpress/2008-02-tissuamicla-affiche1.jpg
+categories:
+- Événements
+- Solidarité
+tags:
+- paris8
+- étudiants
+- interculturel
+- tissuamical
+type: posts
 ---
 
 ![Affiche TissuAmical](/images/wordpress/2008-02-tissuamicla-affiche1.jpg)

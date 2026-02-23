@@ -1,12 +1,17 @@
 ---
-title: "Accueillir des étudiants étrangers à l’université Paris8"
+title: Accueillir des étudiants étrangers à l’université Paris8
 date: 2010-01-01
-villages: ["douentza"]
-categories: ["Éducation"]
-tags: ["archive", "wordpress", "news"]
-description: "Accueillir des étudiants étrangers à l’université Paris8"
 draft: false
-source: "https://leidimen.com/292"
+description: 'Douentza: Accueillir des étudiants étrangers à l’universi... - En savoir plus sur nos initiatives en éducation.'
+categories:
+- Éducation
+tags:
+- archive
+- wordpress
+- news
+villages:
+- douentza
+source: https://leidimen.com/292
 ---
 
 [/images/wordpress/2008-02-tissuamicla-affiche1.jpg](/images/wordpress/2008-02-tissuamicla-affiche1.jpg)

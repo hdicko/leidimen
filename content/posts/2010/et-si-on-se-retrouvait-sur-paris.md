@@ -1,12 +1,17 @@
 ---
-title: "Et si on se retrouvait sur Paris?"
+title: Et si on se retrouvait sur Paris?
 date: 2010-01-01
-villages: ["douentza"]
-categories: ["Culture"]
-tags: ["archive", "wordpress", "non-classe"]
-description: "Et si on se retrouvait sur Paris?"
 draft: false
-source: "https://leidimen.com/et-si-on-se-retrouvait-sur-paris"
+description: 'Douentza: Et si on se retrouvait sur Paris? - En savoir plus sur nos initiatives en culture.'
+categories:
+- Culture
+tags:
+- archive
+- wordpress
+- non-classe
+villages:
+- douentza
+source: https://leidimen.com/et-si-on-se-retrouvait-sur-paris
 ---
 
 [

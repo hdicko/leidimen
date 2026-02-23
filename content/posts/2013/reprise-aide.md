@@ -1,26 +1,23 @@
 ---
-title: "Situation sécuritaire"
-date: "2013-03-06T14:30:00+01:00"
+title: Situation sécuritaire
+date: '2013-03-06T14:30:00+01:00'
 draft: false
-description: "Situation sécuritaire dans nos villages"
-author: "Hamassala David Dicko"
-slug: "aide"
-featured_image: "/images/bureau-leidimen.jpg"
+description: 'Douentza: Situation sécuritaire - En savoir plus sur nos initiatives en informations.'
+author: Hamassala David Dicko
+slug: aide
 weight: 8
-
+image: /images/bureau-leidimen.jpg
 categories:
-  - "informations"
-
+- informations
 tags:
-  - "blog"
-  - "leidimen"
-
+- blog
+- leidimen
 villages:
-  - "douentza"
-  - "diona"
-  - "boundoucoli"
-  - "debere"
-  - "dorool"
+- douentza
+- diona
+- boundoucoli
+- debere
+- dorool
 ---
 
 {{< details summary="lire tout l'article" >}}

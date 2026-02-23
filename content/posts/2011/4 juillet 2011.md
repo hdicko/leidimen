@@ -1,19 +1,17 @@
 ---
-title: "Compte rendu de réunion"
-date: 2011-07-04T20:37:50+02:00
+title: Compte rendu de réunion
+date: 2011-07-04 20:37:50+02:00
 draft: false
-description: "Compte rendu de réunion"
-author: "Hamassala David @ 18:30"
-slug: "cr-2010"
-featured_image: "/img/logo/leidimen-logo-ai.jpeg"
+description: Compte rendu de réunion - En savoir plus sur nos initiatives en actualités.
+author: Hamassala David @ 18:30
+slug: cr-2010
 weight: 0
-
-categories: []
-
+image: /img/logo/leidimen-logo-ai.jpeg
+categories:
+- Actualités
 tags:
-  - "blog"
-  - "reunion"
-
+- blog
+- reunion
 villages: []
 ---
 

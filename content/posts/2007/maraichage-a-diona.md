@@ -1,13 +1,20 @@
 ---
-title: "Maraîchage à Diona"
+title: Maraîchage à Diona
 date: 2007-11-01
-villages: ["diona"]
-categories: ["Agriculture", "Développement"]
-tags: ["maraîchage", "femmes", "agriculture", "lac Korarou"]
-description: "Projet de soutien au maraîchage pour une centaine de femmes le long des rives du lac Korarou à Diona"
-image: "/images/wordpress/2007-11-dsc01894-small.jpg"
 draft: false
-type: "posts"
+description: 'Diona: Maraîchage à Diona - En savoir plus sur nos initiatives en agriculture.'
+image: /images/wordpress/2007-11-dsc01894-small.jpg
+categories:
+- Agriculture
+- Développement
+tags:
+- maraîchage
+- femmes
+- agriculture
+- lac Korarou
+villages:
+- diona
+type: posts
 ---
 
 ![Maraîchage à Diona](/images/wordpress/2007-11-dsc01894-small.jpg)

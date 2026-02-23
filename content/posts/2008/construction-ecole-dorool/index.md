@@ -1,14 +1,23 @@
 ---
-title: "Construction d'une école à Dorool : quelques nouvelles"
-date: 2008-02-21T14:50:00+01:00
-author: "Melina Dicko"
-description: "Bilan très positif après trois mois : les habitants construisent l'école avec enthousiasme"
+title: 'Construction d''une école à Dorool : quelques nouvelles'
+date: 2008-02-21 14:50:00+01:00
 draft: false
-categories: ["News Leidimen"]
-tags: ["école", "dorool", "construction", "éducation"]
-villages: ["dorool"]
-moods: ["Heureux", "Motivé", "Reconnaissant"]
-image: "inscription.jpg"
+description: 'Dorool: Construction d''une école à Dorool : quelques no... - En savoir plus sur nos initiatives en news leidimen.'
+author: Melina Dicko
+image: inscription.jpg
+categories:
+- News Leidimen
+tags:
+- école
+- dorool
+- construction
+- éducation
+villages:
+- dorool
+moods:
+- Heureux
+- Motivé
+- Reconnaissant
 ---
 
 ## Un projet qui avance à grands pas

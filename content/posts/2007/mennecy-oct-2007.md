@@ -1,19 +1,17 @@
 ---
-title: "Réunion Mennecy Octobre 2007"
-date: 2007-10-28T20:37:50+02:00
+title: Réunion Mennecy Octobre 2007
+date: 2007-10-28 20:37:50+02:00
 draft: false
-description: "Réunion à Mennecy avec une dizaine de membres"
-author: "Moussa - Hamassala David Dicko"
-slug: "reunion-mennecy-oct-2007"
-featured_image: "/img/reunions/reunion-mennecy2.jpeg"
+description: Réunion Mennecy Octobre 2007 - En savoir plus sur nos initiatives en actualités.
+author: Moussa - Hamassala David Dicko
+slug: reunion-mennecy-oct-2007
 weight: 0
-
-categories: []
-
+image: /img/reunions/reunion-mennecy2.jpeg
+categories:
+- Actualités
 tags:
-  - "blog"
-  - "reunion"
-
+- blog
+- reunion
 villages: []
 ---
 

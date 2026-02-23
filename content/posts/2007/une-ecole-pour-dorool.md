@@ -1,13 +1,19 @@
 ---
-title: "Une école pour Dorool"
+title: Une école pour Dorool
 date: 2007-07-01
-villages: ["dorool"]
-categories: ["Éducation"]
-tags: ["école", "projet", "parrainage", "éducation"]
-description: "Projet de construction d'une école à Dorool pour scolariser les dizaines d'enfants du village"
-image: "/images/wordpress/2007-07-8199.jpg"
 draft: false
-type: "posts"
+description: 'Dorool: Une école pour Dorool - En savoir plus sur nos initiatives en éducation.'
+image: /images/wordpress/2007-07-8199.jpg
+categories:
+- Éducation
+tags:
+- école
+- projet
+- parrainage
+- éducation
+villages:
+- dorool
+type: posts
 ---
 
 ![Enfants de Dorool](/images/wordpress/2007-07-8199.jpg)

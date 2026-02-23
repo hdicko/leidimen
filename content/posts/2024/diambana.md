@@ -1,22 +1,20 @@
 ---
-title: "Diambana - Darawal et Tanal - Nos villages de coeur autour de Diona la capitale"
-date: 2024-02-27T20:37:50+02:00
+title: Diambana - Darawal et Tanal - Nos villages de coeur autour de Diona la capitale
+date: 2024-02-27 20:37:50+02:00
 draft: false
-description: "Nos villages de coeur autour de Diona la capitale"
-author: "Hamadoun"
-slug: "diambana-villages"
-featured_image: "/images/leidimen-logo-thumb.jpg"
+description: 'Diambana: Diambana - Darawal et Tanal - Nos villages de c... - En savoir plus sur nos initiatives en actualités.'
+author: Hamadoun
+slug: diambana-villages
 weight: 0
-
-categories: []
-
+image: /images/leidimen-logo-thumb.jpg
+categories:
+- Actualités
 tags:
-  - "blog"
-
+- blog
 villages:
-  - "diambana"
-  - "darawal"
-  - "tanal"
+- diambana
+- darawal
+- tanal
 ---
 
 ### This is post 20 - Just for testing !

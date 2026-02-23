@@ -1,12 +1,17 @@
 ---
-title: "Reprise de l’aide au développement"
+title: Reprise de l’aide au développement
 date: 2010-01-01
-villages: ["douentza"]
-categories: ["Culture"]
-tags: ["archive", "wordpress", "non-classe"]
-description: "Reprise de l’aide au développement"
 draft: false
-source: "https://leidimen.com/subventions"
+description: 'Douentza: Reprise de l’aide au développement - En savoir plus sur nos initiatives en culture.'
+categories:
+- Culture
+tags:
+- archive
+- wordpress
+- non-classe
+villages:
+- douentza
+source: https://leidimen.com/subventions
 ---
 
 Le Mali n’est pas encore stable, ni militairement, ni politiquement – sur ces deux points, la situation s’améliore néanmoins rapidement.

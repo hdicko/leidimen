@@ -1,13 +1,18 @@
 ---
-title: "this is from leidimen-cms web appli"
+title: this is from leidimen-cms web appli
 date: 2025-11-04
-villages: ["diona", "debere"]
-categories: ["Éducation"]
-tags: ["projet AI"]
-moods: ["motivé"]
-description: "AI claude AI + vscode"
-image: ""
 draft: false
+description: 'Diona: this is from leidimen-cms web appli - En savoir plus sur nos initiatives en éducation.'
+image: ''
+categories:
+- Éducation
+tags:
+- projet AI
+villages:
+- diona
+- debere
+moods:
+- motivé
 ---
 
 ## 📖 Utilisation

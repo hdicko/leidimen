@@ -1,24 +1,21 @@
 ---
-title: "Nouveau Projet Éducatif à Dorool"
-date: 2025-08-19T10:00:00Z
+title: Nouveau Projet Éducatif à Dorool
+date: 2025-08-19 10:00:00+00:00
 draft: false
-description: "Lancement d'un nouveau projet d'alphabétisation dans le village de Dorool"
-author: "Équipe Leidimen"
-slug: "projet-educatif-dorool-2025"
-featured_image: "/img/logo/leidimen-logo-ai.jpeg"
+description: 'Dorool: Nouveau Projet Éducatif à Dorool - En savoir plus sur nos initiatives en éducation.'
+author: Équipe Leidimen
+slug: projet-educatif-dorool-2025
 weight: 0
-
+image: /img/logo/leidimen-logo-ai.jpeg
 categories:
-  - "Éducation"
-  - "Projets"
-
+- Éducation
+- Projets
 tags:
-  - "Dorool"
-  - "Alphabétisation"
-  - "Mali"
-
+- Dorool
+- Alphabétisation
+- Mali
 villages:
-  - "dorool"
+- dorool
 ---
 
 {{< details summary="lire tout l'article" >}}

@@ -1,12 +1,17 @@
 ---
-title: "Un nouveau design pour Leïdimen.com !"
+title: Un nouveau design pour Leïdimen.com !
 date: 2010-01-01
-villages: ["douentza"]
-categories: ["Culture"]
-tags: ["archive", "wordpress", "non-classe"]
-description: "Un nouveau design pour Leïdimen.com !"
 draft: false
-source: "https://leidimen.com/un-nouveau-design-pour-leidimencom"
+description: 'Douentza: Un nouveau design pour Leïdimen.com ! - En savoir plus sur nos initiatives en culture.'
+categories:
+- Culture
+tags:
+- archive
+- wordpress
+- non-classe
+villages:
+- douentza
+source: https://leidimen.com/un-nouveau-design-pour-leidimencom
 ---
 
 Comme vous l’avez sans doute remarqué, notre site Internet a fait peau neuve.

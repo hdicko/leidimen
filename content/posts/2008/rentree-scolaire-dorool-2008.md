@@ -1,20 +1,18 @@
 ---
-title: "La rentrée scolaire à Dorool 2008"
-date: 2008-10-21T20:37:50+02:00
+title: La rentrée scolaire à Dorool 2008
+date: 2008-10-21 20:37:50+02:00
 draft: false
-description: "Rentrée scolaire à Dorool - Un instituteur a été nommé"
-author: "Moussa Dicko"
-slug: "rentree-scolaire-dorool-2008"
-featured_image: "/img/logo/leidimen-logo-ai.jpeg"
+description: 'Dorool: La rentrée scolaire à Dorool 2008 - En savoir plus sur nos initiatives en actualités.'
+author: Moussa Dicko
+slug: rentree-scolaire-dorool-2008
 weight: 0
-
-categories: []
-
+image: /img/logo/leidimen-logo-ai.jpeg
+categories:
+- Actualités
 tags:
-  - "blog"
-
+- blog
 villages:
-  - "dorool"
+- dorool
 ---
 
 # Rentree scolaire

@@ -1,12 +1,21 @@
 ---
-title: "Réunion à Paris"
+title: Réunion à Paris
 date: 2010-01-01
-villages: ["dorool", "diona", "debere", "darawal", "douentza"]
-categories: ["Éducation"]
-tags: ["archive", "wordpress", "news"]
-description: "Réunion à Paris"
 draft: false
-source: "https://leidimen.com/reunion-a-paris"
+description: 'Dorool: Réunion à Paris - En savoir plus sur nos initiatives en éducation.'
+categories:
+- Éducation
+tags:
+- archive
+- wordpress
+- news
+villages:
+- dorool
+- diona
+- debere
+- darawal
+- douentza
+source: https://leidimen.com/reunion-a-paris
 ---
 
 La réunion de dimanche s’est déroulée à Paris chez notre aimable trésorier Moussa :-).

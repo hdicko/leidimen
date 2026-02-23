@@ -1,14 +1,16 @@
 ---
-title: "Et si on se retrouvait sur Paris?"
-date: 2013-03-05T04:42:00+01:00
-author: "Hamassala David Dicko"
-description: "Nous contemplons l'idée d'un événement sur le printemps parisien"
+title: Et si on se retrouvait sur Paris?
+date: 2013-03-05 04:42:00+01:00
 draft: false
-categories: ["Divers"]
+description: Et si on se retrouvait sur Paris? - En savoir plus sur nos initiatives en divers.
+author: Hamassala David Dicko
+image: /posts/2013/paris-event-2013.jpg
+categories:
+- Divers
 tags: []
 villages: []
-moods: ["Heureux"]
-image: "/posts/2013/paris-event-2013.jpg"
+moods:
+- Heureux
 ---
 
 ![Printemps à Paris](/posts/2013/paris-event-2013.jpg)

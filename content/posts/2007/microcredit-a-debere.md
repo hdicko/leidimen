@@ -1,13 +1,20 @@
 ---
-title: "Microcrédit à Débéré"
+title: Microcrédit à Débéré
 date: 2007-10-01
-villages: ["debere"]
-categories: ["Économie", "Développement"]
-tags: ["microcrédit", "femmes", "microfinance", "développement économique"]
-description: "Initiative de microcrédit pour les femmes de Débéré depuis 2006 pour développer une petite banque de village"
-image: "/images/wordpress/2007-11-imgp0535-small.JPG"
 draft: false
-type: "posts"
+description: 'Debere: Microcrédit à Débéré - En savoir plus sur nos initiatives en économie.'
+image: /images/wordpress/2007-11-imgp0535-small.JPG
+categories:
+- Économie
+- Développement
+tags:
+- microcrédit
+- femmes
+- microfinance
+- développement économique
+villages:
+- debere
+type: posts
 ---
 
 ![Hamassala et Abdoulaye avec quelques représentantes des femmes de Débéré, en octobre 2007](/images/wordpress/2007-11-imgp0535-small.JPG)

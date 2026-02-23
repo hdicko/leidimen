@@ -1,25 +1,23 @@
 ---
-title: "Tous les villages"
-date: 2023-08-27T20:37:50+02:00
+title: Tous les villages
+date: 2023-08-27 20:37:50+02:00
 draft: false
-description: "Ce post concerne tous les villages - Douentza, Diona et environs, Debere, Boundoucoli et Dorool et environs"
-author: "Cisse"
-slug: "tanal-villages"
-featured_image: "/img/logo/leidimen-logo-ai.jpeg"
+description: 'Tanal: Tous les villages - En savoir plus sur nos initiatives en actualités.'
+author: Cisse
+slug: tanal-villages
 weight: 0
-
-categories: []
-
+image: /img/logo/leidimen-logo-ai.jpeg
+categories:
+- Actualités
 tags:
-  - "blog"
-
+- blog
 villages:
-  - "Tanal"
-  - "Douentza"
-  - "Diona"
-  - "Debere"
-  - "Boundoucoli"
-  - "Dorool"
+- Tanal
+- Douentza
+- Diona
+- Debere
+- Boundoucoli
+- Dorool
 ---
 
 {{< details summary="lire tout l'article" >}}

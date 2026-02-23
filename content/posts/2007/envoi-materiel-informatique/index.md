@@ -1,14 +1,23 @@
 ---
-title: "Envoi du matériel informatique à Bamako"
-date: 2007-01-15T07:29:00+01:00
-author: "Olivier Dicko"
-description: "Chargement et envoi de 10 ordinateurs pour le lycée de Douentza"
+title: Envoi du matériel informatique à Bamako
+date: 2007-01-15 07:29:00+01:00
 draft: false
-categories: ["News Leidimen"]
-tags: ["informatique", "ordinateurs", "bamako", "douentza", "éducation"]
-villages: ["douentza"]
-moods: ["Heureux", "Motivé"]
-image: "envoi.jpg"
+description: 'Douentza: Envoi du matériel informatique à Bamako - En savoir plus sur nos initiatives en news leidimen.'
+author: Olivier Dicko
+image: envoi.jpg
+categories:
+- News Leidimen
+tags:
+- informatique
+- ordinateurs
+- bamako
+- douentza
+- éducation
+villages:
+- douentza
+moods:
+- Heureux
+- Motivé
 ---
 
 ## Un projet majeur qui prend vie ! 💻

@@ -1,12 +1,17 @@
 ---
-title: "Actu musique"
+title: Actu musique
 date: 2010-01-01
-villages: ["douentza"]
-categories: ["Culture"]
-tags: ["archive", "wordpress", "infos-sorties"]
-description: "Actu musique"
 draft: false
-source: "https://leidimen.com/actu-musique"
+description: 'Douentza: Actu musique - En savoir plus sur nos initiatives en culture.'
+categories:
+- Culture
+tags:
+- archive
+- wordpress
+- infos-sorties
+villages:
+- douentza
+source: https://leidimen.com/actu-musique
 ---
 
 [

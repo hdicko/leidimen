@@ -1,12 +1,20 @@
 ---
-title: "De retour du Mali!"
+title: De retour du Mali!
 date: 2010-01-01
-villages: ["dorool", "diona", "debere", "douentza"]
-categories: ["Éducation"]
-tags: ["archive", "wordpress", "news"]
-description: "De retour du Mali!"
 draft: false
-source: "https://leidimen.com/de-retour-du-mali"
+description: 'Dorool: De retour du Mali! - En savoir plus sur nos initiatives en éducation.'
+categories:
+- Éducation
+tags:
+- archive
+- wordpress
+- news
+villages:
+- dorool
+- diona
+- debere
+- douentza
+source: https://leidimen.com/de-retour-du-mali
 ---
 
 Bonjour à tous!

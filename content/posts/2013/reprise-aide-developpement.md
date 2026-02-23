@@ -1,10 +1,11 @@
 ---
-title: "Reprise de l'aide au développement"
-date: 2013-03-05T04:46:00+01:00
-author: "Hamassala David Dicko"
-description: "Le Mali n'est pas encore stable, mais la situation s'améliore"
+title: Reprise de l'aide au développement
+date: 2013-03-05 04:46:00+01:00
 draft: false
-categories: ["Divers"]
+description: Reprise de l'aide au développement - En savoir plus sur nos initiatives en divers.
+author: Hamassala David Dicko
+categories:
+- Divers
 tags: []
 villages: []
 moods: []

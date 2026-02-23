@@ -1,12 +1,17 @@
 ---
-title: "Ecole de Dorool"
+title: Ecole de Dorool
 date: 2010-01-01
-villages: ["dorool"]
-categories: ["Culture"]
-tags: ["archive", "wordpress", "non-classe"]
-description: "Ecole de Dorool"
 draft: false
-source: "https://leidimen.com/ecole-de-dorool"
+description: 'Dorool: Ecole de Dorool - En savoir plus sur nos initiatives en culture.'
+categories:
+- Culture
+tags:
+- archive
+- wordpress
+- non-classe
+villages:
+- dorool
+source: https://leidimen.com/ecole-de-dorool
 ---
 
 Quelques nouvelles en images (vous pouvez cliquer sur les photos pour les agrandir):

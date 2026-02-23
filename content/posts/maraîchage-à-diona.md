@@ -1,17 +1,16 @@
 ---
-title: " Maraîchage à Diona"
+title: ' Maraîchage à Diona'
 date: 2025-12-29
 lastmod: 2025-12-29
-author: Leidimen
 draft: false
-description: >-
-  Le lac Korarou, sous-exploité, est une mine de ressources pour toute la
-  région.
-
-  Pour la première fois en 2006, une centaine de femmes ont entrepris de faire du maraîchage le long des rives du lac sur deux sites différents. Cette initiative est d’autant plus surprenante et encourageante qu’elles se sont lancées seules, sans formation préalable, et leurs premiers résultats sont encourageants.
-
-  En plus d’une ressource financière, ce projet permet d’apporter un complément de légumes variés à l’alimentation du village, limitée habituellement au mil et au riz.
+description: 'Diona: Maraîchage à Diona - En savoir plus sur nos initiatives en actualités.'
+author: Leidimen
 image: /images/uploads/diona-maraichage.jpg
+categories:
+- Actualités
+villages:
+- diona
+- dorool
 ---
 
 ## Le Maraîchage

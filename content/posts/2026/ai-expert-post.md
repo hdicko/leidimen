@@ -1,19 +1,19 @@
 ---
-title: "Intelligence Artificielle et Développement en Milieu Rural"
+title: Intelligence Artificielle et Développement en Milieu Rural
 date: 2026-01-21
 draft: false
-description: "Explorer le potentiel de l'intelligence artificielle pour soutenir les projets de développement dans les villages du Mali."
-image: "/images/uploads/default.jpeg"
-villages:
-  - "douentza"
+description: 'Douentza: Intelligence Artificielle et Développement en M... - En savoir plus sur nos initiatives en éducation.'
+image: /images/uploads/default.jpeg
 categories:
-  - "Éducation"
+- Éducation
 tags:
-  - "intelligence artificielle"
-  - "technologie"
-  - "innovation"
+- intelligence artificielle
+- technologie
+- innovation
+villages:
+- douentza
 moods:
-  - "inspire"
+- inspire
 ---
 
 ## Introduction

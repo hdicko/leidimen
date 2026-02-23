@@ -1,13 +1,21 @@
 ---
-title: "Festival Peul à Bruxelles le 7 juillet 2007"
-date: 2007-06-26T03:05:00+01:00
-author: "Moussa Dicko"
-description: "Grand Festival culturel Peul réunissant 23 nations africaines avec Oumou Sangaré et de nombreux artistes"
+title: Festival Peul à Bruxelles le 7 juillet 2007
+date: 2007-06-26 03:05:00+01:00
 draft: false
-categories: ["Sorties"]
-tags: ["festival", "culture", "musique", "bruxelles", "peul"]
+description: Festival Peul à Bruxelles le 7 juillet 2007 - En savoir plus sur nos initiatives en sorties.
+author: Moussa Dicko
+categories:
+- Sorties
+tags:
+- festival
+- culture
+- musique
+- bruxelles
+- peul
 villages: []
-moods: ["Heureux", "Inspiré"]
+moods:
+- Heureux
+- Inspiré
 ---
 
 ## Un événement culturel majeur

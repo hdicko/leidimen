@@ -1,13 +1,21 @@
 ---
-title: "Distribution de matériel scolaire et construction d'une troisième classe à Dorool"
-date: 2012-01-01T21:53:00+01:00
-author: "Melina Dicko"
-description: "Voyage au Mali pour distribuer du matériel scolaire et suivre la construction de l'école"
+title: Distribution de matériel scolaire et construction d'une troisième classe à Dorool
+date: 2012-01-01 21:53:00+01:00
 draft: false
-categories: ["News Leidimen"]
+description: 'Dorool: Distribution de matériel scolaire et constructi... - En savoir plus sur nos initiatives en news leidimen.'
+author: Melina Dicko
+categories:
+- News Leidimen
 tags: []
-villages: ["dorool", "manko", "tacouti", "ndumpa", "debere"]
-moods: ["Heureux", "Motivé"]
+villages:
+- dorool
+- manko
+- tacouti
+- ndumpa
+- debere
+moods:
+- Heureux
+- Motivé
 ---
 
 Comme chaque année, plusieurs membres de Leïdimen se sont rendus au Mali pour réaliser certaines actions et faire avancer les projets de l'association. Cette année, Mamadou, Kadji, ainsi que la présidente Aissa Dicko, faisaient partie du voyage. Ils ont ainsi distribué au nom de Leïdimen du matériel scolaire dans les écoles de Tacouti, Manko, N'Dumpa, Débéré.

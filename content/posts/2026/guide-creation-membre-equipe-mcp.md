@@ -1,22 +1,22 @@
 ---
-title: "Guide : Ajouter un membre de l'équipe avec le serveur MCP"
+title: 'Guide : Ajouter un membre de l''équipe avec le serveur MCP'
 date: 2026-02-17
 draft: false
-description: "Tutoriel complet pour créer facilement des profils de membres Leidimen avec le serveur MCP Hugo"
-image: "/images/uploads/default.jpeg"
-villages:
-  - "douentza"
+description: 'Douentza: Guide : Ajouter un membre de l''équipe avec le s... - En savoir plus sur nos initiatives en informations.'
+image: /images/uploads/default.jpeg
 categories:
-  - "informations"
+- informations
 tags:
-  - "guide"
-  - "mcp"
-  - "équipe"
-  - "technologie"
-  - "administration"
+- guide
+- mcp
+- équipe
+- technologie
+- administration
+villages:
+- douentza
 moods:
-  - "inspire"
-  - "motive"
+- inspire
+- motive
 ---
 
 ## Introduction

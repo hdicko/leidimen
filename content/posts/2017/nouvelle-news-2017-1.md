@@ -1,12 +1,17 @@
 ---
-title: "nouvelle news 2017"
+title: nouvelle news 2017
 date: 2017-01-29
-villages: ["douentza"]
-categories: ["Culture"]
-tags: ["archive", "wordpress", "News Leidimen"]
-description: "nouvelle news 2017"
 draft: false
-source: "https://leidimen.com/nouvelle-news-2017"
+description: 'Douentza: nouvelle news 2017 - En savoir plus sur nos initiatives en culture.'
+categories:
+- Culture
+tags:
+- archive
+- wordpress
+- News Leidimen
+villages:
+- douentza
+source: https://leidimen.com/nouvelle-news-2017
 ---
 
 Bonjour,

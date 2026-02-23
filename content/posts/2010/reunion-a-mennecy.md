@@ -1,12 +1,17 @@
 ---
-title: "Réunion à Mennecy"
+title: Réunion à Mennecy
 date: 2010-01-01
-villages: ["douentza"]
-categories: ["Éducation"]
-tags: ["archive", "wordpress", "news"]
-description: "Réunion à Mennecy"
 draft: false
-source: "https://leidimen.com/reunion-a-mennecy"
+description: 'Douentza: Réunion à Mennecy - En savoir plus sur nos initiatives en éducation.'
+categories:
+- Éducation
+tags:
+- archive
+- wordpress
+- news
+villages:
+- douentza
+source: https://leidimen.com/reunion-a-mennecy
 ---
 
 Une réunion s’est tenue dimanche 28 octobre à Mennecy.
