@@ -2,18 +2,18 @@
 title: Info – Arrivée des ordinateurs à Bamako et info musique
 date: 2007-02-26 20:37:50+02:00
 draft: false
-description: 'Douentza: Info – Arrivée des ordinateurs à Bamako et info... - En savoir plus sur nos initiatives en actualités.'
+description: "Nous nous réjouissons d'avoir reçu un coup de téléphone d'Abdoulaye nous disant que le 22 février, notre cargaison de 10 ordinateurs est arrivée à Bamako."
 author: Eva
 slug: info-ordi-bamako-2007
 weight: 0
 image: /img/infos/ordi.jpg
 categories:
-- Actualités
+  - Actualités
 tags:
-- blog
-- info
+  - blog
+  - info
 villages:
-- douentza
+  - douentza
 ---
 
 ## 📅 26 février 2007

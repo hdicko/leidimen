@@ -1,10 +1,15 @@
 <!-- Leaflet CSS -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" 
-      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+  crossorigin="" />
 
 <!-- Leaflet JS -->
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" 
-        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script
+  src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+  crossorigin=""></script>
 
 <div class="container my-5">
   <div class="map-header text-center mb-4">
@@ -13,9 +18,9 @@
       Localisation des villages d'intervention
     </h3>
   </div>
-  
-  <div id="villages-map" style="height: 500px; width: 100%;"></div>
-  
+
+  <div id="villages-map"></div>
+
   <div class="map-footer text-center mt-3">
     <span class="text-muted">
       <i class="bi bi-info-circle me-2"></i>
@@ -40,7 +45,7 @@
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
       maxZoom: 18
     }).addTo(map);
-    
+
     // Données des villages depuis Hugo
     const villages = [
       {{ range $index, $village := $.Site.Data.villages.mali_villages }}
@@ -55,7 +60,7 @@
       }{{ if ne $index (sub (len $.Site.Data.villages.mali_villages) 1) }},{{ end }}
       {{ end }}
     ];
-    
+
     // Icônes personnalisées pour les différents types
     const chefLieuIcon = L.icon({
       iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png',
@@ -65,7 +70,7 @@
       popupAnchor: [1, -34],
       shadowSize: [41, 41]
     });
-    
+
     const villageIcon = L.icon({
       iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
       shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
@@ -74,11 +79,11 @@
       popupAnchor: [1, -34],
       shadowSize: [41, 41]
     });
-    
+
     // Ajouter les marqueurs pour chaque village
     villages.forEach(village => {
       const icon = village.type === 'chef-lieu' ? chefLieuIcon : villageIcon;
-      
+
       const popupContent = `
         <div>
           <h6>${village.name}</h6>
@@ -88,11 +93,11 @@
           <span class="badge ${village.type === 'chef-lieu' ? 'bg-primary' : 'bg-success'}">${village.type === 'chef-lieu' ? 'Chef-lieu' : 'Village'}</span>
         </div>
       `;
-      
+
       const marker = L.marker([village.lat, village.lon], { icon: icon })
         .bindPopup(popupContent)
         .addTo(map);
-      
+
       // Ajouter un label permanent avec le nom du village
       marker.bindTooltip(village.name, {
         permanent: true,
@@ -101,8 +106,7 @@
       });
     });
   }
-  
+
   initMap();
 })();
 </script>
-

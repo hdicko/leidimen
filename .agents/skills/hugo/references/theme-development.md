@@ -68,18 +68,22 @@ Hugo finds templates using specificity rules. Most specific wins. Project layout
 Docs: https://gohugo.io/templates/lookup-order/
 
 For a **single page** in section `posts` with type `posts` and layout unset:
+
 1. `layouts/posts/single.html`
 2. `layouts/_default/single.html`
 
 For a **list page** (section `posts`):
+
 1. `layouts/posts/list.html`
 2. `layouts/_default/list.html`
 
 For the **homepage**:
+
 1. `layouts/_default/home.html`
 2. `layouts/_default/list.html`
 
 For **baseof** (base template):
+
 1. `layouts/posts/baseof.html`
 2. `layouts/_default/baseof.html`
 

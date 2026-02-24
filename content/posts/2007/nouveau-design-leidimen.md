@@ -2,16 +2,16 @@
 title: Un nouveau design pour Leïdimen.com !
 date: 2007-12-06 15:53:00+01:00
 draft: false
-description: Un nouveau design pour Leïdimen.com ! - En savoir plus sur nos initiatives en divers.
+description: "Comme vous l'avez sans doute remarqué, notre site Internet a fait peau neuve !"
 author: Melina Dicko
 categories:
-- Divers
+  - Divers
 tags:
-- site web
-- design
+  - site web
+  - design
 villages: []
 moods:
-- Heureux
+  - Heureux
 ---
 
 ## Une nouvelle image pour notre association

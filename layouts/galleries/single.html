@@ -1,8 +1,7 @@
-{{/* 
-  Template: galleries/single.html
+{{/* Template: galleries/single.html
   Purpose: Individual gallery page with structured data and accessibility enhancements
   Context: Displays photo gallery with semantic HTML, SEO, and Fancybox lightbox
-  
+
   Features:
   - Semantic HTML5 structure with article and figure elements
   - JSON-LD structured data for ImageGallery schema
@@ -11,19 +10,19 @@
   - Responsive image grid (4 columns desktop, 3 tablet, 2 mobile)
   - Fancybox lightbox integration
   - External SCSS for styling
-  
+
   Data Structure:
   - .Title: Gallery title
   - .Content: Gallery description
   - .Date: Publication date
   - .Resources.ByType "image": All image page resources
-  
+
   Dependencies:
   - Fancybox library for lightbox
   - Bootstrap 5 for grid system
   - assets/scss/pages/galleries-single.scss
   - Hugo image processing (.Fill)
-  
+
   Image Processing:
   - Thumbnails: 400x300px crop with WebP
   - Full images: Original size via RelPermalink
@@ -32,8 +31,8 @@
 
 {{ define "main" }}
 
-{{/* Structured Data - JSON-LD for ImageGallery */}}
-{{ with .Resources.ByType "image" }}
+  {{/* Structured Data - JSON-LD for ImageGallery */}}
+  {{ with .Resources.ByType "image" }}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -55,80 +54,97 @@
   ]
 }
 </script>
-{{ end }}
+  {{ end }}
 
 
-<article class="gallery-single" itemscope itemtype="https://schema.org/ImageGallery" data-aos="fade-up">
-  <div class="container py-5">
-    {{/* Gallery Header */}}
-    <header class="gallery-header text-center mb-5">
-      <h1 class="display-4 fw-bold mb-3" itemprop="name">{{ .Title }}</h1>
-      
-      {{ with .Content }}
-      <div class="lead text-muted mb-4" itemprop="description">
-        {{ . }}
-      </div>
-      {{ end }}
-      
-      <div class="gallery-meta text-muted">
-        <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}" itemprop="datePublished">
-          <i class="bi bi-calendar3" aria-hidden="true"></i>
-          <span class="visually-hidden">Publié le </span>
-          {{ .Date.Format "2 January 2006" }}
-        </time>
-        {{ with .Resources.ByType "image" }}
-        <span class="ms-3">
-          <i class="bi bi-images" aria-hidden="true"></i>
-          {{ len . }} {{ if eq (len .) 1 }}photo{{ else }}photos{{ end }}
-        </span>
+  <article
+    class="gallery-single"
+    itemscope
+    itemtype="https://schema.org/ImageGallery"
+    data-aos="fade-up">
+    <div class="container py-5">
+      {{/* Gallery Header */}}
+      <header class="gallery-header text-center mb-5">
+        <h1 class="display-4 fw-bold mb-3" itemprop="name">{{ .Title }}</h1>
+
+        {{ with .Content }}
+          <div class="lead text-muted mb-4" itemprop="description">
+            {{ . }}
+          </div>
         {{ end }}
-      </div>
-      
-      <a href="{{ "/galleries/" | relURL }}" class="btn btn-outline-primary mt-3">
-        <i class="bi bi-arrow-left" aria-hidden="true"></i> Retour aux galeries
-      </a>
-    </header>
 
-    {{/* Gallery Grid */}}
-    {{ with .Resources.ByType "image" }}
-    <div class="row g-3" role="list" aria-label="Galerie de photos">
-      {{ range $index, $img := . }}
-        {{ $thumb := $img.Fill "400x300 webp q85" }}
-        <div class="col-6 col-md-4 col-lg-3" role="listitem">
-          <a
-            href="{{ $img.RelPermalink }}"
-            data-fancybox="gallery"
-            data-caption="{{ $img.Name }}"
-            class="d-block gallery-item"
-            aria-label="Photo {{ add $index 1 }} sur {{ len . }}">
-            <figure class="mb-0">
-              <img
-                src="{{ $thumb.RelPermalink }}"
-                class="img-fluid rounded shadow-sm"
-                alt="{{ with $img.Title }}{{ . }}{{ else }}Photo {{ add $index 1 }}{{ end }}"
-                width="{{ $thumb.Width }}"
-                height="{{ $thumb.Height }}"
-                loading="lazy"
-                itemprop="image" />
-            </figure>
-          </a>
+
+        <div class="gallery-meta text-muted">
+          <time
+            datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}"
+            itemprop="datePublished">
+            <i class="bi bi-calendar3" aria-hidden="true"></i>
+            <span class="visually-hidden">Publié le </span>
+            {{ .Date.Format "2 January 2006" }}
+          </time>
+          {{ with .Resources.ByType "image" }}
+            <span class="ms-3">
+              <i class="bi bi-images" aria-hidden="true"></i>
+              {{ len . }} {{ if eq (len .) 1 }}photo{{ else }}photos{{ end }}
+            </span>
+          {{ end }}
+        </div>
+
+        <a
+          href="{{ "/galleries/" | relURL }}"
+          class="btn btn-outline-primary mt-3">
+          <i class="bi bi-arrow-left" aria-hidden="true"></i> Retour aux
+          galeries
+        </a>
+      </header>
+
+      {{/* Gallery Grid */}}
+      {{ with .Resources.ByType "image" }}
+        <div class="row g-3" role="list" aria-label="Galerie de photos">
+          {{ range $index, $img := . }}
+            {{ $thumb := $img.Fill "400x300 webp q85" }}
+            <div class="col-6 col-md-4 col-lg-3" role="listitem">
+              <a
+                href="{{ $img.RelPermalink }}"
+                data-fancybox="gallery"
+                data-caption="{{ $img.Name }}"
+                class="d-block gallery-item"
+                aria-label="Photo {{ add $index 1 }} sur {{ len . }}">
+                <figure class="mb-0">
+                  <img
+                    src="{{ $thumb.RelPermalink }}"
+                    class="img-fluid rounded shadow-sm"
+                    alt="{{ with $img.Title }}
+                      {{ . }}
+                    {{ else }}
+                      Photo {{ add $index 1 }}
+                    {{ end }}"
+                    width="{{ $thumb.Width }}"
+                    height="{{ $thumb.Height }}"
+                    loading="lazy"
+                    itemprop="image" />
+                </figure>
+              </a>
+            </div>
+          {{ end }}
+        </div>
+      {{ else }}
+        <div class="alert alert-info text-center" role="status">
+          <i class="bi bi-info-circle" aria-hidden="true"></i>
+          Aucune image dans cette galerie pour le moment.
         </div>
       {{ end }}
     </div>
-    {{ else }}
-    <div class="alert alert-info text-center" role="status">
-      <i class="bi bi-info-circle" aria-hidden="true"></i> 
-      Aucune image dans cette galerie pour le moment.
-    </div>
-    {{ end }}
-  </div>
-</article>
+  </article>
 
-{{/* Load external styles */}}
-{{ $galleryStyles := resources.Get "scss/pages/galleries-single.scss" }}
-{{ if $galleryStyles }}
-  {{ $galleryStyles = $galleryStyles | toCSS | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ $galleryStyles.RelPermalink }}" integrity="{{ $galleryStyles.Data.Integrity }}">
-{{ end }}
+  {{/* Load external styles */}}
+  {{ $galleryStyles := resources.Get "scss/pages/galleries-single.scss" }}
+  {{ if $galleryStyles }}
+    {{ $galleryStyles = $galleryStyles | toCSS | minify | fingerprint }}
+    <link
+      rel="stylesheet"
+      href="{{ $galleryStyles.RelPermalink }}"
+      integrity="{{ $galleryStyles.Data.Integrity }}" />
+  {{ end }}
 
 {{ end }}

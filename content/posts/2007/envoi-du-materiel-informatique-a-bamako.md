@@ -2,15 +2,15 @@
 title: Envoi du matériel informatique à Bamako
 date: 2007-01-15
 draft: false
-description: 'Douentza: Envoi du matériel informatique à Bamako - En savoir plus sur nos initiatives en culture.'
+description: "Chargement du matériel informatique direction Bamako"
 categories:
-- Culture
+  - Culture
 tags:
-- archive
-- wordpress
-- News Leidimen
+  - archive
+  - wordpress
+  - News Leidimen
 villages:
-- douentza
+  - douentza
 source: https://leidimen.com/envoi-du-materiel-informatique-a-bamako
 ---
 

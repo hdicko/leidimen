@@ -2,16 +2,16 @@
 title: Réunion Mennecy Octobre 2007
 date: 2007-10-28 20:37:50+02:00
 draft: false
-description: Réunion Mennecy Octobre 2007 - En savoir plus sur nos initiatives en actualités.
+description: "{ .display .text-center .img-fluid} { .display .text-center .img-fluid} Réunion à Mennecy { .h1 } Une réunion s’est tenue dimanche 28 octobre à Mennecy."
 author: Moussa - Hamassala David Dicko
 slug: reunion-mennecy-oct-2007
 weight: 0
 image: /img/reunions/reunion-mennecy2.jpeg
 categories:
-- Actualités
+  - Actualités
 tags:
-- blog
-- reunion
+  - blog
+  - reunion
 villages: []
 ---
 

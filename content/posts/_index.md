@@ -12,6 +12,4 @@ tags:
   - développement
 
 type: posts
-
-slug: actualites
 ---

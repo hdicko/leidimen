@@ -2,6 +2,7 @@
 date: "2023-08-19T22:35:25+02:00"
 draft: false
 title: Douentza
+description: "Chef-lieu de la région de Douentza au Mali, 25 885 habitants. Centre administratif et culturel où Leidimen intervient pour l'école, la santé et l'eau."
 ---
 
 References et lectures

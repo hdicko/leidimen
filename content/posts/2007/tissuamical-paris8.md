@@ -2,22 +2,22 @@
 title: Accueillir des étudiants étrangers à l'université Paris8
 date: 2007-11-23
 draft: false
-description: Accueillir des étudiants étrangers à l'universi... - En savoir plus sur nos initiatives en événements.
+description: "La visibilité de Leïdimen a dépassé les limites de l'Essonne durant ces mois d'automne : nous nous sommes joints à une action inter-culturelle à."
 image: /images/wordpress/2008-02-tissuamicla-affiche1.jpg
 categories:
-- Événements
-- Solidarité
+  - Événements
+  - Solidarité
 tags:
-- paris8
-- étudiants
-- interculturel
-- tissuamical
+  - paris8
+  - étudiants
+  - interculturel
+  - tissuamical
 type: posts
 ---
 
 ![Affiche TissuAmical](/images/wordpress/2008-02-tissuamicla-affiche1.jpg)
 
-La visibilité de Leïdimen a dépassé les limites de l'Essonne durant ces mois d'automne : nous nous sommes joints à une action inter-culturelle à l'Université Paris 8 (Saint-Denis), où deux de nos membres sont inscrits actuellement. 
+La visibilité de Leïdimen a dépassé les limites de l'Essonne durant ces mois d'automne : nous nous sommes joints à une action inter-culturelle à l'Université Paris 8 (Saint-Denis), où deux de nos membres sont inscrits actuellement.
 
 ## Le projet TissuAmical
 

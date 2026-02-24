@@ -1,16 +1,16 @@
 ---
-title: ' Maraîchage à Diona'
+title: " Maraîchage à Diona"
 date: 2025-12-29
 lastmod: 2025-12-29
 draft: false
-description: 'Diona: Maraîchage à Diona - En savoir plus sur nos initiatives en actualités.'
+description: "Dans la région Le maraîchage est la culture de légumes."
 author: Leidimen
 image: /images/uploads/diona-maraichage.jpg
 categories:
-- Actualités
+  - Actualités
 villages:
-- diona
-- dorool
+  - diona
+  - dorool
 ---
 
 ## Le Maraîchage

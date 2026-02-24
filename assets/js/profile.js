@@ -6,100 +6,100 @@
  * Handles contact and share actions using event delegation
  */
 class ProfileActionHandler {
-  constructor() {
-    this.init();
-  }
+	constructor() {
+		this.init();
+	}
 
-  init() {
-    // Use event delegation for better performance
-    document.addEventListener('click', (e) => {
-      const button = e.target.closest('[data-action]');
-      if (!button) return;
+	init() {
+		// Use event delegation for better performance
+		document.addEventListener('click', (e) => {
+			const button = e.target.closest('[data-action]');
+			if (!button) return;
 
-      const action = button.dataset.action;
-      
-      switch (action) {
-        case 'contact':
-          this.handleContact(button.dataset.memberName);
-          break;
-        case 'share':
-          this.handleShare(button.dataset.url, button.dataset.title);
-          break;
-      }
-    });
-  }
+			const action = button.dataset.action;
 
-  /**
-   * Open contact modal for member
-   * @param {string} memberName - Name of the team member
-   */
-  handleContact(memberName) {
-    // Check if a contact modal function exists globally
-    if (typeof openContactModal === 'function') {
-      openContactModal(memberName);
-      return;
-    }
+			switch (action) {
+				case 'contact':
+					this.handleContact(button.dataset.memberName);
+					break;
+				case 'share':
+					this.handleShare(button.dataset.url, button.dataset.title);
+					break;
+			}
+		});
+	}
 
-    // Fallback: scroll to contact section or show alert
-    const contactSection = document.querySelector('#contact');
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      alert(`Pour contacter ${memberName}, veuillez utiliser le formulaire de contact.`);
-    }
-  }
+	/**
+	 * Open contact modal for member
+	 * @param {string} memberName - Name of the team member
+	 */
+	handleContact(memberName) {
+		// Check if a contact modal function exists globally
+		if (typeof openContactModal === 'function') {
+			openContactModal(memberName);
+			return;
+		}
 
-  /**
-   * Handle profile sharing with Web Share API or fallback
-   * @param {string} url - Profile URL to share
-   * @param {string} title - Profile title
-   */
-  async handleShare(url, title) {
-    const shareData = {
-      title: `Profil de ${title} - Leidimen`,
-      text: `Découvrez le profil de ${title} sur Leidimen`,
-      url: url
-    };
+		// Fallback: scroll to contact section or show alert
+		const contactSection = document.querySelector('#contact');
+		if (contactSection) {
+			contactSection.scrollIntoView({ behavior: 'smooth' });
+		} else {
+			alert(`Pour contacter ${memberName}, veuillez utiliser le formulaire de contact.`);
+		}
+	}
 
-    // Use Web Share API if available
-    if (navigator.share) {
-      try {
-        await navigator.share(shareData);
-        console.log('Profile shared successfully');
-      } catch (err) {
-        // User cancelled or error occurred
-        if (err.name !== 'AbortError') {
-          this.fallbackShare(url);
-        }
-      }
-    } else {
-      this.fallbackShare(url);
-    }
-  }
+	/**
+	 * Handle profile sharing with Web Share API or fallback
+	 * @param {string} url - Profile URL to share
+	 * @param {string} title - Profile title
+	 */
+	async handleShare(url, title) {
+		const shareData = {
+			title: `Profil de ${title} - Leidimen`,
+			text: `Découvrez le profil de ${title} sur Leidimen`,
+			url: url,
+		};
 
-  /**
-   * Fallback sharing: copy to clipboard
-   * @param {string} url - URL to copy
-   */
-  async fallbackShare(url) {
-    try {
-      await navigator.clipboard.writeText(url);
-      this.showNotification('Lien copié dans le presse-papiers !');
-    } catch (err) {
-      // Fallback: show URL in prompt
-      prompt('Copier le lien:', url);
-    }
-  }
+		// Use Web Share API if available
+		if (navigator.share) {
+			try {
+				await navigator.share(shareData);
+				console.log('Profile shared successfully');
+			} catch (err) {
+				// User cancelled or error occurred
+				if (err.name !== 'AbortError') {
+					this.fallbackShare(url);
+				}
+			}
+		} else {
+			this.fallbackShare(url);
+		}
+	}
 
-  /**
-   * Show temporary notification
-   * @param {string} message - Message to display
-   */
-  showNotification(message) {
-    const notification = document.createElement('div');
-    notification.className = 'profile-notification';
-    notification.textContent = message;
-    notification.style.cssText = `
+	/**
+	 * Fallback sharing: copy to clipboard
+	 * @param {string} url - URL to copy
+	 */
+	async fallbackShare(url) {
+		try {
+			await navigator.clipboard.writeText(url);
+			this.showNotification('Lien copié dans le presse-papiers !');
+		} catch (err) {
+			// Fallback: show URL in prompt
+			prompt('Copier le lien:', url);
+		}
+	}
+
+	/**
+	 * Show temporary notification
+	 * @param {string} message - Message to display
+	 */
+	showNotification(message) {
+		const notification = document.createElement('div');
+		notification.className = 'profile-notification';
+		notification.textContent = message;
+		notification.style.cssText = `
       position: fixed;
       bottom: 2rem;
       right: 2rem;
@@ -112,23 +112,23 @@ class ProfileActionHandler {
       animation: slideInUp 0.3s ease-out;
     `;
 
-    document.body.appendChild(notification);
+		document.body.appendChild(notification);
 
-    // Remove after 3 seconds
-    setTimeout(() => {
-      notification.style.animation = 'slideOutDown 0.3s ease-in';
-      setTimeout(() => notification.remove(), 300);
-    }, 3000);
-  }
+		// Remove after 3 seconds
+		setTimeout(() => {
+			notification.style.animation = 'slideOutDown 0.3s ease-in';
+			setTimeout(() => notification.remove(), 300);
+		}, 3000);
+	}
 }
 
 // Initialize when DOM is ready
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', () => {
-    new ProfileActionHandler();
-  });
+	document.addEventListener('DOMContentLoaded', () => {
+		new ProfileActionHandler();
+	});
 } else {
-  new ProfileActionHandler();
+	new ProfileActionHandler();
 }
 
 // Add animation keyframes

@@ -66,6 +66,7 @@ Or use a custom build script. Vercel auto-detects Hugo projects.
 ## Cloudflare Pages
 
 Build settings in the Cloudflare dashboard:
+
 - Build command: `hugo --minify`
 - Build output directory: `public`
 - Environment variable: `HUGO_VERSION` = `0.147.0`

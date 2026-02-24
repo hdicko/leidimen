@@ -12,7 +12,12 @@
     "dev": "node --watch src/index.js",
     "inspect": "npx @modelcontextprotocol/inspector node src/index.js"
   },
-  "keywords": ["mcp", "hugo", "cms", "leidimen"],
+  "keywords": [
+    "mcp",
+    "hugo",
+    "cms",
+    "leidimen"
+  ],
   "license": "MIT",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.12.1",

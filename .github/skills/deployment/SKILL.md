@@ -1,3 +1,8 @@
+---
+name: deployment
+description: "Handle Hugo builds, testing, formatting, and deployment to GitHub Pages and Netlify"
+---
+
 # Deployment Agent
 
 ## Purpose

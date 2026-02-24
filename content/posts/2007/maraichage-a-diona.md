@@ -2,18 +2,18 @@
 title: Maraîchage à Diona
 date: 2007-11-01
 draft: false
-description: 'Diona: Maraîchage à Diona - En savoir plus sur nos initiatives en agriculture.'
+description: "Le lac Korarou, sous-exploité, est une mine de ressources pour toute la région."
 image: /images/wordpress/2007-11-dsc01894-small.jpg
 categories:
-- Agriculture
-- Développement
+  - Agriculture
+  - Développement
 tags:
-- maraîchage
-- femmes
-- agriculture
-- lac Korarou
+  - maraîchage
+  - femmes
+  - agriculture
+  - lac Korarou
 villages:
-- diona
+  - diona
 type: posts
 ---
 

@@ -2,15 +2,15 @@
 title: Compte-rendu du voyage de David et Abdoulaye
 date: 2007-11-11
 draft: false
-description: 'Douentza: Compte-rendu du voyage de David et Abdoulaye - En savoir plus sur nos initiatives en culture.'
+description: "Comme vous le savez, je suis parti au Mali en octobre pour deux semaines."
 categories:
-- Culture
+  - Culture
 tags:
-- archive
-- wordpress
-- News Leidimen
+  - archive
+  - wordpress
+  - News Leidimen
 villages:
-- douentza
+  - douentza
 source: https://leidimen.com/mon-compte-rendu-de-voyage
 ---
 

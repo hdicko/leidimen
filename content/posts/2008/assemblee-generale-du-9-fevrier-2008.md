@@ -2,15 +2,15 @@
 title: Assemblée générale du 9 février 2008
 date: 2008-02-05
 draft: false
-description: 'Douentza: Assemblée générale du 9 février 2008 - En savoir plus sur nos initiatives en culture.'
+description: "Bonjour à tous, l’assemblée générale de l’association Leïdimen aura lieu à Bondoufle le samedi 9 février 2008 à 14h."
 categories:
-- Culture
+  - Culture
 tags:
-- archive
-- wordpress
-- Divers
+  - archive
+  - wordpress
+  - Divers
 villages:
-- douentza
+  - douentza
 source: https://leidimen.com/assemblee-generale-du-9-fevrier-2008
 ---
 

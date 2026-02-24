@@ -2,20 +2,20 @@
 title: Fournitures scolaires aux villages
 date: 2007-07-01
 draft: false
-description: 'Diona: Fournitures scolaires aux villages - En savoir plus sur nos initiatives en éducation.'
+description: "Afin de favoriser l'éducation des enfants des villages, nous avons acheminé depuis 2006 des fournitures scolaires de base aux écoles élémentaires (écoles."
 image: /images/wordpress/2007-07-thumbnailca1w59jb.jpg
 categories:
-- Éducation
+  - Éducation
 tags:
-- fournitures scolaires
-- école
-- éducation
-- matériel scolaire
+  - fournitures scolaires
+  - école
+  - éducation
+  - matériel scolaire
 villages:
-- diona
-- debere
-- manko
-- tacouti
+  - diona
+  - debere
+  - manko
+  - tacouti
 type: posts
 ---
 

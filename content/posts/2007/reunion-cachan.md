@@ -2,19 +2,19 @@
 title: Réunion à Cachan
 date: 2007-11-26 07:27:00+01:00
 draft: false
-description: Réunion à Cachan - En savoir plus sur nos initiatives en news leidimen.
+description: "Une réunion s'est tenue le samedi 24 novembre à Cachan pour faire le point sur l'organisation et les projets de l'association."
 author: Moussa Dicko
 categories:
-- News Leidimen
-- Réunions
+  - News Leidimen
+  - Réunions
 tags:
-- réunion
-- conseil d'administration
-- budget
-- projets
+  - réunion
+  - conseil d'administration
+  - budget
+  - projets
 villages: []
 moods:
-- Motivé
+  - Motivé
 ---
 
 ## Réunion du Conseil d'Administration

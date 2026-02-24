@@ -2,15 +2,15 @@
 title: “Requiem Noir” à Drancy (93)
 date: 2007-06-11
 draft: false
-description: 'Douentza: “Requiem Noir” à Drancy (93) - En savoir plus sur nos initiatives en culture.'
+description: "Sur la scène une diversité de groupes de musique, dans leurs chansons une même émotion: la commémoration de l’abolition de l’esclavage est fêtée dans ce."
 categories:
-- Culture
+  - Culture
 tags:
-- archive
-- wordpress
-- Sorties
+  - archive
+  - wordpress
+  - Sorties
 villages:
-- douentza
+  - douentza
 source: https://leidimen.com/requiem-noir-a-drancy-93
 ---
 

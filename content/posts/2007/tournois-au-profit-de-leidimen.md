@@ -2,15 +2,15 @@
 title: Tournois au profit de Leïdimen
 date: 2007-07-29
 draft: false
-description: 'Douentza: Tournois au profit de Leïdimen - En savoir plus sur nos initiatives en culture.'
+description: "Au cours du mois de juillet, deux tournois ont été organisés au profit de Leïdimen : un tournoi de PES, et un tournoi de poker."
 categories:
-- Culture
+  - Culture
 tags:
-- archive
-- wordpress
-- News Leidimen
+  - archive
+  - wordpress
+  - News Leidimen
 villages:
-- douentza
+  - douentza
 source: https://leidimen.com/tournois-au-profit-de-leidimen
 ---
 

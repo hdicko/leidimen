@@ -802,7 +802,7 @@ hugo-mcp-server/
          param1: z.string().describe("Parameter description"),
          param2: z.number().optional().describe("Optional parameter"),
        },
-       async (params) => myTool(hugoRoot, params)
+       async (params) => myTool(hugoRoot, params),
      );
    }
    ```
@@ -822,22 +822,18 @@ hugo-mcp-server/
    export function registerResources(server, hugoRoot) {
      // ... existing resources
 
-     server.resource(
-       "my-resource",
-       "hugo://my-data",
-       async (uri) => {
-         const data = await loadMyData(hugoRoot);
-         return {
-           contents: [
-             {
-               uri: uri.href,
-               mimeType: "application/json",
-               text: JSON.stringify(data, null, 2),
-             },
-           ],
-         };
-       }
-     );
+     server.resource("my-resource", "hugo://my-data", async (uri) => {
+       const data = await loadMyData(hugoRoot);
+       return {
+         contents: [
+           {
+             uri: uri.href,
+             mimeType: "application/json",
+             text: JSON.stringify(data, null, 2),
+           },
+         ],
+       };
+     });
    }
    ```
 

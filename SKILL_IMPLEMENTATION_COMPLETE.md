@@ -101,18 +101,18 @@ $ ./scripts/scan-inline-styles.sh
 ### ✅ Build Results
 
 ```
-Start building sites … 
+Start building sites …
 hugo v0.152.1-5869cbddd88590563c2b7b400e804ccc7d2cb697+extended linux/amd64
 
-                  │ FR  
+                  │ FR
 ──────────────────┼─────
- Pages            │ 698 
- Paginator pages  │  11 
- Non-page files   │ 285 
- Static files     │ 301 
- Processed images │ 449 
- Aliases          │   3 
- Cleaned          │   0 
+ Pages            │ 698
+ Paginator pages  │  11
+ Non-page files   │ 285
+ Static files     │ 301
+ Processed images │ 449
+ Aliases          │   3
+ Cleaned          │   0
 
 Total in 729 ms
 ```
@@ -173,12 +173,20 @@ All 10 tests passed:
 }
 
 // Semantic Class Names
-.notification-hide { /* ... */ }
-.lightbox-img { /* ... */ }
-.adhesion-card-gradient { /* ... */ }
+.notification-hide {
+  /* ... */
+}
+.lightbox-img {
+  /* ... */
+}
+.adhesion-card-gradient {
+  /* ... */
+}
 
 // Theme-Aware Design
-body[data-bs-theme="light"] .component { /* ... */ }
+body[data-bs-theme="light"] .component {
+  /* ... */
+}
 ```
 
 ### JavaScript Patterns
@@ -191,7 +199,7 @@ const fetchData = async (url) => {
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     return await response.json();
   } catch (error) {
-    console.error('Fetch error:', error);
+    console.error("Fetch error:", error);
   }
 };
 
@@ -265,14 +273,14 @@ When testing locally, verify these interactive areas:
 
 ### Key Files Modified
 
-| File | Type | Changes |
-|------|------|---------|
-| `assets/scss/_skill-refactor.scss` | SCSS | Created - 1034 lines of centralized styles |
-| `assets/scss/index.scss` | SCSS | Updated - imports refactored partial |
-| `static/js/lightbox.js` | JavaScript | Modernized - ES6+ syntax, async/await |
-| `layouts/partials/*.html` | Templates | Refactored - removed inline styles |
-| `assets/icons/forgejo.svg` | SVG | Optimized - style attributes → element attributes |
-| `scripts/*.sh` | Bash | Created - verification and build scripts |
+| File                               | Type       | Changes                                           |
+| ---------------------------------- | ---------- | ------------------------------------------------- |
+| `assets/scss/_skill-refactor.scss` | SCSS       | Created - 1034 lines of centralized styles        |
+| `assets/scss/index.scss`           | SCSS       | Updated - imports refactored partial              |
+| `static/js/lightbox.js`            | JavaScript | Modernized - ES6+ syntax, async/await             |
+| `layouts/partials/*.html`          | Templates  | Refactored - removed inline styles                |
+| `assets/icons/forgejo.svg`         | SVG        | Optimized - style attributes → element attributes |
+| `scripts/*.sh`                     | Bash       | Created - verification and build scripts          |
 
 ## Future Enhancements (Optional)
 

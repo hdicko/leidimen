@@ -2,17 +2,17 @@
 title: La rentrée scolaire à Dorool 2008
 date: 2008-10-21 20:37:50+02:00
 draft: false
-description: 'Dorool: La rentrée scolaire à Dorool 2008 - En savoir plus sur nos initiatives en actualités.'
+description: "{ .display .text-center} Mamadou est rentré du Mali le mois dernier avec d’excellentes nouvelles de l’école !"
 author: Moussa Dicko
 slug: rentree-scolaire-dorool-2008
 weight: 0
 image: /img/logo/leidimen-logo-ai.jpeg
 categories:
-- Actualités
+  - Actualités
 tags:
-- blog
+  - blog
 villages:
-- dorool
+  - dorool
 ---
 
 # Rentree scolaire

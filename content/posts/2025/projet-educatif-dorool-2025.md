@@ -2,20 +2,20 @@
 title: Nouveau Projet Éducatif à Dorool
 date: 2025-08-19 10:00:00+00:00
 draft: false
-description: 'Dorool: Nouveau Projet Éducatif à Dorool - En savoir plus sur nos initiatives en éducation.'
+description: "L'association Leidimen lance un ambitieux projet d'alphabétisation dans le village de Dorool, au Mali."
 author: Équipe Leidimen
 slug: projet-educatif-dorool-2025
 weight: 0
 image: /img/logo/leidimen-logo-ai.jpeg
 categories:
-- Éducation
-- Projets
+  - Éducation
+  - Projets
 tags:
-- Dorool
-- Alphabétisation
-- Mali
+  - Dorool
+  - Alphabétisation
+  - Mali
 villages:
-- dorool
+  - dorool
 ---
 
 {{< details summary="lire tout l'article" >}}

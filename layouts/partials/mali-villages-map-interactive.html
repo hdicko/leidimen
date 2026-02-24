@@ -1177,17 +1177,17 @@ document.addEventListener('DOMContentLoaded', function() {
     // Create village detail content structure
     const detailContent = document.createElement('div');
     detailContent.className = 'village-detail-content';
-    
+
     // Add description
     const description = document.createElement('p');
     description.className = 'lead';
     description.textContent = village.description;
     detailContent.appendChild(description);
-    
+
     // Add statistics row
     const statsRow = document.createElement('div');
     statsRow.className = 'row g-3 mb-4';
-    
+
     // Population stat
     const popCol = document.createElement('div');
     popCol.className = 'col-6';
@@ -1201,7 +1201,7 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
     `;
     statsRow.appendChild(popCol);
-    
+
     // Status stat
     const statusCol = document.createElement('div');
     statusCol.className = 'col-6';
@@ -1215,9 +1215,9 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
     `;
     statsRow.appendChild(statusCol);
-    
+
     detailContent.appendChild(statsRow);
-    
+
     // Add projects if any
     if (village.projects.length > 0) {
       const projectsDiv = document.createElement('div');
@@ -1230,7 +1230,7 @@ document.addEventListener('DOMContentLoaded', function() {
       `;
       detailContent.appendChild(projectsDiv);
     }
-    
+
     // Add coordinates section
     const coordDiv = document.createElement('div');
     coordDiv.className = 'coordinates-info';
@@ -1245,7 +1245,7 @@ document.addEventListener('DOMContentLoaded', function() {
       </button>
     `;
     detailContent.appendChild(coordDiv);
-    
+
     body.appendChild(detailContent);
         </div>
 
@@ -1314,23 +1314,23 @@ document.addEventListener('DOMContentLoaded', function() {
     const notification = document.createElement('div');
     notification.className = `notification-ctx7 notification-${type}`;
 
-    const iconClass = type === 'success' ? 'bi-check-circle' : 
-                      type === 'info' ? 'bi-info-circle' : 
+    const iconClass = type === 'success' ? 'bi-check-circle' :
+                      type === 'info' ? 'bi-info-circle' :
                       'bi-exclamation-triangle';
-    
+
     const icon = document.createElement('i');
     icon.className = `bi ${iconClass} notification-icon notification-icon--${type}`;
-    
+
     const contentDiv = document.createElement('div');
-    
+
     const titleEl = document.createElement('h6');
     titleEl.className = 'notification-title';
     titleEl.textContent = title;
-    
+
     const messageEl = document.createElement('p');
     messageEl.className = 'notification-message';
     messageEl.textContent = message;
-    
+
     contentDiv.appendChild(titleEl);
     contentDiv.appendChild(messageEl);
     notification.appendChild(icon);

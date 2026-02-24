@@ -1,10 +1,10 @@
 /**
  * Prompts Registration Module
- * 
+ *
  * This module registers pre-configured prompt templates that guide users through
  * common Hugo site management tasks. Prompts provide structured instructions and
  * rules for content creation, ensuring consistency with site conventions.
- * 
+ *
  * Available Prompts:
  * - new-post: Guide for creating blog posts with proper frontmatter
  * - new-gallery: Guide for creating photo galleries
@@ -12,32 +12,32 @@
  * - createnewpost: Complete professional guide for creating high-quality blog posts
  */
 
-import { z } from "zod";
+import { z } from 'zod';
 
 /**
  * Register all prompt templates with the MCP server
- * 
+ *
  * @param {McpServer} server - The MCP server instance
  * @param {string} hugoRoot - Root directory of the Hugo site
  */
 export function registerPrompts(server, hugoRoot) {
-  // ═══════════════════════════════════════
-  // PROMPT: Create a new post with guidance
-  // ═══════════════════════════════════════
-  server.prompt(
-    "new-post",
-    "Guide for creating a new Leidimen blog post",
-    {
-      topic: z.string().describe("What the post is about"),
-      village: z.string().optional().describe("Which village(s) it relates to"),
-    },
-    async ({ topic, village }) => ({
-      messages: [
-        {
-          role: "user",
-          content: {
-            type: "text",
-            text: `Create a new blog post for the Leidimen association website about: "${topic}"${village ? ` related to village: ${village}` : ""}.
+	// ═══════════════════════════════════════
+	// PROMPT: Create a new post with guidance
+	// ═══════════════════════════════════════
+	server.prompt(
+		'new-post',
+		'Guide for creating a new Leidimen blog post',
+		{
+			topic: z.string().describe('What the post is about'),
+			village: z.string().optional().describe('Which village(s) it relates to'),
+		},
+		async ({ topic, village }) => ({
+			messages: [
+				{
+					role: 'user',
+					content: {
+						type: 'text',
+						text: `Create a new blog post for the Leidimen association website about: "${topic}"${village ? ` related to village: ${village}` : ''}.
 
 The site is for a French solidarity association supporting villages in the Douentza region of Mali.
 
@@ -48,32 +48,32 @@ Rules:
 - Categories: Éducation, Santé, Infrastructure, informations
 - Moods: heureux, triste, inspire, motive, reconnaissant
 - Include an SEO description (150-160 characters)
-- Date should be today: ${new Date().toISOString().split("T")[0]}
+- Date should be today: ${new Date().toISOString().split('T')[0]}
 - Post goes in content/posts/${new Date().getFullYear()}/
 
 Use the create-post tool to create it.`,
-          },
-        },
-      ],
-    })
-  );
+					},
+				},
+			],
+		}),
+	);
 
-  // ═══════════════════════════════════════
-  // PROMPT: Create a gallery
-  // ═══════════════════════════════════════
-  server.prompt(
-    "new-gallery",
-    "Guide for creating a photo gallery",
-    {
-      title: z.string().describe("Gallery title"),
-    },
-    async ({ title }) => ({
-      messages: [
-        {
-          role: "user",
-          content: {
-            type: "text",
-            text: `Create a new photo gallery titled "${title}" for the Leidimen site.
+	// ═══════════════════════════════════════
+	// PROMPT: Create a gallery
+	// ═══════════════════════════════════════
+	server.prompt(
+		'new-gallery',
+		'Guide for creating a photo gallery',
+		{
+			title: z.string().describe('Gallery title'),
+		},
+		async ({ title }) => ({
+			messages: [
+				{
+					role: 'user',
+					content: {
+						type: 'text',
+						text: `Create a new photo gallery titled "${title}" for the Leidimen site.
 
 Remember:
 - Use the create-gallery tool
@@ -81,26 +81,22 @@ Remember:
 - The {{< gallery >}} shortcode auto-loads PhotoSwipe
 - Never load PhotoSwipe twice on the same page
 - Supported formats: .jpg, .jpeg, .png, .webp`,
-          },
-        },
-      ],
-    })
-  );
+					},
+				},
+			],
+		}),
+	);
 
-  // ═══════════════════════════════════════
-  // PROMPT: Content audit
-  // ═══════════════════════════════════════
-  server.prompt(
-    "content-audit",
-    "Run a full content audit on the Leidimen site",
-    {},
-    async () => ({
-      messages: [
-        {
-          role: "user",
-          content: {
-            type: "text",
-            text: `Run a complete content audit on the Leidimen Hugo site:
+	// ═══════════════════════════════════════
+	// PROMPT: Content audit
+	// ═══════════════════════════════════════
+	server.prompt('content-audit', 'Run a full content audit on the Leidimen site', {}, async () => ({
+		messages: [
+			{
+				role: 'user',
+				content: {
+					type: 'text',
+					text: `Run a complete content audit on the Leidimen Hugo site:
 
 1. Use validate-content to check all files for issues
 2. Use list-content for "posts" to see all articles
@@ -113,36 +109,35 @@ Report:
 - Posts without descriptions (bad for SEO)
 - Posts without villages (unlinked to geography)
 - Content distribution by year`,
-          },
-        },
-      ],
-    })
-  );
+				},
+			},
+		],
+	}));
 
-  // ═══════════════════════════════════════
-  // PROMPT: Create a comprehensive new post
-  // ═══════════════════════════════════════
-  server.prompt(
-    "createnewpost",
-    "Complete guide for creating a professional Leidimen blog post with all best practices",
-    {
-      topic: z.string().describe("Main subject or theme of the post"),
-      villages: z.string().optional().describe("Related villages (comma-separated)"),
-      category: z.string().optional().describe("Primary category (Éducation, Santé, Infrastructure, or informations)"),
-      mood: z.string().optional().describe("Emotional tone (heureux, triste, inspire, motive, reconnaissant)"),
-      hasImages: z.boolean().optional().describe("Whether the post will include images/gallery"),
-    },
-    async ({ topic, villages, category, mood, hasImages }) => {
-      const currentYear = new Date().getFullYear();
-      const currentDate = new Date().toISOString().split("T")[0];
-      
-      return {
-        messages: [
-          {
-            role: "user",
-            content: {
-              type: "text",
-              text: `Create a comprehensive, high-quality blog post for the Leidimen association website.
+	// ═══════════════════════════════════════
+	// PROMPT: Create a comprehensive new post
+	// ═══════════════════════════════════════
+	server.prompt(
+		'createnewpost',
+		'Complete guide for creating a professional Leidimen blog post with all best practices',
+		{
+			topic: z.string().describe('Main subject or theme of the post'),
+			villages: z.string().optional().describe('Related villages (comma-separated)'),
+			category: z.string().optional().describe('Primary category (Éducation, Santé, Infrastructure, or informations)'),
+			mood: z.string().optional().describe('Emotional tone (heureux, triste, inspire, motive, reconnaissant)'),
+			hasImages: z.boolean().optional().describe('Whether the post will include images/gallery'),
+		},
+		async ({ topic, villages, category, mood, hasImages }) => {
+			const currentYear = new Date().getFullYear();
+			const currentDate = new Date().toISOString().split('T')[0];
+
+			return {
+				messages: [
+					{
+						role: 'user',
+						content: {
+							type: 'text',
+							text: `Create a comprehensive, high-quality blog post for the Leidimen association website.
 
 ═══════════════════════════════════
 CONTEXT & MISSION
@@ -151,10 +146,10 @@ Leidimen is a French solidarity association supporting villages in the Douentza 
 The site uses Hugo static site generator with custom taxonomies for organizing content.
 
 Topic: "${topic}"
-${villages ? `Related Villages: ${villages}` : "Villages: [To be determined based on content]"}
-${category ? `Category: ${category}` : "Category: [Choose: Éducation, Santé, Infrastructure, or informations]"}
-${mood ? `Mood: ${mood}` : "Mood: [Choose: heureux, triste, inspire, motive, or reconnaissant]"}
-${hasImages ? "📸 This post will include images/gallery" : ""}
+${villages ? `Related Villages: ${villages}` : 'Villages: [To be determined based on content]'}
+${category ? `Category: ${category}` : 'Category: [Choose: Éducation, Santé, Infrastructure, or informations]'}
+${mood ? `Mood: ${mood}` : 'Mood: [Choose: heureux, triste, inspire, motive, or reconnaissant]'}
+${hasImages ? '📸 This post will include images/gallery' : ''}
 
 ═══════════════════════════════════
 CRITICAL REQUIREMENTS
@@ -235,12 +230,16 @@ CRITICAL REQUIREMENTS
    - Year-based directory structure (NEW convention)
    - Slug: Auto-generated from title (Unicode safe)
    
-   ${hasImages ? `
+   ${
+			hasImages
+				? `
    For posts with images:
    - Use bundle structure: content/posts/${currentYear}/[slug]/index.md
    - Place images in same folder (page resources)
    - Reference with {{< gallery >}} shortcode or ![alt](/path)
-   - PhotoSwipe auto-loads with gallery shortcode` : ""}
+   - PhotoSwipe auto-loads with gallery shortcode`
+				: ''
+		}
 
 7. SHORTCODES AVAILABLE
    - {{< gallery >}} - Auto photo gallery from page resources
@@ -264,7 +263,7 @@ IMPLEMENTATION STEPS
    - moods: [Array of mood(s)]
    - description: [SEO description 150-160 chars]
    - image: [Cover image path if applicable]
-   - bundle: ${hasImages ? "true" : "false"}
+   - bundle: ${hasImages ? 'true' : 'false'}
 
 5. Validate with validate-content tool after creation
 6. Confirm all taxonomies are lowercase and valid
@@ -285,7 +284,7 @@ Before finalizing, verify:
 ✓ Includes concrete details (dates, names, numbers)
 ✓ Human impact emphasized
 ✓ SEO optimized (keywords in title/description)
-${hasImages ? "✓ Images are page resources (in same folder)" : ""}
+${hasImages ? '✓ Images are page resources (in same folder)' : ''}
 ✓ Call to action included
 ✓ Proper year directory (${currentYear})
 
@@ -326,10 +325,10 @@ NOW PROCEED
 
 Use the create-post tool to create this post following all guidelines above.
 Ensure quality, accuracy, and adherence to Leidimen's mission and values.`,
-            },
-          },
-        ],
-      };
-    }
-  );
+						},
+					},
+				],
+			};
+		},
+	);
 }

@@ -2,18 +2,18 @@
 title: Réussites de notre mission 2025
 date: 2025-08-18 14:30:00+00:00
 draft: false
-description: Réussites de notre mission 2025 - En savoir plus sur nos initiatives en bilan.
+description: "L'année 2025 a été marquée par de nombreuses réussites dans nos actions de solidarité entre Bondoufle et les villages du Mali."
 author: Bureau Leidimen
 slug: bilan-reussites-2025
 weight: 0
 image: /img/logo/leidimen-logo.jpg
 categories:
-- Bilan
-- Réussites
+  - Bilan
+  - Réussites
 tags:
-- '2025'
-- Bilan
-- Solidarité
+  - "2025"
+  - Bilan
+  - Solidarité
 villages: []
 ---
 

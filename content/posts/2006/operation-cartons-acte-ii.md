@@ -2,15 +2,15 @@
 title: Opération cartons Acte II
 date: 2006-09-30
 draft: false
-description: 'Douentza: Opération cartons Acte II - En savoir plus sur nos initiatives en culture.'
+description: "Dans le cadre du projet d’envoi de manuels scolaires et d’ordinateurs au Mali, des membres de l’association et des bénévoles ont participé a un inventaire."
 categories:
-- Culture
+  - Culture
 tags:
-- archive
-- wordpress
-- News Leidimen
+  - archive
+  - wordpress
+  - News Leidimen
 villages:
-- douentza
+  - douentza
 source: https://leidimen.com/operation-cartons-acte-ii
 ---
 

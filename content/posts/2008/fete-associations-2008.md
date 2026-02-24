@@ -2,16 +2,16 @@
 title: Fête des associations 21/09/08
 date: 2008-09-14 17:01:00+01:00
 draft: false
-description: Fête des associations 21/09/08 - En savoir plus sur nos initiatives en news leidimen.
+description: "La fête des associations aura lieu le dimanche 21 septembre 2008 au stade Henry Marcille à Bondoufle."
 author: Aissa Dicko
 categories:
-- News Leidimen
+  - News Leidimen
 tags:
-- événement
-- bondoufle
+  - événement
+  - bondoufle
 villages: []
 moods:
-- Motivé
+  - Motivé
 ---
 
 Bonjour à tous!

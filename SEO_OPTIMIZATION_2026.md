@@ -11,6 +11,7 @@ The Leidimen Hugo site has been significantly enhanced with advanced SEO optimiz
 ### 1. **Image SEO & Accessibility** ✅
 
 **Improvements:**
+
 - ✅ Added automatic alt text generation from image metadata/filenames
 - ✅ Enhanced gallery shortcode with proper alt attributes
 - ✅ Added width/height attributes for CLS (Cumulative Layout Shift) improvement
@@ -19,6 +20,7 @@ The Leidimen Hugo site has been significantly enhanced with advanced SEO optimiz
 - ✅ Added ARIA labels for better accessibility
 
 **Files Modified:**
+
 - [layouts/shortcodes/gallery.html](layouts/shortcodes/gallery.html)
 - [hugo.toml](hugo.toml) - Image processing settings
 
@@ -43,6 +45,7 @@ The Leidimen Hugo site has been significantly enhanced with advanced SEO optimiz
   - File: [layouts/partials/seo/howto-schema.html](layouts/partials/seo/howto-schema.html)
 
 **Usage:** Add frontmatter to pages:
+
 ```yaml
 # FAQ Example
 faqs:
@@ -71,6 +74,7 @@ howto:
 ### 3. **Internal Linking Structure** ✅
 
 **New Component:**
+
 - ✅ **Related Posts Partial** - Intelligent content recommendations
   - Displays up to 6 related posts based on shared taxonomies
   - Prioritizes: Villages > Categories > Tags
@@ -78,9 +82,11 @@ howto:
   - File: [layouts/partials/related-posts.html](layouts/partials/related-posts.html)
 
 **Files Modified:**
+
 - [layouts/posts/single.html](layouts/posts/single.html) - Integrated related posts
 
-**Impact:** 
+**Impact:**
+
 - Improved user engagement (lower bounce rate)
 - Better crawlability and link equity distribution
 - Enhanced topical relevance signals to search engines
@@ -108,6 +114,7 @@ howto:
   - Deferred non-critical CSS (Fancybox, Font Awesome)
 
 **Metrics Targeted:**
+
 - **LCP (Largest Contentful Paint):** Preload hero images, optimize fonts
 - **FID (First Input Delay):** Deferred JavaScript, optimized critical path
 - **CLS (Cumulative Layout Shift):** Image dimensions, font preloading
@@ -119,12 +126,14 @@ howto:
 ### 5. **Multilingual SEO Support** ✅
 
 **Implementation:**
+
 - ✅ Hreflang tags for French (fr, fr-FR) and x-default
 - ✅ Prepared for future English content expansion
 - ✅ Open Graph locale declarations
 - ✅ File: [layouts/partials/seo/hreflang.html](layouts/partials/seo/hreflang.html)
 
 **Future-Ready:**
+
 ```html
 <link rel="alternate" hreflang="fr" href="..." />
 <link rel="alternate" hreflang="en" href="..." />
@@ -140,6 +149,7 @@ howto:
 **New Testing Script:** `test-seo.sh`
 
 **Test Categories (50+ tests):**
+
 1. ✅ Meta Tags Validation (title, description, OG, Twitter)
 2. ✅ Structured Data (JSON-LD schemas)
 3. ✅ Image Optimization (alt text, lazy loading, dimensions)
@@ -152,11 +162,13 @@ howto:
 10. ✅ Internal Linking (related posts)
 
 **Usage:**
+
 ```bash
 ./test-seo.sh
 ```
 
 **Output:**
+
 - Color-coded test results (✓ Pass, ✗ Fail, ⚠ Warning)
 - Success rate percentage
 - Detailed failure explanations
@@ -168,21 +180,22 @@ howto:
 
 ## 📊 SEO Improvements Summary
 
-| Category | Before | After | Improvement |
-|----------|--------|-------|-------------|
-| **Structured Data Types** | 3 (NGO, BlogPosting, BreadcrumbList) | 6 (+ FAQPage, Event, HowTo) | +100% |
-| **Image Alt Text** | Partial | Comprehensive | 100% coverage |
-| **Internal Linking** | Basic | Smart recommendations | Related posts on all articles |
-| **Performance Hints** | None | 10+ resource hints | Faster LCP/FID |
-| **Multilingual Support** | None | Hreflang tags | International SEO ready |
-| **Automated Testing** | Basic | 50+ SEO tests | Quality assurance |
-| **Image Quality** | 75 (Box filter) | 85 (Lanczos) | +13% quality |
+| Category                  | Before                               | After                       | Improvement                   |
+| ------------------------- | ------------------------------------ | --------------------------- | ----------------------------- |
+| **Structured Data Types** | 3 (NGO, BlogPosting, BreadcrumbList) | 6 (+ FAQPage, Event, HowTo) | +100%                         |
+| **Image Alt Text**        | Partial                              | Comprehensive               | 100% coverage                 |
+| **Internal Linking**      | Basic                                | Smart recommendations       | Related posts on all articles |
+| **Performance Hints**     | None                                 | 10+ resource hints          | Faster LCP/FID                |
+| **Multilingual Support**  | None                                 | Hreflang tags               | International SEO ready       |
+| **Automated Testing**     | Basic                                | 50+ SEO tests               | Quality assurance             |
+| **Image Quality**         | 75 (Box filter)                      | 85 (Lanczos)                | +13% quality                  |
 
 ---
 
 ## 🎯 Expected Impact
 
 ### Search Engine Benefits
+
 1. **Richer Search Results:**
    - FAQ rich snippets with expandable Q&A
    - Event cards with dates and locations
@@ -201,6 +214,7 @@ howto:
    - Ready for English content expansion
 
 ### User Experience Benefits
+
 1. **Faster Load Times:**
    - Resource hints reduce DNS/connection overhead
    - Lazy loading reduces initial page weight
@@ -221,6 +235,7 @@ howto:
 ## 🔧 Files Created/Modified
 
 ### New Files (8):
+
 1. `layouts/partials/seo/faq-schema.html` - FAQ structured data
 2. `layouts/partials/seo/event-schema.html` - Event structured data
 3. `layouts/partials/seo/howto-schema.html` - HowTo structured data
@@ -231,6 +246,7 @@ howto:
 8. `SEO_OPTIMIZATION_2026.md` - This documentation
 
 ### Modified Files (4):
+
 1. `layouts/shortcodes/gallery.html` - Enhanced image SEO
 2. `layouts/posts/single.html` - Added related posts
 3. `layouts/partials/head.html` - Integrated new SEO partials
@@ -243,6 +259,7 @@ howto:
 ### For Content Creators
 
 **Adding FAQs to a Page:**
+
 ```yaml
 ---
 title: "Adhésion"
@@ -255,6 +272,7 @@ faqs:
 ```
 
 **Adding Events:**
+
 ```yaml
 ---
 title: "Assemblée Générale 2026"
@@ -270,6 +288,7 @@ event:
 ```
 
 **Adding How-To Guides:**
+
 ```yaml
 ---
 title: "Comment nous rejoindre"
@@ -290,6 +309,7 @@ howto:
 ### For Developers
 
 **Running SEO Tests:**
+
 ```bash
 # Build and test
 npm run build
@@ -300,6 +320,7 @@ npm run build
 ```
 
 **Checking Related Posts Locally:**
+
 ```bash
 ./dev-server.sh
 # Navigate to any blog post
@@ -307,6 +328,7 @@ npm run build
 ```
 
 **Validating Structured Data:**
+
 1. Build site: `npm run build`
 2. Use Google Rich Results Test: https://search.google.com/test/rich-results
 3. Or use Schema.org validator: https://validator.schema.org/
@@ -328,16 +350,19 @@ npm run build
 ### Monitoring Post-Deployment
 
 **Week 1-2:**
+
 - Monitor Google Search Console for structured data errors
 - Check Page Experience report for Core Web Vitals
 - Review internal link clicks in Analytics
 
 **Month 1:**
+
 - Check for rich snippet impressions in Search Console
 - Monitor average position changes
 - Review bounce rate and pages per session
 
 **Ongoing:**
+
 - Run `./test-seo.sh` before each deployment
 - Update structured data as content types evolve
 - Add new schema types for emerging content patterns
@@ -347,18 +372,21 @@ npm run build
 ## 🎓 SEO Best Practices Going Forward
 
 ### Content Creation
+
 1. **Always include:** Title, description (150-160 chars), image, taxonomies
 2. **Use structured data:** Add FAQ/Event/HowTo frontmatter where applicable
 3. **Optimize images:** Descriptive filenames, proper alt text
 4. **Internal linking:** Reference related content naturally in text
 
 ### Technical Maintenance
+
 1. **Monitor performance:** Run SEO tests regularly
 2. **Update schemas:** Keep structured data current with content changes
 3. **Check errors:** Review Google Search Console weekly
 4. **Optimize new content types:** Add new schemas as site evolves
 
 ### Accessibility
+
 1. **Alt text:** Every image needs descriptive alt text
 2. **Semantic HTML:** Use proper heading hierarchy (H1 → H2 → H3)
 3. **ARIA labels:** Add to interactive elements
@@ -369,17 +397,20 @@ npm run build
 ## 📚 Resources & Documentation
 
 ### SEO Tools
+
 - Google Search Console: https://search.google.com/search-console
 - Google Rich Results Test: https://search.google.com/test/rich-results
 - PageSpeed Insights: https://pagespeed.web.dev/
 - Schema.org Documentation: https://schema.org/
 
 ### Hugo SEO Guides
+
 - Hugo SEO Guide: https://gohugo.io/templates/embedded/
 - Internal Templates: https://gohugo.io/templates/internal/
 - Image Processing: https://gohugo.io/content-management/image-processing/
 
 ### Related Documentation
+
 - [SEO_LLM_OPTIMIZATION_SUMMARY.md](SEO_LLM_OPTIMIZATION_SUMMARY.md) - Previous optimization (Jan 2025)
 - [CONTENT_CREATION_GUIDE.md](CONTENT_CREATION_GUIDE.md) - Content guidelines
 - [CODE_DOCUMENTATION.md](CODE_DOCUMENTATION.md) - Technical architecture
@@ -395,13 +426,14 @@ The Leidimen site now has **enterprise-grade SEO** with:
 ✅ **Smart internal linking** (related posts recommendations)  
 ✅ **Core Web Vitals optimization** (resource hints, performance)  
 ✅ **Multilingual readiness** (hreflang tags)  
-✅ **Automated testing** (50+ SEO quality checks)  
+✅ **Automated testing** (50+ SEO quality checks)
 
 **Result:** The site is optimized for maximum search visibility, user experience, and accessibility. It's ready to rank competitively for humanitarian, education, and development topics related to Mali and Douentza.
 
 ---
 
 **Next Steps:**
+
 1. Deploy changes with `./deploy.sh`
 2. Submit updated sitemap to Google Search Console
 3. Request re-indexing of key pages

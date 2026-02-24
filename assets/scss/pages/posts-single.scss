@@ -63,7 +63,7 @@ summary {
   }
 
   &::after {
-    content: '▼';
+    content: "▼";
     font-size: 1rem;
     color: #667eea;
     transition: transform 0.3s ease;
@@ -80,7 +80,7 @@ summary {
   }
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     top: 0;

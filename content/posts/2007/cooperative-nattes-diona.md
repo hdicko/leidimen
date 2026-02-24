@@ -2,18 +2,18 @@
 title: Coopérative de productrices de nattes à Diona
 date: 2007-11-01
 draft: false
-description: 'Diona: Coopérative de productrices de nattes à Diona - En savoir plus sur nos initiatives en artisanat.'
+description: "Dans nos villages, les femmes ont l'habitude de tisser des nattes qui servent à tous les usages : les nattes font office de table, de chaise, de tapis… et."
 image: /images/wordpress/2007-11-niger-mali-2005-084-small.jpg
 categories:
-- Artisanat
-- Développement
+  - Artisanat
+  - Développement
 tags:
-- nattes
-- femmes
-- coopérative
-- artisanat
+  - nattes
+  - femmes
+  - coopérative
+  - artisanat
 villages:
-- diona
+  - diona
 type: posts
 ---
 

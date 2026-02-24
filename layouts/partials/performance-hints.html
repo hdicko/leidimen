@@ -1,41 +1,76 @@
-{{/* 
-  Performance Hints Partial
+{{/* Performance Hints Partial
   Purpose: Add resource hints for better performance and Core Web Vitals
-  
+
   Features:
   - DNS prefetch for external domains
   - Preconnect for critical external resources
   - Preload for critical fonts and images
-  
+
   Usage: Include in head.html partial
 */}}
 
 {{/* DNS Prefetch for external resources */}}
-<link rel="dns-prefetch" href="//cdn.jsdelivr.net">
-<link rel="dns-prefetch" href="//unpkg.com">
-<link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
-<link rel="dns-prefetch" href="//fonts.googleapis.com">
-<link rel="dns-prefetch" href="//fonts.gstatic.com">
+<link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
+<link rel="dns-prefetch" href="//unpkg.com" />
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link rel="dns-prefetch" href="//fonts.gstatic.com" />
 
 {{/* Preconnect for critical external resources */}}
-<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
 
 {{/* Preload critical fonts for LCP improvement (non-blocking) */}}
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic"></noscript>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"></noscript>
+<link
+  rel="preload"
+  as="style"
+  href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic"
+  onload="this.onload=null;this.rel='stylesheet'" />
+<noscript
+  ><link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic"
+/></noscript>
+<link
+  rel="preload"
+  as="style"
+  href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+  onload="this.onload=null;this.rel='stylesheet'" />
+<noscript
+  ><link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+/></noscript>
 
 {{/* Preload logo for LCP improvement (above-the-fold image) */}}
 {{ if .IsHome }}
-<link rel="preload" as="image" href="{{ "images/leidimen-logo.jpg" | absURL }}" type="image/jpeg">
+  <link
+    rel="preload"
+    as="image"
+    href="{{ "images/leidimen-logo.jpg" | absURL }}"
+    type="image/jpeg" />
 {{ end }}
 
 {{/* Defer non-critical CSS */}}
-<link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"></noscript>
+<link
+  rel="preload"
+  as="style"
+  href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
+  onload="this.onload=null;this.rel='stylesheet'" />
+<noscript
+  ><link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
+/></noscript>
 
-<link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></noscript>
+<link
+  rel="preload"
+  as="style"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  onload="this.onload=null;this.rel='stylesheet'" />
+<noscript
+  ><link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/></noscript>

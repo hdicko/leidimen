@@ -2,15 +2,15 @@
 title: Le Mali en fête
 date: 2006-10-06
 draft: false
-description: 'Douentza: Le Mali en fête - En savoir plus sur nos initiatives en culture.'
+description: "Le Mali est au coeur de l’actualité en île de France."
 categories:
-- Culture
+  - Culture
 tags:
-- archive
-- wordpress
-- Sorties
+  - archive
+  - wordpress
+  - Sorties
 villages:
-- douentza
+  - douentza
 source: https://leidimen.com/le-mali-en-fete
 ---
 

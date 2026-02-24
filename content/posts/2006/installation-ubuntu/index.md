@@ -2,21 +2,21 @@
 title: Installation d'Ubuntu
 date: 2006-12-20 07:39:00+01:00
 draft: false
-description: 'Douentza: Installation d''Ubuntu - En savoir plus sur nos initiatives en news leidimen.'
+description: "Ubuntu a été installé sur tous les PC destinés au lycée de Douentza."
 author: Olivier Dicko
 image: install.jpg
 categories:
-- News Leidimen
+  - News Leidimen
 tags:
-- ubuntu
-- linux
-- informatique
-- open source
-- douentza
+  - ubuntu
+  - linux
+  - informatique
+  - open source
+  - douentza
 villages:
-- douentza
+  - douentza
 moods:
-- Motivé
+  - Motivé
 ---
 
 ## Une étape cruciale franchie ! 🐧

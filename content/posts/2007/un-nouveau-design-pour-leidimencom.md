@@ -2,15 +2,15 @@
 title: Un nouveau design pour Leïdimen.com !
 date: 2007-12-06
 draft: false
-description: 'Douentza: Un nouveau design pour Leïdimen.com ! - En savoir plus sur nos initiatives en santé.'
+description: "Comme vous l’avez sans doute remarqué, notre site Internet a fait peau neuve."
 categories:
-- Santé
+  - Santé
 tags:
-- archive
-- wordpress
-- Divers
+  - archive
+  - wordpress
+  - Divers
 villages:
-- douentza
+  - douentza
 source: https://leidimen.com/un-nouveau-design-pour-leidimencom
 ---
 

@@ -2,17 +2,17 @@
 title: Soirée leïdimen
 date: 2008-04-10
 draft: false
-description: 'Douentza: Soirée leïdimen - En savoir plus sur nos initiatives en culture.'
+description: "Samedi 3 Mai 2008 Soirée au profit de l’association LEIDIMEN à la salle des fêtes de Bondoufle (91) rue de villeroy de 21h30 à 3h45 Mixée par DJ Jacks &."
 categories:
-- Culture
+  - Culture
 tags:
-- archive
-- wordpress
-- Divers
-- News Leidimen
-- Sorties
+  - archive
+  - wordpress
+  - Divers
+  - News Leidimen
+  - Sorties
 villages:
-- douentza
+  - douentza
 source: https://leidimen.com/soiree-leidimen
 ---
 

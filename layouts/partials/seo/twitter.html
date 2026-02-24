@@ -18,7 +18,8 @@
     {{ .Site.Title }}
   {{ else }}
     {{ .Title | truncate 70 }}
-  {{ end }}" />
+  {{ end }}
+  " />
 
 {{/* Description - max 200 characters for Twitter */}}
 {{ $description := "" }}
@@ -29,7 +30,9 @@
 {{ else }}
   {{ $description = .Site.Params.description }}
 {{ end }}
-<meta name="twitter:description" content="{{ $description | plainify | truncate 200 }}" />
+<meta
+  name="twitter:description"
+  content="{{ $description | plainify | truncate 200 }}" />
 
 {{/* Image - validate and optimize */}}
 {{ $image := "" }}
@@ -48,8 +51,20 @@
   {{/* Twitter recommends 1200x628px for large cards */}}
   {{ $resized := $img.Resize "1200x webp q85 lanczos" }}
   <meta name="twitter:image" content="{{ $resized.Permalink }}" />
-  <meta name="twitter:image:alt" content="{{ with .Params.image_alt }}{{ . }}{{ else }}{{ .Title }}{{ end }}" />
+  <meta
+    name="twitter:image:alt"
+    content="{{ with .Params.image_alt }}
+      {{ . }}
+    {{ else }}
+      {{ .Title }}
+    {{ end }}" />
 {{ else }}
   <meta name="twitter:image" content="{{ $image | absURL }}" />
-  <meta name="twitter:image:alt" content="{{ with .Params.image_alt }}{{ . }}{{ else }}{{ .Site.Title }}{{ end }}" />
+  <meta
+    name="twitter:image:alt"
+    content="{{ with .Params.image_alt }}
+      {{ . }}
+    {{ else }}
+      {{ .Site.Title }}
+    {{ end }}" />
 {{ end }}

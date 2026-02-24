@@ -2,15 +2,15 @@
 title: La rentrée à Dorool
 date: 2010-01-01
 draft: false
-description: 'Dorool: La rentrée à Dorool - En savoir plus sur nos initiatives en éducation.'
+description: "Mamadou est rentré du Mali le mois dernier avec d’excellentes nouvelles de l’école !"
 categories:
-- Éducation
+  - Éducation
 tags:
-- archive
-- wordpress
-- news
+  - archive
+  - wordpress
+  - news
 villages:
-- dorool
+  - dorool
 source: https://leidimen.com/la-rentree-a-dorool
 ---
 

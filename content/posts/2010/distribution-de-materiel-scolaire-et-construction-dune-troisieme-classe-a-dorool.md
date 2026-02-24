@@ -2,16 +2,16 @@
 title: Distribution de matériel scolaire et construction d’une troisième classe à Dorool
 date: 2010-01-01
 draft: false
-description: 'Dorool: Distribution de matériel scolaire et constructi... - En savoir plus sur nos initiatives en éducation.'
+description: "Comme chaque année, plusieurs membres de Leïdimen se sont rendus au Mali pour réaliser certaines actions et faire avancer les projets de l’association."
 categories:
-- Éducation
+  - Éducation
 tags:
-- archive
-- wordpress
-- news
+  - archive
+  - wordpress
+  - news
 villages:
-- dorool
-- manko
+  - dorool
+  - manko
 source: https://leidimen.com/distribution-de-materiel-scolaire-et-construction-dune-troisieme-classe-a-dorool
 ---
 

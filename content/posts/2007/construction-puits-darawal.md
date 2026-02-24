@@ -2,18 +2,18 @@
 title: Construction d'un puits à Darawal
 date: 2007-12-01
 draft: false
-description: 'Darawal: Construction d''un puits à Darawal - En savoir plus sur nos initiatives en infrastructure.'
+description: "Eh bien, sachez qu'à Darawal, c'est l'eau qu'ils boivent et qu'ils utilisent pour se laver ou faire la vaisselle !"
 image: /images/wordpress/2007-12-puits-3-1.jpg
 categories:
-- Infrastructure
-- Santé
+  - Infrastructure
+  - Santé
 tags:
-- puits
-- eau
-- santé
-- infrastructure
+  - puits
+  - eau
+  - santé
+  - infrastructure
 villages:
-- darawal
+  - darawal
 type: posts
 ---
 
@@ -43,7 +43,7 @@ L'étude d'implantation a déjà été faite, ce qui nous a permis de savoir pr�
 Compte tenu de cette étude et de l'appel d'offre qui a été lancé, nous savons qu'il faut désormais réunir **20 700 euros** pour engager les travaux et mener à terme la réalisation du puits.
 
 ![Puits à Debere du même type que celui qu'il faut construire à Darawal](/images/wordpress/2007-07-thumbnailca0jzwvq.jpg)
-*Puits à Debere du même type que celui qu'il faut construire à Darawal*
+_Puits à Debere du même type que celui qu'il faut construire à Darawal_
 
 ### C'est pourquoi nous nous permettons de [solliciter votre aide](/documents/adhesion) pour soutenir notre projet.
 

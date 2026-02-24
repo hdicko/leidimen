@@ -1,277 +1,180 @@
-# Leidimen
-
-**Site web de l'association Leidimen** - Supporting villages in the Douentza region of Mali through education, health, and infrastructure projects.
+# Leidimen — Site Web de l'Association
 
 [![Hugo](https://img.shields.io/badge/Hugo-0.152.1-FF4088?logo=hugo)](https://gohugo.io)
 [![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3.8-7952B3?logo=bootstrap&logoColor=white)](https://getbootstrap.com)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Deploy](https://img.shields.io/badge/Deployed%20on-GitHub%20Pages-181717?logo=github)](https://hdicko.github.io/leidimen/)
 
-> **Leidimen** is a French solidarity association dedicated to supporting education, healthcare, and infrastructure development in Mali. This repository contains the source code for the organization's multilingual static website.
+## What is this?
 
-## 🌍 Live Sites
+**Leidimen** is a French solidarity association that supports villages in the Douentza region of Mali — through education, healthcare, and infrastructure projects.
 
-- **Production**: [https://hdicko.github.io/leidimen/](https://hdicko.github.io/leidimen/)
-- **Netlify CMS**: [https://hdicko.github.io/leidimen/admin/](https://hdicko.github.io/leidimen/admin/)
+This repository is the source code for the association's website. It is a **static site** built with [Hugo](https://gohugo.io), styled with Bootstrap 5, and managed through Netlify CMS. Content is written in French and organised around the villages Leidimen works with.
 
-## ✨ Features
+**Live site →** [hdicko.github.io/leidimen](https://hdicko.github.io/leidimen/)
 
-- 🌐 **Multilingual Content** - French language support with potential for expansion
-- 🏘️ **Village-Focused Organization** - Custom taxonomy for 10+ villages in the Douentza region
-- 📸 **Photo Galleries** - PhotoSwipe integration for beautiful image galleries
-- 📝 **Multiple Content Creation Methods**:
-  - Web-based CMS interface (cms-web/)
-  - Netlify CMS with GitHub authentication
-  - Hugo CLI with archetypes
-- 🎨 **Modern UI** - Bootstrap 5.3.8 with custom SCSS and dark mode
-- 🗺️ **Interactive Maps** - Village locations with project information
-- 📱 **Responsive Design** - Mobile-first approach
-- ⚡ **Static Site Performance** - Fast loading and SEO optimized
-- 🔄 **WordPress Migration** - Scripts for importing legacy content (2006-2017)
+---
 
-## 🛠️ Tech Stack
+## Quick Start
 
-- **Static Site Generator**: [Hugo 0.152.1](https://gohugo.io) (Extended version)
-- **CSS Framework**: [Bootstrap 5.3.8](https://getbootstrap.com)
-- **Icons**: [Bootstrap Icons 1.13.1](https://icons.getbootstrap.com)
-- **CSS Preprocessor**: [Dart Sass 1.93.2](https://sass-lang.com/dart-sass)
-- **Gallery**: [PhotoSwipe](https://photoswipe.com)
-- **CMS**: [Netlify CMS](https://www.netlifycms.org) + Custom Node.js interface
-- **Deployment**: GitHub Pages + Netlify
-- **Code Formatting**: Prettier with go-template plugin
-
-## 📋 Prerequisites
-
-- **Node.js** 18+ and npm
-- **Git**
-- **Hugo 0.152.1** (automatically installed via `hugo-installer`)
-
-## 🚀 Quick Start
-
-### Installation
+You need **Node.js 18+** and **Git**. Hugo itself is installed automatically by npm — you do not need to install it separately.
 
 ```bash
-# Clone the repository
+# 1. Clone the repo
 git clone https://github.com/hdicko/leidimen.git
 cd leidimen
 
-# Install dependencies (includes Hugo binary)
+# 2. Install dependencies (this also downloads the Hugo binary)
 npm install
-```
 
-### Local Development
-
-```bash
-# Start development server with baseURL override
-./dev-server.sh
-
-# OR use npm script
+# 3. Start the local development server
 npm run dev
-
-# Access site at: http://localhost:1313
-# Access CMS at: http://localhost:1313/leidimen/admin/
 ```
 
-### Build for Production
+The site is now running at **http://localhost:1313**.  
+The CMS admin panel is at **http://localhost:1313/leidimen/admin/**.
+
+> **Tip:** `./dev-server.sh` does the same thing as `npm run dev` if you prefer a script.
+
+---
+
+## Adding Content
+
+The most common task for contributors is writing a new article (post). Here are your three options — pick the one that fits you best.
+
+### Option A — Netlify CMS (best for editors, no coding needed)
+
+1. Start the dev server (`npm run dev`)
+2. Go to http://localhost:1313/leidimen/admin/
+3. Log in with Netlify Identity
+4. Use the web interface to create or edit content
+
+→ See [NETLIFY_CMS_GUIDE.md](NETLIFY_CMS_GUIDE.md) for a full walkthrough.
+
+### Option B — Hugo CLI (best for developers)
 
 ```bash
-# Build optimized site
-npm run build
+# Create a new post — opens a pre-filled Markdown file
+hugo new posts/2025/my-article.md
 
-# Output: public/
+# Other content types
+hugo new equipe/firstname-lastname.md   # team member profile
 ```
 
-## 📝 Content Creation
+Edit the generated file in your editor, then check the result in your browser.
 
-### Method 1: Web CMS Interface (Recommended for Developers)
-
-The custom Node.js interface provides real-time validation and GitHub API integration:
+### Option C — cms-web app (developer tool with GitHub integration)
 
 ```bash
 cd cms-web
 npm install
-# Configure GITHUB_TOKEN in .env (see cms-web/QUICKSTART.md)
+# Add your GitHub token to cms-web/.env first (see cms-web/QUICKSTART.md)
 npm start
-# Access at: http://localhost:3000
+# Opens at http://localhost:3000
 ```
 
-See [cms-web/README.md](cms-web/README.md) for detailed setup.
+→ See [cms-web/README.md](cms-web/README.md) for setup details.
 
-### Method 2: Netlify CMS (Recommended for Editors)
+### Frontmatter tips
 
-1. **Local**: Navigate to `http://localhost:1313/leidimen/admin/`
-2. **Production**: Navigate to `https://hdicko.github.io/leidimen/admin/`
-3. Authenticate with Netlify Identity
-4. Create/edit content through the web interface
+Every piece of content has a YAML header (frontmatter). A few things to keep in mind:
 
-See [NETLIFY_CMS_GUIDE.md](NETLIFY_CMS_GUIDE.md) for complete instructions.
+- **Village names must be lowercase** in frontmatter, e.g. `villages: ["dorool"]`
+- Available villages: `dorool`, `diona`, `debere`, `diambana`, `darawal`, `tanal`, `manko`, `tacouti`, `n'dumpa`, `douentza`
+- Available categories: `Éducation`, `Santé`, `Infrastructure`
+- For **photo galleries**: images must live in the same folder as the `index.md` file (they are Hugo page resources)
 
-### Method 3: Hugo CLI (Recommended for Experienced Users)
-
-```bash
-# Create a new post (uses archetype template)
-hugo new posts/2025/my-article.md
-
-# Create a team member profile
-hugo new equipe/firstname-lastname.md
-
-# Edit the generated file with your preferred editor
-```
-
-## 📂 Project Structure
-
-```
-leidimen/
-├── archetypes/          # Content templates
-├── assets/              # SCSS, JS, raw assets
-├── content/             # Markdown content files
-│   ├── posts/          # Blog posts (organized by year)
-│   ├── equipe/         # Team member profiles
-│   ├── galleries/      # Photo galleries
-│   ├── villages/       # Village information pages
-│   └── documents/      # Legal documents
-├── data/                # YAML/JSON data files
-│   └── villages/       # Village coordinates and metadata
-├── layouts/             # Hugo templates
-│   ├── _default/       # Base templates
-│   ├── partials/       # Reusable components
-│   └── shortcodes/     # Custom shortcodes
-├── static/              # Static assets (copied as-is)
-│   ├── images/         # Images
-│   └── admin/          # Netlify CMS config
-├── cms-web/             # Custom CMS interface
-├── public/              # Generated site (git-ignored)
-├── hugo.toml            # Hugo configuration
-├── netlify.toml         # Netlify deployment config
-└── package.json         # npm dependencies
-```
-
-## 🗂️ Custom Taxonomies
-
-The site uses four custom taxonomies for content organization:
-
-- **Villages**: `dorool`, `diona`, `debere`, `diambana`, `darawal`, `tanal`, `manko`, `tacouti`, `n'dumpa`, `douentza`
-- **Categories**: `Éducation`, `Santé`, `Infrastructure`
-- **Moods**: `Heureux`, `Triste`, `Inspiré`, `Motivé`, `Reconnaissant`
-- **Tags**: General keywords
-
-**Important**: Always use lowercase for village names in frontmatter: `villages: ["dorool"]`
-
-## 🎨 Custom Shortcodes
-
-Available shortcodes for content enhancement:
-
-### Gallery & Images
-- `{{< gallery >}}` - Auto photo gallery from page resources
-- `{{< gallery-pro >}}` - Professional gallery with options
-- `{{< image >}}` - Responsive image with lazy loading
-- `{{< load-photoswipe >}}` - Manual PhotoSwipe loading
-
-### Layout
-- `{{< divider >}}` - Horizontal separator
-- `{{< details "Summary" >}}Content{{< /details >}}` - Collapsible sections
-- `{{< typeit >}}Text{{< /typeit >}}` - Typing animation
-
-## 🚢 Deployment
-
-### GitHub Pages (Primary)
-
-```bash
-# Deploy to gh-pages branch
-./deploy.sh
-```
-
-### Netlify (Automatic)
-
-Automatic deployment on push to `main` branch via `netlify.toml`.
-
-## 🔄 WordPress Migration
-
-For importing legacy content from leidimen.com (2006-2017):
-
-```bash
-# 1. Migrate posts by date
-python3 migrate-wordpress-posts.py
-
-# 2. Update image links
-python3 update-image-links.py
-
-# 3. Download images
-python3 download-all-wordpress-images.py
-
-# 4. Test build
-npm run build
-```
-
-See individual script headers for detailed usage.
-
-## 🧪 Testing
-
-```bash
-# Run comprehensive compatibility tests
-./test-hugo-compatibility.sh
-
-# Check code formatting
-npm run format:check
-
-# Auto-format code
-npm run format:write
-```
-
-## 📖 Documentation
-
-- [Quick Reference](QUICK_REFERENCE.md) - Content creation guide for non-technical editors
-- [Content Creation Guide](CONTENT_CREATION_GUIDE.md) - Complete content workflows
-- [Code Documentation](CODE_DOCUMENTATION.md) - Detailed code architecture
-- [Netlify CMS Guide](NETLIFY_CMS_GUIDE.md) - CMS usage instructions
-- [Search Feature](SEARCH_FEATURE.md) - Search functionality documentation
-- [SEO Optimization](SEO_LLM_OPTIMIZATION_SUMMARY.md) - SEO and AI optimization strategies
-- [Hugo Migration](HUGO_0.152.1_MIGRATION.md) - Version migration notes
-- [Web CMS Integration](cms-web/INTEGRATION.md) - Custom CMS details
-
-## 🤝 Contributing
-
-Contributions are welcome! Please follow these guidelines:
-
-1. **Content Creation**: Use one of the three methods documented above
-2. **Code Changes**: 
-   - Run `npm run format:write` before committing
-   - Test with `./test-hugo-compatibility.sh`
-   - Ensure Hugo 0.152.1 compatibility
-3. **Taxonomy Values**: Always use lowercase in frontmatter
-4. **Gallery Posts**: Create page bundles with `index.md` + images in the same folder
-
-## 🐛 Common Issues
-
-### Gallery Not Working
-- Ensure images are page resources (in same folder as `index.md`)
-- Check that file is named `index.md` not `my-post.md`
-- Verify PhotoSwipe is loaded only once
-
-### Build Errors
-- **"can't find page resource"**: Image not in page bundle
-- **"taxonomy not found"**: Check taxonomy name in `hugo.toml`
-- **SCSS compile error**: Verify Dart Sass is installed
-- **baseURL issues**: Check `/leidimen/` path in URLs
-
-### Hugo Version Issues
-- Run `npm install` to ensure Hugo 0.152.1 is installed locally
-- Use npm scripts (`npm run dev`) instead of direct `hugo` commands
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 👥 Team
-
-Leidimen Association Team - See [équipe](https://hdicko.github.io/leidimen/equipe/) for full team profiles.
-
-## 🔗 Links
-
-- **Website**: [hdicko.github.io/leidimen](https://hdicko.github.io/leidimen/)
-- **GitHub**: [github.com/hdicko/leidimen](https://github.com/hdicko/leidimen)
-- **Netlify CMS**: [hdicko.github.io/leidimen/admin](https://hdicko.github.io/leidimen/admin/)
+→ See [CONTENT_CREATION_GUIDE.md](CONTENT_CREATION_GUIDE.md) for a complete content workflow guide.  
+→ See [QUICK_REFERENCE.md](QUICK_REFERENCE.md) for a quick cheat sheet.
 
 ---
 
-**Made with ❤️ for the communities of Douentza, Mali**
+## Deploying
+
+### GitHub Pages (primary deployment)
+
+```bash
+./deploy.sh
+```
+
+This builds the site and pushes the output to the `gh-pages` branch.
+
+### Netlify (automatic)
+
+Any push to the `main` branch triggers an automatic deploy on Netlify. No manual steps needed.
+
+---
+
+## Project Structure
+
+```
+leidimen/
+├── content/             # All site content (Markdown files)
+│   ├── posts/           #   Blog posts, organised by year
+│   ├── equipe/          #   Team member profiles
+│   ├── villages/        #   Village information pages
+│   └── galleries/       #   Photo galleries
+├── assets/              # SCSS and JavaScript source files
+├── layouts/             # Hugo HTML templates and shortcodes
+├── static/              # Files copied as-is (images, CMS config)
+├── data/                # Village coordinates and metadata (YAML)
+├── archetypes/          # Content templates used by `hugo new`
+├── cms-web/             # Optional Node.js CMS interface
+├── hugo.toml            # Main Hugo configuration
+├── netlify.toml         # Netlify deployment configuration
+└── package.json         # npm dependencies and scripts
+```
+
+**Key npm scripts:**
+
+| Command                | What it does                       |
+| ---------------------- | ---------------------------------- |
+| `npm install`          | Install dependencies + Hugo binary |
+| `npm run dev`          | Start local dev server             |
+| `npm run build`        | Build production site to `public/` |
+| `npm run format:write` | Auto-format code with Prettier     |
+
+---
+
+## Troubleshooting
+
+**Hugo not found / wrong version**
+Run `npm install` — it fetches the correct Hugo binary (0.152.1). Always use `npm run dev` rather than calling `hugo` directly.
+
+**Gallery images not showing**
+Gallery images must be _page resources_: they need to sit in the same folder as `index.md`. A standalone file like `my-post.md` cannot have a gallery.
+
+**Build error: "can't find page resource"**
+Same as above — move the image into the page bundle folder.
+
+**URLs look wrong (missing `/leidimen/`)**
+The site lives in a subdirectory. The `baseURL` in `hugo.toml` already includes `/leidimen/`. The dev server handles this automatically via `npm run dev`.
+
+---
+
+## Further Reading
+
+| Document                                               | What's in it                         |
+| ------------------------------------------------------ | ------------------------------------ |
+| [CONTENT_CREATION_GUIDE.md](CONTENT_CREATION_GUIDE.md) | Full content workflows for all types |
+| [QUICK_REFERENCE.md](QUICK_REFERENCE.md)               | Short cheat sheet for editors        |
+| [NETLIFY_CMS_GUIDE.md](NETLIFY_CMS_GUIDE.md)           | Using the CMS admin panel            |
+| [DEPLOY.md](DEPLOY.md)                                 | Deployment details                   |
+| [CODE_DOCUMENTATION.md](CODE_DOCUMENTATION.md)         | Code architecture and templates      |
+| [HUGO_0.152.1_MIGRATION.md](HUGO_0.152.1_MIGRATION.md) | Notes on the Hugo version upgrade    |
+| [cms-web/README.md](cms-web/README.md)                 | The Node.js CMS interface            |
+
+---
+
+## Contributing
+
+All contributions are welcome — from fixing a typo to adding new content.
+
+1. Make your changes in a branch and open a pull request
+2. Run `npm run format:write` before committing code changes
+3. Test your build locally with `npm run build` and check the output
+4. Follow the frontmatter rules above (especially lowercase village names)
+
+---
+
+_Made with ❤️ for the communities of Douentza, Mali_

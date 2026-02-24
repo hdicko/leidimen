@@ -2,17 +2,17 @@
 title: Une école pour Dorool
 date: 2007-07-01
 draft: false
-description: 'Dorool: Une école pour Dorool - En savoir plus sur nos initiatives en éducation.'
+description: "Dorool : Une école pour Dorool — initiative Leidimen pour éducation et soutien scolaire au Mali."
 image: /images/wordpress/2007-07-8199.jpg
 categories:
-- Éducation
+  - Éducation
 tags:
-- école
-- projet
-- parrainage
-- éducation
+  - école
+  - projet
+  - parrainage
+  - éducation
 villages:
-- dorool
+  - dorool
 type: posts
 ---
 

@@ -2,20 +2,20 @@
 title: Réunion à Mennecy
 date: 2007-10-28 19:40:00+01:00
 draft: false
-description: Réunion à Mennecy - En savoir plus sur nos initiatives en news leidimen.
+description: "Une réunion s'est tenue dimanche 28 octobre à Mennecy."
 author: Moussa Dicko
 image: reunion-1.jpg
 categories:
-- News Leidimen
-- Réunions
+  - News Leidimen
+  - Réunions
 tags:
-- réunion
-- mennecy
-- mali
-- projets
+  - réunion
+  - mennecy
+  - mali
+  - projets
 villages: []
 moods:
-- Motivé
+  - Motivé
 ---
 
 ## Une réunion productive

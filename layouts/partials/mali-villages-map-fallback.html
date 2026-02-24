@@ -782,23 +782,26 @@
       const notification = document.createElement("div");
       notification.className = `notification-ctx7 notification-${type}`;
 
-      const iconClass = type === "success" ? "bi-check-circle" : 
-                        type === "info" ? "bi-info-circle" : 
-                        "bi-exclamation-triangle";
-      
+      const iconClass =
+        type === "success"
+          ? "bi-check-circle"
+          : type === "info"
+            ? "bi-info-circle"
+            : "bi-exclamation-triangle";
+
       const icon = document.createElement("i");
       icon.className = `bi ${iconClass} notification-icon notification-icon--${type}`;
-      
+
       const contentDiv = document.createElement("div");
-      
+
       const titleEl = document.createElement("h6");
       titleEl.className = "notification-title";
       titleEl.textContent = title;
-      
+
       const messageEl = document.createElement("p");
       messageEl.className = "notification-message";
       messageEl.textContent = message;
-      
+
       contentDiv.appendChild(titleEl);
       contentDiv.appendChild(messageEl);
       notification.appendChild(icon);

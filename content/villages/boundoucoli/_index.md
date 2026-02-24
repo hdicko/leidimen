@@ -2,6 +2,7 @@
 date: "2026-02-19T18:00:00+02:00"
 draft: false
 title: Boundoucoli
+description: "Village de 700 habitants près de Débéré, région de Douentza. Leidimen y soutient l'élevage, l'alimentation animale et l'éducation au Mali."
 ---
 
 Boundoucoli est un petit village de 700 habitants situé à quelques kilomètres seulement du grand village de Débéré, dans la région de Douentza.

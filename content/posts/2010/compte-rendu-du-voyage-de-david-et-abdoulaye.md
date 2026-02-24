@@ -2,20 +2,20 @@
 title: Compte-rendu du voyage de David et Abdoulaye
 date: 2010-01-01
 draft: false
-description: 'Diona: Compte-rendu du voyage de David et Abdoulaye - En savoir plus sur nos initiatives en éducation.'
+description: "Comme vous le savez, je suis parti au Mali en octobre pour deux semaines."
 categories:
-- Éducation
+  - Éducation
 tags:
-- archive
-- wordpress
-- news
+  - archive
+  - wordpress
+  - news
 villages:
-- diona
-- debere
-- tanal
-- manko
-- tacouti
-- douentza
+  - diona
+  - debere
+  - tanal
+  - manko
+  - tacouti
+  - douentza
 source: https://leidimen.com/mon-compte-rendu-de-voyage
 ---
 

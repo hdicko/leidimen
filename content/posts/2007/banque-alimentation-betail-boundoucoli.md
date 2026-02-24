@@ -5,15 +5,15 @@ draft: false
 description: Mise en place d'une banque d'aliments pour bétail (tourteau) dans le village de Boundoucoli pour réduire les coûts d'exploitation des éleveurs.
 image: /images/wordpress/2007-11-dsc01892-small.jpg
 categories:
-- Projet
+  - Projet
 tags:
-- élevage
-- bétail
-- tourteau
-- alimentation animale
-- Boundoucoli
+  - élevage
+  - bétail
+  - tourteau
+  - alimentation animale
+  - Boundoucoli
 villages:
-- boundoucoli
+  - boundoucoli
 type: posts
 ---
 

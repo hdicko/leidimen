@@ -1872,7 +1872,7 @@
               <i class="bi bi-x"></i>
             </button>
           </div>
-          
+
           <!-- Modal Body -->
           <div class="contact-modal-body">
             <form id="contactForm" class="contact-form">
@@ -1880,22 +1880,22 @@
                 <label for="senderName">Votre nom *</label>
                 <input type="text" id="senderName" name="senderName" required>
               </div>
-              
+
               <div class="form-group">
                 <label for="senderEmail">Votre email *</label>
                 <input type="email" id="senderEmail" name="senderEmail" required>
               </div>
-              
+
               <div class="form-group">
                 <label for="subject">Sujet *</label>
                 <input type="text" id="subject" name="subject" required placeholder="Objet de votre message">
               </div>
-              
+
               <div class="form-group">
                 <label for="message">Message *</label>
                 <textarea id="message" name="message" rows="6" required placeholder="Votre message pour ${memberName}..."></textarea>
               </div>
-              
+
               <div class="contact-modal-footer">
                 <button type="button" class="btn-secondary" onclick="this.closest('.contact-modal-backdrop').remove()">
                   Annuler
@@ -1930,7 +1930,7 @@
           padding: 1rem;
           animation: fadeIn 0.3s ease;
         }
-        
+
         .contact-modal-container {
           background: white;
           border-radius: 16px;
@@ -1941,11 +1941,11 @@
           box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
           animation: modalSlideIn 0.3s ease;
         }
-        
+
         .contact-modal-content {
           padding: 0;
         }
-        
+
         .contact-modal-header {
           padding: 2rem 2rem 1rem 2rem;
           border-bottom: 1px solid #e5e7eb;
@@ -1953,7 +1953,7 @@
           justify-content: space-between;
           align-items: center;
         }
-        
+
         .contact-modal-header h3 {
           margin: 0;
           color: var(--context7-dark);
@@ -1961,7 +1961,7 @@
           display: flex;
           align-items: center;
         }
-        
+
         .contact-modal-close {
           background: #f3f4f6;
           border: none;
@@ -1975,34 +1975,34 @@
           color: #6b7280;
           transition: all 0.2s ease;
         }
-        
+
         .contact-modal-close:hover {
           background: #e5e7eb;
           color: #374151;
         }
-        
+
         .contact-modal-body {
           padding: 1rem 2rem 2rem 2rem;
         }
-        
+
         .contact-form {
           display: flex;
           flex-direction: column;
           gap: 1.5rem;
         }
-        
+
         .form-group {
           display: flex;
           flex-direction: column;
           gap: 0.5rem;
         }
-        
+
         .form-group label {
           font-weight: 500;
           color: var(--context7-dark);
           font-size: 0.875rem;
         }
-        
+
         .form-group input,
         .form-group textarea {
           padding: 0.75rem 1rem;
@@ -2012,26 +2012,26 @@
           transition: border-color 0.2s ease;
           font-family: inherit;
         }
-        
+
         .form-group input:focus,
         .form-group textarea:focus {
           outline: none;
           border-color: var(--context7-primary);
           box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
         }
-        
+
         .form-group textarea {
           resize: vertical;
           min-height: 120px;
         }
-        
+
         .contact-modal-footer {
           display: flex;
           gap: 1rem;
           justify-content: flex-end;
           margin-top: 2rem;
         }
-        
+
         .btn-primary,
         .btn-secondary {
           padding: 0.75rem 1.5rem;
@@ -2044,32 +2044,32 @@
           display: flex;
           align-items: center;
         }
-        
+
         .btn-primary {
           background: var(--context7-primary);
           color: white;
         }
-        
+
         .btn-primary:hover {
           background: var(--context7-primary-dark, #2563eb);
           transform: translateY(-1px);
         }
-        
+
         .btn-secondary {
           background: #f3f4f6;
           color: #6b7280;
         }
-        
+
         .btn-secondary:hover {
           background: #e5e7eb;
           color: #374151;
         }
-        
+
         @keyframes fadeIn {
           from { opacity: 0; }
           to { opacity: 1; }
         }
-        
+
         @keyframes modalSlideIn {
           from {
             opacity: 0;
@@ -2080,19 +2080,19 @@
             transform: scale(1) translateY(0);
           }
         }
-        
+
         @media (max-width: 768px) {
           .contact-modal-container {
             margin: 1rem;
             max-width: calc(100% - 2rem);
           }
-          
+
           .contact-modal-header,
           .contact-modal-body {
             padding-left: 1.5rem;
             padding-right: 1.5rem;
           }
-          
+
           .contact-modal-footer {
             flex-direction: column;
           }
@@ -2142,8 +2142,7 @@
         submitBtn.disabled = true;
 
         // Create mailto link as fallback
-        const mailto = `mailto:association@leidimen.com?subject=${encodeURIComponent(`[Contact ${memberName}] ${data.subject}`)}&body=${encodeURIComponent(`De: ${data.from} (${data.email})\nPour: ${memberName}\n\nMessage:\n${data.message}`)}`;
-
+        const mailto = `mailto:{{ site.Params.email | safeJS }}?subject=${encodeURIComponent(`[Contact ${memberName}] ${data.subject}`)}&body=${encodeURIComponent(`De: ${data.from} (${data.email})\nPour: ${memberName}\n\nMessage:\n${data.message}`)}`;
         // Simulate sending (replace with actual email service integration)
         setTimeout(() => {
           // For now, open default email client
@@ -2190,13 +2189,13 @@
           animation: slideInRight 0.3s ease;
           border-left: 4px solid #10b981;
         }
-        
+
         .success-notification .notification-content {
           display: flex;
           align-items: center;
           gap: 1rem;
         }
-        
+
         .success-notification .notification-icon {
           background: #10b981;
           color: white;
@@ -2208,19 +2207,19 @@
           justify-content: center;
           flex-shrink: 0;
         }
-        
+
         .success-notification h6 {
           margin: 0 0 0.25rem 0;
           font-weight: 600;
           color: #065f46;
         }
-        
+
         .success-notification p {
           margin: 0;
           color: #6b7280;
           font-size: 0.875rem;
         }
-        
+
         @keyframes slideInRight {
           from {
             transform: translateX(100%);

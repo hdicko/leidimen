@@ -2,15 +2,15 @@
 title: Installation d’Ubuntu
 date: 2010-01-01
 draft: false
-description: 'Douentza: Installation d’Ubuntu - En savoir plus sur nos initiatives en éducation.'
+description: "Ubuntu a été installé sur tous les PC destinés au lycée de Douentza"
 categories:
-- Éducation
+  - Éducation
 tags:
-- archive
-- wordpress
-- news
+  - archive
+  - wordpress
+  - news
 villages:
-- douentza
+  - douentza
 source: https://leidimen.com/installation-dubuntu
 ---
 

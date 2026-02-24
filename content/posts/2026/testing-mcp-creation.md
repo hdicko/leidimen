@@ -2,18 +2,18 @@
 title: Testing MCP Creation New Post
 date: 2026-02-16
 draft: false
-description: 'Douentza: Testing MCP Creation New Post - En savoir plus sur nos initiatives en informations.'
+description: "Article de test validant la création automatique de contenu Hugo via le serveur MCP : frontmatter, taxonomies et structure de répertoires par année."
 image: /images/uploads/default.jpeg
 categories:
-- informations
+  - informations
 tags:
-- test
-- mcp
-- création
+  - test
+  - mcp
+  - création
 villages:
-- douentza
+  - douentza
 moods:
-- motive
+  - motive
 ---
 
 # Test de Création MCP

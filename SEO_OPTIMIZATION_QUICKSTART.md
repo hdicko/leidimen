@@ -10,34 +10,40 @@
 ## What Changed
 
 ### 1. **Image SEO** ✅
+
 - Automatic alt text from image metadata
 - Lazy loading on all images
 - Better image quality (Lanczos filter, quality 85)
 - Width/height attributes for CLS improvement
 
 ### 2. **Advanced Schema.org** ✅
+
 - FAQPage schema for Q&A content
 - Event schema for meetings/activities
 - HowTo schema for tutorials
 - All schemas auto-load when frontmatter present
 
 ### 3. **Internal Linking** ✅
+
 - Related posts section on all blog posts
 - Smart recommendations based on villages/categories/tags
 - Improved crawlability and user engagement
 
 ### 4. **Performance** ✅
+
 - Resource hints (dns-prefetch, preconnect, preload)
 - Optimized minification settings
 - Deferred non-critical CSS
 - Better Core Web Vitals scores
 
 ### 5. **Multilingual SEO** ✅
+
 - Hreflang tags for international targeting
 - Ready for English content expansion
 - Proper locale declarations
 
 ### 6. **Automated Testing** ✅
+
 - 39 comprehensive SEO tests
 - Categories: meta tags, structured data, images, performance, accessibility
 - Run with: `./test-seo.sh`
@@ -45,11 +51,13 @@
 ## Quick Start
 
 ### Test SEO Quality
+
 ```bash
 ./test-seo.sh
 ```
 
 ### Deploy Changes
+
 ```bash
 npm run build
 ./deploy.sh
@@ -58,6 +66,7 @@ npm run build
 ### Use New Schemas
 
 **Add FAQ to a page:**
+
 ```yaml
 ---
 title: "Page Title"
@@ -68,6 +77,7 @@ faqs:
 ```
 
 **Add Event:**
+
 ```yaml
 ---
 event:
@@ -80,6 +90,7 @@ event:
 ```
 
 **Add HowTo:**
+
 ```yaml
 ---
 howto:
@@ -91,6 +102,7 @@ howto:
 ```
 
 ## Files Created
+
 - `layouts/partials/seo/faq-schema.html`
 - `layouts/partials/seo/event-schema.html`
 - `layouts/partials/seo/howto-schema.html`
@@ -101,6 +113,7 @@ howto:
 - `SEO_OPTIMIZATION_2026.md` (full documentation)
 
 ## Files Modified
+
 - `layouts/shortcodes/gallery.html` - Enhanced alt text
 - `layouts/posts/single.html` - Added related posts
 - `layouts/partials/head.html` - Integrated new SEO components
@@ -117,6 +130,7 @@ Success Rate: 92%
 ```
 
 **Minor Issues (acceptable):**
+
 - Some old WordPress images missing alt text (can be fixed gradually)
 - HTML whitespace (minification working, some whitespace normal)
 

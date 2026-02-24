@@ -2,22 +2,22 @@
 title: Envoi du matériel informatique à Bamako
 date: 2007-01-15 07:29:00+01:00
 draft: false
-description: 'Douentza: Envoi du matériel informatique à Bamako - En savoir plus sur nos initiatives en news leidimen.'
+description: "Après des semaines de préparation, le grand jour est arrivé : le matériel informatique est en route vers Bamako !"
 author: Olivier Dicko
 image: envoi.jpg
 categories:
-- News Leidimen
+  - News Leidimen
 tags:
-- informatique
-- ordinateurs
-- bamako
-- douentza
-- éducation
+  - informatique
+  - ordinateurs
+  - bamako
+  - douentza
+  - éducation
 villages:
-- douentza
+  - douentza
 moods:
-- Heureux
-- Motivé
+  - Heureux
+  - Motivé
 ---
 
 ## Un projet majeur qui prend vie ! 💻

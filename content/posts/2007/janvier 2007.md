@@ -2,16 +2,16 @@
 title: Envoi du matériel informatique à Bamako
 date: 2007-01-15 20:37:50+02:00
 draft: false
-description: Envoi du matériel informatique à Bamako - En savoir plus sur nos initiatives en actualités.
+description: "En janvier 2007, nous avons préparé et expédié 10 ordinateurs pour le lycée de Douentza."
 author: Aissa Dicko
 slug: envoi-materiel-informatique-bamako-2007
 weight: 0
 image: /img/infos/ordi.jpg
 categories:
-- Actualités
+  - Actualités
 tags:
-- blog
-- info
+  - blog
+  - info
 villages: []
 ---
 

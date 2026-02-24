@@ -1,3 +1,8 @@
+---
+name: leidimen-refactor
+description: "Repeatable, low-risk refactoring process for the Leidimen Hugo project: templates, SCSS, JS, and config"
+---
+
 # SKILL — Refactoring Guide
 
 ## Purpose

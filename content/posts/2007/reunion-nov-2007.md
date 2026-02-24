@@ -2,16 +2,16 @@
 title: Réunion Novembre 2007
 date: 2007-11-26 20:37:50+02:00
 draft: false
-description: Réunion Novembre 2007 - En savoir plus sur nos initiatives en actualités.
+description: "{ .display .text-center .img-fluid} 26 novembre 2007 {.h1 } Réunion à Cachan { .h2 } Filed under: News Leidimen,Réunions — Moussa @ 07:27 Une réunion."
 author: Moussa et Eva
 slug: reunion-nov-2007
 weight: 0
 image: /img/reunions/tissuamical.jpg
 categories:
-- Actualités
+  - Actualités
 tags:
-- blog
-- reunion
+  - blog
+  - reunion
 villages: []
 ---
 

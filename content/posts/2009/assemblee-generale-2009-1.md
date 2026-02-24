@@ -2,16 +2,16 @@
 title: Assemblée Générale 2009
 date: 2009-02-15
 draft: false
-description: 'Douentza: Assemblée Générale 2009 - En savoir plus sur nos initiatives en culture.'
+description: "Nous vous informons que l’assemblée générale 2009 aura lieu le samedi 21 février à 14h30, à Bondoufle."
 categories:
-- Culture
+  - Culture
 tags:
-- archive
-- wordpress
-- News Leidimen
-- Réunions
+  - archive
+  - wordpress
+  - News Leidimen
+  - Réunions
 villages:
-- douentza
+  - douentza
 source: https://leidimen.com/assemblee-generale-2009
 ---
 

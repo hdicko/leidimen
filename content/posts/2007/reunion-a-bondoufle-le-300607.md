@@ -2,16 +2,16 @@
 title: Réunion à Bondoufle le 30.06.07
 date: 2007-07-02
 draft: false
-description: 'Douentza: Réunion à Bondoufle le 30.06.07 - En savoir plus sur nos initiatives en culture.'
+description: "Une réunion s’est tenue samedi 30 juin à Bondoufle."
 categories:
-- Culture
+  - Culture
 tags:
-- archive
-- wordpress
-- News Leidimen
-- Réunions
+  - archive
+  - wordpress
+  - News Leidimen
+  - Réunions
 villages:
-- douentza
+  - douentza
 source: https://leidimen.com/reunion-a-bondoufle-le-300607
 ---
 

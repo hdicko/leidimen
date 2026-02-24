@@ -2,15 +2,15 @@
 title: Et si on se retrouvait sur Paris?
 date: 2013-03-05 04:42:00+01:00
 draft: false
-description: Et si on se retrouvait sur Paris? - En savoir plus sur nos initiatives en divers.
+description: "Nous contemplons l'idée d'un événement sur le printemps parisien, pourquoi pas le long des berges du canal."
 author: Hamassala David Dicko
 image: /posts/2013/paris-event-2013.jpg
 categories:
-- Divers
+  - Divers
 tags: []
 villages: []
 moods:
-- Heureux
+  - Heureux
 ---
 
 ![Printemps à Paris](/posts/2013/paris-event-2013.jpg)

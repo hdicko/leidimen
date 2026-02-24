@@ -2,15 +2,15 @@
 title: De retour du Mali!
 date: 2007-10-23
 draft: false
-description: 'Douentza: De retour du Mali! - En savoir plus sur nos initiatives en santé.'
+description: "Je suis de retour du Mali, avec un sourire, en pleine santé (ça mérite d’être souligné!), et très heureux de ce merveilleux voyage."
 categories:
-- Santé
+  - Santé
 tags:
-- archive
-- wordpress
-- News Leidimen
+  - archive
+  - wordpress
+  - News Leidimen
 villages:
-- douentza
+  - douentza
 source: https://leidimen.com/de-retour-du-mali
 ---
 

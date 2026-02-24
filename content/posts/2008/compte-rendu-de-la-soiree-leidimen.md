@@ -2,16 +2,16 @@
 title: Compte rendu de la soirée Leïdimen
 date: 2008-05-24
 draft: false
-description: 'Douentza: Compte rendu de la soirée Leïdimen - En savoir plus sur nos initiatives en culture.'
+description: "La soirée du 3 mai 2008 nous a permis de réunir une centaine de personnes à la salle des fêtes de Bondoufle."
 categories:
-- Culture
+  - Culture
 tags:
-- archive
-- wordpress
-- News Leidimen
-- Sorties
+  - archive
+  - wordpress
+  - News Leidimen
+  - Sorties
 villages:
-- douentza
+  - douentza
 source: https://leidimen.com/compte-rendu-de-la-soiree-leidimen
 ---
 

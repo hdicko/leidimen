@@ -1,0 +1,205 @@
+// Footer styles — moved from layouts/partials/footer.html <style> block
+
+.footer {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  }
+}
+
+.footer-logo {
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.footer-section {
+  // Intersection Observer animation (initial hidden state)
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+
+  &.animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  h5,
+  h6 {
+    position: relative;
+    padding-bottom: 0.5rem;
+  }
+
+  h5::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+  }
+}
+
+.footer-links li {
+  opacity: 0;
+  animation: footerFadeInUp 0.6s ease forwards;
+
+  &:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+  &:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  &:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+  &:nth-child(4) {
+    animation-delay: 0.4s;
+  }
+  &:nth-child(5) {
+    animation-delay: 0.5s;
+  }
+
+  a {
+    transition: all 0.2s ease;
+    padding: 0.25rem 0;
+    display: inline-block;
+
+    &:hover {
+      color: #667eea !important;
+      transform: translateX(5px);
+    }
+  }
+}
+
+@keyframes footerFadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.social-link {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+
+  &:hover {
+    background-color: #667eea;
+    border-color: #667eea;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+  }
+
+  &[title="facebook"]:hover {
+    background-color: #1877f2;
+    border-color: #1877f2;
+    box-shadow: 0 5px 15px rgba(24, 119, 242, 0.4);
+  }
+
+  &[title="Twitter"]:hover {
+    background-color: #1da1f2;
+    border-color: #1da1f2;
+    box-shadow: 0 5px 15px rgba(29, 161, 242, 0.4);
+  }
+
+  &[title="LinkedIn"]:hover {
+    background-color: #0077b5;
+    border-color: #0077b5;
+    box-shadow: 0 5px 15px rgba(0, 119, 181, 0.4);
+  }
+
+  i {
+    font-size: 1.2rem;
+  }
+}
+
+.social-icon-size {
+  width: 40px;
+  height: 40px;
+}
+
+.social-icon-font {
+  font-size: 1.1rem;
+}
+
+.contact-item {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  i {
+    width: 20px;
+    text-align: center;
+  }
+}
+
+.back-to-top {
+  width: 40px;
+  height: 40px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: #667eea;
+    border-color: #667eea;
+    transform: translateY(-2px);
+  }
+}
+
+.solidarity-message {
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: rgba(102, 126, 234, 0.2) !important;
+  }
+}
+
+// Map container height
+#villages-map {
+  height: 500px;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 3rem 0 !important;
+  }
+
+  .footer-section {
+    margin-bottom: 2rem;
+  }
+
+  .social-links .d-flex {
+    justify-content: center;
+  }
+
+  .footer-legal {
+    text-align: center;
+  }
+}

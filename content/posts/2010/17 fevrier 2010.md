@@ -2,17 +2,17 @@
 title: Surcreusement de puits dans le village de Darawal
 date: 2010-02-17 20:37:50+02:00
 draft: false
-description: 'Darawal: Surcreusement de puits dans le village de Darawal - En savoir plus sur nos initiatives en actualités.'
+description: "{.display .text-center} --- Financé en partie par le Conseil Général de l’Essonne, ce projet consiste à surcreuser un puits qui existe déjà dans le village."
 author: Melina @1158
 slug: puits-darawal-2010
 weight: 0
 image: /img/diambana/puits.jpg
 categories:
-- Actualités
+  - Actualités
 tags:
-- blog
+  - blog
 villages:
-- darawal
+  - darawal
 ---
 
 {{< myimage src="/img/diambana/puits.jpg" >}}

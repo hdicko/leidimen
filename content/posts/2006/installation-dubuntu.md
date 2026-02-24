@@ -2,15 +2,15 @@
 title: Installation d’Ubuntu
 date: 2006-12-20
 draft: false
-description: 'Douentza: Installation d’Ubuntu - En savoir plus sur nos initiatives en culture.'
+description: "Ubuntu a été installé sur tous les PC destinés au lycée de Douentza"
 categories:
-- Culture
+  - Culture
 tags:
-- archive
-- wordpress
-- News Leidimen
+  - archive
+  - wordpress
+  - News Leidimen
 villages:
-- douentza
+  - douentza
 source: https://leidimen.com/installation-dubuntu
 ---
 

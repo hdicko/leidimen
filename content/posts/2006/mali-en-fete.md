@@ -2,21 +2,21 @@
 title: Le Mali en fête
 date: 2006-10-06 07:09:00+01:00
 draft: false
-description: Le Mali en fête - En savoir plus sur nos initiatives en sorties.
+description: "Cette semaine, le Mali est au cœur de l'actualité culturelle en Île-de-France !"
 author: Olivier Dicko
 categories:
-- Sorties
+  - Sorties
 tags:
-- culture
-- mali
-- festival
-- artisanat
-- musique
-- evry
+  - culture
+  - mali
+  - festival
+  - artisanat
+  - musique
+  - evry
 villages: []
 moods:
-- Heureux
-- Inspiré
+  - Heureux
+  - Inspiré
 ---
 
 ## Le Mali au cœur de l'Île-de-France 🇲🇱

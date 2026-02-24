@@ -2,15 +2,15 @@
 title: Nouveau site
 date: 2007-06-05
 draft: false
-description: 'Douentza: Nouveau site - En savoir plus sur nos initiatives en santé.'
+description: "Le nouveau site internet prend doucement forme et le transfert sera prêt d’ici quelques jours!"
 categories:
-- Santé
+  - Santé
 tags:
-- archive
-- wordpress
-- Divers
+  - archive
+  - wordpress
+  - Divers
 villages:
-- douentza
+  - douentza
 source: https://leidimen.com/nouveau-site
 ---
 

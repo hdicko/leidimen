@@ -2,15 +2,15 @@
 title: Première semaine culturelle africaine du Pecq
 date: 2008-02-20
 draft: false
-description: 'Douentza: Première semaine culturelle africaine du Pecq - En savoir plus sur nos initiatives en culture.'
+description: "A l’initiative de l’association des Amis de la Boucle du Niger se tient actuellement la première semaine culturelle africaine du Pecq."
 categories:
-- Culture
+  - Culture
 tags:
-- archive
-- wordpress
-- Sorties
+  - archive
+  - wordpress
+  - Sorties
 villages:
-- douentza
+  - douentza
 source: https://leidimen.com/premiere-semaine-culturelle-africaine-du-pecq
 ---
 

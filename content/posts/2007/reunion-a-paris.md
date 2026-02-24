@@ -2,16 +2,16 @@
 title: Réunion à Paris
 date: 2007-06-25
 draft: false
-description: 'Dorool: Réunion à Paris - En savoir plus sur nos initiatives en culture.'
+description: "La réunion de dimanche s’est déroulée à Paris chez notre aimable trésorier Moussa :-)."
 categories:
-- Culture
+  - Culture
 tags:
-- archive
-- wordpress
-- News Leidimen
-- Réunions
+  - archive
+  - wordpress
+  - News Leidimen
+  - Réunions
 villages:
-- dorool
+  - dorool
 source: https://leidimen.com/reunion-a-paris
 ---
 

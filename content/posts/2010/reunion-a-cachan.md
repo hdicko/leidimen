@@ -2,15 +2,15 @@
 title: Réunion à Cachan
 date: 2010-01-01
 draft: false
-description: 'Douentza: Réunion à Cachan - En savoir plus sur nos initiatives en éducation.'
+description: "Une réunion s’est tenue le samedi 24 à Cachan."
 categories:
-- Éducation
+  - Éducation
 tags:
-- archive
-- wordpress
-- news
+  - archive
+  - wordpress
+  - news
 villages:
-- douentza
+  - douentza
 source: https://leidimen.com/reunion-a-cachan
 ---
 

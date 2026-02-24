@@ -2,16 +2,16 @@
 title: Réunion à Mennecy
 date: 2007-10-28
 draft: false
-description: 'Douentza: Réunion à Mennecy - En savoir plus sur nos initiatives en culture.'
+description: "Une réunion s’est tenue dimanche 28 octobre à Mennecy."
 categories:
-- Culture
+  - Culture
 tags:
-- archive
-- wordpress
-- News Leidimen
-- Réunions
+  - archive
+  - wordpress
+  - News Leidimen
+  - Réunions
 villages:
-- douentza
+  - douentza
 source: https://leidimen.com/reunion-a-mennecy
 ---
 

@@ -80,13 +80,18 @@
   overflow: hidden;
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: -50%;
     left: -50%;
     width: 200%;
     height: 200%;
-    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    background: linear-gradient(
+      45deg,
+      transparent,
+      rgba(255, 255, 255, 0.3),
+      transparent
+    );
     transform: rotate(45deg);
     animation: shimmer 3s infinite;
   }
@@ -114,7 +119,12 @@
 .date-connector {
   width: 3px;
   height: 60px;
-  background: linear-gradient(180deg, #667eea 0%, #764ba2 50%, transparent 100%);
+  background: linear-gradient(
+    180deg,
+    #667eea 0%,
+    #764ba2 50%,
+    transparent 100%
+  );
   margin-top: 10px;
 
   @media (max-width: 768px) {
@@ -137,7 +147,7 @@
   border-left: 5px solid #667eea;
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -398,7 +408,7 @@ summary {
   }
 
   &::after {
-    content: '▼';
+    content: "▼";
     font-size: 1rem;
     color: #667eea;
     transition: transform 0.3s ease;
@@ -415,7 +425,7 @@ summary {
   }
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     top: 0;

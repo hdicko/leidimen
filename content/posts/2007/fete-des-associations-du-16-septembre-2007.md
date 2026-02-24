@@ -2,15 +2,15 @@
 title: Fête des associations du 16 septembre 2007
 date: 2007-09-25
 draft: false
-description: 'Douentza: Fête des associations du 16 septembre 2007 - En savoir plus sur nos initiatives en santé.'
+description: "Pour la troisième année consécutive, Leïdimen a participé à la fête des associations de Bondoufle."
 categories:
-- Santé
+  - Santé
 tags:
-- archive
-- wordpress
-- News Leidimen
+  - archive
+  - wordpress
+  - News Leidimen
 villages:
-- douentza
+  - douentza
 source: https://leidimen.com/fete-des-associations-3
 ---
 

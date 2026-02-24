@@ -20,6 +20,7 @@ tags:
 moods:
   - "inspire"
 ---
+
 ## Une révolution technologique qui touche le monde entier
 
 L'intelligence artificielle (IA) n'est plus une simple innovation technologique réservée aux grandes métropoles. Elle transforme déjà notre quotidien, de la santé à l'éducation, en passant par l'agriculture. Dans nos villages de Douentza, Dorool et Diona, nous devons dès maintenant réfléchir à la manière d'initier nos enfants à cette révolution numérique.
@@ -29,6 +30,7 @@ L'intelligence artificielle (IA) n'est plus une simple innovation technologique 
 L'intelligence artificielle sera au cœur des métiers de demain. Nos enfants, qu'ils deviennent agriculteurs, enseignants, médecins ou entrepreneurs, utiliseront des outils assistés par l'IA. Il est essentiel qu'ils ne soient pas de simples utilisateurs passifs, mais des acteurs informés et critiques de cette technologie.
 
 **Les bénéfices concrets :**
+
 - Développement de la pensée logique et de la résolution de problèmes
 - Compréhension des outils numériques qui façonnent leur avenir
 - Préparation aux métiers émergents et opportunités professionnelles
@@ -39,6 +41,7 @@ L'intelligence artificielle sera au cœur des métiers de demain. Nos enfants, q
 ### 1. Commencer par les bases
 
 Pas besoin d'ordinateurs sophistiqués pour débuter ! L'initiation à l'IA commence par :
+
 - La compréhension de ce qu'est un algorithme (recettes de cuisine, règles de jeux)
 - L'apprentissage de la logique à travers des jeux et des défis
 - La familiarisation avec la notion de données et de patterns
@@ -46,6 +49,7 @@ Pas besoin d'ordinateurs sophistiqués pour débuter ! L'initiation à l'IA comm
 ### 2. Utiliser des ressources adaptées
 
 Même avec des moyens limités, nous pouvons :
+
 - Organiser des ateliers collectifs avec un seul ordinateur ou smartphone
 - Utiliser des applications éducatives gratuites en ligne
 - Créer des activités déconnectées (jeux de logique, puzzles algorithmiques)
@@ -54,6 +58,7 @@ Même avec des moyens limités, nous pouvons :
 ### 3. Intégrer l'IA dans les matières existantes
 
 L'intelligence artificielle peut enrichir l'enseignement traditionnel :
+
 - **Mathématiques** : Comprendre les statistiques et les probabilités
 - **Sciences** : Découvrir comment l'IA aide à analyser des données climatiques
 - **Langues** : Utiliser des outils de traduction et de correction
@@ -62,6 +67,7 @@ L'intelligence artificielle peut enrichir l'enseignement traditionnel :
 ## Le rôle de notre association
 
 Leidimen s'engage à soutenir cette initiative en :
+
 - Identifiant des formateurs et ressources pédagogiques adaptées
 - Équipant progressivement nos écoles en matériel informatique
 - Organisant des sessions de sensibilisation pour les enseignants
@@ -70,6 +76,7 @@ Leidimen s'engage à soutenir cette initiative en :
 ## Un défi collectif, une opportunité unique
 
 Former nos enfants à l'intelligence artificielle n'est pas qu'une question de technologie. C'est aussi leur donner les clés pour :
+
 - Comprendre le monde qui les entoure
 - Innover et créer des solutions adaptées à leur contexte
 - Participer pleinement à l'économie numérique mondiale
@@ -85,6 +92,6 @@ Partagez vos idées, vos ressources, votre expertise. Ensemble, construisons un 
 
 ---
 
-*L'avenir de nos villages se construit aujourd'hui. Ne laissons pas la révolution numérique passer sans nous. Préparons nos enfants à devenir les acteurs, et non les spectateurs, de demain.*
+_L'avenir de nos villages se construit aujourd'hui. Ne laissons pas la révolution numérique passer sans nous. Préparons nos enfants à devenir les acteurs, et non les spectateurs, de demain._
 
 **Contactez-nous** pour contribuer à cette initiative ou partager vos expériences : ensemble, faisons de Douentza, Dorool et Diona des pionniers de l'éducation numérique au Mali.

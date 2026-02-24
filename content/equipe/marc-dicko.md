@@ -1,6 +1,7 @@
 ---
 title: Marc Dicko
 date: 2006-01-03
+description: "Marc Dicko, membre fondateur de l'association Leidimen, engagé pour la solidarité et le développement de l'éducation dans les villages maliens."
 card:
   membre: fondateur
   pays: France

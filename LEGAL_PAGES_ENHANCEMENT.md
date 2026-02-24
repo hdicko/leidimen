@@ -7,6 +7,7 @@ Les pages de **Politique de Confidentialité** et **Mentions Légales** ont ét�
 ## ✨ Nouvelles Fonctionnalités Implémentées
 
 ### 1. 🌓 Mode Sombre (Dark Mode)
+
 - **Bouton de basculement** fixe en haut à droite
 - **Persistance** : Le choix est sauvegardé dans le localStorage
 - **Transitions fluides** entre les thèmes
@@ -14,10 +15,12 @@ Les pages de **Politique de Confidentialité** et **Mentions Légales** ont ét�
 - **Couleurs optimisées** pour la lisibilité en mode sombre
 
 **Utilisation** :
+
 - Cliquez sur le bouton lune/soleil en haut à droite
 - Le thème choisi est automatiquement sauvegardé
 
 ### 2. 📜 Animations au Scroll (AOS - Animate On Scroll)
+
 - **Bibliothèque AOS** intégrée (2.3.4)
 - **Animations sur tous les éléments** :
   - Hero section : fade-down + zoom-in
@@ -29,6 +32,7 @@ Les pages de **Politique de Confidentialité** et **Mentions Légales** ont ét�
   - Titres : fade-right
 
 **Paramètres AOS** :
+
 ```javascript
 duration: 800ms
 easing: ease-out-cubic
@@ -37,6 +41,7 @@ offset: 100px
 ```
 
 ### 3. 💬 Tooltips Explicatifs
+
 - **Tooltips sur tous les éléments clés** avec `data-tooltip`
 - **Apparition au survol** avec animation scale
 - **Design moderne** : fond sombre, texte blanc, ombre portée
@@ -45,6 +50,7 @@ offset: 100px
 - **Accessibilité clavier** : focus avec Tab
 
 **Éléments avec tooltips** :
+
 - Badge "Document Officiel"
 - Métadonnées (date, type, conformité)
 - Sommaire
@@ -54,12 +60,14 @@ offset: 100px
 - Bouton scroll to top
 
 ### 4. 📊 Barre de Progression du Scroll
+
 - **Barre fixe en haut** de la page
 - **Gradient coloré** (bleu-violet)
 - **Largeur dynamique** selon la position du scroll
 - **Indicateur visuel** de progression dans la lecture
 
 ### 5. ⬆️ Bouton "Retour en Haut"
+
 - **Bouton fixe** en bas à droite
 - **Apparition progressive** après 300px de scroll
 - **Animation smooth scroll** vers le haut
@@ -67,6 +75,7 @@ offset: 100px
 - **Tooltip** "Retour en haut de la page"
 
 ### 6. 📑 Table des Matières Interactive Améliorée
+
 - **Génération automatique** depuis les H2 et H3
 - **Navigation smooth scroll**
 - **Highlight de la section active** avec IntersectionObserver
@@ -74,6 +83,7 @@ offset: 100px
 - **Indentation visuelle** pour les sous-sections
 
 ### 7. 🎯 Quick Info Cards
+
 - **3 cards informatives** en haut du contenu
 - **Icônes Bootstrap** pour identification visuelle
 - **Effet hover** avec élévation
@@ -81,6 +91,7 @@ offset: 100px
 - **Responsive** : colonne unique sur mobile
 
 ### 8. 🎨 Design Amélioré
+
 - **Hero section** avec icône flottante + backdrop pulsant
 - **Badge gradient** avec ombre portée
 - **Titre avec gradient de texte**
@@ -91,6 +102,7 @@ offset: 100px
 - **Action cards** en footer
 
 ### 9. 🎊 Easter Egg (Bonus)
+
 - **Konami Code** : ⬆️⬆️⬇️⬇️⬅️➡️⬅️➡️BA
 - **Effet confetti** animé avec 50 particules colorées
 - Animation physique réaliste
@@ -98,17 +110,20 @@ offset: 100px
 ## 🛠️ Technologies Utilisées
 
 ### Bibliothèques Externes
+
 - **AOS (Animate On Scroll)** 2.3.4
   - CDN: `https://unpkg.com/aos@2.3.4/dist/aos.css`
   - CDN: `https://unpkg.com/aos@2.3.4/dist/aos.js`
 
 ### API Web
+
 - **IntersectionObserver** : détection des sections visibles
 - **localStorage** : sauvegarde du thème
 - **Web Animations API** : confetti effect
 - **Smooth Scroll API** : navigation fluide
 
 ### CSS Moderne
+
 - **CSS Custom Properties** : variables de couleur
 - **CSS Grid** : layout des cards
 - **CSS Transitions** : animations fluides
@@ -119,6 +134,7 @@ offset: 100px
 ## 📱 Responsive Design
 
 ### Breakpoints
+
 - **Mobile** (< 768px) :
   - TOC sidebar masquée
   - Cards en colonne unique
@@ -126,6 +142,7 @@ offset: 100px
   - Padding ajustés
 
 ### Modes d'Impression
+
 - **Print-friendly** :
   - Masquage des éléments interactifs
   - Suppression des ombres
@@ -134,6 +151,7 @@ offset: 100px
 ## 🎯 Accessibilité
 
 ### Fonctionnalités A11Y
+
 - **Tooltips accessibles au clavier** (tabindex="0")
 - **ARIA labels** sur les boutons
 - **Contraste élevé** en mode sombre
@@ -142,6 +160,7 @@ offset: 100px
 - **Smooth scroll** pour navigation
 
 ### Support Navigateurs
+
 - ✅ Chrome/Edge (Chromium)
 - ✅ Firefox
 - ✅ Safari
@@ -151,6 +170,7 @@ offset: 100px
 ## 🚀 Performance
 
 ### Optimisations
+
 - **AOS once: true** : animation une seule fois
 - **Lazy loading** des animations
 - **Debounced scroll events** : barre de progression
@@ -159,6 +179,7 @@ offset: 100px
 - **Transform** au lieu de position (GPU acceleration)
 
 ### Métriques
+
 - **Build time** : ~700ms (inchangé)
 - **Pages générées** : 698
 - **Taille AOS** : ~13KB (gzip)
@@ -169,6 +190,7 @@ offset: 100px
 ### Pour les Éditeurs
 
 **Éditer le contenu** :
+
 ```markdown
 ---
 title: "Politique de Confidentialité"
@@ -188,6 +210,7 @@ Contenu...
 ```
 
 **Ajouter des tooltips** :
+
 ```html
 <span data-tooltip="Texte explicatif">Élément</span>
 ```
@@ -195,22 +218,25 @@ Contenu...
 ### Pour les Développeurs
 
 **Modifier le thème** :
+
 ```javascript
 // Dans le localStorage
-localStorage.setItem('legalTheme', 'dark');
+localStorage.setItem("legalTheme", "dark");
 ```
 
 **Personnaliser AOS** :
+
 ```javascript
 AOS.init({
-  duration: 1000,  // Durée animation
-  easing: 'ease',  // Type easing
-  once: false,     // Répéter animations
-  offset: 200      // Offset déclenchement
+  duration: 1000, // Durée animation
+  easing: "ease", // Type easing
+  once: false, // Répéter animations
+  offset: 200, // Offset déclenchement
 });
 ```
 
 **Changer les couleurs** :
+
 ```css
 .legal-icon-pro {
   background: linear-gradient(135deg, #custom1, #custom2);
@@ -220,13 +246,16 @@ AOS.init({
 ## 🔧 Maintenance
 
 ### Fichiers Modifiés
+
 - ✅ `/layouts/documents/single.html` (919 lignes)
 
 ### Dépendances
+
 - AOS 2.3.4 (CDN - stable)
 - Bootstrap Icons (déjà présent)
 
 ### Tests Effectués
+
 - ✅ Build Hugo : OK (706ms)
 - ✅ Dev server : OK (http://localhost:1313/leidimen/)
 - ✅ Responsive : OK
@@ -237,6 +266,7 @@ AOS.init({
 ## 📊 Comparaison Avant/Après
 
 ### Avant
+
 - Design basique
 - Pas d'animations
 - Pas de mode sombre
@@ -244,6 +274,7 @@ AOS.init({
 - Pas de tooltips
 
 ### Après
+
 - ✨ Design professionnel moderne
 - 🎬 Animations fluides au scroll
 - 🌓 Mode sombre avec persistance
@@ -257,12 +288,14 @@ AOS.init({
 ## 🎓 Ressources
 
 ### Documentation
+
 - [AOS Documentation](https://michalsnik.github.io/aos/)
 - [IntersectionObserver API](https://developer.mozilla.org/fr/docs/Web/API/Intersection_Observer_API)
 - [Web Animations API](https://developer.mozilla.org/fr/docs/Web/API/Web_Animations_API)
 - [CSS Gradients](https://developer.mozilla.org/fr/docs/Web/CSS/gradient)
 
 ### Inspirations Design
+
 - Stripe Documentation
 - Vercel Design System
 - Tailwind UI Legal Pages
@@ -288,6 +321,7 @@ Aucun problème connu à ce jour.
 ## 📝 Changelog
 
 ### Version 2.0 - 2 février 2026
+
 - ✨ Ajout du mode sombre
 - 🎬 Intégration AOS animations
 - 💬 Système de tooltips
@@ -298,6 +332,7 @@ Aucun problème connu à ce jour.
 - 🎊 Easter egg confetti
 
 ### Version 1.0 - Octobre 2025
+
 - 🎨 Design initial professionnel
 - 📑 Table des matières basique
 - 🎯 Hero section avec icône

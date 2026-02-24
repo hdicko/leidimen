@@ -58,6 +58,7 @@ my-site/
 ### Theme Development
 
 Create custom themes or modify existing ones. See [references/theme-development.md](references/theme-development.md) for:
+
 - Theme directory structure and skeleton
 - Template lookup order
 - Base templates (`baseof.html`) and blocks
@@ -68,6 +69,7 @@ Create custom themes or modify existing ones. See [references/theme-development.
 ### Templating
 
 Write Go templates for layouts, partials, and shortcodes. See [references/templating.md](references/templating.md) for:
+
 - Go template syntax and functions
 - Context (the dot `.`) and variable scoping
 - Range, with, if/else patterns
@@ -77,6 +79,7 @@ Write Go templates for layouts, partials, and shortcodes. See [references/templa
 ### Content Management
 
 Organize and manage site content. See [references/content-management.md](references/content-management.md) for:
+
 - Page bundles (leaf vs branch)
 - Front matter fields
 - Sections and taxonomies
@@ -87,6 +90,7 @@ Organize and manage site content. See [references/content-management.md](referen
 ### Asset Pipeline
 
 Process images, CSS/Sass, JavaScript, and more. See [references/asset-pipeline.md](references/asset-pipeline.md) for:
+
 - Image processing (resize, crop, filters, WebP)
 - Sass/SCSS compilation
 - JavaScript bundling with esbuild
@@ -96,6 +100,7 @@ Process images, CSS/Sass, JavaScript, and more. See [references/asset-pipeline.m
 ### Deployment
 
 Deploy to hosting platforms. See [references/deployment.md](references/deployment.md) for:
+
 - Netlify configuration
 - Vercel setup
 - Cloudflare Pages

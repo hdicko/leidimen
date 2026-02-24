@@ -2,18 +2,18 @@
 title: De retour du Mali!
 date: 2010-01-01
 draft: false
-description: 'Dorool: De retour du Mali! - En savoir plus sur nos initiatives en éducation.'
+description: "Je suis de retour du Mali, avec un sourire, en pleine santé (ça mérite d’être souligné!), et très heureux de ce merveilleux voyage."
 categories:
-- Éducation
+  - Éducation
 tags:
-- archive
-- wordpress
-- news
+  - archive
+  - wordpress
+  - news
 villages:
-- dorool
-- diona
-- debere
-- douentza
+  - dorool
+  - diona
+  - debere
+  - douentza
 source: https://leidimen.com/de-retour-du-mali
 ---
 

@@ -1,22 +1,21 @@
-{{/* 
-  Schema.org FAQPage markup for pages with FAQ content
+{{/* Schema.org FAQPage markup for pages with FAQ content
   Usage: Include this partial in pages with frequently asked questions
-  
+
   This provides structured data for FAQ-rich results in search engines
   FAQs can be displayed as rich snippets with expandable Q&A sections
-  
+
   Requirements:
   - Page frontmatter must have 'faqs' array with question/answer pairs
-  
+
   Example frontmatter:
   ---
   faqs:
-    - question: "Comment soutenir Leidimen?"
-      answer: "Vous pouvez nous soutenir par adhésion, don, ou bénévolat."
-    - question: "Où se trouve Douentza?"
-      answer: "Douentza est une région du Mali, en Afrique de l'Ouest."
+  - question: "Comment soutenir Leidimen?"
+  answer: "Vous pouvez nous soutenir par adhésion, don, ou bénévolat."
+  - question: "Où se trouve Douentza?"
+  answer: "Douentza est une région du Mali, en Afrique de l'Ouest."
   ---
-*/}}
+  */}}
 
 {{ with .Params.faqs }}
 <script type="application/ld+json">

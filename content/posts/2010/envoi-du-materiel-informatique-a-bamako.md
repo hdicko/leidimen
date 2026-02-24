@@ -2,15 +2,15 @@
 title: Envoi du matériel informatique à Bamako
 date: 2010-01-01
 draft: false
-description: 'Douentza: Envoi du matériel informatique à Bamako - En savoir plus sur nos initiatives en éducation.'
+description: "Chargement du matériel informatique direction Bamako"
 categories:
-- Éducation
+  - Éducation
 tags:
-- archive
-- wordpress
-- news
+  - archive
+  - wordpress
+  - news
 villages:
-- douentza
+  - douentza
 source: https://leidimen.com/envoi-du-materiel-informatique-a-bamako
 ---
 

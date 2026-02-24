@@ -2,19 +2,19 @@
 title: Compte rendu de la soirée Leïdimen
 date: 2008-05-24 15:32:00+01:00
 draft: false
-description: Compte rendu de la soirée Leïdimen - En savoir plus sur nos initiatives en news leidimen.
+description: "La soirée du 3 mai 2008 nous a permis de réunir une centaine de personnes à la salle des fêtes de Bondoufle."
 author: Aissa Dicko
 categories:
-- News Leidimen
-- Sorties
+  - News Leidimen
+  - Sorties
 tags:
-- événement
-- soirée
-- bondoufle
+  - événement
+  - soirée
+  - bondoufle
 villages: []
 moods:
-- Heureux
-- Reconnaissant
+  - Heureux
+  - Reconnaissant
 ---
 
 La soirée du 3 mai 2008 nous a permis de réunir une centaine de personnes à la salle des fêtes de Bondoufle. Pour tous ceux qui n'ont pas pu venir les photos de la soirée sont en ligne. Nous tenons à remercier la chanteuse Milca, la styliste Nina Moon, les mannequins, le prof de danse Harold et ses élèves, le DJ, et bien sûr toutes les personnes présentes !

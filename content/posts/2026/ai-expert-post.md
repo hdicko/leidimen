@@ -2,18 +2,18 @@
 title: Intelligence Artificielle et Développement en Milieu Rural
 date: 2026-01-21
 draft: false
-description: 'Douentza: Intelligence Artificielle et Développement en M... - En savoir plus sur nos initiatives en éducation.'
+description: "Comment l'intelligence artificielle peut optimiser les projets de solidarité internationale de Leidimen : analyse de données, communication multilingue et formation."
 image: /images/uploads/default.jpeg
 categories:
-- Éducation
+  - Éducation
 tags:
-- intelligence artificielle
-- technologie
-- innovation
+  - intelligence artificielle
+  - technologie
+  - innovation
 villages:
-- douentza
+  - douentza
 moods:
-- inspire
+  - inspire
 ---
 
 ## Introduction

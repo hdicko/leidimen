@@ -2,15 +2,15 @@
 title: Actu musique
 date: 2010-01-01
 draft: false
-description: 'Douentza: Actu musique - En savoir plus sur nos initiatives en culture.'
+description: "Leïdimen rassemble des personnes d’origines diverses par des liens d amitiés et de solidarité."
 categories:
-- Culture
+  - Culture
 tags:
-- archive
-- wordpress
-- infos-sorties
+  - archive
+  - wordpress
+  - infos-sorties
 villages:
-- douentza
+  - douentza
 source: https://leidimen.com/actu-musique
 ---
 

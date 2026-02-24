@@ -2,20 +2,20 @@
 title: Festival Peul à Bruxelles le 7 juillet 2007
 date: 2007-06-26 03:05:00+01:00
 draft: false
-description: Festival Peul à Bruxelles le 7 juillet 2007 - En savoir plus sur nos initiatives en sorties.
+description: "--- Cet événement exceptionnel est une grande rencontre culturelle, réunissant plus de 23 nations africaines en Belgique."
 author: Moussa Dicko
 categories:
-- Sorties
+  - Sorties
 tags:
-- festival
-- culture
-- musique
-- bruxelles
-- peul
+  - festival
+  - culture
+  - musique
+  - bruxelles
+  - peul
 villages: []
 moods:
-- Heureux
-- Inspiré
+  - Heureux
+  - Inspiré
 ---
 
 ## Un événement culturel majeur

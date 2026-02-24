@@ -3,14 +3,14 @@ title: Une école pour Dorool
 date: 2025-12-29
 lastmod: 2025-12-29
 draft: false
-description: 'Dorool: Une école pour Dorool - En savoir plus sur nos initiatives en actualités.'
+description: "Dorool : Une école pour Dorool — projet de solidarité de l'association Leidimen au Mali."
 author: Leidimen
 image: /images/uploads/ecole-dorool.jpeg
 categories:
-- Actualités
+  - Actualités
 villages:
-- dorool
-- diona
+  - dorool
+  - diona
 ---
 
 Voici **Ibrahim**, **Faadi**, **Leyla** et **Issa**.

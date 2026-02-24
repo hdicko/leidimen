@@ -2,20 +2,20 @@
 title: Opération cartons Acte II
 date: 2006-09-30 07:10:00+01:00
 draft: false
-description: Opération cartons Acte II - En savoir plus sur nos initiatives en news leidimen.
+description: "Dans le cadre du projet d'envoi de manuels scolaires et d'ordinateurs au Mali, des membres de l'association et des bénévoles ont participé à un inventaire."
 author: Olivier Dicko
 image: inventaire1.jpg
 categories:
-- News Leidimen
+  - News Leidimen
 tags:
-- bénévolat
-- inventaire
-- manuels scolaires
-- ordinateurs
-- mali
+  - bénévolat
+  - inventaire
+  - manuels scolaires
+  - ordinateurs
+  - mali
 villages: []
 moods:
-- Motivé
+  - Motivé
 ---
 
 ## Une journée de mobilisation collective 📦

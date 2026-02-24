@@ -1,8 +1,7 @@
-{{/* 
-  Template: posts/single.html
+{{/* Template: posts/single.html
   Purpose: Individual blog post display template with SEO and accessibility enhancements
   Context: Displays single blog post with semantic HTML, structured data, and responsive design
-  
+
   Features:
   - Semantic HTML5 structure (article, header, time elements)
   - JSON-LD structured data for SEO (BlogPosting schema)
@@ -11,7 +10,7 @@
   - Social sharing meta tags
   - Responsive typography and layout
   - External SCSS for styling
-  
+
   Data Structure:
   - .Title: Post title
   - .Date: Publication date
@@ -21,7 +20,7 @@
   - .Params.categories: Post categories
   - .Params.villages: Related villages
   - .Params.description: SEO description
-  
+
   Dependencies:
   - Bootstrap 5 for grid system
   - assets/scss/pages/posts-single.scss
@@ -29,7 +28,7 @@
 */}}
 
 {{ define "main" }}
-{{/* Structured Data - JSON-LD for BlogPosting */}}
+  {{/* Structured Data - JSON-LD for BlogPosting */}}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -59,117 +58,150 @@
 }
 </script>
 
-<article class="post-single" itemscope itemtype="https://schema.org/BlogPosting" data-aos="fade-up">
-  <div class="container py-5">
-    <div class="row justify-content-center">
-      <div class="col-lg-10 col-xl-8">
-        {{/* Post Header */}}
-        <header class="post-header mb-5">
-          <h1 class="post-title display-4 fw-bold mb-4" itemprop="headline">{{ .Title }}</h1>
-          
-          {{/* Post Meta */}}
-          <div class="post-meta d-flex flex-wrap align-items-center gap-3 mb-4">
-            <time class="text-muted" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}" itemprop="datePublished">
-              <i class="bi bi-calendar3" aria-hidden="true"></i>
-              <span class="visually-hidden">Publié le </span>
-              {{ .Date.Format "2 January 2006" }}
-            </time>
-            
-            {{ with .Params.auteur }}
-            <span class="text-muted" itemprop="author" itemscope itemtype="https://schema.org/Person">
-              <i class="bi bi-person" aria-hidden="true"></i>
-              <span itemprop="name">{{ . }}</span>
-            </span>
-            {{ end }}
-            
-            {{ with .ReadingTime }}
-            <span class="text-muted">
-              <i class="bi bi-clock" aria-hidden="true"></i>
-              {{ . }} min de lecture
-            </span>
-            {{ end }}
-          </div>
-          
-          {{/* Categories & Villages */}}
-          {{ if or .Params.categories .Params.villages }}
-          <div class="post-taxonomies mb-4">
-            {{ with .Params.categories }}
-            <div class="d-inline-flex flex-wrap gap-2">
-              {{ range . }}
-              <a href="{{ "/categories/" | relURL }}{{ . | urlize }}/" class="badge bg-primary text-decoration-none" rel="category">
-                {{ . }}
-              </a>
+  <article
+    class="post-single"
+    itemscope
+    itemtype="https://schema.org/BlogPosting"
+    data-aos="fade-up">
+    <div class="container py-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-10 col-xl-8">
+          {{/* Post Header */}}
+          <header class="post-header mb-5">
+            <h1 class="post-title display-4 fw-bold mb-4" itemprop="headline">
+              {{ .Title }}
+            </h1>
+
+            {{/* Post Meta */}}
+            <div
+              class="post-meta d-flex flex-wrap align-items-center gap-3 mb-4">
+              <time
+                class="text-muted"
+                datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}"
+                itemprop="datePublished">
+                <i class="bi bi-calendar3" aria-hidden="true"></i>
+                <span class="visually-hidden">Publié le </span>
+                {{ .Date.Format "2 January 2006" }}
+              </time>
+
+              {{ with .Params.auteur }}
+                <span
+                  class="text-muted"
+                  itemprop="author"
+                  itemscope
+                  itemtype="https://schema.org/Person">
+                  <i class="bi bi-person" aria-hidden="true"></i>
+                  <span itemprop="name">{{ . }}</span>
+                </span>
+              {{ end }}
+
+              {{ with .ReadingTime }}
+                <span class="text-muted">
+                  <i class="bi bi-clock" aria-hidden="true"></i>
+                  {{ . }} min de lecture
+                </span>
               {{ end }}
             </div>
-            {{ end }}
-            
-            {{ with .Params.villages }}
-            <div class="d-inline-flex flex-wrap gap-2 ms-2">
-              {{ range . }}
-              <a href="{{ "/villages/" | relURL }}{{ . | urlize }}/" class="badge bg-success text-decoration-none" rel="tag">
-                <i class="bi bi-geo-alt" aria-hidden="true"></i> {{ . }}
-              </a>
-              {{ end }}
-            </div>
-            {{ end }}
-          </div>
-          {{ end }}
-        </header>
-        
-        {{/* Post Content */}}
-        <div class="post-content" itemprop="articleBody">
-          {{ .Content }}
-        </div>
-        
-        {{/* Post Footer */}}
-        <footer class="post-footer mt-5 pt-4 border-top">
-          {{/* Share Buttons */}}
-          <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
-            <div>
-              <strong class="text-muted">Partager :</strong>
-              <div class="btn-group ms-2" role="group" aria-label="Boutons de partage">
-                <a href="https://twitter.com/intent/tweet?url={{ .Permalink | urlquery }}&text={{ .Title | urlquery }}" 
-                   class="btn btn-sm btn-outline-primary" 
-                   target="_blank" 
-                   rel="noopener noreferrer"
-                   aria-label="Partager sur Twitter">
-                  <i class="bi bi-twitter" aria-hidden="true"></i>
-                </a>
-                <a href="https://www.facebook.com/sharer/sharer.php?url={{ .Permalink | urlquery }}" 
-                   class="btn btn-sm btn-outline-primary" 
-                   target="_blank" 
-                   rel="noopener noreferrer"
-                   aria-label="Partager sur Facebook">
-                  <i class="bi bi-facebook" aria-hidden="true"></i>
-                </a>
-                <button class="btn btn-sm btn-outline-primary" 
-                        data-action="copy-link" 
-                        data-url="{{ .Permalink }}"
-                        aria-label="Copier le lien">
-                  <i class="bi bi-link-45deg" aria-hidden="true"></i>
-                </button>
+
+            {{/* Categories & Villages */}}
+            {{ if or .Params.categories .Params.villages }}
+              <div class="post-taxonomies mb-4">
+                {{ with .Params.categories }}
+                  <div class="d-inline-flex flex-wrap gap-2">
+                    {{ range . }}
+                      <a
+                        href="{{ "/categories/" | relURL }}{{ . | urlize }}/"
+                        class="badge bg-primary text-decoration-none"
+                        rel="category">
+                        {{ . }}
+                      </a>
+                    {{ end }}
+                  </div>
+                {{ end }}
+
+                {{ with .Params.villages }}
+                  <div class="d-inline-flex flex-wrap gap-2 ms-2">
+                    {{ range . }}
+                      <a
+                        href="{{ "/villages/" | relURL }}{{ . | urlize }}/"
+                        class="badge bg-success text-decoration-none"
+                        rel="tag">
+                        <i class="bi bi-geo-alt" aria-hidden="true"></i> {{ . }}
+                      </a>
+                    {{ end }}
+                  </div>
+                {{ end }}
               </div>
-            </div>
-            
-            {{/* Back to Posts */}}
-            <a href="{{ "/posts/" | relURL }}" class="btn btn-outline-secondary">
-              <i class="bi bi-arrow-left" aria-hidden="true"></i> Retour aux articles
-            </a>
+            {{ end }}
+          </header>
+
+          {{/* Post Content */}}
+          <div class="post-content" itemprop="articleBody">
+            {{ .Content }}
           </div>
-        </footer>
+
+          {{/* Post Footer */}}
+          <footer class="post-footer mt-5 pt-4 border-top">
+            {{/* Share Buttons */}}
+            <div
+              class="d-flex justify-content-between align-items-center flex-wrap gap-3">
+              <div>
+                <strong class="text-muted">Partager :</strong>
+                <div
+                  class="btn-group ms-2"
+                  role="group"
+                  aria-label="Boutons de partage">
+                  <a
+                    href="https://twitter.com/intent/tweet?url={{ .Permalink | urlquery }}&text={{ .Title | urlquery }}"
+                    class="btn btn-sm btn-outline-primary"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Partager sur Twitter">
+                    <i class="bi bi-twitter" aria-hidden="true"></i>
+                  </a>
+                  <a
+                    href="https://www.facebook.com/sharer/sharer.php?url={{ .Permalink | urlquery }}"
+                    class="btn btn-sm btn-outline-primary"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Partager sur Facebook">
+                    <i class="bi bi-facebook" aria-hidden="true"></i>
+                  </a>
+                  <button
+                    class="btn btn-sm btn-outline-primary"
+                    data-action="copy-link"
+                    data-url="{{ .Permalink }}"
+                    aria-label="Copier le lien">
+                    <i class="bi bi-link-45deg" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+
+              {{/* Back to Posts */}}
+              <a
+                href="{{ "/posts/" | relURL }}"
+                class="btn btn-outline-secondary">
+                <i class="bi bi-arrow-left" aria-hidden="true"></i> Retour aux
+                articles
+              </a>
+            </div>
+          </footer>
+        </div>
       </div>
     </div>
-  </div>
-</article>
+  </article>
 
-{{/* Related Posts for Better Internal Linking */}}
-{{ partial "related-posts.html" . }}
+  {{/* Related Posts for Better Internal Linking */}}
+  {{ partial "related-posts.html" . }}
 
-{{/* Load external styles */}}
-{{ $postStyles := resources.Get "scss/pages/posts-single.scss" }}
-{{ if $postStyles }}
-  {{ $postStyles = $postStyles | toCSS | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ $postStyles.RelPermalink }}" integrity="{{ $postStyles.Data.Integrity }}">
-{{ end }}
+  {{/* Load external styles */}}
+  {{ $postStyles := resources.Get "scss/pages/posts-single.scss" }}
+  {{ if $postStyles }}
+    {{ $postStyles = $postStyles | toCSS | minify | fingerprint }}
+    <link
+      rel="stylesheet"
+      href="{{ $postStyles.RelPermalink }}"
+      integrity="{{ $postStyles.Data.Integrity }}" />
+  {{ end }}
 
 {{ end }}

@@ -2,15 +2,15 @@
 title: Accueillir des étudiants étrangers à l’université Paris8
 date: 2010-01-01
 draft: false
-description: 'Douentza: Accueillir des étudiants étrangers à l’universi... - En savoir plus sur nos initiatives en éducation.'
+description: "/images/wordpress/2008-02-tissuamicla-affiche1.jpg La visibilité de Leïdimen a dépassé les limites de l’Essonne durant ces mois d’automne : nous nous."
 categories:
-- Éducation
+  - Éducation
 tags:
-- archive
-- wordpress
-- news
+  - archive
+  - wordpress
+  - news
 villages:
-- douentza
+  - douentza
 source: https://leidimen.com/292
 ---
 

@@ -2,15 +2,15 @@
 title: Ecole de Dorool
 date: 2010-01-01
 draft: false
-description: 'Dorool: Ecole de Dorool - En savoir plus sur nos initiatives en culture.'
+description: "Quelques nouvelles en images (vous pouvez cliquer sur les photos pour les agrandir):"
 categories:
-- Culture
+  - Culture
 tags:
-- archive
-- wordpress
-- non-classe
+  - archive
+  - wordpress
+  - non-classe
 villages:
-- dorool
+  - dorool
 source: https://leidimen.com/ecole-de-dorool
 ---
 

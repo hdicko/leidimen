@@ -2,17 +2,17 @@
 title: this is from leidimen-cms web appli
 date: 2025-11-04
 draft: false
-description: 'Diona: this is from leidimen-cms web appli - En savoir plus sur nos initiatives en éducation.'
-image: ''
+description: "Remplir le formulaire avec toutes les informations requises : Titre : Titre de l'article Date : Date de publication Villages : Sélectionner un ou."
+image: ""
 categories:
-- Éducation
+  - Éducation
 tags:
-- projet AI
+  - projet AI
 villages:
-- diona
-- debere
+  - diona
+  - debere
 moods:
-- motivé
+  - motivé
 ---
 
 ## 📖 Utilisation

@@ -2,15 +2,15 @@
 title: nouvelle news 2017
 date: 2010-01-01
 draft: false
-description: 'Douentza: nouvelle news 2017 - En savoir plus sur nos initiatives en éducation.'
+description: "Bonjour,   Nous avons des nouvelles à partager."
 categories:
-- Éducation
+  - Éducation
 tags:
-- archive
-- wordpress
-- news
+  - archive
+  - wordpress
+  - news
 villages:
-- douentza
+  - douentza
 source: https://leidimen.com/nouvelle-news-2017
 ---
 

@@ -2,19 +2,19 @@
 title: Première semaine culturelle africaine du Pecq
 date: 2008-02-20
 draft: false
-description: Première semaine culturelle africaine du Pecq - En savoir plus sur nos initiatives en événements.
+description: "À l'initiative de l'association des Amis de la Boucle du Niger se tient actuellement la première semaine culturelle africaine du Pecq."
 categories:
-- Événements
-- Culture
+  - Événements
+  - Culture
 tags:
-- culture
-- exposition
-- le pecq
-- partenariat
+  - culture
+  - exposition
+  - le pecq
+  - partenariat
 type: posts
 ---
 
-À l'initiative de l'association des Amis de la Boucle du Niger se tient actuellement la première semaine culturelle africaine du Pecq. 
+À l'initiative de l'association des Amis de la Boucle du Niger se tient actuellement la première semaine culturelle africaine du Pecq.
 
 ## Au programme
 

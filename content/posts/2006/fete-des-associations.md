@@ -2,15 +2,15 @@
 title: Fête des associations
 date: 2006-09-17
 draft: false
-description: 'Douentza: Fête des associations - En savoir plus sur nos initiatives en culture.'
+description: "Pour la deuxième année consécutive, l’association Leïdimen a participé à la fête des associations du dimanche 17 septembre 2006."
 categories:
-- Culture
+  - Culture
 tags:
-- archive
-- wordpress
-- News Leidimen
+  - archive
+  - wordpress
+  - News Leidimen
 villages:
-- douentza
+  - douentza
 source: https://leidimen.com/fete-des-associations
 ---
 

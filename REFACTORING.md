@@ -19,6 +19,7 @@ Major site-wide refactoring focused on code quality, performance, accessibility,
 #### posts/single.html - Blog Post Template
 
 **Problems identified:**
+
 - Extensive inline styles (200+ lines)
 - Commented debug code cluttering template
 - No structured data for SEO
@@ -28,12 +29,14 @@ Major site-wide refactoring focused on code quality, performance, accessibility,
 **Solution implemented:**
 
 **Structured Data (JSON-LD):**
+
 - BlogPosting schema with headline, dates, author, publisher
 - Automatic keyword extraction from categories/tags
 - Word count and reading time metadata
 - Image and description for rich snippets
 
 **Semantic HTML:**
+
 - `<article itemscope>` wrapper with BlogPosting itemtype
 - `<header>` for post metadata
 - `<time datetime>` with ISO 8601 dates
@@ -41,6 +44,7 @@ Major site-wide refactoring focused on code quality, performance, accessibility,
 - Proper `itemprop` attributes throughout
 
 **Accessibility Features:**
+
 - ARIA labels on all icon buttons (`aria-label`, `aria-hidden`)
 - `.visually-hidden` class for screen reader text
 - Semantic heading hierarchy (h1 for title)
@@ -48,15 +52,18 @@ Major site-wide refactoring focused on code quality, performance, accessibility,
 - Role attributes for button groups
 
 **Social Sharing:**
+
 - Twitter and Facebook share buttons
 - Copy-link functionality with data attributes
-- Target="_blank" with proper `rel="noopener noreferrer"`
+- Target="\_blank" with proper `rel="noopener noreferrer"`
 
 **External Stylesheet:**
+
 - Loads `assets/scss/pages/posts-single.scss` with integrity hashes
 - Minified and fingerprinted for cache busting
 
 **Benefits:**
+
 - ✅ Clean separation of concerns (HTML/CSS/JS)
 - ✅ Improved SEO with structured data
 - ✅ Better accessibility (WCAG compliance)
@@ -68,6 +75,7 @@ Major site-wide refactoring focused on code quality, performance, accessibility,
 #### galleries/single.html - Photo Gallery Template
 
 **Problems identified:**
+
 - Inline `<style>` block in template
 - Commented-out header section
 - No structured data
@@ -78,11 +86,13 @@ Major site-wide refactoring focused on code quality, performance, accessibility,
 **Solution implemented:**
 
 **Structured Data (JSON-LD):**
+
 - ImageGallery schema with complete photo metadata
 - Individual ImageObject for each photo
 - Width and height dimensions for layout stability
 
 **Semantic HTML:**
+
 - `<article itemscope>` with ImageGallery type
 - `<header>` with gallery title, description, metadata
 - `<figure>` elements for each photo
@@ -90,6 +100,7 @@ Major site-wide refactoring focused on code quality, performance, accessibility,
 - Role="list" and role="listitem" for gallery grid
 
 **Accessibility Features:**
+
 - ARIA labels on gallery items ("Photo 1 sur 12")
 - Data-caption for lightbox accessibility
 - Alt text with fallback to "Photo N"
@@ -97,17 +108,20 @@ Major site-wide refactoring focused on code quality, performance, accessibility,
 - Screen reader friendly photo counter
 
 **Performance Optimizations:**
+
 - `loading="lazy"` on all images
 - WebP format with quality 85
 - Width/height attributes for CLS prevention
 - Optimized thumbnails (400x300px)
 
 **External Stylesheet:**
+
 - Loads `assets/scss/pages/galleries-single.scss`
 - Extracted all inline styles
 - Hover effects and transitions in CSS
 
 **Benefits:**
+
 - ✅ ImageGallery schema for rich search results
 - ✅ Lazy loading improves page speed
 - ✅ WebP reduces bandwidth usage
@@ -121,6 +135,7 @@ Major site-wide refactoring focused on code quality, performance, accessibility,
 **Enhancements:**
 
 **Structured Data (JSON-LD):**
+
 - Person schema with complete profile
 - Job title and organization membership
 - Social media links in `sameAs` array
@@ -128,6 +143,7 @@ Major site-wide refactoring focused on code quality, performance, accessibility,
 - Founding date for founders
 
 **Accessibility:**
+
 - Already had good AOS animations
 - Added Person schema for SEO
 - Social links with proper ARIA labels
@@ -139,16 +155,19 @@ Major site-wide refactoring focused on code quality, performance, accessibility,
 #### Lazy Loading Implementation
 
 **Files modified:**
+
 - `layouts/_default/_markup/render-image.html` - Markdown images
 - `layouts/shortcodes/image.html` - Image shortcode
 - `layouts/galleries/single.html` - Gallery images
 
 **Implementation:**
+
 ```html
 <img src="..." loading="lazy" alt="..." />
 ```
 
 **Benefits:**
+
 - ✅ Deferred image loading saves bandwidth
 - ✅ Faster initial page load
 - ✅ Better Core Web Vitals scores
@@ -163,6 +182,7 @@ Major site-wide refactoring focused on code quality, performance, accessibility,
 **File:** `layouts/_default/baseof.html`
 
 **Implementation:**
+
 ```html
 <a href="#main-content" class="visually-hidden-focusable skip-link">
   Aller au contenu principal
@@ -170,15 +190,19 @@ Major site-wide refactoring focused on code quality, performance, accessibility,
 ```
 
 **Styling:** `assets/scss/index.scss`
+
 ```scss
 .skip-link {
   position: absolute;
   top: -40px;
-  &:focus { top: 0; }
+  &:focus {
+    top: 0;
+  }
 }
 ```
 
 **Benefits:**
+
 - ✅ Keyboard navigation support
 - ✅ WCAG 2.1 Level A compliance
 - ✅ Better screen reader experience
@@ -190,12 +214,14 @@ Major site-wide refactoring focused on code quality, performance, accessibility,
 **File:** `layouts/_default/baseof.html`
 
 **Implementation:**
+
 - `<nav role="navigation" aria-label="Navigation principale">`
 - `<aside role="complementary" aria-label="Bannière de l'association">`
 - `<main id="main-content" role="main">`
 - `<footer role="contentinfo">`
 
 **Benefits:**
+
 - ✅ Clear document structure for assistive technology
 - ✅ Easier navigation with screen readers
 - ✅ Semantic HTML5 + ARIA roles
@@ -209,11 +235,13 @@ Major site-wide refactoring focused on code quality, performance, accessibility,
 **New file:** `layouts/partials/seo/breadcrumb.html`
 
 **Features:**
+
 - Automatic breadcrumb generation from URL structure
 - Home → Section → Page hierarchy
 - Position numbering for each level
 
 **Example output:**
+
 ```json
 {
   "@type": "BreadcrumbList",
@@ -228,6 +256,7 @@ Major site-wide refactoring focused on code quality, performance, accessibility,
 **Integration:** Added to `layouts/partials/head.html`
 
 **Benefits:**
+
 - ✅ Breadcrumb display in search results
 - ✅ Better site hierarchy understanding
 - ✅ Improved SERP click-through rates
@@ -237,25 +266,30 @@ Major site-wide refactoring focused on code quality, performance, accessibility,
 #### Enhanced Structured Data
 
 **Organization Schema** (existing - layouts/partials/seo/json-ld.html):
+
 - NGO type with founding date, location, area served
 - Contact information and social links
 - `knowsAbout` array with expertise areas
 
 **BlogPosting Schema** (new - layouts/posts/single.html):
+
 - Article metadata with author, publisher
 - Publication and modification dates
 - Keywords from taxonomies
 
 **ImageGallery Schema** (new - layouts/galleries/single.html):
+
 - Gallery with individual ImageObject items
 - Complete image metadata (URL, dimensions)
 
 **Person Schema** (new - layouts/equipe/single.html):
+
 - Team member profiles with job titles
 - Organization membership
 - Skills and social profiles
 
 **Benefits:**
+
 - ✅ Rich search results with enhanced snippets
 - ✅ Knowledge Graph eligibility
 - ✅ Better content categorization
@@ -267,21 +301,24 @@ Major site-wide refactoring focused on code quality, performance, accessibility,
 #### External SCSS Files
 
 **New files created:**
+
 - `assets/scss/pages/posts-single.scss` - Post page styles
 - `assets/scss/pages/galleries-single.scss` - Gallery styles
 - `assets/scss/pages/equipe-single.scss` (Phase 2) - Profile styles
 
 **Loading pattern:**
+
 ```go
 {{ $styles := resources.Get "scss/pages/posts-single.scss" }}
 {{ if $styles }}
   {{ $styles = $styles | toCSS | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ $styles.RelPermalink }}" 
+  <link rel="stylesheet" href="{{ $styles.RelPermalink }}"
         integrity="{{ $styles.Data.Integrity }}">
 {{ end }}
 ```
 
 **Benefits:**
+
 - ✅ Separation of concerns
 - ✅ Cache busting with fingerprinting
 - ✅ Subresource Integrity (SRI) hashes
@@ -294,6 +331,7 @@ Major site-wide refactoring focused on code quality, performance, accessibility,
 **File:** `assets/js/profile.js` (from Phase 2)
 
 **Features:**
+
 - ES6 class `ProfileActionHandler`
 - Web Share API with clipboard fallback
 - Event delegation pattern
@@ -301,16 +339,26 @@ Major site-wide refactoring focused on code quality, performance, accessibility,
 - Async/await pattern
 
 **Pattern:**
+
 ```javascript
 class ProfileActionHandler {
-  init() { /* event delegation */ }
-  async handleShare(e) { /* Web Share API */ }
-  async fallbackShare(url) { /* clipboard fallback */ }
-  showNotification(message, type) { /* toast */ }
+  init() {
+    /* event delegation */
+  }
+  async handleShare(e) {
+    /* Web Share API */
+  }
+  async fallbackShare(url) {
+    /* clipboard fallback */
+  }
+  showNotification(message, type) {
+    /* toast */
+  }
 }
 ```
 
 **Benefits:**
+
 - ✅ Modern JavaScript patterns
 - ✅ Native sharing capabilities
 - ✅ Graceful fallbacks
@@ -323,11 +371,13 @@ class ProfileActionHandler {
 #### Hugo Version Unification
 
 **Configuration:**
+
 - `package.json`: Hugo 0.152.1 pinned via `hugo-installer`
 - `netlify.toml`: HUGO_VERSION = "0.152.1"
 - Local and production use identical versions
 
 **Benefits:**
+
 - ✅ No version compatibility issues
 - ✅ Consistent builds locally and on Netlify
 - ✅ Automatic binary installation with `npm install`
@@ -338,6 +388,7 @@ class ProfileActionHandler {
 **After:** ~713ms (698 pages)
 
 **Improvements:**
+
 - External SCSS compilation
 - Optimized image processing
 - Reduced template complexity
@@ -351,6 +402,7 @@ class ProfileActionHandler {
 **Script:** `test-hugo-compatibility.sh`
 
 **Tests:**
+
 1. Hugo version verification
 2. Development build test
 3. Production build test
@@ -363,6 +415,7 @@ class ProfileActionHandler {
 10. Sitemap generation
 
 **Usage:**
+
 ```bash
 ./test-hugo-compatibility.sh && ./deploy.sh
 ```
@@ -374,6 +427,7 @@ class ProfileActionHandler {
 #### Files Modified (17 total)
 
 **Templates:**
+
 1. `layouts/posts/single.html` - Complete rewrite with structured data
 2. `layouts/galleries/single.html` - Major refactoring
 3. `layouts/equipe/single.html` - Person schema added
@@ -381,29 +435,25 @@ class ProfileActionHandler {
 5. `layouts/_default/_markup/render-image.html` - Lazy loading
 6. `layouts/shortcodes/image.html` - Lazy loading
 
-**Stylesheets:**
-7. `assets/scss/index.scss` - Skip link and utility classes
-8. `assets/scss/pages/posts-single.scss` - New external stylesheet
-9. `assets/scss/pages/galleries-single.scss` - New external stylesheet
+**Stylesheets:** 7. `assets/scss/index.scss` - Skip link and utility classes 8. `assets/scss/pages/posts-single.scss` - New external stylesheet 9. `assets/scss/pages/galleries-single.scss` - New external stylesheet
 
-**Partials:**
-10. `layouts/partials/head.html` - Breadcrumb integration
-11. `layouts/partials/seo/breadcrumb.html` - New breadcrumb schema
+**Partials:** 10. `layouts/partials/head.html` - Breadcrumb integration 11. `layouts/partials/seo/breadcrumb.html` - New breadcrumb schema
 
-**Documentation:**
-12. `REFACTORING.md` - This document
+**Documentation:** 12. `REFACTORING.md` - This document
 
 ---
 
 ### 9. Backwards Compatibility
 
 **No breaking changes:**
+
 - All existing content renders correctly
 - Old posts without structured data still work
 - Galleries with existing images load normally
 - Team profiles maintain functionality
 
 **Migration notes:**
+
 - New posts automatically get BlogPosting schema
 - New galleries automatically get ImageGallery schema
 - Team members automatically get Person schema
@@ -414,6 +464,7 @@ class ProfileActionHandler {
 ### 10. Next Steps (Future Enhancements)
 
 **Recommended:**
+
 1. **Progressive Web App (PWA)**
    - Service worker for offline support
    - Web app manifest

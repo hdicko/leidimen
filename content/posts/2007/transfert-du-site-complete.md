@@ -2,15 +2,15 @@
 title: Transfert du site complété
 date: 2007-06-09
 draft: false
-description: 'Douentza: Transfert du site complété - En savoir plus sur nos initiatives en culture.'
+description: "J’ai le plaisir de vous annoncer que le site temporaire a été transféré avec succès."
 categories:
-- Culture
+  - Culture
 tags:
-- archive
-- wordpress
-- Divers
+  - archive
+  - wordpress
+  - Divers
 villages:
-- douentza
+  - douentza
 source: https://leidimen.com/transfert-du-site-complete
 ---
 

@@ -1,3 +1,8 @@
+---
+name: seo-optimizer
+description: "Optimize Leidimen content for search engines and AI indexing: meta descriptions, Open Graph, semantic markup, image alt text"
+---
+
 # SEO Optimizer Agent
 
 ## Purpose

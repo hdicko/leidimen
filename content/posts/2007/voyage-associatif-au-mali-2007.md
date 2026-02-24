@@ -2,17 +2,17 @@
 title: Voyage associatif au Mali 2007
 date: 2007-09-26
 draft: false
-description: 'Diona: Voyage associatif au Mali 2007 - En savoir plus sur nos initiatives en culture.'
+description: "Du 24 septembre au 6 octobre, Hamassala David est au Mali pour faire avancer les projets Leidimen avec Abdoulaye, prendre des nouvelles des villages et."
 categories:
-- Culture
+  - Culture
 tags:
-- archive
-- wordpress
-- News Leidimen
+  - archive
+  - wordpress
+  - News Leidimen
 villages:
-- diona
-- debere
-- douentza
+  - diona
+  - debere
+  - douentza
 source: https://leidimen.com/voyage-associatif-au-mali-2007
 ---
 

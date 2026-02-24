@@ -2,10 +2,10 @@
 title: Reprise de l'aide au développement
 date: 2013-03-05 04:46:00+01:00
 draft: false
-description: Reprise de l'aide au développement - En savoir plus sur nos initiatives en divers.
+description: "Le Mali n'est pas encore stable, ni militairement, ni politiquement – sur ces deux points, la situation s'améliore néanmoins rapidement."
 author: Hamassala David Dicko
 categories:
-- Divers
+  - Divers
 tags: []
 villages: []
 moods: []

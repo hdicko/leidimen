@@ -1,16 +1,16 @@
 ---
-title: 'Ecole de Dorool : des nouvelles en images'
+title: "Ecole de Dorool : des nouvelles en images"
 date: 2010-02-12
 draft: false
-description: 'Dorool: Ecole de Dorool : des nouvelles en images - En savoir plus sur nos initiatives en éducation.'
+description: "Au mois d’août dernier, Mamadou et Kadji se sont rendus à Dorool où ils ont rencontré l’instituteur, les écoliers et leurs parents."
 categories:
-- Éducation
+  - Éducation
 tags:
-- archive
-- wordpress
-- News Leidimen
+  - archive
+  - wordpress
+  - News Leidimen
 villages:
-- dorool
+  - dorool
 source: https://leidimen.com/ecole-de-dorool-des-nouvelles-en-images
 ---
 

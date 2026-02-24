@@ -2,15 +2,15 @@
 title: Fête des associations
 date: 2007-09-11
 draft: false
-description: 'Douentza: Fête des associations - En savoir plus sur nos initiatives en culture.'
+description: "Bonjour à tous, je vous informe que Leïdimen participera à la fête des associations de Bondoufle le dimanche 16 septembre 2007."
 categories:
-- Culture
+  - Culture
 tags:
-- archive
-- wordpress
-- News Leidimen
+  - archive
+  - wordpress
+  - News Leidimen
 villages:
-- douentza
+  - douentza
 source: https://leidimen.com/fete-des-associations-2
 ---
 

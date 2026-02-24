@@ -1,22 +1,22 @@
 ---
-title: 'Guide : Ajouter un membre de l''équipe avec le serveur MCP'
+title: "Guide : Ajouter un membre de l'équipe avec le serveur MCP"
 date: 2026-02-17
 draft: false
-description: 'Douentza: Guide : Ajouter un membre de l''équipe avec le s... - En savoir plus sur nos initiatives en informations.'
+description: "Guide pratique pour ajouter un membre à l'équipe Leidimen via le serveur MCP Hugo : création de profils structurés en langage naturel avec Claude."
 image: /images/uploads/default.jpeg
 categories:
-- informations
+  - informations
 tags:
-- guide
-- mcp
-- équipe
-- technologie
-- administration
+  - guide
+  - mcp
+  - équipe
+  - technologie
+  - administration
 villages:
-- douentza
+  - douentza
 moods:
-- inspire
-- motive
+  - inspire
+  - motive
 ---
 
 ## Introduction
@@ -31,24 +31,24 @@ Avant de créer un profil, il est important de comprendre les informations requi
 
 ### Informations obligatoires
 
-| Champ | Description | Exemple |
-|-------|-------------|---------|
-| **name** | Nom complet | "Abdoulaye Dicko" |
-| **fonction** | Rôle dans l'association | "Président", "Trésorier", "Secrétaire" |
-| **membre** | Statut du membre | fondateur, bureau, adherent, bienfaiteur |
+| Champ        | Description             | Exemple                                  |
+| ------------ | ----------------------- | ---------------------------------------- |
+| **name**     | Nom complet             | "Abdoulaye Dicko"                        |
+| **fonction** | Rôle dans l'association | "Président", "Trésorier", "Secrétaire"   |
+| **membre**   | Statut du membre        | fondateur, bureau, adherent, bienfaiteur |
 
 ### Informations optionnelles
 
-| Champ | Description | Exemple |
-|-------|-------------|---------|
-| **image** | Photo de profil | "/images/team/abdoulaye.jpg" |
-| **ville** | Ville de résidence | "Paris", "Lyon", "Douentza" |
-| **pays** | Pays (par défaut: France) | "France", "Mali" |
-| **email** | Adresse email | "contact@example.com" |
-| **devise** | Motto personnel | "Ensemble pour l'éducation" |
-| **specialites** | Compétences clés | ["Gestion de projet", "Finance"] |
-| **presentation** | Courte biographie | "Passionné par l'éducation..." |
-| **body** | Biographie complète | Texte Markdown détaillé |
+| Champ            | Description               | Exemple                          |
+| ---------------- | ------------------------- | -------------------------------- |
+| **image**        | Photo de profil           | "/images/team/abdoulaye.jpg"     |
+| **ville**        | Ville de résidence        | "Paris", "Lyon", "Douentza"      |
+| **pays**         | Pays (par défaut: France) | "France", "Mali"                 |
+| **email**        | Adresse email             | "contact@example.com"            |
+| **devise**       | Motto personnel           | "Ensemble pour l'éducation"      |
+| **specialites**  | Compétences clés          | ["Gestion de projet", "Finance"] |
+| **presentation** | Courte biographie         | "Passionné par l'éducation..."   |
+| **body**         | Biographie complète       | Texte Markdown détaillé          |
 
 ## Les 4 statuts de membre
 
@@ -70,6 +70,7 @@ Crée un profil pour Jean Dupont, nouveau trésorier de Leidimen
 ```
 
 Claude vous demandera alors les informations complémentaires :
+
 - Statut (bureau dans ce cas)
 - Ville et pays
 - Email (optionnel)
@@ -96,12 +97,14 @@ Claude utilisera automatiquement l'outil `create-team-member` avec tous les para
 ### Exemple de conversation réelle
 
 **Vous** :
+
 ```
 Ajoute Mamadou Koné comme nouveau membre adhérent.
 Il vit à Bamako, Mali et s'occupe du suivi des projets sur place.
 ```
 
 **Claude** :
+
 ```
 Je vais créer le profil de Mamadou Koné...
 
@@ -135,7 +138,6 @@ card:
   devise: ""
   specialites: []
 ---
-
 ## Mamadou Koné
 
 Bienvenue dans l'équipe Leidimen !
@@ -166,6 +168,7 @@ cp photo-mamadou.jpg static/images/team/mamadou-kone.jpg
 Deux options :
 
 **Option A : Via MCP**
+
 ```
 Mets à jour le profil de Mamadou Koné avec l'image /images/team/mamadou-kone.jpg
 ```
@@ -192,15 +195,15 @@ Crée le profil de Hammadoun Dicko, membre fondateur de Leidimen :
 - Email : hammadoun@leidimen.fr
 - Devise : "L'éducation transforme les villages"
 - Spécialités : Développement local, Gestion de projet, Relations communautaires
-- Présentation : Originaire de Douentza, Hammadoun a fondé Leidimen en 2000 
+- Présentation : Originaire de Douentza, Hammadoun a fondé Leidimen en 2000
   pour soutenir l'éducation et le développement dans sa région natale.
 
 Biographie complète :
-Hammadoun Dicko est né à Douentza et a consacré sa vie au développement 
-de sa région. Après des études en France, il a créé l'association Leidimen 
+Hammadoun Dicko est né à Douentza et a consacré sa vie au développement
+de sa région. Après des études en France, il a créé l'association Leidimen
 pour créer un pont entre les villages maliens et la diaspora française.
 
-Sous sa direction, Leidimen a construit 15 écoles, formé 200 enseignants 
+Sous sa direction, Leidimen a construit 15 écoles, formé 200 enseignants
 et soutenu plus de 3000 élèves dans la région de Douentza.
 ```
 
@@ -231,6 +234,7 @@ Liste tous les membres de l'équipe
 ```
 
 Claude utilisera `list-content` avec le type `equipe` pour afficher :
+
 - Noms et fonctions
 - Statuts (fondateur, bureau, etc.)
 - Chemins des fichiers
@@ -270,14 +274,14 @@ La section **body** du fichier permet d'ajouter une biographie détaillée en Ma
 
 ### Parcours
 
-Fatou est diplômée en développement international de Sciences Po Paris. 
-Originaire de Bamako, elle a travaillé 10 ans pour des ONG internationales 
+Fatou est diplômée en développement international de Sciences Po Paris.
+Originaire de Bamako, elle a travaillé 10 ans pour des ONG internationales
 avant de rejoindre Leidimen.
 
 ### Engagement avec Leidimen
 
-"J'ai découvert Leidimen lors d'une mission à Douentza en 2018. L'approche 
-participative et le respect des communautés locales m'ont immédiatement 
+"J'ai découvert Leidimen lors d'une mission à Douentza en 2018. L'approche
+participative et le respect des communautés locales m'ont immédiatement
 séduite. J'ai rejoint le bureau en 2020 pour coordonner nos projets santé."
 
 ### Réalisations clés
@@ -288,7 +292,7 @@ séduite. J'ai rejoint le bureau en 2020 pour coordonner nos projets santé."
 
 ### Vision
 
-"Notre objectif est de rendre chaque village autonome en matière de santé 
+"Notre objectif est de rendre chaque village autonome en matière de santé
 de base. L'éducation sanitaire transforme des vies."
 ```
 
@@ -340,6 +344,7 @@ Claude utilisera `get-post-content` pour afficher le frontmatter et le contenu.
 ### 1. Préparation
 
 Rassemblez les informations :
+
 - ☑️ Nom complet
 - ☑️ Fonction dans l'association
 - ☑️ Statut (fondateur/bureau/adherent/bienfaiteur)
@@ -389,6 +394,7 @@ Les profils créés apparaissent automatiquement sur la page `/equipe/` du site 
 ### Affichage carte (card)
 
 Le frontmatter `card:` définit l'aperçu dans la grille :
+
 - Photo de profil
 - Nom et fonction
 - Badges de statut (fondateur, bureau, etc.)
@@ -398,6 +404,7 @@ Le frontmatter `card:` définit l'aperçu dans la grille :
 ### Page individuelle
 
 Chaque membre a sa propre page avec :
+
 - Biographie complète
 - Timeline (si `experience:` est défini)
 - Compétences (si `skills:` est défini)
@@ -411,6 +418,7 @@ Chaque membre a sa propre page avec :
 **Erreur** : `❌ Team member file already exists: content/equipe/jean-dupont.md`
 
 **Solution** : Le slug est généré automatiquement à partir du nom. Si deux personnes ont le même nom, modifiez légèrement :
+
 - Jean Dupont Paris → `jean-dupont-paris`
 - Jean Dupont Lyon → `jean-dupont-lyon`
 
@@ -419,6 +427,7 @@ Chaque membre a sa propre page avec :
 **Erreur** : Statut "membre" non valide
 
 **Solution** : Utilisez uniquement ces 4 valeurs :
+
 - `fondateur`
 - `bureau`
 - `adherent`
@@ -427,6 +436,7 @@ Chaque membre a sa propre page avec :
 ### L'image ne s'affiche pas
 
 **Vérifications** :
+
 1. ✅ Le fichier existe dans `static/images/team/`
 2. ✅ Le chemin commence par `/images/team/` (avec le `/` initial)
 3. ✅ Le format est JPG, PNG ou WebP
@@ -435,6 +445,7 @@ Chaque membre a sa propre page avec :
 ### Le profil n'apparaît pas sur le site
 
 **Causes possibles** :
+
 1. `draft: true` → Changez en `draft: false`
 2. Fichier mal placé → Doit être dans `content/equipe/`
 3. Frontmatter invalide → Vérifiez la syntaxe YAML
@@ -497,14 +508,14 @@ pays: "France"
 
 ## Outils MCP pour la gestion d'équipe
 
-| Commande | Outil MCP | Résultat |
-|----------|-----------|----------|
-| "Crée un profil pour [Nom]" | `create-team-member` | Nouveau fichier dans content/equipe/ |
-| "Liste tous les membres" | `list-content` type=equipe | Affiche tous les profils |
-| "Cherche les membres à Paris" | `search-content` | Trouve par ville/pays |
-| "Affiche le profil de [Nom]" | `get-post-content` | Lit le fichier complet |
-| "Mets à jour [Nom]" | `update-frontmatter` | Modifie les métadonnées |
-| "Valide les profils" | `validate-content` | Vérifie la cohérence |
+| Commande                      | Outil MCP                  | Résultat                             |
+| ----------------------------- | -------------------------- | ------------------------------------ |
+| "Crée un profil pour [Nom]"   | `create-team-member`       | Nouveau fichier dans content/equipe/ |
+| "Liste tous les membres"      | `list-content` type=equipe | Affiche tous les profils             |
+| "Cherche les membres à Paris" | `search-content`           | Trouve par ville/pays                |
+| "Affiche le profil de [Nom]"  | `get-post-content`         | Lit le fichier complet               |
+| "Mets à jour [Nom]"           | `update-frontmatter`       | Modifie les métadonnées              |
+| "Valide les profils"          | `validate-content`         | Vérifie la cohérence                 |
 
 ## Aller plus loin
 
@@ -549,6 +560,7 @@ card:
 ## Conclusion
 
 Le serveur MCP Hugo simplifie radicalement la gestion de l'équipe Leidimen. Plus besoin de :
+
 - Créer manuellement les fichiers
 - Formater le frontmatter YAML
 - Générer les slugs
@@ -564,10 +576,11 @@ Tout se fait en **langage naturel** avec Claude, en quelques secondes.
 4. ✅ Personnalisez avec photos et biographies détaillées
 
 **Ressources** :
+
 - [Documentation MCP officielle](https://modelcontextprotocol.io)
 - [Code source serveur MCP Hugo](https://github.com/hdicko/leidimen/tree/main/hugo-mcp-server)
 - [Template équipe Leidimen](https://github.com/hdicko/leidimen/tree/main/layouts/equipe)
 
 ---
 
-*Ce guide a été créé avec le serveur MCP Hugo pour vous aider à gérer efficacement l'équipe Leidimen. Bonne création de profils ! 👥*
+_Ce guide a été créé avec le serveur MCP Hugo pour vous aider à gérer efficacement l'équipe Leidimen. Bonne création de profils ! 👥_

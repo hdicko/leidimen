@@ -2,18 +2,18 @@
 title: Soirée Leïdimen - 3 mai 2008
 date: 2008-04-10
 draft: false
-description: Soirée Leïdimen - 3 mai 2008 - En savoir plus sur nos initiatives en événements.
+description: "Soirée au profit de l'association LEIDIMEN À la salle des fêtes de Bondoufle (91) rue de Villeroy   De 21h30 à 3h45 Mixage par DJ Jacks & Friends Défilé."
 image: /images/wordpress/2008-06-soiree_recto.jpg
 categories:
-- Événements
-- News
+  - Événements
+  - News
 tags:
-- soirée
-- bondoufle
-- événement
-- défilé
-- concert
-- fundraising
+  - soirée
+  - bondoufle
+  - événement
+  - défilé
+  - concert
+  - fundraising
 type: posts
 ---
 

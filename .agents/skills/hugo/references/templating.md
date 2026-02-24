@@ -221,6 +221,7 @@ Usage: `{{</* figure src="photo.jpg" alt="A photo" caption="My photo" */>}}`
 ```
 
 Usage:
+
 ```
 {{</* callout "warning" */>}}
 This is a **warning** message.

@@ -2,15 +2,15 @@
 title: Derniers préparatifs
 date: 2007-01-13
 draft: false
-description: 'Douentza: Derniers préparatifs - En savoir plus sur nos initiatives en culture.'
+description: "Derniers préparatifs avant l envoi des ordinateurs."
 categories:
-- Culture
+  - Culture
 tags:
-- archive
-- wordpress
-- News Leidimen
+  - archive
+  - wordpress
+  - News Leidimen
 villages:
-- douentza
+  - douentza
 source: https://leidimen.com/derniers-preparatifs
 ---
 

@@ -2,15 +2,15 @@
 title: Nouveau site
 date: 2010-01-01
 draft: false
-description: 'Douentza: Nouveau site - En savoir plus sur nos initiatives en culture.'
+description: "Le nouveau site internet prend doucement forme et le transfert sera prêt d’ici quelques jours!"
 categories:
-- Culture
+  - Culture
 tags:
-- archive
-- wordpress
-- non-classe
+  - archive
+  - wordpress
+  - non-classe
 villages:
-- douentza
+  - douentza
 source: https://leidimen.com/nouveau-site
 ---
 

@@ -1,3 +1,8 @@
+---
+name: content-creator
+description: "Create Hugo content following Leidimen conventions: posts, galleries, team members, and village pages"
+---
+
 # Content Creator Agent
 
 ## Purpose

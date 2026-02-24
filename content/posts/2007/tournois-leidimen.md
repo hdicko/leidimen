@@ -2,19 +2,19 @@
 title: Tournois au profit de Leïdimen
 date: 2007-07-29 18:32:00+01:00
 draft: false
-description: Tournois au profit de Leïdimen - En savoir plus sur nos initiatives en news leidimen.
+description: "Au cours du mois de juillet, deux tournois ont été organisés au profit de Leïdimen : 🎮 Un tournoi de PES (Pro Evolution Soccer) 🃏 Un tournoi de poker ---."
 author: Melina Dicko
 categories:
-- News Leidimen
+  - News Leidimen
 tags:
-- tournoi
-- événement
-- financement
-- poker
+  - tournoi
+  - événement
+  - financement
+  - poker
 villages: []
 moods:
-- Heureux
-- Reconnaissant
+  - Heureux
+  - Reconnaissant
 ---
 
 ## Des événements ludiques au service de la solidarité

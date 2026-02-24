@@ -2,21 +2,21 @@
 title: Réunion septembre 2007
 date: 2007-09-27 20:37:50+02:00
 draft: false
-description: 'Douentza: Réunion septembre 2007 - En savoir plus sur nos initiatives en actualités.'
+description: "27 septembre 2007 { .h1 .bg-secondary } Voyage associatif au Mali 2007 { .h2 } Du 24 septembre au 6 octobre, Hamassala David est au Mali pour faire."
 author: Aissa - Eva
 slug: reunion-sept-2007
 weight: 0
 image: /img/logo/leidimen-logo-ai.jpeg
 categories:
-- Actualités
+  - Actualités
 tags:
-- blog
-- reunion
+  - blog
+  - reunion
 villages:
-- douentza
-- debere
-- boundoucoli
-- diona
+  - douentza
+  - debere
+  - boundoucoli
+  - diona
 ---
 
 27 septembre 2007

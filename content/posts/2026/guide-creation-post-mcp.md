@@ -1,21 +1,21 @@
 ---
-title: 'Guide : Créer un post avec le serveur MCP Hugo'
+title: "Guide : Créer un post avec le serveur MCP Hugo"
 date: 2026-02-17
 draft: false
-description: 'Douentza: Guide : Créer un post avec le serveur MCP Hugo - En savoir plus sur nos initiatives en informations.'
+description: "Guide complet pour créer des articles sur le site Leidimen via le serveur MCP Hugo : protocole MCP, outils de création de contenu et workflow automatisé."
 image: /images/uploads/default.jpeg
 categories:
-- informations
+  - informations
 tags:
-- guide
-- mcp
-- technologie
-- documentation
+  - guide
+  - mcp
+  - technologie
+  - documentation
 villages:
-- douentza
+  - douentza
 moods:
-- inspire
-- motive
+  - inspire
+  - motive
 ---
 
 ## Introduction au serveur MCP Hugo
@@ -57,9 +57,7 @@ Ajoutez la configuration suivante au fichier de configuration de Claude Desktop 
   "mcpServers": {
     "hugo-leidimen": {
       "command": "node",
-      "args": [
-        "/chemin/vers/leidimen/hugo-mcp-server/src/index.js"
-      ],
+      "args": ["/chemin/vers/leidimen/hugo-mcp-server/src/index.js"],
       "env": {
         "HUGO_ROOT": "/chemin/vers/leidimen"
       }
@@ -81,6 +79,7 @@ Fermez complètement Claude Desktop et relancez-le pour que le serveur MCP soit 
 Le serveur MCP inclut un prompt pré-configuré appelé **`new-post`** qui guide la création :
 
 1. Dans Claude Desktop, tapez :
+
    ```
    Utilise le prompt "new-post" pour créer un article sur [sujet]
    ```
@@ -122,6 +121,7 @@ Claude utilisera l'outil `create-post` pour générer le fichier avec le bon for
 ```
 
 Le fichier est automatiquement créé avec :
+
 - Frontmatter YAML correctement formaté
 - Villages en minuscules (validation automatique)
 - Type "posts" pour le bon template Hugo
@@ -134,26 +134,26 @@ Le serveur MCP Hugo Leidimen offre plusieurs outils puissants :
 
 ### 📝 Création de contenu
 
-| Outil | Description |
-|-------|-------------|
-| `create-post` | Créer un nouvel article de blog |
-| `create-gallery` | Créer une galerie photo (page bundle) |
-| `create-team-member` | Ajouter un membre de l'équipe |
+| Outil                | Description                           |
+| -------------------- | ------------------------------------- |
+| `create-post`        | Créer un nouvel article de blog       |
+| `create-gallery`     | Créer une galerie photo (page bundle) |
+| `create-team-member` | Ajouter un membre de l'équipe         |
 
 ### 🔍 Gestion de contenu
 
-| Outil | Description |
-|-------|-------------|
-| `list-content` | Lister les posts, galleries, équipe, villages |
-| `search-content` | Recherche full-text dans tout le contenu |
-| `get-post-content` | Lire le contenu d'un fichier existant |
-| `update-frontmatter` | Modifier les métadonnées d'un post |
-| `validate-content` | Vérifier les erreurs (taxonomies, champs manquants) |
+| Outil                | Description                                         |
+| -------------------- | --------------------------------------------------- |
+| `list-content`       | Lister les posts, galleries, équipe, villages       |
+| `search-content`     | Recherche full-text dans tout le contenu            |
+| `get-post-content`   | Lire le contenu d'un fichier existant               |
+| `update-frontmatter` | Modifier les métadonnées d'un post                  |
+| `validate-content`   | Vérifier les erreurs (taxonomies, champs manquants) |
 
 ### 🛠️ Développement
 
-| Outil | Description |
-|-------|-------------|
+| Outil        | Description                              |
+| ------------ | ---------------------------------------- |
 | `build-site` | Compiler le site Hugo (production/draft) |
 | `serve-site` | Lancer le serveur de développement local |
 
@@ -166,6 +166,7 @@ Utilise validate-content pour vérifier tous les posts
 ```
 
 Claude va scanner tous les fichiers et rapporter :
+
 - Villages avec mauvaise casse (Dorool → dorool)
 - Champs manquants (title, date, description)
 - Descriptions trop longues (>160 caractères)
@@ -178,6 +179,7 @@ Recherche tous les posts qui mentionnent "école"
 ```
 
 Claude utilisera `search-content` pour trouver les correspondances dans :
+
 - Titres
 - Corps de texte
 - Descriptions
@@ -191,6 +193,7 @@ Liste tous les posts du village de Diona
 ```
 
 Claude filtrera automatiquement et affichera :
+
 - Titre et date
 - Chemin du fichier
 - Villages associés
@@ -241,6 +244,7 @@ git push origin main
 ### Les villages ne sont pas reconnus
 
 Le serveur valide contre la liste officielle :
+
 - douentza, dorool, diona, debere, diambana
 - darawal, tanal, manko, tacouti, ndumpa
 
@@ -262,10 +266,11 @@ Le serveur MCP Hugo transforme la création de contenu pour Leidimen. Ce qui pre
 4. Consultez le [README du serveur MCP](https://github.com/hdicko/leidimen/tree/main/hugo-mcp-server) pour plus de détails
 
 **Ressources utiles** :
+
 - [Documentation officielle MCP](https://modelcontextprotocol.io)
 - [Code source du serveur Hugo MCP](https://github.com/hdicko/leidimen/tree/main/hugo-mcp-server)
 - [Guide de contribution Leidimen](https://github.com/hdicko/leidimen/blob/main/CONTENT_CREATION_GUIDE.md)
 
 ---
 
-*Ce post a été créé avec le serveur MCP Hugo pour démontrer ses capacités. Méta, n'est-ce pas ? 😊*
+_Ce post a été créé avec le serveur MCP Hugo pour démontrer ses capacités. Méta, n'est-ce pas ? 😊_

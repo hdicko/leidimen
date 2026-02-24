@@ -42,7 +42,11 @@
     <!-- Enhanced Professional Legal Document Layout -->
     <div class="legal-document-wrapper-pro" data-theme="light">
       <!-- Dark Mode Toggle Button -->
-      <button class="theme-toggle-btn" id="themeToggle" aria-label="Changer le thème" data-tooltip="Activer/désactiver le mode sombre">
+      <button
+        class="theme-toggle-btn"
+        id="themeToggle"
+        aria-label="Changer le thème"
+        data-tooltip="Activer/désactiver le mode sombre">
         <i class="bi bi-moon-stars-fill" id="themeIcon"></i>
       </button>
 
@@ -51,8 +55,14 @@
 
       <div class="container py-5">
         <!-- Enhanced Hero Section -->
-        <div class="legal-hero-pro text-center mb-5" data-aos="fade-down" data-aos-duration="800">
-          <div class="legal-icon-container mb-4" data-aos="zoom-in" data-aos-delay="200">
+        <div
+          class="legal-hero-pro text-center mb-5"
+          data-aos="fade-down"
+          data-aos-duration="800">
+          <div
+            class="legal-icon-container mb-4"
+            data-aos="zoom-in"
+            data-aos-delay="200">
             <div class="legal-icon-backdrop"></div>
             <div class="legal-icon-pro">
               {{ if eq .Title "Mentions Légales" }}
@@ -62,24 +72,44 @@
               {{ end }}
             </div>
           </div>
-          
-          <span class="legal-badge-pro mb-3" data-aos="fade-up" data-aos-delay="300" data-tooltip="Document certifié conforme aux normes légales">
+
+          <span
+            class="legal-badge-pro mb-3"
+            data-aos="fade-up"
+            data-aos-delay="300"
+            data-tooltip="Document certifié conforme aux normes légales">
             <i class="bi bi-shield-fill-check me-2"></i>Document Officiel
           </span>
-          
-          <h1 class="legal-title-pro mb-3" data-aos="fade-up" data-aos-delay="400">{{ .Title }}</h1>
-          <p class="legal-subtitle-pro" data-aos="fade-up" data-aos-delay="500">{{ .Description }}</p>
-          
-          <div class="legal-meta-pro mt-4" data-aos="fade-up" data-aos-delay="600">
-            <div class="meta-item" data-tooltip="Date de la dernière révision du document">
+
+          <h1
+            class="legal-title-pro mb-3"
+            data-aos="fade-up"
+            data-aos-delay="400">
+            {{ .Title }}
+          </h1>
+          <p class="legal-subtitle-pro" data-aos="fade-up" data-aos-delay="500">
+            {{ .Description }}
+          </p>
+
+          <div
+            class="legal-meta-pro mt-4"
+            data-aos="fade-up"
+            data-aos-delay="600">
+            <div
+              class="meta-item"
+              data-tooltip="Date de la dernière révision du document">
               <i class="bi bi-calendar-event"></i>
               <span>Mise à jour: {{ .Date.Format "2 January 2006" }}</span>
             </div>
-            <div class="meta-item" data-tooltip="Document juridique officiel de l'association">
+            <div
+              class="meta-item"
+              data-tooltip="Document juridique officiel de l'association">
               <i class="bi bi-file-text"></i>
               <span>Document légal</span>
             </div>
-            <div class="meta-item" data-tooltip="Conformité au Règlement Général sur la Protection des Données">
+            <div
+              class="meta-item"
+              data-tooltip="Conformité au Règlement Général sur la Protection des Données">
               <i class="bi bi-check-circle"></i>
               <span>Conforme RGPD</span>
             </div>
@@ -90,8 +120,14 @@
         <div class="row justify-content-center">
           <!-- Table of Contents Sidebar -->
           <div class="col-lg-3 d-none d-lg-block">
-            <div class="toc-sidebar-pro" id="tocSidebar" data-aos="fade-right" data-aos-delay="300">
-              <div class="toc-header" data-tooltip="Navigation rapide dans le document">
+            <div
+              class="toc-sidebar-pro"
+              id="tocSidebar"
+              data-aos="fade-right"
+              data-aos-delay="300">
+              <div
+                class="toc-header"
+                data-tooltip="Navigation rapide dans le document">
                 <i class="bi bi-list-ul me-2"></i>
                 <strong>Sommaire</strong>
               </div>
@@ -103,24 +139,39 @@
 
           <!-- Content -->
           <div class="col-lg-9">
-            <div class="legal-content-card-pro" data-aos="fade-left" data-aos-delay="300">
+            <div
+              class="legal-content-card-pro"
+              data-aos="fade-left"
+              data-aos-delay="300">
               <!-- Quick Info Cards -->
               <div class="quick-info-cards mb-4">
-                <div class="info-card-mini" data-aos="zoom-in" data-aos-delay="400" data-tooltip="Vos données personnelles sont protégées selon les normes européennes">
+                <div
+                  class="info-card-mini"
+                  data-aos="zoom-in"
+                  data-aos-delay="400"
+                  data-tooltip="Vos données personnelles sont protégées selon les normes européennes">
                   <i class="bi bi-shield-lock"></i>
                   <div>
                     <strong>Protection des données</strong>
                     <small>Conformité RGPD garantie</small>
                   </div>
                 </div>
-                <div class="info-card-mini" data-aos="zoom-in" data-aos-delay="500" data-tooltip="Vous pouvez accéder, modifier ou supprimer vos données à tout moment">
+                <div
+                  class="info-card-mini"
+                  data-aos="zoom-in"
+                  data-aos-delay="500"
+                  data-tooltip="Vous pouvez accéder, modifier ou supprimer vos données à tout moment">
                   <i class="bi bi-person-check"></i>
                   <div>
                     <strong>Vos droits</strong>
                     <small>Accès, modification, suppression</small>
                   </div>
                 </div>
-                <div class="info-card-mini" data-aos="zoom-in" data-aos-delay="600" data-tooltip="Contactez-nous pour toute question concernant vos données">
+                <div
+                  class="info-card-mini"
+                  data-aos="zoom-in"
+                  data-aos-delay="600"
+                  data-tooltip="Contactez-nous pour toute question concernant vos données">
                   <i class="bi bi-envelope-at"></i>
                   <div>
                     <strong>Contact</strong>
@@ -136,23 +187,33 @@
 
               <!-- Footer Actions -->
               <div class="legal-footer-actions mt-5" data-aos="fade-up">
-                <div class="action-card" data-tooltip="Besoin d'aide ? Nous sommes là pour répondre à vos questions">
+                <div
+                  class="action-card"
+                  data-tooltip="Besoin d'aide ? Nous sommes là pour répondre à vos questions">
                   <i class="bi bi-question-circle"></i>
                   <div>
                     <strong>Des questions ?</strong>
-                    <p class="mb-0">Contactez-nous pour toute demande d'information</p>
+                    <p class="mb-0">
+                      Contactez-nous pour toute demande d'information
+                    </p>
                   </div>
-                  <a href="{{ "/contact/" | relURL }}" class="btn btn-primary btn-sm">
+                  <a
+                    href="{{ "/contact/" | relURL }}"
+                    class="btn btn-primary btn-sm">
                     Nous contacter
                   </a>
                 </div>
-                <div class="action-card" data-tooltip="Téléchargez une version imprimable du document">
+                <div
+                  class="action-card"
+                  data-tooltip="Téléchargez une version imprimable du document">
                   <i class="bi bi-download"></i>
                   <div>
                     <strong>Version PDF</strong>
                     <p class="mb-0">Téléchargez ce document au format PDF</p>
                   </div>
-                  <button class="btn btn-outline-primary btn-sm" onclick="window.print()">
+                  <button
+                    class="btn btn-outline-primary btn-sm"
+                    onclick="window.print()">
                     Télécharger
                   </button>
                 </div>
@@ -161,7 +222,9 @@
 
             <!-- Back Button -->
             <div class="text-center mt-5" data-aos="fade-up">
-              <a href="{{ "/documents/" | relURL }}" class="btn btn-lg btn-outline-primary rounded-pill px-5">
+              <a
+                href="{{ "/documents/" | relURL }}"
+                class="btn btn-lg btn-outline-primary rounded-pill px-5">
                 <i class="bi bi-arrow-left me-2"></i>Retour aux documents
               </a>
             </div>
@@ -171,9 +234,12 @@
 
       <!-- Scroll Progress Bar -->
       <div class="scroll-progress-bar" id="scrollProgress"></div>
-      
+
       <!-- Scroll to Top Button -->
-      <button class="scroll-to-top" id="scrollToTop" data-tooltip="Retour en haut de la page">
+      <button
+        class="scroll-to-top"
+        id="scrollToTop"
+        data-tooltip="Retour en haut de la page">
         <i class="bi bi-arrow-up"></i>
       </button>
     </div>
@@ -244,7 +310,9 @@
         color: #cbd5e1;
       }
 
-      .legal-document-wrapper-pro[data-theme="dark"] .legal-content-pro blockquote {
+      .legal-document-wrapper-pro[data-theme="dark"]
+        .legal-content-pro
+        blockquote {
         background: linear-gradient(135deg, #1e3a5f 0%, #1e4976 100%);
       }
 
@@ -375,9 +443,17 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: 
-          radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.03) 0%, transparent 50%),
-          radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.03) 0%, transparent 50%);
+        background:
+          radial-gradient(
+            circle at 20% 50%,
+            rgba(99, 102, 241, 0.03) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 80% 80%,
+            rgba(139, 92, 246, 0.03) 0%,
+            transparent 50%
+          );
         pointer-events: none;
         z-index: 0;
       }
@@ -405,7 +481,11 @@
         transform: translate(-50%, -50%);
         width: 140px;
         height: 140px;
-        background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
+        background: linear-gradient(
+          135deg,
+          rgba(99, 102, 241, 0.1),
+          rgba(139, 92, 246, 0.1)
+        );
         border-radius: 50%;
         animation: pulse-backdrop 3s ease-in-out infinite;
       }
@@ -533,7 +613,11 @@
       }
 
       .toc-nav a.active {
-        background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
+        background: linear-gradient(
+          135deg,
+          rgba(99, 102, 241, 0.1),
+          rgba(139, 92, 246, 0.1)
+        );
         color: #6366f1;
         font-weight: 600;
         border-left-color: #6366f1;
@@ -752,7 +836,8 @@
 
       /* Animations */
       @keyframes pulse-backdrop {
-        0%, 100% {
+        0%,
+        100% {
           transform: translate(-50%, -50%) scale(1);
           opacity: 0.5;
         }
@@ -763,7 +848,8 @@
       }
 
       @keyframes float-icon {
-        0%, 100% {
+        0%,
+        100% {
           transform: translateY(0px);
         }
         50% {
@@ -834,150 +920,161 @@
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
+      document.addEventListener("DOMContentLoaded", function () {
         // Initialize AOS (Animate On Scroll)
         AOS.init({
           duration: 800,
-          easing: 'ease-out-cubic',
+          easing: "ease-out-cubic",
           once: true,
           offset: 100,
-          delay: 100
+          delay: 100,
         });
 
         // Dark Mode Toggle
-        const themeToggle = document.getElementById('themeToggle');
-        const themeIcon = document.getElementById('themeIcon');
-        const wrapper = document.querySelector('.legal-document-wrapper-pro');
-        
+        const themeToggle = document.getElementById("themeToggle");
+        const themeIcon = document.getElementById("themeIcon");
+        const wrapper = document.querySelector(".legal-document-wrapper-pro");
+
         // Check for saved theme preference
-        const savedTheme = localStorage.getItem('legalTheme') || 'light';
-        wrapper.setAttribute('data-theme', savedTheme);
+        const savedTheme = localStorage.getItem("legalTheme") || "light";
+        wrapper.setAttribute("data-theme", savedTheme);
         updateThemeIcon(savedTheme);
 
-        themeToggle.addEventListener('click', function() {
-          const currentTheme = wrapper.getAttribute('data-theme');
-          const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-          
-          wrapper.setAttribute('data-theme', newTheme);
-          localStorage.setItem('legalTheme', newTheme);
+        themeToggle.addEventListener("click", function () {
+          const currentTheme = wrapper.getAttribute("data-theme");
+          const newTheme = currentTheme === "light" ? "dark" : "light";
+
+          wrapper.setAttribute("data-theme", newTheme);
+          localStorage.setItem("legalTheme", newTheme);
           updateThemeIcon(newTheme);
-          
+
           // Animate icon
-          themeIcon.style.transform = 'rotate(360deg)';
+          themeIcon.style.transform = "rotate(360deg)";
           setTimeout(() => {
-            themeIcon.style.transform = 'rotate(0deg)';
+            themeIcon.style.transform = "rotate(0deg)";
           }, 500);
         });
 
         function updateThemeIcon(theme) {
-          themeIcon.className = theme === 'light' ? 'bi bi-moon-stars-fill' : 'bi bi-sun-fill';
-          themeIcon.style.transition = 'transform 0.5s ease';
+          themeIcon.className =
+            theme === "light" ? "bi bi-moon-stars-fill" : "bi bi-sun-fill";
+          themeIcon.style.transition = "transform 0.5s ease";
         }
 
         // Scroll to Top Button
-        const scrollToTopBtn = document.getElementById('scrollToTop');
-        
-        window.addEventListener('scroll', function() {
+        const scrollToTopBtn = document.getElementById("scrollToTop");
+
+        window.addEventListener("scroll", function () {
           if (window.scrollY > 300) {
-            scrollToTopBtn.classList.add('visible');
+            scrollToTopBtn.classList.add("visible");
           } else {
-            scrollToTopBtn.classList.remove('visible');
+            scrollToTopBtn.classList.remove("visible");
           }
         });
 
-        scrollToTopBtn.addEventListener('click', function() {
+        scrollToTopBtn.addEventListener("click", function () {
           window.scrollTo({
             top: 0,
-            behavior: 'smooth'
+            behavior: "smooth",
           });
         });
 
         // Generate Table of Contents
-        const content = document.getElementById('legalContent');
-        const tocNav = document.getElementById('tocNav');
-        
+        const content = document.getElementById("legalContent");
+        const tocNav = document.getElementById("tocNav");
+
         if (content && tocNav) {
-          const headings = content.querySelectorAll('h2, h3');
+          const headings = content.querySelectorAll("h2, h3");
           headings.forEach((heading, index) => {
             // Add ID for anchoring
             if (!heading.id) {
-              heading.id = 'section-' + index;
+              heading.id = "section-" + index;
             }
-            
+
             // Add AOS animation to headings
-            heading.setAttribute('data-aos', 'fade-right');
-            heading.setAttribute('data-aos-delay', '100');
-            
+            heading.setAttribute("data-aos", "fade-right");
+            heading.setAttribute("data-aos-delay", "100");
+
             // Create TOC link
-            const link = document.createElement('a');
-            link.href = '#' + heading.id;
+            const link = document.createElement("a");
+            link.href = "#" + heading.id;
             link.textContent = heading.textContent;
-            link.className = heading.tagName === 'H3' ? 'toc-sub-link' : '';
-            link.style.paddingLeft = heading.tagName === 'H3' ? '1.5rem' : '0.75rem';
-            
-            link.addEventListener('click', function(e) {
+            link.className = heading.tagName === "H3" ? "toc-sub-link" : "";
+            link.style.paddingLeft =
+              heading.tagName === "H3" ? "1.5rem" : "0.75rem";
+
+            link.addEventListener("click", function (e) {
               e.preventDefault();
-              heading.scrollIntoView({ behavior: 'smooth', block: 'start' });
-              
+              heading.scrollIntoView({ behavior: "smooth", block: "start" });
+
               // Highlight heading temporarily
-              heading.style.transition = 'background 0.3s ease';
-              heading.style.background = 'rgba(99, 102, 241, 0.1)';
-              heading.style.padding = '0.5rem';
-              heading.style.borderRadius = '8px';
-              
+              heading.style.transition = "background 0.3s ease";
+              heading.style.background = "rgba(99, 102, 241, 0.1)";
+              heading.style.padding = "0.5rem";
+              heading.style.borderRadius = "8px";
+
               setTimeout(() => {
-                heading.style.background = 'transparent';
-                heading.style.padding = '0';
+                heading.style.background = "transparent";
+                heading.style.padding = "0";
               }, 2000);
             });
-            
+
             tocNav.appendChild(link);
           });
 
           // Active section highlighting
-          const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                const id = entry.target.getAttribute('id');
-                tocNav.querySelectorAll('a').forEach(link => {
-                  link.classList.toggle('active', link.getAttribute('href') === '#' + id);
-                });
-              }
-            });
-          }, { rootMargin: '-100px 0px -80% 0px' });
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  const id = entry.target.getAttribute("id");
+                  tocNav.querySelectorAll("a").forEach((link) => {
+                    link.classList.toggle(
+                      "active",
+                      link.getAttribute("href") === "#" + id,
+                    );
+                  });
+                }
+              });
+            },
+            { rootMargin: "-100px 0px -80% 0px" },
+          );
 
-          headings.forEach(heading => observer.observe(heading));
+          headings.forEach((heading) => observer.observe(heading));
         }
 
         // Scroll Progress Bar
-        const progressBar = document.getElementById('scrollProgress');
+        const progressBar = document.getElementById("scrollProgress");
         if (progressBar) {
-          window.addEventListener('scroll', function() {
-            const windowHeight = document.documentElement.scrollHeight - window.innerHeight;
+          window.addEventListener("scroll", function () {
+            const windowHeight =
+              document.documentElement.scrollHeight - window.innerHeight;
             const scrolled = (window.scrollY / windowHeight) * 100;
-            progressBar.style.width = scrolled + '%';
+            progressBar.style.width = scrolled + "%";
           });
         }
 
         // Smooth scroll for all anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-          anchor.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            if (href !== '#') {
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            const href = this.getAttribute("href");
+            if (href !== "#") {
               e.preventDefault();
               const target = document.querySelector(href);
               if (target) {
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                target.scrollIntoView({ behavior: "smooth", block: "start" });
               }
             }
           });
         });
 
         // Add fade-in animation to paragraphs on scroll
-        const paragraphs = document.querySelectorAll('.legal-content-pro p, .legal-content-pro li');
+        const paragraphs = document.querySelectorAll(
+          ".legal-content-pro p, .legal-content-pro li",
+        );
         paragraphs.forEach((para, index) => {
-          para.setAttribute('data-aos', 'fade-up');
-          para.setAttribute('data-aos-delay', Math.min(index * 20, 300));
+          para.setAttribute("data-aos", "fade-up");
+          para.setAttribute("data-aos-delay", Math.min(index * 20, 300));
         });
 
         // Refresh AOS after dynamic content
@@ -986,72 +1083,92 @@
         }, 500);
 
         // Enhanced tooltips with better positioning
-        const tooltipElements = document.querySelectorAll('[data-tooltip]');
-        tooltipElements.forEach(el => {
-          el.addEventListener('mouseenter', function() {
-            const tooltip = this.querySelector('::before');
+        const tooltipElements = document.querySelectorAll("[data-tooltip]");
+        tooltipElements.forEach((el) => {
+          el.addEventListener("mouseenter", function () {
+            const tooltip = this.querySelector("::before");
             // Prevent tooltip from going off-screen
             const rect = this.getBoundingClientRect();
             if (rect.left < 150) {
-              this.style.setProperty('--tooltip-transform', 'translateX(0)');
+              this.style.setProperty("--tooltip-transform", "translateX(0)");
             } else if (rect.right > window.innerWidth - 150) {
-              this.style.setProperty('--tooltip-transform', 'translateX(-100%)');
+              this.style.setProperty(
+                "--tooltip-transform",
+                "translateX(-100%)",
+              );
             }
           });
         });
 
         // Keyboard accessibility for tooltips
-        tooltipElements.forEach(el => {
-          el.setAttribute('tabindex', '0');
-          el.addEventListener('focus', function() {
-            this.classList.add('tooltip-visible');
+        tooltipElements.forEach((el) => {
+          el.setAttribute("tabindex", "0");
+          el.addEventListener("focus", function () {
+            this.classList.add("tooltip-visible");
           });
-          el.addEventListener('blur', function() {
-            this.classList.remove('tooltip-visible');
+          el.addEventListener("blur", function () {
+            this.classList.remove("tooltip-visible");
           });
         });
 
         // Easter egg: Konami code for confetti effect
         let konamiCode = [];
-        const pattern = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
-        
-        document.addEventListener('keydown', function(e) {
+        const pattern = [
+          "ArrowUp",
+          "ArrowUp",
+          "ArrowDown",
+          "ArrowDown",
+          "ArrowLeft",
+          "ArrowRight",
+          "ArrowLeft",
+          "ArrowRight",
+          "b",
+          "a",
+        ];
+
+        document.addEventListener("keydown", function (e) {
           konamiCode.push(e.key);
           konamiCode = konamiCode.slice(-10);
-          
-          if (konamiCode.join(',') === pattern.join(',')) {
+
+          if (konamiCode.join(",") === pattern.join(",")) {
             createConfetti();
           }
         });
 
         function createConfetti() {
           for (let i = 0; i < 50; i++) {
-            const confetti = document.createElement('div');
-            confetti.style.position = 'fixed';
-            confetti.style.left = Math.random() * 100 + '%';
-            confetti.style.top = '-10px';
-            confetti.style.width = '10px';
-            confetti.style.height = '10px';
+            const confetti = document.createElement("div");
+            confetti.style.position = "fixed";
+            confetti.style.left = Math.random() * 100 + "%";
+            confetti.style.top = "-10px";
+            confetti.style.width = "10px";
+            confetti.style.height = "10px";
             confetti.style.background = `hsl(${Math.random() * 360}, 70%, 60%)`;
-            confetti.style.zIndex = '9999';
-            confetti.style.pointerEvents = 'none';
-            confetti.style.borderRadius = '50%';
+            confetti.style.zIndex = "9999";
+            confetti.style.pointerEvents = "none";
+            confetti.style.borderRadius = "50%";
             document.body.appendChild(confetti);
-            
-            const animation = confetti.animate([
-              { transform: 'translateY(0) rotate(0deg)', opacity: 1 },
-              { transform: `translateY(${window.innerHeight + 20}px) rotate(${Math.random() * 720}deg)`, opacity: 0 }
-            ], {
-              duration: 2000 + Math.random() * 1000,
-              easing: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)'
-            });
-            
+
+            const animation = confetti.animate(
+              [
+                { transform: "translateY(0) rotate(0deg)", opacity: 1 },
+                {
+                  transform: `translateY(${window.innerHeight + 20}px) rotate(${Math.random() * 720}deg)`,
+                  opacity: 0,
+                },
+              ],
+              {
+                duration: 2000 + Math.random() * 1000,
+                easing: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+              },
+            );
+
             animation.onfinish = () => confetti.remove();
           }
         }
 
         // Log theme changes for analytics (optional)
-        console.log('🎨 Legal document theme system initialized');
+        console.log("🎨 Legal document theme system initialized");
       });
     </script>
   {{ else if or (eq .Title "Adhesion") (eq .Title "Adhésion") }}

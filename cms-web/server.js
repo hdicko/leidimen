@@ -28,28 +28,28 @@ const MAX_REQUESTS = 100;
 function rateLimiter(req, res, next) {
 	const ip = req.ip || req.connection.remoteAddress;
 	const now = Date.now();
-	
+
 	if (!requestCounts.has(ip)) {
 		requestCounts.set(ip, { count: 1, resetTime: now + RATE_LIMIT_WINDOW });
 		return next();
 	}
-	
+
 	const userData = requestCounts.get(ip);
-	
+
 	if (now > userData.resetTime) {
 		userData.count = 1;
 		userData.resetTime = now + RATE_LIMIT_WINDOW;
 		return next();
 	}
-	
+
 	if (userData.count >= MAX_REQUESTS) {
 		return res.status(429).json({
 			error: 'Too many requests',
 			message: 'Rate limit exceeded. Please try again later.',
-			retryAfter: Math.ceil((userData.resetTime - now) / 1000)
+			retryAfter: Math.ceil((userData.resetTime - now) / 1000),
 		});
 	}
-	
+
 	userData.count++;
 	next();
 }

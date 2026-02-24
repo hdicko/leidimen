@@ -2,15 +2,15 @@
 title: Les 10 ordis sont arrivés à Bamako !
 date: 2010-01-01
 draft: false
-description: 'Douentza: Les 10 ordis sont arrivés à Bamako ! - En savoir plus sur nos initiatives en éducation.'
+description: "/images/wordpress/2007-07-transport4maxi.jpgNous nous réjouissons d’avons recu un coup de téléphone de Abdoulaye nous disant que hier, le 22 février,."
 categories:
-- Éducation
+  - Éducation
 tags:
-- archive
-- wordpress
-- news
+  - archive
+  - wordpress
+  - news
 villages:
-- douentza
+  - douentza
 source: https://leidimen.com/les-10-ordis-sont-arrives-a-bamako
 ---
 

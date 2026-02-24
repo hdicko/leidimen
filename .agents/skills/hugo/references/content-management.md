@@ -23,26 +23,26 @@ series: ["hugo-guide"]
 authors: ["your-name"]
 
 # Display
-weight: 10                 # Sort order (lower = first)
-layout: "custom-layout"    # Override template
-type: "posts"              # Override content type
+weight: 10 # Sort order (lower = first)
+layout: "custom-layout" # Override template
+type: "posts" # Override content type
 
 # Images
-images: ["cover.jpg"]      # For Open Graph
+images: ["cover.jpg"] # For Open Graph
 featured_image: "hero.jpg"
 
 # Table of contents
 toc: true
 
 # Publishing
-publishDate: 2024-04-01    # Future publish date
-expiryDate: 2025-01-01     # Content expiration
+publishDate: 2024-04-01 # Future publish date
+expiryDate: 2025-01-01 # Content expiration
 
 # Build
 _build:
-  list: always             # always, never, local
-  render: always           # always, never, link
-cascade:                   # Apply params to all descendants
+  list: always # always, never, local
+  render: always # always, never, link
+cascade: # Apply params to all descendants
   showReadingTime: true
 ---
 ```
@@ -165,8 +165,8 @@ title: "About"
 menus:
   main:
     weight: 30
-    name: "About Us"    # Optional, defaults to title
-    parent: "company"   # For nested menus
+    name: "About Us" # Optional, defaults to title
+    parent: "company" # For nested menus
 ---
 ```
 

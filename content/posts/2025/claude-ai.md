@@ -2,18 +2,18 @@
 title: claude AI
 date: 2025-11-04
 draft: false
-description: 'Douentza: claude AI - En savoir plus sur nos initiatives en éducation.'
+description: "Douentza : claude AI — initiative Leidimen pour éducation et soutien scolaire au Mali."
 image: /images/uploads/default.jpg
 categories:
-- Éducation
+  - Éducation
 tags:
-- '1'
-- '2'
-- '3'
+  - "1"
+  - "2"
+  - "3"
 villages:
-- douentza
+  - douentza
 moods:
-- heureux
+  - heureux
 ---
 
 end

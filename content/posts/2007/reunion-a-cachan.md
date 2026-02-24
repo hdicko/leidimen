@@ -2,16 +2,16 @@
 title: Réunion à Cachan
 date: 2007-11-26
 draft: false
-description: 'Douentza: Réunion à Cachan - En savoir plus sur nos initiatives en culture.'
+description: "Une réunion s’est tenue le samedi 24 à Cachan."
 categories:
-- Culture
+  - Culture
 tags:
-- archive
-- wordpress
-- News Leidimen
-- Réunions
+  - archive
+  - wordpress
+  - News Leidimen
+  - Réunions
 villages:
-- douentza
+  - douentza
 source: https://leidimen.com/reunion-a-cachan
 ---
 

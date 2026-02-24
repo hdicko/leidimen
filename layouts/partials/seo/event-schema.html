@@ -1,26 +1,25 @@
-{{/* 
-  Schema.org Event markup for events and activities
+{{/* Schema.org Event markup for events and activities
   Usage: Include this partial in event pages
-  
+
   Provides structured data for event-rich results in search engines
   Events can be displayed with date, location, and registration info
-  
+
   Requirements:
   - Page frontmatter must have event details
-  
+
   Example frontmatter:
   ---
   event:
-    name: "Assemblée Générale Leidimen 2026"
-    startDate: "2026-02-15T14:00:00+01:00"
-    endDate: "2026-02-15T18:00:00+01:00"
-    location:
-      name: "Salle des Fêtes de Bondoufle"
-      address: "Bondoufle, 91070, France"
-    description: "Assemblée générale annuelle de l'association"
-    url: "https://hdicko.github.io/leidimen/posts/2026/ag-2026/"
+  name: "Assemblée Générale Leidimen 2026"
+  startDate: "2026-02-15T14:00:00+01:00"
+  endDate: "2026-02-15T18:00:00+01:00"
+  location:
+  name: "Salle des Fêtes de Bondoufle"
+  address: "Bondoufle, 91070, France"
+  description: "Assemblée générale annuelle de l'association"
+  url: "https://hdicko.github.io/leidimen/posts/2026/ag-2026/"
   ---
-*/}}
+  */}}
 
 {{ with .Params.event }}
 <script type="application/ld+json">

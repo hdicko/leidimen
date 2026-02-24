@@ -2,15 +2,15 @@
 title: Et si on se retrouvait sur Paris?
 date: 2013-03-05
 draft: false
-description: 'Douentza: Et si on se retrouvait sur Paris? - En savoir plus sur nos initiatives en culture.'
+description: "Nous contemplons l’idée d’un événement sur le printemps parisien, pourquoi pas le long des berges du canal."
 categories:
-- Culture
+  - Culture
 tags:
-- archive
-- wordpress
-- Divers
+  - archive
+  - wordpress
+  - Divers
 villages:
-- douentza
+  - douentza
 source: https://leidimen.com/et-si-on-se-retrouvait-sur-paris
 ---
 
