@@ -3,7 +3,6 @@ title: "Diambana"
 date: 2026-01-26
 draft: false
 description: "Village de Diambana dans la région de Douentza - Centre de santé communautaire et projets d'eau et d'éducation"
-layout: "village"
 ---
 
 ## Bienvenue à Diambana

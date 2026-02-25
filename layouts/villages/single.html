@@ -1,0 +1,177 @@
+{{/* 
+  Template: villages/single.html
+  Purpose: Single village page layout
+  Context: Renders individual village content pages
+  
+  This layout is used for village pages stored in content/villages/{village-name}/_index.md
+  It applies the village page styling and layout from term.html concept but for content pages.
+  
+  Uses the default single page content rendering with village-specific styling.
+*/}}
+
+{{ define "main" }}
+
+  <!-- Village Page Content -->
+  <div class="village-page container py-5">
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <!-- Village Title -->
+        <div class="village-header mb-5">
+          <h1 class="display-4 fw-bold mb-3 text-primary">{{ .Title }}</h1>
+          <div class="village-meta mb-4">
+            <span class="badge bg-light text-primary me-2">
+              <i class="bi bi-geo-alt-fill me-1"></i>{{ .Title }}
+            </span>
+            <span class="badge bg-light text-muted">
+              <i class="bi bi-calendar3 me-1"></i>{{ .Date.Format "02 janvier 2006" }}
+            </span>
+          </div>
+          
+          <!-- Description -->
+          {{ if .Description }}
+          <p class="lead text-muted fs-5">{{ .Description }}</p>
+          {{ end }}
+        </div>
+
+        <!-- Village Content -->
+        <div class="village-content">
+          {{ .Content }}
+        </div>
+
+        <!-- Related Posts Section -->
+        {{ $village := lower .Title }}
+        {{ $relatedPosts := where site.RegularPages "Params.villages" "intersect" (slice $village) }}
+        
+        {{ if $relatedPosts }}
+        <div class="related-posts mt-5 pt-5 border-top">
+          <h2 class="mb-4">Articles relatifs à {{ .Title }}</h2>
+          <div class="row g-4">
+            {{ range $relatedPosts | first 3 }}
+            <div class="col-md-6">
+              <article class="card h-100 border-0 shadow-sm">
+                {{ if .Params.image }}
+                <img src="{{ .Params.image | relURL }}" class="card-img-top" alt="{{ .Title }}" style="height: 200px; object-fit: cover;">
+                {{ end }}
+                <div class="card-body">
+                  <h5 class="card-title">{{ .Title }}</h5>
+                  <p class="card-text text-muted small">{{ .Summary }}</p>
+                </div>
+                <div class="card-footer bg-transparent border-top-0">
+                  <a href="{{ .RelPermalink }}" class="btn btn-sm btn-primary">Lire plus →</a>
+                </div>
+              </article>
+            </div>
+            {{ end }}
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .village-page {
+      min-height: 70vh;
+    }
+
+    .village-header {
+      border-bottom: 3px solid #e2e8f0;
+      padding-bottom: 2rem;
+    }
+
+    .village-content h2 {
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      color: #1e293b;
+      font-weight: 700;
+    }
+
+    .village-content h3 {
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+      color: #475569;
+      font-weight: 600;
+    }
+
+    .village-content p {
+      line-height: 1.8;
+      color: #475569;
+      margin-bottom: 1rem;
+    }
+
+    .village-content ul,
+    .village-content ol {
+      margin-bottom: 1.5rem;
+      margin-left: 1.5rem;
+    }
+
+    .village-content li {
+      margin-bottom: 0.5rem;
+      color: #475569;
+    }
+
+    .village-meta {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .related-posts .card {
+      transition: all 0.3s ease;
+    }
+
+    .related-posts .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
+    }
+
+    .related-posts .card-title {
+      font-weight: 700;
+      color: #1e293b;
+    }
+
+    /* Dark mode support */
+    body.dark-mode .village-header {
+      border-bottom-color: #3f4758;
+    }
+
+    body.dark-mode .village-content h2,
+    body.dark-mode .village-content h3 {
+      color: #edf0f5;
+    }
+
+    body.dark-mode .village-content p,
+    body.dark-mode .village-content li {
+      color: #c5ccd6;
+    }
+
+    body.dark-mode .related-posts .card {
+      background-color: #272d3f;
+      border-color: #3f4758;
+    }
+
+    body.dark-mode .related-posts .card-title {
+      color: #edf0f5;
+    }
+
+    body.dark-mode .related-posts .card-text {
+      color: #919aaa !important;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .village-header {
+        padding-bottom: 1.5rem;
+      }
+
+      .village-content h2 {
+        font-size: 1.5rem;
+      }
+
+      .village-page {
+        min-height: auto;
+      }
+    }
+  </style>
+
+{{ end }}
