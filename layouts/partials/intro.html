@@ -1,984 +1,179 @@
-<!-- Modern Professional Landing Page -->
+{{/*
+  Simplified Intro Partial - Leidimen Homepage
+  Harmonized with /villages page style
+*/}}
 
-<!-- Hero Section with Background -->
-<section class="hero-modern position-relative overflow-hidden">
-  <div class="hero-background"></div>
-  <div class="hero-overlay"></div>
-
-  <div class="container position-relative stack-top">
-    <div class="row align-items-center min-vh-100 py-5">
-      <div class="col-lg-6 text-white mb-5 mb-lg-0">
-        <span class="hero-badge d-inline-block mb-3 px-4 py-2">
-          <i class="bi bi-heart-fill me-2"></i>Solidarité & Développement
+<!-- Hero Section - Simple Blue Style -->
+<section class="bg-primary text-white py-5 mb-5">
+  <div class="container">
+    <div class="row align-items-center py-5">
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <span class="badge bg-warning text-dark mb-3 px-3 py-2">
+          <i class="bi bi-heart-fill me-2"></i>
+          Solidarité & Développement
         </span>
-        <h1 class="display-3 fw-bold mb-4 hero-title">
-          Ensemble pour les villages de
-          <span class="text-warning">Douentza</span>
+        
+        <h1 class="display-3 fw-bold mb-4">
+          Ensemble pour les villages de Douentza
         </h1>
-        <p class="lead mb-4 opacity-90">
+        
+        <p class="lead mb-4">
           Leidimen agit depuis des années pour améliorer les conditions de vie
           dans les villages du Mali. Éducation, santé, infrastructure - chaque
           action compte.
         </p>
-        <div class="d-flex flex-wrap gap-3 mb-4">
-          <a
-            href="{{ "/equipe/" | relURL }}"
-            class="btn btn-warning btn-lg px-4 rounded-pill shadow">
-            <i class="bi bi-people-fill me-2"></i>Découvrir l'équipe
+        
+        <div class="d-flex flex-wrap gap-3">
+          <a href="{{ "/equipe/" | relURL }}" class="btn btn-warning btn-lg">
+            <i class="bi bi-people-fill me-2"></i>
+            Découvrir l'équipe
           </a>
-          <a
-            href="{{ "/posts/" | relURL }}"
-            class="btn btn-outline-light btn-lg px-4 rounded-pill">
-            <i class="bi bi-newspaper me-2"></i>Nos actualités
+          <a href="{{ "/posts/" | relURL }}" class="btn btn-outline-light btn-lg">
+            <i class="bi bi-newspaper me-2"></i>
+            Nos actualités
           </a>
         </div>
-        <!-- Hero statistics removed as requested -->
       </div>
+      
       <div class="col-lg-6">
-        <div class="hero-image-wrapper">
-          <img
-            src="{{ "images/uploads/default.jpeg" | relURL }}"
-            alt="Villages Mali"
-            class="img-fluid rounded-4 shadow-lg" />
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="scroll-indicator">
-    <i class="bi bi-chevron-down"></i>
-  </div>
-</section>
-
-<!-- Impact statistics removed as requested -->
-
-<!-- Main Content Sections -->
-<section class="intro-section-ctx7 py-5">
-  <div class="container">
-    <!-- Professional Accordion -->
-    <div class="accordion accordion-ctx7" id="accordionLeidimen">
-      <!-- Présentation Section -->
-      <div class="accordion-item accordion-item-ctx7">
-        <h2 class="accordion-header">
-          <button
-            class="accordion-button accordion-button-ctx7"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#collapsePresentation"
-            aria-expanded="true"
-            aria-controls="collapsePresentation">
-            <div class="accordion-icon-ctx7 me-3">
-              <i class="bi bi-building"></i>
-            </div>
-            <div class="accordion-text-ctx7">
-              <h3 class="mb-1 fw-bold fs-5">Présentation de Leidimen</h3>
-              <p class="mb-0 text-muted small">
-                Découvrez notre mission et nos valeurs
-              </p>
-            </div>
-          </button>
-        </h2>
-        <div
-          id="collapsePresentation"
-          class="accordion-collapse collapse show"
-          data-bs-parent="#accordionLeidimen">
-          <div class="accordion-body accordion-body-ctx7">
-            <div class="content-wrapper-ctx7">
-              {{ partial "charte.html" }}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Qui sommes nous Section -->
-      <div class="accordion-item accordion-item-ctx7">
-        <h2 class="accordion-header">
-          <button
-            class="accordion-button accordion-button-ctx7 collapsed"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#collapseTeam"
-            aria-expanded="false"
-            aria-controls="collapseTeam">
-            <div class="accordion-icon-ctx7 me-3">
-              <i class="bi bi-people"></i>
-            </div>
-            <div class="accordion-text-ctx7">
-              <h3 class="mb-1 fw-bold fs-5">Qui sommes nous</h3>
-              <p class="mb-0 text-muted small">
-                Rencontrez notre équipe et notre organisation
-              </p>
-            </div>
-          </button>
-        </h2>
-        <div
-          id="collapseTeam"
-          class="accordion-collapse collapse"
-          data-bs-parent="#accordionLeidimen">
-          <div class="accordion-body accordion-body-ctx7">
-            <div class="content-wrapper-ctx7">
-              {{ partial "qui-sommes-nous.html" }}
-              {{ partial "bureau.html" }}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Séparateur visuel -->
-      <div class="separator-section-ctx7 my-4 text-center">
-        <div class="separator-line-ctx7"></div>
-        <div class="separator-icon-ctx7">
-          <i class="bi bi-heart-fill text-danger"></i>
-        </div>
-        <div class="separator-line-ctx7"></div>
-      </div>
-
-      <!-- Nos actions Section -->
-      <div class="accordion-item accordion-item-ctx7 mt-3">
-        <h2 class="accordion-header">
-          <button
-            class="accordion-button accordion-button-ctx7 collapsed"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#collapseActions"
-            aria-expanded="false"
-            aria-controls="collapseActions">
-            <div class="accordion-icon-ctx7 me-3">
-              <i class="bi bi-gear"></i>
-            </div>
-            <div class="accordion-text-ctx7">
-              <h3 class="mb-1 fw-bold fs-5">Nos actions</h3>
-              <p class="mb-0 text-muted small">
-                Découvrez nos projets et réalisations
-              </p>
-            </div>
-          </button>
-        </h2>
-        <div
-          id="collapseActions"
-          class="accordion-collapse collapse"
-          data-bs-parent="#accordionLeidimen">
-          <div class="accordion-body accordion-body-ctx7">
-            <div class="content-wrapper-ctx7">
-              {{ partial "que-voulons-nous.html" }}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Call to Action -->
-    <div class="cta-section-modern text-center mt-5">
-      <div
-        class="cta-card-modern p-5 rounded-4 position-relative overflow-hidden">
-        <div class="cta-background"></div>
-        <div class="position-relative stack-above">
-          <h2 class="fw-bold mb-3 text-white">Rejoignez notre mission</h2>
-          <p class="text-white opacity-90 mb-4 fs-5">
-            Ensemble, nous pouvons faire la différence et construire un avenir
-            plus solidaire
-          </p>
-          <div class="cta-buttons-ctx7">
-            <a
-              href="{{ "/equipe/" | relURL }}"
-              class="btn btn-light btn-lg rounded-pill me-3 mb-2 px-5">
-              <i class="bi bi-people me-2"></i>Découvrir l'équipe
-            </a>
-            <a
-              href="{{ "/documents/" | relURL }}"
-              class="btn btn-outline-light btn-lg rounded-pill mb-2 px-5">
-              <i class="bi bi-file-text me-2"></i>Nos documents
-            </a>
-          </div>
-        </div>
+        <img
+          src="{{ "images/uploads/default.jpeg" | relURL }}"
+          alt="Vue des villages de la région de Douentza au Mali"
+          class="img-fluid rounded shadow-lg"
+          loading="eager" />
       </div>
     </div>
   </div>
 </section>
 
-<!-- Recent Projects Grid -->
-<section class="py-5 bg-white">
-  <div class="container">
-    <div class="text-center mb-5">
-      <h2 class="display-5 fw-bold mb-3">Nos derniers projets</h2>
-      <p class="text-muted fs-5">
-        Découvrez les réalisations qui changent des vies
-      </p>
+<!-- Main Content -->
+<div class="container py-5">
+  <div class="accordion" id="leidimen-accordion">
+    
+    <!-- Qui sommes-nous -->
+    <div class="accordion-item mb-3 border-0 shadow-sm">
+      <h2 class="accordion-header">
+        <button class="accordion-button bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-presentation" aria-expanded="true">
+          <i class="bi bi-info-circle-fill text-primary me-3 fs-4"></i>
+          <div class="flex-grow-1">
+            <h3 class="h5 mb-1">Qui sommes-nous ?</h3>
+            <p class="text-muted mb-0 small">Découvrez l'association Leidimen</p>
+          </div>
+        </button>
+      </h2>
+      <div id="collapse-presentation" class="accordion-collapse collapse show" data-bs-parent="#leidimen-accordion">
+        <div class="accordion-body bg-light">
+          {{ $.Site.Params.description | markdownify }}
+        </div>
+      </div>
     </div>
 
-    {{ with .Site.GetPage "/posts" }}
-      {{ $posts := .RegularPages | first 3 }}
-      {{ if $posts }}
-        <div class="row g-4">
-          {{ range $posts }}
+    <!-- Actualités -->
+    <div class="accordion-item mb-3 border-0 shadow-sm">
+      <h2 class="accordion-header">
+        <button class="accordion-button bg-white collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-posts">
+          <i class="bi bi-newspaper text-primary me-3 fs-4"></i>
+          <div class="flex-grow-1">
+            <h3 class="h5 mb-1">Actualités récentes</h3>
+            <p class="text-muted mb-0 small">Nos dernières actions</p>
+          </div>
+        </button>
+      </h2>
+      <div id="collapse-posts" class="accordion-collapse collapse" data-bs-parent="#leidimen-accordion">
+        <div class="accordion-body bg-light">
+          <div class="row g-4">
+            {{ $posts := where $.Site.RegularPages "Type" "posts" }}
+            {{ range first 3 $posts }}
             <div class="col-md-4">
-              <div class="project-card h-100">
-                {{ if .Params.image }}
-                  <div class="project-image">
-                    <img
-                      src="{{ .Params.image | relURL }}"
-                      alt="{{ .Title }}"
-                      class="w-100" />
-                    <div class="project-overlay">
-                      <span class="project-category">
-                        {{ if .Params.categories }}
-                          {{ index .Params.categories 0 }}
-                        {{ end }}
-                      </span>
-                    </div>
-                  </div>
+              <div class="card h-100 border-0 shadow-sm">
+                {{ with .Params.image }}
+                <img src="{{ . | relURL }}" class="card-img-top" alt="{{ $.Title }}" loading="lazy" />
                 {{ end }}
-                <div class="project-content p-4">
-                  <div class="project-meta mb-2">
-                    <span class="text-muted small">
-                      <i class="bi bi-calendar3 me-1"></i
-                      >{{ .Date.Format "02 Jan 2006" }}
-                    </span>
-                    {{ if .Params.villages }}
-                      <span class="text-muted small ms-3">
-                        <i class="bi bi-geo-alt me-1"></i
-                        >{{ index .Params.villages 0 }}
-                      </span>
-                    {{ end }}
+                <div class="card-body">
+                  <h4 class="h5 mb-3">
+                    <a href="{{ .RelPermalink }}" class="text-decoration-none text-dark stretched-link">
+                      {{ .Title }}
+                    </a>
+                  </h4>
+                  <p class="card-text text-muted small">{{ .Summary | truncate 120 }}</p>
+                  <div class="text-muted small mt-3">
+                    <i class="bi bi-calendar3"></i> {{ .Date.Format "02/01/2006" }}
                   </div>
-                  <h3 class="project-title h5 mb-3">{{ .Title }}</h3>
-                  <p class="project-excerpt text-muted mb-3">
-                    {{ .Params.description | default .Summary | truncate 100 }}
-                  </p>
-                  <a
-                    href="{{ .Permalink }}"
-                    class="btn btn-sm btn-outline-primary rounded-pill">
-                    Lire la suite <i class="bi bi-arrow-right ms-1"></i>
-                  </a>
                 </div>
               </div>
             </div>
-          {{ end }}
+            {{ end }}
+          </div>
         </div>
-
-        <div class="text-center mt-5">
-          <a
-            href="{{ "/posts/" | relURL }}"
-            class="btn btn-primary btn-lg rounded-pill px-5">
-            Voir tous les projets <i class="bi bi-arrow-right ms-2"></i>
-          </a>
-        </div>
-      {{ else }}
-        <div class="text-center py-5">
-          <p class="text-muted">Aucun projet disponible pour le moment.</p>
-        </div>
-      {{ end }}
-    {{ end }}
-  </div>
-</section>
-
-<!-- Villages Map Section -->
-<section class="py-5 bg-light">
-  <div class="container">
-    <div class="text-center mb-5">
-      <h2 class="display-5 fw-bold mb-3">Les villages que nous soutenons</h2>
-      <p class="text-muted fs-5">
-        10 villages dans la région de Douentza, Mali
-      </p>
+      </div>
     </div>
 
-    <div class="row g-3">
-      {{ $villages := slice "Dorool" "Diona" "Debere" "Diambana" "Darawal" "Douentza" "Tanal" "Manko" "Tacouti" "N'Dumpa" }}
-      {{ range $villages }}
-        <div class="col-md-4 col-sm-6">
-          <div class="village-card p-3 rounded-3">
-            <div class="d-flex align-items-center">
-              <div class="village-icon me-3">
-                <i class="bi bi-geo-alt-fill"></i>
-              </div>
-              <div>
-                <h5 class="mb-0">{{ . }}</h5>
-                <small class="text-muted">Région de Douentza</small>
-              </div>
+    <!-- Villages -->
+    <div class="accordion-item mb-3 border-0 shadow-sm">
+      <h2 class="accordion-header">
+        <button class="accordion-button bg-white collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-villages">
+          <i class="bi bi-geo-alt-fill text-primary me-3 fs-4"></i>
+          <div class="flex-grow-1">
+            <h3 class="h5 mb-1">Nos villages</h3>
+            <p class="text-muted mb-0 small">10 villages soutenus</p>
+          </div>
+        </button>
+      </h2>
+      <div id="collapse-villages" class="accordion-collapse collapse" data-bs-parent="#leidimen-accordion">
+        <div class="accordion-body bg-light">
+          <div class="row g-3">
+            {{ range first 10 $.Site.Data.villages.mali_villages }}
+            <div class="col-md-6 col-lg-4">
+              <a href="{{ printf "/villages/%s/" (.name | urlize) | relURL }}" class="village-card d-flex align-items-center p-3 bg-white rounded shadow-sm text-decoration-none">
+                <div class="me-3">
+                  <i class="bi bi-pin-map-fill text-primary fs-4"></i>
+                </div>
+                <div class="flex-grow-1">
+                  <strong class="d-block text-dark">{{ .name }}</strong>
+                  <small class="text-muted">{{ .region | default "Douentza" }}</small>
+                </div>
+              </a>
+            </div>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Call to Action -->
+<section class="bg-primary text-white py-5">
+  <div class="container">
+    <div class="card border-0 shadow-lg bg-primary">
+      <div class="card-body p-5">
+        <div class="row align-items-center">
+          <div class="col-lg-8">
+            <h2 class="display-5 fw-bold mb-3">Rejoignez notre mission</h2>
+            <p class="lead mb-0">
+              Ensemble, nous pouvons faire la différence. Votre soutien permet de financer des projets concrets qui transforment des vies.
+            </p>
+          </div>
+          <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
+            <div class="d-flex flex-column gap-3">
+              <a href="/equipe/#contact" class="btn btn-warning btn-lg">
+                <i class="bi bi-envelope-heart-fill me-2"></i>
+                Nous contacter
+              </a>
+              <a href="/posts/" class="btn btn-outline-light btn-lg">
+                En savoir plus
+              </a>
             </div>
           </div>
         </div>
-      {{ end }}
+      </div>
     </div>
   </div>
 </section>
 
+<!-- Simple hover effect -->
 <style>
-  /* Modern Hero Section */
-  .hero-modern {
-    min-height: 100vh;
-    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #60a5fa 100%);
-    position: relative;
-  }
-
-  .hero-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="rgb(59,130,246)" stop-opacity="0.3" /><stop offset="100%" stop-color="rgb(30,58,138)" stop-opacity="0.3" /></linearGradient></defs><path d="M0,300 Q300,100 600,300 T1200,300 L1200,600 L0,600 Z" fill="url(%23grad1)"/></svg>');
-    background-size: cover;
-    opacity: 0.5;
-  }
-
-  .hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(30, 58, 138, 0.2);
-  }
-
-  .hero-badge {
-    background: rgba(251, 191, 36, 0.2);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(251, 191, 36, 0.3);
-    color: #fbbf24;
-    font-weight: 600;
-    border-radius: 50px;
-    animation: float-badge 3s ease-in-out infinite;
-  }
-
-  @keyframes float-badge {
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-  }
-
-  .hero-title {
-    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
-    animation: fadeInUp 0.8s ease-out;
-  }
-
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  .hero-image-wrapper {
-    animation: fadeInRight 1s ease-out 0.3s both;
-  }
-
-  @keyframes fadeInRight {
-    from {
-      opacity: 0;
-      transform: translateX(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
-  .hero-image-wrapper img {
-    border: 4px solid rgba(255, 255, 255, 0.2);
-    transition: transform 0.5s ease;
-  }
-
-  .hero-image-wrapper:hover img {
-    transform: scale(1.05) rotate(2deg);
-  }
-
-  .scroll-indicator {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: white;
-    font-size: 2rem;
-    animation: bounce 2s infinite;
-    z-index: 10;
-  }
-
-  @keyframes bounce {
-    0%,
-    100% {
-      transform: translate(-50%, 0);
-    }
-    50% {
-      transform: translate(-50%, 10px);
-    }
-  }
-
-  /* Impact statistics removed */
-  /* Accordion Styles */
-  .intro-section-ctx7 {
-    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-    min-height: 80vh;
-    position: relative;
-  }
-
-  .intro-section-ctx7::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="%23000" opacity="0.02"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-    pointer-events: none;
-  }
-
-  /* Hero Section */
-  .intro-hero-ctx7 {
-    position: relative;
-    z-index: 2;
-  }
-
-  .hero-badge-ctx7 {
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    border-radius: 50px;
-    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.25);
-    animation: float-gentle 3s ease-in-out infinite;
-  }
-
-  .hero-title-ctx7 {
-    color: #1e293b;
-    line-height: 1.2;
-    margin-bottom: 1.5rem;
-  }
-
-  .hero-subtitle-ctx7 {
-    font-size: 1.125rem;
-    line-height: 1.6;
-    max-width: 600px;
-  }
-
-  /* Professional Accordion */
-  .accordion-ctx7 {
-    max-width: 900px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 2;
-  }
-
-  .accordion-item-ctx7 {
-    border: none;
-    margin-bottom: 1.5rem;
-    border-radius: 1rem;
-    overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
-    background: white;
-  }
-
-  .accordion-item-ctx7:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-  }
-
-  .accordion-button-ctx7 {
-    background: white;
-    border: none;
-    padding: 2rem;
-    font-weight: 500;
-    box-shadow: none;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .accordion-button-ctx7::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      135deg,
-      rgba(99, 102, 241, 0.05) 0%,
-      rgba(139, 92, 246, 0.05) 100%
-    );
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-
-  .accordion-button-ctx7:hover::before,
-  .accordion-button-ctx7:focus::before {
-    opacity: 1;
-  }
-
-  .accordion-button-ctx7:not(.collapsed) {
-    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-    color: white;
-  }
-
-  .accordion-button-ctx7:not(.collapsed) .accordion-icon-ctx7 {
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
-  }
-
-  .accordion-button-ctx7:focus {
-    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25);
-  }
-
-  .accordion-icon-ctx7 {
-    width: 50px;
-    height: 50px;
-    border-radius: 12px;
-    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.25rem;
-    transition: all 0.3s ease;
-  }
-
-  .accordion-text-ctx7 h3 {
-    font-size: 1.25rem;
-    color: inherit;
-  }
-
-  .accordion-text-ctx7 p {
-    color: #64748b;
-    font-size: 0.875rem;
-  }
-
-  .accordion-button-ctx7:not(.collapsed) .accordion-text-ctx7 p {
-    color: rgba(255, 255, 255, 0.8);
-  }
-
-  .accordion-body-ctx7 {
-    padding: 2rem;
-    background: #fafbfc;
-    border-top: 1px solid #e2e8f0;
-  }
-
-  .content-wrapper-ctx7 {
-    line-height: 1.7;
-  }
-
-  .content-wrapper-ctx7 h1,
-  .content-wrapper-ctx7 h2,
-  .content-wrapper-ctx7 h3 {
-    color: #1e293b;
-    margin-bottom: 1rem;
-  }
-
-  .content-wrapper-ctx7 p {
-    color: #475569;
-    margin-bottom: 1.25rem;
-  }
-
-  /* CTA Section Modern */
-  .cta-section-modern {
-    position: relative;
-    z-index: 2;
-  }
-
-  .cta-card-modern {
-    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
-    box-shadow: 0 20px 60px rgba(30, 58, 138, 0.3);
-    position: relative;
-    border: none;
-  }
-
-  .cta-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1.5" fill="white" opacity="0.1"/></pattern></defs><rect width="800" height="400" fill="url(%23dots)"/></svg>');
-    opacity: 1;
-  }
-
-  .cta-buttons-ctx7 .btn {
-    font-weight: 600;
-    padding: 0.75rem 2rem;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  }
-
-  .cta-buttons-ctx7 .btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-  }
-
-  /* Project Cards */
-  .project-card {
-    background: white;
-    border-radius: 1rem;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
-    border: 1px solid #e2e8f0;
-  }
-
-  .project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-  }
-
-  .project-image {
-    position: relative;
-    height: 200px;
-    overflow: hidden;
-  }
-
-  .project-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-  }
-
-  .project-card:hover .project-image img {
-    transform: scale(1.1);
-  }
-
-  .project-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.3) 0%,
-      transparent 50%
-    );
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-end;
-    padding: 1rem;
-  }
-
-  .project-category {
-    background: rgba(59, 130, 246, 0.9);
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 50px;
-    font-size: 0.875rem;
-    font-weight: 600;
-  }
-
-  .project-content {
-    background: white;
-  }
-
-  .project-title {
-    color: #1e293b;
-    font-weight: 700;
-    line-height: 1.4;
-  }
-
-  .project-excerpt {
-    line-height: 1.6;
-  }
-
-  /* Village Cards */
-  .village-card {
-    background: white;
-    border: 2px solid #e2e8f0;
-    transition: all 0.3s ease;
-  }
-
-  .village-card:hover {
-    border-color: #3b82f6;
-    background: #f8fafc;
-    transform: translateX(5px);
-  }
-
-  .village-icon {
-    width: 40px;
-    height: 40px;
-    background: linear-gradient(135deg, #3b82f6 0%, #1e3a8a 100%);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 1.25rem;
-  }
-
-  /* Existing Accordion Styles Continue */
-
-  /* Animations */
-  @keyframes float-gentle {
-    0%,
-    100% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-8px);
-    }
-  }
-
-  /* Separator Section */
-  .separator-section-ctx7 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    padding: 2rem 0;
-  }
-
-  .separator-line-ctx7 {
-    flex: 1;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, #cbd5e1, transparent);
-    max-width: 200px;
-  }
-
-  .separator-icon-ctx7 {
-    margin: 0 1.5rem;
-    font-size: 1.5rem;
-    animation: pulse-heart 2s ease-in-out infinite;
-  }
-
-  @keyframes pulse-heart {
-    0%,
-    100% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.2);
-    }
-  }
-
-  /* Dark Mode Styles */
-  body.dark-mode .intro-section-ctx7 {
-    background: linear-gradient(135deg, #1d2433 0%, #272d3f 100%);
-  }
-
-  body.dark-mode .hero-title-ctx7 {
-    color: #edf0f5;
-  }
-
-  body.dark-mode .hero-subtitle-ctx7 {
-    color: #c5ccd6;
-  }
-
-  body.dark-mode .accordion-item-ctx7 {
-    background: #272d3f;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-  }
-
-  body.dark-mode .accordion-button-ctx7 {
-    background: #272d3f;
-    color: #edf0f5;
-  }
-
-  body.dark-mode .accordion-text-ctx7 p {
-    color: #919aaa;
-  }
-
-  body.dark-mode .accordion-button-ctx7:not(.collapsed) .accordion-text-ctx7 p {
-    color: rgba(250, 251, 252, 0.9);
-  }
-
-  body.dark-mode .accordion-body-ctx7 {
-    background: #1d2433;
-    border-top-color: #3f4758;
-  }
-
-  body.dark-mode .content-wrapper-ctx7 h1,
-  body.dark-mode .content-wrapper-ctx7 h2,
-  body.dark-mode .content-wrapper-ctx7 h3 {
-    color: #edf0f5;
-  }
-
-  body.dark-mode .content-wrapper-ctx7 p {
-    color: #c5ccd6;
-  }
-
-  /* Dark-mode impact styles removed */
-
-  body.dark-mode .project-card {
-    background: #272d3f;
-    border-color: #3f4758;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
-  }
-
-  body.dark-mode .project-card:hover {
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
-  }
-
-  body.dark-mode .project-content {
-    background: #272d3f;
-  }
-
-  body.dark-mode .project-title {
-    color: #edf0f5;
-  }
-
-  body.dark-mode .project-excerpt {
-    color: #c5ccd6;
-  }
-
-  body.dark-mode .project-meta .text-muted {
-    color: #919aaa !important;
-  }
-
-  body.dark-mode .village-card {
-    background: #272d3f;
-    border-color: #3f4758;
-  }
-
-  body.dark-mode .village-card:hover {
-    background: #30364a;
-    border-color: #5b9cff;
-  }
-
-  body.dark-mode .village-card h5 {
-    color: #edf0f5;
-  }
-
-  body.dark-mode .village-card .text-muted {
-    color: #919aaa !important;
-  }
-
-  body.dark-mode .bg-light {
-    background: #1d2433 !important;
-  }
-
-  body.dark-mode .bg-white {
-    background: #272d3f !important;
-  }
-
-  body.dark-mode .text-muted {
-    color: #919aaa !important;
-  }
-
-  body.dark-mode h2.display-5,
-  body.dark-mode h2.display-4 {
-    color: #edf0f5;
-  }
-
-  body.dark-mode .separator-line-ctx7 {
-    background: linear-gradient(90deg, transparent, #4f5768, transparent);
-  }
-
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .intro-hero-ctx7 {
-      padding: 2rem 0;
-    }
-
-    .hero-title-ctx7 {
-      font-size: 2.5rem;
-    }
-
-    .accordion-button-ctx7 {
-      padding: 1.5rem;
-    }
-
-    .accordion-body-ctx7 {
-      padding: 1.5rem;
-    }
-
-    .accordion-icon-ctx7 {
-      width: 40px;
-      height: 40px;
-      font-size: 1rem;
-    }
-
-    .accordion-text-ctx7 h3 {
-      font-size: 1.1rem;
-    }
-
-    .cta-card-ctx7 {
-      padding: 2rem !important;
-    }
-
-    .cta-buttons-ctx7 .btn {
-      width: 100%;
-      margin-bottom: 0.5rem;
-    }
-  }
-
-  @media (max-width: 576px) {
-    .hero-title-ctx7 {
-      font-size: 2rem;
-    }
-
-    .accordion-button-ctx7 {
-      padding: 1rem;
-    }
-
-    .accordion-body-ctx7 {
-      padding: 1rem;
-    }
-  }
+  .village-card { transition: all 0.3s ease; }
+  .village-card:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.15) !important; }
 </style>
-{{/* Styles moved to assets/scss/_skill-refactor.scss */}}
-
-<script>
-  // Context7 Professional Intro Enhancements
-  document.addEventListener("DOMContentLoaded", function () {
-    // Smooth accordion transitions
-    const accordionButtons = document.querySelectorAll(
-      ".accordion-button-ctx7",
-    );
-
-    accordionButtons.forEach((button) => {
-      button.addEventListener("click", function () {
-        // Add loading state
-        this.style.pointerEvents = "none";
-        setTimeout(() => {
-          this.style.pointerEvents = "auto";
-        }, 300);
-      });
-    });
-
-    // Intersection Observer for animations
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: "0px 0px -50px 0px",
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = "1";
-          entry.target.style.transform = "translateY(0)";
-        }
-      });
-    }, observerOptions);
-
-    // Observe accordion items for stagger animation
-    const accordionItems = document.querySelectorAll(".accordion-item-ctx7");
-    accordionItems.forEach((item, index) => {
-      item.style.opacity = "0";
-      item.style.transform = "translateY(30px)";
-      item.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
-      observer.observe(item);
-    });
-
-    // CTA section animation
-    const ctaSection = document.querySelector(".cta-section-ctx7");
-    if (ctaSection) {
-      ctaSection.style.opacity = "0";
-      ctaSection.style.transform = "translateY(30px)";
-      ctaSection.style.transition =
-        "opacity 0.6s ease 0.3s, transform 0.6s ease 0.3s";
-      observer.observe(ctaSection);
-    }
-
-    // Enhanced button interactions
-    const ctaButtons = document.querySelectorAll(".cta-buttons-ctx7 .btn");
-    ctaButtons.forEach((button) => {
-      button.addEventListener("mouseenter", function () {
-        this.style.transform = "translateY(-2px) scale(1.02)";
-      });
-
-      button.addEventListener("mouseleave", function () {
-        this.style.transform = "translateY(0) scale(1)";
-      });
-    });
-  });
-</script>

@@ -117,7 +117,8 @@
                     alt="{{ with $img.Title }}
                       {{ . }}
                     {{ else }}
-                      Photo {{ add $index 1 }}
+                      Photo
+                      {{ add $index 1 }}
                     {{ end }}"
                     width="{{ $thumb.Width }}"
                     height="{{ $thumb.Height }}"
