@@ -1,115 +1,537 @@
-{{/* Template: categories/category.terms.html.html
-  Purpose: Display all categories in an accordion layout
-  Context: /categories/ page - shows all category terms with their content
-
-  Features:
-  - Bootstrap accordion component (collapsible panels)
-  - Categories sorted by count (most popular first)
-  - Each category shows:
-  - Category name
-  - Count badge (number of items)
-  - "View all" link to category page
-  - List of all pages in that category
-
-  Layout:
-  - Debug borders visible (red/success colors)
-  - Centered container (lg-8, md-10)
-  - Accordion items with collapse behavior
-
-  Data Structure:
-  - .Data.Terms.ByCount: Categories sorted by item count (descending)
-  - $value.Name: Category name
-  - $value.Count: Number of items in category
-  - $value.WeightedPages: All pages tagged with this category
-
-  Note: This appears to be a development/debug template with visible borders
+{{/*
+  Template : categories/category.terms.html
+  Page     : /categories/
+  Design   : Magazine showcase — mosaic grid, per-category colour identity,
+             animated hero, glassmorphism stats, dark-mode aware.
 */}}
-
 {{ define "main" }}
 
-  {{/* Debug header - Visual separator for template identification */}}
-  <hr class="border border-danger border-1 opacity-50" />
-  <p class="fs-2 text-center badge text-bg-info">
-    layouts/categories/category.terms.html.html
-  </p>
-  <hr class="border border-danger border-2 opacity-50" />
+{{/* ── Pre-compute stats ────────────────────────────────────────────── */}}
+{{ $terms      := .Data.Terms.ByCount }}
+{{ $totalCats  := len $terms }}
+{{ $totalPages := 0 }}
+{{ range $terms }}{{ $totalPages = add $totalPages .Count }}{{ end }}
 
-  {{/* Store data context for use inside loops */}}
-  {{ $data := .Data }}
+{{/* ── HERO ─────────────────────────────────────────────────────────── */}}
+<section class="cats-hero" aria-label="En-tête catégories">
+  <div class="cats-hero__mesh" aria-hidden="true">
+    <div class="cats-hero__blob cats-hero__blob--1"></div>
+    <div class="cats-hero__blob cats-hero__blob--2"></div>
+    <div class="cats-hero__blob cats-hero__blob--3"></div>
+  </div>
 
-
-  <div class="container-flex mt-3" role="main">
-    <div
-      class="col-lg-8 mx-auto col-md-10 offset-md-1 border border-success border-5 rounded-5">
-      <article class="post-preview">
-        {{/* Bootstrap Accordion Component
-          Each category is an accordion item that can be expanded/collapsed
-        */}}
-        <div class="accordion" id="accordion">
-          {{/* Loop through all category terms sorted by count (most popular first)
-            $key: Index
-            $value: Category object with Name, Count, WeightedPages
-          */}}
-          {{ range $key, $value := .Data.Terms.ByCount }}
-            <div class="accordion-item">
-              {{/* Accordion Header - Category name with count badge
-                - Clickable button to expand/collapse
-                - Shows category name and item count
-                - Default state: collapsed
-              */}}
-              <h2 class="accordion-header" id="headingOne">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapse{{ $value.Name }}">
-                  <h4 class="accordion-header ms-2">
-                    {{ $value.Name }}
-                    {{/* Count badge - shows number of items in this category */}}
-                    <span
-                      class="badge rounded-pill text-bg-light position-absolute text-end"
-                      >{{ $value.Count }}</span
-                    >
-                  </h4>
-                </button>
-              </h2>
-
-              {{/* Accordion Body - Category content (hidden by default)
-                - "View all" link to category archive page
-                - List of all pages in this category
-              */}}
-              <div
-                id="collapse{{ $value.Name }}"
-                class="accordion-collapse collapse">
-                <div class="accordion-body">
-                  {{/* "View all" link - Goes to category archive page
-                    URL format: /categories/{category-name}/
-                    Uses urlize to create URL-safe slug
-                  */}}
-                  <a
-                    href="{{ $.Site.LanguagePrefix | absURL }}/{{ $data.Plural }}/{{ $value.Name | urlize }}/"
-                    class="post-title list-group-item view-all"
-                    >View all</a
-                  >
-
-                  {{/* List of pages in this category
-                    - Each item is a clickable link
-                    - Shows page title
-                    - Links to page permalink
-                  */}}
-                  <div class="list-group">
-                    {{ range $item := $value.WeightedPages }}
-                      <a href="{{ $item.Permalink }}" class="list-group-item"
-                        >{{ $item.Title }}</a
-                      >
-                    {{ end }}
-                  </div>
-                </div>
-              </div>
-            </div>
-          {{ end }}
+  <div class="container position-relative z-1">
+    <div class="row align-items-center gy-4">
+      <div class="col-lg-7" data-aos="fade-right">
+        <p class="cats-hero__eyebrow">
+          <i class="bi bi-grid-3x3-gap-fill me-2"></i>Thématiques
+        </p>
+        <h1 class="cats-hero__title">Nos Catégories</h1>
+        <p class="cats-hero__sub">
+          Explorez nos contenus organisés par grandes thématiques d'action.
+        </p>
+      </div>
+      <div class="col-lg-5" data-aos="fade-left" data-aos-delay="100">
+        <div class="cats-hero__stats">
+          <div class="cats-stat">
+            <span class="cats-stat__num" data-count="{{ $totalCats }}">0</span>
+            <span class="cats-stat__label">catégories</span>
+          </div>
+          <div class="cats-stat__sep" aria-hidden="true"></div>
+          <div class="cats-stat">
+            <span class="cats-stat__num" data-count="{{ $totalPages }}">0</span>
+            <span class="cats-stat__label">contenus</span>
+          </div>
         </div>
-      </article>
+      </div>
     </div>
   </div>
+</section>
+
+{{/* ── MOSAIC GRID ───────────────────────────────────────────────────── */}}
+<section class="cats-grid-section py-5">
+  <div class="container">
+    <div class="cats-mosaic" id="catsMosaic">
+
+      {{ range $i, $term := $terms }}
+      {{ $slug  := $term.Name | urlize }}
+      {{ $count := $term.Count }}
+      {{ $pct   := 0 }}
+      {{ if gt $totalPages 0 }}{{ $pct = mul (div (float $count) (float $totalPages)) 100 | int }}{{ end }}
+
+      <article class="cats-card{{ if eq $i 0 }} cats-card--featured{{ end }}"
+               data-cat="{{ $slug }}"
+               data-count="{{ $count }}"
+               data-aos="fade-up"
+               data-aos-delay="{{ mul $i 80 }}">
+
+        {{/* ── Decorative gradient backdrop ── */}}
+        <div class="cats-card__bg" aria-hidden="true">
+          <div class="cats-card__blob"></div>
+        </div>
+
+        {{/* ── Header row ── */}}
+        <div class="cats-card__head">
+          <div class="cats-card__icon" aria-hidden="true">
+            <i class="bi cats-icon"></i>
+          </div>
+          <span class="cats-card__pill">{{ $count }}
+            article{{ if ne $count 1 }}s{{ end }}</span>
+        </div>
+
+        {{/* ── Title ── */}}
+        <h2 class="cats-card__name">{{ $term.Name }}</h2>
+
+        {{/* ── Progress bar ── */}}
+        <div class="cats-card__bar-wrap" title="{{ $pct }}% du contenu total"
+             aria-label="{{ $pct }}% du contenu">
+          <div class="cats-card__bar" style="--pct:{{ $pct }}%"></div>
+        </div>
+
+        {{/* ── Recent posts preview ── */}}
+        {{ if $term.WeightedPages }}
+        <ul class="cats-card__posts list-unstyled">
+          {{ range first 3 $term.WeightedPages }}
+          <li class="cats-card__post-item">
+            <a href="{{ .RelPermalink }}" class="cats-card__post-link"
+               title="{{ .Title }}">
+              <i class="bi bi-file-text me-1" aria-hidden="true"></i>
+              {{ .Title | truncate 48 }}
+            </a>
+          </li>
+          {{ end }}
+          {{ if gt (len $term.WeightedPages) 3 }}
+          <li class="cats-card__post-more">
+            +{{ sub (len $term.WeightedPages) 3 }} autre{{ if gt (sub (len $term.WeightedPages) 3) 1 }}s{{ end }}
+          </li>
+          {{ end }}
+        </ul>
+        {{ end }}
+
+        {{/* ── CTA ── */}}
+        <a href="{{ $term.Page.RelPermalink }}"
+           class="cats-card__cta stretched-link"
+           aria-label="Voir tous les articles : {{ $term.Name }}">
+          <span>Explorer</span>
+          <i class="bi bi-arrow-right-short" aria-hidden="true"></i>
+        </a>
+
+      </article>
+      {{ end }}
+
+      {{/* Empty state */}}
+      {{ if eq $totalCats 0 }}
+      <div class="cats-empty text-center py-5 col-span-all">
+        <i class="bi bi-inbox display-1 text-muted d-block mb-3"></i>
+        <h3 class="h4">Aucune catégorie pour l'instant</h3>
+        <a href="/" class="btn btn-primary mt-3">Retour à l'accueil</a>
+      </div>
+      {{ end }}
+
+    </div><!-- /.cats-mosaic -->
+  </div>
+</section>
+
+{{/* ── STYLES ───────────────────────────────────────────────────────── */}}
+<style>
+/* ── Variables & resets ───────────────────────────────────── */
+.cats-hero,
+.cats-grid-section,
+.cats-card {
+  --cat-primary:   var(--color-primary, #667eea);
+  --cat-secondary: var(--color-primary-dark, #764ba2);
+}
+
+/* ── Hero ─────────────────────────────────────────────────── */
+.cats-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 5rem 0 4rem;
+  background: linear-gradient(135deg,
+    var(--cat-primary) 0%,
+    var(--cat-secondary) 60%,
+    #f093fb 100%);
+}
+
+/* animated mesh blobs */
+.cats-hero__mesh { position: absolute; inset: 0; pointer-events: none; }
+.cats-hero__blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: .35;
+  animation: blobDrift 18s ease-in-out infinite alternate;
+}
+.cats-hero__blob--1 {
+  width: 500px; height: 500px;
+  background: #f093fb;
+  top: -150px; left: -100px;
+  animation-duration: 22s;
+}
+.cats-hero__blob--2 {
+  width: 350px; height: 350px;
+  background: #4facfe;
+  bottom: -80px; right: 5%;
+  animation-duration: 16s;
+  animation-delay: -5s;
+}
+.cats-hero__blob--3 {
+  width: 250px; height: 250px;
+  background: #43e97b;
+  top: 40%; left: 45%;
+  animation-duration: 20s;
+  animation-delay: -10s;
+}
+@keyframes blobDrift {
+  from { transform: translate(0,0) scale(1); }
+  to   { transform: translate(40px, 30px) scale(1.1); }
+}
+
+.cats-hero__eyebrow {
+  color: rgba(255,255,255,.8);
+  font-size: .875rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  margin-bottom: .75rem;
+}
+.cats-hero__title {
+  font-size: clamp(2.25rem, 5vw, 3.75rem);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+.cats-hero__sub {
+  color: rgba(255,255,255,.8);
+  font-size: 1.125rem;
+  max-width: 480px;
+  margin-bottom: 0;
+}
+
+/* glassmorphism stat card */
+.cats-hero__stats {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  background: rgba(255,255,255,.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: 20px;
+  padding: 2rem 2.5rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,.12);
+}
+.cats-stat__num {
+  display: block;
+  font-size: 3rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1;
+}
+.cats-stat__label {
+  display: block;
+  font-size: .875rem;
+  color: rgba(255,255,255,.75);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  margin-top: .25rem;
+}
+.cats-stat__sep {
+  width: 1px;
+  height: 60px;
+  background: rgba(255,255,255,.3);
+  flex-shrink: 0;
+}
+
+/* ── Mosaic grid ──────────────────────────────────────────── */
+.cats-mosaic {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+@media (min-width: 992px) {
+  .cats-mosaic {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .cats-card--featured {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+}
+
+/* ── Card ─────────────────────────────────────────────────── */
+.cats-card {
+  position: relative;
+  border-radius: 20px;
+  padding: 2rem;
+  overflow: hidden;
+  background: var(--bs-body-bg, #fff);
+  box-shadow: 0 4px 24px rgba(0,0,0,.07);
+  border: 1px solid var(--color-border-light, #e2e8f0);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: transform .35s cubic-bezier(.4,0,.2,1),
+              box-shadow .35s cubic-bezier(.4,0,.2,1);
+  /* each card gets a colour from the JS palette below */
+  --cat-h: 240;
+}
+.cats-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 48px rgba(0,0,0,.13);
+}
+.cats-card--featured {
+  padding: 2.5rem;
+  background: linear-gradient(135deg,
+    hsl(var(--cat-h), 70%, 55%) 0%,
+    hsl(calc(var(--cat-h) + 40), 65%, 45%) 100%);
+  color: #fff;
+  border: none;
+}
+.cats-card--featured .cats-card__name,
+.cats-card--featured .cats-card__pill,
+.cats-card--featured .cats-card__post-link,
+.cats-card--featured .cats-card__post-more { color: #fff; }
+.cats-card--featured .cats-card__post-link:hover { opacity: .8; }
+.cats-card--featured .cats-card__bar { background: rgba(255,255,255,.6); }
+.cats-card--featured .cats-card__bar-wrap { background: rgba(255,255,255,.25); }
+.cats-card--featured .cats-card__cta {
+  background: rgba(255,255,255,.2);
+  color: #fff;
+  border-color: rgba(255,255,255,.4);
+}
+.cats-card--featured .cats-card__cta:hover {
+  background: rgba(255,255,255,.35);
+}
+
+/* decorative blob inside non-featured cards */
+.cats-card__bg { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.cats-card__blob {
+  position: absolute;
+  width: 200px; height: 200px;
+  border-radius: 50%;
+  background: linear-gradient(135deg,
+    hsl(var(--cat-h), 80%, 70%),
+    hsl(calc(var(--cat-h)+40), 70%, 60%));
+  opacity: .08;
+  top: -60px; right: -60px;
+  transition: transform .5s ease;
+}
+.cats-card:hover .cats-card__blob { transform: scale(1.3); }
+
+/* icon */
+.cats-card__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.cats-card__icon {
+  width: 52px; height: 52px;
+  border-radius: 14px;
+  background: linear-gradient(135deg,
+    hsl(var(--cat-h), 70%, 57%),
+    hsl(calc(var(--cat-h)+40), 65%, 47%));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px hsla(var(--cat-h), 60%, 50%, .35);
+}
+.cats-card__icon i {
+  font-size: 1.4rem;
+  color: #fff;
+}
+.cats-card--featured .cats-card__icon {
+  background: rgba(255,255,255,.25);
+  box-shadow: 0 4px 14px rgba(0,0,0,.15);
+  width: 68px; height: 68px;
+  border-radius: 18px;
+}
+.cats-card--featured .cats-card__icon i { font-size: 2rem; }
+
+/* count pill */
+.cats-card__pill {
+  font-size: .75rem;
+  font-weight: 700;
+  color: hsl(var(--cat-h), 55%, 45%);
+  background: hsl(var(--cat-h), 80%, 95%);
+  padding: .3rem .8rem;
+  border-radius: 50px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* title */
+.cats-card__name {
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin: 0;
+  color: var(--color-text-heading, #2c3e50);
+  line-height: 1.2;
+}
+.cats-card--featured .cats-card__name {
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  color: #fff;
+}
+
+/* progress bar */
+.cats-card__bar-wrap {
+  height: 6px;
+  border-radius: 999px;
+  background: var(--color-bg-lighter, #e9ecef);
+  overflow: hidden;
+}
+.cats-card__bar {
+  height: 100%;
+  width: var(--pct, 0%);
+  border-radius: 999px;
+  background: linear-gradient(90deg,
+    hsl(var(--cat-h), 70%, 55%),
+    hsl(calc(var(--cat-h)+40), 65%, 50%));
+  transition: width 1.2s cubic-bezier(.4,0,.2,1);
+}
+
+/* recent posts */
+.cats-card__posts { flex: 1; margin: 0; }
+.cats-card__post-item {
+  padding: .4rem 0;
+  border-bottom: 1px solid var(--color-border-light, #e2e8f0);
+}
+.cats-card__post-item:last-child { border-bottom: none; }
+.cats-card--featured .cats-card__post-item { border-color: rgba(255,255,255,.2); }
+.cats-card__post-link {
+  font-size: .875rem;
+  color: var(--color-text-secondary, #475569);
+  text-decoration: none;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: color .2s;
+}
+.cats-card__post-link:hover { color: hsl(var(--cat-h), 60%, 42%); }
+.cats-card__post-more {
+  font-size: .8rem;
+  color: var(--color-text-subtle, #64748b);
+  padding-top: .35rem;
+  font-style: italic;
+}
+
+/* CTA button */
+.cats-card__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  margin-top: auto;
+  padding: .55rem 1.25rem;
+  border-radius: 999px;
+  font-size: .875rem;
+  font-weight: 700;
+  border: 2px solid hsl(var(--cat-h), 55%, 80%);
+  color: hsl(var(--cat-h), 55%, 40%);
+  background: transparent;
+  text-decoration: none;
+  transition: background .25s, color .25s, border-color .25s;
+  align-self: flex-start;
+}
+.cats-card__cta i { font-size: 1.25rem; transition: transform .25s; }
+.cats-card:hover .cats-card__cta i { transform: translateX(4px); }
+.cats-card__cta:hover {
+  background: hsl(var(--cat-h), 65%, 93%);
+  border-color: hsl(var(--cat-h), 55%, 60%);
+  color: hsl(var(--cat-h), 60%, 35%);
+}
+
+/* ── Dark mode ────────────────────────────────────────────── */
+[data-bs-theme="dark"] .cats-card:not(.cats-card--featured) {
+  background: var(--bs-body-bg);
+  border-color: var(--color-border-light, #374151);
+}
+[data-bs-theme="dark"] .cats-card__name { color: var(--color-text-heading); }
+[data-bs-theme="dark"] .cats-card__post-link { color: var(--color-text-muted); }
+[data-bs-theme="dark"] .cats-card__pill {
+  background: hsl(var(--cat-h), 30%, 25%);
+  color: hsl(var(--cat-h), 70%, 75%);
+}
+
+/* ── Reduced motion ───────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .cats-hero__blob,
+  .cats-card,
+  .cats-card__bar,
+  .cats-card__cta i { animation: none; transition: none; }
+}
+</style>
+
+{{/* ── SCRIPTS ──────────────────────────────────────────────────────── */}}
+<script>
+(function () {
+  /* Per-category colour palette (hue in HSL) + Bootstrap Icon class */
+  const palette = {
+    'education':       { h: 220, icon: 'bi-mortarboard-fill' },
+    'éducation':       { h: 220, icon: 'bi-mortarboard-fill' },
+    'culture':         { h: 320, icon: 'bi-palette-fill' },
+    'sante':           { h: 158, icon: 'bi-heart-pulse-fill' },
+    'santé':           { h: 158, icon: 'bi-heart-pulse-fill' },
+    'infrastructure':  { h:  30, icon: 'bi-building-fill' },
+    'agriculture':     { h:  90, icon: 'bi-tree-fill' },
+    'sport':           { h:   0, icon: 'bi-trophy-fill' },
+    'environnement':   { h: 130, icon: 'bi-globe2' },
+    'evenements':      { h: 260, icon: 'bi-calendar-event-fill' },
+    'événements':      { h: 260, icon: 'bi-calendar-event-fill' },
+    'news':            { h: 190, icon: 'bi-newspaper' },
+  };
+  const defaults = [
+    { h: 248, icon: 'bi-bookmark-fill' },
+    { h:  12, icon: 'bi-star-fill' },
+    { h: 200, icon: 'bi-geo-alt-fill' },
+    { h: 285, icon: 'bi-lightning-fill' },
+  ];
+
+  document.querySelectorAll('.cats-card').forEach((card, idx) => {
+    const slug = card.dataset.cat || '';
+    const cfg  = palette[slug] || defaults[idx % defaults.length];
+
+    card.style.setProperty('--cat-h', cfg.h);
+    const iconEl = card.querySelector('.cats-icon');
+    if (iconEl) iconEl.className = 'bi ' + cfg.icon;
+  });
+
+  /* Animate progress bars on intersection */
+  const bars = document.querySelectorAll('.cats-card__bar');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.style.width = e.target.style.getPropertyValue('--pct') || '0%';
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: .3 });
+    bars.forEach(b => { const pct = b.style.getPropertyValue('--pct'); b.style.width = '0%'; b.style.setProperty('--pct', pct); io.observe(b); });
+  }
+
+  /* Count-up animation for hero stats */
+  document.querySelectorAll('.cats-stat__num[data-count]').forEach(el => {
+    const target = parseInt(el.dataset.count, 10);
+    if (!target) return;
+    let start = null;
+    const duration = 1200;
+    const step = ts => {
+      if (!start) start = ts;
+      const progress = Math.min((ts - start) / duration, 1);
+      el.textContent = Math.round(progress * target);
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    /* Delay until visible */
+    const io = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting) { requestAnimationFrame(step); io.disconnect(); }
+    });
+    io.observe(el);
+  });
+})();
+</script>
+
 {{ end }}
