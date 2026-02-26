@@ -6,6 +6,124 @@
 */}}
 {{ define "main" }}
 
+{{/* ── Per-category icon + hue lookup (server-side, no JS flash) ────── */}}
+{{/* Keys are urlize'd slugs. Add new categories here as needed.       */}}
+{{ $catIcon := dict
+    "education"           "bi-mortarboard-fill"
+    "éducation"           "bi-mortarboard-fill"
+    "culture"             "bi-palette-fill"
+    "sante"               "bi-heart-pulse-fill"
+    "santé"               "bi-heart-pulse-fill"
+    "infrastructure"      "bi-building-fill"
+    "agriculture"         "bi-tree-fill"
+    "sport"               "bi-trophy-fill"
+    "environnement"       "bi-globe2"
+    "evenements"          "bi-calendar-event-fill"
+    "événements"          "bi-calendar-event-fill"
+    "réunions"            "bi-calendar-event-fill"
+    "news"                "bi-newspaper"
+    "news leidimen"       "bi-newspaper"
+    "nouvelles"           "bi-newspaper"
+    "leidimen"            "bi-heart-fill"
+    "actualites"          "bi-megaphone-fill"
+    "actualités"          "bi-megaphone-fill"
+    "solidarite"          "bi-people-fill"
+    "solidarité"          "bi-people-fill"
+    "formation"           "bi-book-fill"
+    "eau"                 "bi-droplet-fill"
+    "energie"             "bi-lightning-charge-fill"
+    "énergie"             "bi-lightning-charge-fill"
+    "femmes"              "bi-gender-female"
+    "enfants"             "bi-balloon-fill"
+    "voyage"              "bi-airplane-fill"
+    "collecte"            "bi-box-seam-fill"
+    "partenariat"         "bi-handshake-fill"
+    "reunion"             "bi-people-fill"
+    "réunion"             "bi-people-fill"
+    "divers"              "bi-grid-fill"
+    "sorties"             "bi-map-fill"
+    "projets"             "bi-kanban-fill"
+    "projet"              "bi-kanban-fill"
+    "artisanat"           "bi-scissors"
+    "bienfaiteur"         "bi-award-fill"
+    "bilan"               "bi-clipboard-data-fill"
+    "bureau"              "bi-briefcase-fill"
+    "bénévole"            "bi-person-hearts"
+    "ca"                  "bi-people-fill"
+    "communication"       "bi-chat-dots-fill"
+    "développement"       "bi-graph-up-arrow"
+    "fondateur"           "bi-star-fill"
+    "gauche"              "bi-arrow-left-circle-fill"
+    "guide"               "bi-compass-fill"
+    "info"                "bi-info-circle-fill"
+    "informations"        "bi-info-circle-fill"
+    "informatique"        "bi-laptop-fill"
+    "meb"                 "bi-diagram-3-fill"
+    "membre"              "bi-person-badge-fill"
+    "réussites"           "bi-trophy-fill"
+    "sécurité alimentaire" "bi-shield-check"
+    "économie"            "bi-coin"
+}}
+{{ $catHue := dict
+    "education"           220
+    "éducation"           220
+    "culture"             320
+    "sante"               158
+    "santé"               158
+    "infrastructure"       30
+    "agriculture"          90
+    "sport"                 0
+    "environnement"       130
+    "evenements"          260
+    "événements"          260
+    "réunions"            260
+    "news"                190
+    "news leidimen"       190
+    "nouvelles"           190
+    "leidimen"              5
+    "actualites"           35
+    "actualités"           35
+    "solidarite"          200
+    "solidarité"          200
+    "formation"           235
+    "eau"                 200
+    "energie"              50
+    "énergie"              50
+    "femmes"              330
+    "enfants"              20
+    "voyage"              195
+    "collecte"             80
+    "partenariat"         170
+    "reunion"             285
+    "réunion"             285
+    "divers"              248
+    "sorties"             155
+    "projets"             210
+    "projet"              210
+    "artisanat"           280
+    "bienfaiteur"          45
+    "bilan"               195
+    "bureau"               25
+    "bénévole"            160
+    "ca"                  240
+    "communication"       195
+    "développement"       100
+    "fondateur"            55
+    "gauche"              220
+    "guide"               175
+    "info"                200
+    "informations"        200
+    "informatique"        230
+    "meb"                 270
+    "membre"              215
+    "réussites"            45
+    "sécurité alimentaire" 145
+    "économie"             70
+}}
+{{/* Fallback pool for unknown categories */}}
+{{ $fallbackIcons := slice "bi-bookmark-fill" "bi-star-fill" "bi-geo-alt-fill" "bi-lightning-fill" "bi-flag-fill" "bi-gem" }}
+{{ $fallbackHues  := slice 248 12 200 285 60 340 }}
+
 {{/* ── Pre-compute stats ────────────────────────────────────────────── */}}
 {{ $terms      := .Data.Terms.ByCount }}
 {{ $totalCats  := len $terms }}
@@ -54,14 +172,18 @@
     <div class="cats-mosaic" id="catsMosaic">
 
       {{ range $i, $term := $terms }}
-      {{ $slug  := $term.Name | urlize }}
+      {{/* Use lowercase term name directly — avoids URL-encoding issues with path.Base */}}
+      {{ $slug  := $term.Name | lower }}
       {{ $count := $term.Count }}
       {{ $pct   := 0 }}
       {{ if gt $totalPages 0 }}{{ $pct = mul (div (float $count) (float $totalPages)) 100 | int }}{{ end }}
 
+      {{/* Server-side icon + hue — fallback to pool for unknown slugs */}}
+      {{ $icon := index $catIcon $slug | default (index $fallbackIcons (mod $i (len $fallbackIcons))) }}
+      {{ $hue  := index $catHue  $slug | default (index $fallbackHues  (mod $i (len $fallbackHues))) }}
+
       <article class="cats-card{{ if eq $i 0 }} cats-card--featured{{ end }}"
-               data-cat="{{ $slug }}"
-               data-count="{{ $count }}"
+               style="--cat-h:{{ $hue }}"
                data-aos="fade-up"
                data-aos-delay="{{ mul $i 80 }}">
 
@@ -72,8 +194,8 @@
 
         {{/* ── Header row ── */}}
         <div class="cats-card__head">
-          <div class="cats-card__icon" aria-hidden="true">
-            <i class="bi cats-icon"></i>
+          <div class="cats-card__icon" aria-label="{{ $term.Name }}">
+            <i class="bi {{ $icon }}" aria-hidden="true"></i>
           </div>
           <span class="cats-card__pill">{{ $count }}
             article{{ if ne $count 1 }}s{{ end }}</span>
@@ -468,37 +590,6 @@
 {{/* ── SCRIPTS ──────────────────────────────────────────────────────── */}}
 <script>
 (function () {
-  /* Per-category colour palette (hue in HSL) + Bootstrap Icon class */
-  const palette = {
-    'education':       { h: 220, icon: 'bi-mortarboard-fill' },
-    'éducation':       { h: 220, icon: 'bi-mortarboard-fill' },
-    'culture':         { h: 320, icon: 'bi-palette-fill' },
-    'sante':           { h: 158, icon: 'bi-heart-pulse-fill' },
-    'santé':           { h: 158, icon: 'bi-heart-pulse-fill' },
-    'infrastructure':  { h:  30, icon: 'bi-building-fill' },
-    'agriculture':     { h:  90, icon: 'bi-tree-fill' },
-    'sport':           { h:   0, icon: 'bi-trophy-fill' },
-    'environnement':   { h: 130, icon: 'bi-globe2' },
-    'evenements':      { h: 260, icon: 'bi-calendar-event-fill' },
-    'événements':      { h: 260, icon: 'bi-calendar-event-fill' },
-    'news':            { h: 190, icon: 'bi-newspaper' },
-  };
-  const defaults = [
-    { h: 248, icon: 'bi-bookmark-fill' },
-    { h:  12, icon: 'bi-star-fill' },
-    { h: 200, icon: 'bi-geo-alt-fill' },
-    { h: 285, icon: 'bi-lightning-fill' },
-  ];
-
-  document.querySelectorAll('.cats-card').forEach((card, idx) => {
-    const slug = card.dataset.cat || '';
-    const cfg  = palette[slug] || defaults[idx % defaults.length];
-
-    card.style.setProperty('--cat-h', cfg.h);
-    const iconEl = card.querySelector('.cats-icon');
-    if (iconEl) iconEl.className = 'bi ' + cfg.icon;
-  });
-
   /* Animate progress bars on intersection */
   const bars = document.querySelectorAll('.cats-card__bar');
   if ('IntersectionObserver' in window) {
