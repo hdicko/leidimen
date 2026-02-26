@@ -1,12 +1,12 @@
 #!/bin/bash
 
-# Script de test de compatibilité Hugo 0.152.1
+# Script de test de compatibilité Hugo 0.157.0
 # Ce script teste toutes les fonctionnalités avant déploiement
 
 set -e
 
 echo "═══════════════════════════════════════════════════════════════"
-echo "  Test de Compatibilité Hugo 0.152.1 - Projet Leidimen"
+echo "  Test de Compatibilité Hugo 0.157.0 - Projet Leidimen"
 echo "═══════════════════════════════════════════════════════════════"
 echo ""
 
@@ -33,10 +33,10 @@ test_error() {
 # 1. Vérifier la version Hugo
 test_step "1. Vérification de la version Hugo..."
 HUGO_VERSION=$(./node_modules/.bin/hugo/hugo version | grep -oP 'v\d+\.\d+\.\d+')
-if [[ "$HUGO_VERSION" == "v0.152.1" ]]; then
+if [[ "$HUGO_VERSION" == "v0.157.0" ]]; then
     test_success "Hugo version correcte: $HUGO_VERSION"
 else
-    test_error "Version Hugo incorrecte: $HUGO_VERSION (attendu: v0.152.1)"
+    test_error "Version Hugo incorrecte: $HUGO_VERSION (attendu: v0.157.0)"
 fi
 echo ""
 

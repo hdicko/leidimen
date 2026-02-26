@@ -27,7 +27,7 @@
     "hugo-installer": "^4.0.1"
   },
   "otherDependencies": {
-    "hugo": "0.152.1"
+    "hugo": "0.157.0"
   },
   "directories": {
     "man": "man"

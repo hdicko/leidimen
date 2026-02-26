@@ -1,6 +1,9 @@
 // Custom.scss
 // Option A: Include all of Bootstrap
 
+// CSS custom properties (theme variables) — must come before all other imports
+@import "variables";
+
 // Include any default variable overrides here (though functions won't be available)
 
 @import "../../node_modules/bootstrap/scss/bootstrap";
@@ -8,6 +11,8 @@
 // Then add additional custom code here
 @import "skill-refactor";
 @import "partials/intro-improved";
+@import "documents";
+@import "components";
 
 // Accessibility: Skip navigation link
 .skip-link {

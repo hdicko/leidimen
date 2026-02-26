@@ -32,7 +32,7 @@
 
   // Loading placeholder
   &[data-loading] {
-    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background: linear-gradient(90deg, var(--color-bg-skeleton) 25%, var(--color-bg-skeleton-dark) 50%, var(--color-bg-skeleton) 75%);
     background-size: 200% 100%;
     animation: loading 1.5s infinite;
   }
@@ -78,7 +78,7 @@
   h1 {
     font-size: 2.5rem;
     font-weight: 700;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -86,7 +86,7 @@
   }
 
   .lead {
-    color: #4a5568;
+    color: var(--color-text-muted);
     font-size: 1.25rem;
     line-height: 1.6;
   }
@@ -118,14 +118,14 @@
 .gallery-loading {
   text-align: center;
   padding: 3rem;
-  color: #718096;
+  color: var(--color-text-gray-medium);
 
   .spinner {
     display: inline-block;
     width: 40px;
     height: 40px;
-    border: 4px solid #f3f4f6;
-    border-top-color: #667eea;
+    border: 4px solid var(--color-bg-gray-light);
+    border-top-color: var(--color-primary);
     border-radius: 50%;
     animation: spin 1s linear infinite;
   }

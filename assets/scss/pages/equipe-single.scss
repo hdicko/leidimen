@@ -69,7 +69,7 @@
 .date-circle {
   width: 80px;
   height: 80px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -121,8 +121,8 @@
   height: 60px;
   background: linear-gradient(
     180deg,
-    #667eea 0%,
-    #764ba2 50%,
+    var(--color-primary) 0%,
+    var(--color-primary-dark) 50%,
     transparent 100%
   );
   margin-top: 10px;
@@ -144,7 +144,7 @@
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   position: relative;
   overflow: hidden;
-  border-left: 5px solid #667eea;
+  border-left: 5px solid var(--color-primary);
 
   &::before {
     content: "";
@@ -153,7 +153,7 @@
     left: 0;
     right: 0;
     height: 3px;
-    background: linear-gradient(90deg, #667eea, #764ba2);
+    background: linear-gradient(90deg, var(--color-primary), var(--color-primary-dark));
   }
 
   &:hover {
@@ -180,7 +180,7 @@
 .experience-icon {
   width: 50px;
   height: 50px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
   border-radius: 15px;
   display: flex;
   align-items: center;
@@ -207,12 +207,12 @@
   margin: 0 0 5px 0;
   font-size: 1.3rem;
   font-weight: 700;
-  color: #2d3748;
+  color: var(--color-text-body);
   line-height: 1.3;
 }
 
 .experience-category {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
   color: white;
   padding: 4px 12px;
   border-radius: 20px;
@@ -223,7 +223,7 @@
 }
 
 .experience-content {
-  color: #4a5568;
+  color: var(--color-text-muted);
   line-height: 1.7;
 }
 
@@ -237,7 +237,7 @@
   margin-top: 20px;
 
   h6 {
-    color: #2d3748;
+    color: var(--color-text-body);
     font-weight: 700;
     margin-bottom: 10px;
     display: flex;
@@ -254,7 +254,7 @@
 
   li {
     margin-bottom: 5px;
-    color: #4a5568;
+    color: var(--color-text-muted);
   }
 }
 
@@ -265,17 +265,17 @@
 }
 
 .skill-tag {
-  background: #f7fafc;
-  color: #4a5568;
+  background: var(--color-bg-surface-alt);
+  color: var(--color-text-muted);
   padding: 6px 12px;
   border-radius: 20px;
   font-size: 0.85rem;
   font-weight: 500;
-  border: 1px solid #e2e8f0;
+  border: 1px solid var(--color-border-light);
   transition: all 0.3s ease;
 
   &:hover {
-    background: #667eea;
+    background: var(--color-primary);
     color: white;
     transform: translateY(-2px);
   }
@@ -299,7 +299,7 @@
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: #667eea;
+    background: var(--color-primary);
     animation: pulse 2s infinite;
 
     &:nth-child(2) {
@@ -328,7 +328,7 @@
 // CONTENT SUBTITLE
 // ========================================
 .content-subtitle {
-  color: #718096;
+  color: var(--color-text-gray-medium);
   font-size: 0.95rem;
   margin-top: 5px;
   font-style: italic;
@@ -338,11 +338,11 @@
 // ACTION BUTTONS
 // ========================================
 .action-btn-ctx7 {
-  background-color: #f0f8ff;
-  color: #0056b3;
+  background-color: var(--color-link-bg-hover);
+  color: var(--color-link);
 
   &:hover {
-    background-color: #e6f2ff;
+    background-color: var(--color-link-bg);
   }
 }
 
@@ -350,23 +350,23 @@
 // MODERN DETAILS/SUMMARY STYLING
 // ========================================
 details {
-  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  background: linear-gradient(135deg, var(--color-white) 0%, var(--color-bg-surface) 100%);
   border-radius: 16px;
   padding: 0;
   margin: 2rem 0;
-  border: 2px solid #e2e8f0;
+  border: 2px solid var(--color-border-light);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
   overflow: hidden;
 
   &:hover {
-    border-color: #667eea;
+    border-color: var(--color-primary);
     box-shadow: 0 8px 30px rgba(102, 126, 234, 0.15);
     transform: translateY(-2px);
   }
 
   &[open] {
-    border-color: #667eea;
+    border-color: var(--color-primary);
     box-shadow: 0 10px 40px rgba(102, 126, 234, 0.2);
 
     summary::after {
@@ -389,8 +389,8 @@ summary {
   padding: 1.5rem 2rem;
   font-size: 1.25rem;
   font-weight: 600;
-  color: #1e293b;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: var(--color-text-dark);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -410,7 +410,7 @@ summary {
   &::after {
     content: "▼";
     font-size: 1rem;
-    color: #667eea;
+    color: var(--color-primary);
     transition: transform 0.3s ease;
     margin-left: 1rem;
     flex-shrink: 0;
@@ -431,7 +431,7 @@ summary {
     top: 0;
     bottom: 0;
     width: 4px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
     border-radius: 16px 0 0 16px;
     transform: scaleY(0);
     transition: transform 0.3s ease;
@@ -449,13 +449,13 @@ details .details-content {
   animation: slideDown 0.3s ease-out;
 
   h2 {
-    color: #1e293b;
+    color: var(--color-text-dark);
     font-weight: 700;
     font-size: 1.5rem;
     margin-top: 1.5rem;
     margin-bottom: 1rem;
     padding-bottom: 0.5rem;
-    border-bottom: 3px solid #667eea;
+    border-bottom: 3px solid var(--color-primary);
     display: inline-block;
 
     &:first-child {
@@ -468,7 +468,7 @@ details .details-content {
   }
 
   p {
-    color: #475569;
+    color: var(--color-text-secondary);
     line-height: 1.8;
     margin-bottom: 1rem;
   }
@@ -479,33 +479,33 @@ details .details-content {
   }
 
   li {
-    color: #475569;
+    color: var(--color-text-secondary);
     line-height: 1.8;
     margin-bottom: 0.5rem;
     position: relative;
     padding-left: 0.5rem;
 
     &::marker {
-      color: #667eea;
+      color: var(--color-primary);
       font-weight: bold;
     }
   }
 
   strong {
-    color: #1e293b;
+    color: var(--color-text-dark);
     font-weight: 600;
   }
 
   a {
-    color: #667eea;
+    color: var(--color-primary);
     text-decoration: none;
     font-weight: 500;
     transition: all 0.3s ease;
     border-bottom: 2px solid transparent;
 
     &:hover {
-      color: #764ba2;
-      border-bottom-color: #764ba2;
+      color: var(--color-primary-dark);
+      border-bottom-color: var(--color-primary-dark);
     }
   }
 

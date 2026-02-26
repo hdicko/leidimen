@@ -5,23 +5,23 @@
 // MODERN DETAILS/SUMMARY STYLING FOR POSTS
 // ========================================
 details {
-  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  background: linear-gradient(135deg, var(--color-white) 0%, var(--color-bg-surface) 100%);
   border-radius: 16px;
   padding: 0;
   margin: 2rem 0;
-  border: 2px solid #e2e8f0;
+  border: 2px solid var(--color-border-light);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
   overflow: hidden;
 
   &:hover {
-    border-color: #667eea;
+    border-color: var(--color-primary);
     box-shadow: 0 8px 30px rgba(102, 126, 234, 0.15);
     transform: translateY(-2px);
   }
 
   &[open] {
-    border-color: #667eea;
+    border-color: var(--color-primary);
     box-shadow: 0 10px 40px rgba(102, 126, 234, 0.2);
 
     summary::after {
@@ -44,8 +44,8 @@ summary {
   padding: 1.5rem 2rem;
   font-size: 1.25rem;
   font-weight: 600;
-  color: #1e293b;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: var(--color-text-dark);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -65,7 +65,7 @@ summary {
   &::after {
     content: "▼";
     font-size: 1rem;
-    color: #667eea;
+    color: var(--color-primary);
     transition: transform 0.3s ease;
     margin-left: 1rem;
     flex-shrink: 0;
@@ -86,7 +86,7 @@ summary {
     top: 0;
     bottom: 0;
     width: 4px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
     border-radius: 16px 0 0 16px;
     transform: scaleY(0);
     transition: transform 0.3s ease;
@@ -104,13 +104,13 @@ details .details-content {
   animation: slideDown 0.3s ease-out;
 
   h2 {
-    color: #1e293b;
+    color: var(--color-text-dark);
     font-weight: 700;
     font-size: 1.5rem;
     margin-top: 1.5rem;
     margin-bottom: 1rem;
     padding-bottom: 0.5rem;
-    border-bottom: 3px solid #667eea;
+    border-bottom: 3px solid var(--color-primary);
     display: inline-block;
 
     &:first-child {
@@ -123,7 +123,7 @@ details .details-content {
   }
 
   p {
-    color: #475569;
+    color: var(--color-text-secondary);
     line-height: 1.8;
     margin-bottom: 1rem;
   }
@@ -134,33 +134,33 @@ details .details-content {
   }
 
   li {
-    color: #475569;
+    color: var(--color-text-secondary);
     line-height: 1.8;
     margin-bottom: 0.5rem;
     position: relative;
     padding-left: 0.5rem;
 
     &::marker {
-      color: #667eea;
+      color: var(--color-primary);
       font-weight: bold;
     }
   }
 
   strong {
-    color: #1e293b;
+    color: var(--color-text-dark);
     font-weight: 600;
   }
 
   a {
-    color: #667eea;
+    color: var(--color-primary);
     text-decoration: none;
     font-weight: 500;
     transition: all 0.3s ease;
     border-bottom: 2px solid transparent;
 
     &:hover {
-      color: #764ba2;
-      border-bottom-color: #764ba2;
+      color: var(--color-primary-dark);
+      border-bottom-color: var(--color-primary-dark);
     }
   }
 
@@ -196,24 +196,24 @@ details .details-content {
   }
 
   code {
-    background-color: #f8f9fa;
+    background-color: var(--color-bg-light);
     padding: 0.2rem 0.4rem;
     border-radius: 3px;
     font-size: 0.9em;
   }
 
   pre {
-    background-color: #f8f9fa;
+    background-color: var(--color-bg-light);
     padding: 1rem;
     border-radius: 8px;
     overflow-x: auto;
   }
 
   blockquote {
-    border-left: 4px solid #667eea;
+    border-left: 4px solid var(--color-primary);
     padding-left: 1.5rem;
     margin: 1.5rem 0;
     font-style: italic;
-    color: #4a5568;
+    color: var(--color-text-muted);
   }
 }

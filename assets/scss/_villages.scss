@@ -1,0 +1,104 @@
+// Village page styles
+
+.village-page {
+  min-height: 70vh;
+}
+
+.village-header {
+  border-bottom: 3px solid var(--color-border-light);
+  padding-bottom: 2rem;
+}
+
+.village-content h2 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: var(--color-text-dark);
+  font-weight: 700;
+}
+
+.village-content h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: var(--color-text-secondary);
+  font-weight: 600;
+}
+
+.village-content p {
+  line-height: 1.8;
+  color: var(--color-text-secondary);
+  margin-bottom: 1rem;
+}
+
+.village-content ul,
+.village-content ol {
+  margin-bottom: 1.5rem;
+  margin-left: 1.5rem;
+}
+
+.village-content li {
+  margin-bottom: 0.5rem;
+  color: var(--color-text-secondary);
+}
+
+.village-meta {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.related-posts .card {
+  transition: all 0.3s ease;
+}
+
+.related-posts .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
+}
+
+.related-posts .card-title {
+  font-weight: 700;
+  color: var(--color-text-dark);
+}
+
+/* Dark mode support */
+body.dark-mode .village-header {
+  border-bottom-color: var(--color-dark-border);
+}
+
+body.dark-mode .village-content h2,
+body.dark-mode .village-content h3 {
+  color: var(--color-dark-text);
+}
+
+body.dark-mode .village-content p,
+body.dark-mode .village-content li {
+  color: var(--color-dark-text-muted);
+}
+
+body.dark-mode .related-posts .card {
+  background-color: var(--color-dark-surface);
+  border-color: var(--color-dark-border);
+}
+
+body.dark-mode .related-posts .card-title {
+  color: var(--color-dark-text);
+}
+
+body.dark-mode .related-posts .card-text {
+  color: var(--color-dark-text-subtle) !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .village-header {
+    padding-bottom: 1.5rem;
+  }
+
+  .village-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .village-page {
+    min-height: auto;
+  }
+}

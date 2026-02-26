@@ -129,6 +129,10 @@ disableLatLong = false
   author = ""
   email = "association@leidimen.com"
   address = "Association Leidimen, 14 rue des Pommiers, 91070 Bondoufle."
+  addressStreet = "14 rue des Pommiers"
+  addressLocality = "Bondoufle"
+  addressPostalCode = "91070"
+  addressCountry = "FR"
   tel= "+33 6 XX XX XX XX"
   avatarurl = "/images/leidimen-logo.jpg"
   
@@ -292,7 +296,7 @@ disableLatLong = false
       keepWhitespace = false
     [minify.tdewolff.css]
       precision = 1
-      keepCSS2 = true
+      version = 4
 
 # Build configuration for performance
 [build]
