@@ -88,7 +88,7 @@
                   </div>
                   <div
                     class="stat-number"
-                    data-count="{{ now.Year | sub 2007 }}">
+                    data-count="{{ sub now.Year 2007 }}">
                     0
                   </div>
                   <div class="stat-label">Années d'Expérience</div>
@@ -357,7 +357,7 @@
                 <div class="member-stats">
                   <div class="stat">
                     <span class="stat-number"
-                      >{{ now.Year | sub $member.Date.Year }}</span
+                      >{{ sub now.Year $member.Date.Year }}</span
                     >
                     <span class="stat-label">années</span>
                   </div>
@@ -773,15 +773,16 @@
     /* Filter Section */
     .filter-section {
       padding: 3rem 0;
-      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     .filter-container {
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.05);
       -webkit-backdrop-filter: blur(10px);
       backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
       border-radius: 24px;
     }
 
@@ -801,30 +802,36 @@
       position: absolute;
       left: 1.5rem;
       z-index: 2;
-      color: #6b7280;
+      color: rgba(255, 255, 255, 0.5);
       font-size: 1.25rem;
     }
 
     .search-input {
       padding: 1rem 1rem 1rem 4rem;
-      border: 2px solid transparent;
+      border: 2px solid rgba(255, 255, 255, 0.15);
       border-radius: 50px;
-      background: rgba(255, 255, 255, 0.9);
+      background: rgba(255, 255, 255, 0.08);
+      color: white;
       font-size: 1.1rem;
       transition: all 0.3s ease;
     }
 
+    .search-input::placeholder {
+      color: rgba(255, 255, 255, 0.4);
+    }
+
     .search-input:focus {
       border-color: var(--context7-primary);
-      box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
-      background: white;
+      box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2);
+      background: rgba(255, 255, 255, 0.12);
+      outline: none;
     }
 
     .search-clear {
       position: absolute;
       right: 1.5rem;
       cursor: pointer;
-      color: #6b7280;
+      color: rgba(255, 255, 255, 0.5);
       font-size: 1.25rem;
       transition: color 0.2s ease;
     }
@@ -844,10 +851,10 @@
       align-items: center;
       gap: 0.5rem;
       padding: 0.75rem 1.5rem;
-      border: 2px solid #e5e7eb;
+      border: 2px solid rgba(255, 255, 255, 0.2);
       border-radius: 50px;
-      background: white;
-      color: #374151;
+      background: rgba(255, 255, 255, 0.07);
+      color: rgba(255, 255, 255, 0.8);
       font-weight: 500;
       transition: all 0.3s ease;
       cursor: pointer;
@@ -855,18 +862,21 @@
 
     .filter-pill:hover {
       border-color: var(--context7-primary);
+      background: rgba(99, 102, 241, 0.15);
+      color: white;
       transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 12px rgba(99, 102, 241, 0.25);
     }
 
     .filter-pill.active {
       background: var(--context7-primary);
       border-color: var(--context7-primary);
       color: white;
+      box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
     }
 
     .pill-count {
-      background: rgba(0, 0, 0, 0.1);
+      background: rgba(255, 255, 255, 0.15);
       padding: 0.25rem 0.5rem;
       border-radius: 12px;
       font-size: 0.75rem;
@@ -915,11 +925,11 @@
 
     /* Context7 Member Cards */
     .context7-member-card {
-      background: rgba(30, 41, 59, 0.5);
+      background: rgba(30, 41, 59, 0.85);
       border-radius: 20px;
       overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
       -webkit-backdrop-filter: blur(20px);
       backdrop-filter: blur(20px);
       transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -928,7 +938,8 @@
 
     .context7-member-card:hover {
       transform: translateY(-8px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+      border-color: rgba(99, 102, 241, 0.4);
     }
 
     .card-bg-effects {
@@ -1187,13 +1198,13 @@
     .btn-secondary-action {
       width: 48px;
       height: 48px;
-      border: 2px solid #e5e7eb;
-      background: white;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.08);
       border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #6b7280;
+      color: rgba(255, 255, 255, 0.7);
       transition: all 0.3s ease;
       cursor: pointer;
     }
@@ -1201,7 +1212,7 @@
     .btn-secondary-action:hover {
       border-color: var(--context7-primary);
       color: var(--context7-primary);
-      background: #f8fafc;
+      background: rgba(99, 102, 241, 0.15);
     }
 
     /* No Results */
@@ -1217,17 +1228,17 @@
 
     .no-results-icon {
       font-size: 4rem;
-      color: #d1d5db;
+      color: rgba(255, 255, 255, 0.3);
       margin-bottom: 1.5rem;
     }
 
     .no-results h3 {
-      color: var(--context7-dark);
+      color: rgba(255, 255, 255, 0.9);
       margin-bottom: 1rem;
     }
 
     .no-results p {
-      color: #6b7280;
+      color: rgba(255, 255, 255, 0.6);
       margin-bottom: 2rem;
     }
 
