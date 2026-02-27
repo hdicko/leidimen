@@ -190,9 +190,12 @@
     margin: 0.5rem 0;
   }
 
-  footer {
-    color: rgba(255, 255, 255, 0.5);
+  .quote-author {
+    display: block;
+    color: #a5b4fc;
     font-size: 0.875rem;
+    font-style: normal;
+    margin-top: 0.25rem;
   }
 }
 
