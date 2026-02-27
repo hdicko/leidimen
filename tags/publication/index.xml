@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Publication on Leidimen - Association de Solidarité Mali</title><link>https://hdicko.github.io/leidimen/tags/publication/</link><description>Recent content in Publication on Leidimen - Association de Solidarité Mali</description><generator>Hugo</generator><language>fr-FR</language><lastBuildDate>Wed, 25 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://hdicko.github.io/leidimen/tags/publication/index.xml" rel="self" type="application/rss+xml"/><item><title>Comment créer un post étape par étape en utilisant l’app web leidimen-cms</title><link>https://hdicko.github.io/leidimen/posts/2026/comment-creer-un-post-etape-par-etape-en-utilisant-l-app-web-leidimen-cms/</link><pubDate>Wed, 25 Feb 2026 00:00:00 +0000</pubDate><guid>https://hdicko.github.io/leidimen/posts/2026/comment-creer-un-post-etape-par-etape-en-utilisant-l-app-web-leidimen-cms/</guid><description>&lt;p&gt;Voici un guide simple pour créer et publier un article avec l’application web &lt;strong&gt;leidimen-cms&lt;/strong&gt;. Aucune compétence technique n’est requise.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="-pré-requis-à-faire-une-seule-fois"&gt;✅ Pré-requis (à faire une seule fois)
+ &lt;a href="#-pr%c3%a9-requis-%c3%a0-faire-une-seule-fois"&gt;¶&lt;/a&gt;
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Avoir un compte GitHub&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Rendez‑vous sur &lt;a href="https://github.com/" target="_blank" rel="noopener"&gt;https://github.com/&lt;/a&gt; et créez un compte si besoin.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Créer un token GitHub&lt;/strong&gt; (clé d’accès)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Ouvrez &lt;a href="https://github.com/settings/tokens" target="_blank" rel="noopener"&gt;https://github.com/settings/tokens&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Cliquez sur &lt;strong&gt;Generate new token&lt;/strong&gt; (ou &lt;strong&gt;Fine‑grained token&lt;/strong&gt;)&lt;/li&gt;
+&lt;li&gt;Donnez un nom (ex. &lt;em&gt;leidimen‑cms&lt;/em&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Cochez l’accès &lt;code&gt;repo&lt;/code&gt;&lt;/strong&gt; (obligatoire)&lt;/li&gt;
+&lt;li&gt;Copiez le token et gardez‑le précieusement&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Avoir l’application leidimen‑cms sur votre ordinateur&lt;/strong&gt;&lt;/p&gt;</description></item></channel></rss>

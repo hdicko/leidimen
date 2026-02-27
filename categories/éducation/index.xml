@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Éducation on Leidimen - Association de Solidarité Mali</title><link>https://hdicko.github.io/leidimen/categories/%C3%A9ducation/</link><description>Recent content in Éducation on Leidimen - Association de Solidarité Mali</description><generator>Hugo</generator><language>fr-FR</language><lastBuildDate>Tue, 17 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://hdicko.github.io/leidimen/categories/%C3%A9ducation/index.xml" rel="self" type="application/rss+xml"/><item><title>Préparer nos enfants à l'ère de l'intelligence artificielle</title><link>https://hdicko.github.io/leidimen/posts/2026/preparer-nos-enfants-a-l-ere-de-l-intelligence-artificielle/</link><pubDate>Tue, 17 Feb 2026 00:00:00 +0000</pubDate><guid>https://hdicko.github.io/leidimen/posts/2026/preparer-nos-enfants-a-l-ere-de-l-intelligence-artificielle/</guid><description>&lt;h2 id="une-révolution-technologique-qui-touche-le-monde-entier"&gt;Une révolution technologique qui touche le monde entier
+ &lt;a href="#une-r%c3%a9volution-technologique-qui-touche-le-monde-entier"&gt;¶&lt;/a&gt;
+&lt;/h2&gt;&lt;p&gt;L&amp;rsquo;intelligence artificielle (IA) n&amp;rsquo;est plus une simple innovation technologique réservée aux grandes métropoles. Elle transforme déjà notre quotidien, de la santé à l&amp;rsquo;éducation, en passant par l&amp;rsquo;agriculture. Dans nos villages de Douentza, Dorool et Diona, nous devons dès maintenant réfléchir à la manière d&amp;rsquo;initier nos enfants à cette révolution numérique.&lt;/p&gt;
+&lt;h2 id="pourquoi-lia-est-importante-pour-nos-enfants"&gt;Pourquoi l&amp;rsquo;IA est importante pour nos enfants
+ &lt;a href="#pourquoi-lia-est-importante-pour-nos-enfants"&gt;¶&lt;/a&gt;
+&lt;/h2&gt;&lt;p&gt;L&amp;rsquo;intelligence artificielle sera au cœur des métiers de demain. Nos enfants, qu&amp;rsquo;ils deviennent agriculteurs, enseignants, médecins ou entrepreneurs, utiliseront des outils assistés par l&amp;rsquo;IA. Il est essentiel qu&amp;rsquo;ils ne soient pas de simples utilisateurs passifs, mais des acteurs informés et critiques de cette technologie.&lt;/p&gt;</description></item><item><title>Nouveau projet d'extension de l'école de Dorool</title><link>https://hdicko.github.io/leidimen/posts/2026/projet-ecole-dorool-janvier/</link><pubDate>Mon, 26 Jan 2026 00:00:00 +0000</pubDate><guid>https://hdicko.github.io/leidimen/posts/2026/projet-ecole-dorool-janvier/</guid><description>&lt;h2 id="un-nouveau-chapitre-pour-léducation-à-dorool"&gt;Un nouveau chapitre pour l&amp;rsquo;éducation à Dorool
+ &lt;a href="#un-nouveau-chapitre-pour-l%c3%a9ducation-%c3%a0-dorool"&gt;¶&lt;/a&gt;
+&lt;/h2&gt;&lt;p&gt;Nous sommes heureux d&amp;rsquo;annoncer le lancement d&amp;rsquo;un nouveau projet d&amp;rsquo;extension de l&amp;rsquo;école primaire de Dorool. Ce projet ambitieux vise à construire deux nouvelles salles de classe et à rénover les installations existantes.&lt;/p&gt;
+&lt;h3 id="objectifs-du-projet"&gt;Objectifs du projet
+ &lt;a href="#objectifs-du-projet"&gt;¶&lt;/a&gt;
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Construction de 2 nouvelles salles de classe&lt;/strong&gt; pour accueillir 60 élèves supplémentaires&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Rénovation des installations sanitaires&lt;/strong&gt; pour améliorer l&amp;rsquo;hygiène&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Fourniture de matériel scolaire&lt;/strong&gt; (livres, cahiers, crayons) pour tous les élèves&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Formation des enseignants&lt;/strong&gt; aux nouvelles méthodes pédagogiques&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="contexte"&gt;Contexte
+ &lt;a href="#contexte"&gt;¶&lt;/a&gt;
+&lt;/h3&gt;&lt;p&gt;L&amp;rsquo;école de Dorool accueille actuellement 180 élèves dans des conditions difficiles. Les salles de classe sont surpeuplées avec parfois plus de 60 élèves par classe. Cette extension permettra de diviser les effectifs et d&amp;rsquo;offrir de meilleures conditions d&amp;rsquo;apprentissage.&lt;/p&gt;</description></item><item><title>Créer un Nouveau Prompt pour la Création de Blog</title><link>https://hdicko.github.io/leidimen/posts/2026/creer-prompt-vscode-claude/</link><pubDate>Wed, 21 Jan 2026 00:00:00 +0000</pubDate><guid>https://hdicko.github.io/leidimen/posts/2026/creer-prompt-vscode-claude/</guid><description>&lt;h2 id="introduction"&gt;Introduction
+ &lt;a href="#introduction"&gt;¶&lt;/a&gt;
+&lt;/h2&gt;&lt;p&gt;La création de prompts personnalisés dans Visual Studio Code avec Claude Sonnet 4.5 permet d&amp;rsquo;automatiser et d&amp;rsquo;optimiser la création de contenus pour notre blog. Ce guide vous montre comment créer vos propres commandes réutilisables.&lt;/p&gt;
+&lt;h2 id="quest-ce-quun-prompt-personnalisé-"&gt;Qu&amp;rsquo;est-ce qu&amp;rsquo;un Prompt Personnalisé ?
+ &lt;a href="#quest-ce-quun-prompt-personnalis%c3%a9-"&gt;¶&lt;/a&gt;
+&lt;/h2&gt;&lt;p&gt;Un prompt personnalisé est une instruction réutilisable que vous pouvez sauvegarder et rappeler facilement dans VS Code. Il permet de standardiser des tâches répétitives comme la création d&amp;rsquo;articles de blog avec des structures cohérentes.&lt;/p&gt;</description></item><item><title>Intelligence Artificielle et Développement en Milieu Rural</title><link>https://hdicko.github.io/leidimen/posts/2026/ai-expert-post/</link><pubDate>Wed, 21 Jan 2026 00:00:00 +0000</pubDate><guid>https://hdicko.github.io/leidimen/posts/2026/ai-expert-post/</guid><description>&lt;h2 id="introduction"&gt;Introduction
+ &lt;a href="#introduction"&gt;¶&lt;/a&gt;
+&lt;/h2&gt;&lt;p&gt;L&amp;rsquo;intelligence artificielle représente une opportunité unique pour améliorer l&amp;rsquo;efficacité de nos projets de solidarité internationale.&lt;/p&gt;
+&lt;h2 id="le-potentiel-de-lia"&gt;Le Potentiel de l&amp;rsquo;IA
+ &lt;a href="#le-potentiel-de-lia"&gt;¶&lt;/a&gt;
+&lt;/h2&gt;&lt;p&gt;Les technologies d&amp;rsquo;IA peuvent nous aider dans plusieurs domaines :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Analyse de données&lt;/strong&gt; : Optimiser l&amp;rsquo;allocation des ressources&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Communication&lt;/strong&gt; : Faciliter les échanges multilingues&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Planification&lt;/strong&gt; : Améliorer la coordination des projets&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Formation&lt;/strong&gt; : Créer des contenus éducatifs adaptés&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="applications-pratiques"&gt;Applications Pratiques
+ &lt;a href="#applications-pratiques"&gt;¶&lt;/a&gt;
+&lt;/h2&gt;&lt;p&gt;Notre association explore comment ces technologies peuvent soutenir concrètement nos actions sur le terrain.&lt;/p&gt;</description></item><item><title>claude AI</title><link>https://hdicko.github.io/leidimen/posts/2025/claude-ai/</link><pubDate>Tue, 04 Nov 2025 00:00:00 +0000</pubDate><guid>https://hdicko.github.io/leidimen/posts/2025/claude-ai/</guid><description>&lt;p&gt;end&lt;/p&gt;</description></item><item><title>this is from leidimen-cms web appli</title><link>https://hdicko.github.io/leidimen/posts/2025/this-is-from-leidimen-cms-web-appli/</link><pubDate>Tue, 04 Nov 2025 00:00:00 +0000</pubDate><guid>https://hdicko.github.io/leidimen/posts/2025/this-is-from-leidimen-cms-web-appli/</guid><description>&lt;h2 id="-utilisation"&gt;📖 Utilisation
+ &lt;a href="#-utilisation"&gt;¶&lt;/a&gt;
+&lt;/h2&gt;&lt;h3 id="créer-un-nouveau-post"&gt;Créer un nouveau post
+ &lt;a href="#cr%c3%a9er-un-nouveau-post"&gt;¶&lt;/a&gt;
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Remplir le formulaire avec toutes les informations requises :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Titre&lt;/strong&gt; : Titre de l&amp;rsquo;article&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Date&lt;/strong&gt; : Date de publication&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Villages&lt;/strong&gt; : Sélectionner un ou plusieurs villages (Ctrl+clic)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Catégorie&lt;/strong&gt; : Éducation, Santé, Infrastructure, etc.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Mood&lt;/strong&gt; : Heureux, Triste, Inspiré, Motivé, Reconnaissant&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Tags&lt;/strong&gt; : Mots-clés séparés par virgules&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Description&lt;/strong&gt; : Résumé SEO (150-160 caractères)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Image&lt;/strong&gt; : Chemin vers l&amp;rsquo;image de couverture&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Contenu&lt;/strong&gt; : Corps de l&amp;rsquo;article en Markdown&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Prévisualiser&lt;/strong&gt; (optionnel) pour vérifier le Markdown généré&lt;/p&gt;</description></item><item><title>Mariam Dicko</title><link>https://hdicko.github.io/leidimen/equipe/mariam-dicko/</link><pubDate>Tue, 19 Aug 2025 10:00:00 +0000</pubDate><guid>https://hdicko.github.io/leidimen/equipe/mariam-dicko/</guid><description>&lt;h2 id="présentation"&gt;Présentation
+ &lt;a href="#pr%c3%a9sentation"&gt;¶&lt;/a&gt;
+&lt;/h2&gt;&lt;p&gt;Mariam Dicko est un membre dévoué du Conseil d&amp;rsquo;Administration de l&amp;rsquo;Association Leidimen depuis 2020. Forte de son expérience dans l&amp;rsquo;enseignement et sa maîtrise parfaite de l&amp;rsquo;anglais, elle apporte une perspective internationale précieuse aux projets de développement de l&amp;rsquo;association au Mali.&lt;/p&gt;
+&lt;h3 id="parcours-professionnel"&gt;Parcours professionnel
+ &lt;a href="#parcours-professionnel"&gt;¶&lt;/a&gt;
+&lt;/h3&gt;&lt;p&gt;Diplômée en Sciences de l&amp;rsquo;Éducation de l&amp;rsquo;Université de Paris, Mariam a consacré sa carrière à l&amp;rsquo;enseignement de l&amp;rsquo;anglais dans le secondaire. Elle a également participé à plusieurs programmes d&amp;rsquo;échange éducatif entre la France et l&amp;rsquo;Afrique de l&amp;rsquo;Ouest, ce qui lui a donné une compréhension approfondie des défis éducatifs dans la région.&lt;/p&gt;</description></item><item><title>Nouveau Projet Éducatif à Dorool</title><link>https://hdicko.github.io/leidimen/posts/2025/projet-educatif-dorool-2025/</link><pubDate>Tue, 19 Aug 2025 10:00:00 +0000</pubDate><guid>https://hdicko.github.io/leidimen/posts/2025/projet-educatif-dorool-2025/</guid><description>&lt;details&gt;
+ &lt;summary&gt;Details&lt;/summary&gt;
+ &lt;div class="details-content"&gt;
+ &lt;h2 id="un-nouveau-défi-éducatif"&gt;Un nouveau défi éducatif&lt;/h2&gt;
+&lt;p&gt;L&amp;rsquo;association Leidimen lance un ambitieux projet d&amp;rsquo;alphabétisation dans le village de Dorool, au Mali. Cette initiative vise à réduire l&amp;rsquo;analphabétisme et à donner aux jeunes et aux adultes les outils nécessaires pour leur développement personnel et professionnel.&lt;/p&gt;
+&lt;h3 id="objectifs-du-projet"&gt;Objectifs du projet&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Formation de 50 adultes&lt;/strong&gt; en lecture et écriture&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Création d&amp;rsquo;une bibliothèque communautaire&lt;/strong&gt; avec des livres en français et en langues locales&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Formation de 5 instructeurs locaux&lt;/strong&gt; pour assurer la pérennité du programme&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="partenaires-impliqués"&gt;Partenaires impliqués&lt;/h3&gt;
+&lt;p&gt;Ce projet est réalisé en collaboration avec les autorités locales de Dorool et avec le soutien financier de nos donateurs en France.&lt;/p&gt;</description></item><item><title>Distribution de matériel scolaire et construction d’une troisième classe à Dorool</title><link>https://hdicko.github.io/leidimen/posts/2012/distribution-de-materiel-scolaire-et-construction-dune-troisieme-classe-a-dorool/</link><pubDate>Sun, 01 Jan 2012 00:00:00 +0000</pubDate><guid>https://hdicko.github.io/leidimen/posts/2012/distribution-de-materiel-scolaire-et-construction-dune-troisieme-classe-a-dorool/</guid><description>&lt;p&gt;Comme chaque année, plusieurs membres de Leïdimen se sont rendus au Mali pour réaliser certaines actions et faire avancer les projets de l’association. Cette année, Mamadou, Kadji, ainsi que la présidente Aissa Dicko, faisaient partie du voyage. Ils ont ainsi distribué au nom de Leïdimen du matériel scolaire dans les écoles de Takouti, Manko, N’Dumpa, […]&lt;/p&gt;</description></item><item><title>Images de l'École et des élèves de Dorool</title><link>https://hdicko.github.io/leidimen/posts/2012/ecole-de-dorool/</link><pubDate>Sun, 01 Jan 2012 00:00:00 +0000</pubDate><guid>https://hdicko.github.io/leidimen/posts/2012/ecole-de-dorool/</guid><description>&lt;p&gt;Quelques nouvelles en images (vous pouvez cliquer sur les photos pour les agrandir):&lt;/p&gt;
+&lt;div class="row g-3 my-4"&gt;
+ &lt;div class="col-md-4"&gt;
+ &lt;a href="https://hdicko.github.io/leidimen/images/wordpress/2012-01-DSC00385.jpg" data-lightbox="ecole-dorool"&gt;
+ &lt;img src="https://hdicko.github.io/leidimen/images/wordpress/2012-01-DSC00385.jpg" class="img-fluid rounded shadow" alt="École de Dorool" /&gt;
+ &lt;/a&gt;
+ &lt;/div&gt;
+ &lt;div class="col-md-4"&gt;
+ &lt;a href="https://hdicko.github.io/leidimen/images/wordpress/2012-01-IMG_4663.jpg" data-lightbox="ecole-dorool"&gt;
+ &lt;img src="https://hdicko.github.io/leidimen/images/wordpress/2012-01-IMG_4663.jpg" class="img-fluid rounded shadow" alt="École de Dorool" /&gt;
+ &lt;/a&gt;
+ &lt;/div&gt;
+ &lt;div class="col-md-4"&gt;
+ &lt;a href="https://hdicko.github.io/leidimen/images/wordpress/2012-01-DSC00425.jpg" data-lightbox="ecole-dorool"&gt;
+ &lt;img src="https://hdicko.github.io/leidimen/images/wordpress/2012-01-DSC00425.jpg" class="img-fluid rounded shadow" alt="École de Dorool" /&gt;
+ &lt;/a&gt;
+ &lt;/div&gt;
+ &lt;div class="col-md-4"&gt;
+ &lt;a href="https://hdicko.github.io/leidimen/images/wordpress/2012-01-DSC00419.jpg" data-lightbox="ecole-dorool"&gt;
+ &lt;img src="https://hdicko.github.io/leidimen/images/wordpress/2012-01-DSC00419.jpg" class="img-fluid rounded shadow" alt="École de Dorool" /&gt;
+ &lt;/a&gt;
+ &lt;/div&gt;
+ &lt;div class="col-md-4"&gt;
+ &lt;a href="https://hdicko.github.io/leidimen/images/wordpress/2012-01-DSC00412.jpg" data-lightbox="ecole-dorool"&gt;
+ &lt;img src="https://hdicko.github.io/leidimen/images/wordpress/2012-01-DSC00412.jpg" class="img-fluid rounded shadow" alt="École de Dorool" /&gt;
+ &lt;/a&gt;
+ &lt;/div&gt;
+ &lt;div class="col-md-4"&gt;
+ &lt;a href="https://hdicko.github.io/leidimen/images/wordpress/2012-01-DSC00410.jpg" data-lightbox="ecole-dorool"&gt;
+ &lt;img src="https://hdicko.github.io/leidimen/images/wordpress/2012-01-DSC00410.jpg" class="img-fluid rounded shadow" alt="École de Dorool" /&gt;
+ &lt;/a&gt;
+ &lt;/div&gt;
+ &lt;div class="col-md-4"&gt;
+ &lt;a href="https://hdicko.github.io/leidimen/images/wordpress/2012-01-DSC00408.jpg" data-lightbox="ecole-dorool"&gt;
+ &lt;img src="https://hdicko.github.io/leidimen/images/wordpress/2012-01-DSC00408.jpg" class="img-fluid rounded shadow" alt="École de Dorool" /&gt;
+ &lt;/a&gt;
+ &lt;/div&gt;
+&lt;/div&gt;</description></item><item><title>Ecole de Dorool : des nouvelles en images</title><link>https://hdicko.github.io/leidimen/posts/2010/ecole-de-dorool-des-nouvelles-en-images/</link><pubDate>Fri, 12 Feb 2010 00:00:00 +0000</pubDate><guid>https://hdicko.github.io/leidimen/posts/2010/ecole-de-dorool-des-nouvelles-en-images/</guid><description>&lt;p&gt;Au mois d’août dernier, Mamadou et Kadji se sont rendus à Dorool où ils ont rencontré l’instituteur, les écoliers et leurs parents.  Grâce aux parrains, Leïdimen a pu acheter le matériel scolaire nécessaire pour cette nouvelle année, ainsi que deux tenues par enfant (dont  un uniforme scolaire). Voir les photos&lt;/p&gt;</description></item><item><title>Accueillir des étudiants étrangers à l’université Paris8</title><link>https://hdicko.github.io/leidimen/posts/2010/accueillir-des-etudiants-etrangers-a-luniversite-paris8/</link><pubDate>Fri, 01 Jan 2010 00:00:00 +0000</pubDate><guid>https://hdicko.github.io/leidimen/posts/2010/accueillir-des-etudiants-etrangers-a-luniversite-paris8/</guid><description>&lt;p&gt;&lt;a href="https://hdicko.github.io/leidimen/images/wordpress/2008-02-tissuamicla-affiche1.jpg"&gt;/images/wordpress/2008-02-tissuamicla-affiche1.jpg&lt;/a&gt;
+&lt;a href="https://hdicko.github.io/leidimen/images/wordpress/2008-02-tissuamicla-affiche1.jpg"&gt;
+&lt;p class="rouded float-start imag-thumbnail"&gt;
+ &lt;img
+ src="//leidimen.com/wp-content/uploads/2008/02/tissuamicla-affiche1.jpg"
+ loading="lazy"
+ alt="tap affiche 1"
+ /&gt;&lt;/p&gt;
+
+&lt;/a&gt;
+La visibilité de Leïdimen a dépassé les limites de l’Essonne durant ces mois d’automne : nous nous sommes joints a une action inter-culturelle à l’Université Paris 8 (Saint-Denis), où deux de nos membres sont inscrits actuellement. Constatant que l’accueil des étudiants étrangers – dont plusieurs sont originaires de pays africains – n’était pas tres développé, un groupe d’étudiants a lancé le projet TissuAmical (du « parrainage » entre anciens et nouveaux étudiants) et demandé la collaboration de Leïdimen pour l’organisation d’une soirée de bienvenue mettant à l’honneur la diversité culturelle (jeux, repas, musiques). Cette soirée festive a eu lieu le 9 nov. 2007 dans l’Amphi X de Paris8 avec une centaine d’étudiants autour de plats typiques de leurs pays, de concerts (avec le Petit Choeur de Saint-Denis, la Chorale universitaire de Berlin, un groupe de Jazz-Funk du département Musique), de danse et animations photos. Ainsi, Leidimen a aidé à produire pas mal de sourires à Paris8 :-).
+&lt;a href="https://hdicko.github.io/leidimen/images/wordpress/2008-02-tissuamicla-affiche2.jpg"&gt;/images/wordpress/2008-02-tissuamicla-affiche2.jpg&lt;/a&gt;
+&lt;a href="https://hdicko.github.io/leidimen/images/wordpress/2008-02-tissuamicla-affiche2.jpg"&gt;
+&lt;p class="rouded float-start imag-thumbnail"&gt;
+ &lt;img
+ src="//leidimen.com/wp-content/uploads/2008/02/tissuamicla-affiche2.jpg"
+ loading="lazy"
+ alt="tap affiche 2"
+ /&gt;&lt;/p&gt;</description></item><item><title>Assemblée Générale 2009</title><link>https://hdicko.github.io/leidimen/posts/2010/assemblee-generale-2009/</link><pubDate>Fri, 01 Jan 2010 00:00:00 +0000</pubDate><guid>https://hdicko.github.io/leidimen/posts/2010/assemblee-generale-2009/</guid><description>&lt;p&gt;Bonjour à tous !
+Nous vous informons que l’assemblée générale 2009 aura lieu le samedi 21 février à 14h30, à Bondoufle. Nous espérons vous y voir nombreux !
+Comme les années précédentes, le montant de la cotisation annuelle est de 10 euros.&lt;/p&gt;</description></item><item><title>Compte-rendu du voyage de David et Abdoulaye</title><link>https://hdicko.github.io/leidimen/posts/2010/compte-rendu-du-voyage-de-david-et-abdoulaye/</link><pubDate>Fri, 01 Jan 2010 00:00:00 +0000</pubDate><guid>https://hdicko.github.io/leidimen/posts/2010/compte-rendu-du-voyage-de-david-et-abdoulaye/</guid><description>&lt;p&gt;Un grand bonjour à tous!
+Comme vous le savez, je suis parti au Mali en octobre pour deux semaines. J’y ai retrouvé Abdoulaye, avec qui nous avons pu nous rendre aux villages le temps d’une semaine.
+Ce fut un voyage très intense, et émaillé d’excellentes surprises et de belles rencontres.
+Le bilan est positif. Nous sommes ravis d’avoir pu constater sur le terrain que nos différentes contributions sont utiles et fortement appréciées par les populations.
+Aux villages, ça bouge! Et Leïdimen y participe pleinement !
+Notre mission première
+L’objectif principal du voyage était de livrer les dix ordinateurs au lycée de Douentza, d’organiser leur remise offic&lt;a href="https://hdicko.github.io/leidimen/images/wordpress/2007-11-imgp0513-small.jpg"&gt;
+&lt;p class="rouded float-start imag-thumbnail"&gt;
+ &lt;img
+ src="//leidimen.com/wp-content/uploads/2007/11/imgp0513-small.thumbnail.jpg"
+ loading="lazy"
+ alt="ordis"
+ /&gt;&lt;/p&gt;</description></item><item><title>Construction d’une école à Dorool : quelques nouvelles</title><link>https://hdicko.github.io/leidimen/posts/2010/construction-dune-ecole-a-dorool-quelques-nouvelles/</link><pubDate>Fri, 01 Jan 2010 00:00:00 +0000</pubDate><guid>https://hdicko.github.io/leidimen/posts/2010/construction-dune-ecole-a-dorool-quelques-nouvelles/</guid><description>&lt;p&gt;Au mois de décembre, nous vous avons fait part de notre volonté de &lt;a href="https://leidimen.com/projets/une-ecole-pour-dorool" target="_blank" rel="noopener"&gt;construire une école dans le village de Dorool&lt;/a&gt;. Trois mois plus tard, le bilan est très positif ! Mamadou est parti au Mali au mois de janvier. Son voyage a été consacré en grande partie à ce projet, et il est revenu en France avec de très bonnes nouvelles ! Les habitants de Dorool ont accueilli le projet avec enthousiasme : tous les parents veulent inscrire leurs enfants à l’école, et ce sont les hommes du village eux mêmes qui construisent la salle de classe.&lt;/p&gt;</description></item><item><title>De retour du Mali!</title><link>https://hdicko.github.io/leidimen/posts/2010/de-retour-du-mali/</link><pubDate>Fri, 01 Jan 2010 00:00:00 +0000</pubDate><guid>https://hdicko.github.io/leidimen/posts/2010/de-retour-du-mali/</guid><description>&lt;p&gt;Bonjour à tous!
+Je suis de retour du Mali, avec un sourire, en pleine santé (ça mérite d’être souligné!), et très heureux de ce merveilleux voyage. Le voyage fut très court, mais nous avons néanmoins pu aller depuis Bamako jusqu’aux villages avec Abdoulaye Dicko, et mener là-bas plusieurs projets associatifs dont nous sommes très contents. Ce voyage fut rempli de très nombreux problèmes logistiques (un grand classique) qu’il a fallu résoudre patiemment un par un, mais également émaillé tout au long de notre parcours de très bonnes surprises.
+Sans compromettre mon compte-rendu de vive voix, je peux d’ores et déjà vous dire qu’il s’est passé de très bonnes choses au niveau du projet des &lt;a href="https://leidimen.com/projets/informatique" target="_blank" rel="noopener"&gt;10 ordinateurs&lt;/a&gt; pour le lycée, de la &lt;a href="https://leidimen.com/projets/grains_dorool" target="_blank" rel="noopener"&gt;banque de céréales&lt;/a&gt; du village de Diona, ainsi que de la &lt;a href="https://leidimen.com/projets/intro_microfinance_debere" target="_blank" rel="noopener"&gt;caisse de micro-crédit&lt;/a&gt; de Debere).
+Je serai très heureux de vous faire un compte-rendu de ce merveilleux petit séjour lors d’une réunion le Dimanche 28 Octobre dans l’après-midi! Nous publierons le lieu et la date très bientôt sur le site qui, par ailleurs, devrait bouger très bientôt pour prendre en compte nos avancées au Mali.
+A Dimanche,
+Hamassala David Dicko
+&lt;a href="https://hdicko.github.io/leidimen/images/wordpress/2007-10-imgp0531-remise-fournitures-boundoucoli.JPG"&gt;
+&lt;p class="rouded float-start imag-thumbnail"&gt;
+ &lt;img
+ src="//leidimen.com/wp-content/uploads/2007/10/imgp0531-remise-fournitures-boundoucoli.thumbnail.JPG"
+ loading="lazy"
+ alt="remise boundoucoli"
+ /&gt;&lt;/p&gt;</description></item><item><title>Derniers préparatifs</title><link>https://hdicko.github.io/leidimen/posts/2010/derniers-preparatifs/</link><pubDate>Fri, 01 Jan 2010 00:00:00 +0000</pubDate><guid>https://hdicko.github.io/leidimen/posts/2010/derniers-preparatifs/</guid><description>&lt;p&gt;Derniers préparatifs avant l envoi des ordinateurs. On remballe les ordinateurs dans des cartons tout neufs que l on étiquette. Encore une fois merci aux bénévoles !!!!
+&lt;a href="https://hdicko.github.io/leidimen/images/wordpress/2007-06-prep1.JPG"&gt;
+&lt;p class="rouded float-start imag-thumbnail"&gt;
+ &lt;img
+ src="//leidimen.com/wp-content/uploads/2007/06/prep1.miniature.JPG"
+ loading="lazy"
+ alt="prep1"
+ /&gt;&lt;/p&gt;
+
+&lt;/a&gt;    &lt;a href="https://hdicko.github.io/leidimen/images/wordpress/2007-06-prep2.JPG"&gt;
+&lt;p class="rouded float-start imag-thumbnail"&gt;
+ &lt;img
+ src="//leidimen.com/wp-content/uploads/2007/06/prep2.miniature.JPG"
+ loading="lazy"
+ alt="prep2"
+ /&gt;&lt;/p&gt;
+
+&lt;/a&gt;   &lt;a href="https://hdicko.github.io/leidimen/images/wordpress/2007-06-prep3.JPG"&gt;
+&lt;p class="rouded float-start imag-thumbnail"&gt;
+ &lt;img
+ src="//leidimen.com/wp-content/uploads/2007/06/prep3.miniature.JPG"
+ loading="lazy"
+ alt="prep3"
+ /&gt;&lt;/p&gt;
+
+&lt;/a&gt;&lt;/p&gt;</description></item><item><title>Distribution de matériel scolaire et construction d’une troisième classe à Dorool</title><link>https://hdicko.github.io/leidimen/posts/2010/distribution-de-materiel-scolaire-et-construction-dune-troisieme-classe-a-dorool/</link><pubDate>Fri, 01 Jan 2010 00:00:00 +0000</pubDate><guid>https://hdicko.github.io/leidimen/posts/2010/distribution-de-materiel-scolaire-et-construction-dune-troisieme-classe-a-dorool/</guid><description>&lt;p&gt;Comme chaque année, plusieurs membres de Leïdimen se sont rendus au Mali pour réaliser certaines actions et faire avancer les projets de l’association. Cette année, Mamadou, Kadji, ainsi que la présidente Aissa Dicko, faisaient partie du voyage. Ils ont ainsi distribué au nom de Leïdimen du matériel scolaire dans les écoles de Takouti, Manko, N’Dumpa, Débéré.
+Ce voyage était aussi l’occasion de suivre l’évolution de l’école construite à Dorool. Les nouvelles sont très positives : pour répondre aux nombreuses demandes de parents qui souhaitent scolariser leurs enfants, une troisième salle de classe est actuellement en cours de construction. Elle devrait être prête pour accueillir de nouveaux élèves à la rentrée 2012. Leïdimen a aussi réitéré sa demande de kit scolaire auprès des autorités.
+Voici quelques images de ce voyage (vous pouvez cliquer sur les photos pour les agrandir):&lt;/p&gt;</description></item><item><title>Envoi du matériel informatique à Bamako</title><link>https://hdicko.github.io/leidimen/posts/2010/envoi-du-materiel-informatique-a-bamako/</link><pubDate>Fri, 01 Jan 2010 00:00:00 +0000</pubDate><guid>https://hdicko.github.io/leidimen/posts/2010/envoi-du-materiel-informatique-a-bamako/</guid><description>&lt;p&gt;Chargement du matériel informatique direction Bamako       &lt;a href="https://hdicko.github.io/leidimen/images/wordpress/2007-06-envoi.JPG"&gt;
+&lt;p class="rouded float-start imag-thumbnail"&gt;
+ &lt;img
+ src="//leidimen.com/wp-content/uploads/2007/06/envoi.miniature.JPG"
+ loading="lazy"
+ alt="envoi"
+ /&gt;&lt;/p&gt;
+
+&lt;/a&gt;&lt;/p&gt;</description></item><item><title>Installation d’Ubuntu</title><link>https://hdicko.github.io/leidimen/posts/2010/installation-dubuntu/</link><pubDate>Fri, 01 Jan 2010 00:00:00 +0000</pubDate><guid>https://hdicko.github.io/leidimen/posts/2010/installation-dubuntu/</guid><description>&lt;p&gt;Ubuntu a été installé sur tous les PC destinés au lycée de Douentza
+&lt;a href="https://hdicko.github.io/leidimen/images/wordpress/2007-06-install.JPG"&gt;
+&lt;p class="rouded float-start imag-thumbnail"&gt;
+ &lt;img
+ src="//leidimen.com/wp-content/uploads/2007/06/install.miniature.JPG"
+ loading="lazy"
+ alt="install"
+ /&gt;&lt;/p&gt;
+
+&lt;/a&gt;&lt;/p&gt;</description></item><item><title>La rentrée à Dorool</title><link>https://hdicko.github.io/leidimen/posts/2010/la-rentree-a-dorool/</link><pubDate>Fri, 01 Jan 2010 00:00:00 +0000</pubDate><guid>https://hdicko.github.io/leidimen/posts/2010/la-rentree-a-dorool/</guid><description>&lt;p&gt;Mamadou est rentré du Mali le mois dernier avec d’excellentes nouvelles de l’école ! Après de nombreuses démarches administratives, un instituteur a été nommé. La rentrée a eu lieu au début de la semaine.
+&lt;a href="https://hdicko.github.io/leidimen/images/wordpress/2008-10-dsc05588.jpg"&gt;
+&lt;p class="rouded float-start imag-thumbnail"&gt;
+ &lt;img
+ src="//leidimen.com/wp-content/uploads/2008/10/dsc05588-300x225.jpg"
+ loading="lazy"/&gt;&lt;/p&gt;
+
+&lt;/a&gt;
+&lt;a href="https://leidimen.com/la-rentree-a-dorool2" target="_blank" rel="noopener"&gt;Lire la suite &lt;/a&gt;&lt;/p&gt;</description></item><item><title>Les 10 ordis sont arrivés à Bamako !</title><link>https://hdicko.github.io/leidimen/posts/2010/les-10-ordis-sont-arrives-a-bamako/</link><pubDate>Fri, 01 Jan 2010 00:00:00 +0000</pubDate><guid>https://hdicko.github.io/leidimen/posts/2010/les-10-ordis-sont-arrives-a-bamako/</guid><description>&lt;p&gt;&lt;a href="https://hdicko.github.io/leidimen/images/wordpress/2007-07-transport4maxi.jpg"&gt;/images/wordpress/2007-07-transport4maxi.jpg&lt;/a&gt;Nous nous réjouissons d’avons recu un coup de téléphone de Abdoulaye nous disant que hier, le 22 février, notre cargaison de 10 ordinateurs est arrivée à Bamako. Il a tout récupéré à la douane (non sans quelques diffucultés), et maintenant il suffit de stocker les cartons chez lui avant de les acheminer à Douentza où le lycée les attend.
+Pour la suite de ce projet, nous attendons maintenant jusqu’au moment où un de nous ira là-bas pour bien organiser la réception et l’installation du matériel informatique au lycée. David prévoit en effet un séjour au Mali en septembre.
+&lt;a href="https://hdicko.github.io/leidimen/images/wordpress/2007-07-transport4maxi.jpg"&gt;
+&lt;p class="rouded float-start imag-thumbnail"&gt;
+ &lt;img
+ src="//leidimen.com/wp-content/uploads/2007/07/transport4maxi.jpg"
+ loading="lazy"
+ alt="julie et pascal avec ordis"
+ /&gt;&lt;/p&gt;</description></item><item><title>nouvelle news 2017</title><link>https://hdicko.github.io/leidimen/posts/2010/nouvelle-news-2017/</link><pubDate>Fri, 01 Jan 2010 00:00:00 +0000</pubDate><guid>https://hdicko.github.io/leidimen/posts/2010/nouvelle-news-2017/</guid><description>&lt;p&gt;Bonjour,&lt;/p&gt;
+&lt;p&gt; 
+Nous avons des nouvelles à partager.
+&lt;a href="https://hdicko.github.io/leidimen/images/wordpress/2017-01-20160608_132632.jpg"&gt;
+&lt;p class="rouded float-start imag-thumbnail"&gt;
+ &lt;img
+ src="https://hdicko.github.io/leidimen/images/wordpress/2017-01-20160608_132632-300x169.jpg"
+ loading="lazy"
+ alt="20160608_132632"
+ /&gt;&lt;/p&gt;
+
+&lt;/a&gt;
+Leidimen&lt;/p&gt;</description></item><item><title>Réunion à Cachan</title><link>https://hdicko.github.io/leidimen/posts/2010/reunion-a-cachan/</link><pubDate>Fri, 01 Jan 2010 00:00:00 +0000</pubDate><guid>https://hdicko.github.io/leidimen/posts/2010/reunion-a-cachan/</guid><description>&lt;p&gt;Une réunion s’est tenue le samedi 24 à Cachan.
+A l’ordre du jour :
+   1.Fonctionnement de l’association par rapport aux projets
+      a)Vote du Budget annuel / Dépenses de l’association
+      b)Point sur la demande de subvention
+      c)Caractéristiques des projets prioritaires
+   2. Etude des Projets un à un / chiffrage budget
+   3. Présentation de &lt;a href="http://www.sono.ens-cachan.fr/" target="_blank" rel="noopener"&gt;Sono &lt;/a&gt;/ collaboration?
+   4. Actions possibles en décembre?
+Le CA a fixé les montants des dépenses urgentes et a pratiquement achevé l’évaluation des coûts futurs.
+Moussa contactera prochainement l’association Sono (Solidarité Normalienne) de son école pour de futurs projets communs.&lt;/p&gt;</description></item><item><title>Réunion à Mennecy</title><link>https://hdicko.github.io/leidimen/posts/2010/reunion-a-mennecy/</link><pubDate>Fri, 01 Jan 2010 00:00:00 +0000</pubDate><guid>https://hdicko.github.io/leidimen/posts/2010/reunion-a-mennecy/</guid><description>&lt;p&gt;Une réunion s’est tenue dimanche 28 octobre à Mennecy.
+Une dixaine de membres étaient présents ainsi que deux invités : Jean-Noel Dor et Guillaume Dor.
+Ordre du jour :&lt;/p&gt;
+&lt;p&gt;Compte-rendu du voyage d’Abdoulaye et Hamassala-David
+Etat d’avancement des différents projets
+Echange d’idées pour la soirée du samedi 3 mai sur le thème du Mali
+Questions/Reponses&lt;/p&gt;
+&lt;p&gt;Une rencontre est prévue fin novembre afin de définir d’éventuels objectifs pour les voyageurs du mois de décembre.
+Le CA doit se réunir bientôt pour effectuer un bilan financier et prendre des décisions notamment pour la suite des projets en cours.
+Il est important de trouver rapidement des financements,  et de rédiger les dossiers de subventions. Des compétences techniques pour établir les budgets sont également recherchées.
+Merci à tous,
+Moussa.
+&lt;a href="https://hdicko.github.io/leidimen/images/wordpress/2007-10-img_0293b.JPG"&gt;
+&lt;p class="rouded float-start imag-thumbnail"&gt;
+ &lt;img
+ src="//leidimen.com/wp-content/uploads/2007/10/img_0293b.thumbnail.JPG"
+ loading="lazy"
+ alt="img_0293b.JPG"
+ /&gt;&lt;/p&gt;</description></item><item><title>Réunion à Paris</title><link>https://hdicko.github.io/leidimen/posts/2010/reunion-a-paris/</link><pubDate>Fri, 01 Jan 2010 00:00:00 +0000</pubDate><guid>https://hdicko.github.io/leidimen/posts/2010/reunion-a-paris/</guid><description>&lt;p&gt;La réunion de dimanche s’est déroulée à Paris chez notre aimable trésorier Moussa :-).
+Des tâches ont été attribuées à chacun afin de pouvoir diffuser rapidement l’adresse internet de l’association au public.
+Attribution des tâches :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Aissa s’occupera des projets “pastoral intégré à Dorool”,”banque de grain à Dorool”.&lt;/li&gt;
+&lt;li&gt;David s’occupera des projets “Caisse de grain à Diona/Debere” et “Microcrédit”.&lt;/li&gt;
+&lt;li&gt;Eva s’occupera du projet “envoi de matériel informatique parties 1 et 2”.&lt;/li&gt;
+&lt;li&gt;Moussa s’occupera des projets “enfant brûlé” et “puits à Darawal”.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;On s’aidera mutuellement bien évidemment!
+D’autre part, il est urgent de boucler le dossier de subvention pour passer à la session de septembre.
+Aba doit se rendre à Douentza prochainement.
+L’association devrait être elligible à la déduction d’impôts de 75% des dons reçus.
+Aissa et Christine ont débuté l’organisation d’un événement défilé/repas pour l’an prochain.
+Merci à tous,
+Moussa.&lt;/p&gt;</description></item><item><title>Voyage associatif au Mali 2007</title><link>https://hdicko.github.io/leidimen/posts/2010/voyage-associatif-au-mali-2007/</link><pubDate>Fri, 01 Jan 2010 00:00:00 +0000</pubDate><guid>https://hdicko.github.io/leidimen/posts/2010/voyage-associatif-au-mali-2007/</guid><description>&lt;p&gt;Du 24 septembre au 6 octobre, Hamassala David est au Mali pour faire avancer les projets Leidimen avec Abdoulaye, prendre des nouvelles des villages et renouveler les contacts.
+Au programme : Bamako, Douentza, Debere, Boundoucoli, Diona… Les projets : fournitures scolaires,  ordinateurs pour le lycée de Douentza, banque de grains à Diona et Debere, banque de microcrédits femmes à Debere,  maraichage à Diona etc.
+Plus de nouvelles à son retour!&lt;/p&gt;</description></item><item><title>Des écoliers français à la découverte du Mali</title><link>https://hdicko.github.io/leidimen/galleries/ecoliers-francais-mali/</link><pubDate>Mon, 01 Dec 2008 00:00:00 +0000</pubDate><guid>https://hdicko.github.io/leidimen/galleries/ecoliers-francais-mali/</guid><description>&lt;p&gt;Photos des écoliers français découvrant le Mali et ses écoles.&lt;/p&gt;</description></item><item><title>La rentrée à Dorool</title><link>https://hdicko.github.io/leidimen/posts/2008/la-rentree-a-dorool-1/</link><pubDate>Tue, 21 Oct 2008 00:00:00 +0000</pubDate><guid>https://hdicko.github.io/leidimen/posts/2008/la-rentree-a-dorool-1/</guid><description>&lt;p&gt;Mamadou est rentré du Mali le mois dernier avec d’excellentes nouvelles de l’école ! Après de nombreuses démarches administratives, un instituteur a été nommé. La rentrée a eu lieu au début de la semaine. Lire la suite&lt;/p&gt;</description></item><item><title>Construction d’une école à Dorool : quelques nouvelles</title><link>https://hdicko.github.io/leidimen/posts/2008/construction-dune-ecole-a-dorool-quelques-nouvelles/</link><pubDate>Thu, 21 Feb 2008 00:00:00 +0000</pubDate><guid>https://hdicko.github.io/leidimen/posts/2008/construction-dune-ecole-a-dorool-quelques-nouvelles/</guid><description>&lt;p&gt;Au mois de décembre, nous vous avons fait part de notre volonté de construire une école dans le village de Dorool. Trois mois plus tard, le bilan est très positif ! Mamadou est parti au Mali au mois de janvier. Son voyage a été consacré en grande partie à ce projet, et il est revenu […]&lt;/p&gt;</description></item><item><title>Une occasion de rencontrer l’association “Villages Dogons”</title><link>https://hdicko.github.io/leidimen/posts/2007/une-occasion-de-rencontrer-lassociation-villages-dogons/</link><pubDate>Tue, 09 Oct 2007 00:00:00 +0000</pubDate><guid>https://hdicko.github.io/leidimen/posts/2007/une-occasion-de-rencontrer-lassociation-villages-dogons/</guid><description>&lt;p&gt;Salut amis de Leidimen! L’association Villages Dogons œuvre exactement dans la même région que nous, dans des villages du cercle de Douentza, et nous avons quelques projets en commun avec eux – comme la construction de puits, le soutien aux écoles et des projets de micro-finances pour femmes (plus d’informations sur leur site). Lors d’une […]&lt;/p&gt;</description></item><item><title>Fournitures scolaires aux villages</title><link>https://hdicko.github.io/leidimen/posts/2007/fournitures-scolaires-aux-villages/</link><pubDate>Sun, 01 Jul 2007 00:00:00 +0000</pubDate><guid>https://hdicko.github.io/leidimen/posts/2007/fournitures-scolaires-aux-villages/</guid><description>&lt;p&gt;Afin de favoriser l&amp;rsquo;éducation des enfants des villages, nous avons acheminé depuis 2006 des fournitures scolaires de base aux écoles élémentaires (écoles primaires) de Diona, Debere, Boundoucoli, Manko, Ndumpa et Tacouti.&lt;/p&gt;
+&lt;p&gt;&lt;p class="rouded float-start imag-thumbnail"&gt;
+ &lt;img
+ src="https://hdicko.github.io/leidimen/images/wordpress/2007-07-7e7e.jpg"
+ loading="lazy"
+ alt="École à Bore"
+ /&gt;&lt;/p&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;p class="rouded float-start imag-thumbnail"&gt;
+ &lt;img
+ src="https://hdicko.github.io/leidimen/images/wordpress/2007-07-thumbnailca1w59jb.jpg"
+ loading="lazy"
+ alt="Kowi et amie avec crayons en couleurs"
+ /&gt;&lt;/p&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;p class="rouded float-start imag-thumbnail"&gt;
+ &lt;img
+ src="https://hdicko.github.io/leidimen/images/wordpress/2007-07-b044.jpg"
+ loading="lazy"
+ alt="École Manko"
+ /&gt;&lt;/p&gt;
+&lt;/p&gt;</description></item><item><title>Une école pour Dorool</title><link>https://hdicko.github.io/leidimen/posts/2007/une-ecole-pour-dorool/</link><pubDate>Sun, 01 Jul 2007 00:00:00 +0000</pubDate><guid>https://hdicko.github.io/leidimen/posts/2007/une-ecole-pour-dorool/</guid><description>&lt;p&gt;&lt;p class="rouded float-start imag-thumbnail"&gt;
+ &lt;img
+ src="https://hdicko.github.io/leidimen/images/wordpress/2007-07-8199.jpg"
+ loading="lazy"
+ alt="Enfants de Dorool"
+ /&gt;&lt;/p&gt;
+&lt;/p&gt;
+&lt;p&gt;Voici Ibrahim, Faadi, Leyla et Issa.&lt;/p&gt;
+&lt;p&gt;Ces quatre enfants sont originaires de Dorool, village de la &lt;a href="https://hdicko.github.io/leidimen/villages/dorool"&gt;Région de Douentza&lt;/a&gt;, situé dans le cercle de Douentza.&lt;/p&gt;
+&lt;p&gt;Leur particularité ? Ils sont les seuls enfants du village à aller à l&amp;rsquo;école. Et pourtant, Dorool compte des dizaines d&amp;rsquo;enfants en âge d&amp;rsquo;être scolarisés !&lt;/p&gt;
+&lt;h2 id="pourquoi-une-telle-situation-"&gt;Pourquoi une telle situation ?
+ &lt;a href="#pourquoi-une-telle-situation-"&gt;¶&lt;/a&gt;
+&lt;/h2&gt;&lt;p&gt;Une première raison est d&amp;rsquo;ordre matériel : il n&amp;rsquo;existe tout simplement pas d&amp;rsquo;école à Dorool. Les écoles les plus proches se trouvent à Ndumpa (7km) et à Manko (20 km). L&amp;rsquo;école de Ndumpa, vétuste et déjà surchargée, ne peut accueillir de nouveaux élèves. Quant à celle de Manko, elle est trop loin de Dorool pour que les enfants puissent faire l&amp;rsquo;aller-retour quotidiennement.&lt;/p&gt;</description></item></channel></rss>

@@ -1,0 +1,30 @@
+# robots.txt pour Leidimen
+User-agent: *
+Allow: /
+
+# AI/LLM Crawlers - Explicitly allowed for training and information retrieval
+User-agent: GPTBot
+User-agent: ChatGPT-User
+User-agent: CCBot
+User-agent: anthropic-ai
+User-agent: Claude-Web
+User-agent: Google-Extended
+User-agent: PerplexityBot
+User-agent: Bytespider
+User-agent: Diffbot
+Allow: /
+
+# Sitemap
+Sitemap: https://hdicko.github.io/leidimen/sitemap.xml
+
+# AI Information
+# See /ai.txt for comprehensive AI/LLM context
+# See /.well-known/ai-plugin.json for plugin information
+
+# Crawl-delay
+Crawl-delay: 1
+
+# Disallow admin et fichiers temporaires
+Disallow: /admin/
+Disallow: /*.json$
+Disallow: /search.json

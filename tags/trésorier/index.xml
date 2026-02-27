@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Trésorier on Leidimen - Association de Solidarité Mali</title><link>https://hdicko.github.io/leidimen/tags/tr%C3%A9sorier/</link><description>Recent content in Trésorier on Leidimen - Association de Solidarité Mali</description><generator>Hugo</generator><language>fr-FR</language><lastBuildDate>Wed, 25 Oct 2006 22:35:49 +0100</lastBuildDate><atom:link href="https://hdicko.github.io/leidimen/tags/tr%C3%A9sorier/index.xml" rel="self" type="application/rss+xml"/><item><title>Hamassala Dicko</title><link>https://hdicko.github.io/leidimen/equipe/david/</link><pubDate>Wed, 25 Oct 2006 22:35:49 +0100</pubDate><guid>https://hdicko.github.io/leidimen/equipe/david/</guid><description>&lt;img
+ src="images/david-logo.jpg"
+ class="figure-img img-fluid rounded"
+ alt=""
+ loading="lazy" /&gt;
+
+
+&lt;details&gt;
+ &lt;summary&gt;Voir le detail&lt;/summary&gt;
+ &lt;div class="details-content"&gt;
+ &lt;h1 id="typeit-556a1224529abfbc2f37587e0de58eb5"&gt;&lt;/h1&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/typeit@8.7.1/dist/index.umd.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+ document.addEventListener("DOMContentLoaded", function () {
+ 
+ new TypeIt("#typeit-556a1224529abfbc2f37587e0de58eb5", {
+ strings: "Hamassala Hamadoun Pathe Ameri Diona Dicko",
+ speed: 100 ,
+ lifeLike: true ,
+ startDelay: 0 ,
+ breakLines: true ,
+ waitUntilVisible: true ,
+ loop: false ,
+ cursor: false,
+ html: true
+ }).go();
+ 
+ });
+&lt;/script&gt;
+&lt;h2 id="trésorier-de-leidimen"&gt;Trésorier de Leidimen&lt;/h2&gt;
+&lt;p&gt;Hamassala Dicko est trésorier et membre fondateur de l&amp;rsquo;association Leidimen. il assure la gestion financière de l&amp;rsquo;association avec rigueur et transparence, garantissant le bon usage des fonds collectés pour les projets de solidarité.&lt;/p&gt;</description></item></channel></rss>

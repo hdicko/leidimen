@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mcp on Leidimen - Association de Solidarité Mali</title><link>https://hdicko.github.io/leidimen/tags/mcp/</link><description>Recent content in Mcp on Leidimen - Association de Solidarité Mali</description><generator>Hugo</generator><language>fr-FR</language><lastBuildDate>Tue, 17 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://hdicko.github.io/leidimen/tags/mcp/index.xml" rel="self" type="application/rss+xml"/><item><title>Guide : Ajouter un membre de l'équipe avec le serveur MCP</title><link>https://hdicko.github.io/leidimen/posts/2026/guide-creation-membre-equipe-mcp/</link><pubDate>Tue, 17 Feb 2026 00:00:00 +0000</pubDate><guid>https://hdicko.github.io/leidimen/posts/2026/guide-creation-membre-equipe-mcp/</guid><description>&lt;h2 id="introduction"&gt;Introduction
+ &lt;a href="#introduction"&gt;¶&lt;/a&gt;
+&lt;/h2&gt;&lt;p&gt;L&amp;rsquo;ajout de nouveaux membres à l&amp;rsquo;équipe Leidimen nécessite la création de profils détaillés avec des informations structurées. Grâce au &lt;strong&gt;serveur MCP Hugo&lt;/strong&gt;, cette tâche qui prenait plusieurs minutes peut maintenant être accomplie en quelques secondes avec une simple conversation en langage naturel.&lt;/p&gt;
+&lt;p&gt;Ce guide vous montre comment utiliser l&amp;rsquo;outil &lt;code&gt;create-team-member&lt;/code&gt; pour ajouter efficacement de nouveaux membres à la section équipe du site.&lt;/p&gt;
+&lt;h2 id="structure-dun-profil-membre-leidimen"&gt;Structure d&amp;rsquo;un profil membre Leidimen
+ &lt;a href="#structure-dun-profil-membre-leidimen"&gt;¶&lt;/a&gt;
+&lt;/h2&gt;&lt;p&gt;Avant de créer un profil, il est important de comprendre les informations requises :&lt;/p&gt;</description></item><item><title>Guide : Créer un post avec le serveur MCP Hugo</title><link>https://hdicko.github.io/leidimen/posts/2026/guide-creation-post-mcp/</link><pubDate>Tue, 17 Feb 2026 00:00:00 +0000</pubDate><guid>https://hdicko.github.io/leidimen/posts/2026/guide-creation-post-mcp/</guid><description>&lt;h2 id="introduction-au-serveur-mcp-hugo"&gt;Introduction au serveur MCP Hugo
+ &lt;a href="#introduction-au-serveur-mcp-hugo"&gt;¶&lt;/a&gt;
+&lt;/h2&gt;&lt;p&gt;Le &lt;strong&gt;Model Context Protocol (MCP)&lt;/strong&gt; est une nouvelle technologie qui permet à Claude (l&amp;rsquo;assistant IA) d&amp;rsquo;interagir directement avec les systèmes locaux. Pour le site Leidimen, nous avons développé un serveur MCP spécialisé qui facilite la création et la gestion de contenu Hugo.&lt;/p&gt;
+&lt;h2 id="quest-ce-que-mcp-"&gt;Qu&amp;rsquo;est-ce que MCP ?
+ &lt;a href="#quest-ce-que-mcp-"&gt;¶&lt;/a&gt;
+&lt;/h2&gt;&lt;p&gt;MCP (Model Context Protocol) est un protocole open-source développé par Anthropic qui permet aux assistants IA comme Claude d&amp;rsquo;accéder à des outils et des données locales de manière sécurisée. Plutôt que de simplement générer du code, Claude peut maintenant &lt;strong&gt;exécuter des actions&lt;/strong&gt; directement sur votre système.&lt;/p&gt;</description></item><item><title>Testing MCP Creation New Post</title><link>https://hdicko.github.io/leidimen/posts/2026/testing-mcp-creation/</link><pubDate>Mon, 16 Feb 2026 00:00:00 +0000</pubDate><guid>https://hdicko.github.io/leidimen/posts/2026/testing-mcp-creation/</guid><description>&lt;h1 id="test-de-création-mcp"&gt;Test de Création MCP
+ &lt;a href="#test-de-cr%c3%a9ation-mcp"&gt;¶&lt;/a&gt;
+&lt;/h1&gt;&lt;p&gt;Ceci est un article de test créé via le serveur MCP (Model Context Protocol) pour le site Leidimen.&lt;/p&gt;
+&lt;h2 id="objectif"&gt;Objectif
+ &lt;a href="#objectif"&gt;¶&lt;/a&gt;
+&lt;/h2&gt;&lt;p&gt;Ce test valide que le système MCP peut créer automatiquement des articles de blog avec:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Frontmatter correctement formaté&lt;/li&gt;
+&lt;li&gt;Type de contenu approprié (&lt;code&gt;posts&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;Taxonomies conformes (categories, tags, moods, villages)&lt;/li&gt;
+&lt;li&gt;Structure de répertoire basée sur l&amp;rsquo;année (2026)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="résultats"&gt;Résultats
+ &lt;a href="#r%c3%a9sultats"&gt;¶&lt;/a&gt;
+&lt;/h2&gt;&lt;p&gt;✅ L&amp;rsquo;article a été créé avec succès dans la structure appropriée
+✅ Le frontmatter respecte les conventions du site
+✅ La date est correctement configurée&lt;/p&gt;</description></item></channel></rss>

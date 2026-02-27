@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Technologie on Leidimen - Association de Solidarité Mali</title><link>https://hdicko.github.io/leidimen/tags/technologie/</link><description>Recent content in Technologie on Leidimen - Association de Solidarité Mali</description><generator>Hugo</generator><language>fr-FR</language><lastBuildDate>Tue, 17 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://hdicko.github.io/leidimen/tags/technologie/index.xml" rel="self" type="application/rss+xml"/><item><title>Guide : Ajouter un membre de l'équipe avec le serveur MCP</title><link>https://hdicko.github.io/leidimen/posts/2026/guide-creation-membre-equipe-mcp/</link><pubDate>Tue, 17 Feb 2026 00:00:00 +0000</pubDate><guid>https://hdicko.github.io/leidimen/posts/2026/guide-creation-membre-equipe-mcp/</guid><description>&lt;h2 id="introduction"&gt;Introduction
+ &lt;a href="#introduction"&gt;¶&lt;/a&gt;
+&lt;/h2&gt;&lt;p&gt;L&amp;rsquo;ajout de nouveaux membres à l&amp;rsquo;équipe Leidimen nécessite la création de profils détaillés avec des informations structurées. Grâce au &lt;strong&gt;serveur MCP Hugo&lt;/strong&gt;, cette tâche qui prenait plusieurs minutes peut maintenant être accomplie en quelques secondes avec une simple conversation en langage naturel.&lt;/p&gt;
+&lt;p&gt;Ce guide vous montre comment utiliser l&amp;rsquo;outil &lt;code&gt;create-team-member&lt;/code&gt; pour ajouter efficacement de nouveaux membres à la section équipe du site.&lt;/p&gt;
+&lt;h2 id="structure-dun-profil-membre-leidimen"&gt;Structure d&amp;rsquo;un profil membre Leidimen
+ &lt;a href="#structure-dun-profil-membre-leidimen"&gt;¶&lt;/a&gt;
+&lt;/h2&gt;&lt;p&gt;Avant de créer un profil, il est important de comprendre les informations requises :&lt;/p&gt;</description></item><item><title>Guide : Créer un post avec le serveur MCP Hugo</title><link>https://hdicko.github.io/leidimen/posts/2026/guide-creation-post-mcp/</link><pubDate>Tue, 17 Feb 2026 00:00:00 +0000</pubDate><guid>https://hdicko.github.io/leidimen/posts/2026/guide-creation-post-mcp/</guid><description>&lt;h2 id="introduction-au-serveur-mcp-hugo"&gt;Introduction au serveur MCP Hugo
+ &lt;a href="#introduction-au-serveur-mcp-hugo"&gt;¶&lt;/a&gt;
+&lt;/h2&gt;&lt;p&gt;Le &lt;strong&gt;Model Context Protocol (MCP)&lt;/strong&gt; est une nouvelle technologie qui permet à Claude (l&amp;rsquo;assistant IA) d&amp;rsquo;interagir directement avec les systèmes locaux. Pour le site Leidimen, nous avons développé un serveur MCP spécialisé qui facilite la création et la gestion de contenu Hugo.&lt;/p&gt;
+&lt;h2 id="quest-ce-que-mcp-"&gt;Qu&amp;rsquo;est-ce que MCP ?
+ &lt;a href="#quest-ce-que-mcp-"&gt;¶&lt;/a&gt;
+&lt;/h2&gt;&lt;p&gt;MCP (Model Context Protocol) est un protocole open-source développé par Anthropic qui permet aux assistants IA comme Claude d&amp;rsquo;accéder à des outils et des données locales de manière sécurisée. Plutôt que de simplement générer du code, Claude peut maintenant &lt;strong&gt;exécuter des actions&lt;/strong&gt; directement sur votre système.&lt;/p&gt;</description></item><item><title>Créer un Nouveau Prompt pour la Création de Blog</title><link>https://hdicko.github.io/leidimen/posts/2026/creer-prompt-vscode-claude/</link><pubDate>Wed, 21 Jan 2026 00:00:00 +0000</pubDate><guid>https://hdicko.github.io/leidimen/posts/2026/creer-prompt-vscode-claude/</guid><description>&lt;h2 id="introduction"&gt;Introduction
+ &lt;a href="#introduction"&gt;¶&lt;/a&gt;
+&lt;/h2&gt;&lt;p&gt;La création de prompts personnalisés dans Visual Studio Code avec Claude Sonnet 4.5 permet d&amp;rsquo;automatiser et d&amp;rsquo;optimiser la création de contenus pour notre blog. Ce guide vous montre comment créer vos propres commandes réutilisables.&lt;/p&gt;
+&lt;h2 id="quest-ce-quun-prompt-personnalisé-"&gt;Qu&amp;rsquo;est-ce qu&amp;rsquo;un Prompt Personnalisé ?
+ &lt;a href="#quest-ce-quun-prompt-personnalis%c3%a9-"&gt;¶&lt;/a&gt;
+&lt;/h2&gt;&lt;p&gt;Un prompt personnalisé est une instruction réutilisable que vous pouvez sauvegarder et rappeler facilement dans VS Code. Il permet de standardiser des tâches répétitives comme la création d&amp;rsquo;articles de blog avec des structures cohérentes.&lt;/p&gt;</description></item><item><title>Intelligence Artificielle et Développement en Milieu Rural</title><link>https://hdicko.github.io/leidimen/posts/2026/ai-expert-post/</link><pubDate>Wed, 21 Jan 2026 00:00:00 +0000</pubDate><guid>https://hdicko.github.io/leidimen/posts/2026/ai-expert-post/</guid><description>&lt;h2 id="introduction"&gt;Introduction
+ &lt;a href="#introduction"&gt;¶&lt;/a&gt;
+&lt;/h2&gt;&lt;p&gt;L&amp;rsquo;intelligence artificielle représente une opportunité unique pour améliorer l&amp;rsquo;efficacité de nos projets de solidarité internationale.&lt;/p&gt;
+&lt;h2 id="le-potentiel-de-lia"&gt;Le Potentiel de l&amp;rsquo;IA
+ &lt;a href="#le-potentiel-de-lia"&gt;¶&lt;/a&gt;
+&lt;/h2&gt;&lt;p&gt;Les technologies d&amp;rsquo;IA peuvent nous aider dans plusieurs domaines :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Analyse de données&lt;/strong&gt; : Optimiser l&amp;rsquo;allocation des ressources&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Communication&lt;/strong&gt; : Faciliter les échanges multilingues&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Planification&lt;/strong&gt; : Améliorer la coordination des projets&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Formation&lt;/strong&gt; : Créer des contenus éducatifs adaptés&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="applications-pratiques"&gt;Applications Pratiques
+ &lt;a href="#applications-pratiques"&gt;¶&lt;/a&gt;
+&lt;/h2&gt;&lt;p&gt;Notre association explore comment ces technologies peuvent soutenir concrètement nos actions sur le terrain.&lt;/p&gt;</description></item></channel></rss>

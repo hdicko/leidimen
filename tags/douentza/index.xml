@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Douentza on Leidimen - Association de Solidarité Mali</title><link>https://hdicko.github.io/leidimen/tags/douentza/</link><description>Recent content in Douentza on Leidimen - Association de Solidarité Mali</description><generator>Hugo</generator><language>fr-FR</language><lastBuildDate>Tue, 05 Nov 2019 15:44:50 +0100</lastBuildDate><atom:link href="https://hdicko.github.io/leidimen/tags/douentza/index.xml" rel="self" type="application/rss+xml"/><item><title>Hamadoun Dicko</title><link>https://hdicko.github.io/leidimen/equipe/hd/</link><pubDate>Tue, 05 Nov 2019 15:44:50 +0100</pubDate><guid>https://hdicko.github.io/leidimen/equipe/hd/</guid><description>&lt;!-- Professional LinkedIn-style profile for Hamadoun Dicko --&gt;
+&lt;img
+ src="images/hd-thumb.jpg"
+ class="figure-img img-fluid rounded"
+ alt=""
+ loading="lazy" /&gt;
+
+&lt;hr&gt;
+
+&lt;details&gt;
+ &lt;summary&gt;A propos de moi&lt;/summary&gt;
+ &lt;div class="details-content"&gt;
+ &lt;h1 id="typeit-d9ef94ed4c3a0a94c7635a7defe3d2af"&gt;&lt;/h1&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/typeit@8.7.1/dist/index.umd.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+ document.addEventListener("DOMContentLoaded", function () {
+ 
+ new TypeIt("#typeit-d9ef94ed4c3a0a94c7635a7defe3d2af", {
+ strings: "Dicko Hamadi Pathe Ameri Diona",
+ speed: 100 ,
+ lifeLike: true ,
+ startDelay: 0 ,
+ breakLines: true ,
+ waitUntilVisible: true ,
+ loop: false ,
+ cursor: false,
+ html: true
+ }).go();
+ 
+ });
+&lt;/script&gt;
+&lt;h2 id="engagement-associatif"&gt;Engagement associatif&lt;/h2&gt;
+&lt;p&gt;Hamadoun apporte son expertise technique à l&amp;rsquo;association Leidimen en assurant la maintenance des services web, la sécurité des données et le déploiement des outils collaboratifs utilisés par les bénévoles.&lt;/p&gt;</description></item><item><title>Envoi du matériel informatique à Bamako</title><link>https://hdicko.github.io/leidimen/posts/2007/envoi-materiel-informatique/</link><pubDate>Mon, 15 Jan 2007 07:29:00 +0100</pubDate><guid>https://hdicko.github.io/leidimen/posts/2007/envoi-materiel-informatique/</guid><description>&lt;h2 id="un-projet-majeur-qui-prend-vie--"&gt;Un projet majeur qui prend vie ! 💻
+ &lt;a href="#un-projet-majeur-qui-prend-vie--"&gt;¶&lt;/a&gt;
+&lt;/h2&gt;&lt;p&gt;Après des semaines de préparation, le grand jour est arrivé : &lt;strong&gt;le matériel informatique est en route vers Bamako&lt;/strong&gt; !&lt;/p&gt;
+&lt;p&gt;&lt;p class="rouded float-start imag-thumbnail"&gt;
+ &lt;img
+ src="envoi.jpg"
+ loading="lazy"
+ alt="Chargement du matériel"
+ /&gt;&lt;/p&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Chargement du matériel informatique direction Bamako&lt;/em&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="les-derniers-préparatifs"&gt;Les derniers préparatifs
+ &lt;a href="#les-derniers-pr%c3%a9paratifs"&gt;¶&lt;/a&gt;
+&lt;/h2&gt;&lt;p&gt;Dans les jours précédents, nos bénévoles ont travaillé d&amp;rsquo;arrache-pied pour préparer l&amp;rsquo;envoi des &lt;strong&gt;10 ordinateurs&lt;/strong&gt; destinés au lycée de Douentza.&lt;/p&gt;
+&lt;h3 id="-emballage-professionnel"&gt;📦 Emballage professionnel
+ &lt;a href="#-emballage-professionnel"&gt;¶&lt;/a&gt;
+&lt;/h3&gt;&lt;p&gt;Les ordinateurs ont été soigneusement remballés dans des &lt;strong&gt;cartons tout neufs&lt;/strong&gt; que nous avons étiquetés pour garantir leur protection durant le transport.&lt;/p&gt;</description></item><item><title>Installation d'Ubuntu</title><link>https://hdicko.github.io/leidimen/posts/2006/installation-ubuntu/</link><pubDate>Wed, 20 Dec 2006 07:39:00 +0100</pubDate><guid>https://hdicko.github.io/leidimen/posts/2006/installation-ubuntu/</guid><description>&lt;h2 id="une-étape-cruciale-franchie--"&gt;Une étape cruciale franchie ! 🐧
+ &lt;a href="#une-%c3%a9tape-cruciale-franchie--"&gt;¶&lt;/a&gt;
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Ubuntu a été installé sur tous les PC destinés au lycée de Douentza.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;p class="rouded float-start imag-thumbnail"&gt;
+ &lt;img
+ src="install.jpg"
+ loading="lazy"
+ alt="Installation d&amp;rsquo;Ubuntu"
+ /&gt;&lt;/p&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Installation en cours du système d&amp;rsquo;exploitation Ubuntu&lt;/em&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="pourquoi-ubuntu-"&gt;Pourquoi Ubuntu ?
+ &lt;a href="#pourquoi-ubuntu-"&gt;¶&lt;/a&gt;
+&lt;/h2&gt;&lt;h3 id="-un-choix-stratégique-et-éthique"&gt;🆓 Un choix stratégique et éthique
+ &lt;a href="#-un-choix-strat%c3%a9gique-et-%c3%a9thique"&gt;¶&lt;/a&gt;
+&lt;/h3&gt;&lt;p&gt;Ubuntu est une distribution &lt;strong&gt;Linux gratuite et open source&lt;/strong&gt; qui offre de nombreux avantages pour notre projet éducatif :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;💰 Gratuité totale&lt;/strong&gt; : Pas de coûts de licences&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;🔒 Sécurité renforcée&lt;/strong&gt; : Moins vulnérable aux virus&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;📚 Logiciels éducatifs inclus&lt;/strong&gt; : Suite complète préinstallée&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;⚡ Performance optimale&lt;/strong&gt; : Fonctionne bien sur du matériel récupéré&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;🌍 Multilingue&lt;/strong&gt; : Support du français et d&amp;rsquo;autres langues&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="impact-pour-le-lycée-de-douentza"&gt;Impact pour le lycée de Douentza
+ &lt;a href="#impact-pour-le-lyc%c3%a9e-de-douentza"&gt;¶&lt;/a&gt;
+&lt;/h2&gt;&lt;p&gt;Ces &lt;strong&gt;10 ordinateurs&lt;/strong&gt; équipés d&amp;rsquo;Ubuntu vont permettre aux lycéens d&amp;rsquo;accéder à :&lt;/p&gt;</description></item></channel></rss>

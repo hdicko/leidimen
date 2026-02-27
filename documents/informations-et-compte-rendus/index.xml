@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Informations et Comptes rendus de reunions on Leidimen - Association de Solidarité Mali</title><link>https://hdicko.github.io/leidimen/documents/informations-et-compte-rendus/</link><description>Recent content in Informations et Comptes rendus de reunions on Leidimen - Association de Solidarité Mali</description><generator>Hugo</generator><language>fr-FR</language><lastBuildDate>Wed, 13 Nov 2019 15:32:40 +0100</lastBuildDate><atom:link href="https://hdicko.github.io/leidimen/documents/informations-et-compte-rendus/index.xml" rel="self" type="application/rss+xml"/><item><title>Informations</title><link>https://hdicko.github.io/leidimen/documents/informations-et-compte-rendus/informations/</link><pubDate>Wed, 13 Nov 2019 15:32:40 +0100</pubDate><guid>https://hdicko.github.io/leidimen/documents/informations-et-compte-rendus/informations/</guid><description>&lt;h2 id="liens-utiles-et-ressources"&gt;Liens utiles et ressources
+ &lt;a href="#liens-utiles-et-ressources"&gt;¶&lt;/a&gt;
+&lt;/h2&gt;&lt;p&gt;Découvrez nos partenaires et consultez les documents clés sur nos zones d&amp;rsquo;intervention.&lt;/p&gt;
+&lt;div class="row g-4 my-5"&gt;
+ &lt;div class="col-md-6 col-lg-4"&gt;
+ &lt;div class="card info-resource-card shadow-sm h-100"&gt;
+ &lt;div class="card-body text-center"&gt;
+ &lt;div class="mb-4"&gt;
+ &lt;i class="bi bi-globe card-icon text-primary"&gt;&lt;/i&gt;
+ &lt;/div&gt;
+ &lt;h5 class="card-title fw-bold mb-3"&gt;Ville de Bondoufle&lt;/h5&gt;
+ &lt;p class="card-text text-muted mb-4"&gt;Site officiel de notre ville partenaire en Essonne&lt;/p&gt;
+ &lt;a href="https://www.ville-bondoufle.fr/" class="btn btn-outline-primary rounded-pill" target="_blank" rel="noopener"&gt;
+ &lt;i class="bi bi-box-arrow-up-right me-2"&gt;&lt;/i&gt;Visiter le site
+ &lt;/a&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="col-md-6 col-lg-4"&gt;
+ &lt;div class="card info-resource-card shadow-sm h-100"&gt;
+ &lt;div class="card-body text-center"&gt;
+ &lt;div class="mb-4"&gt;
+ &lt;i class="bi bi-file-earmark-text card-icon text-success"&gt;&lt;/i&gt;
+ &lt;/div&gt;
+ &lt;h5 class="card-title fw-bold mb-3"&gt;Schéma d'Aménagement&lt;/h5&gt;
+ &lt;p class="card-text text-muted mb-4"&gt;Cercle de Douentza 2012-2032 - Document de planification&lt;/p&gt;
+ &lt;a href="https://hdicko.github.io/leidimen/documents/Douentza/Douentza1.pdf" class="btn btn-outline-success rounded-pill" target="_blank"&gt;
+ &lt;i class="bi bi-download me-2"&gt;&lt;/i&gt;Télécharger PDF
+ &lt;/a&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="col-md-6 col-lg-4"&gt;
+ &lt;div class="card info-resource-card shadow-sm h-100"&gt;
+ &lt;div class="card-body text-center"&gt;
+ &lt;div class="mb-4"&gt;
+ &lt;i class="bi bi-people card-icon text-info"&gt;&lt;/i&gt;
+ &lt;/div&gt;
+ &lt;h5 class="card-title fw-bold mb-3"&gt;ADPEK&lt;/h5&gt;
+ &lt;p class="card-text text-muted mb-4"&gt;Association pour le développement de l'éducation au Korarou&lt;/p&gt;</description></item><item><title>Compte rendu de réunions</title><link>https://hdicko.github.io/leidimen/documents/informations-et-compte-rendus/compte-rendu/</link><pubDate>Wed, 06 Nov 2019 10:12:09 +0100</pubDate><guid>https://hdicko.github.io/leidimen/documents/informations-et-compte-rendus/compte-rendu/</guid><description>&lt;h2 id="rapports-annuels-de-lassociation"&gt;Rapports annuels de l&amp;rsquo;association
+ &lt;a href="#rapports-annuels-de-lassociation"&gt;¶&lt;/a&gt;
+&lt;/h2&gt;&lt;p&gt;Consultez nos rapports d&amp;rsquo;activités et comptes rendus annuels pour suivre l&amp;rsquo;évolution de nos actions au Mali.&lt;/p&gt;
+&lt;style&gt;
+ .rapport-card {
+ transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+ border-radius: 16px;
+ overflow: hidden;
+ position: relative;
+ }
+ 
+ .rapport-card::before {
+ content: '';
+ position: absolute;
+ top: 0;
+ left: 0;
+ right: 0;
+ height: 4px;
+ background: linear-gradient(90deg, #0d6efd 0%, #0dcaf0 100%);
+ transform: scaleX(0);
+ transition: transform 0.3s ease;
+ }
+ 
+ .rapport-card:hover {
+ transform: translateY(-8px);
+ box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15) !important;
+ }
+ 
+ .rapport-card:hover::before {
+ transform: scaleX(1);
+ }
+ 
+ .rapport-card .card-icon {
+ transition: all 0.3s ease;
+ display: inline-block;
+ }
+ 
+ .rapport-card:hover .card-icon {
+ transform: scale(1.1) rotate(5deg);
+ }
+ 
+ .rapport-card .btn {
+ transition: all 0.3s ease;
+ }
+ 
+ .rapport-card:hover .btn {
+ transform: scale(1.05);
+ }
+ 
+ .year-badge {
+ position: absolute;
+ top: 15px;
+ right: 15px;
+ background: rgba(13, 110, 253, 0.1);
+ color: #0d6efd;
+ padding: 4px 12px;
+ border-radius: 20px;
+ font-size: 0.85rem;
+ font-weight: 600;
+ }
+ 
+ .rapport-nouveau {
+ animation: pulse 2s infinite;
+ box-shadow: 0 0 0 0 rgba(13, 110, 253, 0.4);
+ }
+ 
+ @keyframes pulse {
+ 0% { box-shadow: 0 0 0 0 rgba(13, 110, 253, 0.4); }
+ 70% { box-shadow: 0 0 0 10px rgba(13, 110, 253, 0); }
+ 100% { box-shadow: 0 0 0 0 rgba(13, 110, 253, 0); }
+ }
+&lt;/style&gt;
+&lt;div class="row g-4 my-5"&gt;
+ &lt;div class="col-md-6 col-lg-4"&gt;
+ &lt;div class="card h-100 rapport-card shadow-sm border-0"&gt;
+ &lt;span class="year-badge"&gt;2008&lt;/span&gt;
+ &lt;div class="card-body text-center pt-5"&gt;
+ &lt;i class="bi bi-file-earmark-pdf card-icon text-danger fs-1 mb-3"&gt;&lt;/i&gt;
+ &lt;h5 class="card-title fw-bold"&gt;Rapport 2008&lt;/h5&gt;
+ &lt;p class="card-text text-muted small"&gt;Bilan des activités 2008&lt;/p&gt;</description></item></channel></rss>

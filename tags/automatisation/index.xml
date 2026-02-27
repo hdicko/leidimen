@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Automatisation on Leidimen - Association de Solidarité Mali</title><link>https://hdicko.github.io/leidimen/tags/automatisation/</link><description>Recent content in Automatisation on Leidimen - Association de Solidarité Mali</description><generator>Hugo</generator><language>fr-FR</language><lastBuildDate>Tue, 19 Aug 2025 11:00:00 +0000</lastBuildDate><atom:link href="https://hdicko.github.io/leidimen/tags/automatisation/index.xml" rel="self" type="application/rss+xml"/><item><title>Hamadoun Pathe Ameri Diona Dicko</title><link>https://hdicko.github.io/leidimen/equipe/hpad/</link><pubDate>Tue, 19 Aug 2025 11:00:00 +0000</pubDate><guid>https://hdicko.github.io/leidimen/equipe/hpad/</guid><description>&lt;!-- Professional LinkedIn-style profile for Hamadoun Pathe Ameri Diona Dicko --&gt;
+&lt;img
+ src="images/hpad-card.jpg"
+ class="figure-img img-fluid rounded"
+ alt=""
+ loading="lazy" /&gt;
+
+&lt;hr&gt;
+
+&lt;details&gt;
+ &lt;summary&gt;À propos de moi&lt;/summary&gt;
+ &lt;div class="details-content"&gt;
+ &lt;h1 id="typeit-047f6456d459bb16be78b247245aacf0"&gt;&lt;/h1&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/typeit@8.7.1/dist/index.umd.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+ document.addEventListener("DOMContentLoaded", function () {
+ 
+ new TypeIt("#typeit-047f6456d459bb16be78b247245aacf0", {
+ strings: "Hamadoun Pathe Ameri Diona Dicko",
+ speed: 100 ,
+ lifeLike: true ,
+ startDelay: 0 ,
+ breakLines: true ,
+ waitUntilVisible: true ,
+ loop: false ,
+ cursor: false,
+ html: true
+ }).go();
+ 
+ });
+&lt;/script&gt;
+&lt;h2 id="profil"&gt;Profil&lt;/h2&gt;
+&lt;p&gt;Ingénieur systèmes et DevOps passionné par l&amp;rsquo;architecture d&amp;rsquo;infrastructure, l&amp;rsquo;automatisation et la fiabilité des services. Plus de 20 ans d&amp;rsquo;expérience dans des environnements techniques exigeants au sein de grandes entreprises informatiques (DEC, Compaq, HP), où j&amp;rsquo;ai mené des projets de migration, d&amp;rsquo;automatisation et d&amp;rsquo;exploitation à grande échelle.&lt;/p&gt;</description></item></channel></rss>

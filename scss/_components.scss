@@ -1,0 +1,13 @@
+// Component utility styles used across multiple templates
+
+// Related posts card image (replaces inline style in related-posts.html)
+.post-thumb {
+  height: 200px;
+  object-fit: cover;
+}
+
+// Villages map container (replaces inline style in mali-villages-map-simple.html)
+#villages-map {
+  height: 500px;
+  width: 100%;
+}

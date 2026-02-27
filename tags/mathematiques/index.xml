@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mathematiques on Leidimen - Association de Solidarité Mali</title><link>https://hdicko.github.io/leidimen/tags/mathematiques/</link><description>Recent content in Mathematiques on Leidimen - Association de Solidarité Mali</description><generator>Hugo</generator><language>fr-FR</language><lastBuildDate>Tue, 05 Nov 2019 15:44:50 +0100</lastBuildDate><atom:link href="https://hdicko.github.io/leidimen/tags/mathematiques/index.xml" rel="self" type="application/rss+xml"/><item><title>Hamadoun Dicko</title><link>https://hdicko.github.io/leidimen/equipe/hd/</link><pubDate>Tue, 05 Nov 2019 15:44:50 +0100</pubDate><guid>https://hdicko.github.io/leidimen/equipe/hd/</guid><description>&lt;!-- Professional LinkedIn-style profile for Hamadoun Dicko --&gt;
+&lt;img
+ src="images/hd-thumb.jpg"
+ class="figure-img img-fluid rounded"
+ alt=""
+ loading="lazy" /&gt;
+
+&lt;hr&gt;
+
+&lt;details&gt;
+ &lt;summary&gt;A propos de moi&lt;/summary&gt;
+ &lt;div class="details-content"&gt;
+ &lt;h1 id="typeit-d9ef94ed4c3a0a94c7635a7defe3d2af"&gt;&lt;/h1&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/typeit@8.7.1/dist/index.umd.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+ document.addEventListener("DOMContentLoaded", function () {
+ 
+ new TypeIt("#typeit-d9ef94ed4c3a0a94c7635a7defe3d2af", {
+ strings: "Dicko Hamadi Pathe Ameri Diona",
+ speed: 100 ,
+ lifeLike: true ,
+ startDelay: 0 ,
+ breakLines: true ,
+ waitUntilVisible: true ,
+ loop: false ,
+ cursor: false,
+ html: true
+ }).go();
+ 
+ });
+&lt;/script&gt;
+&lt;h2 id="engagement-associatif"&gt;Engagement associatif&lt;/h2&gt;
+&lt;p&gt;Hamadoun apporte son expertise technique à l&amp;rsquo;association Leidimen en assurant la maintenance des services web, la sécurité des données et le déploiement des outils collaboratifs utilisés par les bénévoles.&lt;/p&gt;</description></item></channel></rss>

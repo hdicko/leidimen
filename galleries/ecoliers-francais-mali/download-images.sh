@@ -1,0 +1,21 @@
+#!/bin/bash
+# Script pour télécharger les images
+
+wget -O "photo-001-imgp0710.jpg" "https://leidimen.com/wp-content/uploads/2008/12/imgp0710.jpg"
+wget -O "photo-002-imgp0711.jpg" "https://leidimen.com/wp-content/uploads/2008/12/imgp0711.jpg"
+wget -O "photo-003-imgp0716.jpg" "https://leidimen.com/wp-content/uploads/2008/12/imgp0716.jpg"
+wget -O "photo-004-imgp0729.jpg" "https://leidimen.com/wp-content/uploads/2008/12/imgp0729.jpg"
+wget -O "photo-005-imgp07322.jpg" "https://leidimen.com/wp-content/uploads/2008/12/imgp07322.jpg"
+wget -O "photo-006-imgp0744.jpg" "https://leidimen.com/wp-content/uploads/2008/12/imgp0744.jpg"
+wget -O "photo-007-imgp0750.jpg" "https://leidimen.com/wp-content/uploads/2008/12/imgp0750.jpg"
+wget -O "photo-008-imgp0751.jpg" "https://leidimen.com/wp-content/uploads/2008/12/imgp0751.jpg"
+wget -O "photo-009-imgp0755.jpg" "https://leidimen.com/wp-content/uploads/2008/12/imgp0755.jpg"
+wget -O "photo-010-imgp0710-300x224.jpg" "//leidimen.com/wp-content/uploads/2008/12/imgp0710-300x224.jpg"
+wget -O "photo-011-imgp0711-300x224.jpg" "//leidimen.com/wp-content/uploads/2008/12/imgp0711-300x224.jpg"
+wget -O "photo-012-imgp0716-300x224.jpg" "//leidimen.com/wp-content/uploads/2008/12/imgp0716-300x224.jpg"
+wget -O "photo-013-imgp0729-300x224.jpg" "//leidimen.com/wp-content/uploads/2008/12/imgp0729-300x224.jpg"
+wget -O "photo-014-imgp07322-224x300.jpg" "//leidimen.com/wp-content/uploads/2008/12/imgp07322-224x300.jpg"
+wget -O "photo-015-imgp0744-300x224.jpg" "//leidimen.com/wp-content/uploads/2008/12/imgp0744-300x224.jpg"
+wget -O "photo-016-imgp0750-300x224.jpg" "//leidimen.com/wp-content/uploads/2008/12/imgp0750-300x224.jpg"
+wget -O "photo-017-imgp0751-300x224.jpg" "//leidimen.com/wp-content/uploads/2008/12/imgp0751-300x224.jpg"
+wget -O "photo-018-imgp0755-300x224.jpg" "//leidimen.com/wp-content/uploads/2008/12/imgp0755-300x224.jpg"
