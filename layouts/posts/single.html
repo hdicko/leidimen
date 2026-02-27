@@ -142,49 +142,12 @@
 
           {{/* Post Footer */}}
           <footer class="post-footer mt-5 pt-4 border-top">
-            {{/* Share Buttons */}}
-            <div
-              class="d-flex justify-content-between align-items-center flex-wrap gap-3">
-              <div>
-                <strong class="text-muted">Partager :</strong>
-                <div
-                  class="btn-group ms-2"
-                  role="group"
-                  aria-label="Boutons de partage">
-                  <a
-                    href="https://twitter.com/intent/tweet?url={{ .Permalink | urlquery }}&text={{ .Title | urlquery }}"
-                    class="btn btn-sm btn-outline-primary"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Partager sur Twitter">
-                    <i class="bi bi-twitter" aria-hidden="true"></i>
-                  </a>
-                  <a
-                    href="https://www.facebook.com/sharer/sharer.php?url={{ .Permalink | urlquery }}"
-                    class="btn btn-sm btn-outline-primary"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Partager sur Facebook">
-                    <i class="bi bi-facebook" aria-hidden="true"></i>
-                  </a>
-                  <button
-                    class="btn btn-sm btn-outline-primary"
-                    data-action="copy-link"
-                    data-url="{{ .Permalink }}"
-                    aria-label="Copier le lien">
-                    <i class="bi bi-link-45deg" aria-hidden="true"></i>
-                  </button>
-                </div>
-              </div>
-
-              {{/* Back to Posts */}}
-              <a
-                href="{{ "/posts/" | relURL }}"
-                class="btn btn-outline-secondary">
-                <i class="bi bi-arrow-left" aria-hidden="true"></i> Retour aux
-                articles
-              </a>
-            </div>
+            <a
+              href="{{ "/posts/" | relURL }}"
+              class="btn btn-outline-secondary">
+              <i class="bi bi-arrow-left" aria-hidden="true"></i> Retour aux
+              articles
+            </a>
           </footer>
         </div>
       </div>
