@@ -32,6 +32,305 @@
   - Custom pagination styling
 */}}
 
+{{ define "page-styles" }}
+  <style>
+    /* Hero Section */
+    .village-hero {
+      min-height: 400px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+
+    .hero-bg-effects {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      overflow: hidden;
+    }
+
+    .gradient-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(
+        135deg,
+        rgba(102, 126, 234, 0.9) 0%,
+        rgba(118, 75, 162, 0.9) 100%
+      );
+    }
+
+    .floating-shapes {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+
+    .shape {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      animation: float 20s infinite ease-in-out;
+    }
+
+    .shape-1 {
+      width: 300px;
+      height: 300px;
+      top: -100px;
+      left: -50px;
+      animation-delay: 0s;
+    }
+
+    .shape-2 {
+      width: 200px;
+      height: 200px;
+      bottom: -50px;
+      right: 10%;
+      animation-delay: 5s;
+    }
+
+    .shape-3 {
+      width: 150px;
+      height: 150px;
+      top: 50%;
+      right: -50px;
+      animation-delay: 10s;
+    }
+
+    @keyframes float {
+      0%,
+      100% {
+        transform: translateY(0) rotate(0deg);
+      }
+      50% {
+        transform: translateY(-30px) rotate(180deg);
+      }
+    }
+
+    .village-icon {
+      font-size: 4rem;
+      color: white;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%,
+      100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+    }
+
+    .hero-decoration {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .decoration-line {
+      width: 60px;
+      height: 2px;
+      background: rgba(255, 255, 255, 0.5);
+    }
+
+    /* Glass Effect Cards */
+    .glass-effect {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .glass-effect:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Content Card */
+    .content-card {
+      overflow: hidden;
+    }
+
+    .content-body {
+      line-height: 1.8;
+      color: #333;
+    }
+
+    .content-body h1,
+    .content-body h2,
+    .content-body h3 {
+      color: #667eea;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .content-body p {
+      margin-bottom: 1rem;
+    }
+
+    /* Section Headers */
+    .section-header {
+      margin-bottom: 3rem;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #2c3e50;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Related posts section light-mode fix */
+    .related-posts-section {
+      background: #f0f2f8 !important;
+    }
+
+    .related-posts-section .display-5 {
+      color: #1e293b !important;
+    }
+
+    /* Post Cards */
+    .post-card {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(102, 126, 234, 0.2);
+    }
+
+    .post-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 40px rgba(102, 126, 234, 0.2) !important;
+    }
+
+    .post-card-border {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    .post-card:hover .post-card-border {
+      transform: scaleX(1);
+    }
+
+    .post-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      line-height: 1.4;
+    }
+
+    .post-title a {
+      color: #1e293b !important;
+      transition: color 0.3s ease;
+    }
+
+    .post-title a:hover {
+      color: #667eea !important;
+    }
+
+    .post-meta {
+      font-size: 0.875rem;
+    }
+
+    .post-excerpt {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #475569 !important;
+    }
+
+    .post-categories .badge {
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+
+    /* Buttons */
+    .btn-outline-primary {
+      border-width: 2px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .btn-outline-primary:hover {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-color: transparent;
+      transform: translateX(5px);
+    }
+
+    /* Pagination */
+    .pagination-wrapper {
+      display: flex;
+      justify-content: center;
+    }
+
+    .pagination-wrapper .pagination {
+      gap: 0.5rem;
+    }
+
+    .pagination-wrapper .page-link {
+      border-radius: 10px;
+      border: 2px solid #667eea;
+      color: #667eea;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .pagination-wrapper .page-link:hover {
+      background: #667eea;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .pagination-wrapper .page-item.active .page-link {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-color: transparent;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .village-hero {
+        min-height: 300px;
+      }
+
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+
+      .village-icon {
+        font-size: 3rem;
+      }
+
+      .section-title {
+        font-size: 1.5rem;
+      }
+
+      .post-title {
+        font-size: 1.25rem;
+      }
+    }
+
+    /* Animation delays for staggered appearance */
+    [data-aos] {
+      pointer-events: auto;
+    }
+  </style>
+{{ end }}
+
 {{ define "main" }}
 
   <!-- Modern Village Page -->
@@ -222,291 +521,5 @@
     {{ end }}
   </div>
 
-  <!-- Styles -->
-  <style>
-    /* Hero Section */
-    .village-hero {
-      min-height: 400px;
-      display: flex;
-      align-items: center;
-      position: relative;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    }
-
-    .hero-bg-effects {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      overflow: hidden;
-    }
-
-    .gradient-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(
-        135deg,
-        rgba(102, 126, 234, 0.9) 0%,
-        rgba(118, 75, 162, 0.9) 100%
-      );
-    }
-
-    .floating-shapes {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-    }
-
-    .shape {
-      position: absolute;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 50%;
-      animation: float 20s infinite ease-in-out;
-    }
-
-    .shape-1 {
-      width: 300px;
-      height: 300px;
-      top: -100px;
-      left: -50px;
-      animation-delay: 0s;
-    }
-
-    .shape-2 {
-      width: 200px;
-      height: 200px;
-      bottom: -50px;
-      right: 10%;
-      animation-delay: 5s;
-    }
-
-    .shape-3 {
-      width: 150px;
-      height: 150px;
-      top: 50%;
-      right: -50px;
-      animation-delay: 10s;
-    }
-
-    @keyframes float {
-      0%,
-      100% {
-        transform: translateY(0) rotate(0deg);
-      }
-      50% {
-        transform: translateY(-30px) rotate(180deg);
-      }
-    }
-
-    .village-icon {
-      font-size: 4rem;
-      color: white;
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0%,
-      100% {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(1.1);
-      }
-    }
-
-    .hero-decoration {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
-      margin-top: 2rem;
-    }
-
-    .decoration-line {
-      width: 60px;
-      height: 2px;
-      background: rgba(255, 255, 255, 0.5);
-    }
-
-    /* Glass Effect Cards */
-    .glass-effect {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      border-radius: 20px;
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-      transition: all 0.3s ease;
-    }
-
-    .glass-effect:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15);
-    }
-
-    /* Content Card */
-    .content-card {
-      overflow: hidden;
-    }
-
-    .content-body {
-      line-height: 1.8;
-      color: #333;
-    }
-
-    .content-body h1,
-    .content-body h2,
-    .content-body h3 {
-      color: #667eea;
-      margin-top: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    .content-body p {
-      margin-bottom: 1rem;
-    }
-
-    /* Section Headers */
-    .section-header {
-      margin-bottom: 3rem;
-    }
-
-    .section-title {
-      font-size: 2rem;
-      font-weight: 700;
-      color: #2c3e50;
-      margin-bottom: 0.5rem;
-    }
-
-    /* Post Cards */
-    .post-card {
-      position: relative;
-      overflow: hidden;
-      transition: all 0.3s ease;
-      border: 1px solid rgba(102, 126, 234, 0.1);
-    }
-
-    .post-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 15px 40px rgba(102, 126, 234, 0.2) !important;
-    }
-
-    .post-card-border {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
-      transform: scaleX(0);
-      transition: transform 0.3s ease;
-    }
-
-    .post-card:hover .post-card-border {
-      transform: scaleX(1);
-    }
-
-    .post-title {
-      font-size: 1.5rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-      line-height: 1.4;
-    }
-
-    .post-title a {
-      transition: color 0.3s ease;
-    }
-
-    .post-title a:hover {
-      color: #667eea !important;
-    }
-
-    .post-meta {
-      font-size: 0.875rem;
-    }
-
-    .post-excerpt {
-      font-size: 1rem;
-      line-height: 1.6;
-    }
-
-    .post-categories .badge {
-      font-size: 0.75rem;
-      font-weight: 500;
-    }
-
-    /* Buttons */
-    .btn-outline-primary {
-      border-width: 2px;
-      font-weight: 600;
-      transition: all 0.3s ease;
-    }
-
-    .btn-outline-primary:hover {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      border-color: transparent;
-      transform: translateX(5px);
-    }
-
-    /* Pagination */
-    .pagination-wrapper {
-      display: flex;
-      justify-content: center;
-    }
-
-    .pagination-wrapper .pagination {
-      gap: 0.5rem;
-    }
-
-    .pagination-wrapper .page-link {
-      border-radius: 10px;
-      border: 2px solid #667eea;
-      color: #667eea;
-      font-weight: 600;
-      transition: all 0.3s ease;
-    }
-
-    .pagination-wrapper .page-link:hover {
-      background: #667eea;
-      color: white;
-      transform: translateY(-2px);
-    }
-
-    .pagination-wrapper .page-item.active .page-link {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      border-color: transparent;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .village-hero {
-        min-height: 300px;
-      }
-
-      .hero-content h1 {
-        font-size: 2.5rem;
-      }
-
-      .village-icon {
-        font-size: 3rem;
-      }
-
-      .section-title {
-        font-size: 1.5rem;
-      }
-
-      .post-title {
-        font-size: 1.25rem;
-      }
-    }
-
-    /* Animation delays for staggered appearance */
-    [data-aos] {
-      pointer-events: auto;
-    }
-  </style>
 {{ end }}
 {{/* * end main * */}}
