@@ -1,7 +1,7 @@
 ---
 title: "Claire Petit"
 card:
-  image: "/images/team/claire-petit.jpg"
+  
   name: "Claire Petit"
   title: "Chargée de projets"
   member: ["adherent"]

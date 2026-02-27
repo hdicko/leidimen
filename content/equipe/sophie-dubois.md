@@ -1,7 +1,7 @@
 ---
 title: "Sophie Dubois"
 card:
-  image: "/images/team/sophie-dubois.jpg"
+  
   name: "Sophie Dubois"
   title: "Responsable communication"
   member: ["adherent"]

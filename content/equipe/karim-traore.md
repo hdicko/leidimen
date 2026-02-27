@@ -1,7 +1,7 @@
 ---
 title: "Karim Traoré"
 card:
-  image: "/images/team/karim-traore.jpg"
+  
   name: "Karim Traoré"
   title: "Coordinateur Mali"
   member: ["adherent"]
