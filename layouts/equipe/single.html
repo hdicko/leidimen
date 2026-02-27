@@ -531,29 +531,6 @@
     Includes integrity hash for security
   */}}
   {{/* Asset Loading */}}
-  {{ $styles := "" }}
-  {{ with resources.Get "scss/pages/profile.scss" }}
-    {{ $styles = . | toCSS | minify | fingerprint }}
-  {{ end }}
-  {{ if $styles }}
-    <link
-      rel="stylesheet"
-      href="{{ $styles.RelPermalink }}"
-      integrity="{{ $styles.Data.Integrity }}" />
-  {{ end }}
-
-  {{/* Load equipe-single specific styles */}}
-  {{ $equipeSingleStyles := "" }}
-  {{ with resources.Get "scss/pages/equipe-single.scss" }}
-    {{ $equipeSingleStyles = . | toCSS | minify | fingerprint }}
-  {{ end }}
-  {{ if $equipeSingleStyles }}
-    <link
-      rel="stylesheet"
-      href="{{ $equipeSingleStyles.RelPermalink }}"
-      integrity="{{ $equipeSingleStyles.Data.Integrity }}" />
-  {{ end }}
-
   {{ $script := "" }}
   {{ with resources.Get "js/profile.js" }}
     {{ $script = . | minify | fingerprint }}
@@ -563,5 +540,17 @@
       src="{{ $script.RelPermalink }}"
       integrity="{{ $script.Data.Integrity }}"
       defer></script>
+  {{ end }}
+{{ end }}
+
+{{ define "page-styles" }}
+  {{/* Load profile CSS in <head> to prevent FOUC */}}
+  {{ with resources.Get "scss/pages/profile.scss" }}
+    {{ $s := . | toCSS | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $s.RelPermalink }}" integrity="{{ $s.Data.Integrity }}" />
+  {{ end }}
+  {{ with resources.Get "scss/pages/equipe-single.scss" }}
+    {{ $s := . | toCSS | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $s.RelPermalink }}" integrity="{{ $s.Data.Integrity }}" />
   {{ end }}
 {{ end }}
