@@ -21,7 +21,10 @@
   - Netlify CMS integration
 */}}
 <!doctype html>
-<html lang="{{ .Site.Language.Lang | default " en" }}" class="h-100" data-bs-theme="auto">
+<html
+  lang="{{ .Site.Language.Lang | default " en" }}"
+  class="h-100"
+  data-bs-theme="auto">
   <head>
     {{ partial "head.html" . }}
     {{ block "page-styles" . }}{{ end }}

@@ -1,11 +1,10 @@
-{{/* 
-  Template: villages/single.html
+{{/* Template: villages/single.html
   Purpose: Single village page layout
   Context: Renders individual village content pages
-  
+
   This layout is used for village pages stored in content/villages/{village-name}/_index.md
   It applies the village page styling and layout from term.html concept but for content pages.
-  
+
   Uses the default single page content rendering with village-specific styling.
 */}}
 
@@ -23,13 +22,14 @@
               <i class="bi bi-geo-alt-fill me-1"></i>{{ .Title }}
             </span>
             <span class="badge bg-light text-muted">
-              <i class="bi bi-calendar3 me-1"></i>{{ .Date.Format "02 janvier 2006" }}
+              <i class="bi bi-calendar3 me-1"></i
+              >{{ .Date.Format "02 janvier 2006" }}
             </span>
           </div>
-          
+
           <!-- Description -->
           {{ if .Description }}
-          <p class="lead text-muted fs-5">{{ .Description }}</p>
+            <p class="lead text-muted fs-5">{{ .Description }}</p>
           {{ end }}
         </div>
 
@@ -41,33 +41,39 @@
         <!-- Related Posts Section -->
         {{ $village := lower .Title }}
         {{ $relatedPosts := where site.RegularPages "Params.villages" "intersect" (slice $village) }}
-        
+
         {{ if $relatedPosts }}
-        <div class="related-posts mt-5 pt-5 border-top">
-          <h2 class="mb-4">Articles relatifs à {{ .Title }}</h2>
-          <div class="row g-4">
-            {{ range $relatedPosts | first 3 }}
-            <div class="col-md-6">
-              <article class="card h-100 border-0 shadow-sm">
-                {{ if .Params.image }}
-                <img src="{{ .Params.image | relURL }}" class="card-img-top" alt="{{ .Title }}" style="height: 200px; object-fit: cover;">
-                {{ end }}
-                <div class="card-body">
-                  <h5 class="card-title">{{ .Title }}</h5>
-                  <p class="card-text text-muted small">{{ .Summary }}</p>
+          <div class="related-posts mt-5 pt-5 border-top">
+            <h2 class="mb-4">Articles relatifs à {{ .Title }}</h2>
+            <div class="row g-4">
+              {{ range $relatedPosts | first 3 }}
+                <div class="col-md-6">
+                  <article class="card h-100 border-0 shadow-sm">
+                    {{ if .Params.image }}
+                      <img
+                        src="{{ .Params.image | relURL }}"
+                        class="card-img-top"
+                        alt="{{ .Title }}"
+                        style="height: 200px; object-fit: cover;" />
+                    {{ end }}
+                    <div class="card-body">
+                      <h5 class="card-title">{{ .Title }}</h5>
+                      <p class="card-text text-muted small">{{ .Summary }}</p>
+                    </div>
+                    <div class="card-footer bg-transparent border-top-0">
+                      <a
+                        href="{{ .RelPermalink }}"
+                        class="btn btn-sm btn-primary"
+                        >Lire plus →</a
+                      >
+                    </div>
+                  </article>
                 </div>
-                <div class="card-footer bg-transparent border-top-0">
-                  <a href="{{ .RelPermalink }}" class="btn btn-sm btn-primary">Lire plus →</a>
-                </div>
-              </article>
+              {{ end }}
             </div>
-            {{ end }}
           </div>
-        </div>
         {{ end }}
       </div>
     </div>
   </div>
-
-
 {{ end }}

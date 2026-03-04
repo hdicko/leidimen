@@ -3,6 +3,7 @@
 ## URLs Correctes
 
 ### 🌐 Production (GitHub Pages)
+
 ```
 https://hdicko.github.io/leidimen/villages/
 ```
@@ -10,18 +11,21 @@ https://hdicko.github.io/leidimen/villages/
 ### 💻 Développement Local
 
 **Option 1 : Avec dev-server.sh (recommandé)**
+
 ```bash
 ./dev-server.sh
 # Puis accéder à: http://localhost:1313/villages/
 ```
 
 **Option 2 : Avec npm**
+
 ```bash
 npm run dev
 # Puis accéder à: http://localhost:1313/leidimen/villages/
 ```
 
 **Option 3 : Hugo direct**
+
 ```bash
 ./node_modules/.bin/hugo/hugo server --baseURL="http://localhost:1313"
 # Puis accéder à: http://localhost:1313/villages/
@@ -34,12 +38,14 @@ npm run dev
 ### Problème 1 : Mauvaise URL
 
 **❌ INCORRECT (Production):**
+
 ```
 https://hdicko.github.io/villages/  (manque /leidimen/)
 http://localhost:1313/villages/     (si npm run dev - manque /leidimen/)
 ```
 
 **✅ CORRECT:**
+
 ```
 https://hdicko.github.io/leidimen/villages/
 ```
@@ -49,6 +55,7 @@ https://hdicko.github.io/leidimen/villages/
 Si vous utilisez `npm run dev` au lieu de `./dev-server.sh`, le site garde le baseURL de production (`/leidimen/`).
 
 **Solution:**
+
 ```bash
 # Utiliser dev-server.sh qui override le baseURL
 ./dev-server.sh
@@ -69,6 +76,7 @@ ls -la public/villages/index.html
 ```
 
 **Résultat attendu:**
+
 ```
 -rw-rw-r-- 1 dicko dicko 48104 Feb 25 20:58 public/villages/index.html
 ```
@@ -81,6 +89,7 @@ head -100 public/villages/index.html | grep -i "villages de la région"
 ```
 
 **Résultat attendu:**
+
 ```html
 <title>Villages de la Région de Douentza - Nos Zones d'Intervention...</title>
 ```
@@ -98,12 +107,12 @@ data/villages/mali_villages.yaml     # Données des villages
 public/villages/index.html           # Page générée
 ```
 
-### Frontmatter du _index.md
+### Frontmatter du \_index.md
 
 ```yaml
 ---
 date: "2023-08-19T22:35:25+02:00"
-draft: false  # ✅ Doit être false
+draft: false # ✅ Doit être false
 title: "Villages de la Région de Douentza - Nos Zones d'Intervention"
 description: "Découvrez les villages..."
 keywords:
@@ -140,6 +149,7 @@ npm run build
 ```
 
 **Après déploiement, la page sera accessible à:**
+
 ```
 https://hdicko.github.io/leidimen/villages/
 ```

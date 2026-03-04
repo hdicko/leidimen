@@ -66,69 +66,77 @@
       {{ $imagesPath := "content/documents/images" }}
       {{ $doroolImages := readDir "content/documents/images/dorool" }}
       {{ $douentzaImages := readDir "content/documents/images/douentza" }}
-      
-      {{ if or $doroolImages $douentzaImages }}
-      <div class="mb-5">
-        <h2 class="h3 mb-4 text-center">
-          <i class="bi bi-images text-primary me-2"></i>
-          Galerie de photos des projets
-        </h2>
-        
-        <!-- Dorool Images -->
-        {{ if $doroolImages }}
-        <h3 class="h5 mb-3 text-muted">📍 Village de Dorool</h3>
-        <div class="row g-3 mb-4">
-          {{ range $doroolImages }}
-            {{ if not .IsDir }}
-              {{ $imgPath := printf "documents/images/dorool/%s" .Name }}
-              <div class="col-6 col-md-4 col-lg-3">
-                <div class="card border-0 shadow-sm h-100 document-img-card">
-                  <img 
-                    src="{{ $imgPath | relURL }}" 
-                    class="card-img-top" 
-                    alt="{{ .Name }}"
-                    loading="lazy"
-                    style="height: 200px; object-fit: cover;" />
-                  <div class="card-body p-2">
-                    <p class="small text-muted mb-0 text-truncate" title="{{ .Name }}">
-                      {{ .Name }}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            {{ end }}
-          {{ end }}
-        </div>
-        {{ end }}
 
-        <!-- Douentza Images -->
-        {{ if $douentzaImages }}
-        <h3 class="h5 mb-3 text-muted">📍 Village de Douentza</h3>
-        <div class="row g-3 mb-4">
-          {{ range $douentzaImages }}
-            {{ if not .IsDir }}
-              {{ $imgPath := printf "documents/images/douentza/%s" .Name }}
-              <div class="col-6 col-md-4 col-lg-3">
-                <div class="card border-0 shadow-sm h-100 document-img-card">
-                  <img 
-                    src="{{ $imgPath | relURL }}" 
-                    class="card-img-top" 
-                    alt="{{ .Name }}"
-                    loading="lazy"
-                    style="height: 200px; object-fit: cover;" />
-                  <div class="card-body p-2">
-                    <p class="small text-muted mb-0 text-truncate" title="{{ .Name }}">
-                      {{ .Name }}
-                    </p>
+      {{ if or $doroolImages $douentzaImages }}
+        <div class="mb-5">
+          <h2 class="h3 mb-4 text-center">
+            <i class="bi bi-images text-primary me-2"></i>
+            Galerie de photos des projets
+          </h2>
+
+          <!-- Dorool Images -->
+          {{ if $doroolImages }}
+            <h3 class="h5 mb-3 text-muted">📍 Village de Dorool</h3>
+            <div class="row g-3 mb-4">
+              {{ range $doroolImages }}
+                {{ if not .IsDir }}
+                  {{ $imgPath := printf "documents/images/dorool/%s" .Name }}
+                  <div class="col-6 col-md-4 col-lg-3">
+                    <div
+                      class="card border-0 shadow-sm h-100 document-img-card">
+                      <img
+                        src="{{ $imgPath | relURL }}"
+                        class="card-img-top"
+                        alt="{{ .Name }}"
+                        loading="lazy"
+                        style="height: 200px; object-fit: cover;" />
+                      <div class="card-body p-2">
+                        <p
+                          class="small text-muted mb-0 text-truncate"
+                          title="{{ .Name }}">
+                          {{ .Name }}
+                        </p>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-            {{ end }}
+                {{ end }}
+              {{ end }}
+            </div>
+          {{ end }}
+
+
+          <!-- Douentza Images -->
+          {{ if $douentzaImages }}
+            <h3 class="h5 mb-3 text-muted">📍 Village de Douentza</h3>
+            <div class="row g-3 mb-4">
+              {{ range $douentzaImages }}
+                {{ if not .IsDir }}
+                  {{ $imgPath := printf "documents/images/douentza/%s" .Name }}
+                  <div class="col-6 col-md-4 col-lg-3">
+                    <div
+                      class="card border-0 shadow-sm h-100 document-img-card">
+                      <img
+                        src="{{ $imgPath | relURL }}"
+                        class="card-img-top"
+                        alt="{{ .Name }}"
+                        loading="lazy"
+                        style="height: 200px; object-fit: cover;" />
+                      <div class="card-body p-2">
+                        <p
+                          class="small text-muted mb-0 text-truncate"
+                          title="{{ .Name }}">
+                          {{ .Name }}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                {{ end }}
+              {{ end }}
+            </div>
           {{ end }}
         </div>
-        {{ end }}
-      </div>
       {{ end }}
+
 
       <!-- Professional Document Cards -->
       <h2 class="h3 mb-4 text-center">

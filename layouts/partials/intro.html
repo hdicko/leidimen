@@ -286,7 +286,9 @@
       {{ $villageMap := dict "Dorool" "dorool" "Diona" "diona" "Debere" "debere" "Diambana" "diambana" "Darawal" "darawal" "Douentza" "douentza" "Tanal" "tanal" "Manko" "manko" "Tacouti" "tacouti" "N'Dumpa" "ndumpa" }}
       {{ range $name, $slug := $villageMap }}
         <div class="col-md-4 col-sm-6">
-          <a href="{{ relURL (printf "/villages/%s/" $slug) }}" class="text-decoration-none text-reset">
+          <a
+            href="{{ relURL (printf "/villages/%s/" $slug) }}"
+            class="text-decoration-none text-reset">
             <div class="village-card p-3 rounded-3">
               <div class="d-flex align-items-center">
                 <div class="village-icon me-3">

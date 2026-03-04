@@ -547,10 +547,16 @@
   {{/* Load profile CSS in <head> to prevent FOUC */}}
   {{ with resources.Get "scss/pages/profile.scss" }}
     {{ $s := . | toCSS | minify | fingerprint }}
-    <link rel="stylesheet" href="{{ $s.RelPermalink }}" integrity="{{ $s.Data.Integrity }}" />
+    <link
+      rel="stylesheet"
+      href="{{ $s.RelPermalink }}"
+      integrity="{{ $s.Data.Integrity }}" />
   {{ end }}
   {{ with resources.Get "scss/pages/equipe-single.scss" }}
     {{ $s := . | toCSS | minify | fingerprint }}
-    <link rel="stylesheet" href="{{ $s.RelPermalink }}" integrity="{{ $s.Data.Integrity }}" />
+    <link
+      rel="stylesheet"
+      href="{{ $s.RelPermalink }}"
+      integrity="{{ $s.Data.Integrity }}" />
   {{ end }}
 {{ end }}

@@ -13,6 +13,7 @@ tags:
   - "publication"
   - "leidimen"
 ---
+
 Voici un guide simple pour créer et publier un article avec l’application web **leidimen-cms**. Aucune compétence technique n’est requise.
 
 ---
@@ -25,7 +26,7 @@ Voici un guide simple pour créer et publier un article avec l’application web
 2. **Créer un token GitHub** (clé d’accès)
    - Ouvrez https://github.com/settings/tokens
    - Cliquez sur **Generate new token** (ou **Fine‑grained token**)
-   - Donnez un nom (ex. *leidimen‑cms*)
+   - Donnez un nom (ex. _leidimen‑cms_)
    - **Cochez l’accès `repo`** (obligatoire)
    - Copiez le token et gardez‑le précieusement
 
@@ -57,8 +58,8 @@ Voici un guide simple pour créer et publier un article avec l’application web
 2. **Renseignez les informations de l’article**
    - **Titre** : le titre principal de votre post
    - **Date** : choisissez la date du jour
-   - **Catégories** : exemple *Éducation*, *Santé*, *Infrastructure*
-   - **Tags** : mots‑clés simples (ex. *école*, *projet*, *don*)
+   - **Catégories** : exemple _Éducation_, _Santé_, _Infrastructure_
+   - **Tags** : mots‑clés simples (ex. _école_, _projet_, _don_)
    - **Villages** : choisissez un ou plusieurs villages (en **minuscules**)
    - **Description SEO** : 150–160 caractères, résumé court
    - **Image de couverture** : ajoutez une image si disponible
@@ -105,4 +106,3 @@ Si vous avez un doute, contactez l’équipe via :
 ---
 
 **Vous êtes prêt·e à publier !**
-

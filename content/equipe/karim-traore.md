@@ -1,7 +1,6 @@
 ---
 title: "Karim Traoré"
 card:
-  
   name: "Karim Traoré"
   title: "Coordinateur Mali"
   member: ["adherent"]
@@ -10,7 +9,13 @@ card:
     - { icon: "envelope", link: "karim.traore@leidimen.org" }
 experience:
   - { year: "2026", title: "Coordinateur Mali", company: "Leidimen" }
-skills: ["Gestion de projets", "Coordination terrain", "Relations communautaires", "Logistique"]
+skills:
+  [
+    "Gestion de projets",
+    "Coordination terrain",
+    "Relations communautaires",
+    "Logistique",
+  ]
 ---
 
 Karim Traoré est le coordinateur de Leidimen au Mali. Basé à Bamako, il assure le lien essentiel entre les villages de la région de Douentza et l'équipe en France.

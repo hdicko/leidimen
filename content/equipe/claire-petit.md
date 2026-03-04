@@ -1,7 +1,6 @@
 ---
 title: "Claire Petit"
 card:
-  
   name: "Claire Petit"
   title: "Chargée de projets"
   member: ["adherent"]
@@ -10,7 +9,14 @@ card:
     - { icon: "envelope", link: "claire.petit@leidimen.org" }
 experience:
   - { year: "2026", title: "Chargée de projets", company: "Leidimen" }
-skills: ["Gestion de projets", "Éducation", "Santé", "Suivi-évaluation", "Partenariats"]
+skills:
+  [
+    "Gestion de projets",
+    "Éducation",
+    "Santé",
+    "Suivi-évaluation",
+    "Partenariats",
+  ]
 ---
 
 Claire Petit est chargée de projets au sein de Leidimen. Basée à Toulouse, elle pilote le développement et le suivi des projets éducatifs et sanitaires menés dans les villages de la région de Douentza.

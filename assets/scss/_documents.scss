@@ -18,19 +18,31 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--color-bg-light) 0%, var(--color-bg-lighter) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-bg-light) 0%,
+    var(--color-bg-lighter) 100%
+  );
   border-radius: 12px;
   transition: all 0.3s ease;
 }
 
 .document-card:hover .document-icon {
   transform: scale(1.1);
-  background: linear-gradient(135deg, var(--color-doc-icon-bg) 0%, var(--color-doc-icon-bg-hover) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-doc-icon-bg) 0%,
+    var(--color-doc-icon-bg-hover) 100%
+  );
 }
 
 /* Professional Buttons */
 .professional-btn {
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-primary) 0%,
+    var(--color-primary-dark) 100%
+  );
   border: none;
   border-radius: 8px;
   color: white;
@@ -49,7 +61,11 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-primary-dark) 0%,
+    var(--color-primary) 100%
+  );
   transition: left 0.3s ease;
   z-index: 1;
 }
@@ -175,7 +191,11 @@
 
 /* Page Header Animation */
 .display-5 {
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-primary) 0%,
+    var(--color-primary-dark) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

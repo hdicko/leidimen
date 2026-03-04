@@ -94,24 +94,40 @@ body[data-bs-theme="light"] .adhesion-note {
 }
 
 .pricing-badge {
-  background: linear-gradient(135deg, var(--color-text-gray-bs) 0%, var(--color-text-light-bs) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-text-gray-bs) 0%,
+    var(--color-text-light-bs) 100%
+  );
   color: white;
   padding: 1rem;
   border-radius: var(--radius-md);
 }
 
 body[data-bs-theme="light"] .pricing-badge {
-  background: linear-gradient(135deg, var(--color-text-secondary-bs) 0%, var(--color-text-gray-bs) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-text-secondary-bs) 0%,
+    var(--color-text-gray-bs) 100%
+  );
 }
 
 .adhesion-btn {
-  background: linear-gradient(135deg, var(--color-text-muted-bs) 0%, var(--color-text-gray-bs) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-text-muted-bs) 0%,
+    var(--color-text-gray-bs) 100%
+  );
   color: white;
   border-radius: 10px;
 }
 
 body[data-bs-theme="light"] .adhesion-btn {
-  background: linear-gradient(135deg, var(--color-link-bs) 0%, var(--color-link-hover) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-link-bs) 0%,
+    var(--color-link-hover) 100%
+  );
 }
 
 .adhesion-zone-card {
@@ -125,7 +141,11 @@ body[data-bs-theme="light"] .adhesion-btn {
 }
 
 body[data-bs-theme="light"] .adhesion-zone-card {
-  background: linear-gradient(135deg, var(--color-text-secondary-bs) 0%, var(--color-text-gray-bs) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-text-secondary-bs) 0%,
+    var(--color-text-gray-bs) 100%
+  );
 }
 
 /* Utility Classes */
@@ -164,7 +184,11 @@ body[data-bs-theme="light"] .adhesion-zone-card {
 
 .subsection-card:hover .subsection-icon {
   transform: scale(1.1);
-  background: linear-gradient(135deg, var(--color-warning-bg) 0%, var(--color-warning-pale) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-warning-bg) 0%,
+    var(--color-warning-pale) 100%
+  );
 }
 
 .content-area iframe {
@@ -565,7 +589,11 @@ body[data-bs-theme="light"] .adhesion-zone-card {
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  background: linear-gradient(
+    90deg,
+    var(--color-primary) 0%,
+    var(--color-primary-dark) 100%
+  );
   transform: scaleX(0);
   transition: transform 0.3s ease;
 }
@@ -607,11 +635,19 @@ body[data-bs-theme="light"] .adhesion-zone-card {
 .footer-section {
   padding: 1.5rem;
   border-radius: 12px;
-  background: linear-gradient(135deg, var(--color-text-heading) 0%, var(--color-text-subheading) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-text-heading) 0%,
+    var(--color-text-subheading) 100%
+  );
 }
 
 body[data-bs-theme="light"] .footer-section {
-  background: linear-gradient(135deg, var(--color-bg-light) 0%, var(--color-bg-lighter) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-bg-light) 0%,
+    var(--color-bg-lighter) 100%
+  );
   border: 1px solid var(--color-bg-lighter);
 }
 
@@ -625,7 +661,11 @@ body[data-bs-theme="light"] .footer-section {
 }
 
 .footer-badge {
-  background: linear-gradient(135deg, var(--color-text-heading) 0%, var(--color-text-subheading) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-text-heading) 0%,
+    var(--color-text-subheading) 100%
+  );
   color: white;
 }
 
@@ -657,7 +697,12 @@ body[data-bs-theme="light"] .footer-section {
 /* Intro / Hero styles (moved from layouts/partials/intro.html) */
 .hero-modern {
   min-height: 100vh;
-  background: linear-gradient(135deg, var(--color-hero-dark) 0%, var(--color-hero-mid) 50%, var(--color-hero-light) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-hero-dark) 0%,
+    var(--color-hero-mid) 50%,
+    var(--color-hero-light) 100%
+  );
   position: relative;
 }
 
@@ -760,7 +805,11 @@ body[data-bs-theme="light"] .footer-section {
 }
 
 .intro-section-ctx7 {
-  background: linear-gradient(135deg, var(--color-bg-surface) 0%, var(--color-border-light) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-bg-surface) 0%,
+    var(--color-border-light) 100%
+  );
   min-height: 80vh;
   position: relative;
 }
@@ -801,7 +850,11 @@ body[data-bs-theme="light"] .footer-section {
   left: 50%;
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, var(--color-primary), var(--color-primary-dark));
+  background: linear-gradient(
+    90deg,
+    var(--color-primary),
+    var(--color-primary-dark)
+  );
   transition: all 0.3s ease;
   transform: translateX(-50%);
 }
@@ -809,7 +862,11 @@ body[data-bs-theme="light"] .footer-section {
   width: 80%;
 }
 .nav-link.active {
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-primary) 0%,
+    var(--color-primary-dark) 100%
+  );
   color: white !important;
 }
 .nav-link.active::after {
@@ -836,7 +893,11 @@ body[data-bs-theme="light"] .footer-section {
   transform: translateX(5px);
 }
 .dropdown-item.active {
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-primary) 0%,
+    var(--color-primary-dark) 100%
+  );
   color: white;
 }
 #darkModeToggle {
@@ -846,7 +907,11 @@ body[data-bs-theme="light"] .footer-section {
   transition: all 0.3s ease;
 }
 #darkModeToggle:hover {
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-primary) 0%,
+    var(--color-primary-dark) 100%
+  );
   color: white;
   border-color: transparent;
   transform: rotate(15deg);

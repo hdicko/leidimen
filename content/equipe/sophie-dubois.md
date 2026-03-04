@@ -1,7 +1,6 @@
 ---
 title: "Sophie Dubois"
 card:
-  
   name: "Sophie Dubois"
   title: "Responsable communication"
   member: ["adherent"]
