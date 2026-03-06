@@ -174,34 +174,7 @@
   }
 </style>
 
-<script>
-  // Navbar scroll effect
-  window.addEventListener("scroll", () => {
-    const navbar = document.getElementById("mainNavbar");
-    if (window.scrollY > 50) {
-      navbar.classList.add("scrolled");
-    } else {
-      navbar.classList.remove("scrolled");
-    }
-  });
-
-  // Auto close mobile menu on link click
-  document.addEventListener("DOMContentLoaded", () => {
-    const navLinks = document.querySelectorAll(
-      ".navbar-nav .nav-link, .dropdown-item",
-    );
-    const navbarToggler = document.querySelector(".navbar-toggler");
-    const navbarCollapse = document.getElementById("navbarNav");
-
-    navLinks.forEach((link) => {
-      link.addEventListener("click", () => {
-        if (
-          window.innerWidth < 992 &&
-          navbarCollapse.classList.contains("show")
-        ) {
-          navbarToggler.click();
-        }
-      });
-    });
-  });
-</script>
+{{ $navbarjs := resources.Get "js/navbar.js" }}
+{{ if $navbarjs }}
+  <script src="{{ $navbarjs.RelPermalink }}"></script>
+{{ end }}

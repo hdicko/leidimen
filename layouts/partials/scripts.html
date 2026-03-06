@@ -40,21 +40,10 @@
   crossorigin=""></script>
 
 <!-- openstreetmap -->
-<script>
-  var map = L.map("map").setView([15.3252, -3.2346], 8);
-  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    maxZoom: 19,
-    attribution:
-      '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-  }).addTo(map);
-
-  var circle = L.circle([15.3252, -3.2346], {
-    color: "red",
-    fillColor: "#f03",
-    fillOpacity: 0.5,
-    radius: 500,
-  }).addTo(map);
-</script>
+{{ $mapjs := resources.Get "js/map.js" }}
+{{ if $mapjs }}
+  <script src="{{ $mapjs.RelPermalink }}"></script>
+{{ end }}
 
 <!-- mathlive removed (was FOR FUN ONLY) -->
 
@@ -79,14 +68,7 @@
   });
 </script>
 
-<!-- boostrap themes - light or dark -->
-<script>
-  function myFunction() {
-    var element = document.body;
-    element.dataset.bsTheme =
-      element.dataset.bsTheme == "dark" ? "light" : "dark";
-  }
-</script>
+<!-- boostrap themes - light or dark (see darkmode.js for full implementation) -->
 
 <!--  AlpineJS-->
 <script

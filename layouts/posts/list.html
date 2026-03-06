@@ -247,93 +247,10 @@
 </section>
 
 <!-- Search and Filter Script -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const searchInput = document.getElementById('searchTitle');
-  const yearFilter = document.getElementById('filterYear');
-  const sortSelect = document.getElementById('sortPosts');
-  const resetBtn = document.getElementById('resetFilters');
-  const postsGrid = document.getElementById('postsGrid');
-  const noResults = document.getElementById('noResults');
-  const resultsCount = document.getElementById('resultsCount');
-  const postCards = Array.from(document.querySelectorAll('.post-card-ctx7'));
-
-  console.log('Posts search initialized:', postCards.length, 'articles found');
-
-  function filterAndSortPosts() {
-    const searchTerm = searchInput.value.toLowerCase().trim();
-    const selectedYear = yearFilter.value;
-    const sortBy = sortSelect.value;
-    
-    console.log('Filtering:', { searchTerm, selectedYear, sortBy });
-    
-    // Filter posts
-    let visiblePosts = postCards.filter(card => {
-      const title = card.dataset.title;
-      const year = card.dataset.year;
-      
-      const matchesSearch = !searchTerm || title.includes(searchTerm);
-      const matchesYear = !selectedYear || year === selectedYear;
-      
-      const isVisible = matchesSearch && matchesYear;
-      card.style.display = isVisible ? 'block' : 'none';
-      return isVisible;
-    });
-
-    console.log('Visible posts:', visiblePosts.length);
-
-    // Sort visible posts
-    visiblePosts.sort((a, b) => {
-      if (sortBy === 'date-desc') {
-        return b.dataset.date.localeCompare(a.dataset.date);
-      } else if (sortBy === 'date-asc') {
-        return a.dataset.date.localeCompare(b.dataset.date);
-      } else if (sortBy === 'title') {
-        return a.dataset.title.localeCompare(b.dataset.title);
-      }
-      return 0;
-    });
-
-    // Reorder in DOM
-    visiblePosts.forEach(card => postsGrid.appendChild(card));
-
-    // Update results count
-    const totalPosts = postCards.length;
-    const visibleCount = visiblePosts.length;
-    
-    if (visibleCount === totalPosts) {
-      resultsCount.textContent = `${totalPosts} article${totalPosts > 1 ? 's' : ''} au total`;
-    } else {
-      resultsCount.textContent = `${visibleCount} article${visibleCount > 1 ? 's' : ''} sur ${totalPosts}`;
-    }
-
-    // Show/hide no results message
-    if (visiblePosts.length === 0) {
-      postsGrid.style.display = 'none';
-      noResults.classList.remove('d-none');
-    } else {
-      postsGrid.style.display = 'grid';
-      noResults.classList.add('d-none');
-    }
-  }
-
-  function resetFilters() {
-    searchInput.value = '';
-    yearFilter.value = '';
-    sortSelect.value = 'date-desc';
-    filterAndSortPosts();
-  }
-
-  // Event listeners
-  searchInput.addEventListener('input', filterAndSortPosts);
-  yearFilter.addEventListener('change', filterAndSortPosts);
-  sortSelect.addEventListener('change', filterAndSortPosts);
-  resetBtn.addEventListener('click', resetFilters);
-
-  // Initial count
-  filterAndSortPosts();
-});
-</script>
+{{ $postsFilterJs := resources.Get "js/posts-filter.js" }}
+{{ if $postsFilterJs }}
+  <script src="{{ $postsFilterJs.RelPermalink }}"></script>
+{{ end }}
 
 <!-- Context7 Posts Styles -->
 <style>

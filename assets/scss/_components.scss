@@ -74,9 +74,12 @@
   width: 100%;
 }
 
-// --- Document section patterns ---
-// Replaces: display-5 fw-bold text-dark mb-3
-.page-display-title {
+// Utility: fixed-height cover image (replaces inline style="height:200px;object-fit:cover")
+.img-cover-200 {
+  height: 200px;
+  object-fit: cover;
+}
+
   font-size: calc(1.325rem + 0.9vw); // matches Bootstrap display-5
   font-weight: 700;
   color: var(--bs-dark);
