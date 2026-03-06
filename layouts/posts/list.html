@@ -81,7 +81,7 @@
               <div class="stat-label">Articles</div>
             </div>
             <div class="stat-item">
-              <div class="stat-number">{{ now.Year | sub 2007 }}</div>
+              <div class="stat-number">{{ sub now.Year .Site.Params.foundingYear }}</div>
               <div class="stat-label">Années</div>
             </div>
           </div>

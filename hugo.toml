@@ -128,6 +128,7 @@ disableLatLong = false
   Description = "Leidimen: association solidaire Bondoufle (France) et Douentza (Mali)"
   author = ""
   email = "association@leidimen.com"
+  foundingYear = 2007
   address = "Association Leidimen, 14 rue des Pommiers, 91070 Bondoufle."
   addressStreet = "14 rue des Pommiers"
   addressLocality = "Bondoufle"
@@ -151,17 +152,17 @@ disableLatLong = false
     name = "facebook"
     icon = "bi bi-facebook"
     weight = 1
-    url = "https://www.facebook.com/dicko.hamadoun.3"
+    url = "https://www.facebook.com/leidimen"
 [[params.social]]
     name = "Twitter"
     icon = "bi bi-twitter"
     weight = 2
-    url = "https://twitter.com/@HamadounDicko"
+    url = "https://twitter.com/leidimen"
 [[params.social]]
     name = "LinkedIn"
     icon = "bi bi-linkedin"
     weight = 3
-    url = "https://www.linkedin.com/in/hamadoundicko"
+    url = "https://www.linkedin.com/company/leidimen"
 
 [menu]
   [[menu.main]]

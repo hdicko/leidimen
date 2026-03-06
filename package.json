@@ -23,7 +23,6 @@
     "bootstrap": "^5.3.8",
     "bootstrap-icons": "^1.13.1",
     "exec-bin": "^1.0.0",
-    "fontawesome-bootstrap-icons": "^1.0.0-1.9.1",
     "hugo-installer": "^4.0.1"
   },
   "otherDependencies": {

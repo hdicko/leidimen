@@ -187,7 +187,7 @@
           </p>
           <!-- Since Year -->
           <span class="badge rounded-pill footer-badge">
-            Depuis {{ 2007 }} • {{ now.Year | sub 2007 }} ans de solidarité
+            Depuis {{ .Site.Params.foundingYear }} • {{ sub now.Year .Site.Params.foundingYear }} ans de solidarité
           </span>
         </div>
       </div>
@@ -201,30 +201,16 @@
               🌐 Suivez-nous
             </h6>
             <div class="d-flex gap-2">
-              <a
-                href="https://www.facebook.com/leidimen"
-                class="social-link social-icon-size btn btn-outline-light btn-sm rounded-circle d-flex align-items-center justify-content-center"
-                target="_blank"
-                rel="noopener noreferrer"
-                title="Facebook">
-                <i class="bi bi-facebook social-icon-font"></i>
-              </a>
-              <a
-                href="https://twitter.com/leidimen"
-                class="social-link social-icon-size btn btn-outline-light btn-sm rounded-circle d-flex align-items-center justify-content-center"
-                target="_blank"
-                rel="noopener noreferrer"
-                title="Twitter">
-                <i class="bi bi-twitter social-icon-font"></i>
-              </a>
-              <a
-                href="https://www.linkedin.com/company/leidimen"
-                class="social-link social-icon-size btn btn-outline-light btn-sm rounded-circle d-flex align-items-center justify-content-center"
-                target="_blank"
-                rel="noopener noreferrer"
-                title="LinkedIn">
-                <i class="bi bi-linkedin social-icon-font"></i>
-              </a>
+              {{ range .Site.Params.social }}
+                <a
+                  href="{{ .url }}"
+                  class="social-link social-icon-size btn btn-outline-light btn-sm rounded-circle d-flex align-items-center justify-content-center"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="{{ .name }}">
+                  <i class="{{ .icon }} social-icon-font"></i>
+                </a>
+              {{ end }}
             </div>
           </div>
 

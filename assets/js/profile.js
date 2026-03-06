@@ -65,7 +65,6 @@ class ProfileActionHandler {
 		if (navigator.share) {
 			try {
 				await navigator.share(shareData);
-				console.log('Profile shared successfully');
 			} catch (err) {
 				// User cancelled or error occurred
 				if (err.name !== 'AbortError') {
