@@ -37,16 +37,16 @@
 {
   "@context": "https://schema.org",
   "@type": "ImageGallery",
-  "name": {{ $.Title | jsonify }},
-  "description": {{ with $.Description }}{{ . | jsonify }}{{ else }}{{ $.Summary | plainify | jsonify }}{{ end }},
-  "datePublished": {{ $.Date.Format "2006-01-02T15:04:05Z07:00" | jsonify }},
-  "url": {{ $.Permalink | jsonify }},
+  "name": "{{ $.Title }}",
+  "description": "{{ with $.Description }}{{ . }}{{ else }}{{ $.Summary | plainify }}{{ end }}",
+  "datePublished": "{{ $.Date.Format "2006-01-02T15:04:05Z07:00" }}",
+  "url": "{{ $.Permalink }}",
   "image": [
     {{ range $i, $img := . }}{{ if $i }},{{ end }}
     {
       "@type": "ImageObject",
-      "url": {{ $img.Permalink | jsonify }},
-      "name": {{ $img.Name | jsonify }},
+      "url": "{{ $img.Permalink }}",
+      "name": "{{ $img.Name }}",
       "width": {{ $img.Width }},
       "height": {{ $img.Height }}
     }
@@ -100,8 +100,9 @@
 
       {{/* Gallery Grid */}}
       {{ with .Resources.ByType "image" }}
+        {{ $images := . }}
         <div class="row g-3" role="list" aria-label="Galerie de photos">
-          {{ range $index, $img := . }}
+          {{ range $index, $img := $images }}
             {{ $thumb := $img.Fill "400x300 webp q85" }}
             <div class="col-6 col-md-4 col-lg-3" role="listitem">
               <a
@@ -109,7 +110,7 @@
                 data-fancybox="gallery"
                 data-caption="{{ $img.Name }}"
                 class="d-block gallery-item"
-                aria-label="Photo {{ add $index 1 }} sur {{ len . }}">
+                aria-label="Photo {{ add $index 1 }} sur {{ len $images }}">
                 <figure class="mb-0">
                   <img
                     src="{{ $thumb.RelPermalink }}"

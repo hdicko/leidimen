@@ -1,7 +1,7 @@
 ---
 title: "Photos des tournois Leïdimen"
 date: 2007-10-01
-type: "gallery"
+type: "galleries"
 villages: ["douentza"]
 categories: ["Culture"]
 tags: ["photos", "archive", "galerie"]

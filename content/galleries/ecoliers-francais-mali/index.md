@@ -1,7 +1,7 @@
 ---
 title: "Des écoliers français à la découverte du Mali"
 date: 2008-12-01
-type: "gallery"
+type: "galleries"
 villages: ["douentza"]
 categories: ["Éducation"]
 tags: ["photos", "archive", "galerie"]
