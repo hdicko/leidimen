@@ -1,0 +1,39 @@
+# Leidimen - Association de Solidarité Mali
+
+> Association de solidarité soutenant les villages de la région de Douentza au Mali. Projets d'éducation, santé et développement durable depuis 2006.
+
+Leidimen est une association humanitaire française fondée en 2006. Elle soutient les communautés rurales de la région de Douentza (Mali, Afrique de l'Ouest) à travers des projets concrets : construction d'écoles, accès à l'eau, infrastructures de santé, et développement durable.
+
+## Site
+
+- [Accueil](https://hdicko.github.io/leidimen/): Présentation de l'association et de ses actions
+- [Nos articles](https://hdicko.github.io/leidimen/posts/): Actualités et rapports d'activités
+- [Notre équipe](https://hdicko.github.io/leidimen/equipe/): Membres fondateurs et bénévoles
+- [Galeries photos](https://hdicko.github.io/leidimen/galleries/): Documentation photographique des projets
+- [Villages](https://hdicko.github.io/leidimen/villages/): Zones d'intervention dans la région de Douentza
+
+## Villages soutenus
+
+- [Douentza](https://hdicko.github.io/leidimen/villages/douentza/): Ville principale de la région, centre d'intervention
+- [Dorool](https://hdicko.github.io/leidimen/villages/dorool/): Village bénéficiant du projet scolaire
+- [Diona](https://hdicko.github.io/leidimen/villages/diona/): Village de la région
+- [Debere](https://hdicko.github.io/leidimen/villages/debere/): Village de la région
+- [Diambana](https://hdicko.github.io/leidimen/villages/diambana/): Village de la région
+- [Darawal](https://hdicko.github.io/leidimen/villages/darawal/): Village de la région
+- [Manko](https://hdicko.github.io/leidimen/villages/manko/): Village de la région
+- [Tacouti](https://hdicko.github.io/leidimen/villages/tacouti/): Village de la région
+- [N'Dumpa](https://hdicko.github.io/leidimen/villages/ndumpa/): Village de la région
+
+## Domaines d'action
+
+- **Éducation**: Construction et réhabilitation d'écoles, fourniture de matériel scolaire, soutien aux enseignants
+- **Santé**: Accès aux soins, sensibilisation sanitaire, équipement de centres de santé
+- **Infrastructure**: Construction de puits, accès à l'eau potable, équipements communautaires
+- **Développement durable**: Projets à long terme en partenariat avec les communautés locales
+
+## Contact
+
+- Site: https://hdicko.github.io/leidimen/
+- GitHub: https://github.com/hdicko/leidimen
+- Localisation: Bondoufle, France (91)
+- Zone d'intervention: Douentza, Région de Mopti, Mali

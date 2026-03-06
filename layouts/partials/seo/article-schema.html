@@ -1,0 +1,67 @@
+{{/* Article / BlogPosting Structured Data - JSON-LD
+  Purpose: Provide rich article metadata to search engines for enhanced SERP results
+  Scope: Individual post pages only (.IsPage and section = posts)
+
+  Benefits:
+  - Enables Google rich results (headline, image, author, dates)
+  - Improves click-through rates in search results
+  - Supports Google News and Discover eligibility
+
+  Schema: https://schema.org/BlogPosting
+*/}}
+
+{{ if and .IsPage (eq .Section "posts") }}
+{{ $image := "" }}
+{{ if .Params.image }}
+  {{ $image = .Params.image | absURL }}
+{{ else if .Resources.GetMatch "cover.*" }}
+  {{ $cover := .Resources.GetMatch "cover.*" }}
+  {{ $image = $cover.Permalink }}
+{{ else }}
+  {{ $image = "images/leidimen-logo.jpg" | absURL }}
+{{ end }}
+
+{{ $author := .Params.author | default "Association Leidimen" }}
+{{ $description := .Description | default .Summary | plainify | truncate 300 }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": {{ .Title | jsonify }},
+  "description": {{ $description | jsonify }},
+  "url": "{{ .Permalink }}",
+  "datePublished": "{{ .PublishDate.Format "2006-01-02T15:04:05Z07:00" }}",
+  "dateModified": "{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}",
+  "author": {
+    "@type": "Organization",
+    "name": {{ $author | jsonify }},
+    "url": "{{ .Site.BaseURL }}"
+  },
+  "publisher": {
+    "@type": "NGO",
+    "name": "Leidimen",
+    "url": "{{ .Site.BaseURL }}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ "images/leidimen-logo.jpg" | absURL }}"
+    }
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "{{ $image }}"
+  },
+  "inLanguage": "fr-FR",
+  "isPartOf": {
+    "@type": "Blog",
+    "name": "{{ .Site.Title }}",
+    "url": "{{ .Site.BaseURL }}"
+  }
+  {{ with .Params.tags }},
+  "keywords": {{ . | jsonify }}
+  {{ end }}
+  {{ with .Params.categories }},
+  "articleSection": {{ index . 0 | jsonify }}
+  {{ end }}
+}
+</script>
+{{ end }}

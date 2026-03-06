@@ -35,7 +35,7 @@ villages:
   </div>
   <div class="col-md-6">
     <div class="card shadow-lg border-0">
-      <a href="/img/infos/ordi.jpg" data-lightbox="ordinateurs" data-title="Les 10 ordinateurs prêts pour Douentza">
+      <a href="/img/infos/ordi.jpg" data-fancybox="ordinateurs" data-title="Les 10 ordinateurs prêts pour Douentza">
         <img src="/img/infos/ordi.jpg" class="card-img-top rounded post-thumb-alt" alt="Ordinateurs pour le lycée de Douentza">
       </a>
       <div class="card-body bg-light">

@@ -149,17 +149,17 @@ disableLatLong = false
 
 [[params.social]]
     name = "facebook"
-    icon = "fab fa-facebook"
+    icon = "bi bi-facebook"
     weight = 1
     url = "https://www.facebook.com/dicko.hamadoun.3"
 [[params.social]]
     name = "Twitter"
-    icon = "fab fa-twitter"
+    icon = "bi bi-twitter"
     weight = 2
     url = "https://twitter.com/@HamadounDicko"
 [[params.social]]
     name = "LinkedIn"
-    icon = "fab fa-linkedin"
+    icon = "bi bi-linkedin"
     weight = 3
     url = "https://www.linkedin.com/in/hamadoundicko"
 
@@ -168,36 +168,36 @@ disableLatLong = false
     name = 'Accueil'
     pageRef = '/'
     weight = 10
-    pre = "<i class='fa fa-home'></i>"
+    pre = "<i class='bi bi-house-fill'></i>"
   [[menu.main]]
     name = 'Equipe'
     pageRef = '/equipe'
-    pre = "<i class='fa fa-id-card'></i>"
+    pre = "<i class='bi bi-person-vcard-fill'></i>"
     weight = 20
   [[menu.main]]
     name = 'Documents'
     pageRef = '/documents'
-    pre = "<i class='fa fa-folder'></i>"
+    pre = "<i class='bi bi-folder-fill'></i>"
     weight = 30
   [[menu.main]]
     name = 'Villages'
     pageRef = '/villages'
-    pre = "<i class='fa fa-map-marker'></i>"
+    pre = "<i class='bi bi-geo-alt-fill'></i>"
     weight = 35
   [[menu.main]]
     name = 'Actualités'
     pageRef = '/posts'
-    pre = "<i class='fa fa-blog'></i>"
+    pre = "<i class='bi bi-journal-text'></i>"
     weight = 40
   [[menu.main]]
     name = 'Adhésion'
     pageRef = '/documents/adhesion'
-    pre = "<i class='fa fa-handshake-o'></i>"
+    pre = "<i class='bi bi-handshake'></i>"
     weight = 45
   [[menu.main]]
     name = 'Partenaires'
     pageRef = '/partenaires'
-    pre = "<i class='fa fa-handshake'></i>"
+    pre = "<i class='bi bi-handshake-fill'></i>"
     weight = 46
   [[menu.main]]
     name = 'Services'
