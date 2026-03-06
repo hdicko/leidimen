@@ -12,10 +12,6 @@ source: "https://leidimen.com/photos/photos-de-la-soiree-leidimen"
 
 Photos de la soirée organisée par Leïdimen en 2008
 
-## Galerie photos
-
-{{< gallery >}}
-
 <!-- Images originales (liens WordPress) -->
 
 <!-- 1. [photo-052.jpg](/images/wordpress/2008-05-photo-052.jpg) -->

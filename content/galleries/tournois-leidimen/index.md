@@ -16,9 +16,6 @@ source: "https://leidimen.com/photos/photos-des-tournois-leidimen"
 
 Au cours du mois de juillet 2007, deux tournois ont été organisés au profit de Leïdimen : un tournoi de PES (Pro Evolution Soccer) et un tournoi de poker. Ces événements conviviaux ont permis de financer en partie le vidéoprojecteur et le disque dur externe de l'association.
 
-{{<divider>}}
-{{< gallery >}}
-
 <!-- Images originales (liens WordPress) -->
 
 <!-- 1. [dsc03417.JPG](/images/wordpress/2007-10-dsc03417.JPG) -->

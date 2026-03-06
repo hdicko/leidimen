@@ -10,5 +10,3 @@ weight: 0
 ---
 
 Photos de personnes et moments de partage.
-
-{{< gallery >}}
