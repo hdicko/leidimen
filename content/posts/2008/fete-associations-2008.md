@@ -11,7 +11,8 @@ tags:
   - bondoufle
 villages: []
 moods:
-  - Motivé
+  - motive
+type: "posts"
 ---
 
 Bonjour à tous!

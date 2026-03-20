@@ -12,12 +12,13 @@ categories:
 tags:
   - blog
 villages:
-  - Tanal
-  - Douentza
-  - Diona
-  - Debere
-  - Boundoucoli
-  - Dorool
+  - tanal
+  - douentza
+  - diona
+  - debere
+  - boundoucoli
+  - dorool
+type: "posts"
 ---
 
 {{< details summary="lire tout l'article" >}}

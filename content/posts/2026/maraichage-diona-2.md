@@ -15,6 +15,7 @@ tags:
   - "irrigation"
 moods:
   - "motive"
+type: "posts"
 ---
 
 ## Le Maraîchage

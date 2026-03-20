@@ -12,6 +12,7 @@ tags:
 villages:
   - douentza
 source: https://leidimen.com/installation-dubuntu
+type: "posts"
 ---
 
 Ubuntu a été installé sur tous les PC destinés au lycée de Douentza

@@ -14,7 +14,7 @@ tags:
   - Boundoucoli
 villages:
   - boundoucoli
-type: posts
+type: "posts"
 ---
 
 Le projet consiste en la mise en place d'une banque d'aliments pour bétail (appelés tourteau) dans le village de Boundoucoli. Il permettra de réduire les coûts d'exploitation des éleveurs de Boundoucoli.

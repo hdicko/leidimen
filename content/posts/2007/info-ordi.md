@@ -14,6 +14,7 @@ tags:
   - info
 villages:
   - douentza
+type: "posts"
 ---
 
 ## 📅 26 février 2007

@@ -12,7 +12,8 @@ villages:
   - diona
   - debere
 moods:
-  - motivé
+  - motive
+type: "posts"
 ---
 
 ## 📖 Utilisation

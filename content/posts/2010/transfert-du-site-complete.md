@@ -12,6 +12,7 @@ tags:
 villages:
   - douentza
 source: https://leidimen.com/transfert-du-site-complete
+type: "posts"
 ---
 
 J’ai le plaisir de vous annoncer que le site temporaire a été transféré avec succès. Leïdimen.com tourne désormais sous un [WordPress](http://www.wordpress.org/), un logiciel libre destiné à publier des blogs.

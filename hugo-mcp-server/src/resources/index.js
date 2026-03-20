@@ -72,7 +72,7 @@ export function registerResources(server, hugoRoot) {
 	// ═══════════════════════════════════════
 	server.resource('taxonomies', 'hugo://taxonomies', async (uri) => {
 		const taxonomies = {
-			villages: ['douentza', 'dorool', 'diona', 'debere', 'diambana', 'darawal', 'tanal', 'manko', 'tacouti', 'ndumpa'],
+			villages: ['douentza', 'dorool', 'diona', 'debere', 'boundoucoli', 'diambana', 'darawal', 'tanal', 'manko', 'tacouti', 'ndumpa'],
 			categories: ['Éducation', 'Santé', 'Infrastructure', 'informations'],
 			moods: ['heureux', 'triste', 'inspire', 'motive', 'reconnaissant'],
 			tags: 'Free-form (any string)',

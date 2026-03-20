@@ -12,6 +12,7 @@ tags:
 villages:
   - douentza
 source: https://leidimen.com/et-si-on-se-retrouvait-sur-paris
+type: "posts"
 ---
 
 [

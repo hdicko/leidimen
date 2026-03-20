@@ -16,8 +16,9 @@ villages:
   - debere
   - diona
 moods:
-  - Motivé
-  - Inspiré
+  - motive
+  - inspire
+type: "posts"
 ---
 
 ## Mission au Mali - Septembre/Octobre 2007

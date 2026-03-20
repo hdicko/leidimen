@@ -13,7 +13,7 @@ tags:
   - éducation
 villages:
   - dorool
-type: posts
+type: "posts"
 ---
 
 ![Enfants de Dorool](/images/wordpress/2007-07-8199.jpg)

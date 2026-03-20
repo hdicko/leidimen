@@ -12,6 +12,7 @@ tags:
 villages:
   - douentza
 source: https://leidimen.com/292
+type: "posts"
 ---
 
 [/images/wordpress/2008-02-tissuamicla-affiche1.jpg](/images/wordpress/2008-02-tissuamicla-affiche1.jpg)

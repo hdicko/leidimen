@@ -16,7 +16,8 @@ tags:
 villages:
   - douentza
 moods:
-  - Motivé
+  - motive
+type: "posts"
 ---
 
 ## Une étape cruciale franchie ! 🐧

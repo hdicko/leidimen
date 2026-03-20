@@ -18,6 +18,7 @@ villages:
   - boundoucoli
   - debere
   - dorool
+type: "posts"
 ---
 
 {{< details summary="lire tout l'article" >}}

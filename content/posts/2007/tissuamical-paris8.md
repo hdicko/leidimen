@@ -12,7 +12,7 @@ tags:
   - étudiants
   - interculturel
   - tissuamical
-type: posts
+type: "posts"
 ---
 
 ![Affiche TissuAmical](/images/wordpress/2008-02-tissuamicla-affiche1.jpg)

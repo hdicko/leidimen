@@ -12,6 +12,7 @@ tags:
 villages:
   - douentza
 source: https://leidimen.com/assemblee-generale-2009
+type: "posts"
 ---
 
 Bonjour à tous !

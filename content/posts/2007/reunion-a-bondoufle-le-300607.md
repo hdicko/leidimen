@@ -13,6 +13,7 @@ tags:
 villages:
   - douentza
 source: https://leidimen.com/reunion-a-bondoufle-le-300607
+type: "posts"
 ---
 
 Une réunion s’est tenue samedi 30 juin à Bondoufle. Ordre du jour : Site internet : questions de fond sur l’usage recherché, questions pratiques… plannification des mois à venir : attribution des tâches, objectifs, dates butoires L’adresse du  site sera  diffusée à l’extérieur le 10 juillet 2007. D’ici là, n’hésitez pas à nous donner des idées […]

@@ -6,6 +6,7 @@ tags: ["archive", "wordpress", "news"]
 description: "Tournois au profit de Leïdimen"
 draft: false
 source: "https://leidimen.com/tournois-au-profit-de-leidimen"
+type: "posts"
 
 ---
 

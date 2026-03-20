@@ -13,6 +13,7 @@ tags:
   - blog
 villages:
   - darawal
+type: "posts"
 ---
 
 {{< myimage src="/img/diambana/puits.jpg" >}}

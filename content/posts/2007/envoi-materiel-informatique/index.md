@@ -16,8 +16,9 @@ tags:
 villages:
   - douentza
 moods:
-  - Heureux
-  - Motivé
+  - heureux
+  - motive
+type: "posts"
 ---
 
 ## Un projet majeur qui prend vie ! 💻

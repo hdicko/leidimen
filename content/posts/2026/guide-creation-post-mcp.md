@@ -16,6 +16,7 @@ villages:
 moods:
   - inspire
   - motive
+type: "posts"
 ---
 
 ## Introduction au serveur MCP Hugo

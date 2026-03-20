@@ -11,6 +11,7 @@ categories:
 villages:
   - dorool
   - diona
+type: "posts"
 ---
 
 Voici **Ibrahim**, **Faadi**, **Leyla** et **Issa**.

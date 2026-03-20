@@ -15,9 +15,10 @@ tags:
 villages:
   - dorool
 moods:
-  - Heureux
-  - Motivé
-  - Reconnaissant
+  - heureux
+  - motive
+  - reconnaissant
+type: "posts"
 ---
 
 ## Un projet qui avance à grands pas

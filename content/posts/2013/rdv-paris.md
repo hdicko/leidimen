@@ -13,6 +13,7 @@ tags:
   - blog
   - leidimen
 villages: []
+type: "posts"
 ---
 
 {{< details summary="Voir toute l'info" >}}

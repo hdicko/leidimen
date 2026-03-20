@@ -13,6 +13,7 @@ tags:
   - blog
   - reunion
 villages: []
+type: "posts"
 ---
 
 Compte-rendu d’activité 2010

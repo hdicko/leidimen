@@ -17,6 +17,7 @@ villages:
   - tacouti
   - douentza
 source: https://leidimen.com/mon-compte-rendu-de-voyage
+type: "posts"
 ---
 
 Un grand bonjour à tous!

@@ -31,6 +31,7 @@ resources:
     title: Fily Dabo Cissoko
   - src: olo Ameri Diona.jpg
     title: Olo Ameri Diona
+type: "posts"
 ---
 
 {{< gallery-pro gallery="souvenir" description="Une collection de photos souvenirs de Hammadoun Dicko avec sa famille, ses frères et ses amis." >}}

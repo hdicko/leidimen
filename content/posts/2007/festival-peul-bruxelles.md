@@ -14,8 +14,9 @@ tags:
   - peul
 villages: []
 moods:
-  - Heureux
-  - Inspiré
+  - heureux
+  - inspire
+type: "posts"
 ---
 
 ## Un événement culturel majeur

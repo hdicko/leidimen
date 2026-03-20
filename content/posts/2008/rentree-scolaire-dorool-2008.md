@@ -13,6 +13,7 @@ tags:
   - blog
 villages:
   - dorool
+type: "posts"
 ---
 
 # Rentree scolaire

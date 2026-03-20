@@ -12,6 +12,7 @@ tags:
 villages:
   - douentza
 source: https://leidimen.com/premiere-semaine-culturelle-africaine-du-pecq
+type: "posts"
 ---
 
 A l’initiative de l’association des Amis de la Boucle du Niger se tient actuellement la première semaine culturelle africaine du Pecq. Au programme : une exposition de photos, des projections de films, une vente de livres et d’objets d’artisanat, un repas africain, un concert…

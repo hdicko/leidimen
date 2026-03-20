@@ -11,6 +11,7 @@ categories:
 villages:
   - diona
   - dorool
+type: "posts"
 ---
 
 ## Le Maraîchage

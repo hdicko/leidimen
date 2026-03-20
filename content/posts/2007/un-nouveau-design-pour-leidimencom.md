@@ -12,6 +12,7 @@ tags:
 villages:
   - douentza
 source: https://leidimen.com/un-nouveau-design-pour-leidimencom
+type: "posts"
 ---
 
 Comme vous l’avez sans doute remarqué, notre site Internet a fait peau neuve. Un grand merci à Rodney pour son travail !

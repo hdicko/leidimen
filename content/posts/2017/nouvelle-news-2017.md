@@ -10,6 +10,7 @@ categories:
 tags: []
 villages: []
 moods: []
+type: "posts"
 ---
 
 Bonjour,

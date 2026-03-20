@@ -12,6 +12,7 @@ tags:
 villages:
   - douentza
 source: https://leidimen.com/reunion-a-mennecy
+type: "posts"
 ---
 
 Une réunion s’est tenue dimanche 28 octobre à Mennecy.

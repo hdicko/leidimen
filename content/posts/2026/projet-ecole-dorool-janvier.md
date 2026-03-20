@@ -16,6 +16,7 @@ villages:
 moods:
   - inspire
   - motive
+type: "posts"
 ---
 
 ## Un nouveau chapitre pour l'éducation à Dorool

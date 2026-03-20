@@ -17,6 +17,7 @@ villages:
   - debere
   - boundoucoli
   - diona
+type: "posts"
 ---
 
 27 septembre 2007

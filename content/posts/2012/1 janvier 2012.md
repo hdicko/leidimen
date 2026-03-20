@@ -15,6 +15,7 @@ tags:
 villages:
   - dorool
   - douentza
+type: "posts"
 ---
 
 **_A﻿I Claude content_**

@@ -11,7 +11,7 @@ tags:
   - exposition
   - le pecq
   - partenariat
-type: posts
+type: "posts"
 ---
 
 À l'initiative de l'association des Amis de la Boucle du Niger se tient actuellement la première semaine culturelle africaine du Pecq.

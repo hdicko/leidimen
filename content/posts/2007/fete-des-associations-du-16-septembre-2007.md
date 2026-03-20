@@ -12,6 +12,7 @@ tags:
 villages:
   - douentza
 source: https://leidimen.com/fete-des-associations-3
+type: "posts"
 ---
 
 Pour la troisième année consécutive, Leïdimen a participé à la fête des associations de Bondoufle. Durant cette journée, trois nouveaux membres nous ont rejoint (deux membres bienfaiteurs et un membre actif). Merci à tous les membres qui nous ont aidé à tenir le stand et à ceux qui sont passés nous rendre visite. A l’année […]

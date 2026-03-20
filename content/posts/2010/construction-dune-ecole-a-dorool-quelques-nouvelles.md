@@ -12,6 +12,7 @@ tags:
 villages:
   - dorool
 source: https://leidimen.com/construction-dune-ecole-a-dorool-quelques-nouvelles
+type: "posts"
 ---
 
 Au mois de décembre, nous vous avons fait part de notre volonté de [construire une école dans le village de Dorool](https://leidimen.com/projets/une-ecole-pour-dorool). Trois mois plus tard, le bilan est très positif ! Mamadou est parti au Mali au mois de janvier. Son voyage a été consacré en grande partie à ce projet, et il est revenu en France avec de très bonnes nouvelles ! Les habitants de Dorool ont accueilli le projet avec enthousiasme : tous les parents veulent inscrire leurs enfants à l’école, et ce sont les hommes du village eux mêmes qui construisent la salle de classe.

@@ -12,9 +12,11 @@ tags:
   - conseil d'administration
   - budget
   - projets
-villages: []
+villages:
+  - douentza
 moods:
-  - Motivé
+  - motive
+type: "posts"
 ---
 
 ## Réunion du Conseil d'Administration

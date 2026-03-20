@@ -13,8 +13,9 @@ tags:
   - poker
 villages: []
 moods:
-  - Heureux
-  - Reconnaissant
+  - heureux
+  - reconnaissant
+type: "posts"
 ---
 
 ## Des événements ludiques au service de la solidarité

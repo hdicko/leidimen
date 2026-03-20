@@ -15,8 +15,9 @@ tags:
   - evry
 villages: []
 moods:
-  - Heureux
-  - Inspiré
+  - heureux
+  - inspire
+type: "posts"
 ---
 
 ## Le Mali au cœur de l'Île-de-France 🇲🇱

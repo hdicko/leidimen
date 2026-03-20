@@ -16,6 +16,7 @@ tags:
   - Mali
 villages:
   - dorool
+type: "posts"
 ---
 
 {{< details summary="lire tout l'article" >}}

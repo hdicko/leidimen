@@ -12,6 +12,7 @@ tags:
 villages:
   - douentza
 source: https://leidimen.com/actu-musique
+type: "posts"
 ---
 
 [

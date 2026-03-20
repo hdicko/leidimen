@@ -13,6 +13,7 @@ tags:
   - blog
   - reunion
 villages: []
+type: "posts"
 ---
 
 {{< myimage src="/img/reunions/reunion-mennecy1.jpeg" >}}

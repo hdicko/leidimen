@@ -15,6 +15,7 @@ villages:
   - debere
   - douentza
 source: https://leidimen.com/de-retour-du-mali
+type: "posts"
 ---
 
 Bonjour à tous!

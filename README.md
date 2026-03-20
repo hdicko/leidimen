@@ -15,6 +15,36 @@ This repository is the source code for the association's website. It is a **stat
 
 ---
 
+## Start Here (Step-by-Step)
+
+Choose your profile and follow only that path.
+
+### Path 1 - Team member (non-technical)
+
+1. Open the CMS guide: [NETLIFY_CMS_GUIDE.md](NETLIFY_CMS_GUIDE.md)
+2. Follow the steps to create or update a post.
+3. Use lowercase village names only (example: `dorool`).
+4. Publish.
+
+### Path 2 - External partner (send content)
+
+1. Prepare your text, photos, and date.
+2. Send it to the Leidimen team (they will publish it in the CMS).
+3. Share this structure to make publishing faster:
+	- Title
+	- Short summary (150-160 chars)
+	- Main text
+	- Concerned village(s)
+	- 1 cover image
+
+### Path 3 - Developer
+
+1. Install and run locally (see Quick Start below).
+2. Create content with Netlify CMS, `cms-web`, or Hugo CLI.
+3. Validate and build before commit.
+
+---
+
 ## Quick Start
 
 You need **Node.js 18+** and **Git**. Hugo itself is installed automatically by npm — you do not need to install it separately.
@@ -40,9 +70,9 @@ The CMS admin panel is at **http://localhost:1313/leidimen/admin/**.
 
 ## Adding Content
 
-The most common task for contributors is writing a new article (post). Here are your three options — pick the one that fits you best.
+The most common task is creating a new article. Pick one method below.
 
-### Option A — Netlify CMS (best for editors, no coding needed)
+### Option A — Netlify CMS (recommended for most team members)
 
 1. Start the dev server (`npm run dev`)
 2. Go to http://localhost:1313/leidimen/admin/
@@ -51,7 +81,7 @@ The most common task for contributors is writing a new article (post). Here are 
 
 → See [NETLIFY_CMS_GUIDE.md](NETLIFY_CMS_GUIDE.md) for a full walkthrough.
 
-### Option B — Hugo CLI (best for developers)
+### Option B — Hugo CLI (developers)
 
 ```bash
 # Create a new post — opens a pre-filled Markdown file
@@ -63,7 +93,7 @@ hugo new equipe/firstname-lastname.md   # team member profile
 
 Edit the generated file in your editor, then check the result in your browser.
 
-### Option C — cms-web app (developer tool with GitHub integration)
+### Option C — cms-web app (developers with GitHub token)
 
 ```bash
 cd cms-web
@@ -80,7 +110,7 @@ npm start
 Every piece of content has a YAML header (frontmatter). A few things to keep in mind:
 
 - **Village names must be lowercase** in frontmatter, e.g. `villages: ["dorool"]`
-- Available villages: `dorool`, `diona`, `debere`, `diambana`, `darawal`, `tanal`, `manko`, `tacouti`, `n'dumpa`, `douentza`
+- Available villages: `dorool`, `diona`, `debere`, `boundoucoli`, `diambana`, `darawal`, `tanal`, `manko`, `tacouti`, `ndumpa`, `douentza`
 - Available categories: `Éducation`, `Santé`, `Infrastructure`
 - For **photo galleries**: images must live in the same folder as the `index.md` file (they are Hugo page resources)
 
@@ -163,6 +193,13 @@ The site lives in a subdirectory. The `baseURL` in `hugo.toml` already includes 
 | [CODE_DOCUMENTATION.md](CODE_DOCUMENTATION.md)         | Code architecture and templates      |
 | [HUGO_0.152.1_MIGRATION.md](HUGO_0.152.1_MIGRATION.md) | Notes on the Hugo version upgrade    |
 | [cms-web/README.md](cms-web/README.md)                 | The Node.js CMS interface            |
+
+### Recommended Reading Order
+
+1. [README.md](README.md)
+2. [NETLIFY_CMS_GUIDE.md](NETLIFY_CMS_GUIDE.md)
+3. [CONTENT_CREATION_GUIDE.md](CONTENT_CREATION_GUIDE.md)
+4. [DEPLOY.md](DEPLOY.md) (developers only)
 
 ---
 

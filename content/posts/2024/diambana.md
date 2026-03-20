@@ -15,6 +15,7 @@ villages:
   - diambana
   - darawal
   - tanal
+type: "posts"
 ---
 
 ### This is post 20 - Just for testing !

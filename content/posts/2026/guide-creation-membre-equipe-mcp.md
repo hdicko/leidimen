@@ -17,6 +17,7 @@ villages:
 moods:
   - inspire
   - motive
+type: "posts"
 ---
 
 ## Introduction

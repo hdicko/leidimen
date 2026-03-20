@@ -14,7 +14,7 @@ tags:
   - infrastructure
 villages:
   - darawal
-type: posts
+type: "posts"
 ---
 
 ![Eau sale à Darawal](/images/wordpress/2007-12-puits-3-1.jpg)

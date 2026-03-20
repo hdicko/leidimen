@@ -10,7 +10,8 @@ categories:
 tags: []
 villages: []
 moods:
-  - Heureux
+  - heureux
+type: "posts"
 ---
 
 ![Printemps à Paris](/posts/2013/paris-event-2013.jpg)

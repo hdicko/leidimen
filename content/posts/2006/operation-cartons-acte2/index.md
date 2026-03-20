@@ -13,9 +13,11 @@ tags:
   - manuels scolaires
   - ordinateurs
   - mali
-villages: []
+villages:
+  - douentza
 moods:
-  - Motivé
+  - motive
+type: "posts"
 ---
 
 ## Une journée de mobilisation collective 📦

@@ -14,6 +14,7 @@ villages:
   - douentza
 moods:
   - heureux
+type: "posts"
 ---
 
 end

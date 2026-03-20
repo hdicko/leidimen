@@ -19,6 +19,7 @@ tags:
   - "éducation"
 moods:
   - "inspire"
+type: "posts"
 ---
 
 ## Une révolution technologique qui touche le monde entier

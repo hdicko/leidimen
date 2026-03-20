@@ -16,6 +16,7 @@ villages:
   - darawal
   - douentza
 source: https://leidimen.com/reunion-a-paris
+type: "posts"
 ---
 
 La réunion de dimanche s’est déroulée à Paris chez notre aimable trésorier Moussa :-).

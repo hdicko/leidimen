@@ -12,6 +12,7 @@ tags:
 villages:
   - douentza
 source: https://leidimen.com/nouvelle-news-2017
+type: "posts"
 ---
 
 Bonjour,

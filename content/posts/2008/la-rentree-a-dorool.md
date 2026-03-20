@@ -11,7 +11,8 @@ tags: []
 villages:
   - dorool
 moods:
-  - Heureux
+  - heureux
+type: "posts"
 ---
 
 Mamadou est rentré du Mali le mois dernier avec d'excellentes nouvelles de l'école ! Après de nombreuses démarches administratives, un instituteur a été nommé. La rentrée a eu lieu au début de la semaine.

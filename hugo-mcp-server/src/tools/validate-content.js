@@ -35,6 +35,7 @@ const VALID_VILLAGES = [
 	'dorool',
 	'diona',
 	'debere',
+	'boundoucoli',
 	'diambana',
 	'darawal',
 	'tanal',

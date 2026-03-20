@@ -16,7 +16,7 @@ tags:
 villages:
   - dorool
   - diona
-type: posts
+type: "posts"
 ---
 
 ## Qu'est-ce qu'une banque de céréales ?

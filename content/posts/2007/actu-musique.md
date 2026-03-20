@@ -12,6 +12,7 @@ tags:
 villages:
   - douentza
 source: https://leidimen.com/actu-musique
+type: "posts"
 ---
 
 Leïdimen rassemble des personnes d’origines diverses par des liens d amitiés et de solidarité. On saluera dans ce cadre le groupe Bayefall Gnawa et le chanteur Nuru Kane qui réunit des artistes talentueux de différentes horizons. Ce groupe réalise un splendide brassage culturelle et musicale.

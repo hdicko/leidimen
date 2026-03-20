@@ -12,6 +12,7 @@ tags:
 villages:
   - douentza
 source: https://leidimen.com/derniers-preparatifs
+type: "posts"
 ---
 
 Derniers préparatifs avant l envoi des ordinateurs. On remballe les ordinateurs dans des cartons tout neufs que l on étiquette. Encore une fois merci aux bénévoles !!!!

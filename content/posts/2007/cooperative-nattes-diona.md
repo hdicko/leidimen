@@ -14,7 +14,7 @@ tags:
   - artisanat
 villages:
   - diona
-type: posts
+type: "posts"
 ---
 
 Dans nos villages, les femmes ont l'habitude de tisser des nattes qui servent à tous les usages : les nattes font office de table, de chaise, de tapis… et on en trouve partout, dans toutes les cases, dans tous les villages.

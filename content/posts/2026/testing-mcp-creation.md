@@ -14,6 +14,7 @@ villages:
   - douentza
 moods:
   - motive
+type: "posts"
 ---
 
 # Test de Création MCP

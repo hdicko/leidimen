@@ -12,6 +12,7 @@ tags:
 villages:
   - douentza
 source: https://leidimen.com/reunion-a-cachan
+type: "posts"
 ---
 
 Une réunion s’est tenue le samedi 24 à Cachan.

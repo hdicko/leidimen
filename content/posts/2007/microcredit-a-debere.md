@@ -14,7 +14,7 @@ tags:
   - développement économique
 villages:
   - debere
-type: posts
+type: "posts"
 ---
 
 ![Hamassala et Abdoulaye avec quelques représentantes des femmes de Débéré, en octobre 2007](/images/wordpress/2007-11-imgp0535-small.JPG)

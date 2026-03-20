@@ -14,6 +14,7 @@ tags:
   - "outils"
 moods:
   - "motive"
+type: "posts"
 ---
 
 ## Introduction

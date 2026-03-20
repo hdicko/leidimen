@@ -11,7 +11,8 @@ tags:
   - design
 villages: []
 moods:
-  - Heureux
+  - heureux
+type: "posts"
 ---
 
 ## Une nouvelle image pour notre association

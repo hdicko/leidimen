@@ -16,7 +16,7 @@ villages:
   - debere
   - manko
   - tacouti
-type: posts
+type: "posts"
 ---
 
 Afin de favoriser l'éducation des enfants des villages, nous avons acheminé depuis 2006 des fournitures scolaires de base aux écoles élémentaires (écoles primaires) de Diona, Debere, Boundoucoli, Manko, Ndumpa et Tacouti.

@@ -15,6 +15,7 @@ tags:
   - Bilan
   - Solidarité
 villages: []
+type: "posts"
 ---
 
 {{< details summary="lire tout l'article" >}}

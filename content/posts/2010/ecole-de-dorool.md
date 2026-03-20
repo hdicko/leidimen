@@ -12,6 +12,7 @@ tags:
 villages:
   - dorool
 source: https://leidimen.com/ecole-de-dorool
+type: "posts"
 ---
 
 Quelques nouvelles en images (vous pouvez cliquer sur les photos pour les agrandir):

@@ -13,6 +13,7 @@ tags:
   - blog
 villages:
   - darawal
+type: "posts"
 ---
 
 # This is Darawal village et son puits en cours de creusement

@@ -9,6 +9,7 @@ categories:
 tags: []
 villages: []
 moods: []
+type: "posts"
 ---
 
 {{< details summary="lire tout l'article" >}}

@@ -14,6 +14,7 @@ tags:
   - blog
 villages:
   - dorool
+type: "posts"
 ---
 
 ![Bureau de leidimen](/images/bureau-leidimen.jpg?&class=border,shadow)

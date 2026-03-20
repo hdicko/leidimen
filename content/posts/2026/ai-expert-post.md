@@ -14,6 +14,7 @@ villages:
   - douentza
 moods:
   - inspire
+type: "posts"
 ---
 
 ## Introduction

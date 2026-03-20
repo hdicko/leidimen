@@ -15,7 +15,8 @@ tags:
   - projets
 villages: []
 moods:
-  - Motivé
+  - motive
+type: "posts"
 ---
 
 ## Une réunion productive

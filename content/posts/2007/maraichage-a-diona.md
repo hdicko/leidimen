@@ -14,7 +14,7 @@ tags:
   - lac Korarou
 villages:
   - diona
-type: posts
+type: "posts"
 ---
 
 ![Maraîchage à Diona](/images/wordpress/2007-11-dsc01894-small.jpg)

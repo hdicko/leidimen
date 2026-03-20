@@ -12,6 +12,7 @@ tags:
 villages:
   - douentza
 source: https://leidimen.com/envoi-du-materiel-informatique-a-bamako
+type: "posts"
 ---
 
 Chargement du matériel informatique direction Bamako       [

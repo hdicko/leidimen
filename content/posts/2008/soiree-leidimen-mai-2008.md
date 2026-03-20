@@ -14,7 +14,7 @@ tags:
   - défilé
   - concert
   - fundraising
-type: posts
+type: "posts"
 ---
 
 ![Soirée Leidimen](/images/wordpress/2008-06-soiree_recto.jpg)

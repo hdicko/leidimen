@@ -12,7 +12,9 @@ categories:
 tags:
   - blog
   - info
-villages: []
+villages:
+  - douentza
+type: "posts"
 ---
 
 ## Chargement du matériel informatique direction Bamako

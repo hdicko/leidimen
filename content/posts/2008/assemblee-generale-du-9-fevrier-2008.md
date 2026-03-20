@@ -12,6 +12,7 @@ tags:
 villages:
   - douentza
 source: https://leidimen.com/assemblee-generale-du-9-fevrier-2008
+type: "posts"
 ---
 
 Bonjour à tous, l’assemblée générale de l’association Leïdimen aura lieu à Bondoufle le samedi 9 février 2008 à 14h. A samedi !
